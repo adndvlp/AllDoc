@@ -1,0 +1,40 @@
+{
+  "project": "ipad",
+  "viewport": {
+    "width": 768,
+    "height": 1024
+  },
+  "status": "complete",
+  "files": [
+    {
+      "path": "screenshots/ipad/inicio.png",
+      "sha256": "0e75d0e6267e459fa43bce53575be9cb5d3450d3f7652925e6452746d0ec6a17",
+      "route": "/"
+    },
+    {
+      "path": "screenshots/ipad/select.png",
+      "sha256": "14248d3cc5a574445934d0cb8a3893001cec3bf0da9c7ced11834922b73394b9",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/ipad/comentarios.png",
+      "sha256": "726b38cfa11945da4bcd5bd4460757dd965d40d30628cdb58bf6e1ff543e4ae5",
+      "route": "/apuntes/analisis-de-datos/sql/comentarios"
+    },
+    {
+      "path": "screenshots/ipad/menu.png",
+      "sha256": "336d80d9ad7ffcdf9e97dc04646f61d93ddf112fbb1fce9b6ed21635d59240f5",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/ipad/buscador.png",
+      "sha256": "71c26d312e93152701ee00f14275635a393b87de5ef862e826f6c208eb8fb452",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/ipad/color-texto.png",
+      "sha256": "09a7485b0ca240ddf9cfb70086ab20cf912c36300cc7d54ea6958a31b41b53d9",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    }
+  ]
+}

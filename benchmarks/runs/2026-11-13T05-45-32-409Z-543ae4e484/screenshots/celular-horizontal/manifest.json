@@ -1,0 +1,40 @@
+{
+  "project": "celular-horizontal",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "status": "complete",
+  "files": [
+    {
+      "path": "screenshots/celular-horizontal/inicio.png",
+      "sha256": "e09af11ecf9cb0e2a7d5e18ee877d1e96365aa5ce1fb6286cb067584a0ec29a5",
+      "route": "/"
+    },
+    {
+      "path": "screenshots/celular-horizontal/select.png",
+      "sha256": "cb42a2e1598e84ee8a491b1cffdac5f91102292a212b0ac35c378ffcd678345f",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-horizontal/comentarios.png",
+      "sha256": "626e9a2e75fdcc371ab6a74b7e1307e87b3b4a3f4d0a12daeaeb59eaf6c88a0b",
+      "route": "/apuntes/analisis-de-datos/sql/comentarios"
+    },
+    {
+      "path": "screenshots/celular-horizontal/menu.png",
+      "sha256": "88a92e9a584297126e5efd8664abca13e8b073c517929526894a75d2023c9d3e",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-horizontal/buscador.png",
+      "sha256": "0b0fb44ccbcc0037a1e29bc687bdda110967ecc01ee62b9a70d0f8711c321473",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-horizontal/color-texto.png",
+      "sha256": "1fe60ecde894d5c26e81c693742437732074466ff44474c8c759735a8975c2a1",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    }
+  ]
+}

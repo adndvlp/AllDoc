@@ -1,0 +1,40 @@
+{
+  "project": "laptop",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "status": "complete",
+  "files": [
+    {
+      "path": "screenshots/laptop/inicio.png",
+      "sha256": "573540e50b949707b6248dfbc1000b34a98f25961ed7c5d3f388ec85142d2b4f",
+      "route": "/"
+    },
+    {
+      "path": "screenshots/laptop/select.png",
+      "sha256": "772cef4d05cc9298b3bb1c8b4c727f0f1449bf1b578537493bd01ab25a4532e0",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/laptop/comentarios.png",
+      "sha256": "607efb899dc9bb232004f6ac7d04ec1d756d880aec2205c16fc7f074877ab9e3",
+      "route": "/apuntes/analisis-de-datos/sql/comentarios"
+    },
+    {
+      "path": "screenshots/laptop/menu.png",
+      "sha256": "7271d95fbc751cefd99270e888f8243908e531c1c93fe318f803a47a6f321d7c",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/laptop/buscador.png",
+      "sha256": "ebfff116a9e5d97aa94cfc8e94e42c2eaad05067cd1f7275266f3c64d5a5b4ef",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/laptop/color-texto.png",
+      "sha256": "0ef02f4a218633e700c941377d3254f24df5678e903761ad44392d8a7195e41d",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    }
+  ]
+}

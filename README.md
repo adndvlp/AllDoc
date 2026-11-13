@@ -181,6 +181,22 @@ concretas. Los ejemplos usan la tabla productos, con nombre, categoría y precio
 El buscador acepta términos como “filtrar” y consultas sin acentos. Se abre con
 Ctrl K o ⌘ K. El índice se descarga al abrirlo.
 
+## Referencia de rendimiento y capturas
+
+Para registrar el estado actual antes de implementar el rediseño del
+[SDD](specs/alldoc-sdd.md):
+
+~~~sh
+npm run baseline
+~~~
+
+Compila producción en un directorio aislado, registra tamaños JS/CSS y capturas
+en los siete tamaños, y mide las interacciones actuales en laptop y celular
+emulado. Guarda las condiciones y la evidencia en una carpeta nueva de
+benchmarks/runs/. Una ejecución parcial indica exactamente qué falta.
+El procedimiento y las limitaciones de cada métrica están en
+[benchmarks/README.md](benchmarks/README.md).
+
 ## Versiones latest
 
 Las dependencias iniciales apuntan a la etiqueta latest de npm, no a betas ni

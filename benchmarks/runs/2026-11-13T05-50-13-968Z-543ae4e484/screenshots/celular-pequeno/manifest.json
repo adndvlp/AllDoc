@@ -1,0 +1,40 @@
+{
+  "project": "celular-pequeno",
+  "viewport": {
+    "width": 320,
+    "height": 568
+  },
+  "status": "complete",
+  "files": [
+    {
+      "path": "screenshots/celular-pequeno/inicio.png",
+      "sha256": "209ccaced7af8456ac42a83874a8d1f1baa14787c7e00b4cd4ebad43a5926aad",
+      "route": "/"
+    },
+    {
+      "path": "screenshots/celular-pequeno/select.png",
+      "sha256": "af37b11279ef3ab7a65dbdeaa120cb6e95da8f90e7fcd75f14054757eaae15a8",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-pequeno/comentarios.png",
+      "sha256": "c32a42c3d0da23a5c10ebaef421ca5050daff3ed63e29056072304f1a6def9ef",
+      "route": "/apuntes/analisis-de-datos/sql/comentarios"
+    },
+    {
+      "path": "screenshots/celular-pequeno/menu.png",
+      "sha256": "ace32102cd03574a154446d77290f96c695f189fe8dee41527c5ead6cbefc568",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-pequeno/buscador.png",
+      "sha256": "e9422b4acc4be4e217ed00af0ac76fc1627385fff7e5061f47998efeb5ea93d0",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/celular-pequeno/color-texto.png",
+      "sha256": "b95cf6be68c13317720b69c6afc5c7ad50f775c1b2251bb37db21e5ce4e5bc4d",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    }
+  ]
+}

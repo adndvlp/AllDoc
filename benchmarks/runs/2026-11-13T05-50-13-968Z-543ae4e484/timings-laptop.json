@@ -1,0 +1,4794 @@
+{
+  "project": "laptop",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "cpuRate": 1,
+  "samplesPerAction": 30,
+  "reducedMotion": "no-preference",
+  "status": "complete",
+  "cold": {
+    "domResponseMs": {
+      "dialogVisible": 36.400000005960464,
+      "resultsReady": 64.70000000298023
+    },
+    "eventTiming": [
+      {
+        "name": "pointerdown",
+        "startTime": 709.2999999970198,
+        "duration": 48,
+        "interactionId": 8416,
+        "inputDelay": 1.5,
+        "processingDuration": 0.20000000298023224,
+        "presentationDelay": 46.29999999701977
+      },
+      {
+        "name": "pointerup",
+        "startTime": 709.2999999970198,
+        "duration": 48,
+        "interactionId": 8416,
+        "inputDelay": 1.7999999970197678,
+        "processingDuration": 0.20000000298023224,
+        "presentationDelay": 46
+      },
+      {
+        "name": "click",
+        "startTime": 709.2999999970198,
+        "duration": 48,
+        "interactionId": 8416,
+        "inputDelay": 2,
+        "processingDuration": 8.299999997019768,
+        "presentationDelay": 37.70000000298023
+      }
+    ],
+    "maxObservedEventDurationMs": 48,
+    "beforeSearch": {
+      "navigation": [
+        {
+          "duration": 98.90000000596046,
+          "domContentLoaded": 83.59999999403954,
+          "loadEventEnd": 98.90000000596046,
+          "ttfb": 0.9000000059604645
+        }
+      ],
+      "resources": [
+        {
+          "path": "/assets/css/styles.e5e960e3.css",
+          "initiatorType": "link",
+          "startTime": 5.9000000059604645,
+          "duration": 5.299999997019768,
+          "transferSize": 21186,
+          "encodedBodySize": 20886,
+          "decodedBodySize": 103683
+        },
+        {
+          "path": "/assets/js/runtime~main.a7f66880.js",
+          "initiatorType": "script",
+          "startTime": 6,
+          "duration": 1.9000000059604645,
+          "transferSize": 2507,
+          "encodedBodySize": 2207,
+          "decodedBodySize": 4411
+        },
+        {
+          "path": "/img/mark.svg",
+          "initiatorType": "link",
+          "startTime": 6,
+          "duration": 6.5,
+          "transferSize": 552,
+          "encodedBodySize": 252,
+          "decodedBodySize": 484
+        },
+        {
+          "path": "/assets/js/main.6f6b0db5.js",
+          "initiatorType": "script",
+          "startTime": 6,
+          "duration": 23.200000002980232,
+          "transferSize": 156374,
+          "encodedBodySize": 156074,
+          "decodedBodySize": 496992
+        },
+        {
+          "path": "/img/topics/power-query.svg",
+          "initiatorType": "link",
+          "startTime": 6.0999999940395355,
+          "duration": 23.600000008940697,
+          "transferSize": 1482,
+          "encodedBodySize": 1182,
+          "decodedBodySize": 2293
+        },
+        {
+          "path": "/img/topics/power-bi.svg",
+          "initiatorType": "link",
+          "startTime": 6.0999999940395355,
+          "duration": 23.700000002980232,
+          "transferSize": 1219,
+          "encodedBodySize": 919,
+          "decodedBodySize": 2520
+        },
+        {
+          "path": "/img/mark.svg",
+          "initiatorType": "img",
+          "startTime": 15.400000005960464,
+          "duration": 14.5,
+          "transferSize": 552,
+          "encodedBodySize": 252,
+          "decodedBodySize": 484
+        },
+        {
+          "path": "/assets/js/5e95c892.b59ebe5d.js",
+          "initiatorType": "script",
+          "startTime": 82.5,
+          "duration": 3.5999999940395355,
+          "transferSize": 561,
+          "encodedBodySize": 261,
+          "decodedBodySize": 337
+        },
+        {
+          "path": "/assets/js/aba21aa0.8732e405.js",
+          "initiatorType": "script",
+          "startTime": 82.70000000298023,
+          "duration": 3.5999999940395355,
+          "transferSize": 459,
+          "encodedBodySize": 159,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/a7bd4aaa.0e960119.js",
+          "initiatorType": "script",
+          "startTime": 82.79999999701977,
+          "duration": 5.100000008940697,
+          "transferSize": 708,
+          "encodedBodySize": 408,
+          "decodedBodySize": 736
+        },
+        {
+          "path": "/assets/js/de13dea7.edc80a00.js",
+          "initiatorType": "script",
+          "startTime": 82.90000000596046,
+          "duration": 5.5,
+          "transferSize": 1426,
+          "encodedBodySize": 1126,
+          "decodedBodySize": 6733
+        },
+        {
+          "path": "/assets/js/166.ff90bc4f.js",
+          "initiatorType": "script",
+          "startTime": 83.09999999403954,
+          "duration": 4.800000011920929,
+          "transferSize": 12784,
+          "encodedBodySize": 12484,
+          "decodedBodySize": 28431
+        },
+        {
+          "path": "/assets/js/a94703ab.5f01d5cf.js",
+          "initiatorType": "script",
+          "startTime": 83.09999999403954,
+          "duration": 6.5,
+          "transferSize": 2286,
+          "encodedBodySize": 1986,
+          "decodedBodySize": 4570
+        },
+        {
+          "path": "/assets/js/common.7b4f7a54.js",
+          "initiatorType": "script",
+          "startTime": 83.20000000298023,
+          "duration": 8.200000002980232,
+          "transferSize": 5970,
+          "encodedBodySize": 5670,
+          "decodedBodySize": 15668
+        },
+        {
+          "path": "/assets/js/17896441.dd038544.js",
+          "initiatorType": "script",
+          "startTime": 83.40000000596046,
+          "duration": 7.5999999940395355,
+          "transferSize": 8775,
+          "encodedBodySize": 8475,
+          "decodedBodySize": 26971
+        },
+        {
+          "path": "/assets/js/17cc07e0.50ae3097.js",
+          "initiatorType": "script",
+          "startTime": 83.40000000596046,
+          "duration": 8.299999997019768,
+          "transferSize": 924,
+          "encodedBodySize": 624,
+          "decodedBodySize": 1320
+        },
+        {
+          "path": "/assets/js/5e95c892.b59ebe5d.js",
+          "initiatorType": "link",
+          "startTime": 131.20000000298023,
+          "duration": 3.5999999940395355,
+          "transferSize": 561,
+          "encodedBodySize": 261,
+          "decodedBodySize": 337
+        },
+        {
+          "path": "/assets/js/aba21aa0.8732e405.js",
+          "initiatorType": "link",
+          "startTime": 131.20000000298023,
+          "duration": 4.0999999940395355,
+          "transferSize": 459,
+          "encodedBodySize": 159,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/a7bd4aaa.0e960119.js",
+          "initiatorType": "link",
+          "startTime": 131.29999999701977,
+          "duration": 3.7000000029802322,
+          "transferSize": 708,
+          "encodedBodySize": 408,
+          "decodedBodySize": 736
+        },
+        {
+          "path": "/assets/js/de13dea7.edc80a00.js",
+          "initiatorType": "link",
+          "startTime": 131.40000000596046,
+          "duration": 4.899999991059303,
+          "transferSize": 1426,
+          "encodedBodySize": 1126,
+          "decodedBodySize": 6733
+        },
+        {
+          "path": "/assets/js/a94703ab.5f01d5cf.js",
+          "initiatorType": "link",
+          "startTime": 131.40000000596046,
+          "duration": 6.899999991059303,
+          "transferSize": 2286,
+          "encodedBodySize": 1986,
+          "decodedBodySize": 4570
+        },
+        {
+          "path": "/assets/js/17896441.dd038544.js",
+          "initiatorType": "link",
+          "startTime": 131.5,
+          "duration": 6.0999999940395355,
+          "transferSize": 8775,
+          "encodedBodySize": 8475,
+          "decodedBodySize": 26971
+        },
+        {
+          "path": "/assets/js/45a3eb1b.77f18d8d.js",
+          "initiatorType": "link",
+          "startTime": 131.59999999403954,
+          "duration": 7.9000000059604645,
+          "transferSize": 1342,
+          "encodedBodySize": 1042,
+          "decodedBodySize": 2308
+        },
+        {
+          "path": "/assets/js/1df93b7f.3f4624f6.js",
+          "initiatorType": "link",
+          "startTime": 131.70000000298023,
+          "duration": 8.299999997019768,
+          "transferSize": 1863,
+          "encodedBodySize": 1563,
+          "decodedBodySize": 4501
+        },
+        {
+          "path": "/assets/js/a7456010.ed28bc1d.js",
+          "initiatorType": "link",
+          "startTime": 131.79999999701977,
+          "duration": 7.5,
+          "transferSize": 460,
+          "encodedBodySize": 160,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/fdabc4f8.8d309c6c.js",
+          "initiatorType": "link",
+          "startTime": 132,
+          "duration": 8.200000002980232,
+          "transferSize": 1341,
+          "encodedBodySize": 1041,
+          "decodedBodySize": 2203
+        },
+        {
+          "path": "/assets/js/a4b81164.2f0635b9.js",
+          "initiatorType": "link",
+          "startTime": 132.20000000298023,
+          "duration": 8.599999994039536,
+          "transferSize": 952,
+          "encodedBodySize": 652,
+          "decodedBodySize": 1407
+        },
+        {
+          "path": "/assets/js/d6599612.56a99818.js",
+          "initiatorType": "link",
+          "startTime": 132.5,
+          "duration": 9,
+          "transferSize": 1332,
+          "encodedBodySize": 1032,
+          "decodedBodySize": 2392
+        }
+      ]
+    },
+    "afterSearch": {
+      "navigation": [
+        {
+          "duration": 98.90000000596046,
+          "domContentLoaded": 83.59999999403954,
+          "loadEventEnd": 98.90000000596046,
+          "ttfb": 0.9000000059604645
+        }
+      ],
+      "resources": [
+        {
+          "path": "/assets/css/styles.e5e960e3.css",
+          "initiatorType": "link",
+          "startTime": 5.9000000059604645,
+          "duration": 5.299999997019768,
+          "transferSize": 21186,
+          "encodedBodySize": 20886,
+          "decodedBodySize": 103683
+        },
+        {
+          "path": "/assets/js/runtime~main.a7f66880.js",
+          "initiatorType": "script",
+          "startTime": 6,
+          "duration": 1.9000000059604645,
+          "transferSize": 2507,
+          "encodedBodySize": 2207,
+          "decodedBodySize": 4411
+        },
+        {
+          "path": "/img/mark.svg",
+          "initiatorType": "link",
+          "startTime": 6,
+          "duration": 6.5,
+          "transferSize": 552,
+          "encodedBodySize": 252,
+          "decodedBodySize": 484
+        },
+        {
+          "path": "/assets/js/main.6f6b0db5.js",
+          "initiatorType": "script",
+          "startTime": 6,
+          "duration": 23.200000002980232,
+          "transferSize": 156374,
+          "encodedBodySize": 156074,
+          "decodedBodySize": 496992
+        },
+        {
+          "path": "/img/topics/power-query.svg",
+          "initiatorType": "link",
+          "startTime": 6.0999999940395355,
+          "duration": 23.600000008940697,
+          "transferSize": 1482,
+          "encodedBodySize": 1182,
+          "decodedBodySize": 2293
+        },
+        {
+          "path": "/img/topics/power-bi.svg",
+          "initiatorType": "link",
+          "startTime": 6.0999999940395355,
+          "duration": 23.700000002980232,
+          "transferSize": 1219,
+          "encodedBodySize": 919,
+          "decodedBodySize": 2520
+        },
+        {
+          "path": "/img/mark.svg",
+          "initiatorType": "img",
+          "startTime": 15.400000005960464,
+          "duration": 14.5,
+          "transferSize": 552,
+          "encodedBodySize": 252,
+          "decodedBodySize": 484
+        },
+        {
+          "path": "/assets/js/5e95c892.b59ebe5d.js",
+          "initiatorType": "script",
+          "startTime": 82.5,
+          "duration": 3.5999999940395355,
+          "transferSize": 561,
+          "encodedBodySize": 261,
+          "decodedBodySize": 337
+        },
+        {
+          "path": "/assets/js/aba21aa0.8732e405.js",
+          "initiatorType": "script",
+          "startTime": 82.70000000298023,
+          "duration": 3.5999999940395355,
+          "transferSize": 459,
+          "encodedBodySize": 159,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/a7bd4aaa.0e960119.js",
+          "initiatorType": "script",
+          "startTime": 82.79999999701977,
+          "duration": 5.100000008940697,
+          "transferSize": 708,
+          "encodedBodySize": 408,
+          "decodedBodySize": 736
+        },
+        {
+          "path": "/assets/js/de13dea7.edc80a00.js",
+          "initiatorType": "script",
+          "startTime": 82.90000000596046,
+          "duration": 5.5,
+          "transferSize": 1426,
+          "encodedBodySize": 1126,
+          "decodedBodySize": 6733
+        },
+        {
+          "path": "/assets/js/166.ff90bc4f.js",
+          "initiatorType": "script",
+          "startTime": 83.09999999403954,
+          "duration": 4.800000011920929,
+          "transferSize": 12784,
+          "encodedBodySize": 12484,
+          "decodedBodySize": 28431
+        },
+        {
+          "path": "/assets/js/a94703ab.5f01d5cf.js",
+          "initiatorType": "script",
+          "startTime": 83.09999999403954,
+          "duration": 6.5,
+          "transferSize": 2286,
+          "encodedBodySize": 1986,
+          "decodedBodySize": 4570
+        },
+        {
+          "path": "/assets/js/common.7b4f7a54.js",
+          "initiatorType": "script",
+          "startTime": 83.20000000298023,
+          "duration": 8.200000002980232,
+          "transferSize": 5970,
+          "encodedBodySize": 5670,
+          "decodedBodySize": 15668
+        },
+        {
+          "path": "/assets/js/17896441.dd038544.js",
+          "initiatorType": "script",
+          "startTime": 83.40000000596046,
+          "duration": 7.5999999940395355,
+          "transferSize": 8775,
+          "encodedBodySize": 8475,
+          "decodedBodySize": 26971
+        },
+        {
+          "path": "/assets/js/17cc07e0.50ae3097.js",
+          "initiatorType": "script",
+          "startTime": 83.40000000596046,
+          "duration": 8.299999997019768,
+          "transferSize": 924,
+          "encodedBodySize": 624,
+          "decodedBodySize": 1320
+        },
+        {
+          "path": "/assets/js/5e95c892.b59ebe5d.js",
+          "initiatorType": "link",
+          "startTime": 131.20000000298023,
+          "duration": 3.5999999940395355,
+          "transferSize": 561,
+          "encodedBodySize": 261,
+          "decodedBodySize": 337
+        },
+        {
+          "path": "/assets/js/aba21aa0.8732e405.js",
+          "initiatorType": "link",
+          "startTime": 131.20000000298023,
+          "duration": 4.0999999940395355,
+          "transferSize": 459,
+          "encodedBodySize": 159,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/a7bd4aaa.0e960119.js",
+          "initiatorType": "link",
+          "startTime": 131.29999999701977,
+          "duration": 3.7000000029802322,
+          "transferSize": 708,
+          "encodedBodySize": 408,
+          "decodedBodySize": 736
+        },
+        {
+          "path": "/assets/js/de13dea7.edc80a00.js",
+          "initiatorType": "link",
+          "startTime": 131.40000000596046,
+          "duration": 4.899999991059303,
+          "transferSize": 1426,
+          "encodedBodySize": 1126,
+          "decodedBodySize": 6733
+        },
+        {
+          "path": "/assets/js/a94703ab.5f01d5cf.js",
+          "initiatorType": "link",
+          "startTime": 131.40000000596046,
+          "duration": 6.899999991059303,
+          "transferSize": 2286,
+          "encodedBodySize": 1986,
+          "decodedBodySize": 4570
+        },
+        {
+          "path": "/assets/js/17896441.dd038544.js",
+          "initiatorType": "link",
+          "startTime": 131.5,
+          "duration": 6.0999999940395355,
+          "transferSize": 8775,
+          "encodedBodySize": 8475,
+          "decodedBodySize": 26971
+        },
+        {
+          "path": "/assets/js/45a3eb1b.77f18d8d.js",
+          "initiatorType": "link",
+          "startTime": 131.59999999403954,
+          "duration": 7.9000000059604645,
+          "transferSize": 1342,
+          "encodedBodySize": 1042,
+          "decodedBodySize": 2308
+        },
+        {
+          "path": "/assets/js/1df93b7f.3f4624f6.js",
+          "initiatorType": "link",
+          "startTime": 131.70000000298023,
+          "duration": 8.299999997019768,
+          "transferSize": 1863,
+          "encodedBodySize": 1563,
+          "decodedBodySize": 4501
+        },
+        {
+          "path": "/assets/js/a7456010.ed28bc1d.js",
+          "initiatorType": "link",
+          "startTime": 131.79999999701977,
+          "duration": 7.5,
+          "transferSize": 460,
+          "encodedBodySize": 160,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/fdabc4f8.8d309c6c.js",
+          "initiatorType": "link",
+          "startTime": 132,
+          "duration": 8.200000002980232,
+          "transferSize": 1341,
+          "encodedBodySize": 1041,
+          "decodedBodySize": 2203
+        },
+        {
+          "path": "/assets/js/a4b81164.2f0635b9.js",
+          "initiatorType": "link",
+          "startTime": 132.20000000298023,
+          "duration": 8.599999994039536,
+          "transferSize": 952,
+          "encodedBodySize": 652,
+          "decodedBodySize": 1407
+        },
+        {
+          "path": "/assets/js/d6599612.56a99818.js",
+          "initiatorType": "link",
+          "startTime": 132.5,
+          "duration": 9,
+          "transferSize": 1332,
+          "encodedBodySize": 1032,
+          "decodedBodySize": 2392
+        },
+        {
+          "path": "/assets/js/426.57d17cb0.js",
+          "initiatorType": "script",
+          "startTime": 718.5999999940395,
+          "duration": 1.800000011920929,
+          "transferSize": 533,
+          "encodedBodySize": 233,
+          "decodedBodySize": 289
+        },
+        {
+          "path": "/assets/js/aba21aa0.8732e405.js",
+          "initiatorType": "link",
+          "startTime": 760.7000000029802,
+          "duration": 4.0999999940395355,
+          "transferSize": 459,
+          "encodedBodySize": 159,
+          "decodedBodySize": 173
+        },
+        {
+          "path": "/assets/js/5e95c892.b59ebe5d.js",
+          "initiatorType": "link",
+          "startTime": 760.7000000029802,
+          "duration": 4.200000002980232,
+          "transferSize": 561,
+          "encodedBodySize": 261,
+          "decodedBodySize": 337
+        },
+        {
+          "path": "/assets/js/de13dea7.edc80a00.js",
+          "initiatorType": "link",
+          "startTime": 760.7999999970198,
+          "duration": 5.600000008940697,
+          "transferSize": 1426,
+          "encodedBodySize": 1126,
+          "decodedBodySize": 6733
+        },
+        {
+          "path": "/assets/js/a7bd4aaa.0e960119.js",
+          "initiatorType": "link",
+          "startTime": 760.7999999970198,
+          "duration": 6.600000008940697,
+          "transferSize": 708,
+          "encodedBodySize": 408,
+          "decodedBodySize": 736
+        },
+        {
+          "path": "/assets/js/a94703ab.5f01d5cf.js",
+          "initiatorType": "link",
+          "startTime": 760.9000000059605,
+          "duration": 5.5999999940395355,
+          "transferSize": 2286,
+          "encodedBodySize": 1986,
+          "decodedBodySize": 4570
+        },
+        {
+          "path": "/assets/js/17896441.dd038544.js",
+          "initiatorType": "link",
+          "startTime": 761,
+          "duration": 6.200000002980232,
+          "transferSize": 8775,
+          "encodedBodySize": 8475,
+          "decodedBodySize": 26971
+        },
+        {
+          "path": "/assets/js/2fcc20c1.06913335.js",
+          "initiatorType": "link",
+          "startTime": 761.0999999940395,
+          "duration": 7.4000000059604645,
+          "transferSize": 931,
+          "encodedBodySize": 631,
+          "decodedBodySize": 1345
+        },
+        {
+          "path": "/assets/js/eeb6511b.ebf10253.js",
+          "initiatorType": "link",
+          "startTime": 761.2999999970198,
+          "duration": 7.4000000059604645,
+          "transferSize": 940,
+          "encodedBodySize": 640,
+          "decodedBodySize": 1372
+        },
+        {
+          "path": "/assets/js/17cc07e0.50ae3097.js",
+          "initiatorType": "link",
+          "startTime": 761.5999999940395,
+          "duration": 7.300000011920929,
+          "transferSize": 924,
+          "encodedBodySize": 624,
+          "decodedBodySize": 1320
+        },
+        {
+          "path": "/assets/js/a6aa3733.4d841386.js",
+          "initiatorType": "link",
+          "startTime": 761.7999999970198,
+          "duration": 7.200000002980232,
+          "transferSize": 925,
+          "encodedBodySize": 625,
+          "decodedBodySize": 1383
+        }
+      ]
+    }
+  },
+  "actions": {
+    "warmSearchOpen": {
+      "summary": {
+        "domResponseMs": {
+          "count": 30,
+          "min": 29.30000001192093,
+          "median": 31.5,
+          "p95": 32.1000000089407,
+          "max": 32.1000000089407
+        },
+        "observedEventDurationMs": {
+          "count": 30,
+          "min": 24,
+          "median": 24,
+          "p95": 24,
+          "max": 24
+        },
+        "samplesWithoutEventTiming": 0
+      },
+      "resultsReadyMs": {
+        "count": 30,
+        "min": 29.30000001192093,
+        "median": 31.5,
+        "p95": 32.1000000089407,
+        "max": 32.1000000089407
+      },
+      "samples": [
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.599999994039536,
+            "resultsReady": 31.69999998807907
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 942.4000000059605,
+              "duration": 24,
+              "interactionId": 8430,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 942.4000000059605,
+              "duration": 24,
+              "interactionId": 8430,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 942.4000000059605,
+              "duration": 24,
+              "interactionId": 8430,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 3.2000000029802322,
+              "presentationDelay": 20.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.700000002980232,
+            "resultsReady": 31.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 1492.0999999940395,
+              "duration": 24,
+              "interactionId": 8465,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.19999998807907
+            },
+            {
+              "name": "pointerup",
+              "startTime": 1492.2999999970198,
+              "duration": 24,
+              "interactionId": 8465,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 1492.2999999970198,
+              "duration": 24,
+              "interactionId": 8465,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 2.4000000059604645,
+              "presentationDelay": 20.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 29.30000001192093,
+            "resultsReady": 29.30000001192093
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 2076.9000000059605,
+              "duration": 24,
+              "interactionId": 8500,
+              "inputDelay": 1,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 22.80000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 2077.0999999940395,
+              "duration": 24,
+              "interactionId": 8500,
+              "inputDelay": 1.300000011920929,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 22.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 2077.0999999940395,
+              "duration": 24,
+              "interactionId": 8500,
+              "inputDelay": 1.4000000059604645,
+              "processingDuration": 4.799999997019768,
+              "presentationDelay": 17.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.899999991059303,
+            "resultsReady": 31.899999991059303
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 2625.4000000059605,
+              "duration": 24,
+              "interactionId": 8535,
+              "inputDelay": 0.5,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 2625.4000000059605,
+              "duration": 24,
+              "interactionId": 8535,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 0,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "click",
+              "startTime": 2625.4000000059605,
+              "duration": 24,
+              "interactionId": 8535,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 2.9000000059604645,
+              "presentationDelay": 20.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.200000002980232,
+            "resultsReady": 31.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 3176.2000000029802,
+              "duration": 24,
+              "interactionId": 8570,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 3176.2000000029802,
+              "duration": 24,
+              "interactionId": 8570,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 3176.2000000029802,
+              "duration": 24,
+              "interactionId": 8570,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 2.7999999970197678,
+              "presentationDelay": 20.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.799999997019768,
+            "resultsReady": 31.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 3775.4000000059605,
+              "duration": 24,
+              "interactionId": 8605,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 3775.5,
+              "duration": 24,
+              "interactionId": 8605,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 3775.5,
+              "duration": 24,
+              "interactionId": 8605,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 2.2000000029802322,
+              "presentationDelay": 21.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 32.1000000089407,
+            "resultsReady": 32.1000000089407
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 4341.79999999702,
+              "duration": 24,
+              "interactionId": 8640,
+              "inputDelay": 0.5,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 4341.79999999702,
+              "duration": 24,
+              "interactionId": 8640,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 4341.79999999702,
+              "duration": 24,
+              "interactionId": 8640,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 2.800000011920929,
+              "presentationDelay": 20.399999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.600000008940697,
+            "resultsReady": 31.600000008940697
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 4892.29999999702,
+              "duration": 24,
+              "interactionId": 8675,
+              "inputDelay": 0.5,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 4892.29999999702,
+              "duration": 24,
+              "interactionId": 8675,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 4892.29999999702,
+              "duration": 24,
+              "interactionId": 8675,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.7999999970197678,
+              "presentationDelay": 20.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 5459.20000000298,
+              "duration": 24,
+              "interactionId": 8710,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 5459.20000000298,
+              "duration": 24,
+              "interactionId": 8710,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 5459.20000000298,
+              "duration": 24,
+              "interactionId": 8710,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.699999988079071,
+              "presentationDelay": 20.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 6008,
+              "duration": 24,
+              "interactionId": 8745,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 6008.0999999940395,
+              "duration": 24,
+              "interactionId": 8745,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 6008.0999999940395,
+              "duration": 24,
+              "interactionId": 8745,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 3.5,
+              "presentationDelay": 19.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 6591.29999999702,
+              "duration": 24,
+              "interactionId": 8780,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 6591.4000000059605,
+              "duration": 24,
+              "interactionId": 8780,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 0,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "click",
+              "startTime": 6591.4000000059605,
+              "duration": 24,
+              "interactionId": 8780,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 2.7999999970197678,
+              "presentationDelay": 20.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.299999997019768,
+            "resultsReady": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 7158.0999999940395,
+              "duration": 24,
+              "interactionId": 8815,
+              "inputDelay": 0.5,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 7158.20000000298,
+              "duration": 24,
+              "interactionId": 8815,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 7158.20000000298,
+              "duration": 24,
+              "interactionId": 8815,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.8999999910593033,
+              "presentationDelay": 20.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.399999991059303,
+            "resultsReady": 31.399999991059303
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 7708.0999999940395,
+              "duration": 24,
+              "interactionId": 8850,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 7708.20000000298,
+              "duration": 24,
+              "interactionId": 8850,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 7708.20000000298,
+              "duration": 24,
+              "interactionId": 8850,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.8999999910593033,
+              "presentationDelay": 20.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.299999997019768,
+            "resultsReady": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 8258.20000000298,
+              "duration": 24,
+              "interactionId": 8885,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 8258.29999999702,
+              "duration": 24,
+              "interactionId": 8885,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 8258.29999999702,
+              "duration": 24,
+              "interactionId": 8885,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 2.800000011920929,
+              "presentationDelay": 20.399999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.19999998807907,
+            "resultsReady": 31.19999998807907
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 8808.40000000596,
+              "duration": 24,
+              "interactionId": 8920,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 8808.40000000596,
+              "duration": 24,
+              "interactionId": 8920,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 0,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "click",
+              "startTime": 8808.40000000596,
+              "duration": 24,
+              "interactionId": 8920,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 2.800000011920929,
+              "presentationDelay": 20.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 9374.59999999404,
+              "duration": 24,
+              "interactionId": 8955,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 9374.70000000298,
+              "duration": 24,
+              "interactionId": 8955,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 9374.70000000298,
+              "duration": 24,
+              "interactionId": 8955,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.699999988079071,
+              "presentationDelay": 20.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.100000008940697,
+            "resultsReady": 31.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 9941.70000000298,
+              "duration": 24,
+              "interactionId": 8990,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.100000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 9941.79999999702,
+              "duration": 24,
+              "interactionId": 8990,
+              "inputDelay": 0.9000000059604645,
+              "processingDuration": 0,
+              "presentationDelay": 23.099999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 9941.79999999702,
+              "duration": 24,
+              "interactionId": 8990,
+              "inputDelay": 1,
+              "processingDuration": 3.1000000089406967,
+              "presentationDelay": 19.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.799999997019768,
+            "resultsReady": 31.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 10474.40000000596,
+              "duration": 24,
+              "interactionId": 9025,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 10474.5,
+              "duration": 24,
+              "interactionId": 9025,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 10474.5,
+              "duration": 24,
+              "interactionId": 9025,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 2,
+              "presentationDelay": 21.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 30.5,
+            "resultsReady": 30.600000008940697
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 11009,
+              "duration": 24,
+              "interactionId": 9060,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.099999994039536
+            },
+            {
+              "name": "pointerup",
+              "startTime": 11009.09999999404,
+              "duration": 24,
+              "interactionId": 9060,
+              "inputDelay": 1,
+              "processingDuration": 0,
+              "presentationDelay": 23
+            },
+            {
+              "name": "click",
+              "startTime": 11009.09999999404,
+              "duration": 24,
+              "interactionId": 9060,
+              "inputDelay": 1,
+              "processingDuration": 2.9000000059604645,
+              "presentationDelay": 20.099999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 32.099999994039536,
+            "resultsReady": 32.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 11540.79999999702,
+              "duration": 24,
+              "interactionId": 9095,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 11540.90000000596,
+              "duration": 24,
+              "interactionId": 9095,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "click",
+              "startTime": 11540.90000000596,
+              "duration": 24,
+              "interactionId": 9095,
+              "inputDelay": 0.5,
+              "processingDuration": 1.8999999910593033,
+              "presentationDelay": 21.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.400000005960464,
+            "resultsReady": 31.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 12091.59999999404,
+              "duration": 24,
+              "interactionId": 9130,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 12091.59999999404,
+              "duration": 24,
+              "interactionId": 9130,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 12091.59999999404,
+              "duration": 24,
+              "interactionId": 9130,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 2.5999999940395355,
+              "presentationDelay": 20.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 32.1000000089407,
+            "resultsReady": 32.1000000089407
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 12657.59999999404,
+              "duration": 24,
+              "interactionId": 9165,
+              "inputDelay": 0.30000001192092896,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 12657.59999999404,
+              "duration": 24,
+              "interactionId": 9165,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "click",
+              "startTime": 12657.59999999404,
+              "duration": 24,
+              "interactionId": 9165,
+              "inputDelay": 0.5,
+              "processingDuration": 2.2000000029802322,
+              "presentationDelay": 21.299999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.400000005960464,
+            "resultsReady": 31.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 13208.20000000298,
+              "duration": 24,
+              "interactionId": 9200,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 13208.29999999702,
+              "duration": 24,
+              "interactionId": 9200,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 13208.29999999702,
+              "duration": 24,
+              "interactionId": 9200,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.7000000029802322,
+              "presentationDelay": 20.599999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 13758.09999999404,
+              "duration": 24,
+              "interactionId": 9235,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 13758.20000000298,
+              "duration": 24,
+              "interactionId": 9235,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 13758.20000000298,
+              "duration": 24,
+              "interactionId": 9235,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 2.5,
+              "presentationDelay": 20.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 14308.09999999404,
+              "duration": 24,
+              "interactionId": 9270,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 14308.20000000298,
+              "duration": 24,
+              "interactionId": 9270,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 14308.20000000298,
+              "duration": 24,
+              "interactionId": 9270,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.5,
+              "presentationDelay": 20.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 14858.20000000298,
+              "duration": 24,
+              "interactionId": 9305,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 14858.20000000298,
+              "duration": 24,
+              "interactionId": 9305,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 14858.20000000298,
+              "duration": 24,
+              "interactionId": 9305,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.699999988079071,
+              "presentationDelay": 20.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.100000008940697,
+            "resultsReady": 31.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 15425.20000000298,
+              "duration": 24,
+              "interactionId": 9340,
+              "inputDelay": 0.5,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 15425.29999999702,
+              "duration": 24,
+              "interactionId": 9340,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 15425.29999999702,
+              "duration": 24,
+              "interactionId": 9340,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 2.7999999970197678,
+              "presentationDelay": 20.599999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.100000008940697,
+            "resultsReady": 31.100000008940697
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 16008.40000000596,
+              "duration": 24,
+              "interactionId": 9375,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 16008.59999999404,
+              "duration": 24,
+              "interactionId": 9375,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 16008.59999999404,
+              "duration": 24,
+              "interactionId": 9375,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 3.4000000059604645,
+              "presentationDelay": 19.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.5,
+            "resultsReady": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 16574.79999999702,
+              "duration": 24,
+              "interactionId": 9410,
+              "inputDelay": 0.5,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 16574.90000000596,
+              "duration": 24,
+              "interactionId": 9410,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 16574.90000000596,
+              "duration": 24,
+              "interactionId": 9410,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 3.2999999970197678,
+              "presentationDelay": 20.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "dialogVisible": 31.299999997019768,
+            "resultsReady": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 17141.70000000298,
+              "duration": 24,
+              "interactionId": 9445,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 17141.79999999702,
+              "duration": 24,
+              "interactionId": 9445,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 17141.79999999702,
+              "duration": 24,
+              "interactionId": 9445,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 2.7000000029802322,
+              "presentationDelay": 20.599999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        }
+      ]
+    },
+    "typeW": {
+      "summary": {
+        "domResponseMs": {
+          "count": 30,
+          "min": 10.5,
+          "median": 24.5,
+          "p95": 26.200000002980232,
+          "max": 26.5
+        },
+        "observedEventDurationMs": {
+          "count": 24,
+          "min": 16,
+          "median": 16,
+          "p95": 24,
+          "max": 24
+        },
+        "samplesWithoutEventTiming": 6
+      },
+      "samples": [
+        {
+          "domResponseMs": {
+            "filtered": 10.5
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.5
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 1665.0999999940395,
+              "duration": 16,
+              "interactionId": 8479,
+              "inputDelay": 0,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 1665.0999999940395,
+              "duration": 16,
+              "interactionId": 8479,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.7999999970197678,
+              "presentationDelay": 15
+            },
+            {
+              "name": "keyup",
+              "startTime": 1666.4000000059605,
+              "duration": 16,
+              "interactionId": 8479,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 2250,
+              "duration": 16,
+              "interactionId": 8514,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 2250,
+              "duration": 16,
+              "interactionId": 8514,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 26.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 2797.7000000029802,
+              "duration": 16,
+              "interactionId": 8549,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 2797.7000000029802,
+              "duration": 16,
+              "interactionId": 8549,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 2799.2999999970198,
+              "duration": 16,
+              "interactionId": 8549,
+              "inputDelay": 0,
+              "processingDuration": 0,
+              "presentationDelay": 16
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 22.900000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 3351.0999999940395,
+              "duration": 24,
+              "interactionId": 8584,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 3351.0999999940395,
+              "duration": 24,
+              "interactionId": 8584,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.2000000029802322,
+              "presentationDelay": 22.599999994039536
+            },
+            {
+              "name": "keyup",
+              "startTime": 3352.7000000029802,
+              "duration": 24,
+              "interactionId": 8584,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 23.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.700000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 3948.2000000029802,
+              "duration": 16,
+              "interactionId": 8619,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "keypress",
+              "startTime": 3948.2000000029802,
+              "duration": 16,
+              "interactionId": 8619,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.600000008940697
+            },
+            {
+              "name": "keyup",
+              "startTime": 3949.9000000059605,
+              "duration": 16,
+              "interactionId": 8619,
+              "inputDelay": 0,
+              "processingDuration": 0,
+              "presentationDelay": 16
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 4515,
+              "duration": 16,
+              "interactionId": 8654,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 4515,
+              "duration": 16,
+              "interactionId": 8654,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 4516.5,
+              "duration": 16,
+              "interactionId": 8654,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 24.5
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 5065.4000000059605,
+              "duration": 16,
+              "interactionId": 8689,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.800000011920929
+            },
+            {
+              "name": "keypress",
+              "startTime": 5065.4000000059605,
+              "duration": 16,
+              "interactionId": 8689,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 1.2000000029802322,
+              "presentationDelay": 14.600000008940697
+            },
+            {
+              "name": "keyup",
+              "startTime": 5067,
+              "duration": 16,
+              "interactionId": 8689,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 5631.9000000059605,
+              "duration": 16,
+              "interactionId": 8724,
+              "inputDelay": 0,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.900000005960464
+            },
+            {
+              "name": "keypress",
+              "startTime": 5631.9000000059605,
+              "duration": 16,
+              "interactionId": 8724,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 1,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 6181,
+              "duration": 16,
+              "interactionId": 8759,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "keypress",
+              "startTime": 6181,
+              "duration": 16,
+              "interactionId": 8759,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 1,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 6182.5999999940395,
+              "duration": 16,
+              "interactionId": 8759,
+              "inputDelay": 0,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 26.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 6763.5,
+              "duration": 16,
+              "interactionId": 8794,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 6763.5,
+              "duration": 16,
+              "interactionId": 8794,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 6765.0999999940395,
+              "duration": 16,
+              "interactionId": 8794,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0,
+              "presentationDelay": 15.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 20.100000008940697
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.100000008940697
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 18.799999997019768
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 8981.20000000298,
+              "duration": 16,
+              "interactionId": 8934,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "keypress",
+              "startTime": 8981.20000000298,
+              "duration": 16,
+              "interactionId": 8934,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 1,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 8982.59999999404,
+              "duration": 16,
+              "interactionId": 8934,
+              "inputDelay": 0,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 9549.20000000298,
+              "duration": 16,
+              "interactionId": 8969,
+              "inputDelay": 0,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 9549.20000000298,
+              "duration": 16,
+              "interactionId": 8969,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1,
+              "presentationDelay": 14.799999997019768
+            },
+            {
+              "name": "keyup",
+              "startTime": 9550.59999999404,
+              "duration": 16,
+              "interactionId": 8969,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0,
+              "presentationDelay": 15.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 21.5
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 10647.40000000596,
+              "duration": 16,
+              "interactionId": 9039,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.800000011920929
+            },
+            {
+              "name": "keypress",
+              "startTime": 10647.40000000596,
+              "duration": 16,
+              "interactionId": 9039,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 1.1000000089406967,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 10648.90000000596,
+              "duration": 16,
+              "interactionId": 9039,
+              "inputDelay": 0,
+              "processingDuration": 0,
+              "presentationDelay": 16
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.5
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 11182.79999999702,
+              "duration": 16,
+              "interactionId": 9074,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 11182.79999999702,
+              "duration": 16,
+              "interactionId": 9074,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.2000000029802322,
+              "presentationDelay": 14.599999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 26.5
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 11713.20000000298,
+              "duration": 16,
+              "interactionId": 9109,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 11713.20000000298,
+              "duration": 16,
+              "interactionId": 9109,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.699999988079071,
+              "presentationDelay": 15.100000008940697
+            },
+            {
+              "name": "keyup",
+              "startTime": 11714.20000000298,
+              "duration": 16,
+              "interactionId": 9109,
+              "inputDelay": 0,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 12264.29999999702,
+              "duration": 16,
+              "interactionId": 9144,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 12264.29999999702,
+              "duration": 16,
+              "interactionId": 9144,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 12265.70000000298,
+              "duration": 16,
+              "interactionId": 9144,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 12832.5,
+              "duration": 16,
+              "interactionId": 9179,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 12832.5,
+              "duration": 16,
+              "interactionId": 9179,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 24.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 13382,
+              "duration": 24,
+              "interactionId": 9214,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 13382,
+              "duration": 24,
+              "interactionId": 9214,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.8999999910593033,
+              "presentationDelay": 22.900000005960464
+            },
+            {
+              "name": "keyup",
+              "startTime": 13383.29999999702,
+              "duration": 24,
+              "interactionId": 9214,
+              "inputDelay": 0,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.200000002980232
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 14481,
+              "duration": 16,
+              "interactionId": 9284,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "keypress",
+              "startTime": 14481,
+              "duration": 16,
+              "interactionId": 9284,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.9000000059604645,
+              "presentationDelay": 14.799999997019768
+            },
+            {
+              "name": "keyup",
+              "startTime": 14482.40000000596,
+              "duration": 16,
+              "interactionId": 9284,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 22.700000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 15033.70000000298,
+              "duration": 24,
+              "interactionId": 9319,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 15033.70000000298,
+              "duration": 24,
+              "interactionId": 9319,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 15035.20000000298,
+              "duration": 24,
+              "interactionId": 9319,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0,
+              "presentationDelay": 23.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "filtered": 24.899999991059303
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 15598.20000000298,
+              "duration": 16,
+              "interactionId": 9354,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 15598.20000000298,
+              "duration": 16,
+              "interactionId": 9354,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 15599.70000000298,
+              "duration": 16,
+              "interactionId": 9354,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0,
+              "presentationDelay": 15.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.600000008940697
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 16183.09999999404,
+              "duration": 16,
+              "interactionId": 9389,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 16183.09999999404,
+              "duration": 16,
+              "interactionId": 9389,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1,
+              "presentationDelay": 14.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 23.19999998807907
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 16749.90000000596,
+              "duration": 16,
+              "interactionId": 9424,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.800000011920929
+            },
+            {
+              "name": "keypress",
+              "startTime": 16749.90000000596,
+              "duration": 16,
+              "interactionId": 9424,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 1,
+              "presentationDelay": 14.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        },
+        {
+          "domResponseMs": {
+            "filtered": 25
+          },
+          "eventTiming": [
+            {
+              "name": "keydown",
+              "startTime": 17314.79999999702,
+              "duration": 16,
+              "interactionId": 9459,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.799999997019768
+            },
+            {
+              "name": "keypress",
+              "startTime": 17314.79999999702,
+              "duration": 16,
+              "interactionId": 9459,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 1.0999999940395355,
+              "presentationDelay": 14.700000002980232
+            },
+            {
+              "name": "keyup",
+              "startTime": 17316.29999999702,
+              "duration": 16,
+              "interactionId": 9459,
+              "inputDelay": 0.10000000894069672,
+              "processingDuration": 0,
+              "presentationDelay": 15.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16
+        }
+      ]
+    },
+    "navigateToWhere": {
+      "summary": {
+        "domResponseMs": {
+          "count": 30,
+          "min": 30.5,
+          "median": 31.900000005960464,
+          "p95": 33.19999998807907,
+          "max": 49.400000005960464
+        },
+        "observedEventDurationMs": {
+          "count": 30,
+          "min": 24,
+          "median": 24,
+          "p95": 24,
+          "max": 24
+        },
+        "samplesWithoutEventTiming": 0
+      },
+      "samples": [
+        {
+          "domResponseMs": {
+            "navigated": 49.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 1258,
+              "duration": 24,
+              "interactionId": 8451,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 1258,
+              "duration": 24,
+              "interactionId": 8451,
+              "inputDelay": 2.2999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 21.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 1258,
+              "duration": 24,
+              "interactionId": 8451,
+              "inputDelay": 2.4000000059604645,
+              "processingDuration": 5.0999999940395355,
+              "presentationDelay": 16.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 1842.4000000059605,
+              "duration": 24,
+              "interactionId": 8486,
+              "inputDelay": 0.5,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 1842.5,
+              "duration": 24,
+              "interactionId": 8486,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 1842.5,
+              "duration": 24,
+              "interactionId": 8486,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 7.5999999940395355,
+              "presentationDelay": 15.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.700000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 2408,
+              "duration": 24,
+              "interactionId": 8521,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 2408,
+              "duration": 24,
+              "interactionId": 8521,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 2408,
+              "duration": 24,
+              "interactionId": 8521,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 7.399999991059303,
+              "presentationDelay": 15.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.29999999701977
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 2958.2000000029802,
+              "duration": 24,
+              "interactionId": 8556,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 23.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 2958.2999999970198,
+              "duration": 24,
+              "interactionId": 8556,
+              "inputDelay": 0.7000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 2958.2999999970198,
+              "duration": 24,
+              "interactionId": 8556,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 4.600000008940697,
+              "presentationDelay": 18.599999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 3525.4000000059605,
+              "duration": 24,
+              "interactionId": 8591,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 3525.4000000059605,
+              "duration": 24,
+              "interactionId": 8591,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 22.900000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 3525.4000000059605,
+              "duration": 24,
+              "interactionId": 8591,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 6.799999997019768,
+              "presentationDelay": 16.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 4125.9000000059605,
+              "duration": 24,
+              "interactionId": 8626,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 0,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 4126.0999999940395,
+              "duration": 24,
+              "interactionId": 8626,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 4126.0999999940395,
+              "duration": 24,
+              "interactionId": 8626,
+              "inputDelay": 1.300000011920929,
+              "processingDuration": 7.399999991059303,
+              "presentationDelay": 15.299999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.6000000089407
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 4674.5,
+              "duration": 24,
+              "interactionId": 8661,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 4674.5999999940395,
+              "duration": 24,
+              "interactionId": 8661,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 4674.5999999940395,
+              "duration": 24,
+              "interactionId": 8661,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.5,
+              "presentationDelay": 16.299999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 5242.4000000059605,
+              "duration": 24,
+              "interactionId": 8696,
+              "inputDelay": 0.5,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 5242.4000000059605,
+              "duration": 24,
+              "interactionId": 8696,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 5242.4000000059605,
+              "duration": 24,
+              "interactionId": 8696,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 6.700000002980232,
+              "presentationDelay": 16
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.79999999701977
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 5790.79999999702,
+              "duration": 24,
+              "interactionId": 8731,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 5790.79999999702,
+              "duration": 24,
+              "interactionId": 8731,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 5790.79999999702,
+              "duration": 24,
+              "interactionId": 8731,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 6.4000000059604645,
+              "presentationDelay": 16.299999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 30.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 6358.79999999702,
+              "duration": 24,
+              "interactionId": 8766,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 6359,
+              "duration": 24,
+              "interactionId": 8766,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 6359,
+              "duration": 24,
+              "interactionId": 8766,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 7,
+              "presentationDelay": 15.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 30.900000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 6941.79999999702,
+              "duration": 24,
+              "interactionId": 8801,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 6942,
+              "duration": 24,
+              "interactionId": 8801,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 6942,
+              "duration": 24,
+              "interactionId": 8801,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.299999997019768,
+              "presentationDelay": 16.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 7491.5,
+              "duration": 24,
+              "interactionId": 8836,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 7491.5,
+              "duration": 24,
+              "interactionId": 8836,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 7491.5,
+              "duration": 24,
+              "interactionId": 8836,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.5,
+              "presentationDelay": 16.299999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.80000001192093
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 8040.9000000059605,
+              "duration": 24,
+              "interactionId": 8871,
+              "inputDelay": 0.5,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 8041.0999999940395,
+              "duration": 24,
+              "interactionId": 8871,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 22.899999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 8041.0999999940395,
+              "duration": 24,
+              "interactionId": 8871,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 6.899999991059303,
+              "presentationDelay": 16
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.700000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 8591.20000000298,
+              "duration": 24,
+              "interactionId": 8906,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 8591.20000000298,
+              "duration": 24,
+              "interactionId": 8906,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 8591.20000000298,
+              "duration": 24,
+              "interactionId": 8906,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.399999991059303,
+              "presentationDelay": 16.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 9158,
+              "duration": 24,
+              "interactionId": 8941,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 9158,
+              "duration": 24,
+              "interactionId": 8941,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 22.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 9158,
+              "duration": 24,
+              "interactionId": 8941,
+              "inputDelay": 1.4000000059604645,
+              "processingDuration": 6.5,
+              "presentationDelay": 16.099999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 30.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 9725.40000000596,
+              "duration": 24,
+              "interactionId": 8976,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 9725.40000000596,
+              "duration": 24,
+              "interactionId": 8976,
+              "inputDelay": 1.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 22.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 9725.40000000596,
+              "duration": 24,
+              "interactionId": 8976,
+              "inputDelay": 1.5999999940395355,
+              "processingDuration": 6.9000000059604645,
+              "presentationDelay": 15.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.29999999701977
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 10274,
+              "duration": 24,
+              "interactionId": 9011,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 10274,
+              "duration": 24,
+              "interactionId": 9011,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 22.900000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 10274,
+              "duration": 24,
+              "interactionId": 9011,
+              "inputDelay": 1.0999999940395355,
+              "processingDuration": 6,
+              "presentationDelay": 16.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.70000000298023
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 10807,
+              "duration": 24,
+              "interactionId": 9046,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 10807,
+              "duration": 24,
+              "interactionId": 9046,
+              "inputDelay": 0.9000000059604645,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23
+            },
+            {
+              "name": "click",
+              "startTime": 10807,
+              "duration": 24,
+              "interactionId": 9046,
+              "inputDelay": 1,
+              "processingDuration": 3.7999999970197678,
+              "presentationDelay": 19.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 11340.79999999702,
+              "duration": 24,
+              "interactionId": 9081,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 11340.90000000596,
+              "duration": 24,
+              "interactionId": 9081,
+              "inputDelay": 0.8999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 23.100000008940697
+            },
+            {
+              "name": "click",
+              "startTime": 11340.90000000596,
+              "duration": 24,
+              "interactionId": 9081,
+              "inputDelay": 1,
+              "processingDuration": 5.299999997019768,
+              "presentationDelay": 17.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.1000000089407
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 11874.29999999702,
+              "duration": 24,
+              "interactionId": 9116,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 11874.29999999702,
+              "duration": 24,
+              "interactionId": 9116,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 22.899999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 11874.29999999702,
+              "duration": 24,
+              "interactionId": 9116,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 5.5,
+              "presentationDelay": 17.399999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 12423.90000000596,
+              "duration": 24,
+              "interactionId": 9151,
+              "inputDelay": 0.5,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.30000001192093
+            },
+            {
+              "name": "pointerup",
+              "startTime": 12424,
+              "duration": 24,
+              "interactionId": 9151,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 12424,
+              "duration": 24,
+              "interactionId": 9151,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.0999999940395355,
+              "presentationDelay": 16.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.900000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 12991.09999999404,
+              "duration": 24,
+              "interactionId": 9186,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 12991.09999999404,
+              "duration": 24,
+              "interactionId": 9186,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 12991.09999999404,
+              "duration": 24,
+              "interactionId": 9186,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 6.100000008940697,
+              "presentationDelay": 16.69999998807907
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 13540.90000000596,
+              "duration": 24,
+              "interactionId": 9221,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 13541,
+              "duration": 24,
+              "interactionId": 9221,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 22.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 13541,
+              "duration": 24,
+              "interactionId": 9221,
+              "inputDelay": 1.4000000059604645,
+              "processingDuration": 6.199999988079071,
+              "presentationDelay": 16.400000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 33.19999998807907
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 14090.40000000596,
+              "duration": 24,
+              "interactionId": 9256,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 14090.40000000596,
+              "duration": 24,
+              "interactionId": 9256,
+              "inputDelay": 1,
+              "processingDuration": 0,
+              "presentationDelay": 23
+            },
+            {
+              "name": "click",
+              "startTime": 14090.40000000596,
+              "duration": 24,
+              "interactionId": 9256,
+              "inputDelay": 1,
+              "processingDuration": 5.399999991059303,
+              "presentationDelay": 17.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.700000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 14641.20000000298,
+              "duration": 24,
+              "interactionId": 9291,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 14641.29999999702,
+              "duration": 24,
+              "interactionId": 9291,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 22.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 14641.29999999702,
+              "duration": 24,
+              "interactionId": 9291,
+              "inputDelay": 1.4000000059604645,
+              "processingDuration": 7.200000002980232,
+              "presentationDelay": 15.399999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 15208.5,
+              "duration": 24,
+              "interactionId": 9326,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 15208.5,
+              "duration": 24,
+              "interactionId": 9326,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 15208.5,
+              "duration": 24,
+              "interactionId": 9326,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 6.600000008940697,
+              "presentationDelay": 16.099999994039536
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.6000000089407
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 15757.09999999404,
+              "duration": 24,
+              "interactionId": 9361,
+              "inputDelay": 0.5,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 15757.09999999404,
+              "duration": 24,
+              "interactionId": 9361,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 0,
+              "presentationDelay": 22.799999997019768
+            },
+            {
+              "name": "click",
+              "startTime": 15757.09999999404,
+              "duration": 24,
+              "interactionId": 9361,
+              "inputDelay": 1.2000000029802322,
+              "processingDuration": 5.9000000059604645,
+              "presentationDelay": 16.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 16340.59999999404,
+              "duration": 24,
+              "interactionId": 9396,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 16340.59999999404,
+              "duration": 24,
+              "interactionId": 9396,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 22.899999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 16340.59999999404,
+              "duration": 24,
+              "interactionId": 9396,
+              "inputDelay": 1.1000000089406967,
+              "processingDuration": 6.200000002980232,
+              "presentationDelay": 16.69999998807907
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 16925.20000000298,
+              "duration": 24,
+              "interactionId": 9431,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 23.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 16925.20000000298,
+              "duration": 24,
+              "interactionId": 9431,
+              "inputDelay": 1.2999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 22.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 16925.20000000298,
+              "duration": 24,
+              "interactionId": 9431,
+              "inputDelay": 1.3999999910593033,
+              "processingDuration": 5.9000000059604645,
+              "presentationDelay": 16.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        },
+        {
+          "domResponseMs": {
+            "navigated": 32.900000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 17473.59999999404,
+              "duration": 24,
+              "interactionId": 9466,
+              "inputDelay": 0.5,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 23.299999997019768
+            },
+            {
+              "name": "pointerup",
+              "startTime": 17473.59999999404,
+              "duration": 24,
+              "interactionId": 9466,
+              "inputDelay": 1.300000011920929,
+              "processingDuration": 0,
+              "presentationDelay": 22.69999998807907
+            },
+            {
+              "name": "click",
+              "startTime": 17473.59999999404,
+              "duration": 24,
+              "interactionId": 9466,
+              "inputDelay": 1.4000000059604645,
+              "processingDuration": 6.0999999940395355,
+              "presentationDelay": 16.5
+            }
+          ],
+          "maxObservedEventDurationMs": 24
+        }
+      ]
+    },
+    "toggleSql": {
+      "domResponseMs": {
+        "count": 30,
+        "min": 22.799999997019768,
+        "median": 31.599999994039536,
+        "p95": 32.400000005960464,
+        "max": 33.099999994039536
+      },
+      "samples": [
+        {
+          "domResponseMs": {
+            "categoryOpen": 31.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 17691.29999999702,
+              "duration": 24,
+              "interactionId": 9480,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 17691.40000000596,
+              "duration": 24,
+              "interactionId": 9480,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 0,
+              "presentationDelay": 23.200000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 17691.40000000596,
+              "duration": 24,
+              "interactionId": 9480,
+              "inputDelay": 0.8999999910593033,
+              "processingDuration": 1.1000000089406967,
+              "presentationDelay": 22
+            }
+          ],
+          "maxObservedEventDurationMs": 24,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 18241.79999999702,
+              "duration": 16,
+              "interactionId": 9487,
+              "inputDelay": 0.5,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.200000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 18241.79999999702,
+              "duration": 16,
+              "interactionId": 9487,
+              "inputDelay": 0.7999999970197678,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.099999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 18241.79999999702,
+              "duration": 16,
+              "interactionId": 9487,
+              "inputDelay": 0.9000000059604645,
+              "processingDuration": 0.5999999940395355,
+              "presentationDelay": 14.5
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 31.899999991059303
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 18791.40000000596,
+              "duration": 16,
+              "interactionId": 9494,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 18791.40000000596,
+              "duration": 16,
+              "interactionId": 9494,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 18791.40000000596,
+              "duration": 16,
+              "interactionId": 9494,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.5999999940395355,
+              "presentationDelay": 14.800000011920929
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 19341.79999999702,
+              "duration": 16,
+              "interactionId": 9501,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.30000001192092896,
+              "presentationDelay": 15.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 19342,
+              "duration": 16,
+              "interactionId": 9501,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0,
+              "presentationDelay": 15.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 19342,
+              "duration": 16,
+              "interactionId": 9501,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5999999940395355,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 31.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 19891.5,
+              "duration": 16,
+              "interactionId": 9508,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 19891.70000000298,
+              "duration": 16,
+              "interactionId": 9508,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 19891.70000000298,
+              "duration": 16,
+              "interactionId": 9508,
+              "inputDelay": 0.5,
+              "processingDuration": 0.7000000029802322,
+              "presentationDelay": 14.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 20458.20000000298,
+              "duration": 16,
+              "interactionId": 9515,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 20458.40000000596,
+              "duration": 16,
+              "interactionId": 9515,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 20458.40000000596,
+              "duration": 16,
+              "interactionId": 9515,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.5,
+              "presentationDelay": 15.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32.20000000298023
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 21007.59999999404,
+              "duration": 16,
+              "interactionId": 9522,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.599999994039536
+            },
+            {
+              "name": "pointerup",
+              "startTime": 21007.70000000298,
+              "duration": 16,
+              "interactionId": 9522,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "click",
+              "startTime": 21007.70000000298,
+              "duration": 16,
+              "interactionId": 9522,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.4000000059604645,
+              "presentationDelay": 15.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 21558.40000000596,
+              "duration": 16,
+              "interactionId": 9529,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 21558.40000000596,
+              "duration": 16,
+              "interactionId": 9529,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 21558.40000000596,
+              "duration": 16,
+              "interactionId": 9529,
+              "inputDelay": 0.699999988079071,
+              "processingDuration": 0.6000000089406967,
+              "presentationDelay": 14.700000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 22108,
+              "duration": 16,
+              "interactionId": 9536,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 22108,
+              "duration": 16,
+              "interactionId": 9536,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 22108,
+              "duration": 16,
+              "interactionId": 9536,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.6000000089406967,
+              "presentationDelay": 14.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 22.799999997019768
+          },
+          "eventTiming": [],
+          "maxObservedEventDurationMs": null,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 30.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 23242,
+              "duration": 16,
+              "interactionId": 9550,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.19999998807907104,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 23242.5,
+              "duration": 16,
+              "interactionId": 9550,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 23242.5,
+              "duration": 16,
+              "interactionId": 9550,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.7000000029802322,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 23792.29999999702,
+              "duration": 16,
+              "interactionId": 9557,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 23792.40000000596,
+              "duration": 16,
+              "interactionId": 9557,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 23792.40000000596,
+              "duration": 16,
+              "interactionId": 9557,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.5,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 24341.20000000298,
+              "duration": 16,
+              "interactionId": 9564,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 24341.20000000298,
+              "duration": 16,
+              "interactionId": 9564,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "click",
+              "startTime": 24341.20000000298,
+              "duration": 16,
+              "interactionId": 9564,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.5,
+              "presentationDelay": 15.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 24891.29999999702,
+              "duration": 16,
+              "interactionId": 9571,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 24891.40000000596,
+              "duration": 16,
+              "interactionId": 9571,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 24891.40000000596,
+              "duration": 16,
+              "interactionId": 9571,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.4000000059604645,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32.19999998807907
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 25440.90000000596,
+              "duration": 16,
+              "interactionId": 9578,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 25440.90000000596,
+              "duration": 16,
+              "interactionId": 9578,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "click",
+              "startTime": 25440.90000000596,
+              "duration": 16,
+              "interactionId": 9578,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 32.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 25990.90000000596,
+              "duration": 16,
+              "interactionId": 9585,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 25991,
+              "duration": 16,
+              "interactionId": 9585,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 25991,
+              "duration": 16,
+              "interactionId": 9585,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5999999940395355,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32.20000000298023
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 26540.90000000596,
+              "duration": 16,
+              "interactionId": 9592,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 26541,
+              "duration": 16,
+              "interactionId": 9592,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0,
+              "presentationDelay": 15.599999994039536
+            },
+            {
+              "name": "click",
+              "startTime": 26541,
+              "duration": 16,
+              "interactionId": 9592,
+              "inputDelay": 0.5,
+              "processingDuration": 0.7000000029802322,
+              "presentationDelay": 14.799999997019768
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.400000005960464
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 27091.70000000298,
+              "duration": 16,
+              "interactionId": 9599,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 27091.79999999702,
+              "duration": 16,
+              "interactionId": 9599,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 27091.79999999702,
+              "duration": 16,
+              "interactionId": 9599,
+              "inputDelay": 0.5,
+              "processingDuration": 0.6000000089406967,
+              "presentationDelay": 14.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 31.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 27641.20000000298,
+              "duration": 16,
+              "interactionId": 9606,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 27641.20000000298,
+              "duration": 16,
+              "interactionId": 9606,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 27641.20000000298,
+              "duration": 16,
+              "interactionId": 9606,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.5,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.5
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 28191.59999999404,
+              "duration": 16,
+              "interactionId": 9613,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 28191.59999999404,
+              "duration": 16,
+              "interactionId": 9613,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0,
+              "presentationDelay": 15.399999991059303
+            },
+            {
+              "name": "click",
+              "startTime": 28191.59999999404,
+              "duration": 16,
+              "interactionId": 9613,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.5,
+              "presentationDelay": 14.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 30.799999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 28741.40000000596,
+              "duration": 16,
+              "interactionId": 9620,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 28741.40000000596,
+              "duration": 16,
+              "interactionId": 9620,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 28741.40000000596,
+              "duration": 16,
+              "interactionId": 9620,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 32.29999999701977
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 29290.70000000298,
+              "duration": 16,
+              "interactionId": 9627,
+              "inputDelay": 0.20000000298023224,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "pointerup",
+              "startTime": 29290.70000000298,
+              "duration": 16,
+              "interactionId": 9627,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 29290.70000000298,
+              "duration": 16,
+              "interactionId": 9627,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5999999940395355,
+              "presentationDelay": 14.900000005960464
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 33.099999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 29840.20000000298,
+              "duration": 16,
+              "interactionId": 9634,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 29840.20000000298,
+              "duration": 16,
+              "interactionId": 9634,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 29840.20000000298,
+              "duration": 16,
+              "interactionId": 9634,
+              "inputDelay": 0.5,
+              "processingDuration": 0.3999999910593033,
+              "presentationDelay": 15.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 30.299999997019768
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 30409.20000000298,
+              "duration": 16,
+              "interactionId": 9641,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 30409.40000000596,
+              "duration": 16,
+              "interactionId": 9641,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.10000000894069672,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 30409.40000000596,
+              "duration": 16,
+              "interactionId": 9641,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32.29999999701977
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 30957.40000000596,
+              "duration": 16,
+              "interactionId": 9648,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 30957.40000000596,
+              "duration": 16,
+              "interactionId": 9648,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "click",
+              "startTime": 30957.40000000596,
+              "duration": 16,
+              "interactionId": 9648,
+              "inputDelay": 0.3999999910593033,
+              "processingDuration": 0.5,
+              "presentationDelay": 15.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.599999994039536
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 31490.70000000298,
+              "duration": 16,
+              "interactionId": 9655,
+              "inputDelay": 0.09999999403953552,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "pointerup",
+              "startTime": 31490.70000000298,
+              "duration": 16,
+              "interactionId": 9655,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0,
+              "presentationDelay": 15.700000002980232
+            },
+            {
+              "name": "click",
+              "startTime": 31490.70000000298,
+              "duration": 16,
+              "interactionId": 9655,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.5,
+              "presentationDelay": 15.200000002980232
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 31
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 32041.40000000596,
+              "duration": 16,
+              "interactionId": 9662,
+              "inputDelay": 0.19999998807907104,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 32041.40000000596,
+              "duration": 16,
+              "interactionId": 9662,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 32041.40000000596,
+              "duration": 16,
+              "interactionId": 9662,
+              "inputDelay": 0.5,
+              "processingDuration": 0.3999999910593033,
+              "presentationDelay": 15.100000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.200000002980232
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 32591.59999999404,
+              "duration": 16,
+              "interactionId": 9669,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.20000000298023224,
+              "presentationDelay": 15.399999991059303
+            },
+            {
+              "name": "pointerup",
+              "startTime": 32591.70000000298,
+              "duration": 16,
+              "interactionId": 9669,
+              "inputDelay": 0.5,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "click",
+              "startTime": 32591.70000000298,
+              "duration": 16,
+              "interactionId": 9669,
+              "inputDelay": 0.5999999940395355,
+              "processingDuration": 0.7999999970197678,
+              "presentationDelay": 14.600000008940697
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        },
+        {
+          "domResponseMs": {
+            "categoryOpen": 32
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 33140.70000000298,
+              "duration": 16,
+              "interactionId": 9676,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.29999999701976776,
+              "presentationDelay": 15.400000005960464
+            },
+            {
+              "name": "pointerup",
+              "startTime": 33140.79999999702,
+              "duration": 16,
+              "interactionId": 9676,
+              "inputDelay": 0.5,
+              "processingDuration": 0,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 33140.79999999702,
+              "duration": 16,
+              "interactionId": 9676,
+              "inputDelay": 0.6000000089406967,
+              "processingDuration": 0.5,
+              "presentationDelay": 14.899999991059303
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "open"
+        },
+        {
+          "domResponseMs": {
+            "categoryClosed": 31.600000008940697
+          },
+          "eventTiming": [
+            {
+              "name": "pointerdown",
+              "startTime": 33691.20000000298,
+              "duration": 16,
+              "interactionId": 9683,
+              "inputDelay": 0.29999999701976776,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.600000008940697
+            },
+            {
+              "name": "pointerup",
+              "startTime": 33691.29999999702,
+              "duration": 16,
+              "interactionId": 9683,
+              "inputDelay": 0.4000000059604645,
+              "processingDuration": 0.09999999403953552,
+              "presentationDelay": 15.5
+            },
+            {
+              "name": "click",
+              "startTime": 33691.29999999702,
+              "duration": 16,
+              "interactionId": 9683,
+              "inputDelay": 0.5,
+              "processingDuration": 0.5,
+              "presentationDelay": 15
+            }
+          ],
+          "maxObservedEventDurationMs": 16,
+          "direction": "close"
+        }
+      ]
+    }
+  },
+  "unavailable": [
+    "Guardar/quitar favorito: la función todavía no existe en la app actual."
+  ],
+  "navigator": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 8,
+    "devicePixelRatio": 1,
+    "supportedEntryTypes": [
+      "element",
+      "event",
+      "first-input",
+      "interaction-contentful-paint",
+      "largest-contentful-paint",
+      "layout-shift",
+      "long-animation-frame",
+      "longtask",
+      "mark",
+      "measure",
+      "navigation",
+      "paint",
+      "resource",
+      "soft-navigation",
+      "visibility-state"
+    ]
+  },
+  "longTasks": []
+}
