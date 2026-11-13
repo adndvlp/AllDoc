@@ -111,3 +111,32 @@ test('salir de la landing elimina su superficie y las suscripciones se pueden li
   store.setQuery('WHERE');
   assert.equal(notifications, previous);
 });
+
+test('buscador vacío: recientes primero sin duplicados; una consulta conserva su ranking', async () => {
+  const store = createSearchStore(async () => entries);
+  const recentIds = [entries[3].id, entries[1].id, entries[3].id, 'retirado'];
+  store.setRecentIds(recentIds);
+  await store.openDialog();
+  assert.deepEqual(store.getSnapshot().results.map(({id}) => id), [entries[3].id, entries[1].id, entries[0].id, entries[2].id, entries[4].id]);
+  store.setQuery('cómo filtrar');
+  assert.deepEqual(store.getSnapshot().results, searchEntries(entries, 'cómo filtrar'));
+  store.setQuery('');
+  assert.equal(store.getSnapshot().results[0].id, entries[3].id);
+});
+
+test('recientes recibidos durante la carga se usan al resolver; no mueven enlaces de un diálogo ya visible', async () => {
+  let resolve!: (value: typeof entries) => void;
+  const store = createSearchStore(() => new Promise((done) => {resolve = done;}));
+  const loaded = store.openDialog();
+  await Promise.resolve();
+  store.setRecentIds([entries[3].id]);
+  resolve(entries);
+  await loaded;
+  assert.equal(store.getSnapshot().results[0].id, entries[3].id);
+  const visible = store.getSnapshot().results;
+  store.setRecentIds([entries[1].id]);
+  assert.equal(store.getSnapshot().results, visible);
+  store.closeDialog();
+  await store.openDialog();
+  assert.equal(store.getSnapshot().results[0].id, entries[1].id);
+});

@@ -151,7 +151,9 @@ La suite de Playwright usa Chromium y siete tamaños: celular de 320 y 390 píxe
 celular horizontal, iPad en vertical y horizontal, laptop y escritorio. Comprueba
 navegación, resultados SQL, ausencia de desbordamientos, menús, búsqueda, selección
 de color, persistencia, rotación y scroll independiente. Incluye búsqueda compartida,
-cargas tardías, reintento, teclado y composición de texto. Genera seis capturas por tamaño.
+cargas tardías, reintento, teclado y composición de texto. También comprueba
+recientes y favoritos, guardado bloqueado o lleno y sincronización entre dos
+pestañas. Genera siete capturas por tamaño.
 
 ~~~sh
 npx playwright install chromium
@@ -212,6 +214,27 @@ primero o el enlace enfocado y Esc cierra el diálogo conservando lo escrito.
 Elegir un resultado limpia la consulta. Limpiar el campo recupera el contenido
 de portada que permanecía oculto mientras se buscaba. La búsqueda no guarda
 consultas ni envía datos a un servicio externo.
+
+## Recientes y favoritos
+
+Al abrir una ficha se registra una visita, también desde una URL directa o el
+historial del navegador. Los recientes conservan veinte conceptos sin duplicados;
+revisitar mueve el concepto al principio. Abrir categorías no registra visitas.
+La estrella junto al título guarda o quita un favorito sin mover el contenido.
+
+La portada muestra hasta seis elementos por colección, con una acción para
+desplegar el resto. Los favoritos conservan el orden de guardado y sus botones de
+quitar mantienen el foco dentro de la sección; al vaciarla vuelve al buscador.
+Al escribir se ocultan las colecciones, sin interferir con los resultados.
+El diálogo vacío sugiere primero los recientes y después el resto del catálogo,
+sin duplicados. Una consulta mantiene su ranking habitual.
+
+Se guardan en `alldoc-recents-v1` y `alldoc-favorites-v1`, con `version: 1` e IDs
+globales de la metadata; la paleta usa su clave independiente. Se validan datos,
+fechas e IDs antes de usarlos. La inicialización no escribe ni borra colecciones.
+Los cambios de otras pestañas actualizan únicamente su colección. Si el guardado
+falla, la biblioteca continúa en memoria y muestra «Guardado en esta sesión».
+No se añade ningún servicio externo ni dependencia para estas colecciones.
 
 ## Referencia de rendimiento y capturas
 

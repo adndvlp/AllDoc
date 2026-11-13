@@ -8,6 +8,7 @@ import {
   LuPanelsTopLeft,
   LuSearch,
   LuSparkles,
+  LuStar,
   LuX,
 } from 'react-icons/lu';
 
@@ -21,6 +22,7 @@ const icons = {
   book: LuBookOpen,
   layers: LuLayers,
   check: LuCheck,
+  star: LuStar,
 };
 
 export type IconName = keyof typeof icons;

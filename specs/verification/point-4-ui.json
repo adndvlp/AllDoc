@@ -1,0 +1,1003 @@
+{
+  "command": "npm run test:ui:update",
+  "stats": {
+    "startTime": "2026-11-13T20:47:51.271Z",
+    "duration": 109029.56599999999,
+    "expected": 148,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceSha256": "2e043f1a8271fbdb4a12970802a35f3b2601b11cffd014d010f358ae76138244",
+  "testsSha256": "e66102f4af7a63aa81d4016a4324e92c12304c629b9c56f17bc051682a419ba7",
+  "cases": [
+    {
+      "file": "personal-library.spec.ts",
+      "title": "recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "almacenamiento lleno: lectura, navegación y favoritos siguen en memoria",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "inicio sin desbordamientos",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "apunte compacto y resultados legibles",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "grupos contraídos, logos y navegación desde el menú",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "buscador accesible y dentro de la pantalla",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "selector de texto visible y elección persistente",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "la navegación se adapta al girar el dispositivo",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "skipped",
+          "skipReason": "La rotación se prueba en los proyectos táctiles."
+        },
+        {
+          "name": "escritorio",
+          "status": "skipped",
+          "skipReason": "La rotación se prueba en los proyectos táctiles."
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "las áreas se pueden abrir desde el encabezado",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "scroll independiente del contenido y el sidebar",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "skipped",
+          "skipReason": "En pantallas pequeñas los temas están en un panel móvil."
+        },
+        {
+          "name": "celular",
+          "status": "skipped",
+          "skipReason": "En pantallas pequeñas los temas están en un panel móvil."
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "skipped",
+          "skipReason": "En pantallas pequeñas los temas están en un panel móvil."
+        },
+        {
+          "name": "ipad",
+          "status": "skipped",
+          "skipReason": "En pantallas pequeñas los temas están en un panel móvil."
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "buscador de portada: carga diferida, consulta pedagógica y navegación por teclado",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "una carga tardía conserva lo escrito y no vuelve a abrir el diálogo",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "error del índice y reintento visible sin perder la consulta",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "sin coincidencias, solo auxiliares y Enter durante composición IME",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "diálogo ajustado a un viewport visual reducido por teclado",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "el diálogo contiene el scroll sin desplazar el apunte del fondo",
+      "projects": [
+        {
+          "name": "celular-pequeno",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "celular-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "ipad-horizontal",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "laptop",
+          "status": "passed",
+          "skipReason": null
+        },
+        {
+          "name": "escritorio",
+          "status": "passed",
+          "skipReason": null
+        }
+      ]
+    }
+  ],
+  "reviewedScreenshots": [
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/colecciones.png",
+      "width": 320,
+      "height": 568,
+      "sha256": "7c009b1ff1084cf519e0d3f89ff5ec0a0359d6b9465765c1320b98bb7b886af5"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/select.png",
+      "width": 320,
+      "height": 568,
+      "sha256": "643000dcae52c4272583907521b52353145b0ee61a6e571bdec17c71a0a6d2f2"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/colecciones.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "6128ecfda655857401911f49e6e8c7b3a517a9fb524d50bf185610749291b31d"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/select.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "a7c97eb9917280e5657f14ab2eabf90d5bbb1ff4b07d214396a66e67f68c0143"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/colecciones.png",
+      "width": 844,
+      "height": 390,
+      "sha256": "735ba510742652d5c293de382c82a81e0d7bcf537dac1124337308e898bb4271"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/select.png",
+      "width": 844,
+      "height": 390,
+      "sha256": "597cd734d1cc3cc91a83610e7d2a1b17a0219b41220071a938f22ec66e5d8187"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/colecciones.png",
+      "width": 768,
+      "height": 1024,
+      "sha256": "8145ffd4cf85359f416b47831e630eb7bdbefc217beabb4d7ada3153648ca634"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/select.png",
+      "width": 768,
+      "height": 1024,
+      "sha256": "c0d26debba6cc627a345b14a5305c9fe42a30d5768587af00be9e246adc08c3d"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/colecciones.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "70a3f7ef8f37d87968e9e3e38c983754eeb405660948fcf40b00e1cd127e3827"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/select.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "ed600039c09ed512d32840f887a24cfa962c8873bc4fd743ba1b735010a1fc30"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/colecciones.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "30085a40645fa5f2c88a409c3a909f9053e266712783700b23dbbee6494792bd"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/select.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "7598a8f1afe869e42c06ece85e3fb1ebe213189ccc31f0c641bc95328c667313"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/colecciones.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b95d6804a21aefbd138fc1659a0fa110fce10b6d7816a8740a80c1859f7dbca5"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/select.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "9a3b08570f2265826e9447e5daf34a6ac418596f09a750c17dab979f115c1b2a"
+    }
+  ]
+}

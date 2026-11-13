@@ -387,9 +387,9 @@ flowchart TD
 | `SearchProvider` | Consulta, superficie activa y carga/caché del índice | Implementado |
 | `SearchDialog` | Diálogo nativo único y atajo global | Implementado |
 | `SearchResults` | Estados, enlaces, teclado y paginación comunes | Implementado |
-| `PersonalLibraryProvider` | Hidratar, validar, actualizar y persistir recientes y favoritos | Pendiente |
-| `PersonalShortcuts` | Presentar recientes/favoritos y sus expansiones | Pendiente |
-| `FavoriteButton` | Guardar o quitar un concepto y exponer su estado accesible | Pendiente |
+| `PersonalLibraryProvider` | Hidratar, validar, actualizar y persistir recientes y favoritos | Implementado |
+| `PersonalShortcuts` | Presentar recientes/favoritos y sus expansiones | Implementado |
+| `FavoriteButton` | Guardar o quitar un concepto y exponer su estado accesible | Implementado |
 | `AreaSwitcher` | Elegir área en el encabezado compacto y conservar las tres opciones | Pendiente |
 
 Se montan los providers una sola vez mediante el wrapper `src/theme/Root.tsx`, compatible con la renderización estática de Docusaurus. Las lecturas de `window`, `localStorage`, teclado y ubicación que lo requieran ocurren en cliente, con limpieza de listeners. Estado local de componentes para resultados desplegados y categorías; no se incorpora una librería global de estado para estas colecciones pequeñas.
@@ -492,7 +492,7 @@ Las siguientes tareas expresan dependencias técnicas; todas forman parte del mi
 | 1 | Registrar capturas, tamaños de bundle y tiempos de referencia | Completado: [referencia verificada](../benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484/README.md) para la comparación de CA-23 |
 | 2 | Introducir metadata canónica y catálogo compartido; adaptar SQL, búsqueda y sidebar | Completado: [verificación](verification/point-2.md) de rutas, contenido, jerarquía y fuentes de datos |
 | 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | Completado: [verificación](verification/point-3.md) de CA-06 a CA-09 |
-| 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | CA-10 a CA-13 |
+| 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | Completado: [verificación](verification/point-4.md) de CA-10 a CA-13 |
 | 5 | Componer landing y páginas de área con jerarquía compacta | CA-01, CA-04, CA-05 |
 | 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | CA-14 a CA-17, CA-25 |
 | 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | CA-18 a CA-21 |
@@ -516,7 +516,13 @@ La portada incorpora un campo real de búsqueda y comparte consulta, índice y c
 
 Pasaron 35 pruebas de código, ambos chequeos de tipos y el build. La ejecución de navegador, realizada desde la terminal del usuario, terminó con 99 aprobadas y seis omisiones previstas, sin fallos ni pruebas inestables. Se revisaron las 21 capturas de portada, búsqueda en portada y diálogo en los siete tamaños. [Verificación y límites](verification/point-3.md).
 
-La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1, 2 y 3.
+### Registro del punto 4
+
+Se añadieron recientes y favoritos con claves locales independientes y versionadas, registro por activación de rutas reconocidas y sincronización entre pestañas. La estrella de cada ficha conserva foco y posición; la portada ofrece accesos a las dos colecciones y permite quitar favoritos con foco útil. El buscador sin consulta sugiere primero los recientes, sin duplicar conceptos ni alterar el ranking de las consultas. Los datos dañados o el guardado bloqueado/lleno no impiden usar la biblioteca.
+
+Pasaron 49 pruebas de código, incluidos dos casos con el preset cliente real, ambos chequeos de tipos y el build. La ejecución de navegador terminó con 148 aprobadas y seis omisiones previstas, sin fallos ni pruebas inestables. Se revisaron 14 capturas de ficha y colecciones en siete tamaños. [Verificación y límites](verification/point-4.md).
+
+La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 4.
 
 ## 16. Guías y fundamentos utilizados
 

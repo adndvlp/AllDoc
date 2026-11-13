@@ -1,6 +1,7 @@
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import HomeSearch from '@site/src/components/HomeSearch';
+import PersonalShortcuts from '@site/src/components/PersonalShortcuts';
 import Icon from '@site/src/components/Icon';
 import {areas} from '@site/src/content/areas';
 import {getConceptsForTopic} from '@site/src/content/concepts';
@@ -12,6 +13,7 @@ export default function Home() {
     <Layout title="Tu biblioteca personal" description="Apuntes breves, ejemplos claros y conceptos a la mano. Tu biblioteca personal de análisis de datos, desarrollo web e IA.">
       <main className={styles.main}>
         <HomeSearch>
+          <PersonalShortcuts />
           <section className={styles.areas} aria-labelledby="areas-title">
             <div className={styles.sectionHeading}><h2 id="areas-title">Explora por área</h2><span>Tu conocimiento, en su lugar.</span></div>
             <div className={styles.areaGrid}>
