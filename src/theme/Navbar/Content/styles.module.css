@@ -25,10 +25,16 @@
     color: var(--text-secondary);
     font-size: .76rem;
     white-space: nowrap;
+    border: 0;
+    border-radius: 0;
+    background: #000;
+    font-family: inherit;
+    cursor: pointer;
   }
 
   .area:hover { color: var(--accent); text-decoration: none; }
-  .area[aria-current='page'] { color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+  .area[aria-current='page'], .area[aria-pressed='true'] { color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+  .area:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 }
 
 @media (min-width: 577px) and (max-width: 996px) {

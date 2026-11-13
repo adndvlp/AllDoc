@@ -98,8 +98,9 @@ Todos los grupos y secciones aparecen contraídos al abrir la página, incluido 
 aunque contenga la página actual. Cada herramienta conserva su propio desplegable;
 salvo SQL, todavía están sin apuntes.
 Pulsar un grupo o una sección despliega o contrae su contenido, sin abrir una página.
-Se navega al pulsar un concepto. La agrupación y el orden se definen en sidebars.ts;
-las carpetas y las rutas de los apuntes se mantienen.
+Se navega al pulsar un concepto. La agrupación y el orden se definen en
+src/content/catalog.ts y sidebars.ts los consume; las carpetas y las rutas de los
+apuntes se mantienen.
 Desarrollo web e IA tienen su espacio preparado, todavía sin conceptos.
 
 Los iconos se importan individualmente de React Icons (`latest`). Lucide se usa
@@ -153,7 +154,9 @@ navegación, resultados SQL, ausencia de desbordamientos, menús, búsqueda, sel
 de color, persistencia, rotación y scroll independiente. Incluye búsqueda compartida,
 cargas tardías, reintento, teclado y composición de texto. También comprueba
 recientes y favoritos, guardado bloqueado o lleno y sincronización entre dos
-pestañas. Genera siete capturas por tamaño.
+pestañas. El catálogo se comprueba en portada y en páginas de área, incluyendo
+despliegues independientes y selección de área sin navegar. Genera nueve capturas
+por tamaño.
 
 ~~~sh
 npx playwright install chromium
@@ -214,6 +217,24 @@ primero o el enlace enfocado y Esc cierra el diálogo conservando lo escrito.
 Elegir un resultado limpia la consulta. Limpiar el campo recupera el contenido
 de portada que permanecía oculto mientras se buscaba. La búsqueda no guarda
 consultas ni envía datos a un servicio externo.
+
+## Catálogo en portada y páginas de área
+
+Debajo del buscador y los accesos personales aparece el catálogo del área activa,
+con el mismo orden, grupos y logos del sidebar. Las filas se despliegan mediante
+`details`/`summary` nativos; abrir SQL muestra sus cinco conceptos y pulsar un
+concepto abre la ficha. Las herramientas vacías muestran «Sin apuntes todavía».
+El catálogo usa el scroll de la página, sin crear otro panel desplazable.
+
+En portada, las áreas del encabezado son botones de selección: cambian el catálogo
+y conservan `/`, la consulta y los accesos personales. Cambiar de área contrae sus
+categorías. La elección no se guarda y al volver a la portada comienza Análisis de
+datos. Buscar y limpiar recupera el catálogo con sus despliegues previos.
+
+En las fichas, los controles de área siguen siendo enlaces a sus páginas. Esas
+páginas usan el mismo componente de catálogo, con despliegues independientes del
+sidebar. Desarrollo web e IA permanecen vacías, sin contenido inventado. La metadata
+está en `src/content/catalog.ts` y la presentación en `src/components/Catalog`.
 
 ## Recientes y favoritos
 

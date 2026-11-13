@@ -382,7 +382,7 @@ flowchart TD
 
 | Pieza | Responsabilidad | Estado |
 | --- | --- | --- |
-| `Catalog` | Renderizar jerarquía compacta, recuentos, categorías y conceptos | Pendiente |
+| `Catalog` | Renderizar jerarquía compacta, recuentos, categorías y conceptos | Implementado |
 | `HomeSearch` | Campo y resultados en el flujo de la landing | Implementado |
 | `SearchProvider` | Consulta, superficie activa y carga/caché del índice | Implementado |
 | `SearchDialog` | Diálogo nativo único y atajo global | Implementado |
@@ -493,7 +493,7 @@ Las siguientes tareas expresan dependencias técnicas; todas forman parte del mi
 | 2 | Introducir metadata canónica y catálogo compartido; adaptar SQL, búsqueda y sidebar | Completado: [verificación](verification/point-2.md) de rutas, contenido, jerarquía y fuentes de datos |
 | 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | Completado: [verificación](verification/point-3.md) de CA-06 a CA-09 |
 | 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | Completado: [verificación](verification/point-4.md) de CA-10 a CA-13 |
-| 5 | Componer landing y páginas de área con jerarquía compacta | CA-01, CA-04, CA-05 |
+| 5 | Componer landing y páginas de área con jerarquía compacta | Completado: [verificación](verification/point-5.md) de CA-01, CA-04 y CA-05 |
 | 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | CA-14 a CA-17, CA-25 |
 | 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | CA-18 a CA-21 |
 | 8 | Ejecutar verificación, revisar imágenes, medir y corregir regresiones | CA-01 a CA-25, informe de resultados y limitaciones reales |
@@ -522,7 +522,15 @@ Se añadieron recientes y favoritos con claves locales independientes y versiona
 
 Pasaron 49 pruebas de código, incluidos dos casos con el preset cliente real, ambos chequeos de tipos y el build. La ejecución de navegador terminó con 148 aprobadas y seis omisiones previstas, sin fallos ni pruebas inestables. Se revisaron 14 capturas de ficha y colecciones en siete tamaños. [Verificación y límites](verification/point-4.md).
 
-La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 4.
+### Registro del punto 5
+
+La portada presenta buscador, accesos personales y catálogo del área seleccionada, con las 19 herramientas, cinco grupos y logos actuales. Grupos y herramientas usan desplegables nativos independientes y empiezan cerrados. SQL despliega sus conceptos y solo los enlaces de conceptos navegan. Las páginas de área comparten el catálogo; Desarrollo web e IA conservan su estado vacío.
+
+Las áreas del encabezado seleccionan el catálogo en la portada sin abandonar `/`, conservando consulta y accesos globales. Cambiar de área contrae sus categorías; buscar y limpiar recupera las expansiones previas. Fuera de la portada, los controles de área siguen navegando. El catálogo adapta su jerarquía al ancho disponible y no crea otro panel de scroll.
+
+Pasaron las 49 pruebas de código, ambos chequeos de tipos y el build. El HTML estático conserva un título principal por página y catálogos inicialmente cerrados. La ejecución de navegador terminó con 176 aprobadas y seis omisiones previstas, sin fallos ni inestables. Se revisaron 21 capturas en siete tamaños. [Verificación y límites](verification/point-5.md).
+
+La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 5.
 
 ## 16. Guías y fundamentos utilizados
 

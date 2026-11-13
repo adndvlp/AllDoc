@@ -20,7 +20,7 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await input(page).fill('cómo filtrar');
   const result = home(page).getByRole('link').filter({hasText: 'WHERE'});
   await expect(result).toHaveCount(1);
-  await expect(page.getByRole('heading', {name: 'Explora por área'})).not.toBeVisible();
+  await expect(page.locator('[data-catalog]')).not.toBeVisible();
   await expect(page).toHaveScreenshot('busqueda-inicio.png');
   await input(page).press('ArrowDown');
   await expect(result).toBeFocused();
@@ -46,7 +46,7 @@ test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foc
   await expect(input(page)).toBeFocused();
   await expect(home(page).getByRole('link').filter({hasText: 'LIMIT'})).toBeVisible();
   await home(page).getByRole('button', {name: 'Limpiar búsqueda'}).click();
-  await expect(page.getByRole('heading', {name: 'Explora por área'})).toBeVisible();
+  await expect(page.locator('[data-catalog]')).toBeVisible();
 });
 
 test('una carga tardía conserva lo escrito y no vuelve a abrir el diálogo', async ({page}) => {

@@ -1,7 +1,5 @@
-import Link from '@docusaurus/Link';
 import {areas, type AreaId} from '@site/src/content/areas';
-import {getConceptsForTopic} from '@site/src/content/concepts';
-import Icon from '../Icon';
+import Catalog from '../Catalog';
 import styles from './styles.module.css';
 
 export default function AreaOverview({areaId}: {areaId: AreaId}) {
@@ -11,19 +9,7 @@ export default function AreaOverview({areaId}: {areaId: AreaId}) {
   return (
     <div>
       <p className={styles.intro}>{area.description}</p>
-      {area.available ? (
-        <div className={styles.topic}>
-          <span className={styles.icon}><Icon name="data" size={26} /></span>
-          <span><strong>SQL</strong><span>Habla con tus datos.</span><small>{getConceptsForTopic(areaId, 'sql').length} conceptos · Consultas básicas</small></span>
-        </div>
-      ) : (
-        <div className={styles.empty}>
-          <span className={styles.emptyIcon}><Icon name={area.icon} size={30} /></span>
-          <h2>El siguiente apunte empieza aquí.</h2>
-          <p>Esta área está lista para crecer con lo que vayas aprendiendo.</p>
-          <Link to="/apuntes/analisis-de-datos">Explorar análisis de datos <Icon name="arrow" size={16} /></Link>
-        </div>
-      )}
+      <Catalog key={areaId} areaId={areaId} showHeading={false} />
     </div>
   );
 }

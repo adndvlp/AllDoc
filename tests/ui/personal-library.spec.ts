@@ -121,7 +121,8 @@ test('datos dañados o retirados: no se escriben al iniciar; la siguiente acció
   expect(await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!).conceptIds, FAVORITES_KEY)).toEqual([]);
   expect(await page.evaluate((key) => localStorage.getItem(key), RECENTS_KEY)).toBe('{roto');
   expect(await page.evaluate(() => localStorage.getItem('alldoc-palette'))).toBe('rojo');
-  await page.getByRole('link', {name: 'SELECT', exact: true}).click();
+  await page.locator('[data-catalog]').getByLabel('SQL', {exact: true}).click();
+  await page.locator('[data-catalog]').getByRole('link').filter({hasText: 'SELECT'}).click();
   await expect(page).toHaveURL(/\/select$/);
   await expect.poll(async () => (await storedRecents(page)).map(({conceptId}) => conceptId)).toEqual([id('select')]);
 });
@@ -166,7 +167,8 @@ test('dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra c
   await expect(star(page)).toHaveAttribute('aria-pressed', 'false');
   await expect(star(page)).toBeFocused();
   expect(await storedRecents(page)).toEqual(visited);
-  await other.getByRole('link', {name: 'WHERE', exact: true}).click();
+  await other.locator('[data-catalog]').getByLabel('SQL', {exact: true}).click();
+  await other.locator('[data-catalog]').getByRole('link').filter({hasText: 'WHERE'}).click();
   await expect(other).toHaveURL(/\/where$/);
   await homeLink(page).click();
   await expect(recents(page).getByRole('link').first()).toContainText('WHERE');

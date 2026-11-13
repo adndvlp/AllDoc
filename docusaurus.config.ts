@@ -51,14 +51,9 @@ const config: Config = {
       logo: {alt: '', src: 'img/mark.svg', width: 30, height: 30},
       hideOnScroll: false,
       items: [
-        {
-          to: '/apuntes/analisis-de-datos',
-          label: 'Análisis de datos',
-          position: 'left',
-          activeBaseRegex: '^/apuntes/analisis-de-datos(?:/|$)',
-        },
-        {to: '/apuntes/desarrollo-web', label: 'Desarrollo web', position: 'left'},
-        {to: '/apuntes/ia', label: 'IA', position: 'left'},
+        {type: 'custom-area', areaId: 'analisis-de-datos', position: 'left'},
+        {type: 'custom-area', areaId: 'desarrollo-web', position: 'left'},
+        {type: 'custom-area', areaId: 'ia', position: 'left'},
         {type: 'custom-palette', position: 'right'},
         {type: 'search', position: 'right'},
       ],

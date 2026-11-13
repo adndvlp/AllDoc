@@ -85,6 +85,10 @@ export function buildCatalog(areas: readonly AreaDefinition[], entries: readonly
 
 export const catalog = buildCatalog(definitions, concepts);
 
+export function countConcepts(nodes: readonly CatalogNode[]): number {
+  return nodes.reduce((count, node) => count + (node.kind === 'group' ? countConcepts(node.items) : node.concepts.length), 0);
+}
+
 export function getTopics(areaId: AreaId): CatalogTopic[] {
   const area = catalog.find((item) => item.id === areaId);
   return area?.items.flatMap((item) => item.kind === 'group' ? [...item.items] : [item]) ?? [];

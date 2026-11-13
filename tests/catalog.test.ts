@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile, readdir} from 'node:fs/promises';
 import path from 'node:path';
-import {catalog, getTopics, buildCatalog, type AreaDefinition} from '../src/content/catalog.ts';
+import {catalog, getTopics, buildCatalog, countConcepts, type AreaDefinition} from '../src/content/catalog.ts';
 import {areas} from '../src/content/areas.ts';
 import {concepts, getConcept, getConceptsForTopic, docsBasePath, type ConceptMeta} from '../src/content/concepts.ts';
 import {entries, buildSearchIndex} from '../src/content/search-index.ts';
@@ -28,6 +28,8 @@ test('el catálogo conserva tres áreas, diecinueve herramientas y los cinco gru
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
   assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL · 5 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [5, 0, 0]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 0);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -103,6 +105,7 @@ const otherConcepts: ConceptMeta[] = [
 
 test('catálogo, sidebar y búsqueda admiten conceptos en cualquier área sin depender de SQL', () => {
   const expanded = buildCatalog(otherAreas, otherConcepts);
+  assert.deepEqual(expanded.map((area) => countConcepts(area.items)), [1, 2, 1]);
   const index = buildSearchIndex(expanded, {'desarrollo-web/react/estado': ['recordar']});
   assert.deepEqual(index.map((entry) => entry.id), [otherConcepts[0].id, otherConcepts[2].id, otherConcepts[1].id, otherConcepts[3].id]);
   assert.deepEqual(index.map((entry) => entry.context), ['Análisis de datos / Excel', 'Desarrollo web / React', 'Desarrollo web / React', 'IA / Modelos']);
