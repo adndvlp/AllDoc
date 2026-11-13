@@ -1,0 +1,38 @@
+{
+  "phase": "red",
+  "execution": "Playwright ejecutado por el usuario; suite completa detenida en el primer fallo",
+  "stats": {
+    "startTime": "2026-11-13T21:20:21.323Z",
+    "duration": 11499.660999999998,
+    "expected": 4,
+    "skipped": 219,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "plannedTests": 224,
+  "sourceSha256": "6e464476c9f3fb559e467f822ccecacd1d7d46ca7cfc0e448fd4b090f52e4e1d",
+  "sameAppAsPoint5": true,
+  "testFileSha256": "de89ab5123d432bed21a2363fdb49740d32adaf2af9debf285192ce0969be3f1",
+  "expectedCodeBorders": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "receivedCodeBorders": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "failed": [
+    {
+      "file": "notes.spec.ts",
+      "title": "una envoltura por ejemplo, tipografía legible y contenido esencial compacto",
+      "project": "celular-pequeno",
+      "errors": [
+        "Error: SELECT: el código comparte la envoltura exterior\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 4\n+ Received  + 4\n\n  Array [\n-   0,\n-   0,\n-   0,\n-   0,\n+   1,\n+   1,\n+   1,\n+   1,\n  ]\n\n  34 |         return [style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].map(parseFloat);\n  35 |       });\n> 36 |       expect(borders, `${concept.title}: el código comparte la envoltura exterior`).toEqual([0, 0, 0, 0]);\n     |                                                                                     ^\n  37 |       await expect(example.getByRole('heading', {level: 2, name: concept.examples[i].title, exact: true})).toHaveCount(1);\n  38 |       expect(await fontSize(example.locator('pre code')), `${concept.title}: código de al menos 14 px`).toBeGreaterThanOrEqual(14);\n  39 |       expect(await fontSize(example.getByText(concept.examples[i].hint, {exact: true}))).toBeGreaterThanOrEqual(14);\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts:36:85"
+      ]
+    }
+  ]
+}

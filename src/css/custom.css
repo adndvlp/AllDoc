@@ -121,10 +121,10 @@ table td, table th { padding: .65rem 1rem; border-color: var(--border-subtle); }
 html.sql-concept-page .container.padding-top--md { padding: 1.25rem 2rem !important; }
 html.sql-concept-page .theme-doc-breadcrumbs { margin: 0 0 .65rem; }
 html.sql-concept-page .theme-doc-markdown h1 { font-size: 2rem; margin: 0 0 .7rem; }
-html.sql-concept-page .pagination-nav { margin-top: 1.1rem; }
+html.sql-concept-page .pagination-nav { margin-top: 1rem; }
 html.sql-concept-page .pagination-nav__link { padding: .65rem .85rem; }
-html.sql-concept-page .pagination-nav__sublabel { font-size: .6rem; }
-html.sql-concept-page .pagination-nav__label { font-size: .8rem; }
+html.sql-concept-page .pagination-nav__sublabel { font-size: .75rem; }
+html.sql-concept-page .pagination-nav__label { font-size: .875rem; }
 
 @media (min-width: 997px) {
   .theme-doc-markdown { max-width: 780px; }

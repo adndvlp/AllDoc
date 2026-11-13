@@ -487,6 +487,13 @@ npm run test:ui
 
 Las siguientes tareas expresan dependencias técnicas; todas forman parte del mismo alcance de este SDD.
 
+Por indicación del usuario, desde el punto 6 los cambios se desarrollan con TDD:
+prueba del comportamiento antes de la implementación, ejecución para comprobar
+el fallo esperado, implementación mínima, paso a verde y refactorización con las
+pruebas aprobadas. Se registra la evidencia roja y verde. Un fallo del entorno o
+de configuración no cuenta como fase roja; debe fallar la expectativa funcional
+que motiva el cambio. Las capturas complementan las aserciones, sin sustituirlas.
+
 | Orden | Trabajo | Resultado verificable |
 | --- | --- | --- |
 | 1 | Registrar capturas, tamaños de bundle y tiempos de referencia | Completado: [referencia verificada](../benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484/README.md) para la comparación de CA-23 |
@@ -494,7 +501,7 @@ Las siguientes tareas expresan dependencias técnicas; todas forman parte del mi
 | 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | Completado: [verificación](verification/point-3.md) de CA-06 a CA-09 |
 | 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | Completado: [verificación](verification/point-4.md) de CA-10 a CA-13 |
 | 5 | Componer landing y páginas de área con jerarquía compacta | Completado: [verificación](verification/point-5.md) de CA-01, CA-04 y CA-05 |
-| 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | CA-14 a CA-17, CA-25 |
+| 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | Completado con TDD: [verificación](verification/point-6.md) de CA-14 a CA-17 y CA-25 |
 | 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | CA-18 a CA-21 |
 | 8 | Ejecutar verificación, revisar imágenes, medir y corregir regresiones | CA-01 a CA-25, informe de resultados y limitaciones reales |
 
@@ -530,7 +537,17 @@ Las áreas del encabezado seleccionan el catálogo en la portada sin abandonar `
 
 Pasaron las 49 pruebas de código, ambos chequeos de tipos y el build. El HTML estático conserva un título principal por página y catálogos inicialmente cerrados. La ejecución de navegador terminó con 176 aprobadas y seis omisiones previstas, sin fallos ni inestables. Se revisaron 21 capturas en siete tamaños. [Verificación y límites](verification/point-5.md).
 
-La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 5.
+### Registro del punto 6
+
+Se desarrolló con TDD: seis casos nuevos escritos antes de modificar la aplicación y fallo funcional registrado sobre la misma huella del punto 5. El código interior de SELECT tenía cuatro bordes de 1 px, frente a los 0 px exigidos para una envoltura única. Después se retiraron el borde y el relleno duplicados, se ajustó código y aclaraciones a 0.875 rem y se adaptaron los ejemplos al ancho del contenedor.
+
+Las ocho consultas y sus resultados se conservan. Los resultados permanecen cerrados e independientes, con tablas semánticas y regiones de scroll con nombre y teclado. Se verifica copia real, rutas y alineación de anterior/siguiente, texto ampliado y las ocho paletas. Las cinco fichas muestran su contenido esencial sin scroll en 390×844 y 1280×800.
+
+Pasaron 49 pruebas de código, ambos chequeos de tipos y el build. La fase verde de navegador terminó con 218 aprobadas y seis omisiones previstas, sin fallos ni inestables; se revisaron 21 capturas en siete tamaños. [Evidencia roja/verde, verificación y límites](verification/point-6.md).
+
+Al 200% quedan solapamientos del encabezado y ajuste excesivo de etiquetas del sidebar en ciertas anchuras. Se registran para el punto 7; CA-18 a CA-21 siguen pendientes y este registro no acredita la accesibilidad global del shell.
+
+La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 6.
 
 ## 16. Guías y fundamentos utilizados
 

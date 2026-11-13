@@ -142,6 +142,12 @@ lo necesitan; las consultas se ajustan al ancho disponible en celulares.
 
 ## Pruebas
 
+El desarrollo sigue TDD: primero se escribe una prueba del comportamiento pedido
+y se ejecuta sobre la versión actual para comprobar el fallo esperado; después se
+implementa el cambio mínimo y se vuelve a ejecutar. La refactorización se realiza
+con las pruebas en verde. Para cambios visuales se usan aserciones de comportamiento
+y medidas del navegador; actualizar capturas no sustituye esas comprobaciones.
+
 ~~~sh
 npm test
 npm run typecheck
@@ -155,8 +161,10 @@ de color, persistencia, rotación y scroll independiente. Incluye búsqueda comp
 cargas tardías, reintento, teclado y composición de texto. También comprueba
 recientes y favoritos, guardado bloqueado o lleno y sincronización entre dos
 pestañas. El catálogo se comprueba en portada y en páginas de área, incluyendo
-despliegues independientes y selección de área sin navegar. Genera nueve capturas
-por tamaño.
+despliegues independientes y selección de área sin navegar. Las fichas añaden
+comprobaciones de compacidad en celular/laptop,
+texto al 200%, copia real al portapapeles, resultados accesibles y las ocho paletas;
+con estas vistas se generan once capturas por tamaño.
 
 ~~~sh
 npx playwright install chromium
