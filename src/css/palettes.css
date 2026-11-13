@@ -1,0 +1,29 @@
+/* El tema negro es fijo. El selector cambia únicamente el acento de texto. */
+:root {
+  --canvas: #000000;
+  --surface: #000000;
+  --surface-raised: #000000;
+  --code-background: #000000;
+  --border-subtle: #252525;
+  --border-strong: #555555;
+  --text-primary: #d4d4d4;
+  --text-secondary: #bbbbbb;
+  --text-muted: #9d9d9d;
+  --accent: #3794ff;
+  --on-accent: #000000;
+  --syntax-keyword: var(--accent);
+  --syntax-operator: #d4d4d4;
+  --syntax-number: #b5cea8;
+  --syntax-string: #ce9178;
+  --syntax-comment: #6a9955;
+  --syntax-function: #dcdcaa;
+}
+
+html[data-palette='azul'] { --accent: #3794ff; }
+html[data-palette='violeta'] { --accent: #b02cff; }
+html[data-palette='verde'] { --accent: #00e676; }
+html[data-palette='ambar'] { --accent: #ffb300; }
+html[data-palette='cian'] { --accent: #00d9ff; }
+html[data-palette='rosa'] { --accent: #ff1493; }
+html[data-palette='rojo'] { --accent: #ff3030; }
+html[data-palette='blanco'] { --accent: #ffffff; }

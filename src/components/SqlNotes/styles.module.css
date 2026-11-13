@@ -1,0 +1,33 @@
+.concept { scroll-margin-top: 1.5rem; }
+.definition { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem; }
+.variants { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: .85rem; align-items: start; }
+.variant { min-width: 0; padding: .9rem; border: 1px solid var(--border-subtle); border-radius: 10px; background: var(--surface); }
+.variantTitle { font-size: .85rem; font-weight: 550; letter-spacing: -.015em; margin: 0 0 .65rem; }
+.variant :global(.theme-code-block) { margin: 0 0 .55rem; }
+.variant :global(.theme-code-block pre) { padding: .7rem .75rem; }
+.variant :global(.theme-code-block code) { font-size: .78rem; line-height: 1.7; }
+.hint { color: var(--text-secondary); font-size: .78rem; line-height: 1.5; margin: 0; }
+.result { border-top: 1px solid var(--border-subtle); margin: .7rem 0 0; }
+.result summary { padding: .55rem 0 0; cursor: pointer; color: var(--text-muted); font-size: .72rem; }
+.result summary > span { color: var(--text-muted); font-family: var(--ifm-font-family-monospace); font-size: .7rem; margin-left: .6rem; }
+.tableWrapper { padding: .3rem 0 .8rem; overflow-x: auto; overscroll-behavior-x: none; }
+.tableWrapper table { margin: 0; width: 100%; display: table; }
+.remember { padding: .55rem .8rem; border-left: 2px solid var(--accent); color: var(--accent-soft-text); font-size: .82rem; line-height: 1.5; margin: 1rem 0 0; }
+.note { color: var(--text-muted); font-size: .78rem; margin: 1rem 0 0; }
+
+@media (pointer: coarse) {
+  .result summary { min-height: 44px; padding-top: .8rem; }
+}
+
+@media (max-width: 576px) {
+  .definition { font-size: .95rem; }
+  .variant { padding: .8rem; }
+  .variantTitle { font-size: .9rem; }
+  .variant :global(.theme-code-block pre), .variant :global(.theme-code-block code) { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .variant :global(.theme-code-block code) { font-size: .8rem; }
+  .hint { font-size: .84rem; }
+  .result summary { min-height: 44px; padding-top: .8rem; font-size: .8rem; }
+  .tableWrapper table { font-size: .8rem; }
+  .tableWrapper th, .tableWrapper td { padding: .5rem .65rem; }
+}
+

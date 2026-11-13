@@ -1,0 +1,33 @@
+.control { position: relative; margin-right: .65rem; }
+.trigger { display: flex; align-items: center; gap: .6rem; min-height: 36px; padding: .45rem .65rem; list-style: none; border: 1px solid var(--border-subtle); border-radius: 7px; background: var(--surface); color: var(--text-secondary); cursor: pointer; font-size: .76rem; user-select: none; }
+.trigger::-webkit-details-marker { display: none; }
+.trigger:hover, .control[open] .trigger { border-color: var(--border-strong); color: var(--text-primary); }
+.preview { font-size: .95rem; font-weight: 650; line-height: 1; }
+.panel { position: absolute; z-index: 120; top: calc(100% + .7rem); right: 0; width: 285px; padding: .7rem; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: 0 20px 60px #0006; max-height: calc(100dvh - var(--ifm-navbar-height) - 2rem); overflow-y: auto; overscroll-behavior: none; }
+.options { min-width: 0; padding: 0; margin: 0; border: none; }
+.options legend { width: 100%; padding: .3rem .5rem .75rem; margin: 0; color: var(--text-muted); font-size: .68rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+.option { display: flex; align-items: center; gap: .8rem; padding: .6rem .5rem; margin: 0; border: 1px solid transparent; border-radius: 7px; cursor: pointer; }
+.option:hover { background: var(--surface-raised); }
+.option[data-selected='true'] { background: var(--accent-muted); border-color: var(--accent-border); }
+.option:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sample { display: grid; place-items: center; flex: 0 0 42px; height: 36px; border: 1px solid var(--border-subtle); border-radius: 5px; font-size: 1.1rem; font-weight: 600; }
+.copy { display: grid; gap: .1rem; }
+.copy strong { color: var(--text-primary); font-size: .77rem; font-weight: 550; }
+.copy small { color: var(--text-muted); font-size: .66rem; }
+.check { margin-left: auto; color: var(--accent); font-size: .85rem; }
+.hint { margin: .65rem .5rem .2rem; padding-top: .75rem; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: .61rem; }
+@media (max-width: 996px) {
+  .panel { position: fixed; top: calc(var(--ifm-navbar-height) + .5rem); right: max(.75rem, env(safe-area-inset-right)); width: min(285px, calc(100vw - 1.5rem)); max-height: calc(100dvh - var(--ifm-navbar-height) - 1rem - env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 576px) {
+  .control { margin-right: .45rem; }
+  .trigger { justify-content: center; min-width: 44px; min-height: 44px; padding: .5rem; }
+  .triggerLabel, .trigger > svg { display: none; }
+  .option { min-height: 48px; }
+}
+
+@media (pointer: coarse) {
+  .trigger { min-height: 44px; }
+  .option { min-height: 48px; }
+}

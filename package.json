@@ -1,0 +1,41 @@
+{
+  "name": "alldoc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Apuntes personales para recordar conceptos de un vistazo.",
+  "scripts": {
+    "start": "docusaurus start --host 127.0.0.1 --no-open",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve --host 127.0.0.1 --no-open",
+    "typecheck": "tsc --noEmit",
+    "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:ui": "playwright test",
+    "test:ui:update": "playwright test --update-snapshots",
+    "test:ui:report": "playwright show-report",
+    "build:ui": "DOCUSAURUS_GENERATED_FILES_DIR_NAME=.docusaurus-ui docusaurus build --out-dir .ui-build",
+    "serve:ui": "docusaurus serve --host 127.0.0.1 --port 4173 --no-open --dir .ui-build",
+    "update:stack": "node scripts/update-stack.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "latest",
+    "@docusaurus/preset-classic": "latest",
+    "@mdx-js/react": "latest",
+    "prism-react-renderer": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@docusaurus/module-type-aliases": "latest",
+    "@docusaurus/types": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

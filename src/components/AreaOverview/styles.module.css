@@ -1,0 +1,20 @@
+.intro { color: var(--text-secondary); font-size: 1.15rem; margin-bottom: 2rem; }
+.topic { display: flex; align-items: center; gap: 1.3rem; padding: 1.6rem; border-radius: 14px; border: 1px solid var(--border-subtle); background: var(--surface); color: var(--text-primary); }
+.icon { color: var(--accent); padding: .8rem; background: var(--accent-muted); border-radius: 12px; }
+.topic > span:nth-child(2) { display: grid; min-width: 0; gap: .3rem; }
+.icon { flex-shrink: 0; }
+.topic strong { font-size: 1.5rem; letter-spacing: -.03em; }
+.topic span span { color: var(--text-secondary); font-size: .9rem; }
+.topic small { color: var(--text-muted); font-size: .75rem; margin-top: .3rem; }
+.empty { border: 1px dashed var(--border-strong); border-radius: 16px; padding: 3rem 2rem; text-align: center; margin: 2.5rem 0; }
+.emptyIcon { display: inline-flex; color: var(--text-muted); margin-bottom: 1.5rem; }
+.empty h2 { font-size: 1.4rem; letter-spacing: -.03em; }
+.empty p { color: var(--text-secondary); max-width: 25rem; margin: 0 auto 1.5rem; }
+.empty a { font-size: .85rem; display: inline-flex; align-items: center; gap: .5rem; }
+@media (max-width: 576px) {
+  .intro { font-size: 1rem; }
+  .topic { padding: 1rem; gap: .8rem; }
+  .icon { padding: .5rem; }
+  .empty { padding: 2rem 1rem; }
+  .empty a { min-height: 44px; text-align: left; }
+}

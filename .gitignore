@@ -1,0 +1,36 @@
+# Dependencias y archivos generados
+node_modules/
+build/
+.docusaurus*/
+.ui-build/
+
+# Cachés
+.cache/
+.npm-cache/
+*.tsbuildinfo
+
+# Resultados de pruebas y cobertura
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+coverage/
+
+# Variables de entorno locales; las plantillas se pueden versionar
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+
+# Registros
+*.log
+
+# Archivos temporales del sistema y del editor
+.DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+*~

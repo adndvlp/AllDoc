@@ -1,0 +1,26 @@
+import OriginalNavbarContent from '@theme-original/Navbar/Content';
+import Link from '@docusaurus/Link';
+import {useLocation} from '@docusaurus/router';
+import {areas} from '@site/src/content/areas';
+import styles from './styles.module.css';
+
+export default function NavbarContent() {
+  const {pathname} = useLocation();
+
+  return (
+    <>
+      <OriginalNavbarContent />
+      <nav className={styles.areas} aria-label="Áreas de estudio">
+        {areas.map((area) => {
+          const href = '/apuntes/' + area.id;
+          const active = pathname === href || pathname.startsWith(href + '/');
+          return (
+            <Link key={area.id} to={href} className={styles.area} aria-current={active ? 'page' : undefined}>
+              {area.title}
+            </Link>
+          );
+        })}
+      </nav>
+    </>
+  );
+}

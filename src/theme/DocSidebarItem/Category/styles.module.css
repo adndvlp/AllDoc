@@ -1,0 +1,15 @@
+.control {
+  width: 100%;
+  text-align: left;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-right: .5rem;
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
