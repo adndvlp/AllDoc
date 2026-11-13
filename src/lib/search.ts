@@ -15,24 +15,32 @@ export function normalizeSearch(value: string): string {
     .trim();
 }
 
-export function searchEntries(
-  entries: SearchEntry[],
-  query: string,
-): SearchEntry[] {
-  const terms = normalizeSearch(query).split(/\s+/).filter(Boolean);
-  if (terms.length === 0) return entries;
+const auxiliaryWords = new Set(['como', 'que', 'es', 'el', 'la', 'los', 'las', 'un', 'una', 'de', 'del', 'en', 'para', 'con', 'al', 'y']);
 
-  return entries
-    .map((entry, position) => {
-      const title = normalizeSearch(entry.title);
-      const text = normalizeSearch([
-        entry.title,
-        entry.description,
-        entry.context,
-        ...entry.keywords,
-      ].join(' '));
+export function searchTerms(query: string): string[] {
+  return normalizeSearch(query).replace(/[¿?¡!]/g, ' ').split(/\s+/)
+    .filter((term) => term.length > 0 && !auxiliaryWords.has(term));
+}
+
+export function prepareSearchIndex(entries: readonly SearchEntry[]) {
+  return entries.map((entry, position) => ({
+    entry, position,
+    title: normalizeSearch(entry.title),
+    text: normalizeSearch([entry.title, entry.description, entry.context, ...entry.keywords].join(' ')),
+  }));
+}
+
+export type PreparedSearchIndex = ReturnType<typeof prepareSearchIndex>;
+
+export function searchPreparedEntries(index: PreparedSearchIndex, query: string): SearchEntry[] {
+  if (!query.trim()) return index.map((item) => item.entry);
+  const terms = searchTerms(query);
+  if (terms.length === 0) return [];
+  const phrase = terms.join(' ');
+  return index
+    .map(({entry, position, title, text}) => {
       if (!terms.every((term) => text.includes(term))) return null;
-      const score = terms.reduce(
+      const score = (title === phrase ? 1000 : title.startsWith(phrase) ? 100 : 0) + terms.reduce(
         (sum, term) => sum + (title === term ? 10 : title.startsWith(term) ? 5 : 1),
         0,
       );
@@ -41,4 +49,8 @@ export function searchEntries(
     .filter((result) => result !== null)
     .sort((a, b) => b.score - a.score || a.position - b.position)
     .map(({entry}) => entry);
+}
+
+export function searchEntries(entries: readonly SearchEntry[], query: string): SearchEntry[] {
+  return searchPreparedEntries(prepareSearchIndex(entries), query);
 }

@@ -147,7 +147,7 @@ async function measure(page, target, conditions, action, eventName = 'click') {
       const check = () => {
         const links = [...document.querySelectorAll('dialog[open] ul a')];
         const satisfied = (kind) => {
-          if (kind === 'dialogVisible') return Boolean(document.querySelector('dialog[open] input[type="search"]'));
+          if (kind === 'dialogVisible') return Boolean(document.querySelector('dialog[open] input[role="searchbox"], dialog[open] input[type="search"]'));
           if (kind === 'resultsReady') return links.length > 0;
           if (kind === 'filtered') return document.querySelector('dialog[open] input')?.value === 'w' && links.length === 1 && links[0].pathname.endsWith('/where');
           if (kind === 'categoryOpen') return element.getAttribute('aria-expanded') === 'true';

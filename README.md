@@ -150,7 +150,8 @@ npm run typecheck:tests
 La suite de Playwright usa Chromium y siete tamaños: celular de 320 y 390 píxeles,
 celular horizontal, iPad en vertical y horizontal, laptop y escritorio. Comprueba
 navegación, resultados SQL, ausencia de desbordamientos, menús, búsqueda, selección
-de color, persistencia, rotación y scroll independiente. Genera cinco capturas por tamaño.
+de color, persistencia, rotación y scroll independiente. Incluye búsqueda compartida,
+cargas tardías, reintento, teclado y composición de texto. Genera seis capturas por tamaño.
 
 ~~~sh
 npx playwright install chromium
@@ -165,6 +166,10 @@ Los resultados JSON se guardan en test-results/results.json; las capturas de err
 y trazas, en test-results/artifacts. La suite compila en .ui-build y levanta su propio
 servidor en el puerto 4173, sin usar el servidor de desarrollo del puerto 3000.
 Para probar un servidor ya preparado, define PLAYWRIGHT_BASE_URL.
+
+La salida de terminal usa puntos. Una comprobación global detecta si falta Chromium
+antes de iniciar las pruebas; si es necesario, ejecuta `npx playwright install chromium`.
+En local se detiene tras el primer fallo; el detalle queda en los informes HTML/JSON.
 
 ## Editar un concepto
 
@@ -191,14 +196,22 @@ así que esos campos no se repiten en el frontmatter de cada concepto.
 de la definición breve de lectura.
 
 El índice de búsqueda y la navegación utilizan metadata, sin importar los
-cuerpos ni las tablas de todas las fichas. La consulta de SELECT que todavía
-aparece como vista previa en la portada está compartida en `sql-preview.ts`.
+cuerpos ni las tablas de todas las fichas.
 La página SELECT incluye el formato mínimo de referencia. SELECT y FROM se
 explican juntos: una variante muestra todas las columnas y otra, varias columnas
 concretas. Los ejemplos usan la tabla productos, con nombre, categoría y precio.
 
-El buscador acepta términos como “filtrar” y consultas sin acentos. Se abre con
-Ctrl K o ⌘ K. El índice se descarga al abrirlo.
+La portada tiene un campo de búsqueda. Acepta términos como «filtrar», «cómo
+filtrar» o «qué es SELECT», sin distinguir acentos o mayúsculas. El campo y el
+diálogo del encabezado comparten consulta, resultados y caché. El índice se
+descarga al enfocar el campo o abrir el diálogo, una sola vez; un fallo permite
+reintentar. Se muestran diez resultados por lote.
+
+Ctrl K o ⌘ K abre el diálogo. Las flechas recorren resultados, Enter abre el
+primero o el enlace enfocado y Esc cierra el diálogo conservando lo escrito.
+Elegir un resultado limpia la consulta. Limpiar el campo recupera el contenido
+de portada que permanecía oculto mientras se buscaba. La búsqueda no guarda
+consultas ni envía datos a un servicio externo.
 
 ## Referencia de rendimiento y capturas
 

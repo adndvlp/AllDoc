@@ -2,7 +2,7 @@
 
 **Documento:** especificación funcional y diseño técnico.  
 **Fecha:** 12 de noviembre de 2026.  
-**Estado:** puntos 1 y 2 completados; el rediseño visual está pendiente.
+**Estado:** puntos 1, 2 y 3 completados; continúan pendientes los puntos 4 a 8.
 
 **Alcance:** toda la propuesta de mejora de la landing y la app, sin dividirla en entregas parciales.  
 **Base:** Docusaurus, React, TypeScript, MDX, CSS Modules y Webpack.
@@ -328,7 +328,7 @@ Se usarán Chrome/Edge, Firefox y Safari actuales como objetivo funcional, con c
 
 ### 12.1 Fuentes de datos
 
-La metadata necesaria para navegar está separada del cuerpo de los apuntes. El catálogo, la navegación de áreas y el índice de búsqueda utilizan esa metadata. Las fuentes de datos de esta sección están implementadas; los componentes de la sección 12.2 corresponden al trabajo posterior.
+La metadata necesaria para navegar está separada del cuerpo de los apuntes. El catálogo, la navegación de áreas y el índice de búsqueda utilizan esa metadata. Las fuentes de datos de esta sección están implementadas; la sección 12.2 distingue los componentes implementados de los pendientes.
 
 | Archivo | Responsabilidad |
 | --- | --- |
@@ -380,15 +380,17 @@ flowchart TD
 
 ### 12.2 Componentes y estado
 
-| Pieza propuesta | Responsabilidad |
-| --- | --- |
-| `Catalog` | Renderizar jerarquía compacta, recuentos, categorías y conceptos |
-| `HomeSearch` | Campo y resultados en el flujo de la landing |
-| `SearchProvider` | Consulta, superficie activa, carga/caché del índice y apertura única del diálogo |
-| `PersonalLibraryProvider` | Hidratar, validar, actualizar y persistir recientes y favoritos |
-| `PersonalShortcuts` | Presentar recientes/favoritos y sus expansiones |
-| `FavoriteButton` | Guardar o quitar un concepto y exponer su estado accesible |
-| `AreaSwitcher` | Elegir área en el encabezado compacto y conservar las tres opciones |
+| Pieza | Responsabilidad | Estado |
+| --- | --- | --- |
+| `Catalog` | Renderizar jerarquía compacta, recuentos, categorías y conceptos | Pendiente |
+| `HomeSearch` | Campo y resultados en el flujo de la landing | Implementado |
+| `SearchProvider` | Consulta, superficie activa y carga/caché del índice | Implementado |
+| `SearchDialog` | Diálogo nativo único y atajo global | Implementado |
+| `SearchResults` | Estados, enlaces, teclado y paginación comunes | Implementado |
+| `PersonalLibraryProvider` | Hidratar, validar, actualizar y persistir recientes y favoritos | Pendiente |
+| `PersonalShortcuts` | Presentar recientes/favoritos y sus expansiones | Pendiente |
+| `FavoriteButton` | Guardar o quitar un concepto y exponer su estado accesible | Pendiente |
+| `AreaSwitcher` | Elegir área en el encabezado compacto y conservar las tres opciones | Pendiente |
 
 Se montan los providers una sola vez mediante el wrapper `src/theme/Root.tsx`, compatible con la renderización estática de Docusaurus. Las lecturas de `window`, `localStorage`, teclado y ubicación que lo requieran ocurren en cliente, con limpieza de listeners. Estado local de componentes para resultados desplegados y categorías; no se incorpora una librería global de estado para estas colecciones pequeñas.
 
@@ -489,7 +491,7 @@ Las siguientes tareas expresan dependencias técnicas; todas forman parte del mi
 | --- | --- | --- |
 | 1 | Registrar capturas, tamaños de bundle y tiempos de referencia | Completado: [referencia verificada](../benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484/README.md) para la comparación de CA-23 |
 | 2 | Introducir metadata canónica y catálogo compartido; adaptar SQL, búsqueda y sidebar | Completado: [verificación](verification/point-2.md) de rutas, contenido, jerarquía y fuentes de datos |
-| 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | CA-06 a CA-09 |
+| 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | Completado: [verificación](verification/point-3.md) de CA-06 a CA-09 |
 | 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | CA-10 a CA-13 |
 | 5 | Componer landing y páginas de área con jerarquía compacta | CA-01, CA-04, CA-05 |
 | 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | CA-14 a CA-17, CA-25 |
@@ -508,7 +510,13 @@ Se implementaron la metadata de conceptos con IDs globales y el catálogo de las
 
 Pasaron 28 pruebas, ambos chequeos de tipos y el build de producción. Las diez rutas mantienen el mismo HTML renderizado tras normalizar scripts y referencias a bundles; las ocho consultas, sus resultados y palabras clave coinciden con el estado previo. El cuerpo de las fichas SQL se sirve desde un chunk compartido de las páginas de apuntes. [Evidencia y alcance de la verificación](verification/point-2.md).
 
-La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 y 2.
+### Registro del punto 3
+
+La portada incorpora un campo real de búsqueda y comparte consulta, índice y caché con el diálogo del encabezado. Existe un único diálogo nativo y un atajo global. El índice se solicita al enfocar o abrir, comparte una promesa mientras carga y puede reintentarse tras un fallo. Se conserva la consulta al cerrar y se limpia al elegir un resultado. Se incluyeron las consultas con palabras auxiliares, ranking, resultados en lotes de diez, estados de carga/vacío/error y navegación por teclado compatible con composición de texto.
+
+Pasaron 35 pruebas de código, ambos chequeos de tipos y el build. La ejecución de navegador, realizada desde la terminal del usuario, terminó con 99 aprobadas y seis omisiones previstas, sin fallos ni pruebas inestables. Se revisaron las 21 capturas de portada, búsqueda en portada y diálogo en los siete tamaños. [Verificación y límites](verification/point-3.md).
+
+La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1, 2 y 3.
 
 ## 16. Guías y fundamentos utilizados
 
