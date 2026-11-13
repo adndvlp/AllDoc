@@ -166,9 +166,10 @@ test('ocho acentos conservan negro puro, contraste y sintaxis; la última elecci
   await go(page, 'limit');
   expect(palettes).toHaveLength(8);
   const summary = page.locator('summary[aria-label^="Elegir color de texto:"]');
-  await summary.click();
   for (const palette of palettes) {
+    await summary.click();
     await summary.locator('..').getByText(palette.name, {exact: true}).click();
+    await expect(summary.locator('..')).not.toHaveAttribute('open');
     await expect(page.locator('html')).toHaveAttribute('data-palette', palette.id);
     const rgb = palette.color.slice(1).match(/../g)!.map((part) => parseInt(part, 16));
     await expect.poll(() => examples(page).first().evaluate((element) => {
@@ -181,7 +182,6 @@ test('ocho acentos conservan negro puro, contraste y sintaxis; la última elecci
     const linear = rgb.map((value) => value / 255).map((value) => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4);
     expect((.2126 * linear[0] + .7152 * linear[1] + .0722 * linear[2] + .05) / .05).toBeGreaterThanOrEqual(4.5);
   }
-  await page.keyboard.press('Escape');
   await page.reload({waitUntil: 'networkidle'});
   await expect(page.locator('html')).toHaveAttribute('data-palette', 'blanco');
   await go(page, 'comentarios');

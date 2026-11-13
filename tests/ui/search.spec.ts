@@ -29,7 +29,10 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await open(page);
   await expect(dialog(page).getByRole('searchbox')).toHaveValue('');
   expect(requests).toBe(1);
-  await expect(page.locator('dialog')).toHaveCount(1);
+  // El menú de temas también usa dialog: se exige un solo buscador montado
+  // y una única ventana abierta, aunque el menú cerrado permanezca en el DOM.
+  await expect(page.locator('dialog[data-search-surface="dialog"]')).toHaveCount(1);
+  await expect(page.locator('dialog[open]')).toHaveCount(1);
 });
 
 test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco', async ({page}) => {

@@ -1,0 +1,74 @@
+{
+  "phase": "first-green-attempt",
+  "stats": {
+    "startTime": "2026-11-13T22:24:30.414Z",
+    "duration": 24419.087,
+    "expected": 7,
+    "skipped": 258,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceSha256": "c240f134fefd33369a7043ca4c546e74be55feca7c7ca8114a0e90b5a743cef5",
+  "testsSha256": "5e08532a30caf5daccd1280a90a5dadd75d19e345fc39aa882a0a1fa3a834825",
+  "testFileSha256": "bf0eb8dc34bbb1bdba04234193b8523fcc5b771105af94d40c34b23045206676",
+  "cases": [
+    {
+      "title": "portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "encabezado compacto: una fila, selector de áreas y controles táctiles sin footer",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "selector de áreas: teclado, cierre, foco y consulta conservada en portada",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "texto al 200%: altura natural, controles sin solaparse y sidebar legible",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "title": "menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte",
+      "project": "celular-pequeno",
+      "status": "failed",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\n  182 |   await drawer.getByRole('link', {name: 'AllDoc', exact: true}).focus();\n  183 |   await page.keyboard.press('Shift+Tab');\n> 184 |   expect(await drawer.evaluate((element) => element.contains(document.activeElement))).toBe(true);\n      |                                                                                        ^\n  185 |   await page.keyboard.press('Escape');\n  186 |   await expect(drawer).toBeHidden();\n  187 |   await expect(toggle).toBeFocused();\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/header.spec.ts:184:88"
+      ]
+    },
+    {
+      "title": "rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando",
+      "project": "celular-pequeno",
+      "status": "interrupted",
+      "errors": []
+    }
+  ],
+  "traceObservation": "El diálogo conserva __playwright_dialog_open_: modal tras Shift+Tab; falla la expectativa inmediata contains(document.activeElement).",
+  "interpretation": "La prueba exigía un ciclo interno estricto que no garantiza el diálogo nativo; se revisará contra el modelo de foco HTML y la exclusión real de controles del fondo."
+}

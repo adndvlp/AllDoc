@@ -1,0 +1,55 @@
+{
+  "phase": "code-validated-ui-pending",
+  "sourceSha256": "c240f134fefd33369a7043ca4c546e74be55feca7c7ca8114a0e90b5a743cef5",
+  "testsSha256": "caa564be6de5c48d8d32e476e13e5cc775f8e99cb344500f71d3f0c8ae5c708b",
+  "tests": [
+    {
+      "path": "tests/ui/catalog.spec.ts",
+      "sha256": "bce71f2497e1131e575619ab504c3885bd247df49d902fe3de6938ce5d28ccbe"
+    },
+    {
+      "path": "tests/ui/global-setup.ts",
+      "sha256": "b0476b2a956225872cd9ef673968a44b53e03735499a3d804561db7022dd46f4"
+    },
+    {
+      "path": "tests/ui/header-helpers.ts",
+      "sha256": "08c110160dde101e513e4ef6eb022d47dc94563e8ddba9e205551d413bfe1b98"
+    },
+    {
+      "path": "tests/ui/header.spec.ts",
+      "sha256": "e6215d40b1478c5d2e18cbc86bfda8ecf251fdcd544d3715465341dc7bea8fe3"
+    },
+    {
+      "path": "tests/ui/notes.spec.ts",
+      "sha256": "b5567c5a8125f6588d02bacdf236583c4a8888ffe5d739b01e7e8aeae1d75353"
+    },
+    {
+      "path": "tests/ui/personal-library.spec.ts",
+      "sha256": "05c780c8f4994f515779601eb8bf952c5d42baa29c776bcd67bef2e720a442f3"
+    },
+    {
+      "path": "tests/ui/responsive.spec.ts",
+      "sha256": "5503114ea0c2ad57959b349df154d198bda58d3c649621c61faeb34f90dae963"
+    },
+    {
+      "path": "tests/ui/search.spec.ts",
+      "sha256": "4de7391db4ab8b68fade762daadaefb0bf9419539810f4bad2e620f460aec81c"
+    }
+  ],
+  "checks": {
+    "unitTests": 49,
+    "applicationTypes": "passed",
+    "testTypes": "passed after search dialog count correction",
+    "productionBuild": "passed",
+    "collectedUITests": 266
+  },
+  "redEvidence": "point-7-red.json",
+  "browserGreen": "pending",
+  "firstBrowserAttempt": "point-7-first-ui.json",
+  "testCorrection": "Se comprueba modalidad real, exclusión de controles de fondo y navegación interior; se permite la transferencia nativa a la interfaz del navegador al llegar al límite.",
+  "secondBrowserAttempt": "point-7-second-ui.json",
+  "testCorrections": [
+    "Se comprueba modalidad real, exclusión de controles de fondo y navegación interior; se permite la transferencia nativa a la interfaz del navegador al llegar al límite.",
+    "Unicidad del buscador por data-search-surface y un único diálogo abierto; el menú cerrado puede permanecer montado."
+  ]
+}

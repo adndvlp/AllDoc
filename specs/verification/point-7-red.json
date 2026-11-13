@@ -1,0 +1,25 @@
+{
+  "phase": "red",
+  "execution": "Playwright ejecutado por el usuario antes de modificar la interfaz",
+  "stats": {
+    "startTime": "2026-11-13T22:04:09.991Z",
+    "duration": 18650.573,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceSha256": "91dffc4d4a2be65eef4e7037324be237f10dde4935c7351bbbc6a694578a44db",
+  "sameAppAsPoint6": true,
+  "testFileSha256": "98411e9f27c9a04e46645b9c99bf264f8c6c53f0917a4e4f38c8594441599194",
+  "failed": [
+    {
+      "file": "header.spec.ts",
+      "title": "encabezado compacto: una fila, selector de áreas y controles táctiles sin footer",
+      "project": "celular",
+      "errors": [
+        "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('.navbar__inner').getByRole('button', { name: /^Elegir área:/ })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('.navbar__inner').getByRole('button', { name: /^Elegir área:/ }) with timeout 7000ms\n  - waiting for locator('.navbar__inner').getByRole('button', { name: /^Elegir área:/ })\n\n\n  59 |   await go(page, '/');\n  60 |   if (page.viewportSize()!.width <= 996) {\n> 61 |     await expect(areaTrigger(page)).toBeVisible();\n     |                                     ^\n  62 |     await expect(areaTrigger(page)).toHaveAccessibleName('Elegir área: Análisis de datos');\n  63 |     await expect(areaTrigger(page)).toHaveAttribute('aria-expanded', 'false');\n  64 |     await expect(header(page).locator('.navbar__toggle')).toBeHidden();\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/header.spec.ts:61:37"
+      ]
+    }
+  ]
+}

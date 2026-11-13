@@ -1,10 +1,8 @@
 import {test, expect, type Page} from '@playwright/test';
+import {chooseHeaderArea, expectSelectedHeaderArea} from './header-helpers';
 
 const library = (page: Page) => page.locator('[data-catalog]');
 const item = (page: Page, id: string) => library(page).locator(`[data-catalog-item="${id}"] > details`);
-const headerAreas = (page: Page) => page.viewportSize()!.width <= 996
-  ? page.getByRole('navigation', {name: 'Áreas de estudio', exact: true})
-  : page.locator('.navbar__inner > .navbar__items').first();
 const search = (page: Page) => page.locator('[data-search-surface="inline"]').getByRole('searchbox');
 async function go(page: Page, route = '/') {
   await page.goto(route, {waitUntil: 'networkidle'});
@@ -65,29 +63,27 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
   const before = await page.evaluate(() => ({recents: localStorage.getItem('alldoc-recents-v1'), favorites: localStorage.getItem('alldoc-favorites-v1')}));
   await library(page).getByLabel('SQL', {exact: true}).click();
   await search(page).fill('filtrar');
-  await headerAreas(page).getByRole('button', {name: 'Desarrollo web', exact: true}).click();
+  await chooseHeaderArea(page, 'Desarrollo web');
   await expect(page).toHaveURL(/\/$/);
   await expect(search(page)).toHaveValue('filtrar');
   await expect(page.locator('[data-search-surface="inline"]').getByRole('link')).toContainText('WHERE');
-  await expect(headerAreas(page).getByRole('button', {name: 'Desarrollo web', exact: true})).toHaveAttribute('aria-pressed', 'true');
+  await expectSelectedHeaderArea(page, 'Desarrollo web');
   await page.getByRole('button', {name: 'Limpiar búsqueda', exact: true}).click();
   await expect(library(page)).toHaveAttribute('data-catalog', 'desarrollo-web');
   await expect(library(page).getByText('Sin apuntes todavía', {exact: true})).toBeVisible();
   await expect(page.getByRole('region', {name: 'Favoritos', exact: true}).getByRole('link')).toContainText('SELECT');
   await expect(page.getByRole('region', {name: 'Recientes', exact: true}).getByRole('link')).toContainText('WHERE');
-  await headerAreas(page).getByRole('button', {name: 'Análisis de datos', exact: true}).click();
+  await chooseHeaderArea(page, 'Análisis de datos');
   await expect(library(page).locator('details[open]')).toHaveCount(0);
-  await headerAreas(page).getByRole('button', {name: 'IA', exact: true}).click();
+  await chooseHeaderArea(page, 'IA');
   await page.reload({waitUntil: 'networkidle'});
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   expect(await page.evaluate(() => ({recents: localStorage.getItem('alldoc-recents-v1'), favorites: localStorage.getItem('alldoc-favorites-v1')}))).toEqual(before);
-  if (page.viewportSize()!.width <= 996) {
-    await page.locator('.navbar__toggle').click();
-    await page.locator('.navbar-sidebar').getByRole('button', {name: 'IA', exact: true}).click();
-    await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
-    await expect(library(page)).toHaveAttribute('data-catalog', 'ia');
-    await expect(page).toHaveURL(/\/$/);
-  }
+  await chooseHeaderArea(page, 'IA');
+  await expectSelectedHeaderArea(page, 'IA');
+  await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
+  await expect(library(page)).toHaveAttribute('data-catalog', 'ia');
+  await expect(page).toHaveURL(/\/$/);
 });
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
@@ -100,7 +96,7 @@ test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías
   await expect(page).toHaveScreenshot('area.png');
   if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
   for (const [areaId, title] of [['desarrollo-web', 'Desarrollo web'], ['ia', 'IA']]) {
-    await headerAreas(page).getByRole('link', {name: title, exact: true}).click();
+    await chooseHeaderArea(page, title);
     await expect(page).toHaveURL(new RegExp(`/apuntes/${areaId}$`));
     await expect(page.getByRole('heading', {level: 1, name: title, exact: true})).toHaveCount(1);
     await expect(library(page)).toHaveAttribute('data-catalog', areaId);

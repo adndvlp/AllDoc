@@ -1,0 +1,279 @@
+{
+  "phase": "second-green-attempt",
+  "stats": {
+    "startTime": "2026-11-13T22:30:53.218Z",
+    "duration": 41613.600000000006,
+    "expected": 36,
+    "skipped": 229,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceSha256": "c240f134fefd33369a7043ca4c546e74be55feca7c7ca8114a0e90b5a743cef5",
+  "testsSha256": "77ef756e58e6ad86a11f697404b782b2e0be0f281de388a322b80e0af8bf065b",
+  "searchTestFileSha256": "467733fb812ee92e1896f00d418d5c95645cc9a2d9361bf5d53964e845e81194",
+  "cases": [
+    {
+      "file": "catalog.spec.ts",
+      "title": "portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "catalog.spec.ts",
+      "title": "cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "catalog.spec.ts",
+      "title": "páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "catalog.spec.ts",
+      "title": "buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "encabezado compacto: una fila, selector de áreas y controles táctiles sin footer",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "selector de áreas: teclado, cierre, foco y consulta conservada en portada",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "texto al 200%: altura natural, controles sin solaparse y sidebar legible",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "header.spec.ts",
+      "title": "paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "una envoltura por ejemplo, tipografía legible y contenido esencial compacto",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "resultados independientes, tabla semántica y scroll horizontal limitado al resultado",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "copiar cada variante conserva la consulta completa y mantiene la posición del contenido",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "anterior y siguiente conservan rutas, teclado y alineación con la ficha",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "notes.spec.ts",
+      "title": "ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "almacenamiento lleno: lectura, navegación y favoritos siguen en memoria",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "personal-library.spec.ts",
+      "title": "dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "inicio sin desbordamientos",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "apunte compacto y resultados legibles",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "grupos contraídos, logos y navegación desde el menú",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "buscador accesible y dentro de la pantalla",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "selector de texto visible y elección persistente",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "la navegación se adapta al girar el dispositivo",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "responsive.spec.ts",
+      "title": "las áreas se pueden abrir desde el encabezado",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "buscador de portada: carga diferida, consulta pedagógica y navegación por teclado",
+      "project": "celular-pequeno",
+      "status": "failed",
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('dialog')\nExpected: 1\nReceived: 2\nTimeout:  7000ms\n\nCall log:\n  - Expect \"toHaveCount\" locator('dialog') with timeout 7000ms\n  - waiting for locator('dialog')\n    18 × locator resolved to 2 elements\n       - unexpected value \"2\"\n\n\n  30 |   await expect(dialog(page).getByRole('searchbox')).toHaveValue('');\n  31 |   expect(requests).toBe(1);\n> 32 |   await expect(page.locator('dialog')).toHaveCount(1);\n     |                                        ^\n  33 | });\n  34 |\n  35 | test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco', async ({page}) => {\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/search.spec.ts:32:40"
+      ]
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "una carga tardía conserva lo escrito y no vuelve a abrir el diálogo",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "error del índice y reintento visible sin perder la consulta",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "sin coincidencias, solo auxiliares y Enter durante composición IME",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "diálogo ajustado a un viewport visual reducido por teclado",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "search.spec.ts",
+      "title": "el diálogo contiene el scroll sin desplazar el apunte del fondo",
+      "project": "celular-pequeno",
+      "status": "passed",
+      "errors": []
+    }
+  ],
+  "failedExpectation": "Se esperaba un solo dialog global; hay un buscador y un menú de temas cerrado.",
+  "headerCasesPassed": 6
+}

@@ -502,7 +502,7 @@ que motiva el cambio. Las capturas complementan las aserciones, sin sustituirlas
 | 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | Completado: [verificación](verification/point-4.md) de CA-10 a CA-13 |
 | 5 | Componer landing y páginas de área con jerarquía compacta | Completado: [verificación](verification/point-5.md) de CA-01, CA-04 y CA-05 |
 | 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | Completado con TDD: [verificación](verification/point-6.md) de CA-14 a CA-17 y CA-25 |
-| 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | CA-18 a CA-21 |
+| 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | Completado con TDD: [verificación](verification/point-7.md) de CA-18 a CA-21 en Chromium emulado |
 | 8 | Ejecutar verificación, revisar imágenes, medir y corregir regresiones | CA-01 a CA-25, informe de resultados y limitaciones reales |
 
 ### Registro del punto 1
@@ -545,9 +545,17 @@ Las ocho consultas y sus resultados se conservan. Los resultados permanecen cerr
 
 Pasaron 49 pruebas de código, ambos chequeos de tipos y el build. La fase verde de navegador terminó con 218 aprobadas y seis omisiones previstas, sin fallos ni inestables; se revisaron 21 capturas en siete tamaños. [Evidencia roja/verde, verificación y límites](verification/point-6.md).
 
-Al 200% quedan solapamientos del encabezado y ajuste excesivo de etiquetas del sidebar en ciertas anchuras. Se registran para el punto 7; CA-18 a CA-21 siguen pendientes y este registro no acredita la accesibilidad global del shell.
+Al cerrar el punto 6 quedaban solapamientos del encabezado al 200% y ajuste excesivo de etiquetas del sidebar en ciertas anchuras. Su corrección y verificación se acreditan en el registro del punto 7; el informe histórico del punto 6 conserva sus límites originales.
 
-La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 6.
+### Registro del punto 7
+
+Se desarrolló con TDD y se registró el fallo funcional del selector ausente antes de modificar la aplicación. En móvil, una sola fila reúne inicio o menú, área, búsqueda y color. En escritorio se conservan las tres áreas y una container query cambia al selector cuando el texto ampliado necesita espacio. El encabezado crece de forma natural y los paneles conservan scroll independiente, sin footer.
+
+El menú móvil es un diálogo nativo con temas, enlace a inicio, cierre exterior, Esc y retorno del foco. Áreas y paleta comparten las reglas de cierre; elegir una opción cierra el selector. El sidebar usa ancho relativo para mejorar sus etiquetas al 200%. Se mantienen catálogo, rutas, conceptos, logos y paletas.
+
+Pasaron las 49 pruebas de código, ambos chequeos de tipos y el build. La fase verde terminó con 260 aprobadas, seis omisiones previstas y ningún fallo o resultado inestable. Se revisaron 39 referencias visuales en siete tamaños, incluidos encabezados al 200%, menús, paleta y buscador. [Evidencia roja/verde, verificación y límites](verification/point-7.md). La emulación no acredita una revisión física de Safari/iOS; la verificación global y las mediciones corresponden al punto 8.
+
+La implementación completa del rediseño requiere la evidencia del punto 8. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 7.
 
 ## 16. Guías y fundamentos utilizados
 

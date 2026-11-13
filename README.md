@@ -134,11 +134,14 @@ el espacio restante de la ventana y tienen scroll independiente: cada panel
 solo se desplaza cuando su contenido supera la altura disponible. Llegar al
 final de un panel no desplaza el otro ni la página completa.
 
-En móvil y tablet de hasta 996 píxeles, las áreas permanecen como pestañas en el
-encabezado y los temas se abren desde el menú. En pantallas más anchas el sidebar
-permanece visible. Se respetan las zonas seguras del dispositivo y la altura
-visible del navegador. Buscador y selector de color tienen scroll interno cuando
-lo necesitan; las consultas se ajustan al ancho disponible en celulares.
+En móvil y tablet de hasta 996 píxeles, un selector de áreas comparte una sola
+fila con inicio o menú, búsqueda y color. Los temas se abren en un diálogo con
+enlace a inicio; en pantallas más anchas el sidebar permanece visible. El
+encabezado crece con el texto y también usa el selector cuando sus áreas no
+caben cómodamente. Se respetan las zonas seguras y la altura visible del
+navegador. Los selectores se cierran con Esc o al elegir, devolviendo el foco.
+Buscador y selectores tienen scroll interno cuando lo necesitan; las consultas
+se ajustan al ancho disponible en celulares.
 
 ## Pruebas
 

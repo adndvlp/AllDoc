@@ -1,5 +1,6 @@
 import {test, expect} from '@playwright/test';
 import type {Locator, Page} from '@playwright/test';
+import {chooseHeaderArea} from './header-helpers';
 
 const selectRoute = '/apuntes/analisis-de-datos/sql/select';
 const browserErrors = new WeakMap<Page, string[]>();
@@ -154,6 +155,10 @@ test('selector de texto visible y elección persistente', async ({page}) => {
   await selector.getByText('Violeta', {exact: true}).click();
   await expect(page.locator('html')).toHaveAttribute('data-palette', 'violeta');
   await expect(selector.locator('input[value="violeta"]')).toBeChecked();
+  await expect(selector).not.toHaveAttribute('open');
+  await expect(summary).toBeFocused();
+  // Captura del selector abierto con la elección ya aplicada.
+  await summary.click();
   await expect(page).toHaveScreenshot('color-texto.png');
   await page.reload({waitUntil: 'networkidle'});
   await expect(page.locator('html')).toHaveAttribute('data-palette', 'violeta');
@@ -171,7 +176,7 @@ test('la navegación se adapta al girar el dispositivo', async ({page}, testInfo
   await expect(page.getByRole('heading', {name: 'SELECT', exact: true})).toBeVisible();
   if (rotated.width <= 996) {
     await expect(page.locator('.navbar__toggle')).toBeVisible();
-    await expect(page.getByRole('navigation', {name: 'Áreas de estudio', exact: true})).toBeVisible();
+    await expect(page.locator('.navbar__inner').getByRole('button', {name: /^Elegir área:/})).toBeVisible();
   } else {
     await expect(page.locator('.navbar__toggle')).toBeHidden();
     await expect(page.locator('.theme-doc-sidebar-container')).toBeVisible();
@@ -185,14 +190,11 @@ test('la navegación se adapta al girar el dispositivo', async ({page}, testInfo
 
 test('las áreas se pueden abrir desde el encabezado', async ({page}) => {
   await openPage(page);
-  const navigation = page.viewportSize()!.width <= 996
-    ? page.getByRole('navigation', {name: 'Áreas de estudio', exact: true})
-    : page.locator('.navbar__inner > .navbar__items').first();
-  await navigation.getByRole('link', {name: 'Desarrollo web', exact: true}).click();
+  await chooseHeaderArea(page, 'Desarrollo web');
   await expect(page).toHaveURL(/\/apuntes\/desarrollo-web$/);
   await expect(page.getByRole('heading', {name: 'Desarrollo web', exact: true})).toBeVisible();
   await noPageOverflow(page);
-  await navigation.getByRole('link', {name: 'IA', exact: true}).click();
+  await chooseHeaderArea(page, 'IA');
   await expect(page).toHaveURL(/\/apuntes\/ia$/);
   await noPageOverflow(page);
 });

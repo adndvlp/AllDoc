@@ -1,5 +1,6 @@
 import {test, expect, type Page} from '@playwright/test';
 import {RECENTS_KEY, FAVORITES_KEY} from '../../src/lib/personal-library';
+import {goHome} from './header-helpers';
 
 const id = (name: string) => `analisis-de-datos/sql/${name}`;
 const route = (name: string) => `/apuntes/${id(name)}`;
@@ -7,7 +8,6 @@ const recents = (page: Page) => page.getByRole('region', {name: 'Recientes', exa
 const favorites = (page: Page) => page.getByRole('region', {name: 'Favoritos', exact: true});
 const search = (page: Page) => page.locator('[data-search-surface="inline"]').getByRole('searchbox');
 const star = (page: Page) => page.getByRole('button', {name: /^(Guardar en favoritos|Quitar de favoritos)$/});
-const homeLink = (page: Page) => page.locator('.navbar__inner').getByRole('link', {name: 'AllDoc', exact: true});
 async function go(page: Page, path = '/') {
   await page.goto(path, {waitUntil: 'networkidle'});
   await expect(page.locator('html')).toHaveAttribute('data-has-hydrated', 'true');
@@ -62,7 +62,7 @@ test('favorito accesible: respuesta sin desplazamiento, persistencia y foco al q
   expect(await page.locator('[data-sql-concept]').boundingBox()).toEqual(before);
   await page.reload({waitUntil: 'networkidle'});
   await expect(star(page)).toHaveAttribute('aria-pressed', 'true');
-  await homeLink(page).click();
+  await goHome(page);
   await expect(favorites(page).getByRole('link')).toHaveText(['SELECTSQL · Análisis de datos']);
   const visited = await storedRecents(page);
   const remove = favorites(page).getByRole('button', {name: 'Quitar SELECT de favoritos'});
@@ -146,7 +146,7 @@ for (const mode of ['bloqueado', 'lleno'] as const) {
     await star(page).click();
     await expect(star(page)).toHaveAttribute('aria-pressed', 'true');
     await expect(page.getByRole('status').filter({hasText: 'Guardado en esta sesión'})).toBeVisible();
-    await homeLink(page).click();
+    await goHome(page);
     await expect(favorites(page).getByRole('link')).toContainText('SELECT');
     await expect(recents(page).getByRole('link')).toContainText('SELECT');
     await favorites(page).getByRole('link').click();
@@ -170,7 +170,7 @@ test('dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra c
   await other.locator('[data-catalog]').getByLabel('SQL', {exact: true}).click();
   await other.locator('[data-catalog]').getByRole('link').filter({hasText: 'WHERE'}).click();
   await expect(other).toHaveURL(/\/where$/);
-  await homeLink(page).click();
+  await goHome(page);
   await expect(recents(page).getByRole('link').first()).toContainText('WHERE');
   await expect(recents(page).getByRole('link')).toHaveCount(2);
   await other.evaluate((key) => localStorage.setItem(key, JSON.stringify({version: 1, conceptIds: ['retirado', 'analisis-de-datos/sql/limit']})), FAVORITES_KEY);

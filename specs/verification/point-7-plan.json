@@ -1,0 +1,13 @@
+{
+  "phase": "awaiting-functional-red",
+  "sourceSha256": "91dffc4d4a2be65eef4e7037324be237f10dde4935c7351bbbc6a694578a44db",
+  "sameAppAsPoint6": true,
+  "testFile": "tests/ui/header.spec.ts",
+  "testFileSha256": "98411e9f27c9a04e46645b9c99bf264f8c6c53f0917a4e4f38c8594441599194",
+  "newCases": 6,
+  "projects": 7,
+  "testTypes": "passed",
+  "localBrowserAttempt": "serve:ui abortó por límite de memoria; sondeo HTTP mínimo rechazado con listen EPERM: operation not permitted 127.0.0.1. No acredita un fallo funcional",
+  "redCommand": "npm run test:ui -- tests/ui/header.spec.ts --project=celular -g \"encabezado compacto\"",
+  "expectedFunctionalFailure": "El selector de áreas del encabezado compacto todavía no existe"
+}

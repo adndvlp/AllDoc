@@ -50,13 +50,8 @@ const config: Config = {
       title: 'AllDoc',
       logo: {alt: '', src: 'img/mark.svg', width: 30, height: 30},
       hideOnScroll: false,
-      items: [
-        {type: 'custom-area', areaId: 'analisis-de-datos', position: 'left'},
-        {type: 'custom-area', areaId: 'desarrollo-web', position: 'left'},
-        {type: 'custom-area', areaId: 'ia', position: 'left'},
-        {type: 'custom-palette', position: 'right'},
-        {type: 'search', position: 'right'},
-      ],
+      // Navbar/Content compone áreas y controles a partir del catálogo común.
+      items: [],
     },
     docs: {
       sidebar: {hideable: false, autoCollapseCategories: false},
