@@ -2,6 +2,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {themes} from 'prism-react-renderer';
 import {paletteBootstrapScript} from './src/content/palettes';
+import {parseConceptFrontMatter} from './src/lib/concept-front-matter.ts';
+import {docsBasePath} from './src/content/concepts.ts';
 
 const config: Config = {
   title: 'AllDoc',
@@ -15,6 +17,7 @@ const config: Config = {
     {tagName: 'script', attributes: {}, innerHTML: paletteBootstrapScript},
   ],
   markdown: {
+    parseFrontMatter: parseConceptFrontMatter,
     hooks: {onBrokenMarkdownLinks: 'throw'},
   },
   i18n: {
@@ -27,7 +30,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: 'apuntes',
+          routeBasePath: docsBasePath.slice(1),
           sidebarPath: './sidebars.ts',
           showLastUpdateAuthor: false,
           showLastUpdateTime: false,

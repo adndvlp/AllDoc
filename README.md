@@ -168,12 +168,31 @@ Para probar un servidor ya preparado, define PLAYWRIGHT_BASE_URL.
 
 ## Editar un concepto
 
-Edita src/content/sql.ts. Cada ficha tiene una definición breve, una o varias
-formas de hacer algo y una idea para recordar. Cada variante incluye el ejemplo,
-una aclaración corta y el resultado opcional.
+La metadata común se edita en [src/content/concepts.ts](src/content/concepts.ts):
+ID global, área, herramienta, título, descripción breve, etiqueta y orden.
+Las rutas se derivan del ID, por ejemplo `analisis-de-datos/sql/select`.
+El catálogo de las tres áreas, sus herramientas y grupos se define en
+[src/content/catalog.ts](src/content/catalog.ts); el sidebar se genera desde él.
+Las herramientas vacías conservan su lugar y solo los conceptos publicados
+aportan enlaces, recuentos y entradas de búsqueda.
 
-Las páginas MDX y el buscador reutilizan esas fichas.
-Para añadir una ficha nueva, agrega sus datos y una página MDX en la carpeta SQL.
+Los ejemplos, resultados, recordatorios y notas SQL se editan en
+[src/content/sql.ts](src/content/sql.ts), vinculados a la metadata por ID global.
+Cada variante incluye el ejemplo, una aclaración corta y el resultado opcional.
+Las palabras clave de búsqueda están en
+[src/content/search-keywords.ts](src/content/search-keywords.ts).
+
+Para añadir un concepto, registra su metadata, cuerpo, palabras clave y página
+MDX en la herramienta correspondiente. Las páginas SQL actuales siguen usando
+`<SqlConceptCard conceptId="select" />`; también se admite su ID global.
+Docusaurus obtiene título, descripción, orden y slug desde la metadata común,
+así que esos campos no se repiten en el frontmatter de cada concepto.
+`seoDescription` permite conservar una descripción para buscadores diferente
+de la definición breve de lectura.
+
+El índice de búsqueda y la navegación utilizan metadata, sin importar los
+cuerpos ni las tablas de todas las fichas. La consulta de SELECT que todavía
+aparece como vista previa en la portada está compartida en `sql-preview.ts`.
 La página SELECT incluye el formato mínimo de referencia. SELECT y FROM se
 explican juntos: una variante muestra todas las columnas y otra, varias columnas
 concretas. Los ejemplos usan la tabla productos, con nombre, categoría y precio.

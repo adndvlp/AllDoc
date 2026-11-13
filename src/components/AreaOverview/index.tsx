@@ -1,6 +1,6 @@
 import Link from '@docusaurus/Link';
 import {areas, type AreaId} from '@site/src/content/areas';
-import {sqlConcepts} from '@site/src/content/sql';
+import {getConceptsForTopic} from '@site/src/content/concepts';
 import Icon from '../Icon';
 import styles from './styles.module.css';
 
@@ -14,7 +14,7 @@ export default function AreaOverview({areaId}: {areaId: AreaId}) {
       {area.available ? (
         <div className={styles.topic}>
           <span className={styles.icon}><Icon name="data" size={26} /></span>
-          <span><strong>SQL</strong><span>Habla con tus datos.</span><small>{sqlConcepts.length} conceptos · Consultas básicas</small></span>
+          <span><strong>SQL</strong><span>Habla con tus datos.</span><small>{getConceptsForTopic(areaId, 'sql').length} conceptos · Consultas básicas</small></span>
         </div>
       ) : (
         <div className={styles.empty}>

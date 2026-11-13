@@ -1,5 +1,5 @@
 import type {IconName} from '../components/Icon';
-import {sqlConcepts} from './sql';
+import {catalog, getTopics} from './catalog.ts';
 
 export type AreaId = 'analisis-de-datos' | 'desarrollo-web' | 'ia';
 
@@ -13,32 +13,12 @@ type Area = {
   available: boolean;
 };
 
-export const areas: Area[] = [
-  {
-    id: 'analisis-de-datos',
-    number: '01',
-    title: 'Análisis de datos',
-    description: 'Consultar, entender y trabajar con datos.',
-    icon: 'data',
-    status: 'SQL · ' + sqlConcepts.length + ' conceptos',
-    available: true,
-  },
-  {
-    id: 'desarrollo-web',
-    number: '02',
-    title: 'Desarrollo web',
-    description: 'Las piezas con las que construyes para la web.',
-    icon: 'web',
-    status: 'Por explorar',
-    available: false,
-  },
-  {
-    id: 'ia',
-    number: '03',
-    title: 'IA',
-    description: 'Ideas y herramientas de inteligencia artificial.',
-    icon: 'ai',
-    status: 'Por explorar',
-    available: false,
-  },
-];
+export const areas: Area[] = catalog.map(({items, sidebarId, ...area}) => {
+  const topics = getTopics(area.id).filter((topic) => topic.concepts.length > 0);
+  const count = topics.reduce((total, topic) => total + topic.concepts.length, 0);
+  return {
+    ...area,
+    status: count ? topics.map((topic) => topic.label).join(', ') + ' · ' + count + (count === 1 ? ' concepto' : ' conceptos') : 'Por explorar',
+    available: count > 0,
+  };
+});

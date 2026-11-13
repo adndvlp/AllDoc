@@ -3,7 +3,11 @@ import type {KeyboardEvent} from 'react';
 import Link from '@docusaurus/Link';
 import Icon from '@site/src/components/Icon';
 import {searchEntries, type SearchEntry} from '@site/src/lib/search';
+import {catalog, getTopics} from '@site/src/content/catalog';
 import styles from './styles.module.css';
+
+const publishedTopics = catalog.flatMap((area) => getTopics(area.id)).filter((topic) => topic.concepts.length > 0);
+const defaultResultLabel = 'PARA RECORDAR' + (publishedTopics.length === 1 ? ' · ' + publishedTopics[0].label : '');
 
 export default function SearchBar() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -85,7 +89,7 @@ export default function SearchBar() {
             <input ref={input} id={labelId + '-input'} type="search" placeholder="¿Qué quieres recordar?" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={focusResult} aria-controls={resultsId} autoComplete="off" autoCapitalize="none" enterKeyHint="search" spellCheck={false} />
             <button type="button" onClick={() => dialog.current?.close()} aria-label="Cerrar buscador"><Icon name="close" size={18} /></button>
           </div>
-          <p className={styles.resultLabel} aria-live="polite">{loading ? 'Buscando tus apuntes…' : error ? 'No se pudo cargar el índice. Cierra el buscador y vuelve a abrirlo.' : query.trim() ? results.length + (results.length === 1 ? ' resultado' : ' resultados') : 'PARA RECORDAR · SQL'}</p>
+          <p className={styles.resultLabel} aria-live="polite">{loading ? 'Buscando tus apuntes…' : error ? 'No se pudo cargar el índice. Cierra el buscador y vuelve a abrirlo.' : query.trim() ? results.length + (results.length === 1 ? ' resultado' : ' resultados') : defaultResultLabel}</p>
           {!loading && !error && (
             <ul ref={resultsList} id={resultsId} className={styles.results} onKeyDown={moveResult} aria-label="Resultados de búsqueda">
               {results.map((entry) => (

@@ -2,7 +2,8 @@
 
 **Documento:** especificación funcional y diseño técnico.  
 **Fecha:** 12 de noviembre de 2026.  
-**Estado:** punto 1 completado y referencia registrada; el rediseño visual está pendiente.  
+**Estado:** puntos 1 y 2 completados; el rediseño visual está pendiente.
+
 **Alcance:** toda la propuesta de mejora de la landing y la app, sin dividirla en entregas parciales.  
 **Base:** Docusaurus, React, TypeScript, MDX, CSS Modules y Webpack.
 
@@ -327,7 +328,7 @@ Se usarán Chrome/Edge, Firefox y Safari actuales como objetivo funcional, con c
 
 ### 12.1 Fuentes de datos
 
-Se separa la metadata necesaria para navegar del cuerpo de los apuntes. Así el encabezado y los accesos personales no necesitan importar todos los ejemplos y tablas. Los archivos nuevos de esta sección son propuestas de implementación.
+La metadata necesaria para navegar está separada del cuerpo de los apuntes. El catálogo, la navegación de áreas y el índice de búsqueda utilizan esa metadata. Las fuentes de datos de esta sección están implementadas; los componentes de la sección 12.2 corresponden al trabajo posterior.
 
 | Archivo | Responsabilidad |
 | --- | --- |
@@ -487,7 +488,7 @@ Las siguientes tareas expresan dependencias técnicas; todas forman parte del mi
 | Orden | Trabajo | Resultado verificable |
 | --- | --- | --- |
 | 1 | Registrar capturas, tamaños de bundle y tiempos de referencia | Completado: [referencia verificada](../benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484/README.md) para la comparación de CA-23 |
-| 2 | Introducir metadata canónica y catálogo compartido; adaptar SQL, búsqueda y sidebar | Rutas/contenido conservados y CA-02, CA-14, CA-22, CA-24 |
+| 2 | Introducir metadata canónica y catálogo compartido; adaptar SQL, búsqueda y sidebar | Completado: [verificación](verification/point-2.md) de rutas, contenido, jerarquía y fuentes de datos |
 | 3 | Compartir carga/estado de búsqueda y añadir campo de landing con todos sus estados | CA-06 a CA-09 |
 | 4 | Implementar colecciones locales, registro de visitas, accesos y botón de favorito | CA-10 a CA-13 |
 | 5 | Componer landing y páginas de área con jerarquía compacta | CA-01, CA-04, CA-05 |
@@ -501,7 +502,13 @@ Se implementó `npm run baseline` y se documentó su procedimiento en [benchmark
 
 La captura se ejecutó desde la terminal del usuario y se revisó en el workspace. Se comprobaron hashes, dimensiones, integridad de las muestras y las seis vistas de cada tamaño. [Revisión de evidencia y límites](../benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484/review.md). El punto 1 está completo; CA-23 requiere además comparar con la implementación posterior del rediseño.
 
-La implementación está completa cuando cada criterio aplicable tiene evidencia y se documenta cualquier limitación pendiente. Haber escrito este SDD no acredita todavía cambios visuales, pruebas nuevas o mejoras de rendimiento en la app.
+### Registro del punto 2
+
+Se implementaron la metadata de conceptos con IDs globales y el catálogo de las tres áreas, las 19 herramientas y los cinco grupos actuales. El sidebar y el índice de búsqueda derivan de ese catálogo. Los títulos, descripciones y rutas de las fichas se definen una sola vez; Docusaurus los recibe mediante su parser de frontmatter. Los ejemplos y resultados SQL permanecen separados y las páginas existentes conservan sus IDs cortos mediante un adaptador.
+
+Pasaron 28 pruebas, ambos chequeos de tipos y el build de producción. Las diez rutas mantienen el mismo HTML renderizado tras normalizar scripts y referencias a bundles; las ocho consultas, sus resultados y palabras clave coinciden con el estado previo. El cuerpo de las fichas SQL se sirve desde un chunk compartido de las páginas de apuntes. [Evidencia y alcance de la verificación](verification/point-2.md).
+
+La implementación completa del rediseño requiere la evidencia de los puntos restantes. Los registros anteriores acreditan el alcance concreto de los puntos 1 y 2.
 
 ## 16. Guías y fundamentos utilizados
 

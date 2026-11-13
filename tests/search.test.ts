@@ -4,9 +4,9 @@ import {normalizeSearch, searchEntries} from '../src/lib/search.ts';
 import type {SearchEntry} from '../src/lib/search.ts';
 
 const entries: SearchEntry[] = [
-  {title: 'SQL de un vistazo', description: 'Repasa SELECT y WHERE.', context: 'Análisis de datos / SQL', href: '/repaso', keywords: ['resumen']},
-  {title: 'SELECT', description: 'Elige columnas.', context: 'Análisis de datos / SQL', href: '/select', keywords: ['seleccionar']},
-  {title: 'WHERE', description: 'Filtra con una condición.', context: 'Análisis de datos / SQL', href: '/where', keywords: ['filtrar', 'condición']},
+  {id: 'test/consultas', title: 'Consultas', description: 'Ejemplos de SELECT y WHERE.', context: 'Análisis de datos / SQL', href: '/consultas', keywords: ['ejemplos']},
+  {id: 'test/select', title: 'SELECT', description: 'Elige columnas.', context: 'Análisis de datos / SQL', href: '/select', keywords: ['seleccionar']},
+  {id: 'test/where', title: 'WHERE', description: 'Filtra con una condición.', context: 'Análisis de datos / SQL', href: '/where', keywords: ['filtrar', 'condición']},
 ];
 
 test('encuentra un concepto por lo que hace, sin recordar su nombre', () => {

@@ -1,10 +1,10 @@
 import CodeBlock from '@theme/CodeBlock';
 import {HtmlClassNameProvider} from '@docusaurus/theme-common';
-import {sqlConcepts} from '@site/src/content/sql';
+import {getSqlConcept} from '@site/src/content/sql';
 import styles from './styles.module.css';
 
 export function SqlConceptCard({conceptId}: {conceptId: string}) {
-  const concept = sqlConcepts.find((item) => item.id === conceptId);
+  const concept = getSqlConcept(conceptId);
   if (!concept) throw new Error('Concepto SQL desconocido: ' + conceptId);
 
   const content = (

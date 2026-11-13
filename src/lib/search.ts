@@ -1,4 +1,5 @@
 export type SearchEntry = {
+  id: string;
   title: string;
   description: string;
   context: string;

@@ -1,4 +1,9 @@
-export const sqlBasePath = '/apuntes/analisis-de-datos/sql';
+import {concepts, type Concept, type ConceptId, type ConceptMeta} from './concepts.ts';
+import {selectAllProductsQuery} from './sql-preview.ts';
+
+const sqlMetadata = concepts.filter((concept): concept is Extract<Concept, {areaId: 'analisis-de-datos'; topicId: 'sql'}> =>
+  concept.areaId === 'analisis-de-datos' && concept.topicId === 'sql');
+export const sqlBasePath = sqlMetadata[0].slug.slice(0, sqlMetadata[0].slug.lastIndexOf('/'));
 
 export type SqlExample = {
   title: string;
@@ -7,15 +12,12 @@ export type SqlExample = {
   output: {columns: string[]; rows: string[][]};
 };
 
-export type SqlConcept = {
+export type SqlConcept = Omit<ConceptMeta, 'id'> & {
   id: string;
+  conceptId: string;
   number: string;
-  title: string;
-  label: string;
-  description: string;
   examples: [SqlExample, ...SqlExample[]];
   remember: string;
-  keywords: string[];
   note?: string;
 };
 
@@ -29,18 +31,16 @@ export const sqlTable = {
   ],
 };
 
-// Cada ficha se escribe una sola vez: las páginas y el buscador la reutilizan.
-export const sqlConcepts: SqlConcept[] = [
-  {
-    id: 'select',
-    number: '01',
-    title: 'SELECT',
-    label: 'Consultar una tabla',
-    description: 'Consulta una tabla y elige qué columnas ver.',
+type SqlBody = Pick<SqlConcept, 'examples' | 'remember' | 'note'>;
+type SqlConceptId = Extract<ConceptId, `analisis-de-datos/sql/${string}`>;
+
+// Solo cuerpos. Los títulos, descripciones, rutas y orden vienen de concepts.ts.
+const bodies = {
+  'analisis-de-datos/sql/select': {
     examples: [
       {
         title: 'Todas las columnas',
-        code: 'SELECT * FROM productos;',
+        code: selectAllProductsQuery,
         hint: 'El asterisco (*) pide todas.',
         output: {
           columns: ['nombre', 'categoria', 'precio'],
@@ -62,14 +62,8 @@ export const sqlConcepts: SqlConcept[] = [
       },
     ],
     remember: 'SELECT elige las columnas. FROM indica la tabla.',
-    keywords: ['elegir', 'seleccionar', 'columnas', 'mostrar', 'consultar', 'tabla', 'from', 'origen', 'asterisco', 'todas', 'varias', 'coma', 'especificas', 'productos', 'nombre', 'precio', 'negocio'],
   },
-  {
-    id: 'where',
-    number: '02',
-    title: 'WHERE',
-    label: 'Quedarte con lo que buscas',
-    description: 'Filtra los datos para ver solo los que cumplen una condición.',
+  'analisis-de-datos/sql/where': {
     examples: [{
       title: 'Cumplir una condición',
       code: 'SELECT nombre FROM productos\nWHERE precio >= 1000;',
@@ -77,14 +71,8 @@ export const sqlConcepts: SqlConcept[] = [
       output: {columns: ['nombre'], rows: [['Monitor']]},
     }],
     remember: 'WHERE filtra filas.',
-    keywords: ['filtrar', 'filtro', 'condicion', 'condición', 'mayor', 'igual', 'filas', 'precio', 'productos'],
   },
-  {
-    id: 'order-by',
-    number: '03',
-    title: 'ORDER BY',
-    label: 'Poner en orden',
-    description: 'Ordena el resultado por una columna.',
+  'analisis-de-datos/sql/order-by': {
     examples: [{
       title: 'Del más barato al más caro',
       code: 'SELECT nombre, precio FROM productos\nORDER BY precio ASC;',
@@ -95,14 +83,8 @@ export const sqlConcepts: SqlConcept[] = [
       },
     }],
     remember: 'ASC: de menor a mayor. DESC: de mayor a menor.',
-    keywords: ['ordenar', 'orden', 'ascendente', 'descendente', 'asc', 'desc', 'precio', 'barato', 'caro'],
   },
-  {
-    id: 'limit',
-    number: '04',
-    title: 'LIMIT',
-    label: 'Ver solo unos cuantos',
-    description: 'Limita cuántas filas aparecen en el resultado.',
+  'analisis-de-datos/sql/limit': {
     examples: [
       {
         title: 'Hasta 5 filas completas',
@@ -128,15 +110,9 @@ export const sqlConcepts: SqlConcept[] = [
       },
     ],
     remember: 'LIMIT fija un máximo de filas. Si la tabla tiene menos, verás menos.',
-    keywords: ['limitar', 'maximo', 'máximo', 'cantidad', 'primeros', 'cinco', 'tres', '5', '3', 'filas', 'productos'],
     note: 'Esta forma de LIMIT funciona en PostgreSQL, MySQL y SQLite.',
   },
-  {
-    id: 'comentarios',
-    number: '05',
-    title: 'Comentarios',
-    label: 'Dejar notas en una consulta',
-    description: 'Escribe notas para recordar qué hace tu consulta.',
+  'analisis-de-datos/sql/comentarios': {
     examples: [
       {
         title: 'Una línea o al final',
@@ -152,6 +128,18 @@ export const sqlConcepts: SqlConcept[] = [
       },
     ],
     remember: 'SQL ignora los comentarios al ejecutar la consulta.',
-    keywords: ['comentario', 'comentarios', 'notas', 'anotar', 'documentar', 'guiones', 'bloque', 'linea', 'línea', '--', '/*', '*/'],
   },
-];
+} satisfies Record<SqlConceptId, SqlBody>;
+
+// Adaptador para las páginas MDX actuales, que todavía reciben el ID corto.
+export const sqlConcepts: SqlConcept[] = sqlMetadata.map((metadata) => ({
+  ...metadata,
+  ...bodies[metadata.id],
+  conceptId: metadata.id,
+  id: metadata.id.split('/').at(-1)!,
+  number: String(metadata.order).padStart(2, '0'),
+}));
+
+export function getSqlConcept(id: string): SqlConcept | undefined {
+  return sqlConcepts.find((concept) => concept.id === id || concept.conceptId === id);
+}

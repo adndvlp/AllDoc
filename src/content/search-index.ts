@@ -1,10 +1,17 @@
-import {sqlBasePath, sqlConcepts} from './sql';
+import {catalog, type CatalogArea} from './catalog.ts';
+import {searchKeywords} from './search-keywords.ts';
 import type {SearchEntry} from '../lib/search';
 
-export const entries: SearchEntry[] = sqlConcepts.map((concept) => ({
-  title: concept.title,
-  description: concept.description,
-  context: 'Análisis de datos / SQL',
-  href: sqlBasePath + '/' + concept.id,
-  keywords: concept.keywords,
-}));
+export function buildSearchIndex(areas: readonly CatalogArea[], keywords: Readonly<Record<string, readonly string[]>>): SearchEntry[] {
+  return areas.flatMap((area) => area.items.flatMap((item) => item.kind === 'group' ? [...item.items] : [item])
+    .flatMap((topic) => topic.concepts.map((concept) => ({
+      id: concept.id,
+      title: concept.title,
+      description: concept.description,
+      context: area.title + ' / ' + topic.label,
+      href: concept.slug,
+      keywords: [...(keywords[concept.id] ?? [])],
+    }))));
+}
+
+export const entries = buildSearchIndex(catalog, searchKeywords);

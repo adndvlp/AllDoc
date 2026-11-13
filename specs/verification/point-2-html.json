@@ -1,0 +1,72 @@
+{
+  "method": "Igualdad del HTML generado tras quitar scripts, referencias a assets JS/CSS y comentarios HTML; no sustituye una captura de navegador.",
+  "pages": [
+    {
+      "page": "404.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "90bba51f7d6a5f58c3606e6c2cc03181f17d8477c0a38001a5c15251ac01c16d",
+      "afterSha256": "90bba51f7d6a5f58c3606e6c2cc03181f17d8477c0a38001a5c15251ac01c16d"
+    },
+    {
+      "page": "apuntes/analisis-de-datos.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "feebdc4b3e86ac38a423b62bef37ca751adc34a276c4bd991c1b9a21b10fb305",
+      "afterSha256": "feebdc4b3e86ac38a423b62bef37ca751adc34a276c4bd991c1b9a21b10fb305"
+    },
+    {
+      "page": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "13076d8fc7b75a2cab8a2819783171cc1f5cef5efcb33e1f337a938b09fd9bf7",
+      "afterSha256": "13076d8fc7b75a2cab8a2819783171cc1f5cef5efcb33e1f337a938b09fd9bf7"
+    },
+    {
+      "page": "apuntes/analisis-de-datos/sql/limit.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "b078eb03aa1d18afc5709090925d017b25914fa57e64990b6af5838ae94b7a50",
+      "afterSha256": "b078eb03aa1d18afc5709090925d017b25914fa57e64990b6af5838ae94b7a50"
+    },
+    {
+      "page": "apuntes/analisis-de-datos/sql/order-by.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "308770d2f01159a49e363a2519df4303b6b937543b29c283a6cedd6fb1ab6317",
+      "afterSha256": "308770d2f01159a49e363a2519df4303b6b937543b29c283a6cedd6fb1ab6317"
+    },
+    {
+      "page": "apuntes/analisis-de-datos/sql/select.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "37ff2148235c0b21df7b3a2428855f08d466922286be5b5489464504d6597b0f",
+      "afterSha256": "37ff2148235c0b21df7b3a2428855f08d466922286be5b5489464504d6597b0f"
+    },
+    {
+      "page": "apuntes/analisis-de-datos/sql/where.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "44cb8d04270663068158e8760d32970023f6106761f531f867e49645874759d7",
+      "afterSha256": "44cb8d04270663068158e8760d32970023f6106761f531f867e49645874759d7"
+    },
+    {
+      "page": "apuntes/desarrollo-web.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "c5add329f9145bdc8906f5fa835dbe992257651ef528bab264cd4f390b0fe6d2",
+      "afterSha256": "c5add329f9145bdc8906f5fa835dbe992257651ef528bab264cd4f390b0fe6d2"
+    },
+    {
+      "page": "apuntes/ia.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "47c204ca406aeee26136c679c72e8fa185fe806799958c3e9289522b9e607358",
+      "afterSha256": "47c204ca406aeee26136c679c72e8fa185fe806799958c3e9289522b9e607358"
+    },
+    {
+      "page": "index.html",
+      "sameRenderedHtml": true,
+      "beforeSha256": "97a8b3f0740134a9aac2a836f850c9776676e61b8a1d0073807840c38778c33a",
+      "afterSha256": "97a8b3f0740134a9aac2a836f850c9776676e61b8a1d0073807840c38778c33a"
+    }
+  ],
+  "css": [
+    {
+      "asset": "assets/css/styles.e5e960e3.css",
+      "sameContent": true,
+      "sha256": "dd8706aedc23423e429c21e2c62858b6648e9cece314236b8c01d6c683a71c01"
+    }
+  ]
+}
