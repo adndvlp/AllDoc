@@ -7,6 +7,7 @@ function validateProfile(value: unknown): asserts value is PracticeProfile {
     || !datasetReference(value.defaultDataset)
     || !['browser', 'remote'].includes(value.executionLocation as string)
     || !['planned', 'enabled'].includes(value.availability as string)
+    || (value.editorAvailability !== undefined && !['planned', 'enabled'].includes(value.editorAvailability as string))
     || !record(value.capabilities)
     || !['multipleFiles', 'tables', 'figures', 'preview'].every((key) => typeof (value.capabilities as Record<string, unknown>)[key] === 'boolean')
     || !['none', 'declared'].includes(value.capabilities.network as string)) {

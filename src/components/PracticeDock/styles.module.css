@@ -1,0 +1,19 @@
+.workspace { display: flex; flex: 1 1 0; min-width: 0; min-height: 0; height: 100%; overflow: hidden; }
+.reading { position: relative; flex: 1 1 0; min-width: 0; min-height: 0; height: 100%; overflow: hidden; container: practice-reader / size; }
+.trigger { position: absolute; inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto; display: flex; gap: .6rem; align-items: center; min-height: 44px; padding: .6rem .9rem; max-width: calc(100% - 2rem); color: var(--accent); background: #000; border: 1px solid var(--accent-border); border-radius: .65rem; font: inherit; font-size: .85rem; cursor: pointer; box-shadow: 0 0 0 5px #000; }
+.triggerIcon { font-family: var(--ifm-font-family-monospace); font-weight: 700; }
+.trigger:hover { border-color: var(--accent); }
+@container practice-reader (inline-size < 24rem) or (block-size < 24rem) {
+  .trigger { width: 44px; height: 44px; min-width: 44px; padding: 0; justify-content: center; }
+  .triggerIcon { font-size: 16px; line-height: 1; }
+  .triggerLabel { display: none; }
+}
+.workspace[data-practice-layout='bottom'] { flex-direction: column; }
+.workspace[data-practice-layout='parallel'] > dialog { flex: 0 0 var(--practice-size); width: var(--practice-size); }
+.workspace[data-practice-layout='bottom'] > dialog { flex: 0 0 var(--practice-size); height: var(--practice-size); width: 100%; }
+.separator { flex: 0 0 8px; position: relative; background: #000; touch-action: none; z-index: 1; }
+.separator[aria-orientation='vertical'] { cursor: col-resize; border-inline: 1px solid var(--border-subtle); }
+.separator[aria-orientation='horizontal'] { cursor: row-resize; border-block: 1px solid var(--border-subtle); }
+.separator:hover, .separator:focus-visible { background: var(--accent); outline-offset: -2px; }
+.separator::after { content: ''; position: absolute; inset: 35% 2px; background: var(--border-strong); border-radius: 4px; }
+.separator[aria-orientation='horizontal']::after { inset: 2px 40%; }

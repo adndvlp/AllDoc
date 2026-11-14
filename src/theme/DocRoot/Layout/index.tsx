@@ -3,10 +3,13 @@ import type {Props} from '@theme/DocRoot/Layout';
 import {useLocation} from '@docusaurus/router';
 import {useDocsSidebar} from '@docusaurus/plugin-content-docs/client';
 import DocSidebar from '@theme/DocSidebar';
+import PracticeDock from '@site/src/components/PracticeDock';
+import {usePractice} from '@site/src/components/PracticeProvider';
 import styles from './styles.module.css';
 
 export default function DocRootLayout({children}: Props) {
   const sidebar = useDocsSidebar();
+  const practice = usePractice();
   const {pathname, hash} = useLocation();
   const reader = useRef<HTMLElement>(null);
 
@@ -38,16 +41,16 @@ export default function DocRootLayout({children}: Props) {
           />
         </aside>
       )}
-      <main
+      <PracticeDock><main
         ref={reader}
         className={styles.reader}
         data-scroll-panel="content"
         tabIndex={0}
         aria-label="Contenido del apunte">
-        <div className={'container padding-top--md padding-bottom--lg ' + styles.inner}>
+        <div className={'container padding-top--md padding-bottom--lg ' + styles.inner} data-practice-supported={Boolean(practice.context)}>
           {children}
         </div>
-      </main>
+      </main></PracticeDock>
     </div>
   );
 }

@@ -7,6 +7,9 @@ import {concepts} from '../src/content/concepts.ts';
 import {entries} from '../src/content/search-index.ts';
 import {registration} from './fixtures/practice.ts';
 import {context as practiceContext, engineFixture, environment, memoryRepository, workspace} from './fixtures/practice-session.ts';
+import {createElement} from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import type {RuntimeEvent} from '../src/practice/contracts.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -79,4 +82,35 @@ test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan 
   assert.equal(repo.records.size, 2); assert.equal(engines.calls.active, 0);
   assert.equal(repo.records.get(workspace().id)!.workspace.files[0].content, 'SELECT 8;');
   assert.equal(repo.records.get(workspace(practiceContext('pandas')).id)!.workspace.files[0].content, 'productos.shape');
+});
+
+test('salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor', () => {
+  const {default: Results} = compile<typeof import('../src/components/PracticeResults/index.tsx')>('../src/components/PracticeResults/index.tsx', {'../PracticePanel/styles.module.css': {}});
+  const identity = {protocolVersion: 1 as const, runId: 'test', generation: 1, revision: 2};
+  const events: RuntimeEvent[] = [
+    {...identity, type: 'stream', channel: 'stdout', text: '<script>alert(1)</script>'},
+    {...identity, type: 'table', columns: [{name: 'activo', type: 'boolean'}, {name: 'precio', type: 'integer'}], rows: [[false, null], [true, 500]], truncated: true},
+    {...identity, type: 'error', message: 'error <img>', file: 'consulta.sql', line: 2},
+    {...identity, type: 'end', status: 'error', environmentReset: false},
+  ];
+  const html = renderToStaticMarkup(createElement(Results, {events, revision: 3}));
+  assert.ok(html.includes('&lt;script&gt;')); assert.ok(!html.includes('<script>'));
+  assert.ok(html.includes('scope="col"')); assert.ok(html.includes('false')); assert.ok(html.includes('NULL'));
+  assert.ok(html.includes('anterior')); assert.ok(html.includes('truncada')); assert.ok(html.includes('consulta.sql:2'));
+});
+
+test('panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes', () => {
+  const resultModule = compile<typeof import('../src/components/PracticeResults/index.tsx')>('../src/components/PracticeResults/index.tsx', {'../PracticePanel/styles.module.css': {}});
+  const ws = {...workspace(), id: JSON.stringify(['analisis-de-datos/otro', 'otro', 'productos-basico', 1]), toolKey: 'analisis-de-datos/otro', profileId: 'otro', files: [{path: 'main.otro', content: 'ejemplo', languageId: 'otro'}], activeFile: 'main.otro'};
+  const fixture = {context: {...practiceContext(), toolKey: ws.toolKey, workspaceKey: ws.id, conceptId: ws.toolKey + '/concepto', conceptSlug: '/apuntes/' + ws.toolKey + '/concepto', profile: {...practiceContext().profile, id: 'otro', toolKey: ws.toolKey, languageId: 'otro', label: 'Perfil de prueba'}},
+    state: {phase: 'running', draft: {workspace: ws, status: 'clean'}, schema: {version: 0, entities: []}, events: [], error: null},
+    requested: true, visible: true, error: null};
+  const {default: Panel} = compile<typeof import('../src/components/PracticePanel/index.tsx')>('../src/components/PracticePanel/index.tsx', {
+    '@docusaurus/theme-common/internal': {useNavbarMobileSidebar: () => ({shouldRender: false})},
+    '../PracticeProvider': {usePractice: () => fixture}, '../SearchProvider': {useSearch: () => ({store: {}})},
+    '../Icon': {__esModule: true, default: () => null}, '../PracticeResults': resultModule,
+    '@site/src/lib/dialog-coordination': {suspendDialogEvent: 'test'}, './styles.module.css': {},
+  });
+  const html = renderToStaticMarkup(createElement(Panel, {layout: 'parallel'}));
+  assert.ok(html.includes('Perfil de prueba')); assert.ok(html.includes('Detener')); assert.ok(html.includes('Reiniciar entorno'));
 });

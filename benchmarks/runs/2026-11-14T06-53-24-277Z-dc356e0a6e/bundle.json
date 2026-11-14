@@ -1,0 +1,516 @@
+{
+  "compression": "gzip nivel 9, por archivo; no incluye cabeceras HTTP",
+  "totals": {
+    "js": {
+      "files": 37,
+      "bytes": 1131815,
+      "gzipBytes": 377499
+    },
+    "css": {
+      "files": 1,
+      "bytes": 111604,
+      "gzipBytes": 22358
+    },
+    "html": {
+      "files": 11,
+      "bytes": 316745,
+      "gzipBytes": 81054
+    }
+  },
+  "pages": [
+    {
+      "html": "404.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/limit.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/order-by.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/select.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/where.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/desarrollo-web.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "apuntes/ia.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    },
+    {
+      "html": "index.html",
+      "assets": [
+        "assets/css/styles.8c4b5782.css",
+        "assets/js/main.3b0a9290.js",
+        "assets/js/runtime~main.ca1fee85.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 502354,
+        "gzipBytes": 159016
+      },
+      "css": {
+        "files": 1,
+        "bytes": 111604,
+        "gzipBytes": 22358
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "404.html",
+      "bytes": 10326,
+      "gzipBytes": 3026,
+      "sha256": "42139853452b8270d3dce1429fd6346f2df8bf1937471a739fca5e71a05aaabe"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "bytes": 30180,
+      "gzipBytes": 6744,
+      "sha256": "f65996092e64bc148b6e77f68d5442949b724cbaa989fedd42033fdaa1ad3af1"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "bytes": 28601,
+      "gzipBytes": 6754,
+      "sha256": "daf41a4e654abe0de0e261d7a9141b9071bf66a41aa5590959902a5461b217f8"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/limit.html",
+      "bytes": 28244,
+      "gzipBytes": 6760,
+      "sha256": "9e2a74cc6b01c0dc4e675cf2b9a380ab588a39097f5f59e02e86e6d794b25462"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/order-by.html",
+      "bytes": 26710,
+      "gzipBytes": 6583,
+      "sha256": "eb7262346afd4dea685205ccbfbfd5f43cab609f0440700f57dfb621b07cfddf"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/select.html",
+      "bytes": 27743,
+      "gzipBytes": 6659,
+      "sha256": "a420fa0d093589484de3a26527690a4da7d63ae241af6cbbea26ea94ce271aeb"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/where.html",
+      "bytes": 26502,
+      "gzipBytes": 6563,
+      "sha256": "7c457d1adf4fb2f30ea73ac8122d6370ad34be8fe9997319f2612544e631d332"
+    },
+    {
+      "path": "apuntes/analisis-de-datos.html",
+      "bytes": 63107,
+      "gzipBytes": 16348,
+      "sha256": "c9985da958479d2eb78e7cc8e1918eea807ff067677c2ba83e056616dffbe411"
+    },
+    {
+      "path": "apuntes/desarrollo-web.html",
+      "bytes": 11240,
+      "gzipBytes": 3285,
+      "sha256": "fa4aedf8019b8039e9c7b4d1f53890e1c8d8cd4077a62555ad3072c35976d8f5"
+    },
+    {
+      "path": "apuntes/ia.html",
+      "bytes": 11116,
+      "gzipBytes": 3270,
+      "sha256": "6826c695fa86aeced8a2388dcf1db5fcd4473cf670c5080b8f493dd19b9d2fbb"
+    },
+    {
+      "path": "assets/css/styles.8c4b5782.css",
+      "bytes": 111604,
+      "gzipBytes": 22358,
+      "sha256": "2a4c78b1822fede0df6b8534d7697b5e71eddad66d7c697f8e9ceff0e29f8277"
+    },
+    {
+      "path": "assets/js/17896441.a0a7ed97.js",
+      "bytes": 1313,
+      "gzipBytes": 721,
+      "sha256": "7b8afd1fcb2cfbb95514495889c37faec604a24ea338dc132b01a80d9df5a705"
+    },
+    {
+      "path": "assets/js/17cc07e0.ea9e2a89.js",
+      "bytes": 1869,
+      "gzipBytes": 837,
+      "sha256": "7734fc180a2928231e4c41e594acaaa4a568aff754cd36afb106de0c1457293b"
+    },
+    {
+      "path": "assets/js/193.efa2483c.js",
+      "bytes": 8124,
+      "gzipBytes": 3042,
+      "sha256": "27c5ad7d2c6cf9d576e49f0cdc23a91e51683a569384e4a28bfef866a18bcc7f"
+    },
+    {
+      "path": "assets/js/1df93b7f.c7e49bb2.js",
+      "bytes": 9550,
+      "gzipBytes": 3727,
+      "sha256": "75aa5561add60d74f3975e1e325ee00199946ee711bb0696c8da342e44f76664"
+    },
+    {
+      "path": "assets/js/237.6fe893a5.js",
+      "bytes": 1270,
+      "gzipBytes": 594,
+      "sha256": "67e7046c1b1211274597e48ca3dd0cd89ebe098daea69317fde3835c205a23e7"
+    },
+    {
+      "path": "assets/js/2fcc20c1.1467ade6.js",
+      "bytes": 1948,
+      "gzipBytes": 854,
+      "sha256": "0d58e20fd277cbdebd507a7f167979f0d1dc714a0954de29fec8d9b81f97d0b2"
+    },
+    {
+      "path": "assets/js/30.9c8582ac.js",
+      "bytes": 20390,
+      "gzipBytes": 9253,
+      "sha256": "31849f905365a2ef2db5d732f1322b9adcdfc971c60810afbb55abeb06f6439d"
+    },
+    {
+      "path": "assets/js/436.b782e146.js",
+      "bytes": 954,
+      "gzipBytes": 560,
+      "sha256": "4507f4627fbf79cb566d3a54d7315114f02b98fe2d2bd0f74fd91139d05a0511"
+    },
+    {
+      "path": "assets/js/456.831485a3.js",
+      "bytes": 4964,
+      "gzipBytes": 2052,
+      "sha256": "ff1fb3a141c86c422f607b5c9b10644c1644c18f3606a4dbda65898126b7bb29"
+    },
+    {
+      "path": "assets/js/45a3eb1b.b2468081.js",
+      "bytes": 5747,
+      "gzipBytes": 2264,
+      "sha256": "ee18c184f2938fce011fe354b80a48eeee3723606820dfbe1db364c3afee2b98"
+    },
+    {
+      "path": "assets/js/4fbb0784.eb308468.js",
+      "bytes": 2049,
+      "gzipBytes": 918,
+      "sha256": "c0ae0b2b0bd1a361380163f998a8b35b31bd5436c0e45afcdda4eb924fc1990d"
+    },
+    {
+      "path": "assets/js/5e95c892.6d7ed4b1.js",
+      "bytes": 337,
+      "gzipBytes": 262,
+      "sha256": "83e9543a1cb0babe197d6102769b5fb15665b096d306d7b0ffd470a53e9460a1"
+    },
+    {
+      "path": "assets/js/820.58eb89a2.js",
+      "bytes": 26628,
+      "gzipBytes": 8719,
+      "sha256": "56aaeff6da6870575e68aa6ab9969d02f067e247b850edc5a1b560ad61763531"
+    },
+    {
+      "path": "assets/js/822.83c131e8.js",
+      "bytes": 26880,
+      "gzipBytes": 8528,
+      "sha256": "71c1147198beb5682bae7317a78f544c11916b5679755d233f775b44908b6e7e"
+    },
+    {
+      "path": "assets/js/85.46320a57.js",
+      "bytes": 339554,
+      "gzipBytes": 109124,
+      "sha256": "9e56af51f8ecb1baaad89a9212f08c3f0cf0aede902ff9e19bba98e41cde3c6d"
+    },
+    {
+      "path": "assets/js/a4b81164.c478b237.js",
+      "bytes": 2012,
+      "gzipBytes": 873,
+      "sha256": "d9603bc87b0ed29852a89615c05aebcc65cec139127d9532a385174ca47d9970"
+    },
+    {
+      "path": "assets/js/a6aa3733.571a25e1.js",
+      "bytes": 1942,
+      "gzipBytes": 846,
+      "sha256": "2073e8edd6308ce548f3e06bb16bed9088a4bd91e7082823de8d87e1b55a6326"
+    },
+    {
+      "path": "assets/js/a7456010.33f4f92c.js",
+      "bytes": 174,
+      "gzipBytes": 162,
+      "sha256": "26b4acf9760c7118da3fe09b6deba6435e8bb2be4b89a0d013059b6d6192c426"
+    },
+    {
+      "path": "assets/js/a7bd4aaa.a34a8619.js",
+      "bytes": 1023,
+      "gzipBytes": 535,
+      "sha256": "fbc0f4b0c884265d41648b079e35c1d8a1a13cab2557e7c75043d7a05bdeac04"
+    },
+    {
+      "path": "assets/js/a94703ab.bc999bee.js",
+      "bytes": 18535,
+      "gzipBytes": 6575,
+      "sha256": "7734833c01613283dbc0ccff4232c8c70ef7bff18ec09644a98ca19d40fd89fb"
+    },
+    {
+      "path": "assets/js/aba21aa0.a0d11764.js",
+      "bytes": 173,
+      "gzipBytes": 159,
+      "sha256": "9034c8de6c62896db6d16a58e295d8a3ad3a718304b81c97ea3a2cdd80f96a9b"
+    },
+    {
+      "path": "assets/js/common.f0d23ef0.js",
+      "bytes": 16359,
+      "gzipBytes": 5911,
+      "sha256": "f20446a1977d713bb65dfa8fabbd6874feb9bb60cb31da8dd31d8e0397dd33a8"
+    },
+    {
+      "path": "assets/js/d6599612.b483be02.js",
+      "bytes": 5831,
+      "gzipBytes": 2277,
+      "sha256": "de624a1c9e2f4b31e80feaa5da6148f40df6329da45251d113e85faebf569444"
+    },
+    {
+      "path": "assets/js/de13dea7.fcde0863.js",
+      "bytes": 6994,
+      "gzipBytes": 1201,
+      "sha256": "4a9a17c6f9808332518ffb7d514a66fbdc23594757415d82717530ee63ff96bb"
+    },
+    {
+      "path": "assets/js/eeb6511b.e66eb948.js",
+      "bytes": 1987,
+      "gzipBytes": 867,
+      "sha256": "428ed899f067fc92d5581f455472bbd29e64702a68e8097368440dd851d3545c"
+    },
+    {
+      "path": "assets/js/fdabc4f8.353368df.js",
+      "bytes": 5642,
+      "gzipBytes": 2259,
+      "sha256": "98d0546895600472aa92627591edb207403d7854e60c719e528b22b86ea7def2"
+    },
+    {
+      "path": "assets/js/main.3b0a9290.js",
+      "bytes": 497280,
+      "gzipBytes": 156511,
+      "sha256": "e379369b006d0e28e76bf809a36fe4654a5a4c9f3cbd4f4189068780ac353560"
+    },
+    {
+      "path": "assets/js/notes-data-products.1386ebf4.js",
+      "bytes": 395,
+      "gzipBytes": 246,
+      "sha256": "86c66a08f613ef84e555eaed5916f48c2ee78749a421f1f13a99e1f05d4731bc"
+    },
+    {
+      "path": "assets/js/notes-pandas.e6e987c7.js",
+      "bytes": 653,
+      "gzipBytes": 419,
+      "sha256": "47a20812c60dc3df04d408e7a6042725eb4d7a9184fd9e9d1d6d0b6ed03aaa70"
+    },
+    {
+      "path": "assets/js/notes-sql.a26b9d78.js",
+      "bytes": 3006,
+      "gzipBytes": 1169,
+      "sha256": "213bd0e5bef8a4b96706114a988445c4c259d963d48a9084a114ba67af8d00ec"
+    },
+    {
+      "path": "assets/js/practice-data.3a66f4f4.js",
+      "bytes": 1416,
+      "gzipBytes": 816,
+      "sha256": "b5e80ad3f0ec40d838af62fece73aa7a9c7a4dfdbb1fb0f10851226f549bb76c"
+    },
+    {
+      "path": "assets/js/practice-editor.7763e920.js",
+      "bytes": 5750,
+      "gzipBytes": 2495,
+      "sha256": "adb0302c2380cd248382410f66ff620da173970bbe558adf1c75bf3190856424"
+    },
+    {
+      "path": "assets/js/practice-python-language.f0d68731.js",
+      "bytes": 44908,
+      "gzipBytes": 18386,
+      "sha256": "def9d194b0126bf16bec8ee7a88869c6960a793652418ee3475bd21b92b3f00a"
+    },
+    {
+      "path": "assets/js/practice-session.e37cf204.js",
+      "bytes": 27557,
+      "gzipBytes": 8283,
+      "sha256": "e5afd08a57e10efcffb45670dcd0f97d0fa9563bb75735a3a82830bf60bef067"
+    },
+    {
+      "path": "assets/js/practice-sql-language.0e563373.js",
+      "bytes": 32168,
+      "gzipBytes": 12881,
+      "sha256": "1edb6218ffb40c5b5bbc5799d3a54f5383e29d3c232ae41cb18b99451a0bfebc"
+    },
+    {
+      "path": "assets/js/runtime~main.ca1fee85.js",
+      "bytes": 5074,
+      "gzipBytes": 2505,
+      "sha256": "c476cb32b6842f8f10d62df6c25a4c3204bd562250d826dde5e32512f0a45147"
+    },
+    {
+      "path": "assets/js/search-index.84f1ccc3.js",
+      "bytes": 1359,
+      "gzipBytes": 668,
+      "sha256": "16d7e43f8f0e23622d09845ec9f969180be76d96d71e1d39a46e8d609971c392"
+    },
+    {
+      "path": "index.html",
+      "bytes": 52976,
+      "gzipBytes": 15062,
+      "sha256": "b2bdc3732e52c576f07c81230d73b1f0670aade676c496e6ae8ba9e2973c0b9e"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import {useSearch} from '../SearchProvider';
 import SearchResults from '../SearchResults';
 import {searchKeyboard} from '../SearchResults/keyboard';
 import styles from './styles.module.css';
+import {openExclusiveModal} from '@site/src/lib/dialog-coordination';
 
 export default function SearchDialog() {
   const {store, state} = useSearch();
@@ -18,7 +19,7 @@ export default function SearchDialog() {
   useEffect(() => {
     const element = dialog.current!;
     if (open) {
-      if (!element.open) element.showModal();
+      if (!element.open) openExclusiveModal(element, document.querySelector<HTMLButtonElement>('[data-header-search]'));
       input.current?.focus();
     } else if (element.open) {
       closingFromState.current = true;

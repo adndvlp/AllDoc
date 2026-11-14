@@ -1,7 +1,7 @@
 # AllDoc — SDD del panel de práctica contextual
 
 **Fecha:** 13 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 y 2 completados; puntos 3 a 8 pendientes.
+**Estado:** puntos 1 a 4 completados; puntos 5 a 8 pendientes.
 **Objetivo de esta etapa:** validar la estructura y el contrato con SQL y pandas, para incorporar después más lenguajes, librerías y frameworks.  
 **Base:** [SDD del rediseño](alldoc-sdd.md), cuyos ocho puntos están completados. Este documento define una ampliación y conserva su evidencia histórica.
 
@@ -37,6 +37,12 @@ El contrato contempla otros motores y salidas. Añadir R, Rust, React o una libr
 | PC-09 | Al implementar se seleccionan las últimas versiones estables compatibles, se actualiza el lockfile y se registra el entorno reproducible |
 
 Un Worker evita bloquear la interfaz, pero no constituye por sí solo una frontera de seguridad. La ejecución de código tiene también el aislamiento descrito en la sección 13.
+
+En el punto 4 se separan `editorAvailability` y `availability`: SQL y pandas
+tienen editor habilitado y runtime pendiente. Sus controles permiten escribir,
+guardar y consultar datos, pero «Ejecutar» permanece desactivado y lo explica.
+La edición no instala un motor ficticio ni convierte un perfil futuro en uno
+habilitado. Las fases 5 y 6 añadirán las implementaciones reales.
 
 ## 3. Alcance actual y ampliaciones
 
@@ -166,6 +172,12 @@ CodeMirror 6 se integra mediante un componente propio pequeño. Se usa su API mo
 El editor recibe archivos virtuales, cambios y selecciones; no conoce cómo ejecutar Python o SQL. El contrato admite varios archivos para futuros frameworks, aunque la primera UI trabaja con `consulta.sql` o `main.py`. Un cambio de acento no remonta el editor ni borra historial o selección.
 
 ### 7.2 Sugerencias por perfil
+
+En el punto 4, SQL completa palabras, tablas y columnas del esquema inicial;
+Python completa palabras y variables locales con CodeMirror. La UI describe ese
+alcance y no lo presenta como análisis semántico de pandas. La integración del
+proveedor real, el esquema actualizado desde SQLite y Jedi siguen en los puntos
+5 y 6. El registro separa explícitamente poder editar de poder ejecutar.
 
 **PF-10.** El autocompletado se anuncia con su alcance real. Se separan resaltado, sugerencias y diagnósticos.
 
@@ -427,6 +439,11 @@ materializadores y ficha pandas; todavía no hay panel o motores del navegador.
 | `src/practice/drafts.ts` | Validación, copias inmutables, revisiones, guardado agrupado y respaldo en memoria |
 | `src/practice/indexeddb-drafts.ts` | IndexedDB versionado, comparación atómica de revisiones y copias ante conflictos |
 | `src/practice/session-manager.ts` | Ciclo de vida, cancelación, temporizadores y descarte de respuestas obsoletas |
+| `src/components/PracticeProvider` | Contexto global, intención de apertura y carga diferida del gestor |
+| `src/components/PracticeDock` y `src/practice/layout.ts` | Espacio real del lector, separador y disposición responsive |
+| `src/components/PracticePanel` | Diálogo único, pestañas, datos, controles y guardado |
+| `src/components/PracticeEditor` y `editor-driver.ts` | Una vista CodeMirror y estado por workspace, con lenguajes diferidos |
+| `src/lib/dialog-coordination.ts` | Exclusión de modales y suspensión antes de búsqueda/temas |
 | `src/practice/datasets/` | Manifiestos, fuente tipada de productos y materializadores SQL/Python |
 | `src/practice/adapters/sqlite/` | Adaptador y Worker SQLite reales |
 | `src/practice/adapters/python/` | Adaptador y Worker Pyodide, pandas y proveedor de completado |
@@ -521,7 +538,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 a 3 están completados; los demás permanecen pendientes. Su orden valida
+Los puntos 1 a 4 están completados; los demás permanecen pendientes. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -530,7 +547,7 @@ a todos los motores de la sección 3.2.
 | 1 | Registrar referencia actual y escribir contratos, perfiles y resolución de contexto | Completado con TDD: [evidencia](verification/practice-point-1.md), 76 pruebas, tipos, build y assets sin cambios |
 | 2 | Definir dataset común y miniapunte pandas | Completado con TDD: [evidencia](verification/practice-point-2.md), 84 pruebas de código, pandas nativo, 302 de UI y capturas revisadas |
 | 3 | Implementar gestor y borradores con adaptadores de prueba | Completado con TDD: [evidencia](verification/practice-point-3.md), 111 pruebas de código, tipos, build y cuatro pruebas con IndexedDB real |
-| 4 | Integrar panel y CodeMirror responsive | Apertura desde fichas, colapso, navegación, foco, scroll y temas revisados |
+| 4 | Integrar panel y CodeMirror responsive | Completado con TDD: [evidencia](verification/practice-point-4.md), 122 pruebas de código, tipos, build y 397 de UI con comparación independiente |
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Consultas, selección, datos, errores, sugerencias de esquema y cancelación |
 | 6 | Implementar adaptador Pyodide/pandas y completado real | DataFrame del miniapunte, ejecución libre, datos equivalentes y cambio SQL ↔ pandas |
 | 7 | Conectar acciones de ejemplos y endurecer recuperación | Sustitución explícita, revisión anterior, reinicios, almacenamiento y red fallidos |
@@ -597,6 +614,32 @@ IndexedDB real, persistencia, conflictos y respaldo en memoria. No se actualizar
 referencias visuales. Los adaptadores de ejecución son dobles exclusivos de las
 pruebas y los perfiles publicados siguen pendientes. El panel y CodeMirror son
 el punto 4; los motores reales siguen en los puntos 5 y 6.
+
+### Registro del punto 4
+
+Se integró el control contextual de práctica y un único editor CodeMirror, con
+gestor, datos y lenguajes diferidos. La disposición depende del espacio y del
+tamaño raíz: lateral, inferior ajustable o modal. Cambiar de tamaño o acento
+conserva instancia, selección e historial; los borradores SQL/pandas se mantienen
+separados. Código, Datos y Resultados tienen pestañas accesibles.
+
+La apertura modal se coordina con búsqueda y temas, sin apilar ventanas. Rotar
+con búsqueda abierta conserva su consulta. El control pasa a 44×44 cuando falta
+espacio: la revisión visual rechazó la etiqueta grande al 200% y su regresión
+quedó cubierta antes de corregirla. Se conserva el scroll independiente.
+
+SQL/pandas habilitan edición y conservan ejecución pendiente. SQL ofrece
+completado inicial de esquema y Python sugerencias básicas de CodeMirror; no se
+simulan SQLite, Pyodide o Jedi. La salida común y un tercer perfil SSR de prueba
+verifican que la presentación no depende del nombre de un motor concreto.
+
+Pasaron 122 pruebas de código, tipos y build. La actualización final y su
+comparación independiente terminaron con 397 aprobadas y nueve omisiones
+previstas, sin fallos o casos inestables. Se revisaron 28 imágenes nuevas y
+26 referencias existentes que cambiaron, conservando 130 referencias. El aumento
+inicial conjunto es 4073 bytes gzip de JS/CSS, dentro de los 5 KiB propuestos;
+CodeMirror y los lenguajes permanecen diferidos. La ejecución real sigue en los
+puntos 5 y 6. [Evidencia roja/verde y límites](verification/practice-point-4.md).
 
 ## 16. Fuentes y decisiones documentadas
 

@@ -27,6 +27,7 @@
 .reader :global([id]) { scroll-margin-top: 1.5rem; }
 .inner { width: 100%; min-width: 0; max-width: 1080px; padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
 .reader > .inner { max-width: 1080px; }
+.inner[data-practice-supported='true'] { padding-bottom: max(6rem, env(safe-area-inset-bottom)); }
 .inner :global(.row), .inner :global(.col) { min-width: 0; }
 .inner :global(article), .inner :global(.pagination-nav) { max-width: 780px; margin-inline: auto; }
 

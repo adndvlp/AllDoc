@@ -7,7 +7,7 @@ export const practiceRegistry = createPracticeRegistry([
     languageId: 'sql', runtimeId: 'sqlite-wasm', completionId: 'sql-schema',
     defaultExampleId: 'sql/select/todas-las-columnas',
     defaultDataset: {id: 'productos-basico', version: 1},
-    executionLocation: 'browser', availability: 'planned',
+    executionLocation: 'browser', availability: 'planned', editorAvailability: 'enabled',
     capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
   }},
   {profile: {
@@ -15,7 +15,7 @@ export const practiceRegistry = createPracticeRegistry([
     languageId: 'python', runtimeId: 'pyodide', completionId: 'python-jedi',
     defaultExampleId: 'pandas/dataframe/productos',
     defaultDataset: {id: 'productos-basico', version: 1},
-    executionLocation: 'browser', availability: 'planned',
+    executionLocation: 'browser', availability: 'planned', editorAvailability: 'enabled',
     capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
   }},
 ]);

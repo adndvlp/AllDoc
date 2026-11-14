@@ -1,4 +1,4 @@
-import type {AdapterFactories, CompletionRequest, CompletionResult, EnvironmentManifest, PracticeContext, RunRequest, RuntimeAdapter, RuntimeEvent, Workspace} from '../../src/practice/contracts.ts';
+import type {AdapterFactories, CompletionRequest, CompletionResult, EnvironmentManifest, PracticeContext, PracticeEditorContext, RunRequest, RuntimeAdapter, RuntimeEvent, Workspace} from '../../src/practice/contracts.ts';
 import type {DraftRepository, RecoveryDraft, StoredDraft} from '../../src/practice/drafts.ts';
 import {createPracticeRegistry} from '../../src/practice/registry.ts';
 import {sqlProfile} from './practice.ts';
@@ -21,7 +21,7 @@ export function context(tool = 'sql', concept = 'select'): PracticeContext {
   return {conceptId: `${profile.toolKey}/${concept}`, conceptSlug: `/apuntes/${profile.toolKey}/${concept}`,
     toolKey: profile.toolKey, profile, workspaceKey: JSON.stringify([profile.toolKey, profile.id, profile.defaultDataset.id, profile.defaultDataset.version])};
 }
-export function workspace(ctx = context(), content = ctx.profile.languageId === 'sql' ? 'SELECT * FROM productos;' : 'productos.head()'): Workspace {
+export function workspace(ctx: PracticeEditorContext = context(), content = ctx.profile.languageId === 'sql' ? 'SELECT * FROM productos;' : 'productos.head()'): Workspace {
   const path = ctx.profile.languageId === 'sql' ? 'main.sql' : 'main.py';
   return {id: ctx.workspaceKey, toolKey: ctx.toolKey, profileId: ctx.profile.id, dataset: ctx.profile.defaultDataset,
     files: [{path, languageId: ctx.profile.languageId, content}], activeFile: path, revision: 0, environmentVersion: 'test-env@1'};

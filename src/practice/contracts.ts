@@ -16,6 +16,7 @@ type ProfileMetadata = Readonly<{
   languageId: string;
   runtimeId: string;
   completionId: string;
+  editorAvailability?: 'planned' | 'enabled';
   defaultExampleId: string;
   defaultDataset: DatasetReference;
   executionLocation: 'browser' | 'remote';
@@ -139,10 +140,12 @@ export interface PracticeRegistry {
   defaultForTool(toolKey: string): PracticeProfile | undefined;
   loadProviders(id: string): Promise<AdapterFactories>;
 }
-export type PracticeContext = Readonly<{
+export type PracticeEditorContext = Readonly<{
   conceptId: string;
   conceptSlug: string;
   toolKey: string;
-  profile: EnabledPracticeProfile;
+  profile: PracticeProfile;
   workspaceKey: string;
 }>;
+/** Ejecutar requiere un perfil habilitado; editar no habilita un runtime pendiente. */
+export type PracticeContext = PracticeEditorContext & {readonly profile: EnabledPracticeProfile};

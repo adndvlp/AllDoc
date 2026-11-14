@@ -2,6 +2,7 @@ import {useEffect, useRef} from 'react';
 import {useNavbarMobileSidebar, useNavbarSecondaryMenu} from '@docusaurus/theme-common/internal';
 import NavbarLogo from '@theme/Navbar/Logo';
 import IconClose from '@theme/Icon/Close';
+import {openExclusiveModal} from '@site/src/lib/dialog-coordination';
 
 function TopicsDialog() {
   const {shown, toggle} = useNavbarMobileSidebar();
@@ -12,7 +13,7 @@ function TopicsDialog() {
 
   useEffect(() => {
     const element = dialog.current!;
-    if (shown && !element.open) element.showModal();
+    if (shown && !element.open) openExclusiveModal(element, document.querySelector<HTMLButtonElement>('.navbar__toggle'));
     else if (!shown && element.open) {
       closingFromState.current = true;
       element.close();

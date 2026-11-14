@@ -1,0 +1,662 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/practice.spec.ts",
+      "--project=celular",
+      "--update-snapshots"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "changed",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "practice.spec.ts",
+      "file": "practice.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "entrada contextual: apertura diferida, editor real y ejecución pendiente explícita",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2674,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-sql.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:31.824Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "practice-sql-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-sql.png"
+                    },
+                    {
+                      "name": "practice-sql-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-entrada-contextua-86cd7-ecución-pendiente-explícita-celular/practice-sql-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-a63268cfeb1542f96ee7",
+          "file": "practice.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2119,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-pandas.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:31.824Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "practice-pandas-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-pandas.png"
+                    },
+                    {
+                      "name": "practice-pandas-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-borradores-SELECT-a3ec1-opio-contexto-tras-recargar-celular/practice-pandas-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-ca86a9f3b4009c0af9ae",
+          "file": "practice.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "datos: tabla común tipada y pestañas por teclado sin resultados inventados",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1093,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-data.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:34.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "practice-data-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-data.png"
+                    },
+                    {
+                      "name": "practice-data-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-datos-tabla-común-8d438-o-sin-resultados-inventados-celular/practice-data-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-be9b66d8e21b9f105e43",
+          "file": "practice.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:34.611Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-39803a3adba074f732d2",
+          "file": "practice.spec.ts",
+          "line": 74,
+          "column": 1
+        },
+        {
+          "title": "modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 8174,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Practicar SQL', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Practicar SQL', exact: true }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Practicar SQL', exact: true })\u001b[22m\n\u001b[2m    18 × locator resolved to <button type=\"button\" class=\"trigger_Z2jv\" aria-expanded=\"false\" aria-controls=\"alldoc-practice-panel\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Practicar SQL', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Practicar SQL', exact: true }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Practicar SQL', exact: true })\u001b[22m\n\u001b[2m    18 × locator resolved to <button type=\"button\" class=\"trigger_Z2jv\" aria-expanded=\"false\" aria-controls=\"alldoc-practice-panel\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts:104:80",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts",
+                      "column": 80,
+                      "line": 104
+                    },
+                    "snippet": " \u001b[90m 102 |\u001b[39m   \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 7;'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m'Escape'\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m expect(panel(page))\u001b[33m.\u001b[39mtoBeHidden()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Practicar SQL'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m}))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m\n \u001b[90m 107 |\u001b[39m test(\u001b[32m'descarga tardía del editor no reabre práctica después de colapsar'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page}) \u001b[33m=>\u001b[39m {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts",
+                        "column": 80,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Practicar SQL', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Practicar SQL', exact: true }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Practicar SQL', exact: true })\u001b[22m\n\u001b[2m    18 × locator resolved to <button type=\"button\" class=\"trigger_Z2jv\" aria-expanded=\"false\" aria-controls=\"alldoc-practice-panel\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n \u001b[90m 102 |\u001b[39m   \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 7;'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 103 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m'Escape'\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m expect(panel(page))\u001b[33m.\u001b[39mtoBeHidden()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Practicar SQL'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m}))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m\n \u001b[90m 107 |\u001b[39m test(\u001b[32m'descarga tardía del editor no reabre práctica después de colapsar'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page}) \u001b[33m=>\u001b[39m {\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts:104:80\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:35.156Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-modal-búsqueda-y--f208b-y-reanudan-con-foco-visible-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-modal-búsqueda-y--f208b-y-reanudan-con-foco-visible-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-modal-búsqueda-y--f208b-y-reanudan-con-foco-visible-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts",
+                    "column": 80,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-a63ec7818a802aabaa1a",
+          "file": "practice.spec.ts",
+          "line": 87,
+          "column": 1
+        },
+        {
+          "title": "descarga tardía del editor no reabre práctica después de colapsar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:35.659Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-3fb57d75719519852139",
+          "file": "practice.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:36.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-493b57bdf97ff9a118c6",
+          "file": "practice.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "responsive: rotación y texto al 200% conservan editor, selección y controles accesibles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1559,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-200.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:37.570Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "practice-200-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/practice-200.png"
+                    },
+                    {
+                      "name": "practice-200-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-responsive-rotaci-a6900-ción-y-controles-accesibles-celular/practice-200-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-3143fa2686fe5d4cd84d",
+          "file": "practice.spec.ts",
+          "line": 130,
+          "column": 1
+        },
+        {
+          "title": "separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "El modo modal ocupa el área visible y no tiene separador.",
+                  "location": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts",
+                    "line": 150,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 890,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-14T06:37:39.140Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "El modo modal ocupa el área visible y no tiene separador.",
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice.spec.ts",
+                        "line": 150,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-852d69893abcd78c1726",
+          "file": "practice.spec.ts",
+          "line": 148,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-14T06:37:23.597Z",
+    "duration": 19819.144,
+    "expected": 7,
+    "skipped": 1,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,22 +1,22 @@
-import type {CompletionAdapter, CompletionResult, EnvironmentManifest, PracticeContext, PracticeRegistry, RunRequest, RuntimeAdapter, RuntimeEvent, RuntimeSchema, Workspace} from './contracts.ts';
+import type {CompletionAdapter, CompletionResult, EnvironmentManifest, PracticeEditorContext, PracticeRegistry, RunRequest, RuntimeAdapter, RuntimeEvent, RuntimeSchema, Workspace} from './contracts.ts';
 import type {DraftState, DraftStore} from './drafts.ts';
 import {isCompletionResult, isRuntimeEvent} from './protocol.ts';
 
 export type SessionSnapshot = Readonly<{
-  context: PracticeContext | null; openRequested: boolean; visible: boolean;
+  context: PracticeEditorContext | null; openRequested: boolean; visible: boolean;
   phase: 'hidden' | 'collapsed' | 'loading' | 'ready' | 'running' | 'error';
   generation: number; draft: DraftState | null; schema: RuntimeSchema;
   events: readonly RuntimeEvent[]; notice: string | null; error: string | null;
 }>;
 export type SessionOptions = {
   registry: PracticeRegistry; drafts: DraftStore;
-  bootstrap(context: PracticeContext): Promise<{workspace: Workspace; environment: EnvironmentManifest}>;
+  bootstrap(context: PracticeEditorContext): Promise<{workspace: Workspace; environment: EnvironmentManifest | null; schema?: RuntimeSchema}>;
   idleMs?: number; timeoutMs?: number; cancelGraceMs?: number; maxOutputBytes?: number;
 };
 export interface PracticeSessionManager {
   getSnapshot(): SessionSnapshot;
   subscribe(listener: () => void): () => void;
-  setContext(context: PracticeContext | null): Promise<void>;
+  setContext(context: PracticeEditorContext | null): Promise<void>;
   open(): Promise<void>;
   collapse(): Promise<void>;
   retry(): Promise<void>;
@@ -112,10 +112,14 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       try {
         const seed = await options.bootstrap(ctx);
         if (!live(generation) || abort.signal.aborted) return;
-        if (seed.workspace.id !== ctx.workspaceKey || seed.workspace.environmentVersion !== seed.environment.version) throw new Error('Contexto inicial incompatible');
+        if (seed.workspace.id !== ctx.workspaceKey || (seed.environment && seed.workspace.environmentVersion !== seed.environment.version)) throw new Error('Contexto inicial incompatible');
         const draft = await options.drafts.load(seed.workspace);
         if (!live(generation) || abort.signal.aborted) return;
         publish({draft, ...(draft.environmentChanged ? {notice: 'El entorno cambió de versión; tu código se conserva.'} : {})});
+        if (ctx.profile.availability === 'planned') {
+          publish({phase: 'ready', schema: seed.schema ?? {version: 0, entities: []}}); return;
+        }
+        if (!seed.environment) throw new Error('Falta el manifiesto del entorno');
         const factories = await options.registry.loadProviders(ctx.profile.id);
         if (!live(generation) || abort.signal.aborted) return;
         const dataset = await factories.createDataset().materialize(ctx.profile.defaultDataset, ctx.profile.runtimeId, abort.signal);
@@ -186,7 +190,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       completionAbort?.abort(); return options.drafts.edit(state.draft.workspace.id, path, content);
     },
     async execute(selection) {
-      if (disposed || activeRun || !state.openRequested || !state.context) return;
+      if (disposed || activeRun || !state.openRequested || state.context?.profile.availability !== 'enabled') return;
       const generation = state.generation;
       await prepare();
       if (!live(generation) || !resource?.ready || !state.draft || activeRun || !state.openRequested) return;
@@ -238,7 +242,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     },
     async stop() {if (activeRun) await stopRun(activeRun, 'cancelled');},
     async resetEnvironment() {
-      if (disposed || !state.openRequested) return;
+      if (disposed || !state.openRequested || state.context?.profile.availability !== 'enabled') return;
       if (resetting) return resetting;
       const generation = state.generation;
       // Reservar el reinicio antes del primer await, también frente a llamadas simultáneas.

@@ -257,13 +257,27 @@ y `indexeddb-drafts.ts` los persiste en la base `alldoc-practice`. Agrupa las
 escrituras durante 300 ms y permite `flush()` al cambiar de contexto o desmontar.
 Un conflicto entre pestañas deja una copia recuperable; un fallo de guardado
 mantiene el texto en memoria. No guarda resultados ni el estado interno del motor.
-El editor visible se integra en el punto 4 del [SDD de práctica](specs/practice-sdd.md).
-Las pruebas del gestor usan adaptadores de prueba; todavía no habilitan motores
-reales. Para comprobar solo IndexedDB en navegador:
+El control «Practicar SQL/pandas» abre CodeMirror en las fichas compatibles.
+Se adapta al espacio del lector: lateral, inferior con separador o modal.
+Conserva borradores e historial al cambiar de tamaño o acento; cada herramienta
+tiene su código. «Datos» muestra los tres productos del paquete canónico.
+Tab sale del editor; Ctrl+Espacio abre sugerencias y las flechas/Inicio permiten
+ajustar/restablecer el separador sin arrastrar. Búsqueda y temas suspenden el
+modal de práctica y lo reanudan al cerrar, sin apilar ventanas.
+
+Los perfiles habilitan edición y mantienen ejecución pendiente. «Ejecutar» está
+desactivado: los motores reales se incorporan en los puntos 5/6 del
+[SDD de práctica](specs/practice-sdd.md). SQL sugiere palabras y columnas iniciales;
+Python ofrece completado básico de CodeMirror, todavía sin análisis de pandas.
+El editor, los lenguajes y el gestor se descargan al abrir práctica.
+Para comprobar solo IndexedDB en navegador:
 
 ```sh
 npm run test:ui -- tests/ui/practice-storage.spec.ts --project=celular --project=laptop
 ```
+
+`npm run test:ui:practice` ejecuta los recorridos del panel en los siete tamaños;
+acepta los argumentos habituales de Playwright, como `-- --project=celular`.
 
 La página SELECT incluye el formato mínimo de referencia. SELECT y FROM se
 explican juntos: una variante muestra todas las columnas y otra, varias columnas
