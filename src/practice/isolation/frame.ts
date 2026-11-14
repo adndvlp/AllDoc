@@ -18,7 +18,10 @@ window.addEventListener('message', (event) => {
     pending.add(request.id);
     if (request.command === 'init') {
       if (worker) {failure(request.id, 'Motor ya inicializado'); return;}
-      worker = new Worker(new URL('../adapters/sqlite/worker.ts', import.meta.url), {name: 'alldoc-sqlite'});
+      const runtimeId = (request.payload as import('../contracts.ts').RuntimeContext).profile.runtimeId;
+      worker = runtimeId === 'pyodide'
+        ? new Worker(new URL('../adapters/python/worker.ts', import.meta.url), {name: 'alldoc-python'})
+        : new Worker(new URL('../adapters/sqlite/worker.ts', import.meta.url), {name: 'alldoc-sqlite'});
       worker.onmessage = ({data: reply}) => {
         if (!isBridgeReply(reply, session) || !pending.has(reply.id)) return;
         if (reply.kind !== 'event') pending.delete(reply.id);
@@ -26,7 +29,7 @@ window.addEventListener('message', (event) => {
       };
       worker.onerror = (error) => {
         error.preventDefault();
-        for (const id of [...pending]) failure(id, 'No se pudo cargar el motor SQL');
+        for (const id of [...pending]) failure(id, 'No se pudo cargar el motor de práctica');
         worker?.terminate(); worker = null;
       };
     }

@@ -1,0 +1,17 @@
+{
+  "point": 6,
+  "stage": "red",
+  "command": "node --experimental-strip-types --test tests/practice-python-initialization.test.ts",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "src/practice/adapters/python/initialize.ts",
+      "sha256": "2b87793842ac261d96a9ae7da42e34ec27daa3a8f637369d53b945c68e337c1f"
+    },
+    {
+      "path": "tests/practice-python-initialization.test.ts",
+      "sha256": "c4872c67491331b4a4a6579425bcfd23ed313d5c5a3f49737cdcccc968ea612d"
+    }
+  ],
+  "log": "(node:22472) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes (2.59325ms)\n✔ inicialización Python: un error de paquetes rechaza la preparación y no entrega una VM parcial (0.32975ms)\n✖ inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial (0.418875ms)\nℹ tests 3\nℹ suites 0\nℹ pass 2\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 142.446625\n\n✖ failing tests:\n\ntest at tests/practice-python-initialization.test.ts:23:1\n✖ inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial (0.418875ms)\n  AssertionError [ERR_ASSERTION]: Missing expected rejection.\n      at async TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts:27:3)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: /instalar jedi/,\n    operator: 'rejects',\n    diff: 'simple'\n  }\n"
+}

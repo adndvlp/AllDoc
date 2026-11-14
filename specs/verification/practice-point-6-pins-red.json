@@ -1,0 +1,17 @@
+{
+  "point": 6,
+  "stage": "red",
+  "command": "node --experimental-strip-types --test tests/python-assets.test.ts",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "scripts/lib/python-assets.ts",
+      "sha256": "b95b8a971389619bfb2b34151372368f9b0fdb9c5d0cda38c821c2b99aa2a963"
+    },
+    {
+      "path": "tests/python-assets.test.ts",
+      "sha256": "fa1e82c015be46b5e9be5ed557faf07026cd27c0aef65222dced8a95b82cf324"
+    }
+  ],
+  "log": "(node:23153) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/python-assets.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ assets Python: cierre transitivo determinista sin paquetes ajenos y con hashes completos (31.370416ms)\n✖ assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones (1.510334ms)\n✔ assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin integridad (0.201667ms)\nℹ tests 3\nℹ suites 0\nℹ pass 2\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 206.162625\n\n✖ failing tests:\n\ntest at tests/python-assets.test.ts:13:1\n✖ assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones (1.510334ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + undefined\n  - {\n  -   digest: 'fixed',\n  -   runtimeVersion: '314.0.8'\n  - }\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/python-assets.test.ts:15:10)\n      at Test.runInAsyncScope (node:async_hooks:226:14)\n      at Test.run (node:internal/test_runner/test:1201:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n      at Test.postRun (node:internal/test_runner/test:1330:19)\n      at Test.run (node:internal/test_runner/test:1258:12)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: { runtimeVersion: '314.0.8', digest: 'fixed' },\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+}

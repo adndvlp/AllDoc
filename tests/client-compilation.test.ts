@@ -106,6 +106,7 @@ test('panel con tercer perfil de prueba: etiqueta propia y controles de detener/
     state: {phase: 'running', draft: {workspace: ws, status: 'clean'}, schema: {version: 0, entities: []}, events: [], error: null},
     requested: true, visible: true, error: null};
   const {default: Panel} = compile<typeof import('../src/components/PracticePanel/index.tsx')>('../src/components/PracticePanel/index.tsx', {
+    '@site/src/practice/interaction': compile<typeof import('../src/practice/interaction.ts')>('../src/practice/interaction.ts'),
     '@docusaurus/theme-common/internal': {useNavbarMobileSidebar: () => ({shouldRender: false})},
     '../PracticeProvider': {usePractice: () => fixture}, '../SearchProvider': {useSearch: () => ({store: {}})},
     '../Icon': {__esModule: true, default: () => null}, '../PracticeResults': resultModule,

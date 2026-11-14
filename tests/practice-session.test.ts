@@ -12,6 +12,22 @@ function setup(options: Partial<SessionOptions> = {}) {
   return {engines, drafts, repository, manager, async close() {await manager.dispose(); await drafts.close();}};
 }
 
+test('sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor', async () => {
+  const f = setup();
+  try {
+    await f.manager.setContext(context()); await f.manager.open();
+    const inspect = deferred<import('../src/practice/contracts.ts').RuntimeSchema>(); f.engines.deferInspect(inspect.promise);
+    const running = f.manager.execute(); await until(() => f.engines.calls.runs.length === 1);
+    f.engines.emit(0, {type: 'end', status: 'success', environmentReset: false});
+    await running;
+    await until(() => f.manager.getSnapshot().phase === 'ready');
+    await f.manager.complete(3);
+    inspect.resolve({version: 9, entities: [{name: 'ventas', kind: 'table', columns: [{name: 'importe', type: 'integer'}]}]});
+    await until(() => f.manager.getSnapshot().schema.version === 9);
+    assert.equal(f.manager.getSnapshot().schema.entities[0].name, 'ventas');
+  } finally {await f.close();}
+});
+
 test('sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores', async () => {
   const f = setup(); await f.manager.setContext(context()); await f.manager.setContext(context('pandas'));
   assert.equal(f.manager.getSnapshot().phase, 'collapsed');

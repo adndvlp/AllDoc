@@ -1,0 +1,17 @@
+{
+  "point": 6,
+  "stage": "red",
+  "command": "node --experimental-strip-types --test tests/runtime-assets.test.mjs",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "scripts/build-practice-runtime.mjs",
+      "sha256": "c007ab75e0914a74514d10782710dd0848c5f7807c5eb4043f3102636a4e6f27"
+    },
+    {
+      "path": "tests/runtime-assets.test.mjs",
+      "sha256": "14b82046f1fc5a3a740228e7d49268b7ccbf203262c5c76fbce81b9209da17af"
+    }
+  ],
+  "log": "(node:24993) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/isolation/policy.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:24993) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n✖ runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin (4313.382ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4491.255709\n\n✖ failing tests:\n\ntest at tests/runtime-assets.test.mjs:10:1\n✖ runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin (4313.382ms)\n  AssertionError [ERR_ASSERTION]: pyodide.mjs\n  + actual - expected\n  \n  + '90b461c8768d7659039095b187e6da98a19db838ad607c27f0405509e798d39b'\n  - '1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70'\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/runtime-assets.test.mjs:17:14)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: '90b461c8768d7659039095b187e6da98a19db838ad607c27f0405509e798d39b',\n    expected: '1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+}

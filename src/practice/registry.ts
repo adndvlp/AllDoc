@@ -5,6 +5,8 @@ function validateProfile(value: unknown): asserts value is PracticeProfile {
   if (!record(value) || !['id', 'label', 'toolKey', 'languageId', 'runtimeId', 'completionId', 'defaultExampleId'].every((key) => identifier(value[key]))
     || !/^[a-z0-9-]+\/[a-z0-9-]+$/.test(value.toolKey as string)
     || !datasetReference(value.defaultDataset)
+    || (value.completionDescription !== undefined && !identifier(value.completionDescription))
+    || (value.busyCompletionDescription !== undefined && !identifier(value.busyCompletionDescription))
     || !['browser', 'remote'].includes(value.executionLocation as string)
     || !['planned', 'enabled'].includes(value.availability as string)
     || (value.editorAvailability !== undefined && !['planned', 'enabled'].includes(value.editorAvailability as string))

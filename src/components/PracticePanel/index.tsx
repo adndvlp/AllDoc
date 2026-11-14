@@ -4,6 +4,7 @@ import {usePractice} from '../PracticeProvider';
 import {useSearch} from '../SearchProvider';
 import Icon from '../Icon';
 import type {PracticeLayout} from '@site/src/practice/layout';
+import {canExecutePractice} from '@site/src/practice/interaction';
 import type {RunRequest, Workspace} from '@site/src/practice/contracts';
 import type {PracticeDataset} from '@site/src/practice/datasets/types';
 import {hasOtherModal, openExclusiveModal, suspendDialogEvent} from '@site/src/lib/dialog-coordination';
@@ -94,6 +95,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const label = practice.context?.toolKey === 'analisis-de-datos/sql' ? 'SQL'
     : practice.context?.toolKey === 'analisis-de-datos/pandas' ? 'pandas' : practice.context?.profile.label ?? 'Código';
   const unavailable = practice.context?.profile.availability !== 'enabled';
+  const canExecute = canExecutePractice(practice.state, workspace);
   const status = practice.state.draft?.status;
   const saved = status === 'memory' ? 'Guardado en esta sesión' : status === 'conflict' ? 'Copia recuperable guardada' : status === 'dirty' || status === 'saving' ? 'Guardando…' : 'Guardado local';
   const error = practice.error ?? practice.state.error;
@@ -121,7 +123,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
         <span className={styles.file}>{workspace?.activeFile ?? 'Preparando código…'}</span>
         {practice.state.phase === 'running'
           ? <button type="button" onClick={() => {void practice.manager?.stop();}}>Detener</button>
-          : <button type="button" disabled={unavailable || practice.state.phase !== 'ready'} onClick={() => {
+          : <button type="button" disabled={!canExecute} onClick={() => {
             const current = selection.current;
             void practice.manager?.execute(current?.id === workspace?.id && current?.path === workspace?.activeFile ? current?.range : undefined);
           }}>Ejecutar</button>}
@@ -148,10 +150,16 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
               if (practice.manager?.getSnapshot().context?.workspaceKey !== key) return;
               try {practice.manager.edit(path, content); setMessage(null);} catch (reason) {setMessage(String(reason));}
             }} onSelection={(id, path, range) => {selection.current = {id, path, range};}}
-            onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else void practice.manager?.execute(selection);}} />}
+            onComplete={(document, position, signal) => {
+              const snapshot = practice.manager?.getSnapshot(); const active = snapshot?.draft?.workspace;
+              if (!active || active.id !== workspace?.id || active.files.find((file) => file.path === active.activeFile)?.content !== document) return Promise.resolve(null);
+              return practice.manager!.complete(position, signal);
+            }}
+            onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else if (canExecute) void practice.manager?.execute(selection);}} />}
           <p id={id + '-help'} className={styles.help}>Tab sale del editor · Ctrl+Espacio sugiere</p>
         </section>
         <section role="tabpanel" id={id + '-pane-1'} aria-labelledby={id + '-tab-1'} hidden={activeTab !== 1} className={styles.data}>
+          {practice.state.phase === 'loading' && !tables?.length && <p>Preparando datos…</p>}
           {tables ? tables.map((table) => <div key={table.name}>
             <h3>{table.name} <span>{'rowCount' in table ? table.rowCount === undefined ? 'Vista' : table.rowCount + ' filas' : table.rows.length + ' filas'}</span></h3>
             <div role="region" aria-label={'Tabla ' + table.name} tabIndex={0} className={styles.table}>
@@ -169,7 +177,9 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
       </div>
       <div className={styles.status}>
         {unavailable && <p>La ejecución aún no está disponible.</p>}
-        <span>{saved}</span><span className={styles.scope}>{label === 'SQL' ? 'SQLite · Sugerencias del esquema actual' : label === 'pandas' ? 'Sugerencias básicas de Python; sin análisis de pandas' : 'Sugerencias según el perfil'}</span>
+        {practice.state.phase === 'loading' && <p role="status">Preparando {practice.context?.profile.label ?? 'entorno'}…</p>}
+        <span>{saved}</span><span className={styles.scope}>{(practice.state.phase === 'running' ? practice.context?.profile.busyCompletionDescription : undefined)
+          ?? practice.context?.profile.completionDescription ?? 'Sugerencias según el perfil'}</span>
         {(message || practice.state.notice) && <p role="status">{message ?? practice.state.notice}</p>}
       </div>
     </div>

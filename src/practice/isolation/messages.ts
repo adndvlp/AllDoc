@@ -1,8 +1,8 @@
-import type {RunRequest, RuntimeContext, RuntimeSchema} from '../contracts.ts';
+import type {CompletionRequest, RunRequest, RuntimeContext, RuntimeSchema} from '../contracts.ts';
 import {counter, datasetReference, identifier, record, text} from '../guards.ts';
 import {isRuntimeEvent} from '../protocol.ts';
 export const BRIDGE_VERSION = 1;
-export type Command = 'init' | 'run' | 'inspect' | 'reset' | 'cancel' | 'dispose';
+export type Command = 'init' | 'run' | 'inspect' | 'reset' | 'cancel' | 'dispose' | 'complete';
 export type BridgeRequest = {version: 1; session: string; id: number; command: Command; payload?: unknown};
 export type BridgeReply = {version: 1; session: string; id: number} & (
   {kind: 'result'; value?: unknown} | {kind: 'failure'; message: string} | {kind: 'event'; event: unknown});
@@ -11,8 +11,9 @@ export function isRunRequest(v: unknown): v is RunRequest {
   if (!record(v) || !identifier(v.runId) || !identifier(v.workspaceId) || !counter(v.generation) || !counter(v.revision)
     || !Array.isArray(v.files) || !v.files.length || v.files.length > 64 || !path(v.entryFile)) return false;
   const files = Array.from(v.files);
-  if (!files.every((f) => record(f) && path(f.path) && f.languageId === 'sql' && text(f.content))
+  if (!files.every((f) => record(f) && path(f.path) && ['sql', 'python'].includes(f.languageId as string) && text(f.content))
     || new Set(files.map((f) => f.path)).size !== files.length
+    || new Set(files.map((f) => f.languageId)).size !== 1
     || files.reduce((size, f) => size + new TextEncoder().encode(f.content).length, 0) > 1_048_576) return false;
   const file = files.find((f) => f.path === v.entryFile);
   return !!file && (v.selection === undefined || (record(v.selection) && counter(v.selection.from) && counter(v.selection.to)
@@ -28,7 +29,7 @@ export function isRuntimeSchema(v: unknown): v is RuntimeSchema {
 export function isRuntimeContext(v: unknown): v is RuntimeContext {
   if (!record(v) || !record(v.profile) || !record(v.environment) || !record(v.dataset)) return false;
   const p = v.profile, e = v.environment, d = v.dataset;
-  return p.availability === 'enabled' && p.runtimeId === 'sqlite-wasm' && p.languageId === 'sql' && p.executionLocation === 'browser'
+  return p.availability === 'enabled' && ((p.runtimeId === 'sqlite-wasm' && p.languageId === 'sql') || (p.runtimeId === 'pyodide' && p.languageId === 'python')) && p.executionLocation === 'browser'
     && identifier(p.id) && identifier(p.label) && identifier(p.toolKey) && identifier(p.completionId) && identifier(p.defaultExampleId)
     && datasetReference(p.defaultDataset) && record(p.capabilities) && p.capabilities.network === 'none'
     && ['multipleFiles', 'tables', 'figures', 'preview'].every((k) => typeof (p.capabilities as Record<string, unknown>)[k] === 'boolean')
@@ -43,6 +44,7 @@ export function isBridgeRequest(v: unknown, session: string): v is BridgeRequest
   switch (v.command) {
     case 'init': return isRuntimeContext(v.payload);
     case 'run': return isRunRequest(v.payload);
+    case 'complete': return isCompletionRequest(v.payload);
     case 'inspect': case 'reset': case 'dispose': return v.payload === undefined;
     case 'cancel': return identifier(v.payload);
     default: return false;
@@ -51,4 +53,10 @@ export function isBridgeRequest(v: unknown, session: string): v is BridgeRequest
 export function isBridgeReply(v: unknown, session: string): v is BridgeReply {
   if (!record(v) || v.version !== BRIDGE_VERSION || v.session !== session || !identifier(session) || !counter(v.id)) return false;
   return v.kind === 'result' || (v.kind === 'failure' && text(v.message)) || (v.kind === 'event' && isRuntimeEvent(v.event));
+}
+
+export function isCompletionRequest(v: unknown): v is CompletionRequest {
+  return record(v) && identifier(v.requestId) && identifier(v.workspaceId) && counter(v.generation) && counter(v.revision)
+    && path(v.file) && text(v.document) && new TextEncoder().encode(v.document).byteLength <= 1_048_576
+    && counter(v.position) && v.position <= v.document.length && isRuntimeSchema(v.schema);
 }

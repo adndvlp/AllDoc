@@ -24,7 +24,7 @@ export interface PracticeSessionManager {
   execute(selection?: RunRequest['selection']): Promise<void>;
   stop(): Promise<void>;
   resetEnvironment(): Promise<void>;
-  complete(position: number): Promise<CompletionResult | null>;
+  complete(position: number, signal?: AbortSignal): Promise<CompletionResult | null>;
   dispose(): Promise<void>;
 }
 export function createPracticeSessionManager(options: SessionOptions): PracticeSessionManager {
@@ -38,7 +38,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
   let resetting: Promise<void> | null = null;
   let controller: AbortController | null = null; let completionAbort: AbortController | null = null;
   let retirement: Promise<void> = Promise.resolve(); let retirementError: Error | null = null;
-  let idle: ReturnType<typeof setTimeout> | undefined; let activeRun: Run | null = null; let sequence = 0;
+  let idle: ReturnType<typeof setTimeout> | undefined; let activeRun: Run | null = null; let sequence = 0; let completionSequence = 0;
   const publish = (patch: Partial<SessionSnapshot>) => {
     if (disposed) return;
     state = Object.freeze({...state, ...patch}); for (const listener of Array.from(listeners)) listener();
@@ -109,6 +109,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     publish({phase: 'loading', error: null});
     const task = (async () => {
       let own: Resource | null = null; let allocatedCompletion: CompletionAdapter | null = null;
+      let allocatedRuntime: RuntimeAdapter | null = null;
       try {
         const seed = await options.bootstrap(ctx);
         if (!live(generation) || abort.signal.aborted) return;
@@ -128,8 +129,9 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
         if (retirementError) throw retirementError;
         if (dataset.reference.id !== ctx.profile.defaultDataset.id || dataset.reference.version !== ctx.profile.defaultDataset.version) throw new Error('Dataset incompatible');
         // Publicar el recurso antes de await init permite disponer una inicialización cancelada.
-        allocatedCompletion = factories.createCompletion();
-        own = {runtime: factories.createRuntime(), completion: allocatedCompletion, controller: abort, ready: false, retired: false};
+        allocatedRuntime = factories.createRuntime();
+        allocatedCompletion = factories.createCompletion(allocatedRuntime);
+        own = {runtime: allocatedRuntime, completion: allocatedCompletion, controller: abort, ready: false, retired: false};
         resource = own;
         await own.runtime.init({profile: ctx.profile, environment: seed.environment, dataset}, abort.signal);
         if (!live(generation) || abort.signal.aborted || own.retired) return;
@@ -142,7 +144,10 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       } catch (error) {
         const cancelled = abort.signal.aborted;
         if (own && !own.retired) await release(own);
-        else if (!own && allocatedCompletion) await bounded(allocatedCompletion.dispose()).catch(() => {});
+        else if (!own) {
+          if (allocatedCompletion) await bounded(allocatedCompletion.dispose()).catch(() => {});
+          if (allocatedRuntime) await bounded(allocatedRuntime.dispose()).catch((reason) => {retirementError = reason instanceof Error ? reason : new Error(String(reason));});
+        }
         if (live(generation) && !cancelled) publish({phase: 'error', error: error instanceof Error ? error.message : String(error)});
       }
     })();
@@ -268,19 +273,20 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       resetting = task;
       try {await task;} finally {if (resetting === task) resetting = null;}
     },
-    async complete(position) {
+    async complete(position, signal) {
       const target = resource; const value = state.draft?.workspace;
-      if (!target?.ready || !value || activeRun || !state.openRequested || disposed) return null;
+      if (!target?.ready || !value || activeRun || !state.openRequested || disposed || signal?.aborted) return null;
       const file = value.files.find((entry) => entry.path === value.activeFile)!;
       if (!Number.isSafeInteger(position) || position < 0 || position > file.content.length) return null;
       completionAbort?.abort(); const abort = new AbortController(); completionAbort = abort;
-      const request = {requestId: `completion-${++sequence}`, generation: state.generation, workspaceId: value.id,
+      const cancelled = () => abort.abort(); signal?.addEventListener('abort', cancelled, {once: true});
+      const request = {requestId: `completion-${++completionSequence}`, generation: state.generation, workspaceId: value.id,
         revision: value.revision, file: file.path, document: file.content, position, schema: state.schema};
       try {
         const result = await target.completion.complete(request, abort.signal);
         return !abort.signal.aborted && live(request.generation) && resource === target
           && state.draft?.workspace.revision === request.revision && isCompletionResult(result, request) ? result : null;
-      } catch {return null;}
+      } catch {return null;} finally {signal?.removeEventListener('abort', cancelled);}
     },
     async dispose() {
       if (disposed) return;

@@ -10,10 +10,10 @@ import {memoryRepository, workspace, context} from './fixtures/practice-session.
 import {createPracticeRegistry} from '../src/practice/registry.ts';
 import {hasOtherModal, openExclusiveModal} from '../src/lib/dialog-coordination.ts';
 
-test('panel: resolver reconoce SQL ejecutable y pandas editable, sin categorías', () => {
+test('panel: resolver reconoce SQL/pandas ejecutables, sin categorías', () => {
   const sql = resolvePracticeEditorContext(concepts[0].slug)!;
   assert.equal(sql.profile.availability, 'enabled'); assert.ok(resolvePracticeContext(concepts[0].slug));
-  assert.equal(resolvePracticeContext('/apuntes/analisis-de-datos/pandas/dataframe'), null);
+  assert.ok(resolvePracticeContext('/apuntes/analisis-de-datos/pandas/dataframe'));
   const where = resolvePracticeEditorContext('/apuntes/analisis-de-datos/sql/where?x=1#x')!;
   assert.equal(sql.workspaceKey, where.workspaceKey);
   assert.notEqual(resolvePracticeEditorContext('/apuntes/analisis-de-datos/pandas/dataframe')!.workspaceKey, sql.workspaceKey);

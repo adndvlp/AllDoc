@@ -9,13 +9,14 @@ export async function editorBootstrap(context: PracticeEditorContext) {
   const expected = python ? 'pandas/dataframe/productos' : 'sql/select/todas-las-columnas';
   if (context.profile.defaultExampleId !== expected) throw new Error('Ejemplo inicial no disponible');
   const table = productsDataset.tables[0]; const path = python ? 'main.py' : 'consulta.sql';
+  const environment = python ? (await import('./adapters/python/environment.ts')).pythonEnvironment : sqliteEnvironment;
   const workspace: Workspace = {id: context.workspaceKey, toolKey: context.toolKey, profileId: context.profile.id,
     dataset: context.profile.defaultDataset, files: [{path, languageId: context.profile.languageId,
       content: python ? pandasExampleCode(table) : `SELECT * FROM ${table.name};`}], activeFile: path, revision: 0,
-    environmentVersion: python ? 'editor@1' : sqliteEnvironment.version};
+    environmentVersion: environment.version};
   const schema: RuntimeSchema = {version: 0, entities: productsDataset.tables.map((entry) => ({
     name: entry.name, kind: python ? 'dataframe' : 'table', columns: entry.columns, rowCount: entry.rows.length}))};
-  return {workspace, environment: python ? null : sqliteEnvironment, schema};
+  return {workspace, environment, schema};
 }
 
 export {productsDataset as editorDataset};

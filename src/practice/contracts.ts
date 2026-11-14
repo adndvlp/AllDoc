@@ -16,6 +16,8 @@ type ProfileMetadata = Readonly<{
   languageId: string;
   runtimeId: string;
   completionId: string;
+  completionDescription?: string;
+  busyCompletionDescription?: string;
   editorAvailability?: 'planned' | 'enabled';
   defaultExampleId: string;
   defaultDataset: DatasetReference;
@@ -122,7 +124,7 @@ export interface DatasetAdapter {
 }
 export type AdapterFactories = Readonly<{
   createRuntime: () => RuntimeAdapter;
-  createCompletion: () => CompletionAdapter;
+  createCompletion: (runtime: RuntimeAdapter) => CompletionAdapter;
   createDataset: () => DatasetAdapter;
 }>;
 export type ProviderLoaders = Readonly<{

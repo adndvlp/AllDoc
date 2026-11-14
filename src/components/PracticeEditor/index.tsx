@@ -1,9 +1,11 @@
 import {useEffect, useRef, useState} from 'react';
 import {mountPracticeEditor, type EditorHandle} from '@site/src/practice/editor-driver';
 import type {RunRequest, RuntimeSchema, Workspace} from '@site/src/practice/contracts';
+import type {SemanticCompletion} from '@site/src/practice/editor-completion';
 
 export default function PracticeEditor(props: {workspace: Workspace; schema: RuntimeSchema; helpId: string;
   onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void;
+  onComplete?: SemanticCompletion;
   onSelection?(id: string, path: string, selection?: RunRequest['selection']): void}) {
   const parent = useRef<HTMLDivElement>(null); const editor = useRef<EditorHandle | null>(null);
   const latest = useRef(props); latest.current = props;
@@ -12,6 +14,7 @@ export default function PracticeEditor(props: {workspace: Workspace; schema: Run
     let cancelled = false; setError(null);
     void mountPracticeEditor(parent.current!, {...latest.current,
       onChange: (...args) => latest.current.onChange(...args), onExecute: (...args) => latest.current.onExecute(...args),
+      onComplete: (...args) => latest.current.onComplete?.(...args) ?? Promise.resolve(null),
       onSelection: (...args) => latest.current.onSelection?.(...args)})
       .then((handle) => {if (cancelled) handle.destroy(); else {editor.current = handle; void handle.update(latest.current.workspace, latest.current.schema);}})
       .catch((reason) => {if (!cancelled) setError(String(reason));});

@@ -5,11 +5,13 @@ import {autocompletion, closeBrackets, closeBracketsKeymap, completionKeymap} fr
 import {HighlightStyle, indentOnInput, syntaxHighlighting} from '@codemirror/language';
 import {tags} from '@lezer/highlight';
 import {editorLanguage} from './editor-language.ts';
+import {createEditorCompletionSource, type SemanticCompletion} from './editor-completion.ts';
 import type {RunRequest, RuntimeSchema, Workspace} from './contracts.ts';
 
 export type EditorHandle = {update(workspace: Workspace, schema: RuntimeSchema): Promise<void>; destroy(): void};
 type Options = {workspace: Workspace; schema: RuntimeSchema; helpId: string;
   onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void;
+  onComplete?: SemanticCompletion;
   onSelection?(id: string, path: string, selection?: RunRequest['selection']): void};
 
 const theme = EditorView.theme({
@@ -43,7 +45,8 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
   const attrs = (workspace: Workspace) => EditorView.contentAttributes.of({role: 'textbox', 'aria-multiline': 'true',
     'aria-label': `Código ${workspace.toolKey === 'analisis-de-datos/sql' ? 'SQL' : workspace.toolKey === 'analisis-de-datos/pandas' ? 'pandas' : name(workspace).languageId}`, 'aria-describedby': options.helpId,
     spellcheck: 'false', autocapitalize: 'off', autocomplete: 'off', autocorrect: 'off'});
-  const initialLanguage = await editorLanguage(name(current).languageId, schema);
+  const semantic = options.onComplete ? createEditorCompletionSource(options.onComplete) : undefined;
+  const initialLanguage = await editorLanguage(name(current).languageId, schema, semantic);
   const extensions = [theme, syntaxHighlighting(highlighting), history(), lineNumbers(), drawSelection(), dropCursor(),
     highlightSpecialChars(), indentOnInput(), closeBrackets(), autocompletion(),
     Prec.highest(keymap.of([{key: 'Mod-Enter', run(view) {
@@ -68,7 +71,7 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
       const token = ++version;
       const same = current.id === workspace.id && current.activeFile === workspace.activeFile;
       if (same && schema === nextSchema && view.state.doc.toString() === name(workspace).content) {current = workspace; return;}
-      const support = await editorLanguage(name(workspace).languageId, nextSchema);
+      const support = await editorLanguage(name(workspace).languageId, nextSchema, semantic);
       if (destroyed || token !== version) return;
       if (!same) {
         states.set(current.id, view.state); current = workspace;

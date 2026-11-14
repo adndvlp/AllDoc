@@ -21,7 +21,9 @@ más adelante, define SITE_URL.
 La práctica SQL ejecuta SQLite WASM en un Worker de otro origen. `npm start`
 inicia también el servidor de archivos del runtime en `http://localhost:3001`.
 Los datos viven en memoria; los borradores se guardan por separado. pandas
-mantiene su editor y tendrá ejecución en el punto 6. Para publicar ambos sitios,
+usa Pyodide y Jedi en su propio Worker. Antes del primer arranque de una copia
+del proyecto, ejecuta `npm run prepare:python` para descargar los paquetes fijados.
+Para publicar ambos sitios,
 consulta [la configuración del runtime](specs/practice-runtime-deployment.md).
 
 ## Estructura inicial

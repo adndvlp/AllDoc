@@ -20,6 +20,7 @@ function run(args) {
 // npm conserva si una dependencia ya pertenece a dependencies o devDependencies.
 // "latest" excluye las etiquetas beta/canary; no se fuerzan conflictos de peers.
 run(['install', '--save-exact', ...packages.map((name) => name + '@latest')]);
+run(['run', 'update:python']);
 run(['run', 'typecheck']);
 run(['test']);
 run(['run', 'build']);

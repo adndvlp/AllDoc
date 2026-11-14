@@ -1,11 +1,11 @@
 # AllDoc — SDD del panel de práctica contextual
 
 **Fecha:** 13 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 4 completados; puntos 5 a 8 pendientes.
+**Estado:** puntos 1 a 6 completados; puntos 7 y 8 pendientes.
 **Objetivo de esta etapa:** validar la estructura y el contrato con SQL y pandas, para incorporar después más lenguajes, librerías y frameworks.  
 **Base:** [SDD del rediseño](alldoc-sdd.md), cuyos ocho puntos están completados. Este documento define una ampliación y conserva su evidencia histórica.
 
-Las decisiones de disposición y los presupuestos del panel son propuestas verificables. No representan motores de práctica ya instalados. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
+Los puntos 1 a 6 implementan y verifican el panel con SQLite y Pyodide/pandas reales. La aceptación global y sus presupuestos de rendimiento permanecen en el punto 8. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
 
 ## 1. Resultado esperado
 
@@ -173,11 +173,12 @@ El editor recibe archivos virtuales, cambios y selecciones; no conoce cómo ejec
 
 ### 7.2 Sugerencias por perfil
 
-En el punto 4, SQL completa palabras, tablas y columnas del esquema inicial;
-Python completa palabras y variables locales con CodeMirror. La UI describe ese
-alcance y no lo presenta como análisis semántico de pandas. La integración del
-proveedor real, el esquema actualizado desde SQLite y Jedi siguen en los puntos
-5 y 6. El registro separa explícitamente poder editar de poder ejecutar.
+SQL completa palabras, tablas y columnas del esquema inspeccionado en SQLite.
+Python conserva las sugerencias básicas de CodeMirror e incorpora Jedi y las
+columnas registradas por el motor. El punto 6 supera sus 63 casos específicos
+en los siete tamaños y la comparación independiente de la suite completa. El registro
+separa explícitamente poder editar de poder ejecutar y la UI anuncia cuándo
+el análisis se pausa durante una ejecución.
 
 **PF-10.** El autocompletado se anuncia con su alcance real. Se separan resaltado, sugerencias y diagnósticos.
 
@@ -188,7 +189,7 @@ proveedor real, el esquema actualizado desde SQLite y Jedi siguen en los puntos
 
 El proveedor de columnas es específico de datos; no se atribuye esa capacidad automáticamente a Jedi. Se define y prueba qué formas admite inicialmente, por ejemplo `productos["..."]`. No se promete inferir el esquema de cualquier programa Python sin ejecutarlo.
 
-El esquema SQL se actualiza desde el motor después de ejecutar, también si una ejecución dejó cambios parciales. No se deducen CREATE o DROP mediante expresiones regulares. El proveedor Python conserva un esquema inicial y refresca las variables registradas después de una ejecución; datos derivados no registrados se incorporarán solo cuando exista inspección validada.
+El esquema SQL se actualiza desde el motor después de ejecutar, también si una ejecución dejó cambios parciales. No se deducen CREATE o DROP mediante expresiones regulares. Python inspecciona los DataFrames presentes en el namespace después de ejecutar; las columnas nuevas y variables eliminadas se reflejan en Datos y en las sugerencias declaradas.
 
 **PF-11.** Las solicitudes incluyen revisión de documento, posición y generación de contexto. Se ignoran sugerencias tardías de otro documento o perfil. Una ejecución ocupada no bloquea las teclas esperando análisis: se conservan sugerencias de metadata o se anuncia el análisis no disponible. Cada evaluación de compatibilidad de Jedi y pandas se realiza antes de declarar completado el perfil.
 
@@ -356,6 +357,12 @@ interface DatasetAdapter {
 ```
 
 Las posiciones de sugerencias usan offsets UTF-16 del documento remitido, con límites validados; un adaptador LSP traduce su protocolo al contrato común. La respuesta solo se aplica al archivo, revisión y generación originales. Documentación y etiquetas son texto seguro. El motor no ejecuta el programa del usuario para obtener una sugerencia.
+
+`AdapterFactories.createCompletion(runtime)` recibe el runtime ya creado del
+workspace. Python comparte su VM de ejecución e inspección con el completador;
+no crea otro intérprete por pulsación. El gestor conserva la propiedad del
+runtime y lo dispone si falla construir el proveedor. Ambos reciben abortos,
+sin mezclar el contador de ejecuciones con el de solicitudes de sugerencias.
 
 `bootstrap` procede del materializador de confianza del perfil, no de una ruta o comando arbitrario recibido desde la UI. SQL usa parámetros para valores y nombres del manifiesto validados; Python materializa valores tipados sin concatenar entrada sin escapar. El esquema describe tablas o variables registradas, con columnas y tipos, independientemente de los handles de cada motor.
 
@@ -538,7 +545,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 a 5 están completados; los demás permanecen pendientes. Su orden valida
+Los puntos 1 a 6 están completados; los demás permanecen pendientes. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -549,7 +556,7 @@ a todos los motores de la sección 3.2.
 | 3 | Implementar gestor y borradores con adaptadores de prueba | Completado con TDD: [evidencia](verification/practice-point-3.md), 111 pruebas de código, tipos, build y cuatro pruebas con IndexedDB real |
 | 4 | Integrar panel y CodeMirror responsive | Completado con TDD: [evidencia](verification/practice-point-4.md), 122 pruebas de código, tipos, build y 397 de UI con comparación independiente |
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Completado con TDD: [evidencia](verification/practice-point-5.md), 137 pruebas de código, tipos, build y 446 de UI con comparación independiente |
-| 6 | Implementar adaptador Pyodide/pandas y completado real | DataFrame del miniapunte, ejecución libre, datos equivalentes y cambio SQL ↔ pandas |
+| 6 | Implementar adaptador Pyodide/pandas y completado real | Completado con TDD: [evidencia](verification/practice-point-6.md), 162 pruebas de código, tipos, build y 509 de UI con comparación independiente |
 | 7 | Conectar acciones de ejemplos y endurecer recuperación | Sustitución explícita, revisión anterior, reinicios, almacenamiento y red fallidos |
 | 8 | Ejecutar aceptación global, revisar capturas y comparar rendimiento | PA-01 a PA-27 con evidencia; contrato validado con dos motores reales |
 
@@ -662,6 +669,31 @@ modificadas y se conservaron 144 referencias. La portada añade 263 bytes gzip
 de JS frente al punto 4, sin cambios de CSS; el WASM permanece separado.
 pandas sigue editable, con ejecución y completado real pendientes del punto 6.
 [Evidencia roja/verde, configuración y límites](verification/practice-point-5.md).
+
+### Registro del punto 6
+
+Se habilitó pandas con Pyodide 314.0.8 y Python 3.14.2 en el origen estático de
+práctica. El entorno carga pandas 3.0.2, NumPy 2.4.6 y Jedi 0.20.1, con siete
+paquetes fijados por versión, fuente y SHA-256. Se descargan al preparar el
+caché; el build comprueba sus bytes y conserva intacta la distribución del SDK.
+El motor no entra en la descarga inicial de AllDoc.
+
+La selección o el archivo se ejecutan en un namespace conservado entre consultas.
+Los DataFrames y Series producen tablas acotadas; stdout, stderr y errores
+conservan su salida real. Jedi y las columnas del esquema inspeccionado usan el
+mismo runtime, sin ejecutar el documento para sugerir. El panel y su contrato
+se comparten con SQL. Reiniciar, cancelar o superar diez segundos reconstruye
+el entorno Python y conserva el código.
+
+Pasaron 162 pruebas de código con motores reales, tipos y build. La suite con
+actualización y la comparación independiente pasaron 509 casos, con nueve
+omisiones previstas, sin fallos ni casos inestables. Se revisaron 21 imágenes
+nuevas o modificadas y se conservaron las 158 referencias durante la comparación.
+La prueba de borradores espera el guardado antes de capturar. La portada añade
+161 bytes gzip de JS frente al punto 5 y mantiene el CSS; el inventario de
+archivos no acredita latencia ni INP. Acciones de ejemplos y aceptación global
+permanecen en los puntos 7 y 8.
+[Evidencia roja/verde, configuración y límites](verification/practice-point-6.md).
 
 ## 16. Fuentes y decisiones documentadas
 

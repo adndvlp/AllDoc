@@ -7,15 +7,15 @@ import {practiceRegistry} from '../src/practice/profiles.ts';
 import {createPracticeContextResolver, workspaceKey} from '../src/practice/context.ts';
 import {pandasConcept, registration, sqlProfile} from './fixtures/practice.ts';
 
-test('SQL habilita proveedores diferidos; pandas conserva su ejecución pendiente', async () => {
+test('SQL y pandas habilitan sus proveedores diferidos sin crear motores al resolver contexto', async () => {
   assert.deepEqual(practiceRegistry.list().map((profile) => [profile.id, profile.toolKey, profile.availability]), [
     ['sql-sqlite', 'analisis-de-datos/sql', 'enabled'],
-    ['python-pandas', 'analisis-de-datos/pandas', 'planned'],
+    ['python-pandas', 'analisis-de-datos/pandas', 'enabled'],
   ]);
   assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'productos-basico', version: 1});
   const providers = await practiceRegistry.loadProviders('sql-sqlite');
   assert.equal(typeof providers.createRuntime, 'function');
-  await assert.rejects(practiceRegistry.loadProviders('python-pandas'), /pendiente/);
+  assert.equal(typeof (await practiceRegistry.loadProviders('python-pandas')).createRuntime, 'function');
   assert.ok(createPracticeContextResolver({registry: practiceRegistry})('/apuntes/analisis-de-datos/sql/select'));
 });
 

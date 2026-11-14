@@ -24,6 +24,7 @@ async function searchTo(page: Page, query: string, title: string) {
   await search.getByRole('searchbox').fill(query);
   await search.getByRole('link').filter({hasText: title}).first().click();
   await expect(code(page)).toBeVisible();
+  await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled({timeout: 25_000});
 }
 
 test('entrada contextual: apertura diferida, editor real y SQL ejecutable', async ({page}) => {
@@ -48,6 +49,7 @@ test('borradores: SELECT/WHERE comparten edición y pandas conserva su propio co
   await searchTo(page, 'WHERE', 'WHERE'); await expect(code(page)).toHaveText('SELECT nombre FROM productos;');
   await searchTo(page, 'DataFrame', 'DataFrame'); await expect(code(page)).toHaveAccessibleName('Código pandas');
   await expect(code(page)).toContainText('pd.DataFrame'); await code(page).fill('productos.head(2)');
+  await expect(panel(page).getByText('Guardado local', {exact: true})).toBeVisible();
   await expect(page).toHaveScreenshot('practice-pandas.png');
   await searchTo(page, 'SELECT', 'SELECT'); await expect(code(page)).toHaveText('SELECT nombre FROM productos;');
   await panel(page).getByRole('button', {name: 'Volver al apunte', exact: true}).click();

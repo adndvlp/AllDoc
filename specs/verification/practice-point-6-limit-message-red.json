@@ -1,0 +1,17 @@
+{
+  "point": 6,
+  "stage": "red",
+  "command": "node --experimental-strip-types --test --test-name-pattern=límites tests/practice-python.test.ts",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "src/practice/adapters/python/core.ts",
+      "sha256": "c4b015edc1c5476667de411520df80931c3c953fb0479da8dbc9df122b4517bd"
+    },
+    {
+      "path": "tests/practice-python.test.ts",
+      "sha256": "f468b768a83770645d9a54c8e123837a325ce65548ca1026bf5cb00196b4a870"
+    }
+  ],
+  "log": "(node:24761) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nError thrown in write:\nError: Se alcanzó el límite de salida de 1 MiB\n    at send (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:54:82)\n    at flush (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:60:9)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:66:105)\n    at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660783\n    at handleEAGAIN (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659665)\n    at readWriteHelper (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659781)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660765)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:84421)\n    at doWritev (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:228608)\n    at _fd_write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:230179)\n✖ Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando (3975.162916ms)\n✔ Pyodide real: una función de una ejecución anterior conserva su excepción y señala la llamada actual (12.744958ms)\nℹ tests 2\nℹ suites 0\nℹ pass 1\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4172.497917\n\n✖ failing tests:\n\ntest at tests/practice-python.test.ts:107:1\n✖ Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando (3975.162916ms)\n  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /límite de salida.*1 MiB/. Input:\n  \n  'OSError: [Errno 29] I/O error'\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python.test.ts:112:10)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'OSError: [Errno 29] I/O error',\n    expected: /límite de salida.*1 MiB/,\n    operator: 'match',\n    diff: 'simple'\n  }\n"
+}

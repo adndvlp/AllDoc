@@ -4,6 +4,7 @@ build/
 .docusaurus*/
 .ui-build/
 .runtime-build/
+.python-packages/
 
 # Cachés
 .cache/
