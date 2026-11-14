@@ -9,7 +9,8 @@ import type {RunRequest, RuntimeSchema, Workspace} from './contracts.ts';
 
 export type EditorHandle = {update(workspace: Workspace, schema: RuntimeSchema): Promise<void>; destroy(): void};
 type Options = {workspace: Workspace; schema: RuntimeSchema; helpId: string;
-  onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void};
+  onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void;
+  onSelection?(id: string, path: string, selection?: RunRequest['selection']): void};
 
 const theme = EditorView.theme({
   '&': {height: '100%', backgroundColor: 'var(--canvas)', color: 'var(--text-primary)', fontSize: '.875rem'},
@@ -54,6 +55,10 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
       ![binding.key, binding.mac, binding.win, binding.linux].some((value) => value?.toLowerCase() === 'ctrl-k')), ...historyKeymap]),
     EditorView.updateListener.of((update) => {
       if (update.docChanged) options.onChange(current.id, current.activeFile, update.state.doc.toString());
+      if (update.selectionSet || update.docChanged) {
+        const {from, to, empty} = update.state.selection.main;
+        options.onSelection?.(current.id, current.activeFile, empty ? undefined : {from, to});
+      }
     })];
   const createState = (workspace: Workspace, support: Awaited<ReturnType<typeof editorLanguage>>) => EditorState.create({
     doc: name(workspace).content, extensions: [...extensions, language.of(support), attributes.of(attrs(workspace))]});
@@ -74,6 +79,8 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
       const content = name(workspace).content;
       view.dispatch({effects: [language.reconfigure(support), attributes.reconfigure(attrs(workspace))],
         ...(view.state.doc.toString() !== content ? {changes: {from: 0, to: view.state.doc.length, insert: content}, annotations: Transaction.addToHistory.of(false)} : {})});
+      const {from, to, empty} = view.state.selection.main;
+      options.onSelection?.(current.id, current.activeFile, empty ? undefined : {from, to});
     },
     destroy() {destroyed = true; version++; states.clear(); view.destroy();},
   };

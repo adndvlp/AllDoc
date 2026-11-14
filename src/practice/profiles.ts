@@ -7,8 +7,12 @@ export const practiceRegistry = createPracticeRegistry([
     languageId: 'sql', runtimeId: 'sqlite-wasm', completionId: 'sql-schema',
     defaultExampleId: 'sql/select/todas-las-columnas',
     defaultDataset: {id: 'productos-basico', version: 1},
-    executionLocation: 'browser', availability: 'planned', editorAvailability: 'enabled',
+    executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
     capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
+  }, loaders: {
+    runtime: () => import(/* webpackChunkName: "practice-sql-bridge" */ './adapters/sqlite/browser.ts').then((module) => module.createSQLiteRuntime),
+    completion: () => import(/* webpackChunkName: "practice-sql-completion" */ './adapters/sqlite/completion.ts').then((module) => module.createSQLCompletion),
+    dataset: () => import(/* webpackChunkName: "practice-dataset-adapter" */ './datasets/index.ts').then((module) => module.createDatasetAdapter),
   }},
   {profile: {
     id: 'python-pandas', label: 'pandas', toolKey: 'analisis-de-datos/pandas',

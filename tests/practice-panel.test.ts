@@ -10,9 +10,10 @@ import {memoryRepository, workspace, context} from './fixtures/practice-session.
 import {createPracticeRegistry} from '../src/practice/registry.ts';
 import {hasOtherModal, openExclusiveModal} from '../src/lib/dialog-coordination.ts';
 
-test('panel: resolver de edición reconoce SQL/pandas pendientes sin habilitar ejecución ni categorías', () => {
+test('panel: resolver reconoce SQL ejecutable y pandas editable, sin categorías', () => {
   const sql = resolvePracticeEditorContext(concepts[0].slug)!;
-  assert.equal(sql.profile.availability, 'planned'); assert.equal(resolvePracticeContext(concepts[0].slug), null);
+  assert.equal(sql.profile.availability, 'enabled'); assert.ok(resolvePracticeContext(concepts[0].slug));
+  assert.equal(resolvePracticeContext('/apuntes/analisis-de-datos/pandas/dataframe'), null);
   const where = resolvePracticeEditorContext('/apuntes/analisis-de-datos/sql/where?x=1#x')!;
   assert.equal(sql.workspaceKey, where.workspaceKey);
   assert.notEqual(resolvePracticeEditorContext('/apuntes/analisis-de-datos/pandas/dataframe')!.workspaceKey, sql.workspaceKey);
@@ -40,7 +41,7 @@ test('panel: separador conserva mínimos legibles, limita arrastre y tiene tama�
 });
 
 test('panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados', async () => {
-  const profile = practiceRegistry.get('sql-sqlite')!; const repository = memoryRepository(); const drafts = createDraftStore(() => repository.repository);
+  const profile = {...practiceRegistry.get('sql-sqlite')!, availability: 'planned' as const}; const repository = memoryRepository(); const drafts = createDraftStore(() => repository.repository);
   let loads = 0;
   const manager = createPracticeSessionManager({registry: {...practiceRegistry, async loadProviders() {loads++; throw new Error('No debe cargar');}}, drafts,
     bootstrap: async () => ({workspace: workspace(), environment: null})});

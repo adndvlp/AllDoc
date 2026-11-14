@@ -133,8 +133,10 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
         resource = own;
         await own.runtime.init({profile: ctx.profile, environment: seed.environment, dataset}, abort.signal);
         if (!live(generation) || abort.signal.aborted || own.retired) return;
+        const schema = await own.runtime.inspect();
+        if (!live(generation) || abort.signal.aborted || own.retired) return;
         own.ready = true;
-        publish({phase: 'ready', schema: dataset.schema,
+        publish({phase: 'ready', schema,
           ...(visited.has(ctx.workspaceKey) ? {notice: 'Entorno restaurado con los datos iniciales; tu código se conserva.'} : {})});
         visited.add(ctx.workspaceKey);
       } catch (error) {

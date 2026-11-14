@@ -1,0 +1,17 @@
+{
+  "stage": "red",
+  "recordedAt": "2026-11-14T07:41:08.268Z",
+  "command": "node --experimental-strip-types --test tests/practice-sqlite.test.ts",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "src/practice/adapters/sqlite/core.ts",
+      "sha256": "8147e5c75df730299da2f4f52083c94582d10bd701caa24f266995539d2e366c"
+    },
+    {
+      "path": "tests/practice-sqlite.test.ts",
+      "sha256": "89fb4eab90649b0aa3a17ad12ff6566cfd212f127b2d12cf938a04c13e1b9125"
+    }
+  ],
+  "log": "(node:6562) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nsqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);\n✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (102.504292ms)\n✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.623833ms)\n✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (2.116041ms)\n✖ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (3.580208ms)\n✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (1.118417ms)\n✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (11.451ms)\n✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (2.133333ms)\n✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (3.028ms)\nℹ tests 8\nℹ suites 0\nℹ pass 7\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 372.561583\n\n✖ failing tests:\n\ntest at tests/practice-sqlite.test.ts:61:1\n✖ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (3.580208ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n  + undefined\n  - [\n  -   [\n  -     'Teclado',\n  -     'Accesorios',\n  -     1\n  -   ],\n  -   [\n  -     'Mouse',\n  -     'Accesorios',\n  -     1\n  -   ],\n  -   [\n  -     'Monitor',\n  -     'Pantallas',\n  -     1\n  -   ]\n  - ]\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts:68:10)\n      at Test.runInAsyncScope (node:async_hooks:226:14)\n      at Test.run (node:internal/test_runner/test:1201:25)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: [ [ 'Teclado', 'Accesorios', 1 ], [ 'Mouse', 'Accesorios', 1 ], [ 'Monitor', 'Pantallas', 1 ] ],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n"
+}

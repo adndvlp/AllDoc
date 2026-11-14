@@ -3,6 +3,7 @@ node_modules/
 build/
 .docusaurus*/
 .ui-build/
+.runtime-build/
 
 # Cachés
 .cache/

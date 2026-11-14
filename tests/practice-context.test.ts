@@ -7,16 +7,16 @@ import {practiceRegistry} from '../src/practice/profiles.ts';
 import {createPracticeContextResolver, workspaceKey} from '../src/practice/context.ts';
 import {pandasConcept, registration, sqlProfile} from './fixtures/practice.ts';
 
-test('los perfiles previstos de SQL y pandas tienen metadata y permanecen sin ejecución habilitada', async () => {
+test('SQL habilita proveedores diferidos; pandas conserva su ejecución pendiente', async () => {
   assert.deepEqual(practiceRegistry.list().map((profile) => [profile.id, profile.toolKey, profile.availability]), [
-    ['sql-sqlite', 'analisis-de-datos/sql', 'planned'],
+    ['sql-sqlite', 'analisis-de-datos/sql', 'enabled'],
     ['python-pandas', 'analisis-de-datos/pandas', 'planned'],
   ]);
   assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'productos-basico', version: 1});
-  for (const profile of practiceRegistry.list()) {
-    await assert.rejects(practiceRegistry.loadProviders(profile.id), /pendiente/);
-  }
-  assert.equal(createPracticeContextResolver({registry: practiceRegistry})('/apuntes/analisis-de-datos/sql/select'), null);
+  const providers = await practiceRegistry.loadProviders('sql-sqlite');
+  assert.equal(typeof providers.createRuntime, 'function');
+  await assert.rejects(practiceRegistry.loadProviders('python-pandas'), /pendiente/);
+  assert.ok(createPracticeContextResolver({registry: practiceRegistry})('/apuntes/analisis-de-datos/sql/select'));
 });
 
 test('SELECT y WHERE comparten identidad de workspace; no se deriva contexto de categorías ni de títulos', () => {

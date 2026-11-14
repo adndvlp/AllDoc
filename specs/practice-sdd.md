@@ -538,7 +538,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 a 4 están completados; los demás permanecen pendientes. Su orden valida
+Los puntos 1 a 5 están completados; los demás permanecen pendientes. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -548,7 +548,7 @@ a todos los motores de la sección 3.2.
 | 2 | Definir dataset común y miniapunte pandas | Completado con TDD: [evidencia](verification/practice-point-2.md), 84 pruebas de código, pandas nativo, 302 de UI y capturas revisadas |
 | 3 | Implementar gestor y borradores con adaptadores de prueba | Completado con TDD: [evidencia](verification/practice-point-3.md), 111 pruebas de código, tipos, build y cuatro pruebas con IndexedDB real |
 | 4 | Integrar panel y CodeMirror responsive | Completado con TDD: [evidencia](verification/practice-point-4.md), 122 pruebas de código, tipos, build y 397 de UI con comparación independiente |
-| 5 | Implementar aislamiento y adaptador SQLite WASM real | Consultas, selección, datos, errores, sugerencias de esquema y cancelación |
+| 5 | Implementar aislamiento y adaptador SQLite WASM real | Completado con TDD: [evidencia](verification/practice-point-5.md), 137 pruebas de código, tipos, build y 446 de UI con comparación independiente |
 | 6 | Implementar adaptador Pyodide/pandas y completado real | DataFrame del miniapunte, ejecución libre, datos equivalentes y cambio SQL ↔ pandas |
 | 7 | Conectar acciones de ejemplos y endurecer recuperación | Sustitución explícita, revisión anterior, reinicios, almacenamiento y red fallidos |
 | 8 | Ejecutar aceptación global, revisar capturas y comparar rendimiento | PA-01 a PA-27 con evidencia; contrato validado con dos motores reales |
@@ -640,6 +640,28 @@ previstas, sin fallos o casos inestables. Se revisaron 28 imágenes nuevas y
 inicial conjunto es 4073 bytes gzip de JS/CSS, dentro de los 5 KiB propuestos;
 CodeMirror y los lenguajes permanecen diferidos. La ejecución real sigue en los
 puntos 5 y 6. [Evidencia roja/verde y límites](verification/practice-point-4.md).
+
+### Registro del punto 5
+
+Se habilitó SQL con SQLite WASM real en un Worker de un origen estático separado,
+sin backend de ejecución. El frame, los assets y el motor se cargan al abrir la
+práctica. La conexión usa un MessagePort privado, mensajes validados y CSP del
+runtime y de la app. `npm start` inicia ambos sitios locales; la publicación
+requiere configurar el origen dedicado y sus cabeceras.
+
+Ejecutar usa la selección o el archivo completo. El parser de SQLite procesa
+sentencias, comentarios y triggers; se respetan transacciones, resultados múltiples,
+tipos serializables, errores y límites. Datos y autocompletado reflejan la
+inspección real, incluidos cambios parciales antes de un error. Reiniciar restaura
+productos; cancelar o superar diez segundos destruye el motor sin perder código.
+
+Pasaron 137 pruebas de código, tipos y build. Los 49 casos específicos de SQL y
+las dos ejecuciones completas de 446 casos acreditan el motor y la comparación
+visual, con nueve omisiones previstas. Se revisaron 32 imágenes nuevas o
+modificadas y se conservaron 144 referencias. La portada añade 263 bytes gzip
+de JS frente al punto 4, sin cambios de CSS; el WASM permanece separado.
+pandas sigue editable, con ejecución y completado real pendientes del punto 6.
+[Evidencia roja/verde, configuración y límites](verification/practice-point-5.md).
 
 ## 16. Fuentes y decisiones documentadas
 

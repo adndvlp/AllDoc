@@ -6,12 +6,17 @@ import {editorLanguage} from '../src/practice/editor-language.ts';
 import {editorBootstrap, editorDataset} from '../src/practice/editor-bootstrap.ts';
 import {resolvePracticeEditorContext} from '../src/practice/context.ts';
 
-test('editor: semillas SQL/pandas reproducen datos canónicos sin crear un entorno ejecutable', async () => {
+test('editor: semillas reproducibles, manifiesto SQLite fijado y pandas aún pendiente', async () => {
   for (const [tool, concept, filename] of [['sql', 'select', 'consulta.sql'], ['pandas', 'dataframe', 'main.py']]) {
     const context = resolvePracticeEditorContext(`/apuntes/analisis-de-datos/${tool}/${concept}`)!;
     const seed = await editorBootstrap(context);
     assert.equal(seed.workspace.id, context.workspaceKey); assert.equal(seed.workspace.activeFile, filename);
-    assert.equal(seed.environment, null); assert.equal(seed.schema.entities[0].rowCount, 3);
+    if (tool === 'sql') {
+      assert.equal(seed.environment?.runtime.id, 'sqlite-wasm');
+      assert.match(seed.environment?.runtime.version ?? '', /^3\./);
+      assert.equal(seed.workspace.environmentVersion, seed.environment?.version);
+    } else assert.equal(seed.environment, null);
+    assert.equal(seed.schema.entities[0].rowCount, 3);
     assert.deepEqual(seed.schema.entities[0].columns, editorDataset.tables[0].columns);
     assert.match(seed.workspace.files[0].content, tool === 'sql' ? /SELECT \* FROM productos;/ : /pd.DataFrame/);
   }

@@ -48,6 +48,7 @@ export type RuntimeSchema = Readonly<{
     kind: 'table' | 'dataframe' | 'variable';
     columns: readonly DataColumn[];
     rowCount?: number;
+    preview?: Readonly<{columns: readonly DataColumn[]; rows: readonly (readonly Cell[])[]; truncated: boolean}>;
   }>[];
 }>;
 export type EnvironmentManifest = Readonly<{

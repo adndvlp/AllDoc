@@ -4,7 +4,7 @@ import {usePractice} from '../PracticeProvider';
 import {useSearch} from '../SearchProvider';
 import Icon from '../Icon';
 import type {PracticeLayout} from '@site/src/practice/layout';
-import type {Workspace} from '@site/src/practice/contracts';
+import type {RunRequest, Workspace} from '@site/src/practice/contracts';
 import type {PracticeDataset} from '@site/src/practice/datasets/types';
 import {hasOtherModal, openExclusiveModal, suspendDialogEvent} from '@site/src/lib/dialog-coordination';
 import type Editor from '../PracticeEditor';
@@ -21,6 +21,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const dialog = useRef<HTMLDialogElement>(null); const programmaticCloses = useRef(0); const suspended = useRef(false);
   const latest = useRef({practice, layout}); latest.current = {practice, layout};
   const previousWorkspace = useRef<Workspace | null>(null);
+  const selection = useRef<{id: string; path: string; range: RunRequest['selection']} | null>(null);
   if (practice.state.draft) previousWorkspace.current = practice.state.draft.workspace;
   const workspace = practice.state.draft?.workspace ?? previousWorkspace.current;
   const [activeTab, setActiveTab] = useState(0); const [EditorComponent, setEditor] = useState<ComponentType<Parameters<typeof Editor>[0]> | null>(null);
@@ -96,6 +97,8 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const status = practice.state.draft?.status;
   const saved = status === 'memory' ? 'Guardado en esta sesión' : status === 'conflict' ? 'Copia recuperable guardada' : status === 'dirty' || status === 'saving' ? 'Guardando…' : 'Guardado local';
   const error = practice.error ?? practice.state.error;
+  const tables = unavailable ? data?.tables : practice.state.schema.entities.map((entity) => ({
+    name: entity.name, columns: entity.columns, rows: entity.preview?.rows ?? [], rowCount: entity.rowCount, truncated: entity.preview?.truncated}));
   function selectTab(index: number, focus = false) {
     setActiveTab(index);
     if (focus) dialog.current?.querySelector<HTMLButtonElement>(`[data-practice-tab="${index}"]`)?.focus();
@@ -118,8 +121,12 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
         <span className={styles.file}>{workspace?.activeFile ?? 'Preparando código…'}</span>
         {practice.state.phase === 'running'
           ? <button type="button" onClick={() => {void practice.manager?.stop();}}>Detener</button>
-          : <button type="button" disabled={unavailable || practice.state.phase !== 'ready'} onClick={() => {void practice.manager?.execute();}}>Ejecutar</button>}
+          : <button type="button" disabled={unavailable || practice.state.phase !== 'ready'} onClick={() => {
+            const current = selection.current;
+            void practice.manager?.execute(current?.id === workspace?.id && current?.path === workspace?.activeFile ? current?.range : undefined);
+          }}>Ejecutar</button>}
         {!unavailable && <button type="button" disabled={practice.state.phase === 'loading'} onClick={() => {void practice.manager?.resetEnvironment();}}>Reiniciar entorno</button>}
+        {activeTab !== 2 && practice.state.events.some((event) => event.type === 'end') && <button type="button" onClick={() => selectTab(2)}>Ver resultados</button>}
       </div>
       <div role="tablist" aria-label="Contenido de práctica" className={styles.tabs}>
         {tabs.map((tab, index) => <button key={tab} type="button" role="tab" id={`${id}-tab-${index}`} data-practice-tab={index}
@@ -132,6 +139,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
       <div className={styles.body}>
         <section className={styles.code} role="tabpanel" id={id + '-pane-0'} aria-labelledby={id + '-tab-0'} hidden={activeTab !== 0}>
           {(error || editorError) && <div className={styles.message} role="alert">No se pudo preparar la práctica.
+            {error && <p>{error}</p>}
             <button type="button" onClick={() => {if (error) {if (practice.manager) void practice.manager.retry(); else void practice.open();} setAttempt((value) => value + 1);}}>Reintentar</button>
           </div>}
           {!error && !editorError && (!EditorComponent || !workspace) && <p className={styles.message} role="status">Cargando editor…</p>}
@@ -139,18 +147,20 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
             onChange={(key, path, content) => {
               if (practice.manager?.getSnapshot().context?.workspaceKey !== key) return;
               try {practice.manager.edit(path, content); setMessage(null);} catch (reason) {setMessage(String(reason));}
-            }} onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else void practice.manager?.execute(selection);}} />}
+            }} onSelection={(id, path, range) => {selection.current = {id, path, range};}}
+            onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else void practice.manager?.execute(selection);}} />}
           <p id={id + '-help'} className={styles.help}>Tab sale del editor · Ctrl+Espacio sugiere</p>
         </section>
         <section role="tabpanel" id={id + '-pane-1'} aria-labelledby={id + '-tab-1'} hidden={activeTab !== 1} className={styles.data}>
-          {data ? data.tables.map((table) => <div key={table.name}>
-            <h3>{table.name} <span>{table.rows.length} filas</span></h3>
+          {tables ? tables.map((table) => <div key={table.name}>
+            <h3>{table.name} <span>{'rowCount' in table ? table.rowCount === undefined ? 'Vista' : table.rowCount + ' filas' : table.rows.length + ' filas'}</span></h3>
             <div role="region" aria-label={'Tabla ' + table.name} tabIndex={0} className={styles.table}>
               <table><caption className="sr-only">Datos de {table.name}</caption>
                 <thead><tr>{table.columns.map((column) => <th key={column.name} scope="col">{column.name}<small>{column.type}</small></th>)}</tr></thead>
                 <tbody>{table.rows.map((row, index) => <tr key={index}>{row.map((cell, column) => <td key={column}>{String(cell ?? 'NULL')}</td>)}</tr>)}</tbody>
               </table>
             </div>
+            {'truncated' in table && table.truncated === true && <p>Vista previa truncada.</p>}
           </div>) : <p>Cargando datos…</p>}
         </section>
         <section role="tabpanel" id={id + '-pane-2'} aria-labelledby={id + '-tab-2'} hidden={activeTab !== 2} className={styles.results}>
@@ -159,7 +169,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
       </div>
       <div className={styles.status}>
         {unavailable && <p>La ejecución aún no está disponible.</p>}
-        <span>{saved}</span><span className={styles.scope}>{label === 'SQL' ? 'Sugerencias: palabras y columnas iniciales' : label === 'pandas' ? 'Sugerencias básicas de Python; sin análisis de pandas' : 'Sugerencias según el perfil'}</span>
+        <span>{saved}</span><span className={styles.scope}>{label === 'SQL' ? 'SQLite · Sugerencias del esquema actual' : label === 'pandas' ? 'Sugerencias básicas de Python; sin análisis de pandas' : 'Sugerencias según el perfil'}</span>
         {(message || practice.state.notice) && <p role="status">{message ?? practice.state.notice}</p>}
       </div>
     </div>

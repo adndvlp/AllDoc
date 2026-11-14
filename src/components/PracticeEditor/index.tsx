@@ -3,14 +3,16 @@ import {mountPracticeEditor, type EditorHandle} from '@site/src/practice/editor-
 import type {RunRequest, RuntimeSchema, Workspace} from '@site/src/practice/contracts';
 
 export default function PracticeEditor(props: {workspace: Workspace; schema: RuntimeSchema; helpId: string;
-  onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void}) {
+  onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void;
+  onSelection?(id: string, path: string, selection?: RunRequest['selection']): void}) {
   const parent = useRef<HTMLDivElement>(null); const editor = useRef<EditorHandle | null>(null);
   const latest = useRef(props); latest.current = props;
   const [error, setError] = useState<string | null>(null); const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let cancelled = false; setError(null);
     void mountPracticeEditor(parent.current!, {...latest.current,
-      onChange: (...args) => latest.current.onChange(...args), onExecute: (...args) => latest.current.onExecute(...args)})
+      onChange: (...args) => latest.current.onChange(...args), onExecute: (...args) => latest.current.onExecute(...args),
+      onSelection: (...args) => latest.current.onSelection?.(...args)})
       .then((handle) => {if (cancelled) handle.destroy(); else {editor.current = handle; void handle.update(latest.current.workspace, latest.current.schema);}})
       .catch((reason) => {if (!cancelled) setError(String(reason));});
     return () => {cancelled = true; editor.current?.destroy(); editor.current = null;};

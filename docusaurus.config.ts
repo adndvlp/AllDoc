@@ -5,6 +5,10 @@ import {themes} from 'prism-react-renderer';
 import {paletteBootstrapScript} from './src/content/palettes';
 import {parseConceptFrontMatter} from './src/lib/concept-front-matter.ts';
 import {docsBasePath} from './src/content/concepts.ts';
+import {validateRuntimeLocation} from './src/practice/isolation/policy.ts';
+
+const practiceOrigin = process.env.PRACTICE_ORIGIN ?? (new URL(process.env.SITE_URL ?? 'http://localhost:3000').hostname === 'localhost' ? 'http://localhost:3001' : '');
+if (practiceOrigin) validateRuntimeLocation(process.env.PRACTICE_APP_ORIGIN ?? (process.env.SITE_URL || 'http://127.0.0.1:3000'), practiceOrigin);
 
 const config: Config = {
   title: 'AllDoc',
@@ -15,6 +19,8 @@ const config: Config = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   headTags: [
+    {tagName: 'meta', attributes: {name: 'alldoc-practice-origin', content: practiceOrigin}},
+    {tagName: 'meta', attributes: {'http-equiv': 'Content-Security-Policy', content: `frame-src ${practiceOrigin || "'none'"}`}},
     {tagName: 'script', attributes: {}, innerHTML: paletteBootstrapScript},
   ],
   markdown: {

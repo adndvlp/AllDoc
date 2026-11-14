@@ -8,7 +8,7 @@ export default function PracticeResults({events, revision}: {events: readonly Ru
     {events[0].revision !== revision && <p role="status">Este resultado corresponde a una versión anterior del código.</p>}
     {events.map((event, index) => {
       if (event.type === 'stream') return <pre key={index}>{event.text}</pre>;
-      if (event.type === 'error') return <p key={index} role="alert">{event.file && <strong>{event.file}{event.line ? ':' + event.line : ''}: </strong>}{event.message}</p>;
+      if (event.type === 'error') return <p key={index} role="alert">{event.file && <strong>{event.file}{event.line ? ':' + event.line : ''}{event.column ? ':' + event.column : ''}: </strong>}{event.message}</p>;
       if (event.type === 'table') return <div key={index}>
         <div className={styles.table} role="region" aria-label={`Tabla de resultado ${index + 1}`} tabIndex={0}>
           <table><caption className="sr-only">Resultado {index + 1}</caption>

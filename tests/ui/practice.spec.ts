@@ -26,15 +26,15 @@ async function searchTo(page: Page, query: string, title: string) {
   await expect(code(page)).toBeVisible();
 }
 
-test('entrada contextual: apertura diferida, editor real y ejecución pendiente explícita', async ({page}) => {
+test('entrada contextual: apertura diferida, editor real y SQL ejecutable', async ({page}) => {
   const requests: string[] = []; page.on('request', (request) => requests.push(request.url()));
   await go(page, '/'); await expect(page.getByRole('button', {name: /^Practicar /})).toHaveCount(0);
   await go(page, '/apuntes/analisis-de-datos'); await expect(page.getByRole('button', {name: /^Practicar /})).toHaveCount(0);
   await go(page); expect(requests.filter((url) => /practice-editor|practice-session/.test(url))).toHaveLength(0);
   await expect(page.locator('.cm-editor')).toHaveCount(0); await open(page);
   await expect(code(page)).toHaveText('SELECT * FROM productos;');
-  await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeDisabled();
-  await expect(panel(page)).toContainText('La ejecución aún no está disponible');
+  await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled();
+  await expect(panel(page)).not.toContainText('La ejecución aún no está disponible');
   expect(requests.some((url) => /practice-editor/.test(url))).toBe(true);
   await fits(page, panel(page)); await expect(page.locator('footer')).toHaveCount(0);
   await expect(page).toHaveScreenshot('practice-sql.png');

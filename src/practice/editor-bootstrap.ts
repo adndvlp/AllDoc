@@ -1,6 +1,7 @@
 import type {PracticeEditorContext, RuntimeSchema, Workspace} from './contracts.ts';
 import {productsDataset} from './datasets/rows/products.ts';
 import {pandasExampleCode} from './datasets/materialize.ts';
+import {sqliteEnvironment} from './adapters/sqlite/environment.ts';
 
 /** Solo se importa al abrir práctica. No crea ni simula un motor. */
 export async function editorBootstrap(context: PracticeEditorContext) {
@@ -11,10 +12,10 @@ export async function editorBootstrap(context: PracticeEditorContext) {
   const workspace: Workspace = {id: context.workspaceKey, toolKey: context.toolKey, profileId: context.profile.id,
     dataset: context.profile.defaultDataset, files: [{path, languageId: context.profile.languageId,
       content: python ? pandasExampleCode(table) : `SELECT * FROM ${table.name};`}], activeFile: path, revision: 0,
-    environmentVersion: 'editor@1'};
+    environmentVersion: python ? 'editor@1' : sqliteEnvironment.version};
   const schema: RuntimeSchema = {version: 0, entities: productsDataset.tables.map((entry) => ({
     name: entry.name, kind: python ? 'dataframe' : 'table', columns: entry.columns, rowCount: entry.rows.length}))};
-  return {workspace, environment: null, schema};
+  return {workspace, environment: python ? null : sqliteEnvironment, schema};
 }
 
 export {productsDataset as editorDataset};
