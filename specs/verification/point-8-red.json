@@ -1,0 +1,22 @@
+{
+  "phase": "red",
+  "command": "node --experimental-strip-types --test --test-name-pattern=\"comparación final\" tests/final-verification.test.ts",
+  "sourceSha256": "c240f134fefd33369a7043ca4c546e74be55feca7c7ca8114a0e90b5a743cef5",
+  "testFileSha256": "95f1494a37a19949db6b2cf02defa458f9ba56b5a47143971c17a5d6bea063e1",
+  "scaffoldSha256": "03e4bfb6e039a4129b64dc7b69ca65c4f70c3b8b04a453c0d5dbc1fe5f96733e",
+  "expected": "complete",
+  "received": "pending",
+  "meaning": "Dos ejecuciones completas, comparables y dentro del presupuesto todavía no producen una comparación completa. El módulo ya existe; no se usa el error inicial de importación como fase roja.",
+  "supplementalRed": [
+    {
+      "test": "procedencia incompleta o esquema desconocido",
+      "expected": "incomplete",
+      "received": "complete"
+    },
+    {
+      "test": "literales de scripts no se cuentan como estructura visible",
+      "expected": "passed",
+      "received": "failed"
+    }
+  ]
+}

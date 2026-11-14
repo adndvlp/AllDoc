@@ -1,0 +1,111 @@
+{
+  "phase": "build-green",
+  "sourceSha256": "14f3739c0a2d727b772ce6e5f1f65123a3b068b3dfb56ab5161ea88022aeade2",
+  "verification": "benchmarks/verifications/2026-11-13T23-55-00-195Z-14f3739c0a",
+  "benchmarkRun": "benchmarks/runs/2026-11-13T23-55-02-627Z-14f3739c0a",
+  "unchangedSqlBodies": true,
+  "unitTestsPassed": 60,
+  "checks": {
+    "01-pruebas de código": {
+      "status": "passed",
+      "log": "01-pruebas.log"
+    },
+    "02-tipos de aplicación": {
+      "status": "passed",
+      "log": "02-tipos.log"
+    },
+    "03-tipos de pruebas": {
+      "status": "passed",
+      "log": "03-tipos.log"
+    },
+    "synthetic": {
+      "status": "passed",
+      "file": "synthetic-search.json",
+      "entries": 1000
+    },
+    "ui": {
+      "status": "not-run"
+    },
+    "05-build y medición de producción": {
+      "status": "passed",
+      "log": "05-build.log"
+    },
+    "published": {
+      "status": "passed",
+      "pages": 10
+    },
+    "comparison": {
+      "status": "incomplete",
+      "file": "comparison.md"
+    }
+  },
+  "publishedAudit": {
+    "status": "passed",
+    "pages": [
+      {
+        "route": "404.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/limit.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/order-by.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/select.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/where.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/desarrollo-web.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/ia.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "index.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      }
+    ],
+    "homeJS": {
+      "loaderFound": true,
+      "chunkIds": [
+        869,
+        76,
+        583
+      ],
+      "bodyAssets": [
+        "assets/js/notes-sql.f4bdf02b.js"
+      ],
+      "loadedBodies": []
+    },
+    "failures": []
+  },
+  "browserValidation": "pending"
+}

@@ -32,7 +32,22 @@ export default function SearchDialog() {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault();
         if (dialog.current?.open) input.current?.focus();
-        else void store.openDialog();
+        else {
+          // Cerrar la ventana de origen antes de showModal conserva un único
+          // diálogo y permite que el retorno nativo del foco tenga un destino visible.
+          const topics = document.querySelector<HTMLDialogElement>('dialog.navbar-sidebar[open]');
+          if (topics) {
+            topics.close();
+            document.querySelector<HTMLButtonElement>('[data-header-search]')?.focus({preventScroll: true});
+          } else {
+            const disclosure = document.activeElement?.closest<HTMLDetailsElement>('.navbar__inner details[open]');
+            if (disclosure) {
+              disclosure.open = false;
+              disclosure.querySelector('summary')?.focus({preventScroll: true});
+            }
+          }
+          void store.openDialog();
+        }
       }
     };
     window.addEventListener('keydown', onKeyDown);

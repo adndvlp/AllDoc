@@ -167,7 +167,8 @@ pestañas. El catálogo se comprueba en portada y en páginas de área, incluyen
 despliegues independientes y selección de área sin navegar. Las fichas añaden
 comprobaciones de compacidad en celular/laptop,
 texto al 200%, copia real al portapapeles, resultados accesibles y las ocho paletas;
-con estas vistas se generan once capturas por tamaño.
+el encabezado añade vistas normales y ampliadas y el selector móvil de áreas.
+Se conservan 88 referencias visuales entre los siete tamaños.
 
 ~~~sh
 npx playwright install chromium
@@ -187,6 +188,19 @@ La salida de terminal usa puntos. Una comprobación global detecta si falta Chro
 antes de iniciar las pruebas; si es necesario, ejecuta `npx playwright install chromium`.
 En local se detiene tras el primer fallo; el detalle queda en los informes HTML/JSON.
 
+La verificación final ejecuta las pruebas y los tipos, compara la UI contra las
+referencias ya revisadas y mide producción frente al baseline del punto 1:
+
+~~~sh
+npm run verify:final
+~~~
+
+Guarda resultados en `benchmarks/verifications/` y una nueva medición en
+`benchmarks/runs/`. No actualiza capturas ni usa el servidor de desarrollo.
+`npm run verify:final -- --code-only` valida código y build, dejando explícitamente
+pendientes navegador y rendimiento. Procedimiento y límites en
+[benchmarks/README.md](benchmarks/README.md).
+
 ## Editar un concepto
 
 La metadata común se edita en [src/content/concepts.ts](src/content/concepts.ts):
@@ -198,7 +212,10 @@ Las herramientas vacías conservan su lugar y solo los conceptos publicados
 aportan enlaces, recuentos y entradas de búsqueda.
 
 Los ejemplos, resultados, recordatorios y notas SQL se editan en
-[src/content/sql.ts](src/content/sql.ts), vinculados a la metadata por ID global.
+[src/content/notes/sql.ts](src/content/notes/sql.ts), vinculados a la metadata por ID global.
+[src/content/sql.ts](src/content/sql.ts) conserva la API usada por los MDX.
+Los cuerpos de nuevas herramientas siguen la carpeta `src/content/notes/`;
+el build los separa por herramienta para que la portada cargue solo su catálogo.
 Cada variante incluye el ejemplo, una aclaración corta y el resultado opcional.
 Las palabras clave de búsqueda están en
 [src/content/search-keywords.ts](src/content/search-keywords.ts).

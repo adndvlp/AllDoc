@@ -8,11 +8,13 @@ import {chromium} from '@playwright/test';
 import uiConfig from '../playwright.config.ts';
 import {sourceFingerprint, inventoryBuild, archiveUiReferences, serveBuild, sha256} from './lib/baseline.ts';
 import {captureScreens, measureProfile} from './lib/baseline-browser.mjs';
+import {auditPublishedBuild} from './lib/final-verification.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const bundleOnly = args.includes('--bundle-only');
-if (args.some((arg) => arg !== '--bundle-only')) throw new Error('Uso: npm run baseline [-- --bundle-only]');
+const postRedesign = args.includes('--post-redesign');
+if (args.some((arg) => !['--bundle-only', '--post-redesign'].includes(arg))) throw new Error('Uso: npm run baseline [-- --bundle-only] [--post-redesign]');
 const startedAt = new Date().toISOString();
 const source = await sourceFingerprint(root);
 const output = path.join(root, 'benchmarks/runs', startedAt.replace(/[:.]/g, '-') + '-' + source.sha256.slice(0, 10));
@@ -25,11 +27,12 @@ const lockDirectory = path.join(root, '.docusaurus-baseline-lock');
 const packageNames = ['@docusaurus/core', 'react', 'react-dom', 'typescript', 'react-icons', '@playwright/test', 'webpack'];
 const packages = {};
 for (const name of packageNames) packages[name] = JSON.parse(await readFile(path.join(root, 'node_modules', name, 'package.json'), 'utf8')).version;
-const measurementFiles = ['scripts/capture-baseline.mjs', 'scripts/lib/baseline.ts', 'scripts/lib/baseline-browser.mjs', 'playwright.config.ts'];
+const measurementFiles = ['scripts/capture-baseline.mjs', 'scripts/lib/baseline.ts', 'scripts/lib/baseline-browser.mjs', 'playwright.config.ts', ...(postRedesign ? ['scripts/lib/final-verification.ts'] : [])];
 const tooling = [];
 for (const filename of measurementFiles) tooling.push({path: filename, sha256: sha256(await readFile(path.join(root, filename)))});
 const report = {
   schemaVersion: 1, startedAt, finishedAt: null, status: 'partial',
+  purpose: postRedesign ? 'post-redesign' : 'baseline',
   source, tooling, packages,
   environment: {node: process.version, platform: os.platform(), release: os.release(), arch: os.arch(), cpu: os.cpus()[0]?.model ?? 'unknown', logicalCpus: os.cpus().length, totalMemoryBytes: os.totalmem(), timezone: Intl.DateTimeFormat().resolvedOptions().timeZone, buildVariables: {SITE_URL: process.env.SITE_URL ?? null}},
   conditions: {
@@ -47,12 +50,12 @@ const report = {
 
 function markdown() {
   const lines = [
-    '# Referencia previa al rediseño de AllDoc', '',
+    postRedesign ? '# Medición posterior al rediseño de AllDoc' : '# Referencia de AllDoc', '',
     '**Estado:** ' + report.status + '.  ',
     '**Fuente SHA-256:** `' + source.sha256 + '`.  ',
     '**Inicio:** ' + startedAt + '.  ',
     '**Build:** ' + report.build.status + '. **Navegador:** ' + report.browser.status + '.', '',
-    'Esta ejecución registra el punto 1 del SDD. No modifica el diseño de la app. Los datos completos y las condiciones están en [report.json](report.json).', '',
+    postRedesign ? 'Esta ejecución contribuye al punto 8 del SDD. Comparar con la referencia inicial; no sobrescribe ejecuciones anteriores. Condiciones en [report.json](report.json).' : 'Esta ejecución registra una referencia. No modifica el diseño de la app. Los datos completos y las condiciones están en [report.json](report.json).', '',
   ];
   if (report.build.status === 'complete') {
     lines.push('## Bundle de producción', '', 'Bytes por archivo, sin cabeceras HTTP; gzip nivel 9. El total del build incluye chunks diferidos y no equivale a la descarga inicial.', '', '| Conjunto | Archivos | Bytes | Gzip bytes |', '| --- | ---: | ---: | ---: |');
@@ -72,7 +75,7 @@ function markdown() {
     }
     lines.push('');
   }
-  lines.push('El proxy DOM incluye espera hasta rAF y no es INP ni medición de píxeles presentados. Las entradas Event Timing y sus subpartes se guardan solo cuando el navegador las emite. Favoritos: no aplicable porque la función todavía no existe.', '');
+  lines.push('El proxy DOM incluye espera hasta rAF y no es INP ni medición de píxeles presentados. Las entradas Event Timing y sus subpartes se guardan solo cuando el navegador las emite. ' + (postRedesign ? 'Favoritos: 15 altas y 15 bajas por perfil; no existe referencia previa de esta función.' : 'Este modo no mide favoritos; usar --post-redesign para incluirlos.'), '');
   if (report.failures.length) lines.push('## Pendientes de esta ejecución', '', ...report.failures.map((failure) => '- ' + failure.stage + ': ' + failure.message.replace(/\n/g, ' ').slice(0, 1200)), '', 'Una ejecución parcial conserva evidencia válida de las etapas terminadas y no acredita las que faltan. Para obtener una ejecución completa, ejecutar `npm run baseline` en un entorno que pueda iniciar Chromium.', '');
   lines.push('## Reproducción y comparación', '', 'Ejecutar `npm run baseline` en el mismo equipo, con versiones, CPU, red y viewport equivalentes y sin otras tareas intensivas. Cada ejecución crea una carpeta nueva. Comparar los perfiles y campos equivalentes; no mezclar el total de JS con la descarga inicial ni el proxy DOM con INP.', '', 'Procedimiento: [benchmarks/README.md](../../README.md).');
   return lines.join('\n') + '\n';
@@ -106,6 +109,12 @@ try {
   await save();
   stage = 'build';
   await build();
+  if (postRedesign) {
+    const audit = await auditPublishedBuild(buildDirectory);
+    await writeFile(path.join(output, 'published-audit.json'), JSON.stringify(audit, null, 2) + '\n');
+    report.publishedAudit = {status: audit.status, file: 'published-audit.json'};
+    if (audit.status !== 'passed') throw new Error('La auditoría del HTML publicado detectó: ' + audit.failures.join('; '));
+  }
   const bundle = await inventoryBuild(buildDirectory);
   await writeFile(path.join(output, 'bundle.json'), JSON.stringify(bundle, null, 2) + '\n');
   report.build = {status: 'complete', manifest: 'bundle.json', totals: bundle.totals, pages: bundle.pages};
@@ -122,7 +131,7 @@ try {
     for (const project of uiConfig.projects) {
       stage = 'screenshots-' + project.name;
       console.log('Capturas: ' + project.name);
-      report.captures.push(await captureScreens(browser, project, output, server.url));
+      report.captures.push(await captureScreens(browser, project, output, server.url, {postRedesign}));
       await save();
     }
     for (const name of ['laptop', 'celular']) {
@@ -130,7 +139,7 @@ try {
       if (!project) throw new Error('Falta el perfil de medición: ' + name);
       stage = 'timings-' + name;
       console.log('Tiempos: ' + name + ' (30 muestras por acción)');
-      report.timings.push(await measureProfile(browser, project, server.url, 30, output));
+      report.timings.push(await measureProfile(browser, project, server.url, 30, output, {postRedesign}));
       await save();
     }
     report.browser.status = 'complete';

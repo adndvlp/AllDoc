@@ -1,12 +1,19 @@
-# Referencia de AllDoc antes del rediseño
+# Medición y comparación de AllDoc
 
-Este procedimiento implementa el punto 1 del [SDD](../specs/alldoc-sdd.md): registrar capturas, tamaños del bundle de producción y tiempos para comparar la app actual con el rediseño. No modifica la interfaz ni actualiza las capturas esperadas de la suite UI.
+Este procedimiento conserva la referencia del punto 1 del [SDD](../specs/alldoc-sdd.md)
+y verifica el rediseño en el punto 8. No modifica la interfaz ni actualiza las
+capturas esperadas de la suite UI.
 
 ## Referencia registrada
 
 El punto 1 está completado con la [referencia previa al rediseño](runs/2026-11-13T05-50-13-968Z-543ae4e484/README.md), ejecutada desde la terminal del usuario y verificada en el proyecto: 42 capturas nuevas, inventario del build y 240 muestras de interacciones, más dos primeras aperturas del buscador. Conserva entorno, versiones, condiciones y hashes.
 
 La [revisión de la evidencia](runs/2026-11-13T05-50-13-968Z-543ae4e484/review.md) documenta integridad de archivos, revisión visual, métricas y sus límites. Esta es la referencia que debe compararse con el rediseño. Las ejecuciones parciales anteriores conservan su estado y no sustituyen a esta referencia completa.
+
+El punto 8 está completado con la [comparación posterior](verifications/2026-11-13T23-59-10-902Z-14f3739c0a/comparison.md)
+y su [revisión final](verifications/2026-11-13T23-59-10-902Z-14f3739c0a/review.md):
+288 pruebas UI aprobadas, 42 capturas revisadas y 300 muestras de interacciones.
+El peor p95 local fue 54,0 ms, con los límites del proxy y de la emulación explícitos.
 
 ## Ejecutar
 
@@ -74,3 +81,76 @@ Las referencias UI antiguas se archivan para que una futura actualización de sn
 Se aplicó [Modern Web Guidance: interaction-paint-timing](../tmp/modern-web-guidance/skills/modern-web-guidance/guides/performance/interaction-paint-timing.md): “does not track subsequent asynchronous paints”. Por eso se registra por separado la disponibilidad del diálogo, la llegada de resultados y la navegación, sin confundirlas con respuesta hasta el siguiente frame.
 
 Las APIs opcionales se detectan mediante `PerformanceObserver.supportedEntryTypes`. Referencias: [PerformanceEventTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming), [CDPSession de Playwright](https://playwright.dev/docs/api/class-cdpsession) y [emulación de CPU de Chromium](https://chromedevtools.github.io/devtools-protocol/tot/Emulation/#method-setCPUThrottlingRate).
+
+## Verificación final del punto 8
+
+```sh
+npm run verify:final
+```
+
+El comando comprueba Chromium una vez y ejecuta las etapas en orden, para que
+las pruebas no compitan con la medición por CPU:
+
+1. Pruebas de código y tipos de aplicación y pruebas.
+2. Suite UI en los siete proyectos con `test:ui`, contra las referencias
+   revisadas. No usa `--update-snapshots`.
+3. Build de producción aislado y auditoría de HTML, rutas retiradas, zoom y
+   dependencias del cargador de portada.
+4. Capturas nuevas del mismo recorrido del punto 1 y dos perfiles de tiempos.
+   Conserva las cuatro acciones comunes y añade treinta alternancias de favorito
+   por perfil: quince altas y quince bajas.
+5. Comparación de tamaños y muestras crudas contra la referencia inicial.
+   Comprobación aparte del motor con mil entradas sintéticas en Node.
+
+La salida muestra etapas cortas. Los logs completos quedan junto al informe, en
+`benchmarks/verifications/<fecha>-<huella>/`. Allí se guardan `verification.json`,
+`ui-results.json`, `comparison.json`, `comparison.md` y `synthetic-search.json`.
+`verification.json` enlaza la medición nueva de `benchmarks/runs/`, donde están
+las capturas, el inventario y las muestras. Una etapa fallida detiene la ejecución
+y conserva sus resultados; no reutiliza un informe UI anterior como si fuera nuevo.
+
+Una ejecución automática completa queda como `ready-for-review`: todavía hay que
+inspeccionar imágenes, diferencias y trazas antes de cerrar el punto 8. El comando
+comprueba que aplicación, pruebas y herramienta no cambien durante la ejecución.
+Un lock propio impide dos verificaciones finales simultáneas.
+
+Para validar lo que no requiere navegador:
+
+```sh
+npm run verify:final -- --code-only
+```
+
+Ese modo termina como `partial` aunque las comprobaciones de código y build
+pasen. No acredita los presupuestos del navegador ni reemplaza la ejecución completa.
+
+### Método y comparación
+
+- El comparador recalcula mediana y p95 a partir de las treinta muestras crudas;
+  no confía en resúmenes almacenados. Las ausencias, valores inválidos, perfiles
+  incompletos o rutas perdidas no se convierten en aprobaciones.
+- Comprueba equipo, Node, versiones, navegador, CPU, viewport, red, caché y
+  movimiento. Condiciones distintas se marcan `incomparable`.
+- El presupuesto local de p95 de 100 ms usa el mismo proxy DOM + siguiente rAF
+  del punto 1. Se evalúan también resultados con el índice cargado. Las treinta
+  aperturas proporcionan tanto disponibilidad del campo como de resultados;
+  no se presentan como sesenta muestras independientes.
+- Event Timing conserva cobertura y ausencias. No se calcula INP de campo ni se
+  atribuyen al navegador los tiempos del ensayo sintético de Node.
+- Cuando aparecen tareas de más de 50 ms, se registra su fase relativa a la
+  primera entrada y se toma una traza CDP en una reproducción posterior. Esos
+  archivos `diagnostic-<perfil>.trace.json` se pueden importar en Performance de
+  DevTools. Sus tiempos no se mezclan con las muestras sin tracing.
+- La captura de color vuelve a abrir el selector después de elegir violeta;
+  conserva un estado visual comparable sin cambiar el cierre previsto de la UI.
+
+La [comprobación del método](../specs/verification/point-8-method.json) recupera
+el script original de Git y verifica su hash contra la referencia. El observador
+y el núcleo del cálculo se conservan; se documentan la ampliación del selector
+al nuevo `role=searchbox`, los predicados de favoritos y las marcas de fase.
+Los archivos de la referencia inicial permanecen intactos.
+
+La auditoría de dependencias comprueba el cargador de portada generado por la
+versión instalada de Docusaurus/Webpack. Rechaza cargar chunks de cuerpos
+`notes-*` y detecta también el antiguo chunk SQL compartido. Si cambia el formato
+y no puede comprobar el cargador, lo indica como fallo. No pretende analizar
+imports arbitrarios que se añadan fuera de este contrato.

@@ -52,7 +52,7 @@ async function stableImages(page) {
   });
 }
 
-export async function captureScreens(browser, project, output, baseURL) {
+export async function captureScreens(browser, project, output, baseURL, {postRedesign = false} = {}) {
   const context = await browser.newContext({...project.use, baseURL, locale: 'es-MX', colorScheme: 'dark', reducedMotion: 'reduce'});
   const page = await context.newPage();
   const errors = [];
@@ -96,6 +96,7 @@ export async function captureScreens(browser, project, output, baseURL) {
     await palette.click();
     await palette.locator('..').getByText('Violeta', {exact: true}).click();
     await expect(page.locator('html')).toHaveAttribute('data-palette', 'violeta');
+    if (postRedesign && !await palette.locator('..').evaluate((element) => element.open)) await palette.click();
     await capture('color-texto');
     if (errors.length) throw new Error(errors.join('\n'));
     result.status = 'complete';
@@ -153,6 +154,8 @@ async function measure(page, target, conditions, action, eventName = 'click') {
           if (kind === 'categoryOpen') return element.getAttribute('aria-expanded') === 'true';
           if (kind === 'categoryClosed') return element.getAttribute('aria-expanded') === 'false';
           if (kind === 'navigated') return location.pathname.endsWith('/where') && document.querySelector('h1')?.textContent.trim() === 'WHERE';
+          if (kind === 'favoriteAdded') return element.getAttribute('aria-pressed') === 'true';
+          if (kind === 'favoriteRemoved') return element.getAttribute('aria-pressed') === 'false';
           return false;
         };
         for (const kind of pending) {
@@ -178,7 +181,8 @@ async function measure(page, target, conditions, action, eventName = 'click') {
     const data = window.__alldocBaseline;
     const current = data.current;
     const events = data.events.filter((entry) => entry.startTime >= current.armedAt);
-    return {domResponseMs: current.responses, eventTiming: events, maxObservedEventDurationMs: events.length ? Math.max(...events.map((entry) => entry.duration)) : null};
+    return {domResponseMs: current.responses, eventTiming: events, maxObservedEventDurationMs: events.length ? Math.max(...events.map((entry) => entry.duration)) : null,
+      armedAt: current.armedAt, eventAt: current.eventAt};
   });
 }
 
@@ -197,7 +201,55 @@ function groupSummary(samples, key) {
   };
 }
 
-export async function measureProfile(browser, project, baseURL, sampleCount, output) {
+// Reproducción separada: tracing no interviene en las 30 muestras comparables.
+async function diagnosticTrace(page, client, project, output) {
+  const filename = 'diagnostic-' + project.name + '.trace.json';
+  await client.send('Tracing.start', {categories: 'devtools.timeline,v8.execute,blink.user_timing', transferMode: 'ReturnAsStream'});
+  let replayError;
+  try {
+    await go(page);
+    await page.evaluate(() => performance.mark('alldoc-diagnostic-interactions'));
+    await searchTrigger(page).click();
+    await input(page).fill('w');
+    await dialog(page).getByRole('link').filter({hasText: 'WHERE'}).click();
+    await page.locator('a.pagination-nav__link--prev').click();
+    const favorite = page.getByRole('button', {name: /^(Guardar en favoritos|Quitar de favoritos)$/});
+    await favorite.click();
+    await favorite.click();
+    const menu = await openTopics(page);
+    const sql = menu.getByRole('button', {name: 'SQL', exact: true});
+    await sql.click();
+    await categorySettled(sql, true);
+    await sql.click();
+    await categorySettled(sql, false);
+  } catch (error) {replayError = error.message;}
+  let timeout;
+  try {
+    const complete = new Promise((resolve, reject) => {
+      client.once('Tracing.tracingComplete', resolve);
+      timeout = setTimeout(() => reject(new Error('La traza no terminó en 30 s')), 30000);
+      timeout.unref();
+    });
+    await client.send('Tracing.end');
+    const event = await complete;
+    if (!event.stream) throw new Error('Chromium no devolvió el stream de tracing');
+    const chunks = [];
+    try {
+      while (true) {
+        const part = await client.send('IO.read', {handle: event.stream});
+        chunks.push(part.base64Encoded ? Buffer.from(part.data, 'base64') : Buffer.from(part.data));
+        if (part.eof) break;
+      }
+    } finally {await client.send('IO.close', {handle: event.stream});}
+    const content = Buffer.concat(chunks);
+    await writeFile(path.join(output, filename), content);
+    return {status: replayError || event.dataLossOccurred ? 'partial' : 'complete', file: filename, sha256: sha256(content),
+      replayError: replayError ?? null, dataLossOccurred: event.dataLossOccurred,
+      note: 'Reproducción posterior a las muestras; no usar sus duraciones como comparación con el baseline sin tracing.'};
+  } finally {clearTimeout(timeout);}
+}
+
+export async function measureProfile(browser, project, baseURL, sampleCount, output, {postRedesign = false} = {}) {
   const cpuRate = project.name === 'celular' ? 4 : 1;
   const context = await browser.newContext({...project.use, baseURL, locale: 'es-MX', colorScheme: 'dark', reducedMotion: 'no-preference'});
   const page = await context.newPage();
@@ -209,7 +261,8 @@ export async function measureProfile(browser, project, baseURL, sampleCount, out
   await client.send('Network.enable');
   await client.send('Network.setCacheDisabled', {cacheDisabled: true});
   const result = {project: project.name, viewport: project.use.viewport, cpuRate, samplesPerAction: sampleCount, reducedMotion: 'no-preference', status: 'partial', cold: null, actions: {}, unavailable: ['Guardar/quitar favorito: la función todavía no existe en la app actual.']};
-  const opened = [], typed = [], navigated = [], toggled = [];
+  if (postRedesign) result.unavailable = [];
+  const opened = [], typed = [], navigated = [], toggled = [], favorites = [];
   try {
     await go(page);
     result.navigator = await page.evaluate(() => ({userAgent: navigator.userAgent, hardwareConcurrency: navigator.hardwareConcurrency, deviceMemory: navigator.deviceMemory ?? null, devicePixelRatio, supportedEntryTypes: window.__alldocBaseline.supported}));
@@ -242,7 +295,25 @@ export async function measureProfile(browser, project, baseURL, sampleCount, out
       toggled.push({...await measure(page, category, [key], () => category.click()), direction: opening ? 'open' : 'close'});
       await categorySettled(category, opening);
     }
-    result.longTasks = await page.evaluate(() => window.__alldocBaseline.longTasks);
+    if (postRedesign) {
+      if (project.use.viewport.width <= 996) {
+        await page.getByRole('button', {name: 'Cerrar barra de lateral', exact: true}).click();
+        await expect(page.getByRole('dialog', {name: 'Temas del área', exact: true})).not.toBeVisible();
+      }
+      const favorite = page.getByRole('button', {name: /^(Guardar en favoritos|Quitar de favoritos)$/});
+      if (await favorite.getAttribute('aria-pressed') === 'true') await favorite.click();
+      await expect(favorite).toHaveAttribute('aria-pressed', 'false');
+      for (let index = 0; index < sampleCount; index++) {
+        const adding = index % 2 === 0;
+        favorites.push({...await measure(page, favorite, [adding ? 'favoriteAdded' : 'favoriteRemoved'], () => favorite.click()), direction: adding ? 'add' : 'remove'});
+      }
+    }
+    result.longTasks = (await page.evaluate(() => window.__alldocBaseline.longTasks)).map((task) => ({...task,
+      phase: task.startTime < result.cold.eventAt ? 'startup' : 'after-first-input'}));
+    if (postRedesign && result.longTasks.some((task) => task.duration > 50)) {
+      try {result.diagnostic = await diagnosticTrace(page, client, project, output);}
+      catch (error) {result.diagnostic = {status: 'failed', message: error.message};}
+    }
     if (errors.length) throw new Error(errors.join('\n'));
     result.status = 'complete';
     return result;
@@ -255,6 +326,7 @@ export async function measureProfile(browser, project, baseURL, sampleCount, out
       typeW: {summary: groupSummary(typed, 'filtered'), samples: typed},
       navigateToWhere: {summary: groupSummary(navigated, 'navigated'), samples: navigated},
       toggleSql: {domResponseMs: summarize(toggled.map((sample) => sample.domResponseMs[sample.direction === 'open' ? 'categoryOpen' : 'categoryClosed'])), samples: toggled},
+      ...(postRedesign ? {toggleFavorite: {domResponseMs: summarize(favorites.map((sample) => sample.domResponseMs[sample.direction === 'add' ? 'favoriteAdded' : 'favoriteRemoved'])), samples: favorites}} : {}),
     };
     await writeFile(path.join(output, 'timings-' + project.name + '.json'), JSON.stringify(result, null, 2) + '\n');
     await context.close();

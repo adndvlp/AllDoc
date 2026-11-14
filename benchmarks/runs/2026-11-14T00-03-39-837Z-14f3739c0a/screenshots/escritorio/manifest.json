@@ -1,0 +1,40 @@
+{
+  "project": "escritorio",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "status": "complete",
+  "files": [
+    {
+      "path": "screenshots/escritorio/inicio.png",
+      "sha256": "3250858d91461e6aed0028f95c51d3809a3cbc0ea8da23e1664af052cd16511e",
+      "route": "/"
+    },
+    {
+      "path": "screenshots/escritorio/select.png",
+      "sha256": "1943c490bf5d0cdca348a9216cf52c8114804175deb9f1e24fe8fd7b6f6fbaa3",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/escritorio/comentarios.png",
+      "sha256": "0041e7e6af3b758bae7b6baa9641e9ecd6597848c486b886246724057755ec6c",
+      "route": "/apuntes/analisis-de-datos/sql/comentarios"
+    },
+    {
+      "path": "screenshots/escritorio/menu.png",
+      "sha256": "6c777a2db00024c81bedff8dc322e416e7649c3cb4d44394b61f6379a72cf18b",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/escritorio/buscador.png",
+      "sha256": "85cf35c0dae791edf4b5802585bca522e1908bc089f44a6d71edfdd135b5e9c2",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    },
+    {
+      "path": "screenshots/escritorio/color-texto.png",
+      "sha256": "0e5d2fd57232d35c4e89924d6421c9d99ae5c9bd36de0cceae226cccab208aad",
+      "route": "/apuntes/analisis-de-datos/sql/select"
+    }
+  ]
+}

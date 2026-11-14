@@ -1,0 +1,17 @@
+{
+  "referenceCommit": "0e03a689551286597b2e2cbc929622723c14089f",
+  "referenceFileSha256": "1ab43233a4efbc51e90254fa4c91475672467838e4652a2330910803a57b1eb2",
+  "committedFileSha256": "1ab43233a4efbc51e90254fa4c91475672467838e4652a2330910803a57b1eb2",
+  "currentFileSha256": "501675d0ccbfa636f655f108e42971bfbfc73fe56753d42dd42949d757ca9fbd",
+  "referenceFileVerified": true,
+  "observerUnchanged": true,
+  "commonCorePreservedAfterListedExtensions": true,
+  "commonCoreSha256": "0468f9e816fec4c1b3f1a7cdc1061c7542260e54dfc2bbe7edf24f980550613f",
+  "extensions": [
+    "Selector de campo ampliado para el input text con role=searchbox introducido en el punto 3; mismo significado de campo disponible",
+    "Dos predicados nuevos para favoritos: aria-pressed true/false",
+    "Marcas eventAt y armedAt añadidas al resultado, sin cambiar los timestamps ni rAF del cálculo",
+    "Diagnóstico con tracing en una reproducción posterior, fuera de las muestras comparables"
+  ],
+  "metric": "Proxy DOM + siguiente rAF, no INP ni píxeles presentados"
+}

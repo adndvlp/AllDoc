@@ -1,0 +1,12 @@
+{
+  "phase": "awaiting-functional-red",
+  "sourceSha256": "74c1071e82c869643f4cb13275484ec72bfc0027096917c20e4fa2921cd6a34b",
+  "testFileSha256": "d350aa70dfc72e0d1c38ce7961936292be28860f8b143144a823f424c0809b7a",
+  "command": "npm run test:ui:overlay",
+  "cases": [
+    "Atajo desde menú: un solo diálogo abierto",
+    "Atajo desde selector de área: retorno a control visible",
+    "Atajo desde selector de color: retorno a control visible"
+  ],
+  "environmentAttempt": "La primera ejecución del usuario no llegó a las aserciones: Chromium ausente. Ese error no acredita RED; se ofrece un comando corto que instala el navegador requerido y ejecuta la prueba."
+}

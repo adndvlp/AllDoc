@@ -1,0 +1,84 @@
+{
+  "phase": "red",
+  "command": "npm run baseline -- --post-redesign --bundle-only",
+  "sourceSha256": "f18e0e6d66bfef1656ee18be891a23d228d2506607cf44e3868e4b4b629db451",
+  "run": "benchmarks/runs/2026-11-13T23-52-21-658Z-f18e0e6d66",
+  "unitRed": {
+    "expected": "failed",
+    "received": "passed",
+    "meaning": "La auditoría antigua aceptaba un chunk compartido que contiene los cuerpos."
+  },
+  "publishedAudit": {
+    "status": "failed",
+    "pages": [
+      {
+        "route": "404.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/limit.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/order-by.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/select.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/where.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/desarrollo-web.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "apuntes/ia.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      },
+      {
+        "route": "index.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      }
+    ],
+    "homeJS": {
+      "loaderFound": true,
+      "chunkIds": [
+        869,
+        76,
+        583
+      ],
+      "bodyAssets": [
+        "assets/js/common.93aceb3b.js"
+      ],
+      "loadedBodies": [
+        "assets/js/common.93aceb3b.js"
+      ]
+    },
+    "failures": [
+      "La portada carga cuerpos de apuntes: assets/js/common.93aceb3b.js"
+    ]
+  },
+  "originalSqlFileSha256": "f6fdbd40d33fb3dee9c14ec171cfe777a4485752595b30661d48ceb1e2e7b2e2"
+}

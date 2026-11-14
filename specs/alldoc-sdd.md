@@ -2,7 +2,7 @@
 
 **Documento:** especificación funcional y diseño técnico.  
 **Fecha:** 12 de noviembre de 2026.  
-**Estado:** puntos 1, 2 y 3 completados; continúan pendientes los puntos 4 a 8.
+**Estado:** puntos 1 a 8 completados; verificación final en Chromium emulado y límites documentados.
 
 **Alcance:** toda la propuesta de mejora de la landing y la app, sin dividirla en entregas parciales.  
 **Base:** Docusaurus, React, TypeScript, MDX, CSS Modules y Webpack.
@@ -328,13 +328,14 @@ Se usarán Chrome/Edge, Firefox y Safari actuales como objetivo funcional, con c
 
 ### 12.1 Fuentes de datos
 
-La metadata necesaria para navegar está separada del cuerpo de los apuntes. El catálogo, la navegación de áreas y el índice de búsqueda utilizan esa metadata. Las fuentes de datos de esta sección están implementadas; la sección 12.2 distingue los componentes implementados de los pendientes.
+La metadata necesaria para navegar está separada del cuerpo de los apuntes. El catálogo, la navegación de áreas y el índice de búsqueda utilizan esa metadata. Las fuentes de datos de esta sección y los componentes de la sección 12.2 están implementados.
 
 | Archivo | Responsabilidad |
 | --- | --- |
 | `src/content/concepts.ts` — nuevo | Metadata canónica: ID global, área, herramienta, slug, título, descripción breve, etiqueta y orden |
 | `src/content/catalog.ts` — nuevo | Árbol ordenado de áreas, grupos y herramientas; pertenencia de conceptos derivada de su metadata |
-| `src/content/sql.ts` — existente | Ejemplos, resultados, recordatorio y nota SQL, vinculados a metadata por ID; conservar una API adaptadora para las páginas MDX |
+| `src/content/notes/sql.ts` | Cuerpos SQL vinculados a metadata por ID; el build separa los módulos de `content/notes/` por herramienta |
+| `src/content/sql.ts` | API compatible para las páginas MDX; reexporta el corpus sin duplicarlo |
 | `src/content/search-keywords.ts` — nuevo | Palabras clave editoriales por ID; separadas del catálogo mínimo |
 | `src/content/search-index.ts` — existente | Índice derivado de metadata más palabras clave, cargado al usar el buscador |
 | `sidebars.ts` — existente | Adaptar el catálogo a categorías de Docusaurus y rutas de documentos, manteniendo reglas C-07 a C-09 |
@@ -390,7 +391,7 @@ flowchart TD
 | `PersonalLibraryProvider` | Hidratar, validar, actualizar y persistir recientes y favoritos | Implementado |
 | `PersonalShortcuts` | Presentar recientes/favoritos y sus expansiones | Implementado |
 | `FavoriteButton` | Guardar o quitar un concepto y exponer su estado accesible | Implementado |
-| `AreaSwitcher` | Elegir área en el encabezado compacto y conservar las tres opciones | Pendiente |
+| Selector de áreas en `Navbar/Content` | Elegir área en el encabezado compacto y conservar las tres opciones | Implementado |
 
 Se montan los providers una sola vez mediante el wrapper `src/theme/Root.tsx`, compatible con la renderización estática de Docusaurus. Las lecturas de `window`, `localStorage`, teclado y ubicación que lo requieran ocurren en cliente, con limpieza de listeners. Estado local de componentes para resultados desplegados y categorías; no se incorpora una librería global de estado para estas colecciones pequeñas.
 
@@ -503,7 +504,7 @@ que motiva el cambio. Las capturas complementan las aserciones, sin sustituirlas
 | 5 | Componer landing y páginas de área con jerarquía compacta | Completado: [verificación](verification/point-5.md) de CA-01, CA-04 y CA-05 |
 | 6 | Simplificar fichas y ajustar tipografía, envolturas y resultados | Completado con TDD: [verificación](verification/point-6.md) de CA-14 a CA-17 y CA-25 |
 | 7 | Compactar encabezado móvil y adaptar componentes sin alterar paneles independientes | Completado con TDD: [verificación](verification/point-7.md) de CA-18 a CA-21 en Chromium emulado |
-| 8 | Ejecutar verificación, revisar imágenes, medir y corregir regresiones | CA-01 a CA-25, informe de resultados y limitaciones reales |
+| 8 | Ejecutar verificación, revisar imágenes, medir y corregir regresiones | Completado con TDD: [verificación final](verification/point-8.md), 42 capturas revisadas y comparación de CA-23 aprobada |
 
 ### Registro del punto 1
 
@@ -555,7 +556,17 @@ El menú móvil es un diálogo nativo con temas, enlace a inicio, cierre exterio
 
 Pasaron las 49 pruebas de código, ambos chequeos de tipos y el build. La fase verde terminó con 260 aprobadas, seis omisiones previstas y ningún fallo o resultado inestable. Se revisaron 39 referencias visuales en siete tamaños, incluidos encabezados al 200%, menús, paleta y buscador. [Evidencia roja/verde, verificación y límites](verification/point-7.md). La emulación no acredita una revisión física de Safari/iOS; la verificación global y las mediciones corresponden al punto 8.
 
-La implementación completa del rediseño requiere la evidencia del punto 8. Los registros anteriores acreditan el alcance concreto de los puntos 1 a 7.
+### Registro del punto 8
+
+Se desarrolló con TDD la herramienta `npm run verify:final`, que ejecuta código, tipos, UI contra referencias revisadas, build, auditoría publicada, capturas y comparación con la referencia inicial. Conserva muestras crudas, procedencia e integridad; los datos ausentes o condiciones distintas no se convierten en aprobaciones. La comprobación sintética de mil entradas usa el motor real sin añadir contenido al catálogo.
+
+Se corrigieron dos problemas confirmados por fases rojas funcionales: Ctrl+K desde el menú podía mantener dos diálogos abiertos, y Webpack incluía el corpus SQL entre los chunks que pedía la portada. El atajo conserva el retorno nativo a un control visible; los cuerpos se separan por herramienta, manteniendo las ocho consultas, rutas y API de las páginas. También se comprueba URL directa de WHERE y recarga con todos los grupos contraídos.
+
+La ejecución completa terminó con 60 pruebas de código y 288 de UI aprobadas, seis omisiones previstas y cero fallos o resultados inestables. Pasaron ambos chequeos de tipos, el build y la auditoría de diez páginas. Se verificaron hashes y dimensiones de 42 capturas nuevas y se revisaron las imágenes y la traza de arranque. La referencia inicial permanece intacta.
+
+Con treinta muestras por acción, el peor p95 del proxy DOM + siguiente rAF fue 54,0 ms en celular con CPU 4×, dentro del presupuesto de 100 ms. La apertura fría móvil hasta resultados fue de 136,4 ms frente a 97,5 ms de referencia; se conserva como muestra única, separada del presupuesto con índice cargado. La tarea móvil de 142 ms ocurrió antes de la primera entrada. El HTML de portada declara 3380 bytes gzip menos de JS; el JS total creció 3482 bytes con las capacidades añadidas. [Evidencia final, comparación y límites](verification/point-8.md).
+
+Los ocho puntos del rediseño quedan completos en el alcance verificado. La emulación no acredita INP de campo ni una revisión física de Safari/iOS; esas limitaciones se conservan en los informes.
 
 ## 16. Guías y fundamentos utilizados
 

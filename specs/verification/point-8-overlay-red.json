@@ -1,0 +1,25 @@
+{
+  "phase": "red",
+  "command": "npm run test:ui:overlay",
+  "stats": {
+    "startTime": "2026-11-13T23:39:54.417Z",
+    "duration": 32337.304999999997,
+    "expected": 0,
+    "skipped": 2,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceSha256": "74c1071e82c869643f4cb13275484ec72bfc0027096917c20e4fa2921cd6a34b",
+  "testFileSha256": "d350aa70dfc72e0d1c38ce7961936292be28860f8b143144a823f424c0809b7a",
+  "expectedOpenDialogs": 1,
+  "receivedOpenDialogs": 2,
+  "failed": [
+    {
+      "title": "atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible",
+      "project": "celular",
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('dialog[open]')\nExpected: 1\nReceived: 2\nTimeout:  7000ms\n\nCall log:\n  - Expect \"toHaveCount\" locator('dialog[open]') with timeout 7000ms\n  - waiting for locator('dialog[open]')\n    18 × locator resolved to 2 elements\n       - unexpected value \"2\"\n\n\n  61 |   await page.keyboard.press('Control+k');\n  62 |   await expect(dialog(page)).toBeVisible();\n> 63 |   await expect(page.locator('dialog[open]')).toHaveCount(1);\n     |                                              ^\n  64 |   await expect(topics).toBeHidden();\n  65 |   await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);\n  66 |   await dialog(page).getByRole('searchbox').fill('filtrar');\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/search.spec.ts:63:46"
+      ]
+    }
+  ]
+}

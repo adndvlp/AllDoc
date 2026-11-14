@@ -52,6 +52,52 @@ test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foc
   await expect(page.locator('[data-catalog]')).toBeVisible();
 });
 
+test('atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible', async ({page}) => {
+  if (page.viewportSize()!.width > 996) await page.setViewportSize({width: 768, height: 600});
+  await go(page, '/apuntes/analisis-de-datos/sql/select');
+  await page.locator('.navbar__toggle').click();
+  const topics = page.getByRole('dialog', {name: 'Temas del área', exact: true});
+  await expect(topics).toBeVisible();
+  await page.keyboard.press('Control+k');
+  await expect(dialog(page)).toBeVisible();
+  await expect(page.locator('dialog[open]')).toHaveCount(1);
+  await expect(topics).toBeHidden();
+  await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
+  await dialog(page).getByRole('searchbox').fill('filtrar');
+  await expect(dialog(page).getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog(page)).toBeHidden();
+  await expect(page.getByRole('button', {name: 'Buscar un concepto', exact: true})).toBeFocused();
+  await page.locator('[data-scroll-panel="content"] summary').first().click();
+  await expect(page.locator('[data-scroll-panel="content"]').getByRole('table').first()).toBeVisible();
+});
+
+for (const control of ['área', 'color'] as const) {
+  test(`atajo desde el selector de ${control}: cerrar búsqueda devuelve el foco a su control visible`, async ({page}) => {
+    if (page.viewportSize()!.width > 996) await page.setViewportSize({width: 768, height: 600});
+    await go(page, '/apuntes/analisis-de-datos/sql/select');
+    const header = page.locator('.navbar__inner');
+    const trigger = control === 'área'
+      ? header.getByRole('button', {name: /^Elegir área:/})
+      : header.locator('summary[aria-label^="Elegir color de texto:"]');
+    await trigger.click();
+    const disclosure = trigger.locator('..');
+    const option = control === 'área'
+      ? disclosure.getByRole('link', {name: 'IA', exact: true})
+      : disclosure.locator('input[value="violeta"]');
+    await option.focus();
+    await expect(option).toBeFocused();
+    await page.keyboard.press('Control+k');
+    await expect(dialog(page)).toBeVisible();
+    await expect(disclosure).not.toHaveAttribute('open');
+    await expect(page.locator('dialog[open]')).toHaveCount(1);
+    await page.keyboard.press('Escape');
+    await expect(dialog(page)).toBeHidden();
+    await expect(trigger).toBeFocused();
+    await expect(trigger).toBeInViewport();
+  });
+}
+
 test('una carga tardía conserva lo escrito y no vuelve a abrir el diálogo', async ({page}) => {
   let release!: () => void;
   let requests = 0;

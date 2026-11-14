@@ -1,0 +1,580 @@
+{
+  "status": "incomplete",
+  "metric": "DOM + siguiente rAF",
+  "budgetMs": 100,
+  "inp": "not-measured",
+  "reasons": [
+    "Ejecución actual incompleta",
+    "Falta navegador: name",
+    "Falta navegador: version",
+    "Perfil incompleto o repetido: laptop",
+    "laptop/warmSearchOpen: faltan 30 muestras válidas y estados equilibrados",
+    "laptop/warmSearchResults: faltan 30 muestras válidas y estados equilibrados",
+    "laptop/typeW: faltan 30 muestras válidas y estados equilibrados",
+    "laptop/navigateToWhere: faltan 30 muestras válidas y estados equilibrados",
+    "laptop/toggleSql: faltan 30 muestras válidas y estados equilibrados",
+    "laptop/toggleFavorite: faltan 30 muestras válidas y estados equilibrados",
+    "Perfil incompleto o repetido: celular",
+    "celular/warmSearchOpen: faltan 30 muestras válidas y estados equilibrados",
+    "celular/warmSearchResults: faltan 30 muestras válidas y estados equilibrados",
+    "celular/typeW: faltan 30 muestras válidas y estados equilibrados",
+    "celular/navigateToWhere: faltan 30 muestras válidas y estados equilibrados",
+    "celular/toggleSql: faltan 30 muestras válidas y estados equilibrados",
+    "celular/toggleFavorite: faltan 30 muestras válidas y estados equilibrados",
+    "laptop: cpuRate distinto",
+    "laptop: viewport distinto",
+    "laptop: reducedMotion distinto",
+    "celular: cpuRate distinto",
+    "celular: viewport distinto",
+    "celular: reducedMotion distinto"
+  ],
+  "warnings": [
+    "La herramienta cambió: revisar el diff y conservar el método de las acciones comunes."
+  ],
+  "bundle": {
+    "totals": {
+      "js": {
+        "before": 198248,
+        "after": 201340,
+        "deltaBytes": 3092,
+        "percent": 1.5596626447681692
+      },
+      "css": {
+        "before": 20886,
+        "after": 21063,
+        "deltaBytes": 177,
+        "percent": 0.847457627118644
+      }
+    },
+    "pages": [
+      {
+        "html": "404.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/comentarios.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/limit.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/order-by.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/select.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/where.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/desarrollo-web.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/ia.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "index.html",
+        "js": {
+          "before": 158281,
+          "after": 154734,
+          "deltaBytes": -3547,
+          "percent": -2.2409512196662895
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "project": "laptop",
+      "action": "warmSearchOpen",
+      "before": {
+        "count": 30,
+        "min": 29.30000001192093,
+        "median": 31.5,
+        "p95": 32.1000000089407,
+        "max": 32.1000000089407
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "laptop",
+      "action": "warmSearchResults",
+      "before": {
+        "count": 30,
+        "min": 29.30000001192093,
+        "median": 31.5,
+        "p95": 32.1000000089407,
+        "max": 32.1000000089407
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "laptop",
+      "action": "typeW",
+      "before": {
+        "count": 30,
+        "min": 10.5,
+        "median": 24.5,
+        "p95": 26.200000002980232,
+        "max": 26.5
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "laptop",
+      "action": "navigateToWhere",
+      "before": {
+        "count": 30,
+        "min": 30.5,
+        "median": 31.900000005960464,
+        "p95": 33.19999998807907,
+        "max": 49.400000005960464
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "laptop",
+      "action": "toggleSql",
+      "before": {
+        "count": 30,
+        "min": 22.799999997019768,
+        "median": 31.599999994039536,
+        "p95": 32.400000005960464,
+        "max": 33.099999994039536
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "laptop",
+      "action": "toggleFavorite",
+      "before": null,
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "warmSearchOpen",
+      "before": {
+        "count": 30,
+        "min": 26,
+        "median": 29.5,
+        "p95": 30.900000005960464,
+        "max": 36.20000000298023
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "warmSearchResults",
+      "before": {
+        "count": 30,
+        "min": 26,
+        "median": 29.5,
+        "p95": 30.900000005960464,
+        "max": 36.20000000298023
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "typeW",
+      "before": {
+        "count": 30,
+        "min": 6.5,
+        "median": 23.599999994039536,
+        "p95": 31.400000005960464,
+        "max": 32.599999994039536
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "navigateToWhere",
+      "before": {
+        "count": 30,
+        "min": 31.299999997019768,
+        "median": 34.79999999701977,
+        "p95": 52.69999998807907,
+        "max": 62.5
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "toggleSql",
+      "before": {
+        "count": 30,
+        "min": 29.099999994039536,
+        "median": 30,
+        "p95": 31.599999994039536,
+        "max": 31.700000002980232
+      },
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "action": "toggleFavorite",
+      "before": null,
+      "after": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "deltaP95": null,
+      "budget": "pending",
+      "eventTiming": {
+        "samplesWithoutEntries": 0,
+        "observed": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    }
+  ],
+  "longTasks": [
+    {
+      "project": "laptop",
+      "tasks": []
+    },
+    {
+      "project": "celular",
+      "tasks": []
+    }
+  ],
+  "cold": [
+    {
+      "project": "laptop",
+      "before": {
+        "dialogVisible": 36.400000005960464,
+        "resultsReady": 64.70000000298023
+      }
+    },
+    {
+      "project": "celular",
+      "before": {
+        "dialogVisible": 62.6000000089407,
+        "resultsReady": 97.5
+      }
+    }
+  ],
+  "reference": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484",
+  "current": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/runs/2026-11-13T23-26-02-511Z-c540c342e1"
+}

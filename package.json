@@ -13,7 +13,9 @@
     "test:ui": "playwright test",
     "test:ui:update": "playwright test --update-snapshots",
     "test:ui:report": "playwright show-report",
+    "test:ui:overlay": "playwright install chromium && playwright test tests/ui/search.spec.ts --project=celular -g 'atajo desde'",
     "baseline": "node scripts/capture-baseline.mjs",
+    "verify:final": "node scripts/verify-final.mjs",
     "build:ui": "DOCUSAURUS_GENERATED_FILES_DIR_NAME=.docusaurus-ui docusaurus build --out-dir .ui-build",
     "serve:ui": "docusaurus serve --host 127.0.0.1 --port 4173 --no-open --dir .ui-build",
     "update:stack": "node scripts/update-stack.mjs"

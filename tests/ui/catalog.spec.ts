@@ -123,3 +123,23 @@ test('buscar y limpiar conserva despliegues; el catálogo no crea otro panel de 
   await expect(item(page, 'sql')).not.toHaveAttribute('open');
   await expect(item(page, 'conexiones-sql')).toHaveAttribute('open', '');
 });
+
+test('URL directa de WHERE y recarga conservan todos los temas contraídos', async ({page}) => {
+  await go(page, '/apuntes/analisis-de-datos/sql/where');
+  for (let pass = 0; pass < 2; pass++) {
+    if (pass) {
+      await page.reload({waitUntil: 'networkidle'});
+      await expect(page.locator('html')).toHaveAttribute('data-has-hydrated', 'true');
+    }
+    const compact = page.viewportSize()!.width <= 996;
+    if (compact) await page.locator('.navbar__toggle').click();
+    const menu = page.locator(compact ? '.navbar-sidebar .theme-doc-sidebar-menu' : '.theme-doc-sidebar-container .theme-doc-sidebar-menu');
+    await expect(menu.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
+    await expect(menu.locator('[aria-expanded="true"]')).toHaveCount(0);
+    for (const label of ['Tablas y archivos', 'Cálculo científico', 'Visualización', 'Conexiones SQL', 'Peticiones y formatos']) {
+      await expect(menu.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-expanded', 'false');
+    }
+    if (compact) await page.getByRole('button', {name: 'Cerrar barra de lateral', exact: true}).click();
+    await expect(page).toHaveURL(/\/sql\/where$/);
+  }
+});

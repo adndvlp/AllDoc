@@ -1,0 +1,993 @@
+{
+  "point": 8,
+  "status": "complete-with-documented-limits",
+  "reviewedAt": "2026-11-14T00:13:39.052921+00:00",
+  "verification": "benchmarks/verifications/2026-11-13T23-59-10-902Z-14f3739c0a",
+  "productionRun": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a",
+  "reference": "benchmarks/runs/2026-11-13T05-50-13-968Z-543ae4e484",
+  "sourceSha256": "14f3739c0a2d727b772ce6e5f1f65123a3b068b3dfb56ab5161ea88022aeade2",
+  "sourceFilesVerified": 112,
+  "toolingFilesVerified": 24,
+  "integrity": {
+    "sourceAndToolingMatch": true,
+    "referenceWorkingTreeUnchanged": true,
+    "timingFilesMatchReport": true,
+    "screenshotHashesAndDimensionsMatch": true,
+    "methodEvidenceMatchesCurrentHelper": true
+  },
+  "checks": {
+    "code": {
+      "passed": 60
+    },
+    "appTypes": "passed",
+    "testTypes": "passed",
+    "ui": {
+      "status": "passed",
+      "stats": {
+        "startTime": "2026-11-13T23:59:14.122Z",
+        "duration": 264661.258,
+        "expected": 288,
+        "skipped": 6,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "projects": {
+        "celular-pequeno": {
+          "passed": 41,
+          "skipped": 1
+        },
+        "celular": {
+          "passed": 41,
+          "skipped": 1
+        },
+        "celular-horizontal": {
+          "passed": 41,
+          "skipped": 1
+        },
+        "ipad": {
+          "passed": 41,
+          "skipped": 1
+        },
+        "ipad-horizontal": {
+          "passed": 42,
+          "skipped": 0
+        },
+        "laptop": {
+          "passed": 41,
+          "skipped": 1
+        },
+        "escritorio": {
+          "passed": 41,
+          "skipped": 1
+        }
+      }
+    },
+    "published": {
+      "status": "passed",
+      "file": "published-audit.json"
+    },
+    "comparisonStatus": "complete"
+  },
+  "profiles": [
+    {
+      "project": "laptop",
+      "cpuRate": 1,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "samples": 150,
+      "directions": {
+        "toggleSql": {
+          "open": 15,
+          "close": 15
+        },
+        "toggleFavorite": {
+          "add": 15,
+          "remove": 15
+        }
+      },
+      "longTasks": []
+    },
+    {
+      "project": "celular",
+      "cpuRate": 4,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "samples": 150,
+      "directions": {
+        "toggleSql": {
+          "open": 15,
+          "close": 15
+        },
+        "toggleFavorite": {
+          "add": 15,
+          "remove": 15
+        }
+      },
+      "longTasks": [
+        {
+          "startTime": 117.8999999910593,
+          "duration": 142,
+          "name": "self",
+          "phase": "startup"
+        }
+      ]
+    }
+  ],
+  "rawActionSamples": 300,
+  "coldOpenSamples": 2,
+  "metrics": [
+    {
+      "project": "laptop",
+      "action": "warmSearchOpen",
+      "beforeP95Ms": 32.1000000089407,
+      "afterP95Ms": 32,
+      "maxMs": 32.5,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "laptop",
+      "action": "warmSearchResults",
+      "beforeP95Ms": 32.1000000089407,
+      "afterP95Ms": 32,
+      "maxMs": 32.5,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "laptop",
+      "action": "typeW",
+      "beforeP95Ms": 26.200000002980232,
+      "afterP95Ms": 20.100000008940697,
+      "maxMs": 20.5,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 27
+    },
+    {
+      "project": "laptop",
+      "action": "navigateToWhere",
+      "beforeP95Ms": 33.19999998807907,
+      "afterP95Ms": 35.29999999701977,
+      "maxMs": 49.599999994039536,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "laptop",
+      "action": "toggleSql",
+      "beforeP95Ms": 32.400000005960464,
+      "afterP95Ms": 33,
+      "maxMs": 33.29999999701977,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "laptop",
+      "action": "toggleFavorite",
+      "beforeP95Ms": null,
+      "afterP95Ms": 33,
+      "maxMs": 33.19999998807907,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "celular",
+      "action": "warmSearchOpen",
+      "beforeP95Ms": 30.900000005960464,
+      "afterP95Ms": 31.600000008940697,
+      "maxMs": 32.400000005960464,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "celular",
+      "action": "warmSearchResults",
+      "beforeP95Ms": 30.900000005960464,
+      "afterP95Ms": 31.600000008940697,
+      "maxMs": 32.400000005960464,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "celular",
+      "action": "typeW",
+      "beforeP95Ms": 31.400000005960464,
+      "afterP95Ms": 17.900000005960464,
+      "maxMs": 33.099999994039536,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 27
+    },
+    {
+      "project": "celular",
+      "action": "navigateToWhere",
+      "beforeP95Ms": 52.69999998807907,
+      "afterP95Ms": 54,
+      "maxMs": 80.59999999403954,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "celular",
+      "action": "toggleSql",
+      "beforeP95Ms": 31.599999994039536,
+      "afterP95Ms": 31.299999997019768,
+      "maxMs": 31.30000001192093,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    },
+    {
+      "project": "celular",
+      "action": "toggleFavorite",
+      "beforeP95Ms": null,
+      "afterP95Ms": 30.799999997019768,
+      "maxMs": 30.80000001192093,
+      "samples": 30,
+      "budget": "met",
+      "samplesWithoutEventTiming": 0
+    }
+  ],
+  "cold": [
+    {
+      "project": "laptop",
+      "before": {
+        "dialogVisible": 36.400000005960464,
+        "resultsReady": 64.70000000298023
+      },
+      "after": {
+        "dialogVisible": 35,
+        "resultsReady": 48
+      }
+    },
+    {
+      "project": "celular",
+      "before": {
+        "dialogVisible": 62.6000000089407,
+        "resultsReady": 97.5
+      },
+      "after": {
+        "dialogVisible": 100.79999999701977,
+        "resultsReady": 136.3999999910593
+      }
+    }
+  ],
+  "bundle": {
+    "totals": {
+      "js": {
+        "before": 198248,
+        "after": 201730,
+        "deltaBytes": 3482,
+        "percent": 1.756385940841774
+      },
+      "css": {
+        "before": 20886,
+        "after": 21063,
+        "deltaBytes": 177,
+        "percent": 0.847457627118644
+      }
+    },
+    "pages": [
+      {
+        "html": "404.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/comentarios.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/limit.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/order-by.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/select.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos/sql/where.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/analisis-de-datos.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/desarrollo-web.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "apuntes/ia.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      },
+      {
+        "html": "index.html",
+        "js": {
+          "before": 158281,
+          "after": 154901,
+          "deltaBytes": -3380,
+          "percent": -2.135442662100947
+        },
+        "css": {
+          "before": 20886,
+          "after": 21063,
+          "deltaBytes": 177,
+          "percent": 0.847457627118644
+        }
+      }
+    ]
+  },
+  "synthetic": {
+    "entries": 1000,
+    "uniqueIds": 1000,
+    "exactMatch": "synthetic/0999",
+    "commonMatches": 1000,
+    "prepareMs": 1.4007079999996677,
+    "samples": {
+      "count": 30,
+      "min": 0.07441700000026685,
+      "median": 0.12474999999994907,
+      "p95": 0.3799579999999878,
+      "max": 0.4491250000000946
+    },
+    "environment": "Node; no mide renderizado ni teclado de navegador",
+    "runtime": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "arch": "arm64"
+    }
+  },
+  "traceReview": {
+    "file": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/diagnostic-celular.trace.json",
+    "sha256": "6a163dc1c621108b4e7beb96950bf9d21b474fe6f5df75d86eb0ec0147d42773",
+    "dataLossOccurred": false,
+    "separateReplay": true,
+    "recordedEventsOver50ms": [
+      {
+        "name": "EvaluateScript",
+        "durationMs": 51.614,
+        "beforeInteractions": true,
+        "url": "http://127.0.0.1:60637/assets/js/main.87845c23.js"
+      }
+    ],
+    "conclusion": "El replay registra EvaluateScript del main antes de la marca de interacción. La medición original tiene una tarea de 142 ms en arranque y ninguna posterior a la primera entrada. No se atribuye esa tarea original a una función exacta usando un replay separado."
+  },
+  "visualReview": {
+    "status": "complete",
+    "count": 42,
+    "method": "Siete hojas de contacto con seis capturas originales cada una; inspección adicional de originales laptop/select, escritorio/comentarios y celular-horizontal/color-texto. Las 88 referencias UI se compararon sin actualizarlas.",
+    "findings": [
+      "Encabezado en una fila a escala normal y categorías inicialmente cerradas.",
+      "Una envoltura por ejemplo, sintaxis visible y navegación alineada.",
+      "Diálogo y paleta permanecen dentro del viewport; pantallas cortas conservan contenido mediante scroll propio, validado por la suite.",
+      "Logos y composición coherentes en los siete tamaños; sin defectos visuales nuevos observados."
+    ],
+    "screenshots": [
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/inicio.png",
+        "sha256": "9e66e171a6ba9763323a89e442377e184d77585a3185932be22e33a678e3654f",
+        "route": "/",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/select.png",
+        "sha256": "498068750d14a5e3cf1695d108742836d0e945fa01ef698685b3978a0bb60085",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/comentarios.png",
+        "sha256": "6a1563f9118f04ed65c5a6411db762cc83ef770368eda34af62c58673b24befe",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/menu.png",
+        "sha256": "a079c22a4a9f68263f6192dc4c19768deae116772c2b112bdcb3ecb889f595f7",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/buscador.png",
+        "sha256": "8c7e331aab45b83eb515f7b51c5910372d869bb2036b07a8556bf022c8f5b5f3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/color-texto.png",
+        "sha256": "90ad4f26e60f95e98c4edeefe5b15732429846ce78cec87b3a73e5eb4432e7fa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/inicio.png",
+        "sha256": "74ba6f5ab0c07cdf53639ef804934e6eb7199d4cb619db4d0b87c3ed4c567e9a",
+        "route": "/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/select.png",
+        "sha256": "4e0b8d7f4659375380efe0920df2ef30d4c8d19fb265389131285be50eb82838",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/comentarios.png",
+        "sha256": "424558c773f48e54c202a2fefd647a224916222e8635c10e09c2ed99d8b6409c",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/menu.png",
+        "sha256": "4005edbd184c8bc5b87db5df61927b84ae34258cd3e9bc75aacf477fbd42730c",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/buscador.png",
+        "sha256": "fc8d761c89cdadbcdd06b7c8226837593cdc36b7c1bac80d9ebe1e94060d4ff1",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/color-texto.png",
+        "sha256": "4435872f8deb302efe532248e6ac5550d65014750febfa49e6f16280d2011a11",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/inicio.png",
+        "sha256": "d5f0fd249f17490aea8200b6f98620e7ca24c27cce55e40af6578e4227c50df2",
+        "route": "/",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/select.png",
+        "sha256": "61d3030bf42d3e2662fb409ae16a2589a3ebe8ff8a89a6067d1442f84c1ae050",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/comentarios.png",
+        "sha256": "888ac524f7f5578e4370fcc4fc2d0bf1691673ac90f48e429318992524a9a2a3",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/menu.png",
+        "sha256": "830169cd9b788deba48990fd55a35886d7dd30c7366c4dfbf8cc3366c92ec03a",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/buscador.png",
+        "sha256": "548c27761cc52d2f40c3dbe25595b40b60fd3d4ae85325586878b01be961472b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/color-texto.png",
+        "sha256": "e3d33662855fde3264a9f01aa63f8d41a013fe8e20d8f2bef959c61d17f50e13",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/inicio.png",
+        "sha256": "39a38ea79bf33fb1db324c37093e426b3119fc55366f375302199fe1b8132587",
+        "route": "/",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/select.png",
+        "sha256": "cf73f0a0b283047dafa58e5e03cf5b8225b6d0fe857635607d9cefead8782afa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/comentarios.png",
+        "sha256": "c39e360c411f07a40fc3e1239bb4af915fa8e08aa3350bf3927116e4681983c1",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/menu.png",
+        "sha256": "978b5532515b88156049437cae32b9870540c4b0f60682c73d247ca384657b94",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/buscador.png",
+        "sha256": "6225f4caebc25c16ac7e4a68599f72163b3805e782721df6f35e488791a70c1a",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/color-texto.png",
+        "sha256": "d5c40bf257be72b27a9a2259c765316e013280536556321563c298748b69d1b3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/inicio.png",
+        "sha256": "85dbe27411d6a5a19e33964e2cb71bafe21401831cbdc3ea3be27e76b1ad5440",
+        "route": "/",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/select.png",
+        "sha256": "3798c0d15ecd5e44bfe3fae6135f8565cbaafd1e5545c402ef1508730686d4c4",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/comentarios.png",
+        "sha256": "372fd7caa9ec049adbafb8be97b04870e450f452acb8443642c59c20e277ca41",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/menu.png",
+        "sha256": "beaa737fd181bcb1df411dde74007ad3ed54dc19df015c74299c90ea13383fee",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/buscador.png",
+        "sha256": "616e093772cff9d56b68d4b25e0c3d38b8df5a0180a885c9eb80e467f31ec1c9",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/color-texto.png",
+        "sha256": "45c6d0fd2c56a3cbde3e8e88636f66ede02e1ca076dbddd1118bb112b4a66e6b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/inicio.png",
+        "sha256": "5a00116962b855953fd5146d3faeba583fd0862741b37d179182f80edc79f34e",
+        "route": "/",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/select.png",
+        "sha256": "9d6a8f4d290809a49b987413c124d28e527d40069505d998f826e10771c74794",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/comentarios.png",
+        "sha256": "16d5a39941b354a0a75f38494ebf4629558f5f05182ca1252c0c95c4ef0ec1e5",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/menu.png",
+        "sha256": "212a1c57420ac84e94f51dce2825e7a3a6c5db78e734a41c75469af8cdb3f9fa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/buscador.png",
+        "sha256": "b217f45cecb8c3ea413c1da07f420fe0f8f92023ab771f3c7d46c303560d9582",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/color-texto.png",
+        "sha256": "949980966755fb2e08b908344da28017a0ae737c0126262a650cb8d12b155bb0",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/inicio.png",
+        "sha256": "3250858d91461e6aed0028f95c51d3809a3cbc0ea8da23e1664af052cd16511e",
+        "route": "/",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/select.png",
+        "sha256": "1943c490bf5d0cdca348a9216cf52c8114804175deb9f1e24fe8fd7b6f6fbaa3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/comentarios.png",
+        "sha256": "0041e7e6af3b758bae7b6baa9641e9ecd6597848c486b886246724057755ec6c",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/menu.png",
+        "sha256": "6c777a2db00024c81bedff8dc322e416e7649c3cb4d44394b61f6379a72cf18b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/buscador.png",
+        "sha256": "85cf35c0dae791edf4b5802585bca522e1908bc089f44a6d71edfdd135b5e9c2",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/color-texto.png",
+        "sha256": "0e5d2fd57232d35c4e89924d6421c9d99ae5c9bd36de0cceae226cccab208aad",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "review": "visual-reviewed"
+      }
+    ]
+  },
+  "tddEvidence": [
+    "specs/verification/point-8-red.json",
+    "specs/verification/point-8-overlay-red.json",
+    "specs/verification/point-8-bodies-red.json",
+    "specs/verification/point-8-bodies-green.json"
+  ],
+  "rawArtifacts": [
+    {
+      "path": "benchmarks/verifications/2026-11-13T23-59-10-902Z-14f3739c0a/verification.json",
+      "sha256": "0c554d99539e55126f541558132cc3418193667cad0cc232ebcfdafce6831eac"
+    },
+    {
+      "path": "benchmarks/verifications/2026-11-13T23-59-10-902Z-14f3739c0a/ui-results.json",
+      "sha256": "f492c22744c119757f71f0ebf7afd807573869ea78c2038bafad9dd80f98e9ca"
+    },
+    {
+      "path": "benchmarks/verifications/2026-11-13T23-59-10-902Z-14f3739c0a/comparison.json",
+      "sha256": "0c1f2e4a26a04a7bf4d537b59fe11ffa17f53dcf3811e29ca3e9a0d4ec1c5c7a"
+    },
+    {
+      "path": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/report.json",
+      "sha256": "71c8e3177eb48888e74660d2e3244bf1cda875e814efe3384e28a12458417dec"
+    },
+    {
+      "path": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/bundle.json",
+      "sha256": "0273cf1d10e70538622b01cbea7cafa2dfcd857cf0c462f406f742b9db09249b"
+    },
+    {
+      "path": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/published-audit.json",
+      "sha256": "f1781a4d10452dccf956b30bbf2f506b57c96e08d0830affabbeae3d5f233d2f"
+    },
+    {
+      "path": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/timings-laptop.json",
+      "sha256": "3dc5af7c55063ca78adf1e21a7e9784bf5ee4eb716c66c577722069c61512117"
+    },
+    {
+      "path": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a/timings-celular.json",
+      "sha256": "f94e3ed20e74b2383485c621cb3090d34e31a59b48ae0aa8d0209eb33829da10"
+    }
+  ],
+  "limits": [
+    "Los tiempos son proxy DOM + siguiente rAF, no INP ni píxeles presentados.",
+    "La búsqueda en frío móvil registra 136,4 ms hasta resultados frente a 97,5 ms en una única muestra de referencia; no determina un percentil ni una regresión estable.",
+    "27 de 30 escrituras por perfil no emiten Event Timing; se conserva cobertura parcial sin convertir ausencias en cero.",
+    "Emulación Chromium en Apple M1: no demuestra comportamiento de Safari/iOS físico, otros motores o redes móviles.",
+    "La reproducción con tracing es posterior e independiente de las muestras comparables."
+  ]
+}

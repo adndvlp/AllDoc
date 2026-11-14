@@ -1,5 +1,6 @@
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type {Module} from 'webpack';
 import {themes} from 'prism-react-renderer';
 import {paletteBootstrapScript} from './src/content/palettes';
 import {parseConceptFrontMatter} from './src/lib/concept-front-matter.ts';
@@ -40,6 +41,25 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  plugins: [function noteBodyChunks() {
+    return {
+      name: 'alldoc-note-bodies',
+      configureWebpack(_config, isServer) {
+        if (isServer) return {};
+        return {optimization: {splitChunks: {cacheGroups: {
+          noteBodies: {
+            test: /[/\\]src[/\\]content[/\\]notes[/\\]/,
+            name(noteModule: Module) {
+              const resource = noteModule.nameForCondition() ?? '';
+              const tool = resource.split(/[/\\]notes[/\\]/).at(-1)!.split(/[/\\]/)[0].replace(/\.[cm]?[jt]sx?$/, '');
+              return 'notes-' + tool;
+            },
+            chunks: 'all', enforce: true, priority: 50,
+          },
+        }}}};
+      },
+    };
+  }],
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
