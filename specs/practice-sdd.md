@@ -1,11 +1,11 @@
 # AllDoc — SDD del panel de práctica contextual
 
 **Fecha:** 13 de noviembre de 2026, America/Mexico_City.  
-**Estado:** punto 1 completado; puntos 2 a 8 pendientes de implementación y validación.  
+**Estado:** puntos 1 y 2 completados; puntos 3 a 8 pendientes.
 **Objetivo de esta etapa:** validar la estructura y el contrato con SQL y pandas, para incorporar después más lenguajes, librerías y frameworks.  
 **Base:** [SDD del rediseño](alldoc-sdd.md), cuyos ocho puntos están completados. Este documento define una ampliación y conserva su evidencia histórica.
 
-Las decisiones de disposición y los presupuestos de esta especificación son propuestas verificables. No representan rendimiento ya obtenido ni motores instalados. El miniapunte de pandas de la sección 5 forma parte del alcance por implementar; hoy solo están publicadas las cinco fichas SQL.
+Las decisiones de disposición y los presupuestos del panel son propuestas verificables. No representan motores de práctica ya instalados. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
 
 ## 1. Resultado esperado
 
@@ -18,7 +18,7 @@ La primera validación cubre dos perfiles reales, no un soporte universal simula
 | SQL / SQLite | SQL, dialecto SQLite | SQLite WASM en Worker | `productos-basico@1` | Tablas y mensajes del motor |
 | pandas | Python con pandas | Pyodide en Worker | El mismo paquete de productos | DataFrames, texto y errores |
 
-Se añadirá un miniapunte de pandas para validar el cambio de contexto desde una ficha real. No habrá una página de práctica adicional ni un enlace especial dentro de una categoría vacía para resolver este caso.
+Se añadió un miniapunte de pandas para validar después el cambio de contexto desde una ficha real. No habrá una página de práctica adicional ni un enlace especial dentro de una categoría vacía para resolver este caso.
 
 El contrato contempla otros motores y salidas. Añadir R, Rust, React o una librería adicional será un trabajo posterior de adaptador, capacidades y pruebas; no exigirá rehacer el panel. La conclusión de esta etapa no acreditará su ejecución.
 
@@ -113,7 +113,7 @@ Mantener un solo motor pesado activo es la política inicial. Al colapsar, puede
 
 ## 5. Miniapunte de pandas
 
-**Concepto propuesto:** DataFrame.  
+**Concepto publicado:** DataFrame.
 **ID:** `analisis-de-datos/pandas/dataframe`.  
 **Ruta:** `/apuntes/analisis-de-datos/pandas/dataframe`.  
 **Definición:** «Un DataFrame es una tabla: columnas para cada dato y filas para cada producto».
@@ -131,11 +131,11 @@ productos = pd.DataFrame({
 productos
 ```
 
-**Recordatorio:** «Cada lista forma una columna». El resultado muestra los tres productos, con precio numérico e índice de filas identificado como índice, no como una columna de negocio añadida.
+**Aclaración:** «Cada lista forma una columna». **Recordatorio:** «DataFrame organiza tus datos en filas y columnas». El resultado muestra los tres productos, con precio numérico e índice de filas identificado como índice, no como una columna de negocio añadida.
 
 El ejemplo permite validar Python, una librería, tablas y cambio de contexto sin crear un curso. La representación anterior y el dataset canónico deben comprobarse entre sí para impedir que el ejemplo y los datos diverjan.
 
-Pandas permanece en «Tablas y archivos», junto a openpyxl. Pulsar Pandas solo despliega; pulsar DataFrame abre la ficha. El catálogo tendrá seis conceptos publicados al incorporar este apunte, de los que SQL conserva cinco. Los recuentos y el índice siguen derivándose de metadata.
+Pandas permanece en «Tablas y archivos», junto a openpyxl. Pulsar Pandas solo despliega; pulsar DataFrame abre la ficha. El catálogo tiene seis conceptos publicados, de los que SQL conserva cinco. Los recuentos y el índice siguen derivándose de metadata.
 
 ## 6. Datos de práctica
 
@@ -347,6 +347,11 @@ Las posiciones de sugerencias usan offsets UTF-16 del documento remitido, con l�
 
 `bootstrap` procede del materializador de confianza del perfil, no de una ruta o comando arbitrario recibido desde la UI. SQL usa parámetros para valores y nombres del manifiesto validados; Python materializa valores tipados sin concatenar entrada sin escapar. El esquema describe tablas o variables registradas, con columnas y tipos, independientemente de los handles de cada motor.
 
+En el punto 2, el bootstrap SQLite se concretó como JSON `alldoc/sql-seed@1`, con
+sentencias y parámetros separados; el futuro adaptador lo ejecutará enlazando
+valores. Python recibe archivos JSON y código de preparación del DataFrame. El
+materializador no ejecuta un motor ni habilita los perfiles de práctica.
+
 En las pruebas de conformidad, un tercer adaptador de prueba con datos y sugerencias distintos debe funcionar sin cambiar componentes del panel. Acredita la separación del contrato; no equivale a un tercer lenguaje soportado.
 
 ### 8.5 Reglas específicas de los dos motores
@@ -409,8 +414,8 @@ Transiciones que deben quedar fijadas en pruebas:
 ## 11. Archivos y puntos de integración propuestos
 
 `contracts.ts`, `profiles.ts` y `context.ts` están implementados en el punto 1,
-junto con el registro, validadores y sus pruebas. Las demás piezas siguen siendo
-diseño pendiente; en particular todavía no hay panel, motores o ficha pandas.
+junto con el registro, validadores y sus pruebas. El punto 2 añade dataset,
+materializadores y ficha pandas; todavía no hay panel o motores del navegador.
 
 | Pieza | Responsabilidad |
 | --- | --- |
@@ -437,7 +442,12 @@ El generador de sidebar sigue consumiendo el catálogo. El contexto de práctica
 
 ## 12. Rendimiento y condiciones de validación
 
-**PNF-01.** La lectura habitual no descarga editor, runtimes, paquetes Python ni filas de datasets de práctica. La prueba de red distingue un control ligero de los assets que se solicitan al abrir el panel. La portada conserva la separación de cuerpos conseguida en el punto 8.
+**PNF-01.** La lectura habitual no descarga editor, runtimes, paquetes Python ni datasets ajenos al ejemplo editorial. La prueba de red distingue un control ligero de los assets que se solicitan al abrir el panel. La portada conserva la separación de cuerpos conseguida en el punto 8.
+
+En el punto 2 se concretó que los tres productos, ya utilizados por las fichas,
+son un fragmento editorial compartido de 246 bytes gzip y pueden cargarse con
+esas fichas. La portada y el registro de perfiles no lo cargan. Los futuros
+datasets mayores o exclusivos de práctica se cargarán al abrir su entorno.
 
 | Medida | Presupuesto propuesto o evidencia requerida |
 | --- | --- |
@@ -510,14 +520,14 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-El punto 1 está completado; los demás permanecen pendientes. Su orden valida
+Los puntos 1 y 2 están completados; los demás permanecen pendientes. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
 | Punto | Trabajo | Resultado revisable |
 | --- | --- | --- |
 | 1 | Registrar referencia actual y escribir contratos, perfiles y resolución de contexto | Completado con TDD: [evidencia](verification/practice-point-1.md), 76 pruebas, tipos, build y assets sin cambios |
-| 2 | Definir dataset común y miniapunte pandas | Tipos, metadata y datos comprobados; ocho ejemplos SQL conservados |
+| 2 | Definir dataset común y miniapunte pandas | Completado con TDD: [evidencia](verification/practice-point-2.md), 84 pruebas de código, pandas nativo, 302 de UI y capturas revisadas |
 | 3 | Implementar gestor y borradores con adaptadores de prueba | Apertura, contexto, revisiones, persistencia y respuestas tardías verificadas |
 | 4 | Integrar panel y CodeMirror responsive | Apertura desde fichas, colapso, navegación, foco, scroll y temas revisados |
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Consultas, selección, datos, errores, sugerencias de esquema y cancelación |
@@ -541,6 +551,24 @@ compilación con el preset cliente real. La referencia completa ya revisada se
 reutiliza por igualdad de fuente e inventario; el intento nuevo de captura
 conserva su fallo EPERM sin atribuirle resultados de navegador. Los assets
 servidos antes y después son idénticos. [Evidencia roja/verde, referencia y límites](verification/practice-point-1.md).
+
+### Registro del punto 2
+
+Se añadió el dataset tipado `productos-basico@1`, con manifiesto ligero y filas
+inmutables compartidas por SQL y pandas. Sus materializadores generan copias,
+esquema y preparación: parámetros enlazados para SQLite, JSON/DataFrame para
+Python. El precio permanece entero y no se añade un id a SELECT *.
+
+Se publicó la ficha DataFrame con un ejemplo breve, sintaxis Python, resultado
+cerrado e índice semántico. Comparte presentación con SQL. Catálogo, búsqueda,
+recientes y favoritos reconocen el sexto concepto; las cinco fichas SQL y sus
+ocho consultas/resultados se conservan, con paginación dentro de su herramienta.
+
+Pasaron 84 pruebas de código, tipos, build y la comprobación nativa con pandas.
+Dos recorridos UI registrados terminaron con 302 aprobadas, seis omisiones
+previstas y cero fallos o resultados inestables. Se revisaron las 14 vistas nuevas
+y diez cambios de catálogo/menú, conservando 102 referencias. La portada no
+carga cuerpos ni filas compartidas. [Evidencia roja/verde y límites](verification/practice-point-2.md).
 
 ## 16. Fuentes y decisiones documentadas
 

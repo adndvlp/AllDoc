@@ -34,7 +34,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await library(page).getByLabel('Tablas y archivos', {exact: true}).click();
   await library(page).getByLabel('Pandas', {exact: true}).click();
   await expect(item(page, 'sql')).toHaveAttribute('open', '');
-  await expect(item(page, 'pandas').getByText('Sin apuntes todavía', {exact: true})).toBeVisible();
+  await expect(item(page, 'pandas').getByRole('link', {name: /DataFrame/})).toBeVisible();
   await expect(page).toHaveURL(/\/$/);
   expect(await page.evaluate(() => localStorage.getItem('alldoc-recents-v1'))).toBeNull();
   await noOverflow(page);

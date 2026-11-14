@@ -39,13 +39,13 @@ test('SELECT y WHERE comparten identidad de workspace; no se deriva contexto de 
   assert.deepEqual(fixture.calls, {runtime: 0, completion: 0, dataset: 0, constructed: 0});
 });
 
-test('pandas cambia de perfil y workspace mediante metadata, sin publicar todavía la ficha futura', () => {
+test('pandas cambia de perfil y workspace mediante su metadata publicada', () => {
   const sql = registration();
   const pandas = registration({...sqlProfile, id: 'python-pandas', label: 'pandas',
     toolKey: 'analisis-de-datos/pandas', languageId: 'python', runtimeId: 'pyodide', completionId: 'python-jedi'});
   const registry = createPracticeRegistry([sql.entry, pandas.entry]);
-  assert.equal(createPracticeContextResolver({registry})(pandasConcept.slug), null);
-  const resolve = createPracticeContextResolver({registry, entries: [...concepts, pandasConcept]});
+  assert.equal(createPracticeContextResolver({registry})(pandasConcept.slug)?.profile.id, 'python-pandas');
+  const resolve = createPracticeContextResolver({registry});
   const sqlContext = resolve(concepts[0].slug);
   const pandasContext = resolve(pandasConcept.slug);
   assert.ok(sqlContext); assert.ok(pandasContext);

@@ -52,6 +52,12 @@ export const concepts = [
     description: 'Escribe notas para recordar qué hace tu consulta.',
     seoDescription: 'Deja notas con -- para una línea y con /* ... */ para varias.',
   }),
+  defineConcept({
+    id: 'analisis-de-datos/pandas/dataframe',
+    areaId: 'analisis-de-datos', topicId: 'pandas', order: 1,
+    title: 'DataFrame', label: 'Crear una tabla',
+    description: 'Un DataFrame es una tabla: columnas para cada dato y filas para cada producto.',
+  }),
 ] as const satisfies readonly ConceptMeta[];
 
 export type Concept = (typeof concepts)[number];

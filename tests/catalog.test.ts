@@ -27,9 +27,9 @@ test('el catálogo conserva tres áreas, diecinueve herramientas y los cinco gru
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL · 5 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [5, 0, 0]);
-  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 0);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 6 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [6, 0, 0]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -47,7 +47,12 @@ test('el sidebar deriva del catálogo, conserva categorías contraídas y solo e
     }
   };
   items.forEach(check);
-  assert.deepEqual(items.find((item) => item.label === 'SQL')?.items, concepts.map((concept) => concept.id));
+  assert.deepEqual(items.find((item) => item.label === 'SQL')?.items, getConceptsForTopic('analisis-de-datos', 'sql').map((concept) => concept.id));
+  const files = items.find((item) => item.label === 'Tablas y archivos')!;
+  assert.ok(Array.isArray(files.items));
+  const pandas = files.items.find((item) => typeof item === 'object' && item.type === 'category' && item.label === 'Pandas');
+  assert.ok(pandas && typeof pandas === 'object' && pandas.type === 'category');
+  assert.deepEqual(pandas.items, ['analisis-de-datos/pandas/dataframe']);
   assert.deepEqual(items[0].items, [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}]);
 });
 
@@ -81,7 +86,7 @@ test('el índice real conserva rutas y búsquedas y no contiene secciones vacía
     assert.equal(entry.href, metadata.slug);
     assert.equal(entry.title, metadata.title);
     assert.equal(entry.description, metadata.description);
-    assert.equal(entry.context, 'Análisis de datos / SQL');
+    assert.equal(entry.context, 'Análisis de datos / ' + (metadata.topicId === 'sql' ? 'SQL' : 'Pandas'));
   }
   for (const [query, id] of [['filtrar', 'where'], ['ORDENAR', 'order-by'], ['máximo', 'limit'], ['--', 'comentarios'], ['/*', 'comentarios']]) {
     assert.equal(searchEntries(entries, query)[0]?.id, 'analisis-de-datos/sql/' + id);
@@ -126,12 +131,16 @@ test('Docusaurus recibe la metadata canónica conservando contenido, opciones y 
   const parsed = {content: 'Contenido MDX', frontMatter: {hide_table_of_contents: true, custom: 'conservar'}};
   for (const concept of concepts) {
     const result = await parseConceptFrontMatter({filePath: path.resolve('docs', concept.id + '.mdx'), fileContent: 'original', defaultParseFrontMatter: async () => parsed});
+    const siblings = getConceptsForTopic(concept.areaId, concept.topicId);
+    const position = siblings.findIndex(({id}) => id === concept.id);
     assert.equal(result.content, parsed.content);
     assert.deepEqual(result.frontMatter, {
       ...parsed.frontMatter,
       title: concept.title, sidebar_label: concept.title, sidebar_position: concept.order,
       description: ('seoDescription' in concept ? concept.seoDescription : concept.description),
       slug: concept.slug.slice(docsBasePath.length),
+      pagination_prev: siblings[position - 1]?.id ?? null,
+      pagination_next: siblings[position + 1]?.id ?? null,
     });
   }
   assert.deepEqual(parsed.frontMatter, {hide_table_of_contents: true, custom: 'conservar'});

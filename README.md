@@ -35,7 +35,8 @@ docs/
 │   │   ├── limit.mdx
 │   │   └── comentarios.mdx
 │   ├── pandas/
-│   │   └── _category_.json
+│   │   ├── _category_.json
+│   │   └── dataframe.mdx
 │   ├── openpyxl/
 │   │   └── _category_.json
 │   ├── numpy/
@@ -96,7 +97,8 @@ Análisis de datos se organiza en este orden:
 
 Todos los grupos y secciones aparecen contraídos al abrir la página, incluido SQL
 aunque contenga la página actual. Cada herramienta conserva su propio desplegable;
-salvo SQL, todavía están sin apuntes.
+SQL tiene cinco conceptos y Pandas incluye un primer apunte de DataFrame;
+las demás herramientas todavía están sin apuntes.
 Pulsar un grupo o una sección despliega o contrae su contenido, sin abrir una página.
 Se navega al pulsar un concepto. La agrupación y el orden se definen en
 src/content/catalog.ts y sidebars.ts los consume; las carpetas y las rutas de los
@@ -157,6 +159,11 @@ npm run typecheck
 npm run typecheck:tests
 ~~~
 
+La comprobación nativa adicional del dataset y el ejemplo pandas se ejecuta con
+`npm run test:practice-data`. Requiere `python3` con pandas instalado; no instala
+paquetes ni forma parte de las dependencias del sitio. Comprueba preparación,
+reinicio, columnas, índice, precio numérico y resultado editorial con pandas real.
+
 La suite de Playwright usa Chromium y siete tamaños: celular de 320 y 390 píxeles,
 celular horizontal, iPad en vertical y horizontal, laptop y escritorio. Comprueba
 navegación, resultados SQL, ausencia de desbordamientos, menús, búsqueda, selección
@@ -168,7 +175,8 @@ despliegues independientes y selección de área sin navegar. Las fichas añaden
 comprobaciones de compacidad en celular/laptop,
 texto al 200%, copia real al portapapeles, resultados accesibles y las ocho paletas;
 el encabezado añade vistas normales y ampliadas y el selector móvil de áreas.
-Se conservan 88 referencias visuales entre los siete tamaños.
+Se conservan 102 referencias visuales, incluidas las vistas de DataFrame a tamaño
+normal y con texto al 200% en los siete tamaños.
 
 ~~~sh
 npx playwright install chromium
@@ -214,6 +222,10 @@ aportan enlaces, recuentos y entradas de búsqueda.
 Los ejemplos, resultados, recordatorios y notas SQL se editan en
 [src/content/notes/sql.ts](src/content/notes/sql.ts), vinculados a la metadata por ID global.
 [src/content/sql.ts](src/content/sql.ts) conserva la API usada por los MDX.
+El miniapunte pandas está en [src/content/notes/pandas.ts](src/content/notes/pandas.ts).
+Ambas herramientas comparten la presentación compacta de
+[ConceptNote](src/components/ConceptNote/index.tsx), con resultado inicialmente
+cerrado; pandas muestra su índice como encabezado de fila, separado de los datos.
 Los cuerpos de nuevas herramientas siguen la carpeta `src/content/notes/`;
 el build los separa por herramienta para que la portada cargue solo su catálogo.
 Cada variante incluye el ejemplo, una aclaración corta y el resultado opcional.
@@ -230,6 +242,14 @@ de la definición breve de lectura.
 
 El índice de búsqueda y la navegación utilizan metadata, sin importar los
 cuerpos ni las tablas de todas las fichas.
+
+El dataset `productos-basico@1` tiene una fuente tipada común en
+[src/practice/datasets/rows/products.ts](src/practice/datasets/rows/products.ts).
+Su manifiesto ligero contiene columnas y tipos; las filas se cargan por separado.
+Los materializadores generan JSON y esquema para Python, y un plan de sentencias
+con parámetros para SQLite. Cada preparación recibe sus propios bytes y esquema.
+Precio permanece entero y no se añade una columna `id` a los ejemplos existentes.
+La portada no carga los cuerpos ni el chunk de filas compartidas.
 La página SELECT incluye el formato mínimo de referencia. SELECT y FROM se
 explican juntos: una variante muestra todas las columnas y otra, varias columnas
 concretas. Los ejemplos usan la tabla productos, con nombre, categoría y precio.

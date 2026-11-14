@@ -1,5 +1,6 @@
 import {concepts, type Concept, type ConceptId, type ConceptMeta} from '../concepts.ts';
 import {selectAllProductsQuery} from '../sql-preview.ts';
+import {productsDataset} from '../../practice/datasets/products.ts';
 
 const sqlMetadata = concepts.filter((concept): concept is Extract<Concept, {areaId: 'analisis-de-datos'; topicId: 'sql'}> =>
   concept.areaId === 'analisis-de-datos' && concept.topicId === 'sql');
@@ -22,13 +23,9 @@ export type SqlConcept = Omit<ConceptMeta, 'id'> & {
 };
 
 export const sqlTable = {
-  name: 'productos',
-  columns: ['nombre', 'categoria', 'precio'],
-  rows: [
-    ['Teclado', 'Accesorios', '500'],
-    ['Mouse', 'Accesorios', '250'],
-    ['Monitor', 'Pantallas', '3500'],
-  ],
+  name: productsDataset.tables[0].name,
+  columns: productsDataset.tables[0].columns.map(({name}) => name),
+  rows: productsDataset.tables[0].rows.map((row) => row.map(String)),
 };
 
 type SqlBody = Pick<SqlConcept, 'examples' | 'remember' | 'note'>;

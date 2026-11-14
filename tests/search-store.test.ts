@@ -117,7 +117,7 @@ test('buscador vacío: recientes primero sin duplicados; una consulta conserva s
   const recentIds = [entries[3].id, entries[1].id, entries[3].id, 'retirado'];
   store.setRecentIds(recentIds);
   await store.openDialog();
-  assert.deepEqual(store.getSnapshot().results.map(({id}) => id), [entries[3].id, entries[1].id, entries[0].id, entries[2].id, entries[4].id]);
+  assert.deepEqual(store.getSnapshot().results.map(({id}) => id), [entries[3].id, entries[1].id, entries[0].id, entries[2].id, entries[4].id, entries[5].id]);
   store.setQuery('cómo filtrar');
   assert.deepEqual(store.getSnapshot().results, searchEntries(entries, 'cómo filtrar'));
   store.setQuery('');

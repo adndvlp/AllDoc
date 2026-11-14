@@ -48,7 +48,7 @@ test('recientes: entrada directa, categorías sin visita, historial, recarga y s
   const dialog = page.getByRole('dialog', {name: 'Buscar en tus apuntes'});
   await expect(dialog.getByRole('link').first()).toContainText('SELECT');
   await expect(dialog.getByRole('link').nth(1)).toContainText('WHERE');
-  await expect(dialog.getByRole('link')).toHaveCount(5);
+  await expect(dialog.getByRole('link')).toHaveCount(6);
 });
 
 test('favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último', async ({page}) => {

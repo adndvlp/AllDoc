@@ -48,11 +48,11 @@ const config: Config = {
         if (isServer) return {};
         return {optimization: {splitChunks: {cacheGroups: {
           noteBodies: {
-            test: /[/\\]src[/\\]content[/\\]notes[/\\]/,
+            test: /[/\\]src[/\\](?:content[/\\]notes|practice[/\\]datasets[/\\]rows)[/\\]/,
             name(noteModule: Module) {
               const resource = noteModule.nameForCondition() ?? '';
-              const tool = resource.split(/[/\\]notes[/\\]/).at(-1)!.split(/[/\\]/)[0].replace(/\.[cm]?[jt]sx?$/, '');
-              return 'notes-' + tool;
+              const tool = resource.split(/[/\\](?:notes|rows)[/\\]/).at(-1)!.split(/[/\\]/)[0].replace(/\.[cm]?[jt]sx?$/, '');
+              return 'notes-' + (/[/\\]practice[/\\]datasets[/\\]rows[/\\]/.test(resource) ? 'data-' : '') + tool;
             },
             chunks: 'all', enforce: true, priority: 50,
           },
@@ -79,7 +79,7 @@ const config: Config = {
     prism: {
       theme: themes.vsDark,
       darkTheme: themes.vsDark,
-      additionalLanguages: ['sql'],
+      additionalLanguages: ['sql', 'python'],
     },
   } satisfies Preset.ThemeConfig,
 };

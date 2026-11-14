@@ -167,7 +167,7 @@ export async function auditPublishedBuild(directory: string) {
   return {status: failures.length ? 'failed' : 'passed', pages, homeJS, failures};
 }
 
-/** Growth check only: the real catalog stays at five published concepts. */
+/** Growth check only: synthetic entries never modify the published catalog. */
 export function syntheticSearchBenchmark() {
   const entries = Array.from({length: 1000}, (_, index) => ({id: `synthetic/${String(index).padStart(4, '0')}`,
     title: `Concepto ${String(index).padStart(4, '0')}`, description: 'Operación sintética para comprobar crecimiento.',

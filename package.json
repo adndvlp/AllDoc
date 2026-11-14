@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:practice-data": "node --experimental-strip-types scripts/verify-practice-data.mjs",
     "test:ui": "playwright test",
     "test:ui:update": "playwright test --update-snapshots",
     "test:ui:report": "playwright show-report",

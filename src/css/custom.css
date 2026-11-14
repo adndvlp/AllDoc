@@ -118,13 +118,13 @@ table th { font-family: var(--ifm-font-family-monospace); font-size: .75rem; fon
 table td, table th { padding: .65rem 1rem; border-color: var(--border-subtle); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-html.sql-concept-page .container.padding-top--md { padding: 1.25rem 2rem !important; }
-html.sql-concept-page .theme-doc-breadcrumbs { margin: 0 0 .65rem; }
-html.sql-concept-page .theme-doc-markdown h1 { font-size: 2rem; margin: 0 0 .7rem; }
-html.sql-concept-page .pagination-nav { margin-top: 1rem; }
-html.sql-concept-page .pagination-nav__link { padding: .65rem .85rem; }
-html.sql-concept-page .pagination-nav__sublabel { font-size: .75rem; }
-html.sql-concept-page .pagination-nav__label { font-size: .875rem; }
+html:is(.sql-concept-page, .concept-note-page) .container.padding-top--md { padding: 1.25rem 2rem !important; }
+html:is(.sql-concept-page, .concept-note-page) .theme-doc-breadcrumbs { margin: 0 0 .65rem; }
+html:is(.sql-concept-page, .concept-note-page) .theme-doc-markdown h1 { font-size: 2rem; margin: 0 0 .7rem; }
+html:is(.sql-concept-page, .concept-note-page) .pagination-nav { margin-top: 1rem; }
+html:is(.sql-concept-page, .concept-note-page) .pagination-nav__link { padding: .65rem .85rem; }
+html:is(.sql-concept-page, .concept-note-page) .pagination-nav__sublabel { font-size: .75rem; }
+html:is(.sql-concept-page, .concept-note-page) .pagination-nav__label { font-size: .875rem; }
 
 @media (min-width: 997px) {
   .theme-doc-markdown { max-width: 780px; }
@@ -147,7 +147,7 @@ html.sql-concept-page .pagination-nav__label { font-size: .875rem; }
 .navbar-sidebar__close { display: grid; place-items: center; flex: 0 0 44px; width: 44px; min-height: 44px; height: auto; color: var(--text-primary); }
 @media (max-width: 576px) {
   .navbar__logo { width: 26px; }
-  html.sql-concept-page .container.padding-top--md { padding: 1rem 1.1rem !important; }
+  html:is(.sql-concept-page, .concept-note-page) .container.padding-top--md { padding: 1rem 1.1rem !important; }
   .theme-doc-markdown h1 { font-size: 2rem; }
   .theme-doc-breadcrumbs { margin-bottom: 1.5rem; }
   .theme-code-block code { font-size: .78rem; }

@@ -6,4 +6,5 @@ export const searchKeywords: Record<ConceptId, readonly string[]> = {
   'analisis-de-datos/sql/order-by': ['ordenar', 'orden', 'ascendente', 'descendente', 'asc', 'desc', 'precio', 'barato', 'caro'],
   'analisis-de-datos/sql/limit': ['limitar', 'maximo', 'máximo', 'cantidad', 'primeros', 'cinco', 'tres', '5', '3', 'filas', 'productos'],
   'analisis-de-datos/sql/comentarios': ['comentario', 'comentarios', 'notas', 'anotar', 'documentar', 'guiones', 'bloque', 'linea', 'línea', '--', '/*', '*/'],
+  'analisis-de-datos/pandas/dataframe': ['crear', 'tabla', 'pandas', 'python', 'dataframe', 'columnas', 'filas', 'listas', 'productos', 'datos'],
 };

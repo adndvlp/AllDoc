@@ -91,7 +91,8 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
     const button = menu.getByRole('button', {name: label, exact: true});
     await button.click();
     const category = button.locator('..').locator('..');
-    await expect(category.locator('.sidebar-empty-note')).toBeVisible();
+    if (label === 'Pandas') await expect(category.getByRole('link', {name: 'DataFrame', exact: true})).toBeVisible();
+    else await expect(category.locator('.sidebar-empty-note')).toBeVisible();
   }
   await expect.poll(async () => menu.locator('img[data-topic-icon]').evaluateAll((images) => images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
   await menu.locator('svg image').evaluateAll((images) => Promise.all(images.map((image) => {

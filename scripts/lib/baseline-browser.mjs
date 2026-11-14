@@ -1,3 +1,4 @@
+import {concepts} from '../../src/content/concepts.ts';
 import {mkdir, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {expect} from '@playwright/test';
@@ -273,7 +274,7 @@ export async function measureProfile(browser, project, baseURL, sampleCount, out
     for (let index = 0; index < sampleCount; index++) {
       opened.push(await measure(page, searchTrigger(page), ['dialogVisible', 'resultsReady'], () => searchTrigger(page).click()));
       await input(page).fill('');
-      await expect(dialog(page).getByRole('link')).toHaveCount(5);
+      await expect(dialog(page).getByRole('link')).toHaveCount(concepts.length);
       typed.push(await measure(page, input(page), ['filtered'], () => input(page).press('w'), 'keydown'));
       const link = dialog(page).getByRole('link').filter({hasText: 'WHERE'});
       navigated.push(await measure(page, link, ['navigated'], () => link.click()));
