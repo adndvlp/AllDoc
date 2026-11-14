@@ -5,6 +5,7 @@ import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {concepts} from '../src/content/concepts.ts';
 import {entries} from '../src/content/search-index.ts';
+import {registration} from './fixtures/practice.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -46,4 +47,19 @@ test('preset cliente: las sugerencias priorizan recientes y eliminan duplicados'
   await store.openDialog();
   assert.deepEqual(store.getSnapshot().results.slice(0, 2).map(({id}) => id), [entries[3].id, entries[1].id]);
   assert.equal(store.getSnapshot().results.length, entries.length);
+});
+
+test('preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores', () => {
+  const guards = compile<typeof import('../src/practice/guards.ts')>('../src/practice/guards.ts');
+  const registryModule = compile<typeof import('../src/practice/registry.ts')>('../src/practice/registry.ts', {'./guards.ts': guards});
+  const profiles = compile<typeof import('../src/practice/profiles.ts')>('../src/practice/profiles.ts', {'./registry.ts': registryModule});
+  const context = compile<typeof import('../src/practice/context.ts')>('../src/practice/context.ts', {
+    '../content/concepts.ts': {concepts, docsBasePath: '/apuntes'}, './guards.ts': guards, './profiles.ts': profiles,
+  });
+  const fixture = registration();
+  const registry = registryModule.createPracticeRegistry([fixture.entry]);
+  const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
+  assert.equal(resolved?.profile.id, 'sql-sqlite');
+  assert.equal(fixture.calls.runtime, 0);
+  assert.equal(profiles.practiceRegistry.list().length, 2);
 });

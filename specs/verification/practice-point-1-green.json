@@ -1,0 +1,1059 @@
+{
+  "point": 1,
+  "feature": "practice",
+  "status": "complete",
+  "recordedAt": "2026-11-14T04:40:22.340Z",
+  "source": {
+    "sha256": "6bd01847dbbeb4bf9ec40a41db100f62a392e83aa0d48d363cb980d7ec4982d3",
+    "files": [
+      {
+        "path": "docs/analisis-de-datos/_category_.json",
+        "sha256": "6e3f5c8b1df16fc1546ef99d055eabe1ac2dbf7266140bfe71e15f88726d4e4a"
+      },
+      {
+        "path": "docs/analisis-de-datos/excel/_category_.json",
+        "sha256": "8337fd8be21fbddf8989af8cdf847259af50cf8edfe002a9d0104ab1e0cb5a22"
+      },
+      {
+        "path": "docs/analisis-de-datos/httpx/_category_.json",
+        "sha256": "5912359b7d1dba114d60a548fb33080488614caef0e7c2761212055ceb91a58b"
+      },
+      {
+        "path": "docs/analisis-de-datos/index.mdx",
+        "sha256": "899493c143ede2f929c7d0e0a46b75b2dbab2c2a4f342aa5903272f7a90f9b2f"
+      },
+      {
+        "path": "docs/analisis-de-datos/json/_category_.json",
+        "sha256": "2406a01ea2428dd59e8a76d6c872774e3a2f41c728d7b3e9a6a44d744c9a18ae"
+      },
+      {
+        "path": "docs/analisis-de-datos/matplotlib/_category_.json",
+        "sha256": "b2dcc3447e2f59428e0afdd0f8654c07afc745c10eba5ed87cffafcc3c2e5037"
+      },
+      {
+        "path": "docs/analisis-de-datos/mysql-connector-python/_category_.json",
+        "sha256": "363978c3a9ba94fcbbb6e41bd509c8b2a08302935bb2d8f00c17801d156990ec"
+      },
+      {
+        "path": "docs/analisis-de-datos/numpy/_category_.json",
+        "sha256": "609d2f6f94331ee7d416468dc794d12b07254f1bcb8eaad583c444bdacad2b4f"
+      },
+      {
+        "path": "docs/analisis-de-datos/openpyxl/_category_.json",
+        "sha256": "937b9020f5be5640361ed81fc1afbc36bd0fc2ec182ea2f7c8eacf41402a14fc"
+      },
+      {
+        "path": "docs/analisis-de-datos/pandas/_category_.json",
+        "sha256": "ed0c0c657fbb83fcae67793bba240d449f378d8113298a8260825d73b129db10"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-bi/_category_.json",
+        "sha256": "a514ca89eabd9e08fc4ba3d54d7edfdc0bca16c1439dc07000e0f6cb2f75e57b"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-query/_category_.json",
+        "sha256": "c947f688b5bd173d2c6918ae822291da9186cb0c05125d02535015385d13d061"
+      },
+      {
+        "path": "docs/analisis-de-datos/psycopg/_category_.json",
+        "sha256": "1b57dccf6c3a5ed630c0c33e8b34eb9aa6d5a23dfb95920de5418c8023f84c06"
+      },
+      {
+        "path": "docs/analisis-de-datos/r/_category_.json",
+        "sha256": "127744d9bb969608ed2c88618f74b5657428840863b527fe389a607ed37958da"
+      },
+      {
+        "path": "docs/analisis-de-datos/requests/_category_.json",
+        "sha256": "297e39d0d8c12dce8773669946998cc5c1006d20cd348939589284674a4484e2"
+      },
+      {
+        "path": "docs/analisis-de-datos/scipy/_category_.json",
+        "sha256": "a4a0c537ad8aff50be4a92b0943e934976774bfa2c9c12ca9150c447abf3fd8b"
+      },
+      {
+        "path": "docs/analisis-de-datos/seaborn/_category_.json",
+        "sha256": "aecede410e9fe694769594a69fee00d59618e10f468e5f683f79c607b0b3ec84"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/_category_.json",
+        "sha256": "a4996253e8dbdcef478e93b3113c70c7303da3c005ab2c022c2b33e29507578d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/comentarios.mdx",
+        "sha256": "1bce6748adf18ec905b327270bcd93487155a23c757fa90eb5d37d26e0233938"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/limit.mdx",
+        "sha256": "34af599cd1994f48f344f8c12ad2108ad0612f6d7aa16b664fd972b6250ccfd1"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/order-by.mdx",
+        "sha256": "3fc6e13a072649a0be8eab213cdaef7c23b57ff0d14c87254a6bf8e3b7c92035"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/select.mdx",
+        "sha256": "13e4f3889c6a7190c509f81e7d9b31989e8759461445d7f5fa782c19d9b1560c"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/where.mdx",
+        "sha256": "cf97b80f455c36f859edb7ee5c2472df40cdb4c9fe5123558f330bd7b46bb04d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlalchemy/_category_.json",
+        "sha256": "89f7b1bbefa248d5062ccfdadfe510ea69e1e7ecfa51e95501842506101aae19"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlite3/_category_.json",
+        "sha256": "c2e8b1e30f6ba356c2e74fee2e2b83fcdba8d695d43c54e8b7fa55460a2872ba"
+      },
+      {
+        "path": "docs/analisis-de-datos/tableau/_category_.json",
+        "sha256": "5d9da8673ec96d43977c42e1805e61b1c66b752776ded393b979f5a22f062e7b"
+      },
+      {
+        "path": "docs/desarrollo-web/_category_.json",
+        "sha256": "5fba86694937a7557a65cb1c180dc8dbe49223a58fb84d1841485d24f9890e11"
+      },
+      {
+        "path": "docs/desarrollo-web/index.mdx",
+        "sha256": "78439987bf8ee4a8f3d06a1cd1b7b53ba2a63e5f1d69527b3c7f3c516aa5fe38"
+      },
+      {
+        "path": "docs/ia/_category_.json",
+        "sha256": "3a0f9dc8d9a7b02fc8b808aaa6b4f5b5e7e317c5cd0b65e784f6fa85cc0eac17"
+      },
+      {
+        "path": "docs/ia/index.mdx",
+        "sha256": "ee9c33acdbf16c9bb2b2c36634a27c1d72b0ae90508f62d04eea68e66521af3c"
+      },
+      {
+        "path": "docusaurus.config.ts",
+        "sha256": "b6b36ee1ca9056a12df360fd4b38855c273c079235142aabbdbff6d85add5127"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "36dc8e08d4980d9ef2404d1c2f21ad930cc8d325743f81a1082694c5c844e896"
+      },
+      {
+        "path": "package.json",
+        "sha256": "f504d0fc5e59f5ebc76bc70a58cbd4fd84a32268b5297a2bea80d94d6c1afbfb"
+      },
+      {
+        "path": "sidebars.ts",
+        "sha256": "e1c9a9e730f7765742df003387306f1b5b43595094046247c4872913e3380c6e"
+      },
+      {
+        "path": "src/components/AreaOverview/index.tsx",
+        "sha256": "3fadf5633a57192afb5326860ca224047b25abfee112a150332a90184efaaf05"
+      },
+      {
+        "path": "src/components/AreaOverview/styles.module.css",
+        "sha256": "79a9a88339168a465a00478fb0a503010e29ae6e1a251c9376ba5ad9a44cfcf2"
+      },
+      {
+        "path": "src/components/Catalog/index.tsx",
+        "sha256": "9e9621049f6909bb98f4c355632287dad105122d6452182065c708900d4c5511"
+      },
+      {
+        "path": "src/components/Catalog/styles.module.css",
+        "sha256": "5c65e61857bab4a389ea7e34715c152a689622ee05672eb9facffe1b6688246f"
+      },
+      {
+        "path": "src/components/FavoriteButton/index.tsx",
+        "sha256": "3d641279510c46462d8df95936e9b2e0ce306aed709c3c10ae41ca1e7dc916b4"
+      },
+      {
+        "path": "src/components/FavoriteButton/styles.module.css",
+        "sha256": "929ea2a849d9312b57f1fe4ab39b2909a0752ef32dd4020e4a7a0567a4f83b5d"
+      },
+      {
+        "path": "src/components/HomeAreaProvider/index.tsx",
+        "sha256": "0b8b5629aba968c4327484231dad45db5e310d4a9136f47eb9d06b8b8a5f653a"
+      },
+      {
+        "path": "src/components/HomeSearch/index.tsx",
+        "sha256": "3b201c218e918b3040c12e5dbb9054e202a7db448ec5ca506e18da8cdb2a8515"
+      },
+      {
+        "path": "src/components/HomeSearch/styles.module.css",
+        "sha256": "15ac6651f86e6d4d2b4eaf3c6304208957a70ed674444df1f19cef8551fbce41"
+      },
+      {
+        "path": "src/components/Icon/index.tsx",
+        "sha256": "8359d57fe7c4e7aeffeffefe8067d56a975bfc54cf1b70a9ee0aa4db95ae0d84"
+      },
+      {
+        "path": "src/components/PaletteSelector/index.tsx",
+        "sha256": "53a08cb89c6134f6fa987519edfea31ed835969f197f514a1a6c775345313d81"
+      },
+      {
+        "path": "src/components/PaletteSelector/styles.module.css",
+        "sha256": "a0899e0c187ff4b31cf19065862176a7ce2689b625013631dfe1318789e1114c"
+      },
+      {
+        "path": "src/components/PersonalLibraryProvider/index.tsx",
+        "sha256": "59e8f8522f1746237766d0fc1fc782a8ae0c9385f3db94573e08ff23106effe5"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/index.tsx",
+        "sha256": "a574dbc79babce776f0557aebd140cdcc7625cdc1451d3961438c16f0a2d5ba8"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/styles.module.css",
+        "sha256": "f5bd782828f69c525531baf72a4930bf339c87cc8e5f12c58f1ee5e2c835c188"
+      },
+      {
+        "path": "src/components/SearchDialog/index.tsx",
+        "sha256": "333cb8a107540a3682137218ef516d829116fa9aaa5a960b73f9ff413c59daa2"
+      },
+      {
+        "path": "src/components/SearchDialog/styles.module.css",
+        "sha256": "ad875499d2057f825f8432e9079cbfc83b11f8a4ab0a67ad2ef4485db31629f8"
+      },
+      {
+        "path": "src/components/SearchProvider/index.tsx",
+        "sha256": "b638b127a782776772ad4c775e48cba80bca47d89096c067ba6d2cdd4ac9b2a7"
+      },
+      {
+        "path": "src/components/SearchResults/index.tsx",
+        "sha256": "c3bade05b2c3fa551afb78bf6a97deb14914f27e34c80d404d5ebf9af963b084"
+      },
+      {
+        "path": "src/components/SearchResults/keyboard.ts",
+        "sha256": "5f6ab53a8c411a9bc8092ab2b013f2d3aa94074420d4f38afa106c32d2ba4fd7"
+      },
+      {
+        "path": "src/components/SearchResults/styles.module.css",
+        "sha256": "b898b527b40fa0ca1121fe9a8b266e3ed66175142e0482d31a25a3046b6ea243"
+      },
+      {
+        "path": "src/components/SqlNotes/index.tsx",
+        "sha256": "d6286944d73e28a58fadd4c19ffc00b86cb208ad7fd84b60d2553b9777e562e2"
+      },
+      {
+        "path": "src/components/SqlNotes/styles.module.css",
+        "sha256": "987e9b6d74fa63ad6e6f1a9addde27284883a11cc5fba8cced5eff6dcb4b888b"
+      },
+      {
+        "path": "src/components/TopicIcon/index.tsx",
+        "sha256": "f25f4692d2075a6a1a8a06a8e892fa107b83076aef5959957d6572898bbff1cb"
+      },
+      {
+        "path": "src/components/TopicIcon/styles.module.css",
+        "sha256": "4cc8c4a740b60a336c0dd51219b5b483a2ee630167990d1f9821339dff7fcebe"
+      },
+      {
+        "path": "src/content/areas.ts",
+        "sha256": "2dff85961dddc05ba6fec118e1ee17c55f171ed9b00e29c7abdcca637d48536c"
+      },
+      {
+        "path": "src/content/catalog.ts",
+        "sha256": "19afd254e50887daa83484fc480465db22fd0ac502517a70ff7753d1f30ace18"
+      },
+      {
+        "path": "src/content/concepts.ts",
+        "sha256": "51c24e19af3dd7d3ecda83c45c937f6743a9a7b96b8728d608c02b840efd4da3"
+      },
+      {
+        "path": "src/content/notes/sql.ts",
+        "sha256": "c2dd095625a474aadd71f938ad3d930bdca5c64fa0868135cf0b0f9982cc6cc6"
+      },
+      {
+        "path": "src/content/palettes.ts",
+        "sha256": "396239b741af4d22945b686050f0d91f4ff08ed809f985c8108f1242089a3d46"
+      },
+      {
+        "path": "src/content/search-index.ts",
+        "sha256": "77d49bd2da647e076fceadcfa755b8736b13e38216b8b76103e1db3ca90c769d"
+      },
+      {
+        "path": "src/content/search-keywords.ts",
+        "sha256": "5fc120a33dcfbc59c0066ae16cd90bd33a29b076cd94f1bb0114b4bbf14d9fdb"
+      },
+      {
+        "path": "src/content/sql-preview.ts",
+        "sha256": "606fc2318fcc34c319b0763d88134ce78e972c64cc089a660b61963260fe64dd"
+      },
+      {
+        "path": "src/content/sql.ts",
+        "sha256": "9eab2a37f76d62cb2e702972df745dac7587b4214677b6dcd955d3f1af8f49db"
+      },
+      {
+        "path": "src/css/custom.css",
+        "sha256": "ccfa1fe9969d4b32a100bfb1bf6249e642693f150ee4324588bbc1dc8b55ea4b"
+      },
+      {
+        "path": "src/css/palettes.css",
+        "sha256": "bf77b05d367826b40cfc54448689f766638171b0cf303c35ca401232fb98cd4c"
+      },
+      {
+        "path": "src/hooks/useHeaderDisclosure.ts",
+        "sha256": "33aa7f314d64a68a6545a4a3d1638416e431eb5097051888d4de2dc8d05b8dd6"
+      },
+      {
+        "path": "src/lib/catalog-sidebar.ts",
+        "sha256": "2de99618a278fd234b54a82a72e12ca28f0bfd48a31f926490cbbe9ffa55eb2f"
+      },
+      {
+        "path": "src/lib/concept-front-matter.ts",
+        "sha256": "4e8274734f58b52ee9988cf50ba623afe24ce882871de0d3c63692d2e1ed9ee9"
+      },
+      {
+        "path": "src/lib/personal-library.ts",
+        "sha256": "b92e11ba721edbb7d247b3a49b50cd1756b17936e5f13b1a5fd6a4aaef318ac6"
+      },
+      {
+        "path": "src/lib/search-store.ts",
+        "sha256": "856d22474dcabc56dd76a59c4a37fecf76c140698ddabdce727fb832790d2ea5"
+      },
+      {
+        "path": "src/lib/search.ts",
+        "sha256": "9d82f42ad381a514928d11e829f865934eec92856afd0a9060c089e34ff041d0"
+      },
+      {
+        "path": "src/pages/index.module.css",
+        "sha256": "0684d97c53cb9e7bb0896bd90ef8c9fd214b441a4ccdc72f4129392277d60bc7"
+      },
+      {
+        "path": "src/pages/index.tsx",
+        "sha256": "63fc1d53f0aa5171d8eaef0fb68bbf007f4b2037d8c80aa544541d03dde15f92"
+      },
+      {
+        "path": "src/practice/context.ts",
+        "sha256": "93c38bc1c942eb497fe09ef8ab3e0546f8a29e254be1539a12867acbf2e4d907"
+      },
+      {
+        "path": "src/practice/contracts.ts",
+        "sha256": "f30ffcb3bdd4bf5c9b8f9d29d10925315ceb8e11f19074800af50cc5114ea075"
+      },
+      {
+        "path": "src/practice/guards.ts",
+        "sha256": "7c0f177ebf982b7c870be988a843f6940a6cc23c18e2e7c5adadbb453e4bc835"
+      },
+      {
+        "path": "src/practice/profiles.ts",
+        "sha256": "2816980457ef4e0024b4d83a0136a85f3d032ca81c951887fc721fc46fa698c6"
+      },
+      {
+        "path": "src/practice/protocol.ts",
+        "sha256": "65d867df311ffcf6b706a23326ad34c26b3519e7566c449371b088ba45919703"
+      },
+      {
+        "path": "src/practice/registry.ts",
+        "sha256": "d41f728e78ac58b5c756acb8ea672acc5515c0d7c74c3d604aef2154698511e3"
+      },
+      {
+        "path": "src/theme/DocItem/Content/index.tsx",
+        "sha256": "c2c6a54d0d4a0e6af517566cc2bb1f890e997dbacac421fbad92e63cfb7caa7b"
+      },
+      {
+        "path": "src/theme/DocItem/Content/styles.module.css",
+        "sha256": "dc7d1e9a59ea8c2aae07e88ecf724e287d6a36fc65eaa731eba17cc358570b4b"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/index.tsx",
+        "sha256": "263387253d6834e10a1128d3cdc9eadeb319fbc33a0d545ff5f9688190cf27d2"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/styles.module.css",
+        "sha256": "a5beb46ce108cb811a5dc6b1f8b0c9c9fa67b9188def4fee193ad450b0539cf7"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/index.tsx",
+        "sha256": "3cccd33b24ba0ec9e5faaf432f9d2194149752ac688553de988df6ac1b3598a3"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/styles.module.css",
+        "sha256": "676882204ccbbc8b224a00275fd8ad666f385151384a4fe061214de6541a0223"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/index.tsx",
+        "sha256": "9365efe8b27ebd0678df1cd836cd398ee5e149fa25895583525c86e4d278203c"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/styles.module.css",
+        "sha256": "a434717cd832459dd8b0c2176b7c64c05dc0351e7ad49eb5ebf224698a44b15f"
+      },
+      {
+        "path": "src/theme/Navbar/Content/index.tsx",
+        "sha256": "046eb878f485cfd864aa6ba2756f9f1f1a44a71dd24037dbde26ecc3610f1709"
+      },
+      {
+        "path": "src/theme/Navbar/Content/styles.module.css",
+        "sha256": "ade84f111e682d22df4272cf50753c4949436c9525aea38a4818d67a08917ee8"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/Toggle/index.tsx",
+        "sha256": "84a93a1ebc2c918977ed628f9b4fe8bd7f19feb58f2582cf24c0e1432d8fa4fe"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/index.tsx",
+        "sha256": "11bf9d1e7941c2146fa9e5c05b6d9b90ec18e340df78242e76015a0022e5a83c"
+      },
+      {
+        "path": "src/theme/Navbar/Search/index.tsx",
+        "sha256": "251fea314e6e9e66a63e744720086a75430766df2a6b7cf71e66b908535cc676"
+      },
+      {
+        "path": "src/theme/Navbar/Search/styles.module.css",
+        "sha256": "62f7e1c511b8b9723a9fe4ab91ec8317f78be34eb389b4d2b269894ad9312e9a"
+      },
+      {
+        "path": "src/theme/Root.tsx",
+        "sha256": "52a1e92e49d904a4d273accac1892e76fe7973e933ce7256b6699d5526fa9ac8"
+      },
+      {
+        "path": "src/theme/SearchBar/index.tsx",
+        "sha256": "d960f97359ac07a122071db1a93cd186000439518fd4ad9c3b7d180a02764f20"
+      },
+      {
+        "path": "src/theme/SearchBar/styles.module.css",
+        "sha256": "ddfaabd2103f14fae1f8ece24cda064789168495867be786d7ec31ae858db33b"
+      },
+      {
+        "path": "static/.DS_Store",
+        "sha256": "efe9fd6f9bd39e9e727e6b721f479e731027a75d5262c665050f2c24d9377a30"
+      },
+      {
+        "path": "static/img/.DS_Store",
+        "sha256": "235248fc0eef73cac6e344bbc6a8eb20e006720c778041dcb6b05e722939d4bc"
+      },
+      {
+        "path": "static/img/mark.svg",
+        "sha256": "454f157668c898c8d877b24bbfc2aad776b9eba1a46aa52f43964b83bffeecd4"
+      },
+      {
+        "path": "static/img/topics/SOURCES.md",
+        "sha256": "94807eb3185e0633119e7d78bf55a478485aecc41e69862587bfb4a9411d9bae"
+      },
+      {
+        "path": "static/img/topics/httpx.png",
+        "sha256": "32a23bbc8e2110857bc5000806d804041170a29971b71fb60849da5b910fc5fb"
+      },
+      {
+        "path": "static/img/topics/licenses/devicon.txt",
+        "sha256": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664"
+      },
+      {
+        "path": "static/img/topics/licenses/httpx.txt",
+        "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+      },
+      {
+        "path": "static/img/topics/licenses/microsoft.txt",
+        "sha256": "9bbc1ea9fe5c96df01b311a2ac864d5b18fc87b9948bfd14770e4b44db755ee9"
+      },
+      {
+        "path": "static/img/topics/licenses/requests.txt",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "static/img/topics/licenses/seaborn.txt",
+        "sha256": "357ad276e086fab501163d4e9a0ae13c2fd0647eb08d2305fbc0ca3813892601"
+      },
+      {
+        "path": "static/img/topics/matplotlib.svg",
+        "sha256": "8f54f90837d06369095f75ac559d54d547ccea006b2cca5f281edc4db7c9d107"
+      },
+      {
+        "path": "static/img/topics/openpyxl.webp",
+        "sha256": "bb6d1baaecf51bfd2325b0df00c6df85b61b3da7894fc7540414c5b180774046"
+      },
+      {
+        "path": "static/img/topics/power-bi.svg",
+        "sha256": "ddc0f9967330898ee85a96dbe32a0dfe62f9da1db293583958cf97cee24eee1e"
+      },
+      {
+        "path": "static/img/topics/power-query.svg",
+        "sha256": "0633c23cfa1d1b8e76cac13ffeebbf3b0223da96e0e61ab0dc7ca56217914f1b"
+      },
+      {
+        "path": "static/img/topics/requests.png",
+        "sha256": "dbf77ff33e977d1b5334d7d38c214a2c89d1c85074b251e4f9c5443e5b0d858f"
+      },
+      {
+        "path": "static/img/topics/seaborn.svg",
+        "sha256": "c8f8c552c7b74d37e00c3a65fce1af4caf0ccf5a30383e135722bb95829e3a72"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "1723fee437804196736bb25e482e2831c4481861cada1f37ed92df2f08d9e9c7"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "path": "tests/practice-context.test.ts",
+      "sha256": "8fdb54d3ab7107474551ca3ef0d041443ad7f259803bf91951c810d117d4e226"
+    },
+    {
+      "path": "tests/practice-contracts.test.ts",
+      "sha256": "45d4f6fd81a781103a2e7ebea7d4267f08652d116eb2ef2e0825dda5147bccba"
+    },
+    {
+      "path": "tests/practice-types.ts",
+      "sha256": "e453636cce695eefe5ad0514ad7898102e50ccb164341c94e785f68f28086fdf"
+    },
+    {
+      "path": "tests/fixtures/practice.ts",
+      "sha256": "823b57adeef03bf62adcd49aa144687381bfcea827b4cb82e0d228e0a9caa0ce"
+    },
+    {
+      "path": "tests/client-compilation.test.ts",
+      "sha256": "a5a11cfd60b19dca40e6d324373be1e616e5e4734e21a798c4e5d1afda6fa1f4"
+    }
+  ],
+  "checks": {
+    "code": {
+      "passed": 76,
+      "failed": 0,
+      "newCases": 16,
+      "command": "npm test",
+      "logSha256": "8d5c21a15a350a2e4f72f57f6bbfa9f8637edc20014cf63cc9efca94b0502fd8"
+    },
+    "appTypes": "passed",
+    "testTypes": "passed",
+    "productionBuild": "passed",
+    "publishedAudit": {
+      "status": "passed",
+      "pages": [
+        {
+          "route": "404.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/limit.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/order-by.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/select.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/where.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/desarrollo-web.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "apuntes/ia.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        },
+        {
+          "route": "index.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        }
+      ],
+      "homeJS": {
+        "loaderFound": true,
+        "chunkIds": [
+          869,
+          76,
+          583
+        ],
+        "bodyAssets": [
+          "assets/js/notes-sql.f4bdf02b.js"
+        ],
+        "loadedBodies": []
+      },
+      "failures": []
+    },
+    "clientPreset": "passed",
+    "unchangedAppAssets": true
+  },
+  "baseline": {
+    "selectedBrowserReference": "benchmarks/runs/2026-11-14T00-03-39-837Z-14f3739c0a",
+    "currentBeforeBuild": "benchmarks/runs/2026-11-14T04-24-34-687Z-14f3739c0a",
+    "currentAfterBuild": "benchmarks/runs/2026-11-14T04-39-42-609Z-6bd01847db",
+    "browserReferenceSourceMatchesBefore": true,
+    "beforeAndAfterInventoryExactlyEqual": true,
+    "existingSourceFilesUnchanged": 112,
+    "packagesUnchanged": true,
+    "screenshotsVerified": [
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/inicio.png",
+        "sha256": "9e66e171a6ba9763323a89e442377e184d77585a3185932be22e33a678e3654f",
+        "route": "/",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/select.png",
+        "sha256": "498068750d14a5e3cf1695d108742836d0e945fa01ef698685b3978a0bb60085",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/comentarios.png",
+        "sha256": "6a1563f9118f04ed65c5a6411db762cc83ef770368eda34af62c58673b24befe",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/menu.png",
+        "sha256": "a079c22a4a9f68263f6192dc4c19768deae116772c2b112bdcb3ecb889f595f7",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/buscador.png",
+        "sha256": "8c7e331aab45b83eb515f7b51c5910372d869bb2036b07a8556bf022c8f5b5f3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular-pequeno",
+        "path": "screenshots/celular-pequeno/color-texto.png",
+        "sha256": "90ad4f26e60f95e98c4edeefe5b15732429846ce78cec87b3a73e5eb4432e7fa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/inicio.png",
+        "sha256": "74ba6f5ab0c07cdf53639ef804934e6eb7199d4cb619db4d0b87c3ed4c567e9a",
+        "route": "/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/select.png",
+        "sha256": "4e0b8d7f4659375380efe0920df2ef30d4c8d19fb265389131285be50eb82838",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/comentarios.png",
+        "sha256": "424558c773f48e54c202a2fefd647a224916222e8635c10e09c2ed99d8b6409c",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/menu.png",
+        "sha256": "4005edbd184c8bc5b87db5df61927b84ae34258cd3e9bc75aacf477fbd42730c",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/buscador.png",
+        "sha256": "fc8d761c89cdadbcdd06b7c8226837593cdc36b7c1bac80d9ebe1e94060d4ff1",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular",
+        "path": "screenshots/celular/color-texto.png",
+        "sha256": "4435872f8deb302efe532248e6ac5550d65014750febfa49e6f16280d2011a11",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/inicio.png",
+        "sha256": "d5f0fd249f17490aea8200b6f98620e7ca24c27cce55e40af6578e4227c50df2",
+        "route": "/",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/select.png",
+        "sha256": "61d3030bf42d3e2662fb409ae16a2589a3ebe8ff8a89a6067d1442f84c1ae050",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/comentarios.png",
+        "sha256": "888ac524f7f5578e4370fcc4fc2d0bf1691673ac90f48e429318992524a9a2a3",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/menu.png",
+        "sha256": "830169cd9b788deba48990fd55a35886d7dd30c7366c4dfbf8cc3366c92ec03a",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/buscador.png",
+        "sha256": "548c27761cc52d2f40c3dbe25595b40b60fd3d4ae85325586878b01be961472b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "celular-horizontal",
+        "path": "screenshots/celular-horizontal/color-texto.png",
+        "sha256": "e3d33662855fde3264a9f01aa63f8d41a013fe8e20d8f2bef959c61d17f50e13",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/inicio.png",
+        "sha256": "39a38ea79bf33fb1db324c37093e426b3119fc55366f375302199fe1b8132587",
+        "route": "/",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/select.png",
+        "sha256": "cf73f0a0b283047dafa58e5e03cf5b8225b6d0fe857635607d9cefead8782afa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/comentarios.png",
+        "sha256": "c39e360c411f07a40fc3e1239bb4af915fa8e08aa3350bf3927116e4681983c1",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/menu.png",
+        "sha256": "978b5532515b88156049437cae32b9870540c4b0f60682c73d247ca384657b94",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/buscador.png",
+        "sha256": "6225f4caebc25c16ac7e4a68599f72163b3805e782721df6f35e488791a70c1a",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad",
+        "path": "screenshots/ipad/color-texto.png",
+        "sha256": "d5c40bf257be72b27a9a2259c765316e013280536556321563c298748b69d1b3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/inicio.png",
+        "sha256": "85dbe27411d6a5a19e33964e2cb71bafe21401831cbdc3ea3be27e76b1ad5440",
+        "route": "/",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/select.png",
+        "sha256": "3798c0d15ecd5e44bfe3fae6135f8565cbaafd1e5545c402ef1508730686d4c4",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/comentarios.png",
+        "sha256": "372fd7caa9ec049adbafb8be97b04870e450f452acb8443642c59c20e277ca41",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/menu.png",
+        "sha256": "beaa737fd181bcb1df411dde74007ad3ed54dc19df015c74299c90ea13383fee",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/buscador.png",
+        "sha256": "616e093772cff9d56b68d4b25e0c3d38b8df5a0180a885c9eb80e467f31ec1c9",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "ipad-horizontal",
+        "path": "screenshots/ipad-horizontal/color-texto.png",
+        "sha256": "45c6d0fd2c56a3cbde3e8e88636f66ede02e1ca076dbddd1118bb112b4a66e6b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/inicio.png",
+        "sha256": "5a00116962b855953fd5146d3faeba583fd0862741b37d179182f80edc79f34e",
+        "route": "/",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/select.png",
+        "sha256": "9d6a8f4d290809a49b987413c124d28e527d40069505d998f826e10771c74794",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/comentarios.png",
+        "sha256": "16d5a39941b354a0a75f38494ebf4629558f5f05182ca1252c0c95c4ef0ec1e5",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/menu.png",
+        "sha256": "212a1c57420ac84e94f51dce2825e7a3a6c5db78e734a41c75469af8cdb3f9fa",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/buscador.png",
+        "sha256": "b217f45cecb8c3ea413c1da07f420fe0f8f92023ab771f3c7d46c303560d9582",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "laptop",
+        "path": "screenshots/laptop/color-texto.png",
+        "sha256": "949980966755fb2e08b908344da28017a0ae737c0126262a650cb8d12b155bb0",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/inicio.png",
+        "sha256": "3250858d91461e6aed0028f95c51d3809a3cbc0ea8da23e1664af052cd16511e",
+        "route": "/",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/select.png",
+        "sha256": "1943c490bf5d0cdca348a9216cf52c8114804175deb9f1e24fe8fd7b6f6fbaa3",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/comentarios.png",
+        "sha256": "0041e7e6af3b758bae7b6baa9641e9ecd6597848c486b886246724057755ec6c",
+        "route": "/apuntes/analisis-de-datos/sql/comentarios",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/menu.png",
+        "sha256": "6c777a2db00024c81bedff8dc322e416e7649c3cb4d44394b61f6379a72cf18b",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/buscador.png",
+        "sha256": "85cf35c0dae791edf4b5802585bca522e1908bc089f44a6d71edfdd135b5e9c2",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      {
+        "project": "escritorio",
+        "path": "screenshots/escritorio/color-texto.png",
+        "sha256": "0e5d2fd57232d35c4e89924d6421c9d99ae5c9bd36de0cceae226cccab208aad",
+        "route": "/apuntes/analisis-de-datos/sql/select",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    ],
+    "browserMeasurement": "Reutilizada de la ejecución completa de la misma fuente y los mismos assets. No se tomaron nuevas capturas ni tiempos en esta sesión.",
+    "freshAttempt": {
+      "status": "partial",
+      "browser": {
+        "status": "not-run"
+      },
+      "failures": [
+        {
+          "stage": "server",
+          "message": "listen EPERM: operation not permitted 127.0.0.1"
+        }
+      ]
+    },
+    "afterMode": "bundle-only; conserva partial en el informe de captura porque no solicitó navegador",
+    "intermediateBuild": "benchmarks/runs/2026-11-14T04-35-15-691Z-b6595b2d23"
+  },
+  "implementation": {
+    "plannedProfiles": [
+      "sql-sqlite",
+      "python-pandas"
+    ],
+    "productionEnabledProfiles": [],
+    "publishesPandasNote": false,
+    "dependencyChanges": false,
+    "interfaces": [
+      "RuntimeAdapter",
+      "CompletionAdapter",
+      "DatasetAdapter"
+    ],
+    "extensionProof": "Tercer adaptador de prueba y varios perfiles SQL; no acredita ejecución Rust."
+  },
+  "tdd": {
+    "red": "specs/verification/practice-point-1-red.json",
+    "supplementalRed": "specs/verification/practice-point-1-red-extra.json",
+    "green": "76 pruebas, tipos y build aprobados",
+    "emptyIdentityRed": "specs/verification/practice-point-1-red-identities.json"
+  },
+  "limits": [
+    "Sin gestor de sesiones, panel, editor o motores reales: pertenecen a los puntos siguientes.",
+    "Los validadores de mensajes no implementan la política acumulada de salida, temporizadores ni ejecución única del futuro gestor.",
+    "La conformidad con dobles demuestra estructura y contrato, no ejecución WASM/Python ni compatibilidad de motores."
+  ]
+}

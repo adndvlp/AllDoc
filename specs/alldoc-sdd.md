@@ -7,6 +7,8 @@
 **Alcance:** toda la propuesta de mejora de la landing y la app, sin dividirla en entregas parciales.  
 **Base:** Docusaurus, React, TypeScript, MDX, CSS Modules y Webpack.
 
+**Ampliación posterior:** [SDD del panel de práctica contextual](practice-sdd.md), pendiente de implementación. Valida estructura y contrato con SQL y pandas; no altera el cierre de los ocho puntos de este rediseño.
+
 ## 1. Objetivo
 
 AllDoc es una biblioteca personal para recordar rápidamente conceptos que ya se han aprendido y consultar nuevas formas de hacer algo. Abrirla debe conducir directamente a un concepto mediante búsqueda, recientes, favoritos o el catálogo organizado.

@@ -1,0 +1,17 @@
+{
+  "stage": "supplemental-red",
+  "recordedAt": "2026-11-14T04:39:26.587Z",
+  "command": "node --experimental-strip-types --test --test-reporter=spec tests/practice-contracts.test.ts",
+  "tests": 6,
+  "passed": 5,
+  "failed": 1,
+  "exitCode": 1,
+  "sourceSha256": "b6595b2d231cec67935a37f62ad069fa95aeeee502ec63319c218ca34400bbbd",
+  "testSha256": "45d4f6fd81a781103a2e7ebea7d4267f08652d116eb2ef2e0825dda5147bccba",
+  "logSha256": "6d79a31302614aa9d4ec35b85ef2e57dc476ca09e93c804c196549efd87adf8c",
+  "functionalFailure": {
+    "case": "identidades vacías de completado que coinciden con la solicitud",
+    "expected": false,
+    "actual": true
+  }
+}
