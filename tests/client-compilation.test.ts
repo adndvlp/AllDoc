@@ -10,6 +10,7 @@ import {context as practiceContext, engineFixture, environment, memoryRepository
 import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import type {RuntimeEvent} from '../src/practice/contracts.ts';
+import {sqlConcepts} from '../src/content/notes/sql.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -26,6 +27,22 @@ function compile<T>(path: string, imports: Record<string, unknown> = {}): T {
   new Function('require', 'exports', 'module', code)((id: string) => imports[id] ?? require(id), module.exports, module);
   return module.exports as T;
 }
+
+test('ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible', () => {
+  const fixture: {context: ReturnType<typeof practiceContext> | null; openExample(): void} = {context: practiceContext(), openExample() {}};
+  const {ConceptNote} = compile<{ConceptNote: import('react').ComponentType<{concept: (typeof sqlConcepts)[number]; conceptId: string; kind: string; language: string}>}>('../src/components/ConceptNote/index.tsx', {
+    '../PracticeProvider': {usePractice: () => fixture},
+    '@theme/CodeBlock': {__esModule: true, default: ({children}: {children: string}) => createElement('pre', null, children)},
+    '@docusaurus/theme-common': {HtmlClassNameProvider: ({children}: {children: import('react').ReactNode}) => children},
+    '../SqlNotes/styles.module.css': {},
+  });
+  const render = () => renderToStaticMarkup(createElement(ConceptNote, {concept: sqlConcepts[0], conceptId: 'select', kind: 'sql', language: 'sql'}));
+  const html = render();
+  assert.equal((html.match(/aria-label="Probar este ejemplo:/g) ?? []).length, 2);
+  assert.ok(html.includes('data-practice-example="sql/select/todas-las-columnas"'));
+  fixture.context = null;
+  assert.ok(!render().includes('data-practice-example'));
+});
 
 test('preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar', () => {
   const {createPersonalLibrary} = compile<typeof import('../src/lib/personal-library.ts')>('../src/lib/personal-library.ts');
@@ -72,7 +89,7 @@ test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan 
   const guards = compile<typeof import('../src/practice/guards.ts')>('../src/practice/guards.ts');
   const drafts = compile<typeof import('../src/practice/drafts.ts')>('../src/practice/drafts.ts', {'./guards.ts': guards});
   const protocol = compile<typeof import('../src/practice/protocol.ts')>('../src/practice/protocol.ts', {'./guards.ts': guards, './contracts.ts': {PRACTICE_PROTOCOL_VERSION: 1}});
-  const sessions = compile<typeof import('../src/practice/session-manager.ts')>('../src/practice/session-manager.ts', {'./protocol.ts': protocol});
+  const sessions = compile<typeof import('../src/practice/session-manager.ts')>('../src/practice/session-manager.ts', {'./protocol.ts': protocol, './drafts.ts': drafts, './guards.ts': guards});
   const repo = memoryRepository(); const store = drafts.createDraftStore(() => repo.repository); const engines = engineFixture();
   const manager = sessions.createPracticeSessionManager({registry: engines.registry, drafts: store,
     bootstrap: async (ctx) => ({workspace: workspace(ctx), environment})});

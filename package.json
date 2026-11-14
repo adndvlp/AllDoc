@@ -19,6 +19,8 @@
     "test:ui:report": "playwright show-report",
     "test:ui:practice": "playwright test tests/ui/practice.spec.ts",
     "test:ui:sql": "playwright test tests/ui/sqlite.spec.ts",
+    "test:ui:actions": "playwright test tests/ui/practice-actions.spec.ts",
+    "test:ui:actions:smoke": "playwright test tests/ui/practice-actions.spec.ts --project=celular -g 'ejemplo explícito'",
     "test:ui:python": "playwright test tests/ui/python.spec.ts",
     "test:ui:python:smoke": "playwright test tests/ui/python.spec.ts --project=celular -g 'DataFrame real'",
     "test:ui:python:check": "playwright test tests/ui/python.spec.ts --project=celular --project=laptop --update-snapshots",

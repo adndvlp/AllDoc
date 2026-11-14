@@ -7,6 +7,7 @@ const sqlMetadata = concepts.filter((concept): concept is Extract<Concept, {area
 export const sqlBasePath = sqlMetadata[0].slug.slice(0, sqlMetadata[0].slug.lastIndexOf('/'));
 
 export type SqlExample = {
+  id: string;
   title: string;
   code: string;
   hint: string;
@@ -36,6 +37,7 @@ const bodies = {
   'analisis-de-datos/sql/select': {
     examples: [
       {
+        id: 'sql/select/todas-las-columnas',
         title: 'Todas las columnas',
         code: selectAllProductsQuery,
         hint: 'El asterisco (*) pide todas.',
@@ -49,6 +51,7 @@ const bodies = {
         },
       },
       {
+        id: 'sql/select/columnas-concretas',
         title: 'Columnas concretas',
         code: 'SELECT nombre, precio FROM productos;',
         hint: 'Escribe sus nombres separados por comas.',
@@ -62,6 +65,7 @@ const bodies = {
   },
   'analisis-de-datos/sql/where': {
     examples: [{
+      id: 'sql/where/condicion',
       title: 'Cumplir una condición',
       code: 'SELECT nombre FROM productos\nWHERE precio >= 1000;',
       hint: 'Solo productos con un precio de 1000 o más.',
@@ -71,6 +75,7 @@ const bodies = {
   },
   'analisis-de-datos/sql/order-by': {
     examples: [{
+      id: 'sql/order-by/precio-ascendente',
       title: 'Del más barato al más caro',
       code: 'SELECT nombre, precio FROM productos\nORDER BY precio ASC;',
       hint: 'Ordena los productos por precio.',
@@ -84,6 +89,7 @@ const bodies = {
   'analisis-de-datos/sql/limit': {
     examples: [
       {
+        id: 'sql/limit/filas-completas',
         title: 'Hasta 5 filas completas',
         code: 'SELECT * FROM productos LIMIT 5;',
         hint: 'Todas las columnas de un máximo de 5 productos.',
@@ -97,6 +103,7 @@ const bodies = {
         },
       },
       {
+        id: 'sql/limit/nombres',
         title: 'Hasta 3 nombres',
         code: 'SELECT nombre FROM productos LIMIT 3;',
         hint: 'Solo la columna nombre, con un máximo de 3 productos.',
@@ -112,12 +119,14 @@ const bodies = {
   'analisis-de-datos/sql/comentarios': {
     examples: [
       {
+        id: 'sql/comentarios/una-linea',
         title: 'Una línea o al final',
         code: '-- Consultar productos\nSELECT * FROM productos; -- Nota',
         hint: '-- comenta desde los guiones hasta el final de esa línea.',
         output: {columns: sqlTable.columns, rows: sqlTable.rows},
       },
       {
+        id: 'sql/comentarios/varias-lineas',
         title: 'Varias líneas',
         code: '/* Esta consulta obtiene\n   todos los productos */\nSELECT * FROM productos;',
         hint: 'Encierra el comentario entre /* y */.',

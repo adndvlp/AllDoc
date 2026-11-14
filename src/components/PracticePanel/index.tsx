@@ -29,7 +29,19 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const [editorError, setEditorError] = useState(false); const [attempt, setAttempt] = useState(0);
   const [data, setData] = useState<PracticeDataset | null>(null); const [message, setMessage] = useState<string | null>(null);
   const id = useId(); const openedBefore = useRef(false);
+  const codeMenu = useRef<HTMLDetailsElement>(null);
   const closeForState = () => {if (dialog.current?.open) {programmaticCloses.current++; dialog.current.close();}};
+  useEffect(() => {
+    const menu = codeMenu.current;
+    const dismiss = (event: PointerEvent) => {if (menu?.open && !menu.contains(event.target as Node)) menu.open = false;};
+    document.addEventListener('pointerdown', dismiss);
+    return () => document.removeEventListener('pointerdown', dismiss);
+  }, []);
+  useEffect(() => {if (codeMenu.current) codeMenu.current.open = false;}, [practice.visible, practice.context?.workspaceKey]);
+  useEffect(() => {
+    if (!practice.state.codeAction || !EditorComponent) return;
+    setActiveTab(0);
+  }, [practice.state.codeAction, EditorComponent]);
 
   useEffect(() => {
     const element = dialog.current!;
@@ -105,6 +117,10 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
     setActiveTab(index);
     if (focus) dialog.current?.querySelector<HTMLButtonElement>(`[data-practice-tab="${index}"]`)?.focus();
   }
+  function codeAction(action: () => void | Promise<unknown>) {
+    if (codeMenu.current) codeMenu.current.open = false;
+    void Promise.resolve().then(action).catch(reason => setMessage(reason instanceof Error ? reason.message : String(reason)));
+  }
   return <dialog ref={dialog} id="alldoc-practice-panel" className={styles.panel} data-practice-panel data-layout={layout}
     aria-labelledby={id + '-title'} onClose={() => {
       if (programmaticCloses.current) programmaticCloses.current--;
@@ -128,6 +144,19 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
             void practice.manager?.execute(current?.id === workspace?.id && current?.path === workspace?.activeFile ? current?.range : undefined);
           }}>Ejecutar</button>}
         {!unavailable && <button type="button" disabled={practice.state.phase === 'loading'} onClick={() => {void practice.manager?.resetEnvironment();}}>Reiniciar entorno</button>}
+        <details ref={codeMenu} className={styles.codeMenu} onKeyDown={(event) => {
+          if (event.key === 'Escape' && codeMenu.current?.open) {
+            event.preventDefault(); event.stopPropagation(); codeMenu.current.open = false;
+            codeMenu.current.querySelector('summary')?.focus({preventScroll: true});
+          }
+        }}>
+          <summary role="button" aria-label="Opciones de código" title="Opciones de código"><span aria-hidden="true">⋯</span></summary>
+          <div role="region" aria-label="Opciones de código" className={styles.codeMenuBody}>
+            <button type="button" disabled={!workspace || !practice.manager} onClick={() => codeAction(() => practice.manager?.restoreInitialCode())}>Restaurar código inicial</button>
+            {practice.state.draft?.previous && <button type="button" onClick={() => codeAction(() => practice.manager?.restorePreviousCode())}>Recuperar código anterior</button>}
+            {status === 'memory' && <button type="button" onClick={() => codeAction(() => practice.manager?.retrySave())}>Reintentar guardado</button>}
+          </div>
+        </details>
         {activeTab !== 2 && practice.state.events.some((event) => event.type === 'end') && <button type="button" onClick={() => selectTab(2)}>Ver resultados</button>}
       </div>
       <div role="tablist" aria-label="Contenido de práctica" className={styles.tabs}>
@@ -142,10 +171,11 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
         <section className={styles.code} role="tabpanel" id={id + '-pane-0'} aria-labelledby={id + '-tab-0'} hidden={activeTab !== 0}>
           {(error || editorError) && <div className={styles.message} role="alert">No se pudo preparar la práctica.
             {error && <p>{error}</p>}
-            <button type="button" onClick={() => {if (error) {if (practice.manager) void practice.manager.retry(); else void practice.open();} setAttempt((value) => value + 1);}}>Reintentar</button>
+            <button type="button" onClick={() => {if (error) {if (practice.error || !practice.manager) void practice.open(); else void practice.manager.retry();} setAttempt((value) => value + 1);}}>Reintentar</button>
           </div>}
           {!error && !editorError && (!EditorComponent || !workspace) && <p className={styles.message} role="status">Cargando editor…</p>}
           {EditorComponent && workspace && <EditorComponent workspace={workspace} schema={practice.state.schema} helpId={id + '-help'}
+            focusRequest={practice.visible && activeTab === 0 ? practice.state.codeAction : 0}
             onChange={(key, path, content) => {
               if (practice.manager?.getSnapshot().context?.workspaceKey !== key) return;
               try {practice.manager.edit(path, content); setMessage(null);} catch (reason) {setMessage(String(reason));}

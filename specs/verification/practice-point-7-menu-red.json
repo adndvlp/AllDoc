@@ -1,0 +1,427 @@
+{
+  "point": 7,
+  "stage": "red",
+  "recordedAt": "2026-11-14T20:12:22.336Z",
+  "files": [
+    {
+      "path": "src/components/PracticePanel/index.tsx",
+      "sha256": "4aa8e8fbeeb914eb502a112c4a6d911b056b359d1ccdeab9f6bf5dd6fb2c41f0"
+    },
+    {
+      "path": "tests/ui/practice-actions.spec.ts",
+      "sha256": "2bcbe8c7f5987116c35615f9c9e6e23f02348273ab6660353acac6e2808e55ab"
+    }
+  ],
+  "report": {
+    "config": {
+      "argv": [
+        "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+        "test",
+        "tests/ui/practice-actions.spec.ts",
+        "--project=celular",
+        "--update-snapshots"
+      ],
+      "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+      "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+      "failOnFlakyTests": false,
+      "forbidOnly": false,
+      "fullyParallel": true,
+      "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+      "globalTeardown": null,
+      "globalTimeout": 0,
+      "grep": {},
+      "grepInvert": null,
+      "maxFailures": 1,
+      "metadata": {
+        "actualWorkers": 2
+      },
+      "preserveOutput": "always",
+      "projects": [
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "celular-pequeno",
+          "name": "celular-pequeno",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "celular",
+          "name": "celular",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "celular-horizontal",
+          "name": "celular-horizontal",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "ipad",
+          "name": "ipad",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "ipad-horizontal",
+          "name": "ipad-horizontal",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "laptop",
+          "name": "laptop",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "escritorio",
+          "name": "escritorio",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        }
+      ],
+      "filteredProjects": [
+        {
+          "grep": {},
+          "grepInvert": null,
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "name": "celular",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+          "timeout": 30000,
+          "use": {
+            "baseURL": "http://127.0.0.1:4173",
+            "browserName": "chromium",
+            "locale": "es-MX",
+            "colorScheme": "dark",
+            "reducedMotion": "reduce",
+            "trace": "retain-on-failure",
+            "screenshot": "only-on-failure",
+            "isMobile": true,
+            "hasTouch": true,
+            "deviceScaleFactor": 1,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          "dependencies": [],
+          "ignoreSnapshots": false,
+          "__projectId": "celular"
+        }
+      ],
+      "quiet": false,
+      "reporter": [
+        [
+          "dot",
+          null
+        ],
+        [
+          "html",
+          {
+            "open": "never"
+          }
+        ],
+        [
+          "json",
+          {
+            "outputFile": "test-results/results.json"
+          }
+        ]
+      ],
+      "reportSlowTests": {
+        "max": 5,
+        "threshold": 300000
+      },
+      "shard": null,
+      "tags": [],
+      "updateSnapshots": "changed",
+      "updateSourceMethod": "patch",
+      "version": "1.65.0",
+      "workers": 2,
+      "webServer": {
+        "command": "npm run build:ui && npm run serve:ui",
+        "url": "http://127.0.0.1:4173",
+        "reuseExistingServer": false,
+        "timeout": 120000
+      }
+    },
+    "suites": [
+      {
+        "title": "practice-actions.spec.ts",
+        "file": "practice-actions.spec.ts",
+        "column": 0,
+        "line": 0,
+        "specs": [
+          {
+            "title": "ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar",
+            "ok": false,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [
+                  {
+                    "workerIndex": 0,
+                    "parallelIndex": 0,
+                    "status": "timedOut",
+                    "duration": 30198,
+                    "error": {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                      "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    "errors": [
+                      {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      {
+                        "location": {
+                          "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-actions.spec.ts",
+                          "column": 84,
+                          "line": 8
+                        },
+                        "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').getByRole('button', { name: 'Opciones de código', exact: true })\u001b[22m\n\n\n \u001b[90m  6 |\u001b[39m \u001b[36mconst\u001b[39m ready \u001b[33m=\u001b[39m (page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m) \u001b[33m=>\u001b[39m expect(panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Ejecutar'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m}))\u001b[33m.\u001b[39mtoBeEnabled({timeout\u001b[33m:\u001b[39m \u001b[35m25_000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m  7 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m action(page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Opciones de código'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'region'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Opciones de código'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m }\n \u001b[90m 11 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m open(page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m) {\n\u001b[2m    at action (/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-actions.spec.ts:8:84)\u001b[22m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-actions.spec.ts:30:9\u001b[22m"
+                      }
+                    ],
+                    "stdout": [],
+                    "stderr": [],
+                    "retry": 0,
+                    "startTime": "2026-11-14T20:10:24.293Z",
+                    "annotations": [],
+                    "attachments": [
+                      {
+                        "name": "screenshot",
+                        "contentType": "image/png",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/test-failed-1.png"
+                      },
+                      {
+                        "name": "error-context",
+                        "contentType": "text/markdown",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/error-context.md"
+                      },
+                      {
+                        "name": "trace",
+                        "contentType": "application/zip",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/trace.zip"
+                      }
+                    ]
+                  }
+                ],
+                "status": "unexpected"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-8a02e67310cc46c3ba51",
+            "file": "practice-actions.spec.ts",
+            "line": 22,
+            "column": 1
+          },
+          {
+            "title": "revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos",
+            "ok": true,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [
+                  {
+                    "workerIndex": 1,
+                    "parallelIndex": 1,
+                    "status": "interrupted",
+                    "duration": 30236,
+                    "errors": [],
+                    "stdout": [],
+                    "stderr": [],
+                    "retry": 0,
+                    "startTime": "2026-11-14T20:10:24.292Z",
+                    "annotations": [],
+                    "attachments": [
+                      {
+                        "name": "screenshot",
+                        "contentType": "image/png",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-revisión--6005e-a-edición-sin-cambiar-datos-celular/test-failed-1.png"
+                      },
+                      {
+                        "name": "error-context",
+                        "contentType": "text/markdown",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-revisión--6005e-a-edición-sin-cambiar-datos-celular/error-context.md"
+                      },
+                      {
+                        "name": "trace",
+                        "contentType": "application/zip",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-revisión--6005e-a-edición-sin-cambiar-datos-celular/trace.zip"
+                      }
+                    ]
+                  }
+                ],
+                "status": "skipped"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-43e6aa34c65f859d18bf",
+            "file": "practice-actions.spec.ts",
+            "line": 35,
+            "column": 1
+          },
+          {
+            "title": "restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto",
+            "ok": true,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [],
+                "status": "skipped"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-3e900544edb21c38c7d1",
+            "file": "practice-actions.spec.ts",
+            "line": 47,
+            "column": 1
+          },
+          {
+            "title": "descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar",
+            "ok": true,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [],
+                "status": "skipped"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-3065a69bd1eaf35befb3",
+            "file": "practice-actions.spec.ts",
+            "line": 66,
+            "column": 1
+          },
+          {
+            "title": "almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar",
+            "ok": true,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [],
+                "status": "skipped"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-f93b7112c2f3ddf64cd1",
+            "file": "practice-actions.spec.ts",
+            "line": 80,
+            "column": 1
+          }
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+      }
+    ],
+    "stats": {
+      "startTime": "2026-11-14T20:10:14.340Z",
+      "duration": 40480.382,
+      "expected": 0,
+      "skipped": 4,
+      "unexpected": 1,
+      "flaky": 0
+    }
+  }
+}

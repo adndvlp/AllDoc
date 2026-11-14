@@ -2,21 +2,24 @@ import type {Workspace} from './contracts.ts';
 import {counter, datasetReference, identifier, record, text} from './guards.ts';
 
 export const MAX_CODE_BYTES = 1_048_576;
-export type StoredDraft = Readonly<{formatVersion: 1; storageRevision: number; savedAt: number; workspace: Workspace}>;
-export type RecoveryDraft = Readonly<{id: string; workspaceId: string; savedAt: number; workspace: Workspace}>;
+export type StoredDraft = Readonly<{formatVersion: 1; storageRevision: number; savedAt: number; workspace: Workspace; previous?: Workspace | null}>;
+export type RecoveryDraft = Readonly<{id: string; workspaceId: string; savedAt: number; workspace: Workspace; previous?: Workspace | null}>;
 export type WriteResult = {status: 'saved'; record: StoredDraft} | {status: 'conflict'; recoveryId: string};
 export interface DraftRepository {
   read(id: string): Promise<unknown>;
-  write(workspace: Workspace, expectedRevision: number | null, savedAt: number): Promise<WriteResult>;
+  write(workspace: Workspace, expectedRevision: number | null, savedAt: number, previous?: Workspace | null): Promise<WriteResult>;
   recoveries(id: string): Promise<readonly RecoveryDraft[]>;
   close(): void;
 }
-export type DraftState = Readonly<{workspace: Workspace; status: 'clean' | 'dirty' | 'saving' | 'saved' | 'memory' | 'conflict'; environmentChanged: boolean}>;
+export type DraftState = Readonly<{workspace: Workspace; previous: Workspace | null; status: 'clean' | 'dirty' | 'saving' | 'saved' | 'memory' | 'conflict'; environmentChanged: boolean}>;
 export interface DraftStore {
   load(seed: Workspace): Promise<DraftState>;
   get(id: string): DraftState | undefined;
   edit(id: string, path: string, content: string): Workspace;
   activate(id: string, path: string): Workspace;
+  replace(id: string, code: Pick<Workspace, 'files' | 'activeFile'>): Workspace;
+  restorePrevious(id: string): Workspace;
+  retryPersistence(id: string): Promise<void>;
   flush(id?: string): Promise<void>;
   subscribe(listener: () => void): () => void;
   close(): Promise<void>;
@@ -49,11 +52,13 @@ export function readDraft(value: unknown, id: string): StoredDraft | null {
     || !counter(value.savedAt)) return null;
   try {
     const workspace = copyWorkspace(value.workspace);
-    return workspace.id === id ? Object.freeze({formatVersion: 1, storageRevision: value.storageRevision, savedAt: value.savedAt, workspace}) : null;
+    let previous: Workspace | null = null;
+    try {if (value.previous != null) {const candidate = copyWorkspace(value.previous); if (candidate.id === id) previous = candidate;}} catch {}
+    return workspace.id === id ? Object.freeze({formatVersion: 1, storageRevision: value.storageRevision, savedAt: value.savedAt, workspace, previous}) : null;
   } catch {return null;}
 }
 export function createDraftStore(repository: () => DraftRepository, options: {debounceMs?: number; now?: () => number} = {}): DraftStore {
-  type Entry = {state: DraftState; expected: number | null; persisted: Workspace; timer?: ReturnType<typeof setTimeout>; writing?: Promise<void>};
+  type Entry = {state: DraftState; expected: number | null; persisted: Workspace | null; timer?: ReturnType<typeof setTimeout>; writing?: Promise<void>};
   const entries = new Map<string, Entry>(); const pending = new Map<string, Promise<DraftState>>();
   const listeners = new Set<() => void>(); let adapter: DraftRepository | undefined; let closed = false;
   const now = options.now ?? Date.now;
@@ -69,10 +74,10 @@ export function createDraftStore(repository: () => DraftRepository, options: {de
     if (entry.writing) return entry.writing;
     entry.writing = (async () => {
       while (entry.persisted !== entry.state.workspace && entry.state.status !== 'memory') {
-        const value = entry.state.workspace;
+        const value = entry.state.workspace; const previous = entry.state.previous;
         publish(entry, {...entry.state, status: 'saving'});
         try {
-          const result = await repo().write(value, entry.expected, now());
+          const result = await repo().write(value, entry.expected, now(), previous);
           if (result.status === 'saved') entry.expected = result.record.storageRevision;
           entry.persisted = value;
           publish(entry, {...entry.state, status: result.status === 'conflict' ? 'conflict'
@@ -82,8 +87,8 @@ export function createDraftStore(repository: () => DraftRepository, options: {de
     })().finally(() => {entry.writing = undefined;});
     return entry.writing;
   };
-  const change = (entry: Entry, workspace: Workspace) => {
-    publish(entry, {...entry.state, workspace, status: entry.state.status === 'memory' ? 'memory' : 'dirty'});
+  const change = (entry: Entry, workspace: Workspace, previous = entry.state.previous) => {
+    publish(entry, {...entry.state, workspace, previous, status: entry.state.status === 'memory' ? 'memory' : 'dirty'});
     clearTimeout(entry.timer);
     entry.timer = setTimeout(() => {void flushEntry(entry);}, options.debounceMs ?? 300);
     // No impide que terminen procesos de verificación nativos.
@@ -102,7 +107,7 @@ export function createDraftStore(repository: () => DraftRepository, options: {de
         catch {failed = true;}
         const environmentChanged = saved !== null && saved.workspace.environmentVersion !== initial.environmentVersion;
         const value = saved ? copyWorkspace({...saved.workspace, environmentVersion: initial.environmentVersion}) : initial;
-        const entry: Entry = {state: Object.freeze({workspace: value, status: failed ? 'memory' : 'clean', environmentChanged}),
+        const entry: Entry = {state: Object.freeze({workspace: value, previous: saved?.previous ?? null, status: failed ? 'memory' : 'clean', environmentChanged}),
           expected: saved?.storageRevision ?? null, persisted: value};
         if (closed) throw new Error('Almacén cerrado');
         entries.set(initial.id, entry); emit(); return entry.state;
@@ -120,6 +125,25 @@ export function createDraftStore(repository: () => DraftRepository, options: {de
     activate(id, path) {
       const entry = requireEntry(id); const old = entry.state.workspace;
       return old.activeFile === path ? old : change(entry, copyWorkspace({...old, activeFile: path, revision: old.revision + 1}));
+    },
+    replace(id, code) {
+      const entry = requireEntry(id); const old = entry.state.workspace;
+      const next = copyWorkspace({...old, files: code.files, activeFile: code.activeFile, revision: old.revision + 1});
+      if (old.activeFile === next.activeFile && JSON.stringify(old.files) === JSON.stringify(next.files)) return old;
+      return change(entry, next, old);
+    },
+    restorePrevious(id) {
+      const entry = requireEntry(id); const previous = entry.state.previous;
+      if (!previous) return entry.state.workspace;
+      const old = entry.state.workspace;
+      return change(entry, copyWorkspace({...old, files: previous.files, activeFile: previous.activeFile, revision: old.revision + 1}), null);
+    },
+    async retryPersistence(id) {
+      const entry = requireEntry(id); await entry.writing;
+      if (closed || entry.state.status !== 'memory') return;
+      await Promise.all(Array.from(entries.values(), value => value.writing));
+      adapter?.close(); adapter = undefined; entry.persisted = null;
+      publish(entry, {...entry.state, status: 'dirty'}); await flushEntry(entry);
     },
     async flush(id) {await Promise.all((id ? [requireEntry(id)] : Array.from(entries.values())).map(flushEntry));},
     subscribe(listener) {listeners.add(listener); return () => {listeners.delete(listener);};},

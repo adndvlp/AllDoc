@@ -1,11 +1,11 @@
 # AllDoc — SDD del panel de práctica contextual
 
 **Fecha:** 13 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 6 completados; puntos 7 y 8 pendientes.
+**Estado:** puntos 1 a 7 completados; punto 8 pendiente.
 **Objetivo de esta etapa:** validar la estructura y el contrato con SQL y pandas, para incorporar después más lenguajes, librerías y frameworks.  
 **Base:** [SDD del rediseño](alldoc-sdd.md), cuyos ocho puntos están completados. Este documento define una ampliación y conserva su evidencia histórica.
 
-Los puntos 1 a 6 implementan y verifican el panel con SQLite y Pyodide/pandas reales. La aceptación global y sus presupuestos de rendimiento permanecen en el punto 8. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
+Los puntos 1 a 7 implementan y verifican el panel con SQLite y Pyodide/pandas reales, acciones de ejemplos y recuperación de código. La aceptación global y sus presupuestos de rendimiento permanecen en el punto 8. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
 
 ## 1. Resultado esperado
 
@@ -545,7 +545,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 a 6 están completados; los demás permanecen pendientes. Su orden valida
+Los puntos 1 a 7 están completados; el punto 8 permanece pendiente. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -557,7 +557,7 @@ a todos los motores de la sección 3.2.
 | 4 | Integrar panel y CodeMirror responsive | Completado con TDD: [evidencia](verification/practice-point-4.md), 122 pruebas de código, tipos, build y 397 de UI con comparación independiente |
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Completado con TDD: [evidencia](verification/practice-point-5.md), 137 pruebas de código, tipos, build y 446 de UI con comparación independiente |
 | 6 | Implementar adaptador Pyodide/pandas y completado real | Completado con TDD: [evidencia](verification/practice-point-6.md), 162 pruebas de código, tipos, build y 509 de UI con comparación independiente |
-| 7 | Conectar acciones de ejemplos y endurecer recuperación | Sustitución explícita, revisión anterior, reinicios, almacenamiento y red fallidos |
+| 7 | Conectar acciones de ejemplos y endurecer recuperación | Completado con TDD: [evidencia](verification/practice-point-7.md), 175 pruebas de código, tipos, build y 558 de UI con comparación independiente |
 | 8 | Ejecutar aceptación global, revisar capturas y comparar rendimiento | PA-01 a PA-27 con evidencia; contrato validado con dos motores reales |
 
 La fase 3 usa dobles intencionalmente para probar el gestor; no permite cerrar la entrega antes de los motores reales de las fases 5 y 6. El documento completo se valida cuando ambos funcionan con el mismo panel y contrato. Los futuros adaptadores podrán reutilizar la suite de conformidad, pero cada uno exigirá pruebas de su lenguaje, librerías, datos y resultados.
@@ -694,6 +694,32 @@ La prueba de borradores espera el guardado antes de capturar. La portada añade
 archivos no acredita latencia ni INP. Acciones de ejemplos y aceptación global
 permanecen en los puntos 7 y 8.
 [Evidencia roja/verde, configuración y límites](verification/practice-point-6.md).
+
+### Registro del punto 7
+
+Los nueve ejemplos publicados ofrecen «Probar» con IDs estables y preparan el
+código sin ejecutarlo. Una sustitución conserva una revisión anterior por
+workspace, persistida junto al borrador mediante CAS. El menú de código permite
+recuperarla, restaurar el ejemplo inicial y reintentar el guardado en IndexedDB;
+restaurar archivos conserva el dataset y los datos mutados del motor vivo.
+El formato 1 admite los registros anteriores y valida el backup por separado.
+
+Las acciones tardías se descartan al cambiar de contexto o cerrar el panel.
+Un fallo al descargar el panel conserva el ejemplo solicitado hasta el reintento.
+El foco se aplica después del montaje de CodeMirror y las opciones conservan
+su operación por teclado, incluido Esc en práctica modal. La entrega estática
+anuncia Content-Length para GET/HEAD y se comprueba con HTTP nativo después de
+observar una descarga de Jedi con framing chunked inválido.
+
+Pasaron 175 pruebas de código, tipos y build. Los 49 casos de acciones se
+comprobaron en los siete tamaños. La suite completa con actualización y la
+comparación independiente pasaron 558 casos, con nueve omisiones previstas,
+sin fallos ni casos inestables. Se revisaron 97 imágenes nuevas o modificadas
+y las 165 referencias conservaron sus hashes en la comparación final. El JS/CSS
+inicial añade 411 bytes gzip frente al punto 6; el incremento desde el punto 3
+es de 4908 bytes, dentro de 5 KiB. La medición de archivos no acredita latencia
+ni INP; la aceptación global permanece en el punto 8.
+[Evidencia roja/verde, configuración y límites](verification/practice-point-7.md).
 
 ## 16. Fuentes y decisiones documentadas
 

@@ -1,0 +1,326 @@
+{
+  "point": 7,
+  "stage": "ui-red",
+  "recordedAt": "2026-11-14T20:04:35.499Z",
+  "command": "npm run test:ui:actions:smoke",
+  "files": [
+    {
+      "path": "tests/ui/practice-actions.spec.ts",
+      "sha256": "2bcbe8c7f5987116c35615f9c9e6e23f02348273ab6660353acac6e2808e55ab",
+      "source": "working-tree"
+    },
+    {
+      "path": "src/components/ConceptNote/index.tsx",
+      "sha256": "2fdc936387ad45a9eacbabe9137ab178a88d45ad8fff0ffb4f6c8b9963a9348a",
+      "source": "HEAD (sin cambios al ejecutar la fase roja)"
+    },
+    {
+      "path": "src/components/PracticeProvider/index.tsx",
+      "sha256": "49d4fd75b223c1f1dd31b2a328c6b9fb04f2cc3ddf50c129a8f4cd1803f2ecdd",
+      "source": "HEAD (sin cambios al ejecutar la fase roja)"
+    }
+  ],
+  "report": {
+    "config": {
+      "argv": [
+        "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+        "test",
+        "tests/ui/practice-actions.spec.ts",
+        "--project=celular",
+        "-g",
+        "ejemplo explícito"
+      ],
+      "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+      "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+      "failOnFlakyTests": false,
+      "forbidOnly": false,
+      "fullyParallel": true,
+      "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+      "globalTeardown": null,
+      "globalTimeout": 0,
+      "grep": {},
+      "grepInvert": null,
+      "maxFailures": 1,
+      "metadata": {
+        "actualWorkers": 1
+      },
+      "preserveOutput": "always",
+      "projects": [
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "celular-pequeno",
+          "name": "celular-pequeno",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "celular",
+          "name": "celular",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "celular-horizontal",
+          "name": "celular-horizontal",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "ipad",
+          "name": "ipad",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "ipad-horizontal",
+          "name": "ipad-horizontal",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "laptop",
+          "name": "laptop",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        },
+        {
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "id": "escritorio",
+          "name": "escritorio",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 30000
+        }
+      ],
+      "filteredProjects": [
+        {
+          "grep": {},
+          "grepInvert": null,
+          "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 1
+          },
+          "name": "celular",
+          "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+          "testIgnore": [],
+          "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+          "timeout": 30000,
+          "use": {
+            "baseURL": "http://127.0.0.1:4173",
+            "browserName": "chromium",
+            "locale": "es-MX",
+            "colorScheme": "dark",
+            "reducedMotion": "reduce",
+            "trace": "retain-on-failure",
+            "screenshot": "only-on-failure",
+            "isMobile": true,
+            "hasTouch": true,
+            "deviceScaleFactor": 1,
+            "viewport": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          "dependencies": [],
+          "ignoreSnapshots": false,
+          "__projectId": "celular"
+        }
+      ],
+      "quiet": false,
+      "reporter": [
+        [
+          "dot",
+          null
+        ],
+        [
+          "html",
+          {
+            "open": "never"
+          }
+        ],
+        [
+          "json",
+          {
+            "outputFile": "test-results/results.json"
+          }
+        ]
+      ],
+      "reportSlowTests": {
+        "max": 5,
+        "threshold": 300000
+      },
+      "shard": null,
+      "tags": [],
+      "updateSnapshots": "default",
+      "updateSourceMethod": "patch",
+      "version": "1.65.0",
+      "workers": 2,
+      "webServer": {
+        "command": "npm run build:ui && npm run serve:ui",
+        "url": "http://127.0.0.1:4173",
+        "reuseExistingServer": false,
+        "timeout": 120000
+      }
+    },
+    "suites": [
+      {
+        "title": "practice-actions.spec.ts",
+        "file": "practice-actions.spec.ts",
+        "column": 0,
+        "line": 0,
+        "specs": [
+          {
+            "title": "ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar",
+            "ok": false,
+            "tags": [],
+            "tests": [
+              {
+                "timeout": 30000,
+                "annotations": [],
+                "expectedStatus": "passed",
+                "projectId": "celular",
+                "projectName": "celular",
+                "results": [
+                  {
+                    "workerIndex": 0,
+                    "parallelIndex": 0,
+                    "status": "timedOut",
+                    "duration": 30164,
+                    "error": {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                      "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    "errors": [
+                      {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      {
+                        "location": {
+                          "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-actions.spec.ts",
+                          "column": 101,
+                          "line": 25
+                        },
+                        "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-sql-example=\"Columnas concretas\"]').getByRole('button', { name: 'Probar este ejemplo: Columnas concretas', exact: true })\u001b[22m\n\n\n \u001b[90m 23 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(sql\u001b[33m,\u001b[39m {waitUntil\u001b[33m:\u001b[39m \u001b[32m'networkidle'\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m   \u001b[36mconst\u001b[39m variant \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-sql-example=\"Columnas concretas\"]'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m   \u001b[36mawait\u001b[39m variant\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Probar este ejemplo: Columnas concretas'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT nombre, precio FROM productos;'\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m ready(page)\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tab'\u001b[39m\u001b[33m,\u001b[39m {name\u001b[33m:\u001b[39m \u001b[32m'Resultados'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-actions.spec.ts:25:101\u001b[22m"
+                      }
+                    ],
+                    "stdout": [],
+                    "stderr": [],
+                    "retry": 0,
+                    "startTime": "2026-11-14T20:01:54.720Z",
+                    "annotations": [],
+                    "attachments": [
+                      {
+                        "name": "screenshot",
+                        "contentType": "image/png",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/test-failed-1.png"
+                      },
+                      {
+                        "name": "error-context",
+                        "contentType": "text/markdown",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/error-context.md"
+                      },
+                      {
+                        "name": "trace",
+                        "contentType": "application/zip",
+                        "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-actions-ejemplo-e-10200-rior-y-prepara-sin-ejecutar-celular/trace.zip"
+                      }
+                    ]
+                  }
+                ],
+                "status": "unexpected"
+              }
+            ],
+            "id": "c3835419d8976b5c20fa-8a02e67310cc46c3ba51",
+            "file": "practice-actions.spec.ts",
+            "line": 22,
+            "column": 1
+          }
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+      }
+    ],
+    "stats": {
+      "startTime": "2026-11-14T20:01:34.663Z",
+      "duration": 50425.304000000004,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    }
+  }
+}

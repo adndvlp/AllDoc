@@ -5,6 +5,7 @@ import type {SessionSnapshot} from '@site/src/practice/session-manager';
 import type {createBrowserPracticeSession} from '@site/src/practice/browser-session';
 
 type Session = ReturnType<typeof createBrowserPracticeSession>;
+type Example = {id: string; code: string; languageId: string};
 const empty: SessionSnapshot = {context: null, openRequested: false, visible: false, phase: 'hidden', generation: 0,
   draft: null, schema: {version: 0, entities: []}, events: [], notice: null, error: null};
 const getEmpty = () => empty; const subscribeEmpty = () => () => {};
@@ -16,6 +17,7 @@ function usePracticeController() {
   const [requested, setRequested] = useState(false); const [error, setError] = useState<string | null>(null);
   const current = useRef({context, requested}); current.current = {context, requested};
   const handle = useRef<Session | null>(null); const pending = useRef<Promise<Session> | null>(null); const dead = useRef(false);
+  const exampleIntent = useRef<{conceptId: string; workspaceKey: string; example: Example} | null>(null);
   const state = useSyncExternalStore(session?.manager.subscribe ?? subscribeEmpty, session?.manager.getSnapshot ?? getEmpty, getEmpty);
   const open = useCallback(async () => {
     current.current.requested = true; setRequested(true); setError(null);
@@ -26,10 +28,24 @@ function usePracticeController() {
       if (dead.current) {await value.dispose(); return;}
       if (!handle.current) {handle.current = value; setSession(value);}
       await value.manager.setContext(current.current.context);
-      if (current.current.requested) await value.manager.open();
+      if (!current.current.requested) return;
+      const intent = exampleIntent.current; const active = current.current.context;
+      if (intent && active?.conceptId === intent.conceptId && active.workspaceKey === intent.workspaceKey
+        && value.manager.getSnapshot().context?.workspaceKey === active.workspaceKey) {
+        if (await value.manager.useExample({...intent.example, workspaceId: active.workspaceKey})) {
+          if (exampleIntent.current === intent) exampleIntent.current = null;
+        }
+      } else {exampleIntent.current = null; await value.manager.open();}
     } catch (reason) {if (!dead.current) setError(reason instanceof Error ? reason.message : String(reason));}
   }, []);
+  const openExample = useCallback((example: Example) => {
+    const context = current.current.context;
+    if (!context || context.profile.languageId !== example.languageId) return Promise.resolve();
+    exampleIntent.current = {conceptId: context.conceptId, workspaceKey: context.workspaceKey, example};
+    return open();
+  }, [open]);
   const collapse = useCallback(() => {
+    exampleIntent.current = null;
     current.current.requested = false; setRequested(false); void handle.current?.manager.collapse();
   }, []);
   useEffect(() => {void handle.current?.manager.setContext(context);}, [context]);
@@ -39,7 +55,7 @@ function usePracticeController() {
     window.addEventListener('pagehide', flush);
     return () => {dead.current = true; window.removeEventListener('pagehide', flush); void handle.current?.dispose();};
   }, []);
-  return {context, state, manager: session?.manager ?? null, requested, visible: Boolean(context && requested), open, collapse, error};
+  return {context, state, manager: session?.manager ?? null, requested, visible: Boolean(context && requested), open, openExample, collapse, error};
 }
 const Context = createContext<ReturnType<typeof usePracticeController> | null>(null);
 export default function PracticeProvider({children}: {children: ReactNode}) {

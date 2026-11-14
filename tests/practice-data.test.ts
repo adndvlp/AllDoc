@@ -99,7 +99,8 @@ test('DataFrame está publicado bajo Pandas, con búsqueda propia y un único ej
 test('el dataset compartido no cambia las consultas, resultados ni contenido de las ocho variantes SQL', async () => {
   const before = JSON.parse(await readFile('specs/verification/practice-point-2-before.json', 'utf8'));
   assert.deepEqual(sqlTable, before.sqlTable);
-  assert.deepEqual(sqlConcepts, before.sqlConcepts);
+  // Los IDs de práctica nuevos son metadata; el contenido editorial permanece intacto.
+  assert.deepEqual(sqlConcepts.map(note => ({...note, examples: note.examples.map(({id, ...example}) => example)})), before.sqlConcepts);
 });
 
 test('anterior y siguiente permanecen dentro de la misma herramienta', async () => {

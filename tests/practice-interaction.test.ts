@@ -7,7 +7,7 @@ import type {SessionSnapshot} from '../src/practice/session-manager.ts';
 test('ejecutar: botón y atajo comparten permiso solo para un workspace habilitado y listo', () => {
   const own = workspace();
   const state: Pick<SessionSnapshot, 'context' | 'phase' | 'draft'> = {context: context(), phase: 'ready',
-    draft: {workspace: own, status: 'saved', environmentChanged: false}};
+    draft: {workspace: own, previous: null, status: 'saved', environmentChanged: false}};
   assert.equal(canExecutePractice(state, own), true);
   for (const phase of ['hidden', 'collapsed', 'loading', 'running', 'error'] as const) assert.equal(canExecutePractice({...state, phase}, own), false, phase);
   assert.equal(canExecutePractice({...state, draft: null}, own), false);

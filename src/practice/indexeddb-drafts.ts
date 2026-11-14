@@ -45,8 +45,10 @@ export function createIndexedDBDraftRepository(options: {factory?: IDBFactory; n
     async read(id) {return transact<unknown>(['drafts'], 'readonly', (tx, result) => {
       const request = tx.objectStore('drafts').get(id); request.onsuccess = () => result(request.result ?? null);
     });},
-    async write(value, expectedRevision, savedAt) {
+    async write(value, expectedRevision, savedAt, backup = null) {
       const workspace = copyWorkspace(value);
+      const previous = backup === null ? null : copyWorkspace(backup);
+      if (previous && previous.id !== workspace.id) throw new Error('Revisión anterior incompatible');
       if (!Number.isSafeInteger(savedAt) || savedAt < 0 || (expectedRevision !== null && (!Number.isSafeInteger(expectedRevision) || expectedRevision < 1))) throw new Error('Revisión de guardado inválida');
       return transact<WriteResult>(['drafts', 'recoveries'], 'readwrite', (tx, result) => {
         const drafts = tx.objectStore('drafts'); const request = drafts.get(workspace.id);
@@ -54,10 +56,10 @@ export function createIndexedDBDraftRepository(options: {factory?: IDBFactory; n
           const current = readDraft(request.result, workspace.id);
           // Un formato corrupto o futuro se conserva; no se sustituye por un seed vacío.
           if ((request.result != null && !current) || (current?.storageRevision ?? null) !== expectedRevision) {
-            const recovery: RecoveryDraft = {id: globalThis.crypto.randomUUID(), workspaceId: workspace.id, savedAt, workspace};
+            const recovery: RecoveryDraft = {id: globalThis.crypto.randomUUID(), workspaceId: workspace.id, savedAt, workspace, previous};
             tx.objectStore('recoveries').put(recovery); result({status: 'conflict', recoveryId: recovery.id});
           } else {
-            const record = {formatVersion: 1 as const, storageRevision: (expectedRevision ?? 0) + 1, savedAt, workspace};
+            const record = {formatVersion: 1 as const, storageRevision: (expectedRevision ?? 0) + 1, savedAt, workspace, previous};
             drafts.put(record); result({status: 'saved', record});
           }
         };

@@ -1,0 +1,923 @@
+{
+  "point": 7,
+  "status": "code-green-ui-pending",
+  "recordedAt": "2026-11-14T20:32:07.606Z",
+  "source": {
+    "sha256": "f45b8f014c833d91d7dc96b3d888fa64d2d77845902a2978b717a9b976fe1955",
+    "files": [
+      {
+        "path": "docs/analisis-de-datos/_category_.json",
+        "sha256": "6e3f5c8b1df16fc1546ef99d055eabe1ac2dbf7266140bfe71e15f88726d4e4a"
+      },
+      {
+        "path": "docs/analisis-de-datos/excel/_category_.json",
+        "sha256": "8337fd8be21fbddf8989af8cdf847259af50cf8edfe002a9d0104ab1e0cb5a22"
+      },
+      {
+        "path": "docs/analisis-de-datos/httpx/_category_.json",
+        "sha256": "5912359b7d1dba114d60a548fb33080488614caef0e7c2761212055ceb91a58b"
+      },
+      {
+        "path": "docs/analisis-de-datos/index.mdx",
+        "sha256": "899493c143ede2f929c7d0e0a46b75b2dbab2c2a4f342aa5903272f7a90f9b2f"
+      },
+      {
+        "path": "docs/analisis-de-datos/json/_category_.json",
+        "sha256": "2406a01ea2428dd59e8a76d6c872774e3a2f41c728d7b3e9a6a44d744c9a18ae"
+      },
+      {
+        "path": "docs/analisis-de-datos/matplotlib/_category_.json",
+        "sha256": "b2dcc3447e2f59428e0afdd0f8654c07afc745c10eba5ed87cffafcc3c2e5037"
+      },
+      {
+        "path": "docs/analisis-de-datos/mysql-connector-python/_category_.json",
+        "sha256": "363978c3a9ba94fcbbb6e41bd509c8b2a08302935bb2d8f00c17801d156990ec"
+      },
+      {
+        "path": "docs/analisis-de-datos/numpy/_category_.json",
+        "sha256": "609d2f6f94331ee7d416468dc794d12b07254f1bcb8eaad583c444bdacad2b4f"
+      },
+      {
+        "path": "docs/analisis-de-datos/openpyxl/_category_.json",
+        "sha256": "937b9020f5be5640361ed81fc1afbc36bd0fc2ec182ea2f7c8eacf41402a14fc"
+      },
+      {
+        "path": "docs/analisis-de-datos/pandas/_category_.json",
+        "sha256": "ed0c0c657fbb83fcae67793bba240d449f378d8113298a8260825d73b129db10"
+      },
+      {
+        "path": "docs/analisis-de-datos/pandas/dataframe.mdx",
+        "sha256": "6b9d7d93e3a89826423045eaad798e099f30606abd8bc843cc1021bab51ed6f5"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-bi/_category_.json",
+        "sha256": "a514ca89eabd9e08fc4ba3d54d7edfdc0bca16c1439dc07000e0f6cb2f75e57b"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-query/_category_.json",
+        "sha256": "c947f688b5bd173d2c6918ae822291da9186cb0c05125d02535015385d13d061"
+      },
+      {
+        "path": "docs/analisis-de-datos/psycopg/_category_.json",
+        "sha256": "1b57dccf6c3a5ed630c0c33e8b34eb9aa6d5a23dfb95920de5418c8023f84c06"
+      },
+      {
+        "path": "docs/analisis-de-datos/r/_category_.json",
+        "sha256": "127744d9bb969608ed2c88618f74b5657428840863b527fe389a607ed37958da"
+      },
+      {
+        "path": "docs/analisis-de-datos/requests/_category_.json",
+        "sha256": "297e39d0d8c12dce8773669946998cc5c1006d20cd348939589284674a4484e2"
+      },
+      {
+        "path": "docs/analisis-de-datos/scipy/_category_.json",
+        "sha256": "a4a0c537ad8aff50be4a92b0943e934976774bfa2c9c12ca9150c447abf3fd8b"
+      },
+      {
+        "path": "docs/analisis-de-datos/seaborn/_category_.json",
+        "sha256": "aecede410e9fe694769594a69fee00d59618e10f468e5f683f79c607b0b3ec84"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/_category_.json",
+        "sha256": "a4996253e8dbdcef478e93b3113c70c7303da3c005ab2c022c2b33e29507578d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/comentarios.mdx",
+        "sha256": "1bce6748adf18ec905b327270bcd93487155a23c757fa90eb5d37d26e0233938"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/limit.mdx",
+        "sha256": "34af599cd1994f48f344f8c12ad2108ad0612f6d7aa16b664fd972b6250ccfd1"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/order-by.mdx",
+        "sha256": "3fc6e13a072649a0be8eab213cdaef7c23b57ff0d14c87254a6bf8e3b7c92035"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/select.mdx",
+        "sha256": "13e4f3889c6a7190c509f81e7d9b31989e8759461445d7f5fa782c19d9b1560c"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/where.mdx",
+        "sha256": "cf97b80f455c36f859edb7ee5c2472df40cdb4c9fe5123558f330bd7b46bb04d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlalchemy/_category_.json",
+        "sha256": "89f7b1bbefa248d5062ccfdadfe510ea69e1e7ecfa51e95501842506101aae19"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlite3/_category_.json",
+        "sha256": "c2e8b1e30f6ba356c2e74fee2e2b83fcdba8d695d43c54e8b7fa55460a2872ba"
+      },
+      {
+        "path": "docs/analisis-de-datos/tableau/_category_.json",
+        "sha256": "5d9da8673ec96d43977c42e1805e61b1c66b752776ded393b979f5a22f062e7b"
+      },
+      {
+        "path": "docs/desarrollo-web/_category_.json",
+        "sha256": "5fba86694937a7557a65cb1c180dc8dbe49223a58fb84d1841485d24f9890e11"
+      },
+      {
+        "path": "docs/desarrollo-web/index.mdx",
+        "sha256": "78439987bf8ee4a8f3d06a1cd1b7b53ba2a63e5f1d69527b3c7f3c516aa5fe38"
+      },
+      {
+        "path": "docs/ia/_category_.json",
+        "sha256": "3a0f9dc8d9a7b02fc8b808aaa6b4f5b5e7e317c5cd0b65e784f6fa85cc0eac17"
+      },
+      {
+        "path": "docs/ia/index.mdx",
+        "sha256": "ee9c33acdbf16c9bb2b2c36634a27c1d72b0ae90508f62d04eea68e66521af3c"
+      },
+      {
+        "path": "docusaurus.config.ts",
+        "sha256": "588154e1300f0129ac6d592be6e40ae4a371a3ae90bf2e10835d4b56958d9690"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "236cf8321c18051c082d42a4a6d695fd859b4efafa38753a01794af9a127573d"
+      },
+      {
+        "path": "package.json",
+        "sha256": "f322bc1f767b3ab1d9510e7723f755e23a5f817084f79ee1369623ba6197b349"
+      },
+      {
+        "path": "sidebars.ts",
+        "sha256": "e1c9a9e730f7765742df003387306f1b5b43595094046247c4872913e3380c6e"
+      },
+      {
+        "path": "src/components/AreaOverview/index.tsx",
+        "sha256": "3fadf5633a57192afb5326860ca224047b25abfee112a150332a90184efaaf05"
+      },
+      {
+        "path": "src/components/AreaOverview/styles.module.css",
+        "sha256": "79a9a88339168a465a00478fb0a503010e29ae6e1a251c9376ba5ad9a44cfcf2"
+      },
+      {
+        "path": "src/components/Catalog/index.tsx",
+        "sha256": "9e9621049f6909bb98f4c355632287dad105122d6452182065c708900d4c5511"
+      },
+      {
+        "path": "src/components/Catalog/styles.module.css",
+        "sha256": "5c65e61857bab4a389ea7e34715c152a689622ee05672eb9facffe1b6688246f"
+      },
+      {
+        "path": "src/components/ConceptNote/index.tsx",
+        "sha256": "209daa7080c152b64236852e0b9576a9b1b3aac176c2946248be3acdf5ecfbff"
+      },
+      {
+        "path": "src/components/FavoriteButton/index.tsx",
+        "sha256": "3d641279510c46462d8df95936e9b2e0ce306aed709c3c10ae41ca1e7dc916b4"
+      },
+      {
+        "path": "src/components/FavoriteButton/styles.module.css",
+        "sha256": "929ea2a849d9312b57f1fe4ab39b2909a0752ef32dd4020e4a7a0567a4f83b5d"
+      },
+      {
+        "path": "src/components/HomeAreaProvider/index.tsx",
+        "sha256": "0b8b5629aba968c4327484231dad45db5e310d4a9136f47eb9d06b8b8a5f653a"
+      },
+      {
+        "path": "src/components/HomeSearch/index.tsx",
+        "sha256": "3b201c218e918b3040c12e5dbb9054e202a7db448ec5ca506e18da8cdb2a8515"
+      },
+      {
+        "path": "src/components/HomeSearch/styles.module.css",
+        "sha256": "15ac6651f86e6d4d2b4eaf3c6304208957a70ed674444df1f19cef8551fbce41"
+      },
+      {
+        "path": "src/components/Icon/index.tsx",
+        "sha256": "8359d57fe7c4e7aeffeffefe8067d56a975bfc54cf1b70a9ee0aa4db95ae0d84"
+      },
+      {
+        "path": "src/components/PaletteSelector/index.tsx",
+        "sha256": "53a08cb89c6134f6fa987519edfea31ed835969f197f514a1a6c775345313d81"
+      },
+      {
+        "path": "src/components/PaletteSelector/styles.module.css",
+        "sha256": "a0899e0c187ff4b31cf19065862176a7ce2689b625013631dfe1318789e1114c"
+      },
+      {
+        "path": "src/components/PandasNotes/index.tsx",
+        "sha256": "8e9a9e37789cb618c29b358071b134f430af5e91a9b92638050f79c995e984b5"
+      },
+      {
+        "path": "src/components/PersonalLibraryProvider/index.tsx",
+        "sha256": "59e8f8522f1746237766d0fc1fc782a8ae0c9385f3db94573e08ff23106effe5"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/index.tsx",
+        "sha256": "a574dbc79babce776f0557aebd140cdcc7625cdc1451d3961438c16f0a2d5ba8"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/styles.module.css",
+        "sha256": "f5bd782828f69c525531baf72a4930bf339c87cc8e5f12c58f1ee5e2c835c188"
+      },
+      {
+        "path": "src/components/PracticeDock/index.tsx",
+        "sha256": "5a5502bb56266c5b1790bb6a0ada43e9b28295045da205a6192633d99c80cfac"
+      },
+      {
+        "path": "src/components/PracticeDock/styles.module.css",
+        "sha256": "a1fef131a1562778147ed79d77f7d67e710c757f1396a8b35baeafb737ec8a11"
+      },
+      {
+        "path": "src/components/PracticeEditor/index.tsx",
+        "sha256": "064796e451a40f6990cb77ffcd545312acabdb9a96d8ba0976f9cd4d7de837a0"
+      },
+      {
+        "path": "src/components/PracticePanel/index.tsx",
+        "sha256": "08fb9cc619249abc469904db1e9df63fed98381b51de4d50ff756e4531d8ee3f"
+      },
+      {
+        "path": "src/components/PracticePanel/styles.module.css",
+        "sha256": "36f1ef793ddab763c0c9a1d37edf42d74462fad088767b427c1d4f7d31d68890"
+      },
+      {
+        "path": "src/components/PracticeProvider/index.tsx",
+        "sha256": "5658e395946e33ae0e9dc543fd6b3f50d19b63a596740db7b0594e69d07ed911"
+      },
+      {
+        "path": "src/components/PracticeResults/index.tsx",
+        "sha256": "b13173da2511921a39d5b47b1736d5e8f51f9fee7e9206451b3dfc478ae11262"
+      },
+      {
+        "path": "src/components/SearchDialog/index.tsx",
+        "sha256": "2dadb87c0d5e5c03ae4a4edd437bba07bafaf45f601f2497648dcd818cbb443c"
+      },
+      {
+        "path": "src/components/SearchDialog/styles.module.css",
+        "sha256": "ad875499d2057f825f8432e9079cbfc83b11f8a4ab0a67ad2ef4485db31629f8"
+      },
+      {
+        "path": "src/components/SearchProvider/index.tsx",
+        "sha256": "b638b127a782776772ad4c775e48cba80bca47d89096c067ba6d2cdd4ac9b2a7"
+      },
+      {
+        "path": "src/components/SearchResults/index.tsx",
+        "sha256": "c3bade05b2c3fa551afb78bf6a97deb14914f27e34c80d404d5ebf9af963b084"
+      },
+      {
+        "path": "src/components/SearchResults/keyboard.ts",
+        "sha256": "5f6ab53a8c411a9bc8092ab2b013f2d3aa94074420d4f38afa106c32d2ba4fd7"
+      },
+      {
+        "path": "src/components/SearchResults/styles.module.css",
+        "sha256": "b898b527b40fa0ca1121fe9a8b266e3ed66175142e0482d31a25a3046b6ea243"
+      },
+      {
+        "path": "src/components/SqlNotes/index.tsx",
+        "sha256": "0c23c837dd2edcff62b2cc5a365e050e02be76dd451efe19efbc0a19ab2fd179"
+      },
+      {
+        "path": "src/components/SqlNotes/styles.module.css",
+        "sha256": "88705045bbb078ed9da07cbf966cd7ebfc4e99a179cdb04cf177b081164e1fae"
+      },
+      {
+        "path": "src/components/TopicIcon/index.tsx",
+        "sha256": "f25f4692d2075a6a1a8a06a8e892fa107b83076aef5959957d6572898bbff1cb"
+      },
+      {
+        "path": "src/components/TopicIcon/styles.module.css",
+        "sha256": "4cc8c4a740b60a336c0dd51219b5b483a2ee630167990d1f9821339dff7fcebe"
+      },
+      {
+        "path": "src/content/areas.ts",
+        "sha256": "2dff85961dddc05ba6fec118e1ee17c55f171ed9b00e29c7abdcca637d48536c"
+      },
+      {
+        "path": "src/content/catalog.ts",
+        "sha256": "19afd254e50887daa83484fc480465db22fd0ac502517a70ff7753d1f30ace18"
+      },
+      {
+        "path": "src/content/concepts.ts",
+        "sha256": "aed110603b6b3f801d2a0b6f11534c014f9e98fb6184b8f7923a1b18b5a3478c"
+      },
+      {
+        "path": "src/content/notes/pandas.ts",
+        "sha256": "7b278264faeb1832dabff608a337710d7a036ceda2df3213c061615b98c4a280"
+      },
+      {
+        "path": "src/content/notes/sql.ts",
+        "sha256": "ef27ae5e4f7d30f9b318457238587101c20e33662603c5d8c3017ec94f4d3251"
+      },
+      {
+        "path": "src/content/palettes.ts",
+        "sha256": "396239b741af4d22945b686050f0d91f4ff08ed809f985c8108f1242089a3d46"
+      },
+      {
+        "path": "src/content/search-index.ts",
+        "sha256": "77d49bd2da647e076fceadcfa755b8736b13e38216b8b76103e1db3ca90c769d"
+      },
+      {
+        "path": "src/content/search-keywords.ts",
+        "sha256": "759daf3227710c630efdfd61d049404e544324c34cda7ada76b89e60dd6a512b"
+      },
+      {
+        "path": "src/content/sql-preview.ts",
+        "sha256": "606fc2318fcc34c319b0763d88134ce78e972c64cc089a660b61963260fe64dd"
+      },
+      {
+        "path": "src/content/sql.ts",
+        "sha256": "9eab2a37f76d62cb2e702972df745dac7587b4214677b6dcd955d3f1af8f49db"
+      },
+      {
+        "path": "src/css/custom.css",
+        "sha256": "bf33e4c16412d0b4576594a5052b3b4add42c5adbb8aed607e73f2032bb8a69f"
+      },
+      {
+        "path": "src/css/palettes.css",
+        "sha256": "bf77b05d367826b40cfc54448689f766638171b0cf303c35ca401232fb98cd4c"
+      },
+      {
+        "path": "src/hooks/useHeaderDisclosure.ts",
+        "sha256": "33aa7f314d64a68a6545a4a3d1638416e431eb5097051888d4de2dc8d05b8dd6"
+      },
+      {
+        "path": "src/lib/catalog-sidebar.ts",
+        "sha256": "2de99618a278fd234b54a82a72e12ca28f0bfd48a31f926490cbbe9ffa55eb2f"
+      },
+      {
+        "path": "src/lib/concept-front-matter.ts",
+        "sha256": "395adff2a21c403f6d06c9ea5bbbf4728a63db17104b8bf2c6e3d72edc5e6d97"
+      },
+      {
+        "path": "src/lib/dialog-coordination.ts",
+        "sha256": "0f3ed8ea3b07b27995377d7757bfd11092fcdeb9048f37128269103d78349c8e"
+      },
+      {
+        "path": "src/lib/personal-library.ts",
+        "sha256": "b92e11ba721edbb7d247b3a49b50cd1756b17936e5f13b1a5fd6a4aaef318ac6"
+      },
+      {
+        "path": "src/lib/search-store.ts",
+        "sha256": "856d22474dcabc56dd76a59c4a37fecf76c140698ddabdce727fb832790d2ea5"
+      },
+      {
+        "path": "src/lib/search.ts",
+        "sha256": "9d82f42ad381a514928d11e829f865934eec92856afd0a9060c089e34ff041d0"
+      },
+      {
+        "path": "src/pages/index.module.css",
+        "sha256": "0684d97c53cb9e7bb0896bd90ef8c9fd214b441a4ccdc72f4129392277d60bc7"
+      },
+      {
+        "path": "src/pages/index.tsx",
+        "sha256": "63fc1d53f0aa5171d8eaef0fb68bbf007f4b2037d8c80aa544541d03dde15f92"
+      },
+      {
+        "path": "src/practice/adapters/python/browser.ts",
+        "sha256": "5c58b2261bbba02e2e284f85eb3cd46d75d1d43d2ee116c3bf9a605f290d8db0"
+      },
+      {
+        "path": "src/practice/adapters/python/core.ts",
+        "sha256": "9227363bae5fe3a4339fef14120e940f6d1dd5c7088c6c645e500bfdeab6fc41"
+      },
+      {
+        "path": "src/practice/adapters/python/environment.ts",
+        "sha256": "924f80bf6ed363b4e7601ec6be48cf53eb4259116aa4c02f18d8845a3c92145e"
+      },
+      {
+        "path": "src/practice/adapters/python/helpers.ts",
+        "sha256": "ee6ce718bf99a1a3ed43a573ed8bf761974184b6d5fc7b8ca54ebc471229d7a9"
+      },
+      {
+        "path": "src/practice/adapters/python/initialize.ts",
+        "sha256": "a9bf6ba8543e4f4b32729a82cac31d3194826139ba291aa084826c9fad2ff84a"
+      },
+      {
+        "path": "src/practice/adapters/python/packages.ts",
+        "sha256": "09d67c8683e0d8f19bb6ed14293ae7d0c0f55f482bd7fc2080a54fffeda1af3c"
+      },
+      {
+        "path": "src/practice/adapters/python/worker.ts",
+        "sha256": "5585da0e9498bcc9b8d53d75d0cfa05a2342575c7f9bfcf798d144b2ecd37923"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/browser.ts",
+        "sha256": "acb6da72c8ce0af0c7a96459c1d6fdcd8e764b247ab5422d16c415e73654459b"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/completion.ts",
+        "sha256": "85140f5623586ad59fbac464f947e45e7a1d14cc524bc764e0f44bdfae26dadc"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/core.ts",
+        "sha256": "242225cbfc06b24077b51a8948966b26264eee6e146389d4834f428cd174a281"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/environment.ts",
+        "sha256": "9e9536fb64e77e9f3950767fb2e4dfbfcf943b8bfa18c65b42c2875fcb670ed2"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/worker.ts",
+        "sha256": "405a77653a3b9ec9a408e669958c0e6aaf710eebd99b2019e6b1a59944d325c6"
+      },
+      {
+        "path": "src/practice/browser-session.ts",
+        "sha256": "85691aff194127a3347a5f95d30e18cd8ff83c9871a9eef596ad6e3a7130e3e2"
+      },
+      {
+        "path": "src/practice/context.ts",
+        "sha256": "c94730d94a6c133a45e8e419471bf00b85a0f0681ce7dbc715c845cf1238b8b3"
+      },
+      {
+        "path": "src/practice/contracts.ts",
+        "sha256": "67956d1fc24b923deca23b87821e62ec2bd2a005a3a7a10939b229cbd5880e81"
+      },
+      {
+        "path": "src/practice/datasets/index.ts",
+        "sha256": "208c7fa09530d61fde0aba04eea4a5d5b453fb39fa9dbe8b95273ab5dcea58f2"
+      },
+      {
+        "path": "src/practice/datasets/manifest.ts",
+        "sha256": "3db901f9b1c80007d5f77f50f59edd435f8e1697f6b2484aa818f948f0d10f02"
+      },
+      {
+        "path": "src/practice/datasets/materialize.ts",
+        "sha256": "987f1aa4b10afd68f7c8d938fac67b20991ad69dd8cea67a8a19bd37d72722e2"
+      },
+      {
+        "path": "src/practice/datasets/products.ts",
+        "sha256": "739a34459560648750b7ba475e82847246ce405893a4b6c0b77cb800b17c8464"
+      },
+      {
+        "path": "src/practice/datasets/rows/products.ts",
+        "sha256": "942250d78fdb9af8fb24c785eaad1c05f3b1ee9ecb906c018138911ff899761e"
+      },
+      {
+        "path": "src/practice/datasets/types.ts",
+        "sha256": "aa69669e09dbc3c778627f87a6dd15d42c51dcd3e21f30eabac3c98e419c9125"
+      },
+      {
+        "path": "src/practice/drafts.ts",
+        "sha256": "20b70ffdc8af234ae71d79a716ae6ad6311b829ae998c8f475777035f1614431"
+      },
+      {
+        "path": "src/practice/editor-bootstrap.ts",
+        "sha256": "d84be5f1e7d82709764a02ae594b0c5ce1be4dad3f0fe19057173da02250a42c"
+      },
+      {
+        "path": "src/practice/editor-completion.ts",
+        "sha256": "1d91c465cfb1d0480c5aad8344fc8e7f1cf1048978e6522f5617781b21e8c13d"
+      },
+      {
+        "path": "src/practice/editor-driver.ts",
+        "sha256": "d457edd57a98a927380b296ce50c4be408fbad94eb0cf506d6e3baf291252af2"
+      },
+      {
+        "path": "src/practice/editor-language.ts",
+        "sha256": "b168b428bacad12142c3fe704f5aae563ed42687c6ae234304244bfb2711e32c"
+      },
+      {
+        "path": "src/practice/guards.ts",
+        "sha256": "7c0f177ebf982b7c870be988a843f6940a6cc23c18e2e7c5adadbb453e4bc835"
+      },
+      {
+        "path": "src/practice/indexeddb-drafts.ts",
+        "sha256": "42aae32b7da7b19efd8c11029a391666e9c60625e9c3f4080102aa9461b247dc"
+      },
+      {
+        "path": "src/practice/interaction.ts",
+        "sha256": "b479d5d41f0d3a21596b13cf92496ab63ea02a630ec606d55dc4acae48e5238d"
+      },
+      {
+        "path": "src/practice/isolation/browser.ts",
+        "sha256": "509065472395cff08b999a5e17dba726bb3915de4e6d03bf85a22fee5a6b4f77"
+      },
+      {
+        "path": "src/practice/isolation/frame.ts",
+        "sha256": "609d162bde17db66ea89db6287e2339360ffe30cd210e3de9b37f06897b759f8"
+      },
+      {
+        "path": "src/practice/isolation/messages.ts",
+        "sha256": "f6a1971c367aeae6497a1c6ece7fcbf7acf3d2d5135e714faa8118084afc13d7"
+      },
+      {
+        "path": "src/practice/isolation/policy.ts",
+        "sha256": "336769407da6db44a2970a21119bfb29c24473298bd37d1f7e78fe236f4cdd82"
+      },
+      {
+        "path": "src/practice/layout.ts",
+        "sha256": "59746bd2abf2a5bc580579060c951ee3fadc3a7981f3d428cbc9d8629f696cd2"
+      },
+      {
+        "path": "src/practice/profiles.ts",
+        "sha256": "eb49ae1d828cfb2ab82bf050129b359de8dd846d0b7f55df8c00d6a8faa903f8"
+      },
+      {
+        "path": "src/practice/protocol.ts",
+        "sha256": "65d867df311ffcf6b706a23326ad34c26b3519e7566c449371b088ba45919703"
+      },
+      {
+        "path": "src/practice/registry.ts",
+        "sha256": "1e5d5cfce530085c1430a7734e1eceba73f8c5dcd70145cf9393c9136f27f842"
+      },
+      {
+        "path": "src/practice/session-manager.ts",
+        "sha256": "0b5d25ad775a95c674940026f3f4709c9d3b7d9d3084570b74222f4db35aa644"
+      },
+      {
+        "path": "src/theme/DocItem/Content/index.tsx",
+        "sha256": "c2c6a54d0d4a0e6af517566cc2bb1f890e997dbacac421fbad92e63cfb7caa7b"
+      },
+      {
+        "path": "src/theme/DocItem/Content/styles.module.css",
+        "sha256": "dc7d1e9a59ea8c2aae07e88ecf724e287d6a36fc65eaa731eba17cc358570b4b"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/index.tsx",
+        "sha256": "0f3cd06f8718d2513e6ec2e78b22c4a8bc321c1782d0bce92e287bc80cdb573d"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/styles.module.css",
+        "sha256": "5f6c556b059e5240eb1500cdaf6ba13479e95f5c54e2e02843b4fb1e8a7b4099"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/index.tsx",
+        "sha256": "3cccd33b24ba0ec9e5faaf432f9d2194149752ac688553de988df6ac1b3598a3"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/styles.module.css",
+        "sha256": "676882204ccbbc8b224a00275fd8ad666f385151384a4fe061214de6541a0223"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/index.tsx",
+        "sha256": "9365efe8b27ebd0678df1cd836cd398ee5e149fa25895583525c86e4d278203c"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/styles.module.css",
+        "sha256": "a434717cd832459dd8b0c2176b7c64c05dc0351e7ad49eb5ebf224698a44b15f"
+      },
+      {
+        "path": "src/theme/Navbar/Content/index.tsx",
+        "sha256": "046eb878f485cfd864aa6ba2756f9f1f1a44a71dd24037dbde26ecc3610f1709"
+      },
+      {
+        "path": "src/theme/Navbar/Content/styles.module.css",
+        "sha256": "ade84f111e682d22df4272cf50753c4949436c9525aea38a4818d67a08917ee8"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/Toggle/index.tsx",
+        "sha256": "84a93a1ebc2c918977ed628f9b4fe8bd7f19feb58f2582cf24c0e1432d8fa4fe"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/index.tsx",
+        "sha256": "ea840cec26dbede9c33e7b3c4fdd51f3687d14051454f7ef6189eaefa94eb817"
+      },
+      {
+        "path": "src/theme/Navbar/Search/index.tsx",
+        "sha256": "251fea314e6e9e66a63e744720086a75430766df2a6b7cf71e66b908535cc676"
+      },
+      {
+        "path": "src/theme/Navbar/Search/styles.module.css",
+        "sha256": "62f7e1c511b8b9723a9fe4ab91ec8317f78be34eb389b4d2b269894ad9312e9a"
+      },
+      {
+        "path": "src/theme/Root.tsx",
+        "sha256": "b9144fd89c898698e4d3b0e238da3a18f18fbd3b428d983e6a319bcc4c7017bc"
+      },
+      {
+        "path": "src/theme/SearchBar/index.tsx",
+        "sha256": "d960f97359ac07a122071db1a93cd186000439518fd4ad9c3b7d180a02764f20"
+      },
+      {
+        "path": "src/theme/SearchBar/styles.module.css",
+        "sha256": "ddfaabd2103f14fae1f8ece24cda064789168495867be786d7ec31ae858db33b"
+      },
+      {
+        "path": "static/.DS_Store",
+        "sha256": "efe9fd6f9bd39e9e727e6b721f479e731027a75d5262c665050f2c24d9377a30"
+      },
+      {
+        "path": "static/img/.DS_Store",
+        "sha256": "235248fc0eef73cac6e344bbc6a8eb20e006720c778041dcb6b05e722939d4bc"
+      },
+      {
+        "path": "static/img/mark.svg",
+        "sha256": "454f157668c898c8d877b24bbfc2aad776b9eba1a46aa52f43964b83bffeecd4"
+      },
+      {
+        "path": "static/img/topics/SOURCES.md",
+        "sha256": "94807eb3185e0633119e7d78bf55a478485aecc41e69862587bfb4a9411d9bae"
+      },
+      {
+        "path": "static/img/topics/httpx.png",
+        "sha256": "32a23bbc8e2110857bc5000806d804041170a29971b71fb60849da5b910fc5fb"
+      },
+      {
+        "path": "static/img/topics/licenses/devicon.txt",
+        "sha256": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664"
+      },
+      {
+        "path": "static/img/topics/licenses/httpx.txt",
+        "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+      },
+      {
+        "path": "static/img/topics/licenses/microsoft.txt",
+        "sha256": "9bbc1ea9fe5c96df01b311a2ac864d5b18fc87b9948bfd14770e4b44db755ee9"
+      },
+      {
+        "path": "static/img/topics/licenses/requests.txt",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "static/img/topics/licenses/seaborn.txt",
+        "sha256": "357ad276e086fab501163d4e9a0ae13c2fd0647eb08d2305fbc0ca3813892601"
+      },
+      {
+        "path": "static/img/topics/matplotlib.svg",
+        "sha256": "8f54f90837d06369095f75ac559d54d547ccea006b2cca5f281edc4db7c9d107"
+      },
+      {
+        "path": "static/img/topics/openpyxl.webp",
+        "sha256": "bb6d1baaecf51bfd2325b0df00c6df85b61b3da7894fc7540414c5b180774046"
+      },
+      {
+        "path": "static/img/topics/power-bi.svg",
+        "sha256": "ddc0f9967330898ee85a96dbe32a0dfe62f9da1db293583958cf97cee24eee1e"
+      },
+      {
+        "path": "static/img/topics/power-query.svg",
+        "sha256": "0633c23cfa1d1b8e76cac13ffeebbf3b0223da96e0e61ab0dc7ca56217914f1b"
+      },
+      {
+        "path": "static/img/topics/requests.png",
+        "sha256": "dbf77ff33e977d1b5334d7d38c214a2c89d1c85074b251e4f9c5443e5b0d858f"
+      },
+      {
+        "path": "static/img/topics/seaborn.svg",
+        "sha256": "c8f8c552c7b74d37e00c3a65fce1af4caf0ccf5a30383e135722bb95829e3a72"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "1723fee437804196736bb25e482e2831c4481861cada1f37ed92df2f08d9e9c7"
+      }
+    ]
+  },
+  "tooling": [
+    {
+      "path": "scripts/build-practice-runtime.mjs",
+      "sha256": "ecfd08e270b7171e88f39db39c1bf11bbca90a1770345e66df85e93f34fa40ec"
+    },
+    {
+      "path": "scripts/capture-baseline.mjs",
+      "sha256": "c4f59b479119f9891d0aa7e52c03ee0a48010b3b31daaceb5b6aeb0694dd94a2"
+    },
+    {
+      "path": "scripts/lib/baseline-browser.mjs",
+      "sha256": "e31ccda4093c741c3413ba7920ccfe297ecd39e9f907d8896a1598f236fe7e48"
+    },
+    {
+      "path": "scripts/lib/baseline.ts",
+      "sha256": "7580d983485049513fcc0d6cdf4344a09ec6fe242563b81abb5bbc0656958c4d"
+    },
+    {
+      "path": "scripts/lib/benchmark-comparison.mjs",
+      "sha256": "fa38ba1a8e65f1cbabd06fce500111010ff3be4570dd45067d78e4cbb3799a49"
+    },
+    {
+      "path": "scripts/lib/final-verification.ts",
+      "sha256": "59af79bdda70c903c7bcbf90366839ba9934324a17462b5b37e3e14e29ef33e8"
+    },
+    {
+      "path": "scripts/lib/python-assets.ts",
+      "sha256": "f7e4f0c835d547d9e4ab1e6198cdf2ba1fe014a0bc9b9394486c1b95b6426675"
+    },
+    {
+      "path": "scripts/lib/runtime-http.mjs",
+      "sha256": "8d01d17e1ce182bf350470dded2a7d30851b7627dd97998f4799d521be3bbdc4"
+    },
+    {
+      "path": "scripts/lib/runtime-typescript-loader.cjs",
+      "sha256": "95f97f75dbc36e1860b1c6c072199ccdf35b20e43d46444e1e1d50dd2c55df46"
+    },
+    {
+      "path": "scripts/prepare-python-runtime.mjs",
+      "sha256": "5ab0da897cf2b1472d4f8804370230c2b37411c5684657778a9029d39b2d6574"
+    },
+    {
+      "path": "scripts/serve-with-runtime.mjs",
+      "sha256": "17f7e8117e2d4228dbbef2f7593d39163442b1eb340534b10ea11ee90a81b81a"
+    },
+    {
+      "path": "scripts/update-stack.mjs",
+      "sha256": "20eb1c1cd4deb823b556fe4ad82fc7a1ef1dc3108245ad89ac1b14960cebce96"
+    },
+    {
+      "path": "scripts/verify-final.mjs",
+      "sha256": "e3e0fd06f9bd569ff433fbb1dbd3fd3d1bd0c4e58c7ba99a2df085f796578fb5"
+    },
+    {
+      "path": "scripts/verify-practice-data.mjs",
+      "sha256": "ad737f1a3a065803714397893ab2f6cf2e50ac8d5d2d35561e2cdd81bb40c41d"
+    },
+    {
+      "path": "tests/baseline.test.ts",
+      "sha256": "6dcc16766cf1df63aaacc54055f7ab768732acb27e1a801525b3230bd85f4a70"
+    },
+    {
+      "path": "tests/catalog.test.ts",
+      "sha256": "287b5b5e0d6af4d47c98bd2a2959e2432a1099f393b0499fc96ff5c5d5006178"
+    },
+    {
+      "path": "tests/client-compilation.test.ts",
+      "sha256": "9912f3a4547b3076584cdbe9caba2dfd6ae62bf8e63a6a402510d6ac05811745"
+    },
+    {
+      "path": "tests/final-verification.test.ts",
+      "sha256": "cd15ab9caa6cbf398df674be1b18abe04fbe41ea0f37c80cf54ba797b8b947d0"
+    },
+    {
+      "path": "tests/fixtures/practice-session.ts",
+      "sha256": "a0d9413bb5323e6136ce84a2cd34d47382fe6620927d9677513901035e19e8fb"
+    },
+    {
+      "path": "tests/fixtures/practice.ts",
+      "sha256": "823b57adeef03bf62adcd49aa144687381bfcea827b4cb82e0d228e0a9caa0ce"
+    },
+    {
+      "path": "tests/palettes.test.ts",
+      "sha256": "87f05b456f0576ffdc8b0d736f3f3e60ff35d768cbe731a94030e93710cd1222"
+    },
+    {
+      "path": "tests/personal-library.test.ts",
+      "sha256": "1b506c4001ac17af953a496999010562ec3b95268f1a8adf291ef4226faba627"
+    },
+    {
+      "path": "tests/practice-actions.test.ts",
+      "sha256": "00d0977d04ceff40057a84d49fa711a7cc6a57cf48ef9f9fb13a0a5daad11d1d"
+    },
+    {
+      "path": "tests/practice-bridge.test.ts",
+      "sha256": "42d289e595cfab3e4f30d743bc0dcf1dc1c0d8dee25da9957cc5d4537bb17d0c"
+    },
+    {
+      "path": "tests/practice-context.test.ts",
+      "sha256": "a1fe14e643add212c60b799cbb55c5822fcc9467c6f4803a34c3996f37141bc9"
+    },
+    {
+      "path": "tests/practice-contracts.test.ts",
+      "sha256": "45d4f6fd81a781103a2e7ebea7d4267f08652d116eb2ef2e0825dda5147bccba"
+    },
+    {
+      "path": "tests/practice-data.test.ts",
+      "sha256": "992827f9af68c588e48bdfa832543f02ddff535d5f6c479230a30caabfc53ba5"
+    },
+    {
+      "path": "tests/practice-drafts.test.ts",
+      "sha256": "71bd37cd8e72db2f5ba4ef151922ee11d2fc1219935da7ba1fd6283e3d5a7cd1"
+    },
+    {
+      "path": "tests/practice-editor-completion.test.ts",
+      "sha256": "8e9e106a33140a9fa65c5a2e9ae4a39b91183073b892401ca7e08f5d782596dc"
+    },
+    {
+      "path": "tests/practice-editor.test.ts",
+      "sha256": "d13131a34888dc4648c630e56ec3dedb313107c5b7912335cf9d4c81eb9b7053"
+    },
+    {
+      "path": "tests/practice-examples.test.ts",
+      "sha256": "6614a1842e659212e86f2de60ed84743c178f143ad4ad02195100387ada8a2af"
+    },
+    {
+      "path": "tests/practice-interaction.test.ts",
+      "sha256": "a2d0ae2c4e76d49131f3ad088e5146f10b177ffcf4e8d1011a5e1c511099c9a1"
+    },
+    {
+      "path": "tests/practice-isolation.test.ts",
+      "sha256": "e8c55a998b4e32995f6247068d5a23a5d28489092ddd846a20d5c3cebeb970e8"
+    },
+    {
+      "path": "tests/practice-panel.test.ts",
+      "sha256": "86b8b1b032f34b58958506e0397d19ac48a2effbc5624a9e1f0f0ed1c283dd3a"
+    },
+    {
+      "path": "tests/practice-providers.test.ts",
+      "sha256": "32aaa3ac6a15147b8fe3840fabaebbaac17f174855349cb114fd3c272848e462"
+    },
+    {
+      "path": "tests/practice-python-initialization.test.ts",
+      "sha256": "c4872c67491331b4a4a6579425bcfd23ed313d5c5a3f49737cdcccc968ea612d"
+    },
+    {
+      "path": "tests/practice-python.test.ts",
+      "sha256": "f468b768a83770645d9a54c8e123837a325ce65548ca1026bf5cb00196b4a870"
+    },
+    {
+      "path": "tests/practice-session.test.ts",
+      "sha256": "116a654b183c78f59316ac067874f21f15963dc06a5e17deea5655aee6750b9b"
+    },
+    {
+      "path": "tests/practice-sqlite.test.ts",
+      "sha256": "d0378563c4bff426db82a53f8ee3a07a12f9e91ffbd8f961b962d06f753821b1"
+    },
+    {
+      "path": "tests/practice-types.ts",
+      "sha256": "e453636cce695eefe5ad0514ad7898102e50ccb164341c94e785f68f28086fdf"
+    },
+    {
+      "path": "tests/python-assets.test.ts",
+      "sha256": "fa1e82c015be46b5e9be5ed557faf07026cd27c0aef65222dced8a95b82cf324"
+    },
+    {
+      "path": "tests/runtime-assets.test.mjs",
+      "sha256": "14b82046f1fc5a3a740228e7d49268b7ccbf203262c5c76fbce81b9209da17af"
+    },
+    {
+      "path": "tests/runtime-http.test.mjs",
+      "sha256": "08d5068a023d82a6756f8dd5b026de2aedf8db21dce14c829a480dd31d68442b"
+    },
+    {
+      "path": "tests/search-store.test.ts",
+      "sha256": "7014a95b97dd4c3a7f69c227bf0d2acb3444209e16414916f10e2ed2cfe8ecff"
+    },
+    {
+      "path": "tests/search.test.ts",
+      "sha256": "b5035d7d69ace957ec37dbb7ac5fa6ee82d14ea86881f96e1be160da9815f47e"
+    },
+    {
+      "path": "tests/sql.test.ts",
+      "sha256": "a2a30a712e9ed57995a03e2d84df94ad501c63c2ea0e57fce279ef068f5748d2"
+    },
+    {
+      "path": "tests/ui/catalog.spec.ts",
+      "sha256": "2e661dae4ed1a1107d13677e9caf132e99b8fb6d0982aae730f663b810734676"
+    },
+    {
+      "path": "tests/ui/global-setup.ts",
+      "sha256": "b0476b2a956225872cd9ef673968a44b53e03735499a3d804561db7022dd46f4"
+    },
+    {
+      "path": "tests/ui/header-helpers.ts",
+      "sha256": "08c110160dde101e513e4ef6eb022d47dc94563e8ddba9e205551d413bfe1b98"
+    },
+    {
+      "path": "tests/ui/header.spec.ts",
+      "sha256": "e6215d40b1478c5d2e18cbc86bfda8ecf251fdcd544d3715465341dc7bea8fe3"
+    },
+    {
+      "path": "tests/ui/notes.spec.ts",
+      "sha256": "b5567c5a8125f6588d02bacdf236583c4a8888ffe5d739b01e7e8aeae1d75353"
+    },
+    {
+      "path": "tests/ui/pandas.spec.ts",
+      "sha256": "d02c1bf56eff5605bcd1f2007576edf60fd1cbc65d171e0bfbe865fa2a9f7f32"
+    },
+    {
+      "path": "tests/ui/personal-library.spec.ts",
+      "sha256": "40a9ca9b65106f9594f4f09eda47a741060ef8ba5df41a4c6aca9a28b9abc8f1"
+    },
+    {
+      "path": "tests/ui/practice-actions.spec.ts",
+      "sha256": "b5a8574bab1348d09a9e92eb00cc8d67baad7da0afb92b0a1e51d27377637447"
+    },
+    {
+      "path": "tests/ui/practice-storage.spec.ts",
+      "sha256": "4c11bedd62822c304439f21240a920d69319ac6b8728d83d3039402c873723d1"
+    },
+    {
+      "path": "tests/ui/practice.spec.ts",
+      "sha256": "8fa8b6f1d96bd212a1050b4c85dd76332c91da0bbdd0ec48fac66fd274c1cce9"
+    },
+    {
+      "path": "tests/ui/python.spec.ts",
+      "sha256": "c1a6e9f8a14a36dbce67da4181f70a304ff6fe16de30b1a92354441d8ac9e525"
+    },
+    {
+      "path": "tests/ui/responsive.spec.ts",
+      "sha256": "ea87ba18a57f1835d731a40c6c47506da2b92882f09ffb3af12019553edf2f3c"
+    },
+    {
+      "path": "tests/ui/search.spec.ts",
+      "sha256": "d350aa70dfc72e0d1c38ce7961936292be28860f8b143144a823f424c0809b7a"
+    },
+    {
+      "path": "tests/ui/sqlite.spec.ts",
+      "sha256": "13bd10cebacdea50496ba8a905aca6b9bba614cbc60e3a1c4c5a79fce8c62447"
+    }
+  ],
+  "checks": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "log": "\n> alldoc@0.1.0 test\n> node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs\n\n(node:49250) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/baseline.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ percentiles de referencia: nearest rank, valores cero y muestras ausentes (1.858792ms)\n✔ assets declarados: incluye preloads JS/CSS y elimina duplicados, sin contar fuentes o scripts inline (1.146791ms)\n✔ inventario: separa total del build y assets declarados por página y usa gzip real (46.8565ms)\n✔ huella: detecta cambios de la app y excluye los informes y resultados generados (56.26375ms)\n✔ servidor de referencia: resuelve rutas estáticas con y sin trailing slash y bloquea salir del build (4.463458ms)\n(node:49251) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/catalog.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ el catálogo conserva tres áreas, diecinueve herramientas y los cinco grupos en su orden (1.800584ms)\n✔ el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos (0.357667ms)\n✔ metadata, páginas MDX, palabras clave y cuerpos tienen los mismos conceptos e IDs únicos (14.267584ms)\n✔ el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado (1.076292ms)\n✔ catálogo, sidebar y búsqueda admiten conceptos en cualquier área sin depender de SQL (0.213625ms)\n✔ el catálogo rechaza conceptos huérfanos e IDs repetidos antes de publicar enlaces inválidos (0.299084ms)\n✔ Docusaurus recibe la metadata canónica conservando contenido, opciones y descripciones SEO (0.573792ms)\n(node:49252) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (908.41975ms)\n✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (189.067584ms)\n✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (57.450958ms)\n✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (135.776667ms)\n✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (1080.949458ms)\n✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (25.528917ms)\n✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (334.2085ms)\n(node:49253) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/final-verification.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ comparación final: distingue bundle total e inicial y favoritos sin referencia previa (3.46675ms)\n✔ presupuesto: recalcula p95 de muestras crudas y no acepta un resumen antiguo favorable (10.423041ms)\n✔ muestras ausentes o inválidas no se convierten en cero ni acreditan el presupuesto (3.157917ms)\n✔ comparación: ejecuciones parciales, perfiles o rutas eliminados y favoritos sin medir quedan pendientes (3.908084ms)\n✔ comparación: cambiar navegador, CPU, viewport o red impide atribuir diferencias a la aplicación (1.416917ms)\n✔ Event Timing: conserva cobertura parcial y no etiqueta el proxy DOM como INP (1.716167ms)\n✔ procedencia incompleta o esquema desconocido no permiten una comparación aprobada (1.053375ms)\n✔ crecimiento: mil entradas sintéticas conservan IDs únicos y ranking del motor real (28.104375ms)\n✔ auditoría publicada: detecta repaso retirado, h1 duplicado y zoom bloqueado (36.671958ms)\n✔ auditoría publicada: los literales de scripts no se cuentan como estructura visible (7.01225ms)\n✔ portada: el cargador no debe descargar un chunk compartido con cuerpos de apuntes (28.040208ms)\n(node:49254) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/palettes.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ restaura cualquiera de los ocho colores guardados antes de pintar (16.984ms)\n✔ convierte las antiguas paletas al color equivalente (5.309375ms)\n✔ una elección inválida o la falta de almacenamiento conserva un color válido (5.1795ms)\n✔ los colores del texto tienen contraste suficiente sobre negro (0.660084ms)\n(node:49255) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/personal-library.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ recientes: valida fechas e IDs, deduplica por fecha, desempata por ID y limita a veinte (3.266542ms)\n✔ versiones y formas inválidas se recuperan sin lanzar; favoritos filtran sin cambiar orden (1.031958ms)\n✔ SSR vacío y estable; hidratar lee ambas colecciones sin escribir ni sobrescribirlas (7.081667ms)\n✔ activación directa antes de hidratar espera la lectura; efectos repetidos registran una sola visita (0.748667ms)\n✔ visitas y revisitas en cualquier área: una por activación, fechas crecientes y máximo veinte (0.283208ms)\n✔ favoritos conservan inserción y quitar/guardar envía al final; cada escritura afecta solo su clave (0.204959ms)\n✔ corrupción de una clave no borra la otra ni escribe al iniciar (0.161667ms)\n✔ almacenamiento inaccesible: conserva memoria y solo avisa tras una acción; no sobrescribe lo que no pudo leer (0.188542ms)\n✔ cuota llena: acción inmediata en memoria, siguientes escrituras pueden recuperar persistencia (0.141375ms)\n✔ storage sincroniza solo la clave afectada, última escritura gana y nunca responde con otra escritura (0.236ms)\n(node:49256) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-actions.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ acciones: sustituir y recuperar conserva todos los archivos, revisiones y el backup al recargar (4.209042ms)\n✔ acciones: sustituciones iguales no consumen backup y las inválidas no cambian el borrador (0.731375ms)\n✔ acciones: un backup corrupto o ajeno no descarta el código principal y el formato anterior sigue válido (0.399209ms)\n✔ acciones: fallo de escritura conserva backup en memoria y el reintento guarda la edición más reciente (1.436042ms)\n✔ acciones: una escritura pendiente no guarda una revisión anterior como backup de la nueva (1.465458ms)\n✔ acciones: un ejemplo abre, conserva la revisión anterior y no ejecuta ni reinicia el motor (4.391708ms)\n✔ acciones: un ejemplo idéntico no anuncia una recuperación inexistente (0.499667ms)\n✔ acciones: el ejemplo queda editable aunque la descarga falle; reintentar no reemplaza el texto (3.235041ms)\n✔ acciones: navegar o colapsar durante una sustitución tardía no reemplaza ni reabre el contexto (0.820125ms)\n✔ acciones: los IDs y lenguajes incompatibles se rechazan antes de modificar código o crear recursos (0.588042ms)\n(node:49257) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera (11.91325ms)\n✔ puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido (2.8075ms)\n✔ puente: contexto SQL y esquema serializables, con límites y tipos completos (17.839083ms)\n(node:49258) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-context.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ SQL y pandas habilitan sus proveedores diferidos sin crear motores al resolver contexto (148.342084ms)\n✔ SELECT y WHERE comparten identidad de workspace; no se deriva contexto de categorías ni de títulos (0.594458ms)\n✔ pandas cambia de perfil y workspace mediante su metadata publicada (0.195ms)\n✔ la clave separa herramienta, perfil, dataset y versión; no depende del concepto ni de versiones del motor (6.372125ms)\n✔ un tercer lenguaje y varios perfiles SQL usan el mismo registro y resolver sin ramas por lenguaje (1.632209ms)\n✔ consultar perfiles es puro; cargar proveedores es explícito, comparte promesa y no construye motores (1.017875ms)\n✔ una carga fallida puede reintentarse y no queda guardada como proveedor válido (1.415625ms)\n✔ el registro rechaza identidades ambiguas, capacidades inválidas y perfiles habilitados sin proveedores (0.545666ms)\n✔ un perfil inválido no muta el registro después de crearlo y el contexto exige metadata coherente (0.180875ms)\n(node:49259) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-contracts.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ el protocolo acepta eventos de ambos motores sin handles o clases del runtime (1.131667ms)\n✔ versiones, tipos desconocidos, identidades ausentes y respuestas de otro contexto se rechazan (0.128917ms)\n✔ columnas y valores coinciden sin confundir null, vacío, booleanos o enteros grandes (0.479542ms)\n✔ el protocolo limita tablas y exige estados finales y localizaciones de error válidos (0.366958ms)\n✔ arrays dispersos no se aceptan como filas, columnas o sugerencias completas (0.359375ms)\n✔ sugerencias validadas por archivo, workspace, revisión y offsets UTF-16 del documento (0.356541ms)\n(node:49261) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-data.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ el dataset canónico conserva tres columnas, tres productos y el precio entero, sin id añadido (1.763959ms)\n✔ materializar SQLite prepara parámetros y sus ocho consultas conservan resultados (25.476ms)\n✔ los valores con comillas o SQL se enlazan como datos, sin interpolarlos en sentencias (0.2585ms)\n✔ Python recibe el mismo JSON tipado y cada materialización tiene su propia copia (1.192917ms)\n✔ dataset y runtime desconocidos o una operación abortada no preparan otro entorno por defecto (1.640333ms)\n✔ DataFrame está publicado bajo Pandas, con búsqueda propia y un único ejemplo breve (8.431125ms)\n✔ el dataset compartido no cambia las consultas, resultados ni contenido de las ocho variantes SQL (1.242791ms)\n✔ anterior y siguiente permanecen dentro de la misma herramienta (0.793292ms)\n(node:49262) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-drafts.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ borradores: carga diferida, edición inmediata, revisiones y guardado agrupado por herramienta (3.8305ms)\n✔ borradores: recuperar en otra sesión conserva texto y avisa del cambio de entorno (0.985417ms)\n✔ borradores: una escritura tardía no declara guardada una edición posterior (0.952791ms)\n✔ borradores: fallo de almacenamiento conserva edición en memoria (0.610667ms)\n✔ borradores: conflicto entre sesiones guarda copia recuperable sin sobrescribir la ganadora (1.037709ms)\n✔ borradores: valida clave, archivos, versión, UTF-8 y restaura una copia inmutable (0.505584ms)\n(node:49263) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor-completion.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación (4.65425ms)\n✔ editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual (0.376792ms)\n✔ editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas (0.199541ms)\n(node:49264) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados (4.210416ms)\n✔ editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales (60.841542ms)\n(node:49265) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-examples.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ ejemplos: IDs estables y únicos para las ocho variantes SQL y pandas; defaults existentes resolubles (2.018625ms)\n(node:49266) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-interaction.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ ejecutar: botón y atajo comparten permiso solo para un workspace habilitado y listo (0.97325ms)\n(node:49267) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-isolation.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ aislamiento: exige otro hostname y origen HTTP(S), sin credenciales, rutas o downgrade (3.530792ms)\n✔ aislamiento: origen exacto normalizado, sin prefijos engañosos ni aceptar null (4.42225ms)\n✔ aislamiento: CSP propia restringe red, frames hijos, formularios y Workers al origen del runtime (0.230833ms)\n(node:49268) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ panel: resolver reconoce SQL/pandas ejecutables, sin categorías (1.58125ms)\n✔ panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo (0.101458ms)\n✔ panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible (0.1105ms)\n✔ panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados (5.431542ms)\n✔ panel: añadir un perfil futuro no activa automáticamente un editor sin preparación (0.148959ms)\n✔ diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda (0.888208ms)\n✔ diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente (2.184917ms)\n(node:49271) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-providers.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ proveedores: el completador recibe el mismo runtime del workspace sin crear otra VM (3.385292ms)\n✔ proveedores: un fallo al crear el completador libera el runtime ya creado (0.434084ms)\n(node:49272) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes (2.956667ms)\n✔ inicialización Python: un error de paquetes rechaza la preparación y no entrega una VM parcial (0.8515ms)\n✔ inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial (0.46425ms)\n(node:49273) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ Pyodide real: dataset compartido, DataFrame filtrado y precio numérico (7157.46625ms)\n✔ Pyodide real: variables y cambios parciales persisten; reiniciar datos no modifica el paquete ni otra sesión (34.400375ms)\n✔ Pyodide real: stdout/stderr, await y última expresión; sintaxis y traceback conservan archivo y línea (15.001833ms)\n✔ Pyodide real: selección UTF-16 no ejecuta el resto y sitúa errores en el archivo original (13.408292ms)\n✔ Pyodide real: null, vacío, booleano, bigint, fechas, cero filas y truncamiento son serializables (22.537417ms)\n✔ Pyodide real: Jedi completa pandas sin ejecutar el programa; columnas siguen solo DataFrames registrados (3140.581167ms)\n✔ Pyodide real: offsets de sugerencia son UTF-16 y disponer libera el entorno del núcleo (16.298625ms)\n✔ Pyodide real: completar columnas usa el esquema y no invoca propiedades del objeto del usuario (12.930542ms)\nError thrown in write:\nError: Se alcanzó el límite de salida de 1 MiB\n    at send (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:54:82)\n    at flush (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:60:9)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:66:105)\n    at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660783\n    at handleEAGAIN (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659665)\n    at readWriteHelper (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659781)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660765)\n    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:84421)\n    at doWritev (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:228608)\n    at _fd_write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:230179)\n✔ Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando (21.765375ms)\n✔ Pyodide real: una función de una ejecución anterior conserva su excepción y señala la llamada actual (11.464625ms)\n(node:49274) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (28.488125ms)\n✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.789584ms)\n✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (2.798542ms)\n✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (8.667625ms)\n✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (4.655625ms)\n✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (18.746375ms)\n✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (1.962375ms)\n✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (3.44525ms)\n✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (23.089375ms)\n✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (17.920417ms)\n✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.446542ms)\n✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (10.169959ms)\n✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (2.54975ms)\n✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (3.096666ms)\n✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (3.75225ms)\n✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (52.662667ms)\n✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (12.226791ms)\n✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (1.320209ms)\n✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (1.410417ms)\n✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (9.408208ms)\n✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (3.222042ms)\n(node:49276) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nsqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);\n✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (247.45825ms)\n✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.700042ms)\n✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (4.316625ms)\n✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (9.685458ms)\n✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (6.909ms)\n✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.988292ms)\n✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (16.234375ms)\n✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (2.512458ms)\n✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (125.17125ms)\n✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (538.69275ms)\n(node:49277) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/python-assets.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ assets Python: cierre transitivo determinista sin paquetes ajenos y con hashes completos (16.346958ms)\n✔ assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones (0.146833ms)\n✔ assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin integridad (0.695958ms)\n(node:49280) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/isolation/policy.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:49280) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n✔ runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin (4563.781708ms)\n✔ HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked (216.941ms)\n(node:49286) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search-store.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ consultas pedagógicas: auxiliares, acentos, preguntas y operadores de comentarios (6.348667ms)\n✔ título completo y prefijo superan coincidencias de palabras y los empates conservan orden (1.795208ms)\n✔ índice preparado: mil entradas conservan coincidencias sin reconstruir la normalización (7.971333ms)\n✔ la carga es diferida, comparte promesa y resuelve la consulta más reciente sin reabrir el diálogo (0.482042ms)\n✔ un error permite reintentar sin perder la consulta; elegir un resultado limpia y conserva la caché (0.472916ms)\n✔ los resultados se muestran en lotes de diez y una consulta nueva restaura el límite (0.238667ms)\n✔ salir de la landing elimina su superficie y las suscripciones se pueden limpiar (0.210083ms)\n✔ buscador vacío: recientes primero sin duplicados; una consulta conserva su ranking (0.286375ms)\n✔ recientes recibidos durante la carga se usan al resolver; no mueven enlaces de un diálogo ya visible (0.149792ms)\n(node:49288) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ encuentra un concepto por lo que hace, sin recordar su nombre (20.489292ms)\n✔ ignora acentos y mayúsculas, y permite combinar área y concepto (100.396417ms)\n✔ una coincidencia exacta en el título precede una mención en la descripción (0.151542ms)\n✔ una consulta sin coincidencias devuelve una lista vacía (0.07625ms)\n(node:49294) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ SELECT / Todas las columnas: resultado correcto (2.134791ms)\n✔ SELECT / Columnas concretas: resultado correcto (0.13ms)\n✔ WHERE / Cumplir una condición: resultado correcto (0.067375ms)\n✔ ORDER BY / Del más barato al más caro: resultado correcto (0.081334ms)\n✔ LIMIT / Hasta 5 filas completas: resultado correcto (0.06975ms)\n✔ LIMIT / Hasta 3 nombres: resultado correcto (0.053916ms)\n✔ Comentarios / Una línea o al final: resultado correcto (0.056167ms)\n✔ Comentarios / Varias líneas: resultado correcto (0.051375ms)\nℹ tests 175\nℹ suites 0\nℹ pass 175\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 12070.970334\n"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "log": "\n> alldoc@0.1.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "command": "npm run typecheck:tests",
+      "exitCode": 0,
+      "log": "\n> alldoc@0.1.0 typecheck:tests\n> tsc --noEmit -p tsconfig.tests.json\n\n"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "\n> alldoc@0.1.0 build\n> docusaurus build\n\n[INFO] [es] Creating an optimized production build...\n[webpackbar] ℹ Compiling Client\n[webpackbar] ℹ Compiling Server\n[webpackbar] ✔ Server: Compiled successfully in 1.44s\n[webpackbar] ✔ Client: Compiled successfully in 3.39s\n(node:47663) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.\n(Use `node --trace-warnings ...` to show where the warning was created)\n[SUCCESS] Generated static files in \"build\".\n[INFO] Use `npm run serve` command to test your build locally.\n┌─────────────────────────────────────────────────────────────────────┐\n│                @docusaurus/core update check failed                 │\n│                 Try running with sudo or get access                 │\n│                to the local update config store via                 │\n│ sudo chown -R $USER:$(id -gn $USER) /Users/andresitopacheco/.config │\n└─────────────────────────────────────────────────────────────────────┘\n"
+    }
+  ],
+  "bundle": "benchmarks/runs/2026-11-14T20-23-27-832Z-f45b8f014c"
+}

@@ -1,5 +1,6 @@
 import type {CompletionAdapter, CompletionResult, EnvironmentManifest, PracticeEditorContext, PracticeRegistry, RunRequest, RuntimeAdapter, RuntimeEvent, RuntimeSchema, Workspace} from './contracts.ts';
-import type {DraftState, DraftStore} from './drafts.ts';
+import {copyWorkspace, MAX_CODE_BYTES, type DraftState, type DraftStore} from './drafts.ts';
+import {identifier} from './guards.ts';
 import {isCompletionResult, isRuntimeEvent} from './protocol.ts';
 
 export type SessionSnapshot = Readonly<{
@@ -7,7 +8,9 @@ export type SessionSnapshot = Readonly<{
   phase: 'hidden' | 'collapsed' | 'loading' | 'ready' | 'running' | 'error';
   generation: number; draft: DraftState | null; schema: RuntimeSchema;
   events: readonly RuntimeEvent[]; notice: string | null; error: string | null;
+  codeAction?: number;
 }>;
+export type PracticeExampleRequest = Readonly<{id: string; workspaceId: string; languageId: string; code: string}>;
 export type SessionOptions = {
   registry: PracticeRegistry; drafts: DraftStore;
   bootstrap(context: PracticeEditorContext): Promise<{workspace: Workspace; environment: EnvironmentManifest | null; schema?: RuntimeSchema}>;
@@ -21,6 +24,10 @@ export interface PracticeSessionManager {
   collapse(): Promise<void>;
   retry(): Promise<void>;
   edit(path: string, content: string): Workspace;
+  useExample(example: PracticeExampleRequest): Promise<boolean>;
+  restoreInitialCode(): Promise<boolean>;
+  restorePreviousCode(): void;
+  retrySave(): Promise<void>;
   execute(selection?: RunRequest['selection']): Promise<void>;
   stop(): Promise<void>;
   resetEnvironment(): Promise<void>;
@@ -38,7 +45,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
   let resetting: Promise<void> | null = null;
   let controller: AbortController | null = null; let completionAbort: AbortController | null = null;
   let retirement: Promise<void> = Promise.resolve(); let retirementError: Error | null = null;
-  let idle: ReturnType<typeof setTimeout> | undefined; let activeRun: Run | null = null; let sequence = 0; let completionSequence = 0;
+  let idle: ReturnType<typeof setTimeout> | undefined; let activeRun: Run | null = null; let sequence = 0; let completionSequence = 0; let codeAction = 0;
   const publish = (patch: Partial<SessionSnapshot>) => {
     if (disposed) return;
     state = Object.freeze({...state, ...patch}); for (const listener of Array.from(listeners)) listener();
@@ -86,6 +93,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     return run.stopping;
   }
   function invalidate() {
+    codeAction++;
     clearTimeout(idle); controller?.abort(); completionAbort?.abort(); loading = null; resetting = null;
     publish({generation: state.generation + 1});
   }
@@ -160,6 +168,30 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       if (live(generation) && resource === target && !target.retired && !activeRun && sequence === runSequence) publish({schema});
     } catch {if (live(generation) && resource === target) publish({notice: 'No se pudo actualizar el esquema.'});}
   }
+  async function replaceCode(example?: PracticeExampleRequest): Promise<boolean> {
+    const ctx = state.context;
+    if (disposed || !ctx) return false;
+    if (example && (!identifier(example.id) || example.workspaceId !== ctx.workspaceKey
+      || example.languageId !== ctx.profile.languageId || typeof example.code !== 'string'
+      || encoder.encode(example.code).byteLength > MAX_CODE_BYTES)) throw new Error('Ejemplo incompatible con este contexto');
+    const action = ++codeAction; const generation = state.generation;
+    if (example) {clearTimeout(idle); publish({openRequested: true, visible: true});}
+    const current = () => live(generation) && action === codeAction && state.context?.workspaceKey === ctx.workspaceKey && state.openRequested;
+    const seed = await options.bootstrap(ctx);
+    if (!current()) return false;
+    if (seed.workspace.id !== ctx.workspaceKey) throw new Error('Contexto inicial incompatible');
+    const draft = await options.drafts.load(seed.workspace);
+    if (!current()) return false;
+    if (!state.draft) publish({draft});
+    const files = example ? seed.workspace.files.map(file => file.path === seed.workspace.activeFile ? {...file, content: example.code} : file) : seed.workspace.files;
+    const validated = copyWorkspace({...seed.workspace, files});
+    completionAbort?.abort();
+    options.drafts.replace(ctx.workspaceKey, {files: validated.files, activeFile: validated.activeFile});
+    publish({codeAction: (state.codeAction ?? 0) + 1, notice: options.drafts.get(ctx.workspaceKey)?.previous
+      ? 'Código preparado. Puedes recuperar el código anterior.' : 'Código preparado.'});
+    if (example) void prepare();
+    return true;
+  }
   const manager: PracticeSessionManager = {
     getSnapshot: () => state,
     subscribe(listener) {listeners.add(listener); return () => {listeners.delete(listener);};},
@@ -181,6 +213,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     },
     async collapse() {
       if (disposed) return;
+      codeAction++;
       const pending = state.phase === 'loading';
       publish({openRequested: false, visible: false, phase: state.context ? 'collapsed' : 'hidden'});
       if (pending) {invalidate(); await retireCurrent();}
@@ -195,6 +228,18 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     edit(path, content) {
       if (!state.draft || disposed) throw new Error('No hay borrador activo');
       completionAbort?.abort(); return options.drafts.edit(state.draft.workspace.id, path, content);
+    },
+    useExample: (example) => replaceCode(example),
+    restoreInitialCode: () => replaceCode(),
+    restorePreviousCode() {
+      if (disposed || !state.draft) return;
+      codeAction++; completionAbort?.abort();
+      options.drafts.restorePrevious(state.draft.workspace.id);
+      publish({codeAction: (state.codeAction ?? 0) + 1, notice: 'Se recuperó tu código anterior.'});
+    },
+    async retrySave() {
+      const key = state.context?.workspaceKey;
+      if (!disposed && key) await options.drafts.retryPersistence(key);
     },
     async execute(selection) {
       if (disposed || activeRun || !state.openRequested || state.context?.profile.availability !== 'enabled') return;

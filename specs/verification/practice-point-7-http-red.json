@@ -1,0 +1,22 @@
+{
+  "point": 7,
+  "stage": "red",
+  "recordedAt": "2026-11-14T20:30:03.283Z",
+  "command": "node --experimental-strip-types --test tests/runtime-http.test.mjs",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "scripts/lib/runtime-http.mjs",
+      "sha256": "7d5c734b087151a5b2c206fd972abe647f760579096316fe2ca2eba1682d3177"
+    },
+    {
+      "path": "scripts/serve-with-runtime.mjs",
+      "sha256": "17f7e8117e2d4228dbbef2f7593d39163442b1eb340534b10ea11ee90a81b81a"
+    },
+    {
+      "path": "tests/runtime-http.test.mjs",
+      "sha256": "08d5068a023d82a6756f8dd5b026de2aedf8db21dce14c829a480dd31d68442b"
+    }
+  ],
+  "log": "✖ HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked (14.906167ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 160.858583\n\n✖ failing tests:\n\ntest at tests/runtime-http.test.mjs:25:1\n✖ HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked (14.906167ms)\n  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Content-Length: 65537(?:\\r\\n|$)/i. Input:\n  \n  'HTTP/1.1 200 OK\\r\\n' +\n    'Content-Type: application/zip\\r\\n' +\n    \"Content-Security-Policy: default-src 'none'\\r\\n\" +\n    'Referrer-Policy: no-referrer\\r\\n' +\n    'X-Content-Type-Options: nosniff\\r\\n' +\n    'Cache-Control: public, max-age=31536000, immutable\\r\\n' +\n    'Date: Sat, 14 Nov 2026 20:28:34 GMT\\r\\n' +\n    'Connection: keep-alive\\r\\n' +\n    'Transfer-Encoding: chunked'\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/runtime-http.test.mjs:34:14)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: \"HTTP/1.1 200 OK\\r\\nContent-Type: application/zip\\r\\nContent-Security-Policy: default-src 'none'\\r\\nReferrer-Policy: no-referrer\\r\\nX-Content-Type-Options: nosniff\\r\\nCache-Control: public, max-age=31536000, immutable\\r\\nDate: Sat, 14 Nov 2026 20:28:34 GMT\\r\\nConnection: keep-alive\\r\\nTransfer-Encoding: chunked\",\n    expected: /Content-Length: 65537(?:\\r\\n|$)/i,\n    operator: 'match',\n    diff: 'simple'\n  }\n"
+}

@@ -33,15 +33,15 @@ export function memoryRepository() {
   const calls = {reads: 0, writes: 0, closes: 0};
   const repository: DraftRepository = {
     async read(id) {calls.reads++; return structuredClone(records.get(id) ?? null);},
-    async write(value, expected, savedAt) {
+    async write(value, expected, savedAt, previous = null) {
       calls.writes++;
       const current = records.get(value.id);
       if ((current?.storageRevision ?? null) !== expected) {
-        const recovery = {id: `recovery-${recoveries.length}`, workspaceId: value.id, savedAt, workspace: structuredClone(value)};
+        const recovery = {id: `recovery-${recoveries.length}`, workspaceId: value.id, savedAt, workspace: structuredClone(value), previous: structuredClone(previous)};
         recoveries.push(recovery);
         return {status: 'conflict', recoveryId: recovery.id};
       }
-      const record: StoredDraft = {formatVersion: 1, storageRevision: (expected ?? 0) + 1, savedAt, workspace: structuredClone(value)};
+      const record: StoredDraft = {formatVersion: 1, storageRevision: (expected ?? 0) + 1, savedAt, workspace: structuredClone(value), previous: structuredClone(previous)};
       records.set(value.id, record);
       return {status: 'saved', record};
     },
