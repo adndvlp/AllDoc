@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {concepts} from '../src/content/concepts.ts';
 import {entries} from '../src/content/search-index.ts';
 import {registration} from './fixtures/practice.ts';
+import {context as practiceContext, engineFixture, environment, memoryRepository, workspace} from './fixtures/practice-session.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -62,4 +63,20 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
   assert.equal(profiles.practiceRegistry.list().length, 2);
+});
+
+test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map', async () => {
+  const guards = compile<typeof import('../src/practice/guards.ts')>('../src/practice/guards.ts');
+  const drafts = compile<typeof import('../src/practice/drafts.ts')>('../src/practice/drafts.ts', {'./guards.ts': guards});
+  const protocol = compile<typeof import('../src/practice/protocol.ts')>('../src/practice/protocol.ts', {'./guards.ts': guards, './contracts.ts': {PRACTICE_PROTOCOL_VERSION: 1}});
+  const sessions = compile<typeof import('../src/practice/session-manager.ts')>('../src/practice/session-manager.ts', {'./protocol.ts': protocol});
+  const repo = memoryRepository(); const store = drafts.createDraftStore(() => repo.repository); const engines = engineFixture();
+  const manager = sessions.createPracticeSessionManager({registry: engines.registry, drafts: store,
+    bootstrap: async (ctx) => ({workspace: workspace(ctx), environment})});
+  await manager.setContext(practiceContext()); await manager.open(); manager.edit('main.sql', 'SELECT 8;');
+  await manager.setContext(practiceContext('pandas')); manager.edit('main.py', 'productos.shape');
+  await manager.dispose(); await store.close();
+  assert.equal(repo.records.size, 2); assert.equal(engines.calls.active, 0);
+  assert.equal(repo.records.get(workspace().id)!.workspace.files[0].content, 'SELECT 8;');
+  assert.equal(repo.records.get(workspace(practiceContext('pandas')).id)!.workspace.files[0].content, 'productos.shape');
 });

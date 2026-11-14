@@ -1,0 +1,468 @@
+{
+  "compression": "gzip nivel 9, por archivo; no incluye cabeceras HTTP",
+  "totals": {
+    "js": {
+      "files": 29,
+      "bytes": 630063,
+      "gzipBytes": 208667
+    },
+    "css": {
+      "files": 1,
+      "bytes": 105773,
+      "gzipBytes": 21120
+    },
+    "html": {
+      "files": 11,
+      "bytes": 312070,
+      "gzipBytes": 79539
+    }
+  },
+  "pages": [
+    {
+      "html": "404.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/limit.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/order-by.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/select.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/where.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/analisis-de-datos.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/desarrollo-web.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "apuntes/ia.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    },
+    {
+      "html": "index.html",
+      "assets": [
+        "assets/css/styles.8ef90888.css",
+        "assets/js/main.75e20f48.js",
+        "assets/js/runtime~main.adbe2544.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 493410,
+        "gzipBytes": 156181
+      },
+      "css": {
+        "files": 1,
+        "bytes": 105773,
+        "gzipBytes": 21120
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "404.html",
+      "bytes": 10326,
+      "gzipBytes": 3027,
+      "sha256": "0da1e9162a637a318fdb027a454a46756fcb52ddd64026e7d9e9698fdec09474"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "bytes": 29537,
+      "gzipBytes": 6546,
+      "sha256": "30ec11599939424fb7b31c100157c5d728b3bebb0ea25966e8aa48935eaa045a"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "bytes": 27965,
+      "gzipBytes": 6558,
+      "sha256": "862c2c766457a7e35d59947852ea55156ff63b87f37d9e91cc137c730f8fb601"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/limit.html",
+      "bytes": 27608,
+      "gzipBytes": 6565,
+      "sha256": "c6ede70526c93bd964893daebec89e295ee0354e73dbfb9d09b126d9c7ba783d"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/order-by.html",
+      "bytes": 26076,
+      "gzipBytes": 6388,
+      "sha256": "46a84e0300e77a71084308aac82d01df25a92266f15cb773a81c763120d1130f"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/select.html",
+      "bytes": 27107,
+      "gzipBytes": 6463,
+      "sha256": "a0d066bf1462d935713c35cec1be90b1b279e5584c642372c8cded76ac1c58f9"
+    },
+    {
+      "path": "apuntes/analisis-de-datos/sql/where.html",
+      "bytes": 25868,
+      "gzipBytes": 6370,
+      "sha256": "c7da4c5d8c88854dedd2f9c973c1224625a94fca79d06b1f1655dd8242e97013"
+    },
+    {
+      "path": "apuntes/analisis-de-datos.html",
+      "bytes": 62801,
+      "gzipBytes": 16222,
+      "sha256": "d831edfd5107558ced2136575e725191e635980f28ec262820112159712f2fc7"
+    },
+    {
+      "path": "apuntes/desarrollo-web.html",
+      "bytes": 10965,
+      "gzipBytes": 3176,
+      "sha256": "d86c4de18673290f84fa7269ddee1d9164c12045ee7c5a1825a9a06487867847"
+    },
+    {
+      "path": "apuntes/ia.html",
+      "bytes": 10841,
+      "gzipBytes": 3163,
+      "sha256": "0fa00ef49c5e620338fa8c5f362667640bbb4a107f196cdaba710223d17b6013"
+    },
+    {
+      "path": "assets/css/styles.8ef90888.css",
+      "bytes": 105773,
+      "gzipBytes": 21120,
+      "sha256": "d4e9b8991f0233f9719f384dd920975c4e454a5c23cb8c3a04e9ac67965d3885"
+    },
+    {
+      "path": "assets/js/17896441.a0a7ed97.js",
+      "bytes": 1313,
+      "gzipBytes": 721,
+      "sha256": "7b8afd1fcb2cfbb95514495889c37faec604a24ea338dc132b01a80d9df5a705"
+    },
+    {
+      "path": "assets/js/17cc07e0.ea9e2a89.js",
+      "bytes": 1869,
+      "gzipBytes": 837,
+      "sha256": "7734fc180a2928231e4c41e594acaaa4a568aff754cd36afb106de0c1457293b"
+    },
+    {
+      "path": "assets/js/1df93b7f.c7e49bb2.js",
+      "bytes": 9550,
+      "gzipBytes": 3727,
+      "sha256": "75aa5561add60d74f3975e1e325ee00199946ee711bb0696c8da342e44f76664"
+    },
+    {
+      "path": "assets/js/237.6fe893a5.js",
+      "bytes": 1270,
+      "gzipBytes": 594,
+      "sha256": "67e7046c1b1211274597e48ca3dd0cd89ebe098daea69317fde3835c205a23e7"
+    },
+    {
+      "path": "assets/js/2fcc20c1.1467ade6.js",
+      "bytes": 1948,
+      "gzipBytes": 854,
+      "sha256": "0d58e20fd277cbdebd507a7f167979f0d1dc714a0954de29fec8d9b81f97d0b2"
+    },
+    {
+      "path": "assets/js/30.9c8582ac.js",
+      "bytes": 20390,
+      "gzipBytes": 9253,
+      "sha256": "31849f905365a2ef2db5d732f1322b9adcdfc971c60810afbb55abeb06f6439d"
+    },
+    {
+      "path": "assets/js/436.b782e146.js",
+      "bytes": 954,
+      "gzipBytes": 560,
+      "sha256": "4507f4627fbf79cb566d3a54d7315114f02b98fe2d2bd0f74fd91139d05a0511"
+    },
+    {
+      "path": "assets/js/456.d2d0fd25.js",
+      "bytes": 4963,
+      "gzipBytes": 2054,
+      "sha256": "dadb4a55b8d17a75ed3511e935b66279f5ecdb9fe5d38d9350f1087b19130e16"
+    },
+    {
+      "path": "assets/js/45a3eb1b.b2468081.js",
+      "bytes": 5747,
+      "gzipBytes": 2264,
+      "sha256": "ee18c184f2938fce011fe354b80a48eeee3723606820dfbe1db364c3afee2b98"
+    },
+    {
+      "path": "assets/js/4fbb0784.eb308468.js",
+      "bytes": 2049,
+      "gzipBytes": 918,
+      "sha256": "c0ae0b2b0bd1a361380163f998a8b35b31bd5436c0e45afcdda4eb924fc1990d"
+    },
+    {
+      "path": "assets/js/5e95c892.6d7ed4b1.js",
+      "bytes": 337,
+      "gzipBytes": 262,
+      "sha256": "83e9543a1cb0babe197d6102769b5fb15665b096d306d7b0ffd470a53e9460a1"
+    },
+    {
+      "path": "assets/js/822.83c131e8.js",
+      "bytes": 26880,
+      "gzipBytes": 8528,
+      "sha256": "71c1147198beb5682bae7317a78f544c11916b5679755d233f775b44908b6e7e"
+    },
+    {
+      "path": "assets/js/a4b81164.c478b237.js",
+      "bytes": 2012,
+      "gzipBytes": 873,
+      "sha256": "d9603bc87b0ed29852a89615c05aebcc65cec139127d9532a385174ca47d9970"
+    },
+    {
+      "path": "assets/js/a6aa3733.571a25e1.js",
+      "bytes": 1942,
+      "gzipBytes": 846,
+      "sha256": "2073e8edd6308ce548f3e06bb16bed9088a4bd91e7082823de8d87e1b55a6326"
+    },
+    {
+      "path": "assets/js/a7456010.16e8f2de.js",
+      "bytes": 174,
+      "gzipBytes": 162,
+      "sha256": "b3a406069e46d01f4d703093c95daa7fd9273c07f93e600b8f08cf9c769a748d"
+    },
+    {
+      "path": "assets/js/a7bd4aaa.a34a8619.js",
+      "bytes": 1023,
+      "gzipBytes": 535,
+      "sha256": "fbc0f4b0c884265d41648b079e35c1d8a1a13cab2557e7c75043d7a05bdeac04"
+    },
+    {
+      "path": "assets/js/a94703ab.960bcb21.js",
+      "bytes": 11833,
+      "gzipBytes": 4322,
+      "sha256": "e33c45d824bb1c8a0d8e11b0d3d563cd5285aeeee40df24daf1a77e5da5730ac"
+    },
+    {
+      "path": "assets/js/aba21aa0.87c13d5a.js",
+      "bytes": 173,
+      "gzipBytes": 159,
+      "sha256": "59777076e40c65d29e9c69244633aa9e13e0a07b88bc4a9518349c7c3261a54e"
+    },
+    {
+      "path": "assets/js/common.f1883485.js",
+      "bytes": 16359,
+      "gzipBytes": 5911,
+      "sha256": "18761e27ae388c4d157316982119428de3cc9d1a824cab035c19d0bbc2a844dd"
+    },
+    {
+      "path": "assets/js/d6599612.b483be02.js",
+      "bytes": 5831,
+      "gzipBytes": 2277,
+      "sha256": "de624a1c9e2f4b31e80feaa5da6148f40df6329da45251d113e85faebf569444"
+    },
+    {
+      "path": "assets/js/de13dea7.f1e64d60.js",
+      "bytes": 6994,
+      "gzipBytes": 1201,
+      "sha256": "0ac4d4578da4099640bf868b9a2da7e0089bcbf2f6a1bf5dd23469f712e58e24"
+    },
+    {
+      "path": "assets/js/eeb6511b.e66eb948.js",
+      "bytes": 1987,
+      "gzipBytes": 867,
+      "sha256": "428ed899f067fc92d5581f455472bbd29e64702a68e8097368440dd851d3545c"
+    },
+    {
+      "path": "assets/js/fdabc4f8.353368df.js",
+      "bytes": 5642,
+      "gzipBytes": 2259,
+      "sha256": "98d0546895600472aa92627591edb207403d7854e60c719e528b22b86ea7def2"
+    },
+    {
+      "path": "assets/js/main.75e20f48.js",
+      "bytes": 488713,
+      "gzipBytes": 153835,
+      "sha256": "c599ca9f48a9e9793395bd0af21c317e147c6a0fe33fe1ecfdf745531d311e4a"
+    },
+    {
+      "path": "assets/js/notes-data-products.1386ebf4.js",
+      "bytes": 395,
+      "gzipBytes": 246,
+      "sha256": "86c66a08f613ef84e555eaed5916f48c2ee78749a421f1f13a99e1f05d4731bc"
+    },
+    {
+      "path": "assets/js/notes-pandas.e6e987c7.js",
+      "bytes": 653,
+      "gzipBytes": 419,
+      "sha256": "47a20812c60dc3df04d408e7a6042725eb4d7a9184fd9e9d1d6d0b6ed03aaa70"
+    },
+    {
+      "path": "assets/js/notes-sql.a26b9d78.js",
+      "bytes": 3006,
+      "gzipBytes": 1169,
+      "sha256": "213bd0e5bef8a4b96706114a988445c4c259d963d48a9084a114ba67af8d00ec"
+    },
+    {
+      "path": "assets/js/runtime~main.adbe2544.js",
+      "bytes": 4697,
+      "gzipBytes": 2346,
+      "sha256": "2fad57c553d11b7df496ee242a942f6d76c8492eaa4168373c36a1bbab5666c9"
+    },
+    {
+      "path": "assets/js/search-index.84f1ccc3.js",
+      "bytes": 1359,
+      "gzipBytes": 668,
+      "sha256": "16d7e43f8f0e23622d09845ec9f969180be76d96d71e1d39a46e8d609971c392"
+    },
+    {
+      "path": "index.html",
+      "bytes": 52976,
+      "gzipBytes": 15061,
+      "sha256": "2dcaf3a7e6c0cfe7504b6425622ed8760f9f78c730d7bb023248002967fbb6d1"
+    }
+  ]
+}

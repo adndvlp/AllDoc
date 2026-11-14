@@ -250,6 +250,21 @@ Los materializadores generan JSON y esquema para Python, y un plan de sentencias
 con parámetros para SQLite. Cada preparación recibe sus propios bytes y esquema.
 Precio permanece entero y no se añade una columna `id` a los ejemplos existentes.
 La portada no carga los cuerpos ni el chunk de filas compartidas.
+
+La base de práctica está en `src/practice/`: el gestor de sesiones separa
+contextos y ejecuciones; `drafts.ts` conserva archivos y revisiones en memoria,
+y `indexeddb-drafts.ts` los persiste en la base `alldoc-practice`. Agrupa las
+escrituras durante 300 ms y permite `flush()` al cambiar de contexto o desmontar.
+Un conflicto entre pestañas deja una copia recuperable; un fallo de guardado
+mantiene el texto en memoria. No guarda resultados ni el estado interno del motor.
+El editor visible se integra en el punto 4 del [SDD de práctica](specs/practice-sdd.md).
+Las pruebas del gestor usan adaptadores de prueba; todavía no habilitan motores
+reales. Para comprobar solo IndexedDB en navegador:
+
+```sh
+npm run test:ui -- tests/ui/practice-storage.spec.ts --project=celular --project=laptop
+```
+
 La página SELECT incluye el formato mínimo de referencia. SELECT y FROM se
 explican juntos: una variante muestra todas las columnas y otra, varias columnas
 concretas. Los ejemplos usan la tabla productos, con nombre, categoría y precio.

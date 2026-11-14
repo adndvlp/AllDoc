@@ -424,7 +424,8 @@ materializadores y ficha pandas; todavía no hay panel o motores del navegador.
 | `src/practice/registry.ts` | Registro extensible, defaults por herramienta y carga explícita de fábricas |
 | `src/practice/context.ts` | Resolver concepto → herramienta/perfil usando IDs canónicos |
 | `src/practice/protocol.ts` y `guards.ts` | Validación de eventos y respuestas de completado en las fronteras del contrato |
-| `src/practice/workspace-store.ts` | Borradores, revisiones, generación, estado del panel y fallos de almacenamiento |
+| `src/practice/drafts.ts` | Validación, copias inmutables, revisiones, guardado agrupado y respaldo en memoria |
+| `src/practice/indexeddb-drafts.ts` | IndexedDB versionado, comparación atómica de revisiones y copias ante conflictos |
 | `src/practice/session-manager.ts` | Ciclo de vida, cancelación, temporizadores y descarte de respuestas obsoletas |
 | `src/practice/datasets/` | Manifiestos, fuente tipada de productos y materializadores SQL/Python |
 | `src/practice/adapters/sqlite/` | Adaptador y Worker SQLite reales |
@@ -520,7 +521,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 y 2 están completados; los demás permanecen pendientes. Su orden valida
+Los puntos 1 a 3 están completados; los demás permanecen pendientes. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -528,7 +529,7 @@ a todos los motores de la sección 3.2.
 | --- | --- | --- |
 | 1 | Registrar referencia actual y escribir contratos, perfiles y resolución de contexto | Completado con TDD: [evidencia](verification/practice-point-1.md), 76 pruebas, tipos, build y assets sin cambios |
 | 2 | Definir dataset común y miniapunte pandas | Completado con TDD: [evidencia](verification/practice-point-2.md), 84 pruebas de código, pandas nativo, 302 de UI y capturas revisadas |
-| 3 | Implementar gestor y borradores con adaptadores de prueba | Apertura, contexto, revisiones, persistencia y respuestas tardías verificadas |
+| 3 | Implementar gestor y borradores con adaptadores de prueba | Completado con TDD: [evidencia](verification/practice-point-3.md), 111 pruebas de código, tipos, build y cuatro pruebas con IndexedDB real |
 | 4 | Integrar panel y CodeMirror responsive | Apertura desde fichas, colapso, navegación, foco, scroll y temas revisados |
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Consultas, selección, datos, errores, sugerencias de esquema y cancelación |
 | 6 | Implementar adaptador Pyodide/pandas y completado real | DataFrame del miniapunte, ejecución libre, datos equivalentes y cambio SQL ↔ pandas |
@@ -569,6 +570,33 @@ Dos recorridos UI registrados terminaron con 302 aprobadas, seis omisiones
 previstas y cero fallos o resultados inestables. Se revisaron las 14 vistas nuevas
 y diez cambios de catálogo/menú, conservando 102 referencias. La portada no
 carga cuerpos ni filas compartidas. [Evidencia roja/verde y límites](verification/practice-point-2.md).
+
+### Registro del punto 3
+
+Se implementó el gestor independiente de React, editor y motores. Distingue la
+intención de apertura del contexto visible; mantiene la sesión entre conceptos
+de la misma herramienta y recupera borradores distintos al cambiar de herramienta.
+Abrir, editar o navegar no ejecuta código. Cada ejecución captura una revisión
+inmutable; generación, run y revisión descartan resultados obsoletos.
+
+Hay un solo motor activo. Se cancelan las operaciones anteriores, se dispone el
+motor antes de crear otro y se bloquea la creación si no puede confirmarse su
+liberación. Colapsar permite retenerlo 60 segundos. Timeout, cancelación, errores
+de protocolo y límites de salida terminan con un solo evento de fin. Reiniciar
+conserva el código; sugerencias y esquemas tardíos no reemplazan el contexto nuevo.
+
+Los borradores se actualizan en memoria inmediatamente y se guardan con debounce
+de 300 ms en IndexedDB `alldoc-practice`, versión 1. Se validan archivos y claves,
+se limita el código a 1 MiB UTF-8 y se conserva el archivo activo. El guardado
+compara revisiones atómicamente: una segunda pestaña conserva una copia recuperable
+en vez de sobrescribir la ganadora. Un fallo conserva el borrador en memoria.
+
+Pasaron 111 pruebas de código, ambos chequeos de tipos, build y auditoría de once
+páginas. Cuatro pruebas en Chromium, con proyectos celular y laptop, comprobaron
+IndexedDB real, persistencia, conflictos y respaldo en memoria. No se actualizaron
+referencias visuales. Los adaptadores de ejecución son dobles exclusivos de las
+pruebas y los perfiles publicados siguen pendientes. El panel y CodeMirror son
+el punto 4; los motores reales siguen en los puntos 5 y 6.
 
 ## 16. Fuentes y decisiones documentadas
 
