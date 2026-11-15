@@ -1,0 +1,68 @@
+{
+  "point": 3,
+  "reviewedAt": "2026-11-15T05:13:28.035Z",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "scope": "Doce capturas de diagnóstico de APP-03/APP-06; no son referencias visuales nuevas ni comparación de píxeles.",
+  "images": [
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-escritorio-adaptacion-200.png",
+      "sha256": "cb01be436759fdc78ab17baec7149f6c9e90f4d9f0ad33f4c5df38e3122b4da9",
+      "review": "Texto al 200% legible; la captura conserva selección nativa de texto después del arrastre. Se registra como diagnóstico, sin aprobar una referencia visual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-escritorio-dialogos-y-contexto.png",
+      "sha256": "f661cd1f3711243badb80ada6a697363f6d7f30db694b73147dc743717c33b19",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-estrecho-adaptacion-200.png",
+      "sha256": "0f27e3e808a3de1d1b24121f6282576ebeaa96e9777ca3ad3487df712a773681",
+      "review": "Texto al 200% en horizontal: código legible con scroll vertical del panel; la cabecera queda fuera de esta captura al enfocar código. El caso comprueba acceso al cierre."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-estrecho-dialogos-y-contexto.png",
+      "sha256": "f661cd1f3711243badb80ada6a697363f6d7f30db694b73147dc743717c33b19",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-tableta-adaptacion-200.png",
+      "sha256": "a39a7ea567be7e9e0f1d5c9af17d05da1d24250beb292ed5e2ffd19a3c69982e",
+      "review": "Texto al 200%: código y controles legibles, sin solapamientos."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/review-images/firefox-tableta-dialogos-y-contexto.png",
+      "sha256": "f661cd1f3711243badb80ada6a697363f6d7f30db694b73147dc743717c33b19",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-escritorio-adaptacion-200.png",
+      "sha256": "de66df917816c4c07989ce26da7574bd1949a08ad170b9ebd910de51b4957069",
+      "review": "Texto al 200%: código y controles legibles, sin solapamientos."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-escritorio-dialogos-y-contexto.png",
+      "sha256": "852de869a563f522b813c8a752bc4721ab7ea812346228a46e6034ac4e39c045",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-estrecho-adaptacion-200.png",
+      "sha256": "c37d454683af4b9a75891faef77411bb3a18718cda6d6221f6b9ec508e8fb049",
+      "review": "Texto al 200% en horizontal: código legible con scroll vertical del panel; la cabecera queda fuera de esta captura al enfocar código. El caso comprueba acceso al cierre."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-estrecho-dialogos-y-contexto.png",
+      "sha256": "058c7ada80b8d688c493d7db37315669751843bf5a7c6f97f6fd3527f5586a64",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-tableta-adaptacion-200.png",
+      "sha256": "52374dce5a530efb9d722138a53b11217d93be740bfb432b8898952286a0b931",
+      "review": "Texto al 200%: código y controles legibles, sin solapamientos."
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590/review-images/webkit-tableta-dialogos-y-contexto.png",
+      "sha256": "058c7ada80b8d688c493d7db37315669751843bf5a7c6f97f6fd3527f5586a64",
+      "review": "Después del cambio de disposición: apunte y práctica visibles a 1280×800, contexto conservado, sin capa modal residual."
+    }
+  ]
+}

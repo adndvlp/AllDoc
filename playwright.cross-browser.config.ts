@@ -24,7 +24,7 @@ export default defineConfig({
   use: {baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173',
     headless: true, locale: 'es-MX', colorScheme: 'dark', reducedMotion: 'reduce',
     trace: 'retain-on-failure', screenshot: 'only-on-failure'},
-  projects: browserProjects(),
-  metadata: {stage: 'desktop-practice', preflight: 'npm run test:browser:preflight',
-    coverage: 'Punto 2: editor, sugerencias y ejecución SQL/pandas en escritorio. Los tamaños restantes corresponden al punto 3.'},
+  projects: browserProjects().map(p => ({...p, ...(p.name.endsWith('-escritorio') ? {} : {grepInvert: /@desktop/})})),
+  metadata: {stage: 'functional-matrix', preflight: 'npm run test:browser:preflight',
+    coverage: 'Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.'},
 });

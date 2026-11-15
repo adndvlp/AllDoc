@@ -1,0 +1,10 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/results.json",
+  "project": "webkit-tableta",
+  "case": "APP-05",
+  "reason": "La traza confirma la expansión del último grupo después de medir scrollHeight: altura 0 en 4671.893 ms, 140 en 4694.541 ms y auto en 4703.538 ms. El scroll se calculó antes de estabilizarse el contenido.",
+  "evidence": "artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/trace.zip:1-trace.trace",
+  "productBug": false
+}

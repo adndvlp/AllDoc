@@ -1,0 +1,58 @@
+{
+  "point": 3,
+  "phase": "GREEN",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-49-06-819Z-a4baa35590/verification.json",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "stable": true,
+  "cases": [
+    {
+      "project": "firefox-estrecho",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 26013
+    },
+    {
+      "project": "firefox-tableta",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 25558
+    },
+    {
+      "project": "firefox-escritorio",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 30290
+    },
+    {
+      "project": "webkit-estrecho",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 19932
+    },
+    {
+      "project": "webkit-tableta",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 19013
+    },
+    {
+      "project": "webkit-escritorio",
+      "id": "PY-07",
+      "status": "passed",
+      "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+      "file": "practice-state.spec.ts",
+      "durationMs": 17837
+    }
+  ],
+  "note": "Se compara el código canónico inicial contra los bytes de IndexedDB. Mantiene las comprobaciones de datos mutados, recuperación, recarga y foco. No cambia código del producto."
+}

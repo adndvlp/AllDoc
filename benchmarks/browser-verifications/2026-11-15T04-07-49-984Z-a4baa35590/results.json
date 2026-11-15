@@ -1,0 +1,325 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.cross-browser.config.ts",
+      "--project=webkit-tableta",
+      "--grep=APP-05"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.cross-browser.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "functional-matrix",
+      "preflight": "npm run test:browser:preflight",
+      "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60827",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-progress.mjs",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "application.spec.ts",
+      "file": "application.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "scroll-input",
+                  "description": "DOM scrollBy + overscroll-behavior; Playwright no admite rueda en WebKit móvil. No acredita física de gestos."
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9527,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 7000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 7000ms exceeded while waiting on the predicate\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts:112:7",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts",
+                      "column": 7,
+                      "line": 112
+                    },
+                    "snippet": " \u001b[90m 110 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m(resolve\u001b[33m=>\u001b[39mrequestAnimationFrame(()\u001b[33m=>\u001b[39mrequestAnimationFrame(()\u001b[33m=>\u001b[39mresolve())))\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m     \u001b[36mreturn\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mabs(el\u001b[33m.\u001b[39mscrollHeight\u001b[33m-\u001b[39mel\u001b[33m.\u001b[39mclientHeight\u001b[33m-\u001b[39mel\u001b[33m.\u001b[39mscrollTop)\u001b[33m<=\u001b[39m\u001b[35m1\u001b[39m \u001b[33m&&\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mabs(el\u001b[33m.\u001b[39mscrollTop\u001b[33m-\u001b[39mbefore\u001b[33m.\u001b[39mtop)\u001b[33m<\u001b[39m\u001b[35m.5\u001b[39m \u001b[33m&&\u001b[39m el\u001b[33m.\u001b[39mscrollHeight\u001b[33m===\u001b[39mbefore\u001b[33m.\u001b[39mheight\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 112 |\u001b[39m   }))\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 113 |\u001b[39m   expect(\u001b[36mawait\u001b[39m reader(page)\u001b[33m.\u001b[39mevaluate(el\u001b[33m=>\u001b[39mel\u001b[33m.\u001b[39mscrollTop))\u001b[33m.\u001b[39mtoBe(initial)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m   \u001b[36mif\u001b[39m(compact) \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m'Escape'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 115 |\u001b[39m   \u001b[36mconst\u001b[39m sidebarPosition\u001b[33m=\u001b[39m\u001b[36mawait\u001b[39m side\u001b[33m.\u001b[39mevaluate(el\u001b[33m=>\u001b[39mel\u001b[33m.\u001b[39mscrollTop)\u001b[33m,\u001b[39m navbar\u001b[33m=\u001b[39m\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.navbar'\u001b[39m)\u001b[33m.\u001b[39mboundingBox()\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts",
+                        "column": 7,
+                        "line": 112
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 7000ms exceeded while waiting on the predicate\n\n  110 |     await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));\n  111 |     return Math.abs(el.scrollHeight-el.clientHeight-el.scrollTop)<=1 && Math.abs(el.scrollTop-before.top)<.5 && el.scrollHeight===before.height;\n> 112 |   })).toBe(true);\n      |       ^\n  113 |   expect(await reader(page).evaluate(el=>el.scrollTop)).toBe(initial);\n  114 |   if(compact) await page.keyboard.press('Escape');\n  115 |   const sidebarPosition=await side.evaluate(el=>el.scrollTop), navbar=await page.locator('.navbar').boundingBox();\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts:112:7"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T04:08:04.839Z",
+                  "annotations": [
+                    {
+                      "type": "scroll-input",
+                      "description": "DOM scrollBy + overscroll-behavior; Playwright no admite rueda en WebKit móvil. No acredita física de gestos."
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts",
+                    "column": 7,
+                    "line": 112
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-afcd86a548144c60eed3",
+          "file": "application.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-15T04:08:04.417Z",
+    "duration": 10656.193000000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

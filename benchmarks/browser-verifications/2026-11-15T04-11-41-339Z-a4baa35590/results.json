@@ -1,0 +1,287 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.cross-browser.config.ts",
+      "--project=webkit-tableta",
+      "--grep=APP-05"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.cross-browser.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "functional-matrix",
+      "preflight": "npm run test:browser:preflight",
+      "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 1
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60875",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-progress.mjs",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-11-41-339Z-a4baa35590/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "application.spec.ts",
+      "file": "application.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "scroll-input",
+                  "description": "DOM scrollBy + overscroll-behavior; Playwright no admite rueda en WebKit móvil. No acredita física de gestos."
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4085,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T04:11:57.617Z",
+                  "annotations": [
+                    {
+                      "type": "scroll-input",
+                      "description": "DOM scrollBy + overscroll-behavior; Playwright no admite rueda en WebKit móvil. No acredita física de gestos."
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "dimensiones-sidebar",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjEzMjQsImhlaWdodCI6MTY2NywiY2xpZW50IjozNDMsInJlbWFpbmluZyI6MCwiZHJpZnQiOjAsImhlaWdodFN0YWJsZSI6dHJ1ZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-afcd86a548144c60eed3",
+          "file": "application.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T04:11:57.216Z",
+    "duration": 5102.32,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

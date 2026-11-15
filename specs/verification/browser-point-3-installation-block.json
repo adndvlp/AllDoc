@@ -1,0 +1,9 @@
+{
+  "point": 3,
+  "status": "incomplete",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-29-29-084Z-a4baa35590/verification.json",
+  "cause": "Faltan los ejecutables Firefox/WebKit correspondientes a Playwright 1.65.1. El preflight detuvo el proceso antes del build y de los casos.",
+  "freeBytes": 1425408000,
+  "next": "npx playwright install firefox webkit && npm run test:browser",
+  "functionalRed": false
+}

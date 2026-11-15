@@ -1,0 +1,677 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.cross-browser.config.ts",
+      "--project=firefox-estrecho",
+      "--project=firefox-tableta",
+      "--project=firefox-escritorio",
+      "--project=webkit-estrecho",
+      "--project=webkit-tableta",
+      "--project=webkit-escritorio",
+      "--grep=APP-0[56]"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.cross-browser.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "functional-matrix",
+      "preflight": "npm run test:browser:preflight",
+      "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-escritorio"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "functional-matrix",
+          "preflight": "npm run test:browser:preflight",
+          "coverage": "Punto 3: matriz funcional de seis proyectos. Los casos @desktop se excluyen antes de ejecutar en los otros tamaños.",
+          "actualWorkers": 2
+        },
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:60472",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-progress.mjs",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "application.spec.ts",
+      "file": "application.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30359,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts",
+                        "column": 36,
+                        "line": 108
+                      },
+                      "message": "Error: locator.evaluate: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Temas del área', exact: true }).locator('.navbar-sidebar__item')\u001b[22m\n\n\n  106 |   expect(await reader(page).evaluate(el=>el.scrollTop)).toBe(initial);\n  107 |   if(compact) await page.keyboard.press('Escape');\n> 108 |   const sidebarPosition=await side.evaluate(el=>el.scrollTop), navbar=await page.locator('.navbar').boundingBox();\n      |                                    ^\n  109 |   for(const bottom of [true,false]) {\n  110 |     await reader(page).evaluate((el,bottom)=>{el.scrollTop=bottom?el.scrollHeight:0;},bottom);\n  111 |     const position=await reader(page).evaluate(el=>el.scrollTop);\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser/application.spec.ts:108:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T04:00:51.604Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-estrecho/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-estrecho/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-estrecho/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "interrupted",
+                  "duration": 25497,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T04:00:59.737Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-tableta/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-tableta/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-tableta/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-28436c3af1a08bc0593d",
+          "file": "application.spec.ts",
+          "line": 95,
+          "column": 1
+        },
+        {
+          "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 2146
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 125
+                    }
+                  ],
+                  "startTime": "2026-11-15T04:00:51.604Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "adaptacion-200",
+                      "contentType": "image/png",
+                      "body": "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u2TVbmbNd7/CGm93lru+Mnu+Dbm5h+XMm5j7iL91OuMDq9NtT3d53Ev/50K7p2GD3S7+ybJqNnSv81vfFrZi0Qx3XzwwLZ0+3Ko26WKDr+/kwnNcpzPetzrd9ooeQ2D65whMZQeBCQAghQpMTZs2tRtuuMHNVfr444/tyy+/tJycHHv00Ufd/UOGDLG7774799FhJTUkr0JWVdv0jkWWUaGizfrhSRv7/EnRNiTKqKCxS9FVrzwFpoZbn2ptj/qf2y8NQZwyoF/uXq5N4WrNypzoekhpCUyHHnqoNW/e3F544QWbObNk5kutz8DktT32aWu4xXHu8qT3rrKpA27IvSdFgX/j6ye47/mc316z0Y8fGt3n5dnON/vYtM9ud5fjgWnyB9dai72uXet7oSptz5unu+rhvD/etsa9TycwrQMEprKDwAQAkEIFprp161qvXr3sm2++cUFJKlasaP/7X6oBXtoqTNVbb2bd+6QWLtDwtNk/P+suF1V5CUwZFTJto6tHuOF2qlL9ekUTW718cbSfxVVaAtPTTz9tm2yyiR122GE2bNiwaPvWp5IITDXbbWtdL/javd6cX1+x0U8cnvvqKc12v8Ja7psaJjX66WNszsDnc+/5W0ZWFdu0/zw3B0lVoj9u6Opujwemwf26WI+rhlv2tGE25MZu7jbxIXv6l/dZRsVMa7ztGestMHXr1s2aNGliS5cute+//95q1aplm2++uZs7I3/88YcNHDjQZs0qeEiqOmZatWplq1evti+++MLdpkVqVBFv3bq1u67V6d577z2bPn26u55OQ0033nhj69y5s3Xq1Mn97mlhmz///NP++uuv6HH50XxPzfXccMMNbdGiRfbLL7+4fVixYkW+iz5kZWXZlltu6S6PGTPGpk6dmntPXltssYVVqlTJZsyYYSNH5q0MptN8U21H+/bt3X916tRxz6t90Xu0cuXK6LGi90/vo6f9OOaY1JDSfv36rTWHKTs723744YfoepK2bdu6bdD7WaNGDbcAkN5TvS+rVq2KHpcfHef6t0ideHqOOXPm2LRp09xrF3ZBIX2mGjXh6f0LfaYEJgCAFCowJSnNgalO932s0/+967Zz6ie32qS3L8vd6qIpL4Ep/n4UquJWSASm9VthqlS3pfXslxqGt2TiLza0f95FIrqc/5XVar+du/zr5U2i4XbptCBE7dyVDn+7qpXlzJuUJzANvKCadT73c7fC3h83bWhLpw5N/d05n1ntTjvZn3f2tgabHb1eA9Ntt91me+65p2vEn3TSSfbUU0+5ABW3cOFCu+CCC+ynn/If1tqnTx87/vjjXTDp2bOn7bbbbnbrrbe6IBKn+/Vav/32W3Sb1K5d2w1B3n777aPb4l5++WX3fL7zKInm/Fx77bVrvaYCwmmnnWZfffWVu54UmOrVq2dff50KyjfffLM9//zaQVj0HPXr17c333zTrrrq7/lo6RR+NEJAQSOJws/111/vhll7J554ol100UXR9YJMmjTJfX5J9G/FWWedZaeeeupa81/l119/dZ+ZgkuIvgtabMIH6CQK2npvC6LPdr/99ouuv/POO3bFFVdE1+MITAAAKZeBSUth97gm1eOqhQ0GX9PW1qzO24NaGOUlMDXZ8QJrffCdbp9GPXGEzf315dw9/GdKOjDttNNOrnE1f/78aBskvwrT7rvvbt9++62bd7culUSFScvad7vwO/d6Wu591KMH5r56iqqGVRt1dAuS/HJJvej2dK0Pvc+abH+2uzz0ts1tyYSBawWmRr1Pt9YH32VTBtxgk9+7yrJqNbGeN0y2nAXT7PerW1mbwx4okcCkYb+LFy92FYDvvvvO9fyrKrTtttta9erVXcg5++yz3X0h8cB00EEH2UsvveT+VmFMVYhq1aq5RWwUTM4888wonIgqW6+99po1a9bMXddw40GDBlmVKlVcxUt/J6p4qeKiKla6o48+2i6//HJ3WRUQbasqWQpvqtToO9q1a6rSt74D04477mj9+/e3qlWruusKhwptOoa0L927d3fVmoceesgeeOCB3L8y22677dwiP56qZaq4iSpS6ceT9lOhN8l9993ntkMUrH788Uf3OWsBIb0fMm/ePDv88MMTq2kawqhjXI/XIiiqJg0ePNhtg4biqnKl59F3Rb8BBSEwAQCKqlwGJs1J2vDywVatWWohgiWTB9vUj260+cM+LNJQtHhg0vmEVizKfzjQ5A+uWeucQ+ty0QdVI2Z+/1h0e5JVS+fbpHdSjTVPS6s32eFcd3nYPTvYolGp3u1/qiQDkxpG6gletmyZ3XPPPa5R6xurSYFJjagrr7zSDVt6/PHHC7XsfVHEA9PiCYNs6dQhufesLWfhNJv87pXRdSlMhcmFlO1Sqzemr3In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sObNm7tG+6RJk2zcuHH2888/2+TJk9fJbqyLz2mLLbawjTfeOLqe5Pfff7effvopul5WHHDAAbbPPvvYE088Yd9//31Z2ewClYfjAwCAsm69B6bWrVu7hnBcRkaG+0+VofTq0Kmnnhpdzs+6aECuDyW9XeUhMN1yyy22ePFiu+KKK6LAdPTRR7tK1FNPPZX7zpZOCn8KgaIKn8JS48aNXUNX15955hn74Ycf8mx8cfZtXXyvDjnkENtzzz0Tjzvvo48+stdeey26XlaoU2bvvfe2J5980r799tuystkF0vco6fgAAAAlZ70HpiQHHnig6w2+//777bfffotuL4p10YBcH0p6u8p6YJKqVau6IYUaluepAqWhSOecc050W2mz1VZb2SmnnGIzZ860F154wUaMGBENi1TV6eSTT7Y6deq4qsd3330XbX5x9m1dfK98YLr77rttyJAh0e3lRa1atWzhwoXlZXciSccHAAAoOQSmdWxdNGyLojwEpiTFCRUlqVWrVnbllVe6eVc33XRT4tC7Ro0a2Q033GAzZsywq6++OqrqFGffCvpeaT5fmzZtbN68eTZnzpzo9rjyHpgAAADWh1IXmNSbqgpUx44dXYNz9uzZbj7I66+/nqf32DcgL7jgAuvevbvttttu7vHjx4+3P/74wz7//PNCLYLQoEEDN5xngw02cD3UU6ZMsYEDB9qnn36aZ9hSUbcrvWHbvn17N4dE26rG7Z9//uleR/8vjNq1a9uOO+5oG264oTVp0sQN/XrnnXdcgz1pDpMa5Nttt517vbZt29rEiRPdnKEvvvgiz8T40PYm0XvVu3dv95yamzZy5EgbOnSoff3112sN8dJQTD1W26tFKfRYvVdbbrllnjlMouAxa9Ys+9///me77767e0yzZs2sQoUKURDRfdOmTXOXtR3bbrutde7c2c0b0ufw119/2Zdffpln33bZZRfbZptt3DAtbbMqQvqMzzvvvOgxxaUKqb4Pzz//vPuuhegx3bp1c8Pv9P/89k0VKe3PrbfeakceeaR778aMGWMPPvhggZ9TvXr17LbbbrMPPvjAvc9JihOYdtppJ9tss81cQNTrTpgwwT2/qmqi77I+P30Gr776qhueuMkmm7ghh/47rnlR6TbaaCP3+bRo0cItXKLvp4YuJs0/0rGz+eabW5cuXdznp21QZVrfZU+f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"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-e3e1ca868276721c3511",
+          "file": "application.spec.ts",
+          "line": 122,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-15T04:00:51.138Z",
+    "duration": 35396.81,
+    "expected": 1,
+    "skipped": 10,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

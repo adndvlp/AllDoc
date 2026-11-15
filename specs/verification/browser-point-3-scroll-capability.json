@@ -1,0 +1,7 @@
+{
+  "point": 3,
+  "source": "node_modules/playwright-core/lib/coreBundle.js",
+  "playwright": "1.65.1",
+  "excerpt": "ync wheel(progress2, x, y, buttons, modifiers, deltaX, deltaY) {\n        if (this._page?.browserContext._options.isMobile)\n          throw new Error(\"Mouse wheel is not supported in mobile WebKit\");\n        await progress2.race(this._session.send(\"Page.updateScrollingState\"));\n        await this._page.mainFra",
+  "decision": "En WebKit móvil se comprueba scrollBy real del DOM, invariantes de regiones y overscroll-behavior:none; el informe anota esta condición. Los otros proyectos comprueban rueda nativa. Toque de controles se prueba con touchscreen.tap. No se afirma prueba física de gestos."
+}

@@ -7,19 +7,20 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {firefox, webkit} from '@playwright/test';
 import config from '../playwright.cross-browser.config.ts';
-import {parseDesktopRunArgs, assessDesktopRun, beforeBrowserWork} from './lib/browser-run.ts';
-import {preflightBrowsers, selectBrowserProjects} from './lib/browser-foundation.ts';
+import {parseBrowserRunArgs, assessBrowserRun, effectiveBrowserProjects, beforeBrowserWork} from './lib/browser-run.ts';
+import {preflightBrowsers} from './lib/browser-foundation.ts';
 import {sourceFingerprint, filesUnder, sha256, serveBuild, inventoryBuild} from './lib/baseline.ts';
 import {auditPublishedBuild} from './lib/final-verification.ts';
 import {buildRuntime} from './build-practice-runtime.mjs';
 import {createRuntimeHandler} from './lib/runtime-http.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const cli = ['node_modules/@playwright/test/cli.js', 'test', '--config=playwright.cross-browser.config.ts', 'practice-desktop.spec.ts'];
+const cli = ['node_modules/@playwright/test/cli.js', 'test', '--config=playwright.cross-browser.config.ts'];
 let options;
-try {options = parseDesktopRunArgs(process.argv.slice(2));}
+try {options = parseBrowserRunArgs(process.argv.slice(2));}
 catch (error) {console.error(error.message); process.exitCode = 1;}
 if (options) {
+  if (options.desktop || options.smoke) cli.push('practice-desktop.spec.ts');
   const filters = options.projects.map(name => '--project=' + name);
   const grep = options.smoke ? (options.grep ? '(?=.*@smoke)(?=.*(?:' + options.grep + '))' : '@smoke') : options.grep;
   if (grep) filters.push('--grep=' + grep);
@@ -35,9 +36,9 @@ async function verify(options, filters) {
   const startedAt = new Date().toISOString(), source = await sourceFingerprint(root);
   const output = path.join(root, 'benchmarks/browser-verifications', startedAt.replace(/[:.]/g, '-') + '-' + source.sha256.slice(0, 10));
   await mkdir(output, {recursive: true});
-  const report = {schemaVersion: 1, point: 2, status: 'partial', startedAt, source, options,
-    scope: 'Escritorio: editor, sugerencias y ejecución real SQL/pandas. La matriz restante y las referencias visuales son puntos posteriores.',
-    projects: selectBrowserProjects(options.projects).map(p => ({...p, use: {...config.use, ...p.use}})),
+  const report = {schemaVersion: 1, point: 3, status: 'partial', startedAt, source, options,
+    scope: options.desktop ? 'Comprobación histórica de práctica de escritorio.' : 'Matriz funcional Firefox/WebKit. Las referencias visuales y aceptación consolidada corresponden a los puntos 4 y 5.',
+    projects: effectiveBrowserProjects(options.projects, config.use, config.use.baseURL),
     environment: {node: process.version, platform: platform(), release: release(), arch: arch(), cpu: cpus()[0]?.model},
     packages: {}, tooling: [], snapshots: [], checks: {}, failure: null};
   try {report.commitBase = execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']}).trim();} catch {report.commitBase = null;}
@@ -84,6 +85,7 @@ async function verify(options, filters) {
       setHandler = value => {handler = value;};
     }
     report.origins = {appOrigin, runtimeOrigin};
+    report.projects = effectiveBrowserProjects(options.projects, config.use, appOrigin);
     await phase('01-build-app', async () => {
       const code = await command('01-build-app', ['node_modules/@docusaurus/core/bin/docusaurus.mjs', 'build', '--out-dir', site],
         {PRACTICE_ORIGIN: runtimeOrigin, DOCUSAURUS_GENERATED_FILES_DIR_NAME: '.docusaurus-browser-verification'});
@@ -102,14 +104,14 @@ async function verify(options, filters) {
       stage = '03-casos'; console.log(stage);
       report.exitCode = await command(stage, [...cli, ...filters], {PLAYWRIGHT_BASE_URL: appOrigin, BROWSER_REPORT_DIR: output}, true);
       const raw = JSON.parse(await readFile(path.join(output, 'results.json'), 'utf8'));
-      report.assessment = assessDesktopRun(raw, options);
+      report.assessment = assessBrowserRun(raw, options);
       if (report.exitCode || report.assessment.status === 'incomplete') throw new Error(report.assessment.reasons[0] ?? 'Playwright terminó con código ' + report.exitCode);
       report.checks[stage] = {status: 'passed'};
     }
     stage = 'invariantes'; const after = await hashes();
     report.stable = source.sha256 === (await sourceFingerprint(root)).sha256 && JSON.stringify(after.tooling) === JSON.stringify(report.tooling) && JSON.stringify(after.snapshots) === JSON.stringify(report.snapshots);
     if (!report.stable) throw new Error('La fuente, herramientas o referencias cambiaron durante la ejecución');
-    report.status = options.buildOnly ? 'build-only-complete' : options.grep ? 'subset-ready-for-review' : options.smoke ? 'smoke-ready-for-review' : 'desktop-ready-for-review';
+    report.status = options.buildOnly ? 'build-only-complete' : options.grep ? 'subset-ready-for-review' : options.smoke ? 'smoke-ready-for-review' : options.desktop ? 'desktop-ready-for-review' : 'matrix-ready-for-review';
   }
   try {
     if (options.buildOnly) await buildAndTest();
@@ -129,12 +131,16 @@ async function verify(options, filters) {
     process.off('SIGINT', signal); process.off('SIGTERM', signal);
     report.finishedAt = new Date().toISOString(); await json('verification.json', report);
     const cases = report.assessment?.cases ?? [];
-    const lines = ['# Firefox/WebKit — práctica en escritorio', '', `Estado: **${report.status}**.`, '', report.scope, '',
+    const lines = ['# Firefox/WebKit — matriz funcional', '', `Estado: **${report.status}**.`, '', report.scope, '',
       `Fuente: \`${source.sha256}\`. Playwright: ${report.packages['@playwright/test']}.`, '',
       '| Proyecto | Caso | Estado | Duración ms |', '| --- | --- | --- | ---: |',
       ...cases.map(c => `| ${c.project} | ${c.id} | ${c.status} | ${c.durationMs} |`), '',
       'Casos originales: results.json. Configuración, invariantes y versiones: [verification.json](verification.json).', '',
-      'Las capturas adjuntas son diagnóstico, sin crear ni actualizar referencias. La revisión y aceptación del punto 2 se registran aparte.'];
+      'Las capturas adjuntas son diagnóstico, sin crear ni actualizar referencias. La revisión del punto 3 se registra aparte.'];
+    if (report.assessment) lines.push('', '## Evidencia por requisito', '',
+      'Se contrasta con el catálogo completo. Los casos no seleccionados permanecen incompletos; un filtro no acredita la matriz.', '',
+      '| Proyecto | Requisito | Estado | Casos aprobados / requeridos |', '| --- | --- | --- | --- |',
+      ...report.assessment.coverage.map(c => `| ${c.project} | ${c.requirement} | ${c.status} | ${c.passedCases.length} / ${c.requiredCases.length} |`));
     if (options.buildOnly) lines.push('', 'Solo build: no abrió navegadores ni servidores; no acredita compatibilidad funcional.');
     if (report.failure) lines.push('', 'Fallo en ' + report.failure.stage + ': ' + report.failure.message.split('\n')[0]);
     await writeFile(path.join(output, 'README.md'), lines.join('\n') + '\n');

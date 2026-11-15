@@ -1,0 +1,29 @@
+{
+  "point": 3,
+  "phase": "GREEN",
+  "recordedAt": "2026-11-15T05:13:28.054Z",
+  "native": {
+    "command": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
+    "passed": 231,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "d0f9e27872fe1da2d1969d87d96726a7fda16f2e45d1d498c1759d1afc72c3a4"
+  },
+  "types": {
+    "app": {
+      "status": "passed",
+      "logSha256": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1"
+    },
+    "tests": {
+      "status": "passed",
+      "logSha256": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902"
+    }
+  },
+  "ui": {
+    "status": "passed",
+    "cases": 168,
+    "projects": 6,
+    "provenance": "browser-point-3-consolidation-review.json"
+  },
+  "productCodeChanged": false
+}

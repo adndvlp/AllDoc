@@ -1,8 +1,9 @@
 # Compatibilidad Firefox/WebKit
 
-El punto 1 prepara la matriz y comprueba el arranque. El punto 2 añade diez
-casos de práctica por motor en escritorio. Su aprobación requiere resultados
-reales; descubrir los casos o compilar no acredita compatibilidad.
+El punto 1 prepara la matriz y comprueba el arranque. El punto 2 verifica la
+práctica de escritorio. El punto 3 amplía la cobertura funcional a seis proyectos:
+Firefox/WebKit estrecho, tableta y escritorio. Descubrir casos o compilar no
+acredita su ejecución real.
 
 ```sh
 npm run test:browser:smoke
@@ -10,9 +11,13 @@ npm run test:browser
 ```
 
 El primer comando ejecuta cuatro casos: filtro SQL y pandas en Firefox y WebKit.
-El segundo ejecuta veinte: apertura sin ejecución automática, editor y resaltado,
-escritura/deshacer/rehacer/Tab, completado SQL/Jedi/columnas, selección, error y
-recuperación, y permiso de Ctrl+Enter mientras se prepara el motor.
+El segundo descubre 168 casos aplicables: 24 por proyecto estrecho/tableta y 36
+por proyecto de escritorio. Incluye navegación, búsqueda, foco y diálogos,
+preferencias, borradores, acciones explícitas, sesiones vivas, resultados,
+aislamiento, adaptación y scroll. Los casos `@desktop` concentran cancelación,
+timeout y fallos de carga/almacenamiento; se excluyen antes de ejecutar en otros
+tamaños, sin tests omitidos. El catálogo en `scripts/lib/browser-cases.ts`
+identifica archivo, alcance y requisitos CB-01 a CB-20 de cada caso.
 
 Para repetir únicamente el caso afectado, sin reconstruir por cada motor:
 
@@ -21,8 +26,9 @@ npm run test:browser -- --project=webkit-escritorio --grep=PY-03
 ```
 
 `--list` descubre los casos sin abrir motores ni servidores. `--build-only`
-comprueba únicamente app, runtime y rutas publicadas. Los tamaños estrecho y
-tableta, y las referencias visuales, corresponden a los puntos 3 y 4 del
+comprueba únicamente app, runtime y rutas publicadas. `--desktop` conserva el
+recorrido histórico de veinte casos del punto 2. Las referencias visuales y la
+aceptación consolidada corresponden a los puntos 4 y 5 del
 [SDD](../../specs/browser-compatibility-sdd.md).
 
 El comando dedicado comprueba primero los motores seleccionados y no descarga
@@ -38,3 +44,7 @@ diagnóstico: estos comandos no crean ni actualizan referencias visuales.
 
 Las pruebas usan roles y teclado de Playwright, sin CDP, motores simulados,
 resultados preparados, reintentos ni omisiones para aprobar el recorrido.
+En WebKit móvil, Playwright no admite `mouse.wheel`: se comprueba `scrollBy`
+real del DOM, contención CSS e independencia de las regiones. El informe anota
+esa condición; no acredita la física de un gesto. Los controles configurados
+para toque utilizan `tap`. Los otros proyectos comprueban rueda nativa.

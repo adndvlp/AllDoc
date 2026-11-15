@@ -1,0 +1,9 @@
+{
+  "point": 3,
+  "status": "incomplete",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/verification.json",
+  "cause": "ENOSPC al guardar la traza durante browserContext.close, después de la ejecución del caso PY-03. No cuenta como fallo funcional de TDD.",
+  "cleanup": "specs/verification/browser-point-3-disk-cleanup.json",
+  "next": "Liberar espacio fuera de los artefactos conservados y ejecutar npm run test:browser.",
+  "productCodeChanged": false
+}

@@ -1,11 +1,12 @@
 import {test, expect} from '@playwright/test';
+import {caseTitle} from '../../scripts/lib/browser-cases';
 import {profiles, panel, code, runButton, openPractice, ready, fillCode, expectCode, execute, completion, expectNoExecution, showResults, capture} from './practice-helpers';
 
 for (const profile of profiles) {
   test.describe(profile.label, () => {
     test.setTimeout(profile.id === 'PY' ? 120_000 : 45_000);
 
-    test(`[${profile.id}-01] @smoke editor diferido y filtro real con columnas y números correctos`, async ({page}, info) => {
+    test(caseTitle(profile.id + '-01'), async ({page}, info) => {
       const requests: string[] = []; page.on('request', request => requests.push(request.url()));
       await page.goto(profile.route, {waitUntil: 'networkidle'});
       expect(requests.filter(url => /\.wasm(?:\?|$)|\.whl(?:\?|$)|\/frame\.html/.test(url))).toHaveLength(0);
@@ -21,7 +22,7 @@ for (const profile of profiles) {
       await capture(page, info, profile.id + '-resultado-real');
     });
 
-    test(`[${profile.id}-02] editor real: resaltado, escritura, deshacer, rehacer y Tab para salir`, async ({page}) => {
+    test(caseTitle(profile.id + '-02'), async ({page}) => {
       await openPractice(page, profile);
       await test.step('Sintaxis visible y distinta del texto corriente', async () => {
         const keyword = panel(page).locator('.cm-line span').filter({hasText: new RegExp('^' + profile.keyword + '$')}).first();
@@ -38,9 +39,13 @@ for (const profile of profiles) {
       await code(page, profile).press('Escape'); await code(page, profile).press('Tab');
       await expect(code(page, profile)).not.toBeFocused();
       await expectNoExecution(page);
+      await fillCode(page, profile, profile.query);
+      await code(page, profile).press('ControlOrMeta+Enter'); await showResults(page);
+      await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
+      await expect(panel(page).getByRole('table')).toContainText('3500');
     });
 
-    test(`[${profile.id}-03] sugerencias reales e inserción exacta sin ejecutar el documento`, async ({page}, info) => {
+    test(caseTitle(profile.id + '-03'), async ({page}, info) => {
       await openPractice(page, profile);
       const examples = profile.id === 'SQL' ? [
         {source: 'SEL', label: 'SELECT', expected: 'SELECT'},
@@ -61,7 +66,7 @@ for (const profile of profiles) {
       });
     });
 
-    test(`[${profile.id}-04] selección de código, error con ubicación y recuperación posterior`, async ({page}) => {
+    test(caseTitle(profile.id + '-04'), async ({page}) => {
       await openPractice(page, profile);
       const selected = profile.id === 'SQL' ? 'SELECT 42 AS respuesta;' : 'productos.head(1)';
       const invalid = profile.id === 'SQL' ? 'SELECT * FROM no_existe;' : 'raise ValueError("error real")';
@@ -80,7 +85,7 @@ for (const profile of profiles) {
       await expect(panel(page).getByRole('table')).toContainText('3500');
     });
 
-    test(`[${profile.id}-05] Ctrl+Enter durante la preparación no deja una ejecución pendiente`, async ({page}) => {
+    test(caseTitle(profile.id + '-05'), async ({page}) => {
       let release!: () => void; const gate = new Promise<void>(resolve => {release = resolve;}); let requested = false;
       await page.route('**/frame.html', async route => {requested = true; await gate; await route.continue();});
       try {

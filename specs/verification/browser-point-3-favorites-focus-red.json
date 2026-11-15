@@ -1,0 +1,14 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590/results.json",
+  "project": "webkit-estrecho",
+  "case": "APP-04",
+  "productBug": false,
+  "reason": "El handler de Collection transfiere el foco solo si el botón eliminado era document.activeElement. La prueba activaba mediante click sin establecer foco; WebKit lo conservó fuera del botón.",
+  "sources": [
+    "src/components/PersonalShortcuts/index.tsx:27",
+    "tests/ui/personal-library.spec.ts:53"
+  ],
+  "fix": "Comprobar eliminación mediante tap/click y, por separado, eliminación del botón enfocado mediante Enter, con la misma expectativa de retorno al buscador."
+}

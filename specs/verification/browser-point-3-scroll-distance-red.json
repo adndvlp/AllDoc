@@ -1,0 +1,9 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/results.json",
+  "project": "webkit-tableta",
+  "case": "APP-05",
+  "reason": "La espera exige el extremo final pero el delta fijo de 2000 px no cubre toda la altura en WebKit tableta. Se utilizará la altura real del scroller; no cambia el criterio ni el timeout.",
+  "productBug": false
+}

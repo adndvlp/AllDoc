@@ -1,0 +1,37 @@
+{
+  "reviewedAt": "2026-11-15T04:57:02.911Z",
+  "scope": "Diagnóstico de APP-06. No genera referencias visuales ni aprueba la matriz completa.",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "images": [
+    {
+      "path": "review-images/firefox-escritorio-adaptacion-200.png",
+      "sha256": "14a84b29343afcdff0fcbb0404cc4c105956f9023a41f171713bfa236a8f1426",
+      "review": "Código, pestañas y controles visibles con texto al 200%, sin solapamientos."
+    },
+    {
+      "path": "review-images/firefox-estrecho-adaptacion-200.png",
+      "sha256": "0f27e3e808a3de1d1b24121f6282576ebeaa96e9777ca3ad3487df712a773681",
+      "review": "Código ampliado legible en horizontal; el panel tiene desplazamiento vertical y la cabecera queda fuera de esta captura al enfocar código. APP-06 comprueba acceso al cierre antes y después."
+    },
+    {
+      "path": "review-images/firefox-tableta-adaptacion-200.png",
+      "sha256": "a39a7ea567be7e9e0f1d5c9af17d05da1d24250beb292ed5e2ffd19a3c69982e",
+      "review": "Código, pestañas y controles visibles con texto al 200%, sin solapamientos."
+    },
+    {
+      "path": "review-images/webkit-escritorio-adaptacion-200.png",
+      "sha256": "de66df917816c4c07989ce26da7574bd1949a08ad170b9ebd910de51b4957069",
+      "review": "Código, pestañas y controles visibles con texto al 200%, sin solapamientos."
+    },
+    {
+      "path": "review-images/webkit-estrecho-adaptacion-200.png",
+      "sha256": "c37d454683af4b9a75891faef77411bb3a18718cda6d6221f6b9ec508e8fb049",
+      "review": "Código ampliado legible en horizontal; el panel tiene desplazamiento vertical y la cabecera queda fuera de esta captura al enfocar código. APP-06 comprueba acceso al cierre antes y después."
+    },
+    {
+      "path": "review-images/webkit-tableta-adaptacion-200.png",
+      "sha256": "52374dce5a530efb9d722138a53b11217d93be740bfb432b8898952286a0b931",
+      "review": "Código, pestañas y controles visibles con texto al 200%, sin solapamientos."
+    }
+  ]
+}

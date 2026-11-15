@@ -1,0 +1,3032 @@
+{
+  "point": 3,
+  "status": "ready-for-review",
+  "kind": "consolidated-evidence",
+  "recordedAt": "2026-11-15T05:09:22.922Z",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "inputs": [
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T04-51-29-570Z-a4baa35590",
+      "report": "dd2e854156adbb102216817176443b861abaf70bb4fee4a516924b83d54aaa7d",
+      "results": "41d6aaf196339b73891dad2d2ef6e66955c4100bc7ed71d90e761e1063924bde",
+      "status": "partial",
+      "selectedCases": 81
+    },
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T04-59-35-262Z-a4baa35590",
+      "report": "e983cb5a04132b396a8493cf6a91c56a1b1ff4a97335769704de2505f977aa7f",
+      "results": "00cf9c76c6005bb0947365d5e315dd7e33bcaa0264e061bb79640ecabc22c929",
+      "status": "subset-ready-for-review",
+      "selectedCases": 3
+    },
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T05-03-30-810Z-a4baa35590",
+      "report": "5c74911923e3268592c44b7b5f4830f2ec7ea2f98caed728f3a03a3abf97c84f",
+      "results": "54663ff7dc4abe173f9b045f5b9a81470fdcf6f3dd03e83570585b822b95b0ae",
+      "status": "matrix-ready-for-review",
+      "selectedCases": 84
+    }
+  ],
+  "compatibility": {
+    "sameSource": true,
+    "samePackages": true,
+    "sameEnvironment": true,
+    "sameSnapshots": true,
+    "effectiveProjects": true,
+    "browserVersions": [
+      {
+        "engine": "firefox",
+        "version": "159.0"
+      },
+      {
+        "engine": "webkit",
+        "version": "27.2"
+      }
+    ]
+  },
+  "reviewedToolingChange": {
+    "status": "reviewed",
+    "affectedCases": [
+      "APP-04"
+    ],
+    "beforeHash": "d9a544015bfa858f97c394f16e8f36c407ac71bfebd85764d32f5ec9478ebd25",
+    "afterHash": "e24b2abf21033b055c9f22896b3775298ff16d14bee8bbeafdfa0f3ef9eaa40e",
+    "beforeUnchangedHash": "c15b2f85cdacbae4f0c0bfa3e911b631c9cc0eae82a76731006b7049791eedf1",
+    "afterUnchangedHash": "c15b2f85cdacbae4f0c0bfa3e911b631c9cc0eae82a76731006b7049791eedf1",
+    "archivedSource": "specs/verification/browser-point-3-application-before-focus.txt",
+    "provenance": "Reconstrucción del archivo anterior al revertir la corrección conocida; SHA-256 idéntico al registrado previamente.",
+    "note": "Solo cambia APP-04. Sus seis casos nuevos pasaron; se utilizan los tres de Firefox y los de WebKit se toman de la ejecución WebKit completa."
+  },
+  "assessment": {
+    "status": "passed",
+    "reasons": [],
+    "cases": [
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 3556
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 3400
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 3201
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 2418
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 1394
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 1390
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 2154
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 2197
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 2277
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3270
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3901
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3308
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1670
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1625
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1585
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 3211
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 3247
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 3779
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 4115
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 2988
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-01",
+        "status": "passed",
+        "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+        "file": "application.spec.ts",
+        "durationMs": 2712
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 2852
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 1425
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-02",
+        "status": "passed",
+        "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+        "file": "application.spec.ts",
+        "durationMs": 1382
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 2067
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 1851
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-03",
+        "status": "passed",
+        "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+        "file": "application.spec.ts",
+        "durationMs": 1917
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 2311
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 2307
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-04",
+        "status": "passed",
+        "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+        "file": "application.spec.ts",
+        "durationMs": 2308
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 2989
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3108
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3550
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1628
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1515
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1880
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2379
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2212
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2515
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1833
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1730
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1929
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2322
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2473
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2443
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2116
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2400
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2334
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-05",
+        "status": "passed",
+        "title": "[SQL-05] @desktop SQL: atajo durante preparación sin ejecución pendiente",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1594
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13570
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 14025
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 14490
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13466
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13324
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13404
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 12693
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13195
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13858
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 12709
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13565
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13878
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-05",
+        "status": "passed",
+        "title": "[PY-05] @desktop pandas: atajo durante preparación sin ejecución pendiente",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 12651
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2147
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2130
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-01",
+        "status": "passed",
+        "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2506
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1577
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1802
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-02",
+        "status": "passed",
+        "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2128
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2141
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2260
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-03",
+        "status": "passed",
+        "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2561
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1994
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2142
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-04",
+        "status": "passed",
+        "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 2534
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-05",
+        "status": "passed",
+        "title": "[SQL-05] @desktop SQL: atajo durante preparación sin ejecución pendiente",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 1808
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 9503
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 10926
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-01",
+        "status": "passed",
+        "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 11247
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 9222
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 10158
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-02",
+        "status": "passed",
+        "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 10541
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 9874
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 11823
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-03",
+        "status": "passed",
+        "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13902
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 10432
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 11060
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-04",
+        "status": "passed",
+        "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13433
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-05",
+        "status": "passed",
+        "title": "[PY-05] @desktop pandas: atajo durante preparación sin ejecución pendiente",
+        "file": "practice-desktop.spec.ts",
+        "durationMs": 13636
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 27312
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 26466
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 28060
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 2481
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 1928
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 1895
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 18998
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 24203
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "FLOW-01",
+        "status": "passed",
+        "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 22128
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 1715
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 3088
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "FLOW-02",
+        "status": "passed",
+        "title": "[FLOW-02] editor y tabla desplazan solo su región",
+        "file": "practice-flow.spec.ts",
+        "durationMs": 2222
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2422
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2733
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2328
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3957
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3837
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3829
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1477
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1432
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1723
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1518
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1390
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1690
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 25100
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 24409
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 26260
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 25070
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 25109
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 26673
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 12078
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 12139
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 13783
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 12137
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 12227
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 12770
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2195
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2419
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-06",
+        "status": "passed",
+        "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 2299
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3465
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3931
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-07",
+        "status": "passed",
+        "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 3784
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1455
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1742
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-08",
+        "status": "passed",
+        "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1564
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1352
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1718
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-09",
+        "status": "passed",
+        "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 1500
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 18695
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 20496
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-06",
+        "status": "passed",
+        "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+        "file": "practice-state.spec.ts",
+        "durationMs": 19927
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 20786
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 20381
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-07",
+        "status": "passed",
+        "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 20738
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 11155
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 10360
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-08",
+        "status": "passed",
+        "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+        "file": "practice-state.spec.ts",
+        "durationMs": 10308
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 10609
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 9289
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-09",
+        "status": "passed",
+        "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+        "file": "practice-state.spec.ts",
+        "durationMs": 9267
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "ERR-01",
+        "status": "passed",
+        "title": "[ERR-01] @desktop carga tardía, cierre y descarga del panel fallida con reintento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 3111
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "ERR-02",
+        "status": "passed",
+        "title": "[ERR-02] @desktop IndexedDB bloqueado, memoria y reintento sin perder edición",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 2830
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-10",
+        "status": "passed",
+        "title": "[SQL-10] @desktop SQL: cancelación conserva edición y permite ejecutar después",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 1981
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-11",
+        "status": "passed",
+        "title": "[SQL-11] @desktop SQL: timeout real reinicia el motor y conserva el borrador",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 12112
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-12",
+        "status": "passed",
+        "title": "[SQL-12] @desktop SQL: salida grande acotada y aviso de truncamiento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 1799
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "SQL-13",
+        "status": "passed",
+        "title": "[SQL-13] @desktop SQL: descarga del motor fallida y reintento conserva código",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 2241
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-10",
+        "status": "passed",
+        "title": "[PY-10] @desktop pandas: cancelación conserva edición y permite ejecutar después",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 23776
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-11",
+        "status": "passed",
+        "title": "[PY-11] @desktop pandas: timeout real reinicia el motor y conserva el borrador",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 34933
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-12",
+        "status": "passed",
+        "title": "[PY-12] @desktop pandas: salida grande acotada y aviso de truncamiento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 13357
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "PY-13",
+        "status": "passed",
+        "title": "[PY-13] @desktop pandas: descarga del motor fallida y reintento conserva código",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 15220
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "ERR-01",
+        "status": "passed",
+        "title": "[ERR-01] @desktop carga tardía, cierre y descarga del panel fallida con reintento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 3524
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "ERR-02",
+        "status": "passed",
+        "title": "[ERR-02] @desktop IndexedDB bloqueado, memoria y reintento sin perder edición",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 2859
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-10",
+        "status": "passed",
+        "title": "[SQL-10] @desktop SQL: cancelación conserva edición y permite ejecutar después",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 4691
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-11",
+        "status": "passed",
+        "title": "[SQL-11] @desktop SQL: timeout real reinicia el motor y conserva el borrador",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 12153
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-12",
+        "status": "passed",
+        "title": "[SQL-12] @desktop SQL: salida grande acotada y aviso de truncamiento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 2580
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "SQL-13",
+        "status": "passed",
+        "title": "[SQL-13] @desktop SQL: descarga del motor fallida y reintento conserva código",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 2426
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-10",
+        "status": "passed",
+        "title": "[PY-10] @desktop pandas: cancelación conserva edición y permite ejecutar después",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 19497
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-11",
+        "status": "passed",
+        "title": "[PY-11] @desktop pandas: timeout real reinicia el motor y conserva el borrador",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 29494
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-12",
+        "status": "passed",
+        "title": "[PY-12] @desktop pandas: salida grande acotada y aviso de truncamiento",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 11443
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "PY-13",
+        "status": "passed",
+        "title": "[PY-13] @desktop pandas: descarga del motor fallida y reintento conserva código",
+        "file": "practice-errors.spec.ts",
+        "durationMs": 12975
+      }
+    ],
+    "coverage": [
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-14",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "passedCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-20",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "passedCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-01",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-02",
+        "status": "passed",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [
+          "APP-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-03",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-04",
+        "status": "passed",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [
+          "APP-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-05",
+        "status": "passed",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [
+          "APP-03"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-06",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-07",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "passedCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-08",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-09",
+        "status": "passed",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-10",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-11",
+        "status": "passed",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-12",
+        "status": "passed",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [
+          "FLOW-01"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-13",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-14",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "passedCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-15",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "passedCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-16",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-17",
+        "status": "passed",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-19",
+        "status": "passed",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "passedCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-20",
+        "status": "passed",
+        "requiredCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "passedCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "missingCases": []
+      }
+    ]
+  },
+  "verifier": {
+    "path": "specs/verification/browser-point-3-consolidate.mjs",
+    "sha256": "7b0a7de750435545363365b2f75898bbc5639161928e4ea7d7fab4ed24a82f10"
+  }
+}

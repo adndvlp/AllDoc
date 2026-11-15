@@ -1,0 +1,14 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/results.json",
+  "project": "firefox-escritorio",
+  "case": "APP-05",
+  "observed": {
+    "before": 1068.199951171875,
+    "after": 1206.699951171875
+  },
+  "source": "node_modules/playwright-core/types/types.d.ts:22552",
+  "reason": "mouse.wheel no espera el fin del scroll. La prueba guardaba una posición intermedia tras esperar solo scrollTop>0; falta esperar el extremo final estable antes de medir independencia.",
+  "productBug": "not-established"
+}

@@ -1,0 +1,11 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-44-02-459Z-a4baa35590/results.json",
+  "project": "firefox-estrecho",
+  "case": "PY-07",
+  "failure": "savedCode esperaba igualdad estricta con el texto capturado mediante innerText del editor inicial.",
+  "reason": "La referencia de bytes debe ser el código inicial del contrato, no una serialización visual del DOM. El helper descartaba los valores y solo devolvía false.",
+  "fix": "Comparar exactamente el código canónico y devolver el contenido leído de IndexedDB para conservar la diferencia en futuros errores.",
+  "productBug": "not-established"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "ready",
+  "projects": [
+    "webkit-estrecho",
+    "webkit-tableta",
+    "webkit-escritorio"
+  ],
+  "engines": [
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "durationMs": 322.455167,
+      "version": "27.2"
+    }
+  ],
+  "diagnostic": null
+}

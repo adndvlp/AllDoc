@@ -1,0 +1,9 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/results.json",
+  "project": "firefox-estrecho",
+  "case": "APP-05",
+  "productBug": false,
+  "reason": "El locator getByRole dialog excluye nodos ocultos. Tras cerrar el menú, la medición de su scroll esperaba un rol visible inexistente hasta el timeout. La geometría del menú cerrado debe leerse mediante un selector DOM estable."
+}

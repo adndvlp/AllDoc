@@ -1,0 +1,11 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/results.json",
+  "project": "firefox-estrecho",
+  "case": "FLOW-02",
+  "productBug": false,
+  "reason": "Infima aplica display:block;overflow:auto al table. El scroll pertenece al table interior, no necesariamente al region exterior.",
+  "source": "node_modules/infima/dist/css/default/default.css:1175",
+  "fix": "Comprobar el elemento que realmente desborda, conservando el contenedor acotado, contención CSS y posición de lector/página."
+}

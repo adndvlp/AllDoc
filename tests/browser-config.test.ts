@@ -5,7 +5,7 @@ import cross from '../playwright.cross-browser.config.ts';
 import {browserProjects} from '../scripts/lib/browser-foundation.ts';
 
 test('configuración dedicada: seis proyectos, idioma/tema y referencias independientes, sin arranque pesado automático', () => {
-  assert.deepEqual(cross.projects, browserProjects());
+  assert.deepEqual(cross.projects?.map(({name, use}) => ({name, use})), browserProjects());
   assert.equal(cross.testDir, './tests/cross-browser');
   assert.equal(cross.globalSetup, undefined); assert.equal(cross.webServer, undefined);
   assert.notEqual(cross.outputDir, legacy.outputDir);

@@ -1,0 +1,9 @@
+{
+  "point": 3,
+  "phase": "RED",
+  "report": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/results.json",
+  "case": "APP-06",
+  "project": "firefox-estrecho",
+  "productBug": false,
+  "reason": "La prueba comparó la anchura del documento de CodeMirror con el viewport. La línea puede ser más ancha dentro de un scroller limitado; debe caber el editor sin desbordar la página."
+}

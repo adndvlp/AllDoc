@@ -63,3 +63,23 @@ export async function capture(page: Page, info: TestInfo, name: string) {
   await page.evaluate(() => document.fonts.ready);
   await info.attach(name, {body: await page.screenshot({animations: 'disabled', caret: 'hide'}), contentType: 'image/png'});
 }
+export async function codeAction(page: Page, name: string) {
+  await panel(page).getByRole('button', {name: 'Opciones de código', exact: true}).click();
+  await page.getByRole('region', {name: 'Opciones de código', exact: true}).getByRole('button', {name, exact: true}).click();
+}
+export async function searchTo(page: Page, query: string) {
+  await panel(page).getByRole('button', {name: 'Buscar un concepto', exact: true}).click();
+  const dialog=page.getByRole('dialog', {name: 'Buscar en tus apuntes', exact: true});
+  await dialog.getByRole('searchbox').fill(query);
+  await dialog.getByRole('link').filter({hasText: query}).first().click();
+}
+export async function savedCode(page: Page, profile: Profile, content: string) {
+  const tool=profile.id==='SQL'?'sql':'pandas', engine=profile.id==='SQL'?'sql-sqlite':'python-pandas';
+  await expect.poll(()=>page.evaluate(async ({tool,engine})=>{
+    const db=await new Promise<IDBDatabase>((resolve,reject)=>{const request=indexedDB.open('alldoc-practice',1); request.onsuccess=()=>resolve(request.result); request.onerror=()=>reject(request.error);});
+    try {return await new Promise<string|undefined>((resolve,reject)=>{
+      const request=db.transaction('drafts').objectStore('drafts').get(JSON.stringify(['analisis-de-datos/'+tool,engine,'productos-basico',1]));
+      request.onsuccess=()=>resolve(request.result?.workspace.files[0].content); request.onerror=()=>reject(request.error);
+    });} finally {db.close();}
+  },{tool,engine})).toBe(content);
+}

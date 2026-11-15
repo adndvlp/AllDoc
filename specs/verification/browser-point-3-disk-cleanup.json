@@ -1,0 +1,221 @@
+{
+  "recordedAt": "2026-11-15T04:26:41.759Z",
+  "reason": "ENOSPC al cerrar contexto y guardar traza de la ejecución 2026-11-15T04-22-50-034Z-a4baa35590.",
+  "cacheRemoved": "node_modules/.cache",
+  "cacheBytes": 203231551,
+  "deduplicatedBytes": 45181651,
+  "deduplicated": [
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/data/001622992663c091d96b8aa6e1983fb473f9eba4.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/artifacts/application--APP-06-texto--07287--px-y-cambio-de-disposición-firefox-estrecho/trace.zip",
+      "sha256": "dcc9bdcbf7ba58252705cf6abe2fc5be2b77ebf01ca7514b5eb504a0c6b2d8c0",
+      "bytes": 3865719
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/data/11737adc16780db1a51f0a2dfb8f2e0080ddeeb8.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-estrecho/trace.zip",
+      "sha256": "015bb21c6f8b4c684242c6a6c106fc731e9a610ab041b615a39b8245a3a226e6",
+      "bytes": 1494661
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/data/d7457a29b66a463d8b11fb866ece0a60608588a2.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-estrecho/trace.zip",
+      "sha256": "e3222f0aab1f0b01fef97427f41ace2576bdc69eebe3a8153e9092fb818f1d14",
+      "bytes": 2951692
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/data/f8a2d559f0c33167b6856df2b33a69bbf02d457f.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-tableta/trace.zip",
+      "sha256": "0c46d7bdb6cedd3bdc2d4930ac593755280709f98062baeb243f58bd9ac95baa",
+      "bytes": 3197302
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-00-31-764Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/html/data/da94660250c222913799181fd606f4b7be5b3e62.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-firefox-escritorio/trace.zip",
+      "sha256": "ce29f8421b3df7441911e1df289d30fa5b0e0806d541d3091f0e8de0509dd972",
+      "bytes": 1065090
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-02-42-561Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/html/data/b6c94ebc52287bd3323de708b061a90e156bb4c4.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/trace.zip",
+      "sha256": "b9ce2e572691f554f7f06d2cffe445bf20280b556995ec76de2538e2b67efd59",
+      "bytes": 954521
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-05-32-656Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html/data/f9fde54a1536ee00d4a5a1858dd7fc6c143c9160.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/artifacts/application--APP-05-lector-6ebce-tremos-y-contenido-que-cabe-webkit-tableta/trace.zip",
+      "sha256": "e1e1562bee9d99c8ab7dd06af860c3e4969df85786c7ee341250901133b98906",
+      "bytes": 743426
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-07-49-984Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/data/7735c0764a1df069a7e9775854b30fc2cacb9c1b.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/artifacts/practice-flow--FLOW-01-con-fba50-edDB-y-recarga-sin-ejecutar-firefox-estrecho/trace.zip",
+      "sha256": "bc70c742b97907eb9a525016ce081d8493d4048cd2a016b62fc26773d6fd6ea5",
+      "bytes": 19799974
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/data/9960472565530cf3eb6aa3ca3ddea442aa62ad1b.zip",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/artifacts/practice-flow--FLOW-02-edi-e9e27-la-desplazan-solo-su-región-firefox-estrecho/trace.zip",
+      "sha256": "4da1380f333e361ee026642d8063f8d173392655903a47f558db834fbb7ca075",
+      "bytes": 3804412
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/data/a24ad190a369b4e242fafc7ec67e15fc3735b284.png",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/data/a24ad190a369b4e242fafc7ec67e15fc3735b284.png",
+      "sha256": "f661cd1f3711243badb80ada6a697363f6d7f30db694b73147dc743717c33b19",
+      "bytes": 110168
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-14-34-474Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/html/data/a24ad190a369b4e242fafc7ec67e15fc3735b284.png",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/data/a24ad190a369b4e242fafc7ec67e15fc3735b284.png",
+      "sha256": "f661cd1f3711243badb80ada6a697363f6d7f30db694b73147dc743717c33b19",
+      "bytes": 110168
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/codeMirrorModule-DNqxPF-E.js",
+      "sha256": "53102e1a7795f44c51b4f4172f9493d94922892a1f5cefe31edf50278e0b89cd",
+      "bytes": 307383
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/assets/defaultSettingsView-BQT9Z6FV.js",
+      "sha256": "807a114bcf1e58a0f46a931b42ae3b94b1ba049d3d6a308f869dea12e9d15034",
+      "bytes": 669380
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/defaultSettingsView.C8BeHuxd.css",
+      "sha256": "278101b68ab48ee6323a6afbf4e0e629324e10e96902a62a0875643a1bba3d94",
+      "bytes": 107270
+    },
+    {
+      "path": "benchmarks/browser-verifications/2026-11-15T04-22-50-034Z-a4baa35590/html/trace/sw.bundle.js",
+      "identicalTo": "benchmarks/browser-verifications/2026-11-15T03-54-17-452Z-a4baa35590/html/trace/sw.bundle.js",
+      "sha256": "f2a3172345fbf372075d51204139002fe80dc573714a5c7508b581c049f94aca",
+      "bytes": 96720
+    }
+  ],
+  "freeBytes": 630784000,
+  "note": "Solo caché regenerable y enlaces duros entre artefactos idénticos de este punto. Todos los resultados, trazas y capturas conservan sus rutas y bytes. No se alteraron dependencias, código, referencias, .runtime-build ni servidor personal."
+}

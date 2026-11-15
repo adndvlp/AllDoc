@@ -1,0 +1,3536 @@
+{
+  "schemaVersion": 1,
+  "point": 3,
+  "status": "partial",
+  "startedAt": "2026-11-15T04:05:32.656Z",
+  "source": {
+    "sha256": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+    "files": [
+      {
+        "path": "docs/analisis-de-datos/_category_.json",
+        "sha256": "6e3f5c8b1df16fc1546ef99d055eabe1ac2dbf7266140bfe71e15f88726d4e4a"
+      },
+      {
+        "path": "docs/analisis-de-datos/excel/_category_.json",
+        "sha256": "8337fd8be21fbddf8989af8cdf847259af50cf8edfe002a9d0104ab1e0cb5a22"
+      },
+      {
+        "path": "docs/analisis-de-datos/httpx/_category_.json",
+        "sha256": "5912359b7d1dba114d60a548fb33080488614caef0e7c2761212055ceb91a58b"
+      },
+      {
+        "path": "docs/analisis-de-datos/index.mdx",
+        "sha256": "899493c143ede2f929c7d0e0a46b75b2dbab2c2a4f342aa5903272f7a90f9b2f"
+      },
+      {
+        "path": "docs/analisis-de-datos/json/_category_.json",
+        "sha256": "2406a01ea2428dd59e8a76d6c872774e3a2f41c728d7b3e9a6a44d744c9a18ae"
+      },
+      {
+        "path": "docs/analisis-de-datos/matplotlib/_category_.json",
+        "sha256": "b2dcc3447e2f59428e0afdd0f8654c07afc745c10eba5ed87cffafcc3c2e5037"
+      },
+      {
+        "path": "docs/analisis-de-datos/mysql-connector-python/_category_.json",
+        "sha256": "363978c3a9ba94fcbbb6e41bd509c8b2a08302935bb2d8f00c17801d156990ec"
+      },
+      {
+        "path": "docs/analisis-de-datos/numpy/_category_.json",
+        "sha256": "609d2f6f94331ee7d416468dc794d12b07254f1bcb8eaad583c444bdacad2b4f"
+      },
+      {
+        "path": "docs/analisis-de-datos/openpyxl/_category_.json",
+        "sha256": "937b9020f5be5640361ed81fc1afbc36bd0fc2ec182ea2f7c8eacf41402a14fc"
+      },
+      {
+        "path": "docs/analisis-de-datos/pandas/_category_.json",
+        "sha256": "ed0c0c657fbb83fcae67793bba240d449f378d8113298a8260825d73b129db10"
+      },
+      {
+        "path": "docs/analisis-de-datos/pandas/dataframe.mdx",
+        "sha256": "6b9d7d93e3a89826423045eaad798e099f30606abd8bc843cc1021bab51ed6f5"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-bi/_category_.json",
+        "sha256": "a514ca89eabd9e08fc4ba3d54d7edfdc0bca16c1439dc07000e0f6cb2f75e57b"
+      },
+      {
+        "path": "docs/analisis-de-datos/power-query/_category_.json",
+        "sha256": "c947f688b5bd173d2c6918ae822291da9186cb0c05125d02535015385d13d061"
+      },
+      {
+        "path": "docs/analisis-de-datos/psycopg/_category_.json",
+        "sha256": "1b57dccf6c3a5ed630c0c33e8b34eb9aa6d5a23dfb95920de5418c8023f84c06"
+      },
+      {
+        "path": "docs/analisis-de-datos/r/_category_.json",
+        "sha256": "127744d9bb969608ed2c88618f74b5657428840863b527fe389a607ed37958da"
+      },
+      {
+        "path": "docs/analisis-de-datos/requests/_category_.json",
+        "sha256": "297e39d0d8c12dce8773669946998cc5c1006d20cd348939589284674a4484e2"
+      },
+      {
+        "path": "docs/analisis-de-datos/scipy/_category_.json",
+        "sha256": "a4a0c537ad8aff50be4a92b0943e934976774bfa2c9c12ca9150c447abf3fd8b"
+      },
+      {
+        "path": "docs/analisis-de-datos/seaborn/_category_.json",
+        "sha256": "aecede410e9fe694769594a69fee00d59618e10f468e5f683f79c607b0b3ec84"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/_category_.json",
+        "sha256": "a4996253e8dbdcef478e93b3113c70c7303da3c005ab2c022c2b33e29507578d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/comentarios.mdx",
+        "sha256": "1bce6748adf18ec905b327270bcd93487155a23c757fa90eb5d37d26e0233938"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/limit.mdx",
+        "sha256": "34af599cd1994f48f344f8c12ad2108ad0612f6d7aa16b664fd972b6250ccfd1"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/order-by.mdx",
+        "sha256": "3fc6e13a072649a0be8eab213cdaef7c23b57ff0d14c87254a6bf8e3b7c92035"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/select.mdx",
+        "sha256": "13e4f3889c6a7190c509f81e7d9b31989e8759461445d7f5fa782c19d9b1560c"
+      },
+      {
+        "path": "docs/analisis-de-datos/sql/where.mdx",
+        "sha256": "cf97b80f455c36f859edb7ee5c2472df40cdb4c9fe5123558f330bd7b46bb04d"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlalchemy/_category_.json",
+        "sha256": "89f7b1bbefa248d5062ccfdadfe510ea69e1e7ecfa51e95501842506101aae19"
+      },
+      {
+        "path": "docs/analisis-de-datos/sqlite3/_category_.json",
+        "sha256": "c2e8b1e30f6ba356c2e74fee2e2b83fcdba8d695d43c54e8b7fa55460a2872ba"
+      },
+      {
+        "path": "docs/analisis-de-datos/tableau/_category_.json",
+        "sha256": "5d9da8673ec96d43977c42e1805e61b1c66b752776ded393b979f5a22f062e7b"
+      },
+      {
+        "path": "docs/desarrollo-web/_category_.json",
+        "sha256": "5fba86694937a7557a65cb1c180dc8dbe49223a58fb84d1841485d24f9890e11"
+      },
+      {
+        "path": "docs/desarrollo-web/index.mdx",
+        "sha256": "78439987bf8ee4a8f3d06a1cd1b7b53ba2a63e5f1d69527b3c7f3c516aa5fe38"
+      },
+      {
+        "path": "docs/ia/_category_.json",
+        "sha256": "3a0f9dc8d9a7b02fc8b808aaa6b4f5b5e7e317c5cd0b65e784f6fa85cc0eac17"
+      },
+      {
+        "path": "docs/ia/index.mdx",
+        "sha256": "ee9c33acdbf16c9bb2b2c36634a27c1d72b0ae90508f62d04eea68e66521af3c"
+      },
+      {
+        "path": "docusaurus.config.ts",
+        "sha256": "588154e1300f0129ac6d592be6e40ae4a371a3ae90bf2e10835d4b56958d9690"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "80773547eb6278f03dc4077b877e85d12ee0f05acc0de4ea4bea3b1071cf3385"
+      },
+      {
+        "path": "package.json",
+        "sha256": "f7be1f1e9de3bf75a67abfd81a02901bb26831ff770c75b792fa16cd86add55c"
+      },
+      {
+        "path": "sidebars.ts",
+        "sha256": "e1c9a9e730f7765742df003387306f1b5b43595094046247c4872913e3380c6e"
+      },
+      {
+        "path": "src/components/AreaOverview/index.tsx",
+        "sha256": "3fadf5633a57192afb5326860ca224047b25abfee112a150332a90184efaaf05"
+      },
+      {
+        "path": "src/components/AreaOverview/styles.module.css",
+        "sha256": "79a9a88339168a465a00478fb0a503010e29ae6e1a251c9376ba5ad9a44cfcf2"
+      },
+      {
+        "path": "src/components/Catalog/index.tsx",
+        "sha256": "9e9621049f6909bb98f4c355632287dad105122d6452182065c708900d4c5511"
+      },
+      {
+        "path": "src/components/Catalog/styles.module.css",
+        "sha256": "5c65e61857bab4a389ea7e34715c152a689622ee05672eb9facffe1b6688246f"
+      },
+      {
+        "path": "src/components/ConceptNote/index.tsx",
+        "sha256": "a8e96c8684192f5fe0991e7fdc2f0ad6794ca4d48db0ca3fb605ce9b75cf16e2"
+      },
+      {
+        "path": "src/components/FavoriteButton/index.tsx",
+        "sha256": "3d641279510c46462d8df95936e9b2e0ce306aed709c3c10ae41ca1e7dc916b4"
+      },
+      {
+        "path": "src/components/FavoriteButton/styles.module.css",
+        "sha256": "929ea2a849d9312b57f1fe4ab39b2909a0752ef32dd4020e4a7a0567a4f83b5d"
+      },
+      {
+        "path": "src/components/HomeAreaProvider/index.tsx",
+        "sha256": "0b8b5629aba968c4327484231dad45db5e310d4a9136f47eb9d06b8b8a5f653a"
+      },
+      {
+        "path": "src/components/HomeSearch/index.tsx",
+        "sha256": "3b201c218e918b3040c12e5dbb9054e202a7db448ec5ca506e18da8cdb2a8515"
+      },
+      {
+        "path": "src/components/HomeSearch/styles.module.css",
+        "sha256": "15ac6651f86e6d4d2b4eaf3c6304208957a70ed674444df1f19cef8551fbce41"
+      },
+      {
+        "path": "src/components/Icon/index.tsx",
+        "sha256": "8359d57fe7c4e7aeffeffefe8067d56a975bfc54cf1b70a9ee0aa4db95ae0d84"
+      },
+      {
+        "path": "src/components/PaletteSelector/index.tsx",
+        "sha256": "53a08cb89c6134f6fa987519edfea31ed835969f197f514a1a6c775345313d81"
+      },
+      {
+        "path": "src/components/PaletteSelector/styles.module.css",
+        "sha256": "a0899e0c187ff4b31cf19065862176a7ce2689b625013631dfe1318789e1114c"
+      },
+      {
+        "path": "src/components/PandasNotes/index.tsx",
+        "sha256": "8e9a9e37789cb618c29b358071b134f430af5e91a9b92638050f79c995e984b5"
+      },
+      {
+        "path": "src/components/PersonalLibraryProvider/index.tsx",
+        "sha256": "59e8f8522f1746237766d0fc1fc782a8ae0c9385f3db94573e08ff23106effe5"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/index.tsx",
+        "sha256": "a574dbc79babce776f0557aebd140cdcc7625cdc1451d3961438c16f0a2d5ba8"
+      },
+      {
+        "path": "src/components/PersonalShortcuts/styles.module.css",
+        "sha256": "f5bd782828f69c525531baf72a4930bf339c87cc8e5f12c58f1ee5e2c835c188"
+      },
+      {
+        "path": "src/components/PracticeDock/index.tsx",
+        "sha256": "5a5502bb56266c5b1790bb6a0ada43e9b28295045da205a6192633d99c80cfac"
+      },
+      {
+        "path": "src/components/PracticeDock/styles.module.css",
+        "sha256": "a1fef131a1562778147ed79d77f7d67e710c757f1396a8b35baeafb737ec8a11"
+      },
+      {
+        "path": "src/components/PracticeEditor/index.tsx",
+        "sha256": "064796e451a40f6990cb77ffcd545312acabdb9a96d8ba0976f9cd4d7de837a0"
+      },
+      {
+        "path": "src/components/PracticePanel/index.tsx",
+        "sha256": "08fb9cc619249abc469904db1e9df63fed98381b51de4d50ff756e4531d8ee3f"
+      },
+      {
+        "path": "src/components/PracticePanel/styles.module.css",
+        "sha256": "36f1ef793ddab763c0c9a1d37edf42d74462fad088767b427c1d4f7d31d68890"
+      },
+      {
+        "path": "src/components/PracticeProvider/index.tsx",
+        "sha256": "5658e395946e33ae0e9dc543fd6b3f50d19b63a596740db7b0594e69d07ed911"
+      },
+      {
+        "path": "src/components/PracticeResults/index.tsx",
+        "sha256": "b13173da2511921a39d5b47b1736d5e8f51f9fee7e9206451b3dfc478ae11262"
+      },
+      {
+        "path": "src/components/SearchDialog/index.tsx",
+        "sha256": "2dadb87c0d5e5c03ae4a4edd437bba07bafaf45f601f2497648dcd818cbb443c"
+      },
+      {
+        "path": "src/components/SearchDialog/styles.module.css",
+        "sha256": "ad875499d2057f825f8432e9079cbfc83b11f8a4ab0a67ad2ef4485db31629f8"
+      },
+      {
+        "path": "src/components/SearchProvider/index.tsx",
+        "sha256": "b638b127a782776772ad4c775e48cba80bca47d89096c067ba6d2cdd4ac9b2a7"
+      },
+      {
+        "path": "src/components/SearchResults/index.tsx",
+        "sha256": "c3bade05b2c3fa551afb78bf6a97deb14914f27e34c80d404d5ebf9af963b084"
+      },
+      {
+        "path": "src/components/SearchResults/keyboard.ts",
+        "sha256": "5f6ab53a8c411a9bc8092ab2b013f2d3aa94074420d4f38afa106c32d2ba4fd7"
+      },
+      {
+        "path": "src/components/SearchResults/styles.module.css",
+        "sha256": "b898b527b40fa0ca1121fe9a8b266e3ed66175142e0482d31a25a3046b6ea243"
+      },
+      {
+        "path": "src/components/SqlNotes/index.tsx",
+        "sha256": "0c23c837dd2edcff62b2cc5a365e050e02be76dd451efe19efbc0a19ab2fd179"
+      },
+      {
+        "path": "src/components/SqlNotes/styles.module.css",
+        "sha256": "88705045bbb078ed9da07cbf966cd7ebfc4e99a179cdb04cf177b081164e1fae"
+      },
+      {
+        "path": "src/components/TopicIcon/index.tsx",
+        "sha256": "f25f4692d2075a6a1a8a06a8e892fa107b83076aef5959957d6572898bbff1cb"
+      },
+      {
+        "path": "src/components/TopicIcon/styles.module.css",
+        "sha256": "4cc8c4a740b60a336c0dd51219b5b483a2ee630167990d1f9821339dff7fcebe"
+      },
+      {
+        "path": "src/content/areas.ts",
+        "sha256": "2dff85961dddc05ba6fec118e1ee17c55f171ed9b00e29c7abdcca637d48536c"
+      },
+      {
+        "path": "src/content/catalog.ts",
+        "sha256": "19afd254e50887daa83484fc480465db22fd0ac502517a70ff7753d1f30ace18"
+      },
+      {
+        "path": "src/content/concepts.ts",
+        "sha256": "aed110603b6b3f801d2a0b6f11534c014f9e98fb6184b8f7923a1b18b5a3478c"
+      },
+      {
+        "path": "src/content/notes/pandas.ts",
+        "sha256": "7b278264faeb1832dabff608a337710d7a036ceda2df3213c061615b98c4a280"
+      },
+      {
+        "path": "src/content/notes/sql.ts",
+        "sha256": "ef27ae5e4f7d30f9b318457238587101c20e33662603c5d8c3017ec94f4d3251"
+      },
+      {
+        "path": "src/content/palettes.ts",
+        "sha256": "396239b741af4d22945b686050f0d91f4ff08ed809f985c8108f1242089a3d46"
+      },
+      {
+        "path": "src/content/search-index.ts",
+        "sha256": "77d49bd2da647e076fceadcfa755b8736b13e38216b8b76103e1db3ca90c769d"
+      },
+      {
+        "path": "src/content/search-keywords.ts",
+        "sha256": "759daf3227710c630efdfd61d049404e544324c34cda7ada76b89e60dd6a512b"
+      },
+      {
+        "path": "src/content/sql-preview.ts",
+        "sha256": "606fc2318fcc34c319b0763d88134ce78e972c64cc089a660b61963260fe64dd"
+      },
+      {
+        "path": "src/content/sql.ts",
+        "sha256": "9eab2a37f76d62cb2e702972df745dac7587b4214677b6dcd955d3f1af8f49db"
+      },
+      {
+        "path": "src/css/custom.css",
+        "sha256": "bf33e4c16412d0b4576594a5052b3b4add42c5adbb8aed607e73f2032bb8a69f"
+      },
+      {
+        "path": "src/css/palettes.css",
+        "sha256": "bf77b05d367826b40cfc54448689f766638171b0cf303c35ca401232fb98cd4c"
+      },
+      {
+        "path": "src/hooks/useHeaderDisclosure.ts",
+        "sha256": "33aa7f314d64a68a6545a4a3d1638416e431eb5097051888d4de2dc8d05b8dd6"
+      },
+      {
+        "path": "src/lib/catalog-sidebar.ts",
+        "sha256": "2de99618a278fd234b54a82a72e12ca28f0bfd48a31f926490cbbe9ffa55eb2f"
+      },
+      {
+        "path": "src/lib/concept-front-matter.ts",
+        "sha256": "395adff2a21c403f6d06c9ea5bbbf4728a63db17104b8bf2c6e3d72edc5e6d97"
+      },
+      {
+        "path": "src/lib/dialog-coordination.ts",
+        "sha256": "0f3ed8ea3b07b27995377d7757bfd11092fcdeb9048f37128269103d78349c8e"
+      },
+      {
+        "path": "src/lib/personal-library.ts",
+        "sha256": "b92e11ba721edbb7d247b3a49b50cd1756b17936e5f13b1a5fd6a4aaef318ac6"
+      },
+      {
+        "path": "src/lib/search-store.ts",
+        "sha256": "856d22474dcabc56dd76a59c4a37fecf76c140698ddabdce727fb832790d2ea5"
+      },
+      {
+        "path": "src/lib/search.ts",
+        "sha256": "9d82f42ad381a514928d11e829f865934eec92856afd0a9060c089e34ff041d0"
+      },
+      {
+        "path": "src/pages/index.module.css",
+        "sha256": "0684d97c53cb9e7bb0896bd90ef8c9fd214b441a4ccdc72f4129392277d60bc7"
+      },
+      {
+        "path": "src/pages/index.tsx",
+        "sha256": "63fc1d53f0aa5171d8eaef0fb68bbf007f4b2037d8c80aa544541d03dde15f92"
+      },
+      {
+        "path": "src/practice/adapters/python/browser.ts",
+        "sha256": "5c58b2261bbba02e2e284f85eb3cd46d75d1d43d2ee116c3bf9a605f290d8db0"
+      },
+      {
+        "path": "src/practice/adapters/python/core.ts",
+        "sha256": "963535ba9ee1028d3380300934e4b36f07a217965c36c9bb239195c5a6f9972e"
+      },
+      {
+        "path": "src/practice/adapters/python/environment.ts",
+        "sha256": "924f80bf6ed363b4e7601ec6be48cf53eb4259116aa4c02f18d8845a3c92145e"
+      },
+      {
+        "path": "src/practice/adapters/python/helpers.ts",
+        "sha256": "ee6ce718bf99a1a3ed43a573ed8bf761974184b6d5fc7b8ca54ebc471229d7a9"
+      },
+      {
+        "path": "src/practice/adapters/python/initialize.ts",
+        "sha256": "51849c3e5f1a98f94d905b9f30ae6fa4cc3a4f590eac1325b9303665573b9e18"
+      },
+      {
+        "path": "src/practice/adapters/python/packages.ts",
+        "sha256": "09d67c8683e0d8f19bb6ed14293ae7d0c0f55f482bd7fc2080a54fffeda1af3c"
+      },
+      {
+        "path": "src/practice/adapters/python/worker.ts",
+        "sha256": "4801830625866b9e094af7dafeb3970bc1fba985a8b676f24715037058dbaf4a"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/browser.ts",
+        "sha256": "acb6da72c8ce0af0c7a96459c1d6fdcd8e764b247ab5422d16c415e73654459b"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/completion.ts",
+        "sha256": "85140f5623586ad59fbac464f947e45e7a1d14cc524bc764e0f44bdfae26dadc"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/core.ts",
+        "sha256": "242225cbfc06b24077b51a8948966b26264eee6e146389d4834f428cd174a281"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/environment.ts",
+        "sha256": "9e9536fb64e77e9f3950767fb2e4dfbfcf943b8bfa18c65b42c2875fcb670ed2"
+      },
+      {
+        "path": "src/practice/adapters/sqlite/worker.ts",
+        "sha256": "405a77653a3b9ec9a408e669958c0e6aaf710eebd99b2019e6b1a59944d325c6"
+      },
+      {
+        "path": "src/practice/browser-session.ts",
+        "sha256": "85691aff194127a3347a5f95d30e18cd8ff83c9871a9eef596ad6e3a7130e3e2"
+      },
+      {
+        "path": "src/practice/context.ts",
+        "sha256": "c94730d94a6c133a45e8e419471bf00b85a0f0681ce7dbc715c845cf1238b8b3"
+      },
+      {
+        "path": "src/practice/contracts.ts",
+        "sha256": "67956d1fc24b923deca23b87821e62ec2bd2a005a3a7a10939b229cbd5880e81"
+      },
+      {
+        "path": "src/practice/datasets/index.ts",
+        "sha256": "208c7fa09530d61fde0aba04eea4a5d5b453fb39fa9dbe8b95273ab5dcea58f2"
+      },
+      {
+        "path": "src/practice/datasets/manifest.ts",
+        "sha256": "3db901f9b1c80007d5f77f50f59edd435f8e1697f6b2484aa818f948f0d10f02"
+      },
+      {
+        "path": "src/practice/datasets/materialize.ts",
+        "sha256": "987f1aa4b10afd68f7c8d938fac67b20991ad69dd8cea67a8a19bd37d72722e2"
+      },
+      {
+        "path": "src/practice/datasets/products.ts",
+        "sha256": "739a34459560648750b7ba475e82847246ce405893a4b6c0b77cb800b17c8464"
+      },
+      {
+        "path": "src/practice/datasets/rows/products.ts",
+        "sha256": "942250d78fdb9af8fb24c785eaad1c05f3b1ee9ecb906c018138911ff899761e"
+      },
+      {
+        "path": "src/practice/datasets/types.ts",
+        "sha256": "aa69669e09dbc3c778627f87a6dd15d42c51dcd3e21f30eabac3c98e419c9125"
+      },
+      {
+        "path": "src/practice/drafts.ts",
+        "sha256": "20b70ffdc8af234ae71d79a716ae6ad6311b829ae998c8f475777035f1614431"
+      },
+      {
+        "path": "src/practice/editor-bootstrap.ts",
+        "sha256": "d84be5f1e7d82709764a02ae594b0c5ce1be4dad3f0fe19057173da02250a42c"
+      },
+      {
+        "path": "src/practice/editor-completion.ts",
+        "sha256": "1d91c465cfb1d0480c5aad8344fc8e7f1cf1048978e6522f5617781b21e8c13d"
+      },
+      {
+        "path": "src/practice/editor-driver.ts",
+        "sha256": "d457edd57a98a927380b296ce50c4be408fbad94eb0cf506d6e3baf291252af2"
+      },
+      {
+        "path": "src/practice/editor-language.ts",
+        "sha256": "b168b428bacad12142c3fe704f5aae563ed42687c6ae234304244bfb2711e32c"
+      },
+      {
+        "path": "src/practice/guards.ts",
+        "sha256": "7c0f177ebf982b7c870be988a843f6940a6cc23c18e2e7c5adadbb453e4bc835"
+      },
+      {
+        "path": "src/practice/indexeddb-drafts.ts",
+        "sha256": "42aae32b7da7b19efd8c11029a391666e9c60625e9c3f4080102aa9461b247dc"
+      },
+      {
+        "path": "src/practice/interaction.ts",
+        "sha256": "b479d5d41f0d3a21596b13cf92496ab63ea02a630ec606d55dc4acae48e5238d"
+      },
+      {
+        "path": "src/practice/isolation/browser.ts",
+        "sha256": "509065472395cff08b999a5e17dba726bb3915de4e6d03bf85a22fee5a6b4f77"
+      },
+      {
+        "path": "src/practice/isolation/frame.ts",
+        "sha256": "609d162bde17db66ea89db6287e2339360ffe30cd210e3de9b37f06897b759f8"
+      },
+      {
+        "path": "src/practice/isolation/messages.ts",
+        "sha256": "f6a1971c367aeae6497a1c6ece7fcbf7acf3d2d5135e714faa8118084afc13d7"
+      },
+      {
+        "path": "src/practice/isolation/policy.ts",
+        "sha256": "336769407da6db44a2970a21119bfb29c24473298bd37d1f7e78fe236f4cdd82"
+      },
+      {
+        "path": "src/practice/layout.ts",
+        "sha256": "59746bd2abf2a5bc580579060c951ee3fadc3a7981f3d428cbc9d8629f696cd2"
+      },
+      {
+        "path": "src/practice/profiles.ts",
+        "sha256": "eb49ae1d828cfb2ab82bf050129b359de8dd846d0b7f55df8c00d6a8faa903f8"
+      },
+      {
+        "path": "src/practice/protocol.ts",
+        "sha256": "65d867df311ffcf6b706a23326ad34c26b3519e7566c449371b088ba45919703"
+      },
+      {
+        "path": "src/practice/registry.ts",
+        "sha256": "1e5d5cfce530085c1430a7734e1eceba73f8c5dcd70145cf9393c9136f27f842"
+      },
+      {
+        "path": "src/practice/session-manager.ts",
+        "sha256": "12afca17ed69007aab1177493784c293bc767d24683ba2b07e65bf006a3b516d"
+      },
+      {
+        "path": "src/practice/timing.ts",
+        "sha256": "5ed9a0eee6335bb2a870ed6f24beda932e924c975a271ea5f0f06542e4ff9f04"
+      },
+      {
+        "path": "src/theme/DocItem/Content/index.tsx",
+        "sha256": "c2c6a54d0d4a0e6af517566cc2bb1f890e997dbacac421fbad92e63cfb7caa7b"
+      },
+      {
+        "path": "src/theme/DocItem/Content/styles.module.css",
+        "sha256": "dc7d1e9a59ea8c2aae07e88ecf724e287d6a36fc65eaa731eba17cc358570b4b"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/index.tsx",
+        "sha256": "0f3cd06f8718d2513e6ec2e78b22c4a8bc321c1782d0bce92e287bc80cdb573d"
+      },
+      {
+        "path": "src/theme/DocRoot/Layout/styles.module.css",
+        "sha256": "5f6c556b059e5240eb1500cdaf6ba13479e95f5c54e2e02843b4fb1e8a7b4099"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/index.tsx",
+        "sha256": "3cccd33b24ba0ec9e5faaf432f9d2194149752ac688553de988df6ac1b3598a3"
+      },
+      {
+        "path": "src/theme/DocSidebar/Desktop/styles.module.css",
+        "sha256": "676882204ccbbc8b224a00275fd8ad666f385151384a4fe061214de6541a0223"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/index.tsx",
+        "sha256": "9365efe8b27ebd0678df1cd836cd398ee5e149fa25895583525c86e4d278203c"
+      },
+      {
+        "path": "src/theme/DocSidebarItem/Category/styles.module.css",
+        "sha256": "a434717cd832459dd8b0c2176b7c64c05dc0351e7ad49eb5ebf224698a44b15f"
+      },
+      {
+        "path": "src/theme/Navbar/Content/index.tsx",
+        "sha256": "046eb878f485cfd864aa6ba2756f9f1f1a44a71dd24037dbde26ecc3610f1709"
+      },
+      {
+        "path": "src/theme/Navbar/Content/styles.module.css",
+        "sha256": "ade84f111e682d22df4272cf50753c4949436c9525aea38a4818d67a08917ee8"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/Toggle/index.tsx",
+        "sha256": "84a93a1ebc2c918977ed628f9b4fe8bd7f19feb58f2582cf24c0e1432d8fa4fe"
+      },
+      {
+        "path": "src/theme/Navbar/MobileSidebar/index.tsx",
+        "sha256": "ea840cec26dbede9c33e7b3c4fdd51f3687d14051454f7ef6189eaefa94eb817"
+      },
+      {
+        "path": "src/theme/Navbar/Search/index.tsx",
+        "sha256": "251fea314e6e9e66a63e744720086a75430766df2a6b7cf71e66b908535cc676"
+      },
+      {
+        "path": "src/theme/Navbar/Search/styles.module.css",
+        "sha256": "62f7e1c511b8b9723a9fe4ab91ec8317f78be34eb389b4d2b269894ad9312e9a"
+      },
+      {
+        "path": "src/theme/Root.tsx",
+        "sha256": "b9144fd89c898698e4d3b0e238da3a18f18fbd3b428d983e6a319bcc4c7017bc"
+      },
+      {
+        "path": "src/theme/SearchBar/index.tsx",
+        "sha256": "d960f97359ac07a122071db1a93cd186000439518fd4ad9c3b7d180a02764f20"
+      },
+      {
+        "path": "src/theme/SearchBar/styles.module.css",
+        "sha256": "ddfaabd2103f14fae1f8ece24cda064789168495867be786d7ec31ae858db33b"
+      },
+      {
+        "path": "static/.DS_Store",
+        "sha256": "efe9fd6f9bd39e9e727e6b721f479e731027a75d5262c665050f2c24d9377a30"
+      },
+      {
+        "path": "static/img/.DS_Store",
+        "sha256": "235248fc0eef73cac6e344bbc6a8eb20e006720c778041dcb6b05e722939d4bc"
+      },
+      {
+        "path": "static/img/mark.svg",
+        "sha256": "454f157668c898c8d877b24bbfc2aad776b9eba1a46aa52f43964b83bffeecd4"
+      },
+      {
+        "path": "static/img/topics/SOURCES.md",
+        "sha256": "94807eb3185e0633119e7d78bf55a478485aecc41e69862587bfb4a9411d9bae"
+      },
+      {
+        "path": "static/img/topics/httpx.png",
+        "sha256": "32a23bbc8e2110857bc5000806d804041170a29971b71fb60849da5b910fc5fb"
+      },
+      {
+        "path": "static/img/topics/licenses/devicon.txt",
+        "sha256": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664"
+      },
+      {
+        "path": "static/img/topics/licenses/httpx.txt",
+        "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+      },
+      {
+        "path": "static/img/topics/licenses/microsoft.txt",
+        "sha256": "9bbc1ea9fe5c96df01b311a2ac864d5b18fc87b9948bfd14770e4b44db755ee9"
+      },
+      {
+        "path": "static/img/topics/licenses/requests.txt",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "static/img/topics/licenses/seaborn.txt",
+        "sha256": "357ad276e086fab501163d4e9a0ae13c2fd0647eb08d2305fbc0ca3813892601"
+      },
+      {
+        "path": "static/img/topics/matplotlib.svg",
+        "sha256": "8f54f90837d06369095f75ac559d54d547ccea006b2cca5f281edc4db7c9d107"
+      },
+      {
+        "path": "static/img/topics/openpyxl.webp",
+        "sha256": "bb6d1baaecf51bfd2325b0df00c6df85b61b3da7894fc7540414c5b180774046"
+      },
+      {
+        "path": "static/img/topics/power-bi.svg",
+        "sha256": "ddc0f9967330898ee85a96dbe32a0dfe62f9da1db293583958cf97cee24eee1e"
+      },
+      {
+        "path": "static/img/topics/power-query.svg",
+        "sha256": "0633c23cfa1d1b8e76cac13ffeebbf3b0223da96e0e61ab0dc7ca56217914f1b"
+      },
+      {
+        "path": "static/img/topics/requests.png",
+        "sha256": "dbf77ff33e977d1b5334d7d38c214a2c89d1c85074b251e4f9c5443e5b0d858f"
+      },
+      {
+        "path": "static/img/topics/seaborn.svg",
+        "sha256": "c8f8c552c7b74d37e00c3a65fce1af4caf0ccf5a30383e135722bb95829e3a72"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "1723fee437804196736bb25e482e2831c4481861cada1f37ed92df2f08d9e9c7"
+      }
+    ]
+  },
+  "options": {
+    "projects": [
+      "firefox-estrecho",
+      "firefox-tableta",
+      "firefox-escritorio",
+      "webkit-estrecho",
+      "webkit-tableta",
+      "webkit-escritorio"
+    ],
+    "smoke": false,
+    "list": false,
+    "buildOnly": false,
+    "grep": "APP-0[56]"
+  },
+  "scope": "Matriz funcional Firefox/WebKit. Las referencias visuales y aceptación consolidada corresponden a los puntos 4 y 5.",
+  "projects": [
+    {
+      "name": "firefox-estrecho",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "firefox-tableta",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "firefox-escritorio",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-estrecho",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-tableta",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-escritorio",
+      "use": {
+        "baseURL": "http://127.0.0.1:4173",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    }
+  ],
+  "environment": {
+    "node": "v26.0.0",
+    "platform": "darwin",
+    "release": "27.0.0",
+    "arch": "arm64",
+    "cpu": "Apple M1"
+  },
+  "packages": {
+    "@playwright/test": "1.65.1",
+    "@codemirror/view": "6.43.15",
+    "@sqlite.org/sqlite-wasm": "3.54.1-build1",
+    "pyodide": "314.0.8"
+  },
+  "tooling": [
+    {
+      "path": "playwright.cross-browser.config.ts",
+      "sha256": "a8e84c7029d55b958bdd8c506665488427941c4bbc10c993454d71ac5dcddc71"
+    },
+    {
+      "path": "scripts/browser-preflight.mjs",
+      "sha256": "c68203e480234f7307f40d53962f2d06fe3c353c186cbe0f1b17829eb4912b0c"
+    },
+    {
+      "path": "scripts/build-practice-runtime.mjs",
+      "sha256": "ecfd08e270b7171e88f39db39c1bf11bbca90a1770345e66df85e93f34fa40ec"
+    },
+    {
+      "path": "scripts/capture-baseline.mjs",
+      "sha256": "c4f59b479119f9891d0aa7e52c03ee0a48010b3b31daaceb5b6aeb0694dd94a2"
+    },
+    {
+      "path": "scripts/lib/baseline-browser.mjs",
+      "sha256": "e31ccda4093c741c3413ba7920ccfe297ecd39e9f907d8896a1598f236fe7e48"
+    },
+    {
+      "path": "scripts/lib/baseline.ts",
+      "sha256": "280408d097d39ba6772e3907d6e016f13aac4dedb0132a510673740858b1ca1a"
+    },
+    {
+      "path": "scripts/lib/benchmark-comparison.mjs",
+      "sha256": "fa38ba1a8e65f1cbabd06fce500111010ff3be4570dd45067d78e4cbb3799a49"
+    },
+    {
+      "path": "scripts/lib/browser-cases.ts",
+      "sha256": "51d81f1bcb1e80a768b9654d3b49bcdcf85587e927cf70c89d86dcbd49cb2088"
+    },
+    {
+      "path": "scripts/lib/browser-foundation.ts",
+      "sha256": "e556b2f1a4109f2243afdd03a89846e48ea0d78ee626465b920b1676118b6c83"
+    },
+    {
+      "path": "scripts/lib/browser-progress.mjs",
+      "sha256": "21f44a8d5773beabecf237bfb7b387995e66c89e4e1fd81383de2520123366e0"
+    },
+    {
+      "path": "scripts/lib/browser-run.ts",
+      "sha256": "0192154bb148111fa0de060b4979f83f5447029a873c39f2b4644554a93ce5e1"
+    },
+    {
+      "path": "scripts/lib/final-verification.ts",
+      "sha256": "30edcc48edabc5b9c87509b3a19514cb3c8416e242f7541969d6c8894d6f57bb"
+    },
+    {
+      "path": "scripts/lib/practice-browser.mjs",
+      "sha256": "ec9f7511cdd5c17bacd8fff06a7596434e8dee07c9e71c54b859c1fa8a2fafe0"
+    },
+    {
+      "path": "scripts/lib/practice-test-reporter.mjs",
+      "sha256": "6db02ef8989b6002fe23294f99f187216c8c489e56646c91256f2d91604d992c"
+    },
+    {
+      "path": "scripts/lib/python-assets.ts",
+      "sha256": "f7e4f0c835d547d9e4ab1e6198cdf2ba1fe014a0bc9b9394486c1b95b6426675"
+    },
+    {
+      "path": "scripts/lib/runtime-http.mjs",
+      "sha256": "8d01d17e1ce182bf350470dded2a7d30851b7627dd97998f4799d521be3bbdc4"
+    },
+    {
+      "path": "scripts/lib/runtime-typescript-loader.cjs",
+      "sha256": "95f97f75dbc36e1860b1c6c072199ccdf35b20e43d46444e1e1d50dd2c55df46"
+    },
+    {
+      "path": "scripts/prepare-python-runtime.mjs",
+      "sha256": "5ab0da897cf2b1472d4f8804370230c2b37411c5684657778a9029d39b2d6574"
+    },
+    {
+      "path": "scripts/serve-with-runtime.mjs",
+      "sha256": "17f7e8117e2d4228dbbef2f7593d39163442b1eb340534b10ea11ee90a81b81a"
+    },
+    {
+      "path": "scripts/test-browser.mjs",
+      "sha256": "7c6ff2190adbadd580ae15028dcfa7483b2b422939d6a783736e3f4bb42a4a9f"
+    },
+    {
+      "path": "scripts/update-stack.mjs",
+      "sha256": "20eb1c1cd4deb823b556fe4ad82fc7a1ef1dc3108245ad89ac1b14960cebce96"
+    },
+    {
+      "path": "scripts/verify-final.mjs",
+      "sha256": "e3e0fd06f9bd569ff433fbb1dbd3fd3d1bd0c4e58c7ba99a2df085f796578fb5"
+    },
+    {
+      "path": "scripts/verify-practice-data.mjs",
+      "sha256": "ad737f1a3a065803714397893ab2f6cf2e50ac8d5d2d35561e2cdd81bb40c41d"
+    },
+    {
+      "path": "scripts/verify-practice.mjs",
+      "sha256": "4fd0b8f4a07a4f1b82ca245384dede0619c7731889c5ab8b7f57451b19274975"
+    },
+    {
+      "path": "tests/cross-browser/README.md",
+      "sha256": "6087971f521c44284ecbcd6600d8052d2cfa504a35a732ab77229247b56eb884"
+    },
+    {
+      "path": "tests/cross-browser/application-helpers.ts",
+      "sha256": "37b883fea618663743fd2e94dae451eadbc4a858e9bdc1bfd976aae6de2c142d"
+    },
+    {
+      "path": "tests/cross-browser/application.spec.ts",
+      "sha256": "1ff02ea41f157a492ed7a570e48a194c18b52fc440274ca650c2fce720cced45"
+    },
+    {
+      "path": "tests/cross-browser/practice-desktop.spec.ts",
+      "sha256": "8840fd20ed6cd45eac630a24b1ac90dff4c6a26d7da1102ffa4e52138037cfe3"
+    },
+    {
+      "path": "tests/cross-browser/practice-errors.spec.ts",
+      "sha256": "b6a4395856d163c3e1b9e8f2be5e7c10a14ad2c3cac7625654d0fb56a71b1c07"
+    },
+    {
+      "path": "tests/cross-browser/practice-flow.spec.ts",
+      "sha256": "581746b8d33df3a6084281cb86f271d9eb151c603d247bf06d2b4a85d3f63d66"
+    },
+    {
+      "path": "tests/cross-browser/practice-helpers.ts",
+      "sha256": "6c6fdfaf631ce86766f0908fc56773ec41cfb29db29be1dd9026fc7c3154b8b5"
+    },
+    {
+      "path": "tests/cross-browser/practice-state.spec.ts",
+      "sha256": "3346d870008134886cd9c087a1e048f81f0b52879579f9416399d0286eacf4b5"
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "sha256": "89afb56208881990b361264c26def649d23153da84c2a6005659bb5aba31af0b"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/area.png",
+      "sha256": "1ce26658c1cdea1199c209664cc7d77d0ab16bb67335247b81bbae75563ae9ee"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/buscador.png",
+      "sha256": "800abf31f1bbc5dbd34cf07f9b2b68fc93f1e67ee80c97dc84835b061a6a891c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/busqueda-inicio.png",
+      "sha256": "6e53f8acf2e3053a4f51cd8b097317cfd720826d78b7ea2ed7e46e0d459e17b8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/catalogo.png",
+      "sha256": "8aca525026b35e2e8a1e15723ed11965a3c6d24fc79348da61b1db92647cc0d2"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/colecciones.png",
+      "sha256": "352f0c2c40a429d527a207499045ace9910555b3271671dbe68a0ae3668acfec"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/color-texto.png",
+      "sha256": "e5144492b90f42267f7f73e2e6a6bd6e0c6da7492bee99457ad156587a79070e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/comentarios.png",
+      "sha256": "b035626ab83ffeb68522aa5133e93e8e61fe4a75199353762091dde4577d0617"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/encabezado-texto-200.png",
+      "sha256": "ae55fb440f830a04941ebec14c6ab1e0b6c6356610b88e37d52ec8e752fd9628"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/inicio.png",
+      "sha256": "d5f0fd249f17490aea8200b6f98620e7ca24c27cce55e40af6578e4227c50df2"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/menu.png",
+      "sha256": "96d834383bdb1106dda78cb9f4c9337c4aca9f0523ba2a5e745681f99e390346"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/pandas-dataframe.png",
+      "sha256": "7fe47332e687b77032704964c4e4e98f7ad6829f8c39d247101359f9a0257db0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/pandas-texto-200.png",
+      "sha256": "0be4614bc2571b2f4bdf76c3f397eabc403e42a970b720576cf3ae73fa1952ac"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/practice-200.png",
+      "sha256": "b50473cfddae06f361920ea9f0d9b63adc625429a7902f13e477a157f9f0bf39"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/practice-actions.png",
+      "sha256": "bee89710011d79b23c97e473937f16d96ad3617440eb3490aa7397424698798a"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/practice-data.png",
+      "sha256": "1b1b9ddec66fe252d1fd931fec02ec0798c55a31556faaa71d2af40de92a6321"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/practice-pandas.png",
+      "sha256": "3bc576460225f5a233b73f064143c1ee0b291334cc431dfbc10cf00743050e7f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/practice-sql.png",
+      "sha256": "538ec21edbe0a8f167ce381e434216dae976066e33fd48b1b7dcd3e7bdea5292"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/python-result.png",
+      "sha256": "84a64e5552607f7996e37aa3dc6950d3c9b5a10eb890fca14ee96181e465c032"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/python-schema.png",
+      "sha256": "6da980ee25217ccca5ff95946d6c1196496ce5b8480c2dd665a3ab3882176b62"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/select-texto-200.png",
+      "sha256": "ae55fb440f830a04941ebec14c6ab1e0b6c6356610b88e37d52ec8e752fd9628"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/select.png",
+      "sha256": "30865f886fb24b29bcd205c483096d4a1291d024d2044b46abfd449f37b9d271"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/selector-areas.png",
+      "sha256": "08e76ba7948dc4279bdfb6013d8d302cfc6cfe340f870ff69cc360bd03daae12"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/sqlite-result.png",
+      "sha256": "981a2c75146f5652c52bf450f0b27632138c3a92baa140b9372264b2cd1f99e0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/sqlite-schema.png",
+      "sha256": "0f78dbf57433ddb759a126acfa03d0caeb41542a49e7d07d877e58dd1eacc766"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/area.png",
+      "sha256": "df4bb03cd324f245611144ba401e319202cada88fdfc1e4844d46cd6b4c5de2c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/buscador.png",
+      "sha256": "12e122ab0288c1a61b8f63b1b7c3bc9ddc8d6707d6f1452b47ed1c4e009a723a"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/busqueda-inicio.png",
+      "sha256": "831a21a481384288e4bc49e1ef0f79c7e99efe1a0044d6531ac8c77631b63d82"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/catalogo.png",
+      "sha256": "292fc5abd57e1c8aec15d04e7b1ae412368e2bfe4ac13c3ce8f4a05bb549b488"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/colecciones.png",
+      "sha256": "97466d7d96482973af037f3699ec002ab5aec21d2732b507ae19fb5c7c1d83a2"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/color-texto.png",
+      "sha256": "d689be234fa95b711f624a8e398aaf0c6f53549b9fcba8969ea897487cab0e04"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/comentarios.png",
+      "sha256": "ba35e0e9ad5d403af8c2f3ef6279144290302fb54ab35d68cf226b6fe6f66416"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/encabezado-texto-200.png",
+      "sha256": "9f086d283b5200ae42756fd4efe83f6200245362c220c8f07b48f24bda46a73b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/inicio.png",
+      "sha256": "9e66e171a6ba9763323a89e442377e184d77585a3185932be22e33a678e3654f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/menu.png",
+      "sha256": "a079c22a4a9f68263f6192dc4c19768deae116772c2b112bdcb3ecb889f595f7"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/pandas-dataframe.png",
+      "sha256": "60b14a564ed7bfb8198e4827ab3a5ac92b1b230bbe2fac52fc91bb2c6bab0722"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/pandas-texto-200.png",
+      "sha256": "81b30c8c54d126fb224980548c4cc54ca40a02bc384678246b8ffc0d0c0c6122"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/practice-actions.png",
+      "sha256": "9df3af5d4d7976a335b9a4e53bed043c41c648d7c355fdf9fe4a1af0a27b9c45"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/practice-data.png",
+      "sha256": "6a7dff0777450b54d9473af566d1e06949304c50cccd73e22d61dede45376dc9"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/practice-pandas.png",
+      "sha256": "bcf6b0afcd97faf4e5abd6f9baa8e338d1b17e5efe84b8a4f9f9111d8df69461"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/practice-sql.png",
+      "sha256": "f4bf7c0300274426b24b3c3ae86636c9e89cc754bce6be8bc790ba7d1885cdd5"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/python-result.png",
+      "sha256": "4d9e2c117c308c50069cc15bf43b5945a54e94484a8239ed086ba87d35b1f8d0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/python-schema.png",
+      "sha256": "aa5953740e8e62e5e68665249cc4b5e58b089a794b80dcfbd5c8fd74bdc4e294"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/select-texto-200.png",
+      "sha256": "9f086d283b5200ae42756fd4efe83f6200245362c220c8f07b48f24bda46a73b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/select.png",
+      "sha256": "1ebb4781aeb893b427c66c02870d0b399bef5ad32ce3f38117770ce07125467e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/selector-areas.png",
+      "sha256": "91d90cad83f0c9b9863079c21f1db55ccc8f4f698bdb680c95bcba3a119ab631"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/sqlite-result.png",
+      "sha256": "77adca54507970686379ed2e0b98a2e3cdd8567f0bbf5612dc166a0428211a9f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/sqlite-schema.png",
+      "sha256": "b135e213aec3d085a03e3ebb8253a1eeb4d26975b019e08519e54317a9a38c17"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/area.png",
+      "sha256": "6a50a20cf78cb2a137340e66237b49455340cf9b793b22f81f64b41cee23fb57"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/buscador.png",
+      "sha256": "5b203036a843c32beefe4bfe10d1a473ce86118d894ecc59a11f21811d62d0c5"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/busqueda-inicio.png",
+      "sha256": "712412f9eeb3d56bda88001c08a472987109f6738ca9d498d2f0ba1a40cf734d"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/catalogo.png",
+      "sha256": "5c60bf92b69fd69202ed83285f5a24575996a41f3ce7ef9f8fdab69c2de7da7f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/colecciones.png",
+      "sha256": "85a35b4589bfba3766e006d23917ea6110a0b4144e01a85da0b0dc4c21564ca0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/color-texto.png",
+      "sha256": "c8408c37650ece3cb86800b4b012bda7d14074ee27fb59d2456bbea74a6134c7"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/comentarios.png",
+      "sha256": "9c0641c7935c948b7262fad32f71fca17304bfb8c5afe5166402a7078978afa8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/encabezado-texto-200.png",
+      "sha256": "130485b07ecdab130e1cb3301a2b6a491d792bff13ef9c9001a02f48bdc4cf60"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/inicio.png",
+      "sha256": "74ba6f5ab0c07cdf53639ef804934e6eb7199d4cb619db4d0b87c3ed4c567e9a"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/menu.png",
+      "sha256": "108ea0387c85b09ea2c7a2efcb94c5d0ad23bd0515e706ff61dd73afe83a3cda"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/pandas-dataframe.png",
+      "sha256": "00f8593905d7a8c8428e05371d9152b6b787adf6447f8b00ac099c5b1ddf31ee"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/pandas-texto-200.png",
+      "sha256": "6dad9a883fd9dededf5b5d353df8fa3f0293908b26dc8a2c2cc326137b1a0f67"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-actions.png",
+      "sha256": "dc3dc8fc8233d4df33d4375a9846e5de3adbe1b6c98a63c2d07df9dc11fdf120"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-data.png",
+      "sha256": "8c4cb687d4fdb70331974048131ea305e39d4b4de4b5703ba74d38911b9ed10b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-pandas.png",
+      "sha256": "5cd418eb70015531bcd0a7b011a35f487ee8a4623ecdd5e9b58b28d2ba6326e0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-sql.png",
+      "sha256": "ffc0509916c9e6e0361b3c2c450ea27cc16c83aced8312f69b869d828e86d86e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/python-result.png",
+      "sha256": "1ae746de7a45c554559d88560e18c1c6b308d13bdc6716924154bb98290d55dc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/python-schema.png",
+      "sha256": "fea43a02f0c6e018a5817e2002efd615424d662488ee4816e115efbe36dde6d8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/select-texto-200.png",
+      "sha256": "130485b07ecdab130e1cb3301a2b6a491d792bff13ef9c9001a02f48bdc4cf60"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/select.png",
+      "sha256": "cb5a7bdf5a0d00c023983bfa6bbd77f053e51db3bf154d0913720a6298709328"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/selector-areas.png",
+      "sha256": "3935f7d6710073c8fd78465e8c74f1ac98db6a883697c1d8877ff76d55c2aa2c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sqlite-result.png",
+      "sha256": "5f2499fd9734b2dc477ada9cbe97c9ddcf3340210d9d745e974f588dc748685a"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sqlite-schema.png",
+      "sha256": "c656100d8bce819299db926c1897b39fdc2312f0bd075a65386edf430db96efc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/area.png",
+      "sha256": "eb433a831ce37d99d4ec03a8fd6ba83714177915a4a0b54f934aeb3765fd58fa"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/buscador.png",
+      "sha256": "3cad240d2d7f81ba349828000f66877b5a553aed2c4928639b128d84000d7d1b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/busqueda-inicio.png",
+      "sha256": "a4ed6ed703db1d1e31d99faf22b5446096908988b91cd6330b82db99a65967ee"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/catalogo.png",
+      "sha256": "66c7ded1a83a920e8173806f9a8298f89b80bc250c9098bcee6ce9c5f19cbaf8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/colecciones.png",
+      "sha256": "f02d7ff6fc581cd8c9dbdbafc16ee127c3863af38bcfaae9a380d9395ac093dd"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/color-texto.png",
+      "sha256": "e9425a5d076e8453bfa837ac969e400d078844c0188d7434bd44fd898ff4fc71"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/comentarios.png",
+      "sha256": "d6d4a64f23cbe769040874c1ffeb2b04c02e35a7ecefa5a7d357b80f3ae49998"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/encabezado-texto-200.png",
+      "sha256": "cef5b4711b3858b50271bc874368e7dbf455b4d594bc5beb3b258275f87a2aa0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/inicio.png",
+      "sha256": "3250858d91461e6aed0028f95c51d3809a3cbc0ea8da23e1664af052cd16511e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/menu.png",
+      "sha256": "d5bb1f83222e51eefa55afedc0ed4e29fb1178d2378ff9a2f8b54f624b8863fc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/pandas-dataframe.png",
+      "sha256": "a3e541ad0136d8a88aa7175f070c02ac354201be758131532b309177e64d6045"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/pandas-texto-200.png",
+      "sha256": "229b3dc9deca88713a30e287f2d3bde777d3f595f55153d7c454ed09fee7a898"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/practice-actions.png",
+      "sha256": "1d04b3d760c1d4b9312ed158bcaf7132dc8d9d0a2ca8eb2c48b2bb6f1cc7bd79"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/practice-data.png",
+      "sha256": "7f841707a2b84b57abb2b82cec2d11ca743363f734c2f8e9e14a5efc392a9b65"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/practice-pandas.png",
+      "sha256": "338a49437b388837f91eb6c399ce1474ae7b81cf29f908b4780adf1512b75863"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/practice-sql.png",
+      "sha256": "bd26c5bd375a41cfa39d4fe6f834567351f11c5f08250ea2de268eed7196d385"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/python-result.png",
+      "sha256": "a88431f3828b43aa2363e897966c074524b6433372c93180756395c687fe98dd"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/python-schema.png",
+      "sha256": "9102d013bc39c0323cac908ae5e7a6d83f03bffa925793a564a3a1a6d669090c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/select-texto-200.png",
+      "sha256": "cef5b4711b3858b50271bc874368e7dbf455b4d594bc5beb3b258275f87a2aa0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/select.png",
+      "sha256": "5ff23f588ae012fd520418ebd066e1b27cf941a2e2372aa367e35f6332279eae"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/sqlite-result.png",
+      "sha256": "b663e257d03ef76e8628556f80737e4ab715634e4b90162cff5f334e73be70e0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/sqlite-schema.png",
+      "sha256": "a09b01b34ede0f62231bd0ab854338975327010307b93aff69ae2d24b1bd803b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/area.png",
+      "sha256": "0fac6d8b4f587aeca62f99d4436d5d1685036f95ccdd982625e48036eb40fb0c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/buscador.png",
+      "sha256": "616e093772cff9d56b68d4b25e0c3d38b8df5a0180a885c9eb80e467f31ec1c9"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/busqueda-inicio.png",
+      "sha256": "c47da2c38ea76bf5a56caec226afab0ac61b54e7e35b5f395b1b947271a7f0ce"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/catalogo.png",
+      "sha256": "3e5059a07df41b3c6c04a0cbfc6bc835a084d3d54c9f69cace70b6f3171690c5"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/colecciones.png",
+      "sha256": "374bc303ba52928b3f3898d90c03a80ff3182bccbf6727a75a675bdd95bdd44a"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/color-texto.png",
+      "sha256": "715cd5ed7ccdebc6ac4f7dc4a1bea42a06ea3aafd7002782c93f5fa7ba83327c"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/comentarios.png",
+      "sha256": "888e0d9397d849fc811f8bbf95945597e610b37a2cbd6ca5dd63b34d80fbd971"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/encabezado-texto-200.png",
+      "sha256": "6e18f01f9063949fe481eea089787fc43d5e3054b6f59235f5a9af794b834290"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/inicio.png",
+      "sha256": "85dbe27411d6a5a19e33964e2cb71bafe21401831cbdc3ea3be27e76b1ad5440"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/menu.png",
+      "sha256": "3154838cf60ce07a8615a2deb7849394e8ce7b1eb8473dfe0093754ecfdac6f6"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/pandas-dataframe.png",
+      "sha256": "7a7bf3f60b130dd9e4f2ab031eceeb2f64bf000b8f84deaccbadfb6ffd6c1790"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/pandas-texto-200.png",
+      "sha256": "3d0a2682d1d3deefde0fa54102019dbeab09a42778bb04978c165100b47bd629"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/practice-actions.png",
+      "sha256": "9c5914025ca130b26785d1a80b99b4eeca8938d1198bf0fe2b08bf94773e1f4d"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/practice-data.png",
+      "sha256": "d9c12be0c32c7ba21f68b1976e00ae6a6cd78c9c5b7e7b79cc7fd1fd26dc14e0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/practice-pandas.png",
+      "sha256": "5f80b6f0d7d075e82906c38df6e1c3fe009b4712c36e16cbc3be7a81348eeda7"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/practice-sql.png",
+      "sha256": "7c646a2baa41ec38d246df83d6c90db5f4f908da671f86bd3f7312f049bb5418"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/python-result.png",
+      "sha256": "729e056d23a21d3b81f263c2cc595457bba1ee9ada6644d73788eea33f23f1a8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/python-schema.png",
+      "sha256": "93a56752c9e8d583fac5917ad113350566bc63c0967778c7b5c00ec6108a8fdc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/select-texto-200.png",
+      "sha256": "6e18f01f9063949fe481eea089787fc43d5e3054b6f59235f5a9af794b834290"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/select.png",
+      "sha256": "cea0b6d936f1a4237df6e054929291f093005ac87cd5d35cec2af6aa3aa7a2bc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/sqlite-result.png",
+      "sha256": "86da058561b68b9a99671adb89e6b1de72babef7fdf65b59d4bca44305500260"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/sqlite-schema.png",
+      "sha256": "2f553c2abc1f215782724f4b76bfae2240b1584045351677f5d0559ca3a9d429"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/area.png",
+      "sha256": "8767f8416db12343e878e00fb4143f1aca1fa08b789b64e9485c4d901074d9ed"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/buscador.png",
+      "sha256": "3142cca666309572518ccde2d33a6fe4f125f9b03444268c9f52f6c0f7d77a47"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/busqueda-inicio.png",
+      "sha256": "c300f6f2739655c54ec3c88d8f0037c7bba66bd2ece438d89db074973b570936"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/catalogo.png",
+      "sha256": "48c38363692dbdb032d90730568d4025aa82ef5bbb1a706a2b4ce9d7d1f75270"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/colecciones.png",
+      "sha256": "1ea874ae25257cd7b7fb99afaf285ac3ff534c5ccfd3ea26503d7bdee0426f4b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/color-texto.png",
+      "sha256": "509bbcf94f9f459bc26d28cf6acaf6c548664629baa9349cd161056e31a47cbf"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/comentarios.png",
+      "sha256": "d3edd4238dc22e6ef3a953b11d41c66a202bd9214bbd1f6f5513c6eafebe39f8"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/encabezado-texto-200.png",
+      "sha256": "601829c7b4f554fbefb6ea1ecefbbd1695962f3d9d94a90c3f53bdf5f2a34467"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/inicio.png",
+      "sha256": "39a38ea79bf33fb1db324c37093e426b3119fc55366f375302199fe1b8132587"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/menu.png",
+      "sha256": "72a9ecd597902e4aeed941672ff3573ef7ec9eb3221a2cc23e7ea16b183df0a6"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/pandas-dataframe.png",
+      "sha256": "1978171fa1219f093ceeebb713d02f1973c21f6c9a4d11c0a9a1ebf5cbd9505f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/pandas-texto-200.png",
+      "sha256": "df7f3c2ad82b8ddd9afc9a19a8b57b08071c4ddcf2dc0de7a3ead99b557b3476"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/practice-actions.png",
+      "sha256": "2fa246372825b64a473a419729029426b5cf5876a6571bf7241bf5f6630b0198"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/practice-data.png",
+      "sha256": "d5dbb5e7abb32ab573d82cec7e5dd556dc4ab4fccde6b60c9a0e77b87c2dd0bb"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/practice-pandas.png",
+      "sha256": "41bf569f0fc0654abe5f0e7d96d4da97f30c94f2e5ee123c2f53268edc759f72"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/practice-sql.png",
+      "sha256": "df44f4d52b2da1cfb7eee8ab8fa9ed3b64d9b3cd84e334af7a176a7e7509989e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/python-result.png",
+      "sha256": "6a8494fe990e6c4fe29b1ca144f442afede8908ed9480dd396f8b0afcc82386b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/python-schema.png",
+      "sha256": "cfe34776a6c221a05ac9b359b1dc4a03c01b69454c7f88225bf181aab12a3ff2"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/select-texto-200.png",
+      "sha256": "2a24155e7ed8bbf7c0a4b7d865bbf136e8a3da855cf527adb6961ebac9a747a0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/select.png",
+      "sha256": "2deac21c8a30623a373421e0f3c04af507b13f1ebbf28d060ab8de23a0853acb"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/selector-areas.png",
+      "sha256": "65300c5edf49ea122ff734827306a647cc1cf3d086dba77d98d0f932020433f4"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/sqlite-result.png",
+      "sha256": "8739026093095226a639dafd61345f52a84526548656efe3f81f216ad190b542"
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/sqlite-schema.png",
+      "sha256": "e041923b1ac83984e49f9a862628a1dd63c338b33b404acec610f8edd64d1a98"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/area.png",
+      "sha256": "f26d8e328844b3d0bf2483c1e3e9ad753d2a758cc4be864403c925226d2390bb"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/buscador.png",
+      "sha256": "b217f45cecb8c3ea413c1da07f420fe0f8f92023ab771f3c7d46c303560d9582"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/busqueda-inicio.png",
+      "sha256": "5faa6597b559c931ae7770730fbea66eebd7fbe2969bdce814a5b1940240ad77"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/catalogo.png",
+      "sha256": "94ac549862bdd67d464db9bfdeb6e3a1e4617cf5de12b1b15476ad1f79d526d9"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/colecciones.png",
+      "sha256": "cb80409388c18bd37a7fb6ccd757a5792cad5cbf7f9dd2ae6288bf6663e3403e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/color-texto.png",
+      "sha256": "d1f21b1d4d120e86e61ad7046c9c91b5af436baac719c227ccc21556e6202993"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/comentarios.png",
+      "sha256": "5d7ecdcb57ad61f9fe398cd4c01f62ed05aa13515f2b799f4e5f4dbbe53cd874"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/encabezado-texto-200.png",
+      "sha256": "1d07ca561c47dca526225b56fbb48eeabf9628b2f8e414432af8ab9ef5754de9"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/inicio.png",
+      "sha256": "5a00116962b855953fd5146d3faeba583fd0862741b37d179182f80edc79f34e"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/menu.png",
+      "sha256": "3c537a25ccbae7c02b2d7cc95ad9fce0a3beda309b2817a11b64b5c45b45504f"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/pandas-dataframe.png",
+      "sha256": "fb479b40afe578141f9bab76af06a96cd4de01e3f95c8711d56abd6b1d572a31"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/pandas-texto-200.png",
+      "sha256": "0d2ad42a7dcffc871ee3783280fd09a8850d16fc58260c4b5c91703588a09e39"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-200.png",
+      "sha256": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-actions.png",
+      "sha256": "c78afbe8fff3718a8584a8591a3c4db8dfef16b0cdad905355295184c35a398b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-data.png",
+      "sha256": "9284d1f9be43f4cba4133209172d7cb9b5c8bfd0b13aa538be14cb5f72d999de"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-pandas.png",
+      "sha256": "14800048ddbb10cc223714a59ec0938463b2cbbbf1931505870938f7bfa76bc0"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-sql.png",
+      "sha256": "75fecd1bd7d68a237fb8a581d478d6baecb8dad1ac316d9626978913b8db5a75"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/python-result.png",
+      "sha256": "4f89034ef6f4c89b89c083c2e824c037861c5df65933960991ba77c5fb8866cd"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/python-schema.png",
+      "sha256": "2264ab328aee31a8668188b3779203ada88e8433b8fdf7c5f6ce3795cdb82523"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/select-texto-200.png",
+      "sha256": "57d75d91e99e4204bfd400bac5b65f30a0a0efc6d8d05199657e92ff4c25d20d"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/select.png",
+      "sha256": "991696f662e5ca97a5c5439a870d93cd35763bda8d2c8d4f9389bc8cfef28cdf"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sqlite-result.png",
+      "sha256": "7b2acf26c1b66e824c2e4e0170f82c51c50ca76dd46acba17d728db205932b76"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sqlite-schema.png",
+      "sha256": "72ac2da38053e7c6a4dda16aa5fd4ad31e79c72b80d097741e64533d90c539ba"
+    }
+  ],
+  "checks": {
+    "01-build-app": {
+      "status": "passed",
+      "durationMs": 11548
+    },
+    "02-runtime-e-inventario": {
+      "status": "passed",
+      "durationMs": 2412
+    }
+  },
+  "failure": {
+    "stage": "03-casos",
+    "message": "Caso fallido: webkit-tableta/APP-05 (failed)"
+  },
+  "commitBase": "5ac9e19898eefd043101dfcfdc365872bc74761e",
+  "browserRevisions": {
+    "comment": "Do not edit this file, use utils/roll_browser.js",
+    "browsers": [
+      {
+        "name": "chromium",
+        "revision": "1255",
+        "installByDefault": true,
+        "browserVersion": "159.0.8154.6",
+        "title": "Chrome for Testing"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1255",
+        "installByDefault": true,
+        "browserVersion": "159.0.8154.6",
+        "title": "Chrome Headless Shell"
+      },
+      {
+        "name": "firefox",
+        "revision": "1572",
+        "installByDefault": true,
+        "browserVersion": "159.0",
+        "title": "Firefox"
+      },
+      {
+        "name": "webkit",
+        "revision": "2388",
+        "installByDefault": true,
+        "revisionOverrides": {
+          "mac14": "2251",
+          "mac14-arm64": "2251"
+        },
+        "browserVersion": "27.2",
+        "title": "WebKit"
+      },
+      {
+        "name": "ffmpeg",
+        "revision": "1013",
+        "installByDefault": true
+      },
+      {
+        "name": "winldd",
+        "revision": "1007",
+        "installByDefault": false
+      },
+      {
+        "name": "android",
+        "revision": "1001",
+        "installByDefault": false
+      }
+    ]
+  },
+  "preflight": {
+    "status": "ready",
+    "projects": [
+      "firefox-estrecho",
+      "firefox-tableta",
+      "firefox-escritorio",
+      "webkit-estrecho",
+      "webkit-tableta",
+      "webkit-escritorio"
+    ],
+    "engines": [
+      {
+        "engine": "firefox",
+        "status": "ready",
+        "durationMs": 2225.1361669999997,
+        "version": "159.0"
+      },
+      {
+        "engine": "webkit",
+        "status": "ready",
+        "durationMs": 1096.713417,
+        "version": "27.2"
+      }
+    ],
+    "diagnostic": null
+  },
+  "origins": {
+    "appOrigin": "http://127.0.0.1:60715",
+    "runtimeOrigin": "http://localhost:60716"
+  },
+  "published": {
+    "status": "passed",
+    "pages": [
+      {
+        "route": "404.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/404",
+        "servedAs": "404.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos",
+        "servedAs": "apuntes/analisis-de-datos.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/pandas/dataframe.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/pandas/dataframe",
+        "servedAs": "apuntes/analisis-de-datos/pandas/dataframe.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/sql/comentarios",
+        "servedAs": "apuntes/analisis-de-datos/sql/comentarios.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/limit.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/sql/limit",
+        "servedAs": "apuntes/analisis-de-datos/sql/limit.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/order-by.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/sql/order-by",
+        "servedAs": "apuntes/analisis-de-datos/sql/order-by.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/select.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/sql/select",
+        "servedAs": "apuntes/analisis-de-datos/sql/select.html"
+      },
+      {
+        "route": "apuntes/analisis-de-datos/sql/where.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/analisis-de-datos/sql/where",
+        "servedAs": "apuntes/analisis-de-datos/sql/where.html"
+      },
+      {
+        "route": "apuntes/desarrollo-web.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/desarrollo-web",
+        "servedAs": "apuntes/desarrollo-web.html"
+      },
+      {
+        "route": "apuntes/ia.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/apuntes/ia",
+        "servedAs": "apuntes/ia.html"
+      },
+      {
+        "route": "index.html",
+        "h1": 1,
+        "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+        "url": "/",
+        "servedAs": "index.html"
+      }
+    ],
+    "homeJS": {
+      "loaderFound": true,
+      "chunkIds": [
+        869,
+        30,
+        583
+      ],
+      "bodyAssets": [
+        "assets/js/notes-data-products.1386ebf4.js",
+        "assets/js/notes-pandas.f8007dcf.js",
+        "assets/js/notes-sql.074b0574.js"
+      ],
+      "loadedBodies": []
+    },
+    "failures": []
+  },
+  "exitCode": 1,
+  "assessment": {
+    "status": "incomplete",
+    "reasons": [
+      "Caso fallido: webkit-tableta/APP-05 (failed)",
+      "Caso sin aprobación estricta: webkit-tableta/APP-05",
+      "Errores globales de Playwright",
+      "Contador no aprobado: unexpected",
+      "El contador no coincide con los casos originales"
+    ],
+    "cases": [
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 4154
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3908
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 4115
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 4067
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-05",
+        "status": "failed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 8402
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-05",
+        "status": "passed",
+        "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+        "file": "application.spec.ts",
+        "durationMs": 3186
+      },
+      {
+        "project": "firefox-estrecho",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 3065
+      },
+      {
+        "project": "firefox-tableta",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 2278
+      },
+      {
+        "project": "firefox-escritorio",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 2687
+      },
+      {
+        "project": "webkit-estrecho",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 2898
+      },
+      {
+        "project": "webkit-tableta",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1660
+      },
+      {
+        "project": "webkit-escritorio",
+        "id": "APP-06",
+        "status": "passed",
+        "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+        "file": "application.spec.ts",
+        "durationMs": 1839
+      }
+    ],
+    "coverage": [
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "PY-02"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05"
+        ],
+        "missingCases": [
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "firefox-estrecho",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "PY-02"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05"
+        ],
+        "missingCases": [
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "firefox-tableta",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-14",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05"
+        ],
+        "missingCases": [
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ]
+      },
+      {
+        "project": "firefox-escritorio",
+        "requirement": "CB-20",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "PY-02"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05"
+        ],
+        "missingCases": [
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "webkit-estrecho",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "PY-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "PY-02"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-14",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "PY-04",
+          "PY-08"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-05",
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "webkit-tableta",
+        "requirement": "CB-20",
+        "status": "not-applicable",
+        "requiredCases": [],
+        "passedCases": [],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-01",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-02",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-01"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-03",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-04",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-02"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-05",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-03"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-03"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-06",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "PY-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "PY-01"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-07",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-02",
+          "SQL-05",
+          "PY-02",
+          "PY-05"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-08",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-03",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-03",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-09",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-03",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-03",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-10",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-01",
+          "SQL-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-01",
+          "SQL-06"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-11",
+        "status": "incomplete",
+        "requiredCases": [
+          "PY-01",
+          "PY-06"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "PY-01",
+          "PY-06"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-12",
+        "status": "incomplete",
+        "requiredCases": [
+          "FLOW-01"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "FLOW-01"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-13",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-07",
+          "PY-07"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-07",
+          "PY-07"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-14",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-10",
+          "SQL-11",
+          "PY-10",
+          "PY-11"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-15",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-04",
+          "SQL-08",
+          "SQL-12",
+          "PY-04",
+          "PY-08",
+          "PY-12"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-16",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-09",
+          "PY-09"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-09",
+          "PY-09"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-17",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-05",
+          "FLOW-02"
+        ],
+        "passedCases": [
+          "APP-05"
+        ],
+        "missingCases": [
+          "FLOW-02"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-18",
+        "status": "passed",
+        "requiredCases": [
+          "APP-06"
+        ],
+        "passedCases": [
+          "APP-06"
+        ],
+        "missingCases": []
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-19",
+        "status": "incomplete",
+        "requiredCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "APP-04",
+          "FLOW-01",
+          "ERR-02"
+        ]
+      },
+      {
+        "project": "webkit-escritorio",
+        "requirement": "CB-20",
+        "status": "incomplete",
+        "requiredCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ],
+        "passedCases": [],
+        "missingCases": [
+          "SQL-05",
+          "SQL-13",
+          "PY-05",
+          "PY-13",
+          "ERR-01",
+          "ERR-02"
+        ]
+      }
+    ]
+  },
+  "finishedAt": "2026-11-15T04:06:19.498Z"
+}
