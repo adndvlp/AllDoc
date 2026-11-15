@@ -1,0 +1,22 @@
+{
+  "status": "ready",
+  "projects": [
+    "firefox-escritorio",
+    "webkit-escritorio"
+  ],
+  "engines": [
+    {
+      "engine": "firefox",
+      "status": "ready",
+      "durationMs": 2410.38375,
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "durationMs": 337.36337500000036,
+      "version": "27.2"
+    }
+  ],
+  "diagnostic": null
+}

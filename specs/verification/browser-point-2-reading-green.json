@@ -1,0 +1,42 @@
+{
+  "point": 2,
+  "phase": "GREEN",
+  "recordedAt": "2026-11-15T03:31:42.064Z",
+  "report": "benchmarks/browser-verifications/2026-11-15T03-30-43-534Z-a4baa35590/verification.json",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "tooling": [
+    {
+      "path": "scripts/lib/browser-run.ts",
+      "sha256": "6e46855d2d403b6347b6104c5885ad25a39de43ea473e6c40bd1e601502ab898"
+    },
+    {
+      "path": "tests/cross-browser/practice-desktop.spec.ts",
+      "sha256": "cfe919dc4cbd3233a897e2cbf12b375fc4a072bedfef8e715edebb7002970526"
+    },
+    {
+      "path": "tests/cross-browser/practice-helpers.ts",
+      "sha256": "4d35acea2728b6d8f6a13e0a718295815a63ae386024c2e65c598f7bb227680f"
+    }
+  ],
+  "cases": [
+    {
+      "project": "firefox-escritorio",
+      "id": "SQL-04",
+      "status": "passed",
+      "title": "[SQL-04] selección de código, error con ubicación y recuperación posterior",
+      "file": "practice-desktop.spec.ts",
+      "durationMs": 4203
+    },
+    {
+      "project": "webkit-escritorio",
+      "id": "SQL-04",
+      "status": "passed",
+      "title": "[SQL-04] selección de código, error con ubicación y recuperación posterior",
+      "file": "practice-desktop.spec.ts",
+      "durationMs": 4173
+    }
+  ],
+  "stable": true,
+  "productChanged": false,
+  "note": "Lectura visible multilinea corregida. Dos casos reales de selección/error/recuperación aprobados; el conjunto de veinte sigue pendiente."
+}

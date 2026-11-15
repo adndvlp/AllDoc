@@ -1,7 +1,7 @@
 # AllDoc — SDD de pruebas automáticas en Firefox y WebKit
 
 **Fecha:** 14 de noviembre de 2026, America/Mexico_City.  
-**Estado:** punto 1 completado; puntos 2 a 5 pendientes. [Evidencia del punto 1](verification/browser-point-1.md).  
+**Estado:** puntos 1 y 2 completados; puntos 3 a 5 pendientes. [Evidencia del punto 1](verification/browser-point-1.md). [Evidencia del punto 2](verification/browser-point-2.md).
 **Objetivo:** comprobar automáticamente el comportamiento de AllDoc y su práctica SQL/pandas en los motores Firefox y WebKit de Playwright.  
 **Alcance solicitado:** únicamente las pruebas automáticas del punto 1. No incluye pruebas en aparatos físicos ni publicación de la app.
 
@@ -92,12 +92,12 @@ Se conservan CSP, sandbox del iframe, validación del puente, MIME y Content-Len
 
 ### 4.4 Comandos previstos
 
-Estos comandos son entregables de la implementación, no existen aún:
+El punto 2 incorpora los dos primeros comandos, inicialmente limitados a escritorio. Los comandos de referencias y aceptación consolidada se incorporan en los puntos posteriores:
 
 | Comando propuesto | Alcance |
 | --- | --- |
 | `npm run test:browser:smoke` | Primera comprobación, un caso SQL y uno pandas por motor, en escritorio |
-| `npm run test:browser` | Casos de compatibilidad en los seis proyectos; admite selección de proyecto y caso |
+| `npm run test:browser` | Punto 2: veinte casos de escritorio; admite selección con `--project=nombre` y `--grep=expresión`. El punto 3 ampliará los tamaños y comportamientos |
 | `npm run test:browser:update` | Generar únicamente las nuevas referencias de Firefox/WebKit, después de revisar los resultados funcionales |
 | `npm run verify:browser` | Preflight, código/tipos pertinentes, build, matriz estricta, invariantes e informe final |
 
@@ -217,14 +217,14 @@ Durante una corrección se ejecuta primero el caso/motor afectado. La matriz com
 | CA-11 | El informe conserva procedencia, casos reales, límites de cobertura y progreso observable; una ejecución interrumpida no queda completa |
 | CA-12 | El cierre declara Firefox/WebKit de Playwright en el entorno registrado, sin atribuir pruebas físicas o Safari comercial |
 
-El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. La aceptación funcional de la app y el cierre de esta entrega permanecen pendientes de los puntos 2 a 5.
+El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. El punto 2 acredita editor, sugerencias y ejecución de SQL/pandas en escritorio. La matriz completa y el cierre global permanecen pendientes de los puntos 3 a 5.
 
 ## 11. Secuencia de implementación
 
 | Punto | Trabajo | Resultado revisable |
 | --- | --- | --- |
 | 1 | Registrar referencia actual, matriz, configuración dedicada y preflight por selección, con TDD | Completado: [evidencia](verification/browser-point-1.md), 208 pruebas de código, tipos y arranque/cierre real de Firefox/WebKit con Playwright 1.65.1; configuración Chromium y 165 referencias intactas |
-| 2 | Ampliar la comprobación básica a editor, sugerencias y ejecución real SQL/pandas en escritorio | Rojo/verde de defectos encontrados y casos reales aprobados por motor |
+| 2 | Ampliar la comprobación básica a editor, sugerencias y ejecución real SQL/pandas en escritorio | Completado: veinte casos reales aprobados, ocho capturas de diagnóstico revisadas, 218 pruebas de código, tipos y build; [evidencia](verification/browser-point-2.md) |
 | 3 | Completar navegación, diálogos, persistencia, adaptación, scroll, aislamiento y errores de la matriz | CB-01 a CB-20 con cobertura por proyecto y sin omisiones que sustituyan casos obligatorios |
 | 4 | Generar y revisar las referencias propias de Firefox/WebKit | Capturas aprobadas, hashes y manifiesto del entorno |
 | 5 | Ejecutar comparación estricta, regresión pertinente y aceptación consolidada | CA-01 a CA-12 con evidencia, progreso visible y alcance documentado |
@@ -238,4 +238,4 @@ El estado global `complete` se registra solo después de la revisión funcional 
 - [Reporters](https://playwright.dev/docs/test-reporters): salida observable y resultados estructurados de ejecución.
 - [Timeouts](https://playwright.dev/docs/test-timeouts): plazos de prueba y aserción, distintos del timeout del programa ejecutado por la app.
 
-La matriz, los comandos propuestos y la selección de cobertura son decisiones de este diseño. El punto 1 implementa y verifica su configuración y preflight. Los casos funcionales, capturas y comandos restantes siguen siendo entregables pendientes; no se presentan como compatibilidad de aplicación ya comprobada.
+La matriz, los comandos y la selección de cobertura son decisiones de este diseño. El punto 1 verifica configuración y preflight. El punto 2 verifica la práctica real de escritorio en Firefox/WebKit y conserva su revisión de diagnóstico. La matriz restante, referencias visuales y aceptación consolidada corresponden a los puntos 3 a 5.

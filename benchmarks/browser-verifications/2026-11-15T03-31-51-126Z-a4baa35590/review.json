@@ -1,0 +1,56 @@
+{
+  "point": 2,
+  "status": "complete",
+  "reviewedAt": "2026-11-15T03:35:06.154Z",
+  "scope": "Escritorio 1280x800 de Firefox/WebKit de Playwright. Revisión de diagnóstico; no genera referencias del punto 4.",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "images": [
+    {
+      "path": "review-images/firefox-escritorio-PY-resultado-real.png",
+      "sha256": "7375e0661d89075866ecf1865f567cef6c1a7db060a760f6798bdba5be0d52a3",
+      "review": "Tabla del filtro real legible con nombre/precio y dos filas; controles visibles, negro puro y acento conservados."
+    },
+    {
+      "path": "review-images/firefox-escritorio-PY-sugerencias-reales.png",
+      "sha256": "30fb3994cf7967f5459c49d17600edf34d6d65d73efbfd06f63bf22cb89f7d02",
+      "review": "Lista de sugerencias legible dentro del editor; SELECT/DataFrame visibles, controles accesibles y sin recortes."
+    },
+    {
+      "path": "review-images/firefox-escritorio-SQL-resultado-real.png",
+      "sha256": "0bc756fe128e0d09c53edf43f99553482a96d17f56aa1e07d0e61d7cc43737a4",
+      "review": "Tabla del filtro real legible con nombre/precio y dos filas; controles visibles, negro puro y acento conservados."
+    },
+    {
+      "path": "review-images/firefox-escritorio-SQL-sugerencias-reales.png",
+      "sha256": "df976b87c43ae8542d2a4fb2854a8483e8abbbede9ac86e921d081bae9f89584",
+      "review": "Lista de sugerencias legible dentro del editor; SELECT/DataFrame visibles, controles accesibles y sin recortes."
+    },
+    {
+      "path": "review-images/webkit-escritorio-PY-resultado-real.png",
+      "sha256": "7bd06cc02437f776327111b7c41b989defd3e9d5956762b2b93c1af270e18c3f",
+      "review": "Tabla del filtro real legible con nombre/precio y dos filas; controles visibles, negro puro y acento conservados."
+    },
+    {
+      "path": "review-images/webkit-escritorio-PY-sugerencias-reales.png",
+      "sha256": "e0a4954b133b66b05dc923e227cab65be3c32e9679ee636b6167a18086bbc1e9",
+      "review": "Lista de sugerencias legible dentro del editor; SELECT/DataFrame visibles, controles accesibles y sin recortes."
+    },
+    {
+      "path": "review-images/webkit-escritorio-SQL-resultado-real.png",
+      "sha256": "2e8c80f6d3c50708583966a831eb377824a281f7ee0681c7ceb8d7567e034974",
+      "review": "Tabla del filtro real legible con nombre/precio y dos filas; controles visibles, negro puro y acento conservados."
+    },
+    {
+      "path": "review-images/webkit-escritorio-SQL-sugerencias-reales.png",
+      "sha256": "cfddcb9c29d61a7bce319b5ab5c0b2ac4a8310d6b37580319854ebd68807da4b",
+      "review": "Lista de sugerencias legible dentro del editor; SELECT/DataFrame visibles, controles accesibles y sin recortes."
+    }
+  ],
+  "results": {
+    "cases": 20,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "note": "No se encontró un defecto de la app. Se corrigió con rojo/verde la lectura multilínea de la prueba y la prioridad de su diagnóstico."
+}

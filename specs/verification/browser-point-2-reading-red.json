@@ -1,0 +1,19 @@
+{
+  "point": 2,
+  "phase": "RED",
+  "recordedAt": "2026-11-15T03:30:21.558Z",
+  "ui": {
+    "report": "benchmarks/browser-verifications/2026-11-15T03-28-23-698Z-a4baa35590/results.json",
+    "project": "firefox-escritorio",
+    "case": "SQL-04",
+    "cause": "La prueba usaba textContent para código multilínea. La captura conserva dos líneas, pero textContent concatena sus bloques. Falló antes de ejecutar la selección.",
+    "productBug": false
+  },
+  "diagnostic": {
+    "command": "node --experimental-strip-types --test tests/browser-run.test.ts",
+    "passed": 6,
+    "failed": 1,
+    "cause": "El diagnóstico principal identificaba un caso omitido antes del fallo real.",
+    "log": "(node:84338) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-run.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ runner de escritorio: valores por defecto, selección y filtro como un solo argumento (2.137125ms)\n✔ runner de escritorio: preflight bloqueado impide construir o iniciar un servidor (0.266208ms)\n✔ informe de escritorio: exige cada caso aprobado en ambos motores, no solo un contador favorable (0.466ms)\n✔ informe de escritorio: rechaza omisiones, resultados ausentes, duplicados y pruebas de otro proyecto (0.235625ms)\n✔ informe de escritorio: fallo, interrupción y reintento no quedan como aprobados (0.1605ms)\n✔ informe de escritorio: smoke y filtros no acreditan la cobertura completa (0.091083ms)\n✖ informe de escritorio: el diagnóstico principal identifica el fallo real antes de los casos no ejecutados (1.033917ms)\nℹ tests 7\nℹ suites 0\nℹ pass 6\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 159.153167\n\n✖ failing tests:\n\ntest at tests/browser-run.test.ts:57:1\n✖ informe de escritorio: el diagnóstico principal identifica el fallo real antes de los casos no ejecutados (1.033917ms)\n  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /firefox-escritorio\\/SQL-04/. Input:\n  \n  'Caso sin aprobación estricta: webkit-escritorio/SQL-01'\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-run.test.ts:62:10)\n      at Test.runInAsyncScope (node:async_hooks:226:14)\n      at Test.run (node:internal/test_runner/test:1201:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n      at Test.postRun (node:internal/test_runner/test:1330:19)\n      at Test.run (node:internal/test_runner/test:1258:12)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'Caso sin aprobación estricta: webkit-escritorio/SQL-01',\n    expected: /firefox-escritorio\\/SQL-04/,\n    operator: 'match',\n    diff: 'simple'\n  }\n"
+  }
+}

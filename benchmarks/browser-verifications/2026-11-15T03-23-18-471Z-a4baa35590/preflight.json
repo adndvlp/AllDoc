@@ -1,0 +1,24 @@
+{
+  "status": "blocked",
+  "projects": [
+    "firefox-escritorio",
+    "webkit-escritorio"
+  ],
+  "engines": [
+    {
+      "engine": "firefox",
+      "status": "launch-failed",
+      "durationMs": 2072.766584,
+      "error": "browserType.launch: Failed to launch the browser process.",
+      "details": "browserType.launch: Failed to launch the browser process.\nBrowser logs:\n\n<launching> /Users/andresitopacheco/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/playwright_firefoxdev_profile-MqNXHX -juggler-pipe -silent\n<launched> pid=82527\n[pid=82527][err] *** You are running in headless mode.\n[pid=82527] <process did exit: exitCode=null, signal=SIGABRT>\n[pid=82527] starting temporary directories cleanup\nCall log:\n  - <launching> /Users/andresitopacheco/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/playwright_firefoxdev_profile-MqNXHX -juggler-pipe -silent\n  - <launched> pid=82527\n  - [pid=82527][err] *** You are running in headless mode.\n  - [pid=82527] <process did exit: exitCode=null, signal=SIGABRT>\n  - [pid=82527] starting temporary directories cleanup\n  - [pid=82527] <gracefully close start>\n  - [pid=82527] <kill>\n  - [pid=82527] <skipped force kill spawnedProcess.killed=false processClosed=true>\n  - [pid=82527] finished temporary directories cleanup\n  - [pid=82527] <gracefully close end>\n"
+    },
+    {
+      "engine": "webkit",
+      "status": "launch-failed",
+      "durationMs": 594.784709,
+      "error": "browserType.launch: Target page, context or browser has been closed",
+      "details": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=82529\n[pid=82529][err] /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh: line 7: 82535 Abort trap: 6           DYLD_FRAMEWORK_PATH=\"$DYLIB_PATH\" DYLD_LIBRARY_PATH=\"$DYLIB_PATH\" \"$PLAYWRIGHT\" \"$@\"\nCall log:\n  - <launching> /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh --inspector-pipe --headless --no-startup-window\n  - <launched> pid=82529\n  - [pid=82529][err] /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh: line 7: 82535 Abort trap: 6           DYLD_FRAMEWORK_PATH=\"$DYLIB_PATH\" DYLD_LIBRARY_PATH=\"$DYLIB_PATH\" \"$PLAYWRIGHT\" \"$@\"\n  - [pid=82529] <gracefully close start>\n  - [pid=82529] <kill>\n  - [pid=82529] <will force kill>\n  - [pid=82529] exception while trying to kill process: Error: kill EPERM\n  - [pid=82529] <process did exit: exitCode=134, signal=null>\n  - [pid=82529] starting temporary directories cleanup\n  - [pid=82529] finished temporary directories cleanup\n  - [pid=82529] <gracefully close end>\n"
+    }
+  ],
+  "diagnostic": "firefox: browserType.launch: Failed to launch the browser process.; webkit: browserType.launch: Target page, context or browser has been closed"
+}

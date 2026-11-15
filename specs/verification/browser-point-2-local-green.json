@@ -1,0 +1,29 @@
+{
+  "point": 2,
+  "phase": "GREEN",
+  "recordedAt": "2026-11-15T03:35:06.161Z",
+  "source": "a4baa3559048a59580da4756d33a071040afe2f8e041b1c4235fe2d9b6bb0527",
+  "native": {
+    "command": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
+    "passed": 218,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "8d355f2c179c15f141e790e06a3ebed19479ee2bc45eaffb99effc2fe5786e56"
+  },
+  "targeted": {
+    "runner": 7,
+    "cli": 3
+  },
+  "types": {
+    "app": "passed",
+    "tests": "passed"
+  },
+  "build": "benchmarks/browser-verifications/2026-11-15T03-31-51-126Z-a4baa35590/verification.json",
+  "browserCases": {
+    "report": "benchmarks/browser-verifications/2026-11-15T03-31-51-126Z-a4baa35590/results.json",
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0
+  },
+  "note": "Las pruebas de código y tipos se ejecutaron localmente; los casos de navegador se ejecutaron desde la terminal del usuario y se revisaron sus artefactos."
+}
