@@ -1,0 +1,6 @@
+{
+  "kind": "fault-injection",
+  "test": "CLI con disco sin margen",
+  "injected": "statfs devuelve cero bloques disponibles",
+  "realBrowserExecution": false
+}

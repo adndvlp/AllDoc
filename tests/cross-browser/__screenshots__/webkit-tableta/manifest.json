@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "status": "awaiting-review",
+  "capturedAt": "2026-11-15T06:02:49.500Z",
+  "context": {
+    "project": {
+      "name": "webkit-tableta",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1
+      }
+    },
+    "environment": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "release": "27.0.0",
+      "arch": "arm64",
+      "cpu": "Apple M1"
+    },
+    "packages": {
+      "@playwright/test": "1.65.1",
+      "@codemirror/view": "6.43.15",
+      "@sqlite.org/sqlite-wasm": "3.54.1-build1",
+      "pyodide": "314.0.8"
+    },
+    "browser": {
+      "engine": "webkit",
+      "version": "27.2"
+    }
+  },
+  "source": "92ea50e9f681e8e2f3b472df3ef73f91ffea12587ece3cd00db8e30a2fcdb62a",
+  "tooling": [
+    {
+      "path": "playwright.cross-browser.config.ts",
+      "sha256": "a03ab0e97edb28e710b9b6cf8ff38bae615b48c698e9035406b8d1adfe66bf8a"
+    },
+    {
+      "path": "scripts/browser-preflight.mjs",
+      "sha256": "c68203e480234f7307f40d53962f2d06fe3c353c186cbe0f1b17829eb4912b0c"
+    },
+    {
+      "path": "scripts/build-practice-runtime.mjs",
+      "sha256": "ecfd08e270b7171e88f39db39c1bf11bbca90a1770345e66df85e93f34fa40ec"
+    },
+    {
+      "path": "scripts/capture-baseline.mjs",
+      "sha256": "c4f59b479119f9891d0aa7e52c03ee0a48010b3b31daaceb5b6aeb0694dd94a2"
+    },
+    {
+      "path": "scripts/lib/baseline-browser.mjs",
+      "sha256": "e31ccda4093c741c3413ba7920ccfe297ecd39e9f907d8896a1598f236fe7e48"
+    },
+    {
+      "path": "scripts/lib/baseline.ts",
+      "sha256": "280408d097d39ba6772e3907d6e016f13aac4dedb0132a510673740858b1ca1a"
+    },
+    {
+      "path": "scripts/lib/benchmark-comparison.mjs",
+      "sha256": "fa38ba1a8e65f1cbabd06fce500111010ff3be4570dd45067d78e4cbb3799a49"
+    },
+    {
+      "path": "scripts/lib/browser-cases.ts",
+      "sha256": "51d81f1bcb1e80a768b9654d3b49bcdcf85587e927cf70c89d86dcbd49cb2088"
+    },
+    {
+      "path": "scripts/lib/browser-command.mjs",
+      "sha256": "cd0fb31bd850b994d683e9bcd56026589fd1163bd435b95a6a00db8b77983514"
+    },
+    {
+      "path": "scripts/lib/browser-foundation.ts",
+      "sha256": "e556b2f1a4109f2243afdd03a89846e48ea0d78ee626465b920b1676118b6c83"
+    },
+    {
+      "path": "scripts/lib/browser-progress.mjs",
+      "sha256": "21f44a8d5773beabecf237bfb7b387995e66c89e4e1fd81383de2520123366e0"
+    },
+    {
+      "path": "scripts/lib/browser-run.ts",
+      "sha256": "8c145f02404f582f1f56fb943293c3057fc847e19063faf0c7cc61eed61bd902"
+    },
+    {
+      "path": "scripts/lib/browser-storage.mjs",
+      "sha256": "8087e6fa8d1e241d4f8109086fa0bbfcb76e301e6996ac33644b80783ea27f62"
+    },
+    {
+      "path": "scripts/lib/browser-visual.ts",
+      "sha256": "0e430094e35e74a040104384450df2507e3d254e9b8416fb11adb45d081214f7"
+    },
+    {
+      "path": "scripts/lib/final-verification.ts",
+      "sha256": "30edcc48edabc5b9c87509b3a19514cb3c8416e242f7541969d6c8894d6f57bb"
+    },
+    {
+      "path": "scripts/lib/practice-browser.mjs",
+      "sha256": "ec9f7511cdd5c17bacd8fff06a7596434e8dee07c9e71c54b859c1fa8a2fafe0"
+    },
+    {
+      "path": "scripts/lib/practice-test-reporter.mjs",
+      "sha256": "6db02ef8989b6002fe23294f99f187216c8c489e56646c91256f2d91604d992c"
+    },
+    {
+      "path": "scripts/lib/python-assets.ts",
+      "sha256": "f7e4f0c835d547d9e4ab1e6198cdf2ba1fe014a0bc9b9394486c1b95b6426675"
+    },
+    {
+      "path": "scripts/lib/runtime-http.mjs",
+      "sha256": "8d01d17e1ce182bf350470dded2a7d30851b7627dd97998f4799d521be3bbdc4"
+    },
+    {
+      "path": "scripts/lib/runtime-typescript-loader.cjs",
+      "sha256": "95f97f75dbc36e1860b1c6c072199ccdf35b20e43d46444e1e1d50dd2c55df46"
+    },
+    {
+      "path": "scripts/prepare-python-runtime.mjs",
+      "sha256": "5ab0da897cf2b1472d4f8804370230c2b37411c5684657778a9029d39b2d6574"
+    },
+    {
+      "path": "scripts/serve-with-runtime.mjs",
+      "sha256": "17f7e8117e2d4228dbbef2f7593d39163442b1eb340534b10ea11ee90a81b81a"
+    },
+    {
+      "path": "scripts/test-browser.mjs",
+      "sha256": "f6c42c655b6bf654bf8991afb0d55206773d8e9003ab69fad40e2d794de2e9d3"
+    },
+    {
+      "path": "scripts/update-stack.mjs",
+      "sha256": "20eb1c1cd4deb823b556fe4ad82fc7a1ef1dc3108245ad89ac1b14960cebce96"
+    },
+    {
+      "path": "scripts/verify-final.mjs",
+      "sha256": "e3e0fd06f9bd569ff433fbb1dbd3fd3d1bd0c4e58c7ba99a2df085f796578fb5"
+    },
+    {
+      "path": "scripts/verify-practice-data.mjs",
+      "sha256": "ad737f1a3a065803714397893ab2f6cf2e50ac8d5d2d35561e2cdd81bb40c41d"
+    },
+    {
+      "path": "scripts/verify-practice.mjs",
+      "sha256": "4fd0b8f4a07a4f1b82ca245384dede0619c7731889c5ab8b7f57451b19274975"
+    },
+    {
+      "path": "tests/cross-browser/README.md",
+      "sha256": "287ac58e16d6d7b17803b7796190c40e44e33fd792a80196e5b08041e35951b3"
+    },
+    {
+      "path": "tests/cross-browser/application-helpers.ts",
+      "sha256": "d3838fde984513a9a9541ebab64911723518601f842e2b4219f955ea6c61e56e"
+    },
+    {
+      "path": "tests/cross-browser/application.spec.ts",
+      "sha256": "e24b2abf21033b055c9f22896b3775298ff16d14bee8bbeafdfa0f3ef9eaa40e"
+    },
+    {
+      "path": "tests/cross-browser/practice-desktop.spec.ts",
+      "sha256": "8840fd20ed6cd45eac630a24b1ac90dff4c6a26d7da1102ffa4e52138037cfe3"
+    },
+    {
+      "path": "tests/cross-browser/practice-errors.spec.ts",
+      "sha256": "b6a4395856d163c3e1b9e8f2be5e7c10a14ad2c3cac7625654d0fb56a71b1c07"
+    },
+    {
+      "path": "tests/cross-browser/practice-flow.spec.ts",
+      "sha256": "d5976b22775968abb6959cac4a9d070352195018b3005639d979860cddf8182d"
+    },
+    {
+      "path": "tests/cross-browser/practice-helpers.ts",
+      "sha256": "f4fedbd0d149604071a8d9a816184a17d80aa098673514f1e3d183015fb397fe"
+    },
+    {
+      "path": "tests/cross-browser/practice-state.spec.ts",
+      "sha256": "7ce13039af0de96fb4280fd1bec708d7cff37d9c38e728cf470e292e29b7933f"
+    },
+    {
+      "path": "tests/cross-browser/visual-stabilize.css",
+      "sha256": "fb717a67dcfc66185e2f8c1853758cd5d3b5d88d6fee78c2b6743ef318399799"
+    },
+    {
+      "path": "tests/cross-browser/visual.spec.ts",
+      "sha256": "071d05d3ea47bae41a700fcd7eb7cf3fe399b94fa1e66bbca470056ca503bc90"
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "sha256": "89afb56208881990b361264c26def649d23153da84c2a6005659bb5aba31af0b"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/inicio.png",
+      "sha256": "b7716739814bd1c361b26fe59c0fe709665c041f31e431d52ef964acbafc04eb"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/pandas-resultado.png",
+      "sha256": "0bc8a27d34d7020c0c41f3843b47fd1f45d653c1f4f4e75bbbf8ab86cbb8468b"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/pandas-sugerencias.png",
+      "sha256": "fb98eddd9749cc693c5e9ef4bc61073f1be035d019bc0748d712cc3ec291dba6"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/practica-busqueda.png",
+      "sha256": "5c7038fa0337cfdeeff658a4276314aee141ee4eedddda1df1c78827e1204f60"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/practica-temas.png",
+      "sha256": "e867d4db8f9525999a65df41764b7a3a14955df7b17ba7daf0240a90e482c312"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-codigo.png",
+      "sha256": "00f4fe3c523f86724cc6bb1dea6370a42cf2d31763c6638cacc09741c2afc27c"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-datos.png",
+      "sha256": "af15973b4b9f06cb4db29f5057547be376c1eb99e37390af2821a440d4b016da"
+    },
+    {
+      "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-resultado.png",
+      "sha256": "e6170f225caafc024f14859e6356f4fe53009f537d849bcd8dd55cb91ab7dda4"
+    }
+  ],
+  "states": [
+    {
+      "project": "webkit-tableta",
+      "image": "inicio.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "sql-codigo.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "sql-resultado.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "sql-datos.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "pandas-resultado.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "pandas-sugerencias.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "practica-busqueda.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    },
+    {
+      "project": "webkit-tableta",
+      "image": "practica-temas.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fontScale": 1
+    }
+  ],
+  "policy": {
+    "animations": "disabled",
+    "caret": "hide",
+    "maxDiffPixelRatio": 0.001,
+    "fullPage": false
+  }
+}

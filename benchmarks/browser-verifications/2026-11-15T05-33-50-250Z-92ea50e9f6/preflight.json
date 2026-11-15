@@ -1,0 +1,28 @@
+{
+  "status": "blocked",
+  "projects": [
+    "firefox-estrecho",
+    "firefox-tableta",
+    "firefox-escritorio",
+    "webkit-estrecho",
+    "webkit-tableta",
+    "webkit-escritorio"
+  ],
+  "engines": [
+    {
+      "engine": "firefox",
+      "status": "missing-executable",
+      "durationMs": 8.289625000000001,
+      "error": "browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox",
+      "details": "browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "engine": "webkit",
+      "status": "missing-executable",
+      "durationMs": 1.0166249999999764,
+      "error": "browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh",
+      "details": "browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    }
+  ],
+  "diagnostic": "firefox: browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox; webkit: browserType.launch: Executable doesn't exist at /Users/andresitopacheco/Library/Caches/ms-playwright/webkit-2388/pw_run.sh. Ejecuta npx playwright install firefox webkit"
+}

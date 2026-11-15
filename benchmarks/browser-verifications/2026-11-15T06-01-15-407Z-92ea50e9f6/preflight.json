@@ -1,0 +1,26 @@
+{
+  "status": "ready",
+  "projects": [
+    "firefox-estrecho",
+    "firefox-tableta",
+    "firefox-escritorio",
+    "webkit-estrecho",
+    "webkit-tableta",
+    "webkit-escritorio"
+  ],
+  "engines": [
+    {
+      "engine": "firefox",
+      "status": "ready",
+      "durationMs": 3951.4098749999994,
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "durationMs": 4715.010542000001,
+      "version": "27.2"
+    }
+  ],
+  "diagnostic": null
+}

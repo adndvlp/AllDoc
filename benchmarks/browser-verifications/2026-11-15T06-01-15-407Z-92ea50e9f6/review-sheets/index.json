@@ -1,0 +1,488 @@
+[
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-escritorio-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/inicio.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "221128a7e4bb711d8683f55a5a7521cce5650667a4614ac062312d2c4c797129"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/sql-codigo.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "855616bf8a2a3db1fe23dcb006295bfc09abab29e541360269e47085f399940c"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/sql-resultado.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "c3b85bc2fbcfde4f34145309ffcffed512297994295e2ee595a6bdb66038d210"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/sql-datos.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "610d37bab1a932d29ebb6d903f0c05205b57fc37f7100baf0b8a89949266bd63"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-escritorio-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/pandas-resultado.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "10958ce6aa1e4896b60666bc95c6b85ce7f46fa22ef2c51443df81bb8ff113e8"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/pandas-sugerencias.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "2cf4ec8afc4a371e5248d52a3abc11450c59b7de5e401c7b22ae265386d26a6b"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/practica-busqueda.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "15c8f0018fda72b83d884ede23e4ae4f838d96383a69e084ef654fed41396272"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/practica-temas.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "a67546347cbb659f366ff087f7a560eaaf446a2efe4b1896c57180bcfd5461bd"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-estrecho-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/inicio.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "db4fb79a50b3f6e9af0d4ad9c9ef9e0efe0e7231e8618187b19802794a770dc2"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/sql-codigo.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "adbcacf6b248a27dd96486535b959d30de4a3a46aeb7604105d88471c0b63b83"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/sql-resultado.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "1a930e415ef15d1607f18267563cc7c9d38022f84d3b55fa62d7554a44d52f2f"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/sql-datos.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "f1029c9a66d8b09e98bbf0d3c6fe21ace3a3ff2c58b09dfd9696d82c93064572"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-estrecho-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/pandas-resultado.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "82c56f86f4579d0859c02f1086a97ad89a8973961beb16f2dcb1eff39408bb83"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/pandas-sugerencias.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "5ee08aa67c376cbd605289656c79334375adaa61b20ad9e74d7dc36fb033a821"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/practica-busqueda.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "bf5d11265f1705e59feab5845974bcccff948cfeecd8ec5ce5d8a78dd0e1dc08"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/practica-temas.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "5f1673dabb3113e64f7561efc8a9ab1bbcec13f45ca6296ddacf0f7f89f4ada5"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-estrecho-200.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/320-texto-200.png",
+        "size": [
+          320,
+          568
+        ],
+        "sha256": "c5b97d07d516fc6ad50754027fd172bdac5393ec9d0c1549695cfc4cf8f671f8"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/horizontal-texto-200.png",
+        "size": [
+          844,
+          390
+        ],
+        "sha256": "ff0453f364aee1c15d722caafe6221ef9ec64c57fd194f23462b99618fc86bba"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-tableta-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/inicio.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "8cb7bd4432984a33d50bf8d3c469aeef092edce7884ae1147a1889dc76d47aed"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/sql-codigo.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "fd2d4ef983d9a8c9804f4f7a4e6ffaff5d99b80d07bc9c63d1db20f8ad0e3288"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/sql-resultado.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "1decda897d24b789d6d2b95ee451d5b649360441d6e6f01591ceeddb9d3a7528"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/sql-datos.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "615635df2b3043277d7649530df4b18f35d848c0fd42dab67184e4790d41e05b"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/firefox-tableta-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/pandas-resultado.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "e9736493fe7b0b3c93fd05cf9a5dce99d0c1d804b49a51fa6c64694561d23ca6"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/pandas-sugerencias.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "e2789e71890fd8f0a2c0b4fd08b6057b0bfc1195f5b9a7f3fe190b428cb64e19"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/practica-busqueda.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "1d405a10c102a9af8e0b4b72d79b629b4f087d17bfffc7c5a5ddc5c4e8135ccd"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/practica-temas.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "fd0b2e9d99a91d492ce477c955cd1afb4cdcb572ef32115dce8f31ff0d09472a"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-escritorio-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/inicio.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "2be48b93d5afa74a80f84979082bacd6370deaf47955f5c17e075303f35e9824"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/sql-codigo.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "4e25419a712b7c9d38311a842bae2574d860f493c983c0374eb35d9820949216"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/sql-resultado.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "988bcb2ed99269b34250dfd402c927aa62bb6ea571e26f4025c625eeb4894267"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/sql-datos.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "e2c08be9d4ccab681d13fc66c196de81ef137234f8350ecfba575c34947d3e2e"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-escritorio-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/pandas-resultado.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "7bd06cc02437f776327111b7c41b989defd3e9d5956762b2b93c1af270e18c3f"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/pandas-sugerencias.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "b79e6abd5ad87a8883e4e0993cc1043b01da3fd31639349f1055a5593511dd61"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/practica-busqueda.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "68fd6e162992b5764d52f66b8a36589bb558e6e83bef4372b887ccd1c2584537"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/practica-temas.png",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "fbada333b463f1abed008c35eda5521358e81071085af3388420b6004c2d7aa7"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-estrecho-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/inicio.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "44107841e49870a45a1b971455b10911373451bb0ad57862a0bedd03c064a83d"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/sql-codigo.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "4277f85756ed82d22dea0eb5b23380c03f1b9791a72360546f7fc8547292ab2e"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/sql-resultado.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "e2545c1fe365246287822b8b18789967135b8fce3bd2ba556a0d61df9cbf8653"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/sql-datos.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "2c75138a221167925bcdbf6ba190587ad1bc2c1c5321e42aa8f60979e7a5ab27"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-estrecho-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/pandas-resultado.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "a8e1140318337a9e5b70e1fcebce97bc2dc1a0c0fdb9624fb6f17d901e637092"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/pandas-sugerencias.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "1eba8ab4b8b825e986d5d1121afe26b157cad51b45bddabab6271539948c25f2"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/practica-busqueda.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "b116fea58ba0be3f0b407985da76084a33b903cdb9cd9326a85b6865ea6136d7"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/practica-temas.png",
+        "size": [
+          390,
+          844
+        ],
+        "sha256": "771ca45748c840cbccfed40eac966945bbf354d3b59bf9294435099da0b66b6c"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-estrecho-200.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/320-texto-200.png",
+        "size": [
+          320,
+          568
+        ],
+        "sha256": "586dbfd0f5f2a46706bed5fc24cd9a7254b0c78c436821eaa3850e023bec3247"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/horizontal-texto-200.png",
+        "size": [
+          844,
+          390
+        ],
+        "sha256": "7df4f100af303aac7261cd733829e9412b7e208206ca5395973cee863edc2f2b"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-tableta-1.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/inicio.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "b7716739814bd1c361b26fe59c0fe709665c041f31e431d52ef964acbafc04eb"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-codigo.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "00f4fe3c523f86724cc6bb1dea6370a42cf2d31763c6638cacc09741c2afc27c"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-resultado.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "e6170f225caafc024f14859e6356f4fe53009f537d849bcd8dd55cb91ab7dda4"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/sql-datos.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "af15973b4b9f06cb4db29f5057547be376c1eb99e37390af2821a440d4b016da"
+      }
+    ]
+  },
+  {
+    "sheet": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/review-sheets/webkit-tableta-2.png",
+    "images": [
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/pandas-resultado.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "0bc8a27d34d7020c0c41f3843b47fd1f45d653c1f4f4e75bbbf8ab86cbb8468b"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/pandas-sugerencias.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "fb98eddd9749cc693c5e9ef4bc61073f1be035d019bc0748d712cc3ec291dba6"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/practica-busqueda.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "5c7038fa0337cfdeeff658a4276314aee141ee4eedddda1df1c78827e1204f60"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/practica-temas.png",
+        "size": [
+          768,
+          1024
+        ],
+        "sha256": "e867d4db8f9525999a65df41764b7a3a14955df7b17ba7daf0240a90e482c312"
+      }
+    ]
+  }
+]

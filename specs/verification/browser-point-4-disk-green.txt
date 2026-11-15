@@ -1,0 +1,16 @@
+✔ ENOSPC al escribir el log: rechaza, termina el hijo y espera su cierre sin error global (3.561541ms)
+✔ ENOSPC al cerrar el log: un proceso con código cero no se presenta como aprobado (0.774042ms)
+✔ comando real: espera stdout/stderr y cierre del log sin cambiar el código de salida (70.76725ms)
+✔ fallo al crear el log no inicia un proceso y fallo de spawn no deja la promesa pendiente (1.069917ms)
+✔ espacio: mide los destinos y exige margen antes de iniciar navegadores/build (1.563416ms)
+✔ espacio: el temporal lleno bloquea aunque el destino de informes tenga espacio (0.3505ms)
+✔ espacio: usa bloques disponibles al usuario y admite el límite exacto (0.118791ms)
+✔ CLI con disco sin margen: diagnóstico único, informe parcial y ningún navegador o build iniciado (545.499291ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 645.062875

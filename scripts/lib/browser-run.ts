@@ -1,7 +1,7 @@
 import {selectBrowserProjects} from './browser-foundation.ts';
 import {browserCases, appliesToProject} from './browser-cases.ts';
 
-export type BrowserRunOptions = {projects: string[]; smoke: boolean; grep?: string; list: boolean; buildOnly: boolean; desktop?: boolean};
+export type BrowserRunOptions = {projects: string[]; smoke: boolean; grep?: string; list: boolean; buildOnly: boolean; desktop?: boolean; visual?: boolean; updateSnapshots?: boolean};
 export const desktopCaseIds = ['SQL-01', 'PY-01', 'SQL-02', 'PY-02', 'SQL-03', 'PY-03', 'SQL-04', 'PY-04', 'SQL-05', 'PY-05'] as const;
 export const smokeCaseIds = ['SQL-01', 'PY-01'] as const;
 
@@ -18,6 +18,8 @@ export function parseBrowserRunArgs(args: readonly string[]): BrowserRunOptions 
     else if (arg === '--list') options.list = true;
     else if (arg === '--build-only') options.buildOnly = true;
     else if (arg === '--desktop') options.desktop = true;
+    else if (arg === '--visual') options.visual = true;
+    else if (arg === '--update-snapshots') options.updateSnapshots = true;
     else if (arg === '--project' || arg.startsWith('--project=')) {
       const value = arg === '--project' ? args[++index] : arg.slice('--project='.length);
       if (!value || value.startsWith('-')) throw new Error('Falta el nombre después de --project');
@@ -31,6 +33,9 @@ export function parseBrowserRunArgs(args: readonly string[]): BrowserRunOptions 
   options.projects = selectBrowserProjects(names).filter(p => names.length || !(options.smoke || options.desktop) || p.name.endsWith('-escritorio')).map(p => p.name);
   if (options.desktop && options.projects.some(name => !name.endsWith('-escritorio'))) throw new Error('--desktop requiere proyectos de escritorio');
   if (options.buildOnly && (options.list || options.smoke || options.grep)) throw new Error('--build-only no se combina con filtros, --list o --smoke');
+  if (options.updateSnapshots && !options.visual) throw new Error('--update-snapshots requiere --visual');
+  if (options.visual && (options.smoke || options.desktop || options.buildOnly)) throw new Error('--visual no se combina con --smoke, --desktop o --build-only');
+  if (options.updateSnapshots && options.grep) throw new Error('La generación requiere el proyecto completo; no admite --grep');
   return options;
 }
 

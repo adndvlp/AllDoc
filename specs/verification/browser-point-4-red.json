@@ -1,0 +1,44 @@
+{
+  "point": 4,
+  "phase": "red",
+  "recordedAt": "2026-11-15T05:36:51.086910+00:00",
+  "cases": [
+    {
+      "command": "node --experimental-strip-types --test tests/browser-visual-cli.test.mjs",
+      "failure": "visual no admitido",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-4-red.txt",
+      "sha256": "b26928d7796896433f93692799717c2a760b75602b5ae9e87a7a06df21b8cef3"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/browser-visual.test.ts",
+      "failure": "pol\u00edtica compartida alterada no bloquea comparaci\u00f3n",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-4-manifest-red.txt",
+      "sha256": "3ab91280481996746348312e1c3226b2f6305508910ddad5cc718cee95e1f458"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/browser-visual.test.ts",
+      "failure": "estados de un caso filtrado rechazados como si fuera un proyecto completo",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-4-states-red.txt",
+      "sha256": "3fd239b905289f0ccd5a25dc8787eab9b94e9a08182918814a8e2c6c6abb39d2"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/browser-command.test.mjs",
+      "failure": "ENOSPC del stream sin manejador",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-4-disk-red.txt",
+      "sha256": "87da368c152824cafa5dcba956b55a24a230ef802a8cf487f0041bf5d2480551",
+      "casesFailed": 2
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/browser-storage.test.mjs",
+      "failure": "preflight atribuido a la etapa de espacio",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-4-stage-red.txt",
+      "sha256": "bab20b0c44fea59ee10c33421cc7ee42aac35a9aff4a03de6ea1cbf1056d5265",
+      "casesFailed": 1
+    }
+  ]
+}

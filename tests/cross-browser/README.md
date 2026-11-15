@@ -35,12 +35,53 @@ El comando dedicado comprueba primero los motores seleccionados y no descarga
 binarios. Construye una sola vez, usa puertos y directorios propios, mantiene
 los orígenes separados y libera sus recursos. No toca el servidor personal ni
 `.runtime-build`. Exige los wheels ya preparados por `npm run prepare:python`.
+Antes de iniciar navegadores y build comprueba un margen operativo de 512 MiB
+libres en el proyecto y el temporal. Un fallo al escribir el log termina el
+proceso hijo y permite liberar los recursos propios; no se presenta como un
+error global de Node ni como una aprobación del caso.
 
 Cada ejecución guarda configuración, versiones, hashes, resultados originales,
 informe HTML, capturas adjuntas y trazas de fallos en
 `benchmarks/browser-verifications/<fecha>-<fuente>/`. Muestra caso, fase y
 progreso cada quince segundos; el detalle queda en los logs. Las capturas son
 diagnóstico: estos comandos no crean ni actualizan referencias visuales.
+
+## Referencias visuales (punto 4)
+
+```sh
+npm run test:browser:update
+```
+
+Genera 52 imágenes mediante 26 casos visuales, separados de los 168 casos
+funcionales. Cubre portada, código/datos/resultados SQL, resultado y sugerencias
+Jedi de pandas, búsqueda y temas con práctica, y 320 px/ventana horizontal al
+200% en los proyectos estrechos. No cambia los nombres, configuración o 165
+referencias de Chromium. No instala navegadores automáticamente.
+
+Cada proyecto guarda PNG y `manifest.json` bajo
+`tests/cross-browser/__screenshots__/{projectName}/`. El manifiesto registra
+entorno, versiones, dimensiones reales, escala de texto, fuente, herramientas
+y hashes; se genera como `awaiting-review`. Las imágenes se deben inspeccionar
+y su revisión se registra aparte. Generar no equivale a aprobar.
+
+Para repetir la generación de un proyecto completo:
+
+```sh
+npm run test:browser:update -- --project=webkit-estrecho
+```
+
+La comparación independiente no crea referencias ausentes ni acepta cambios:
+
+```sh
+npm run test:browser -- --visual
+```
+
+Admite `--project` y `--grep`; un filtro no acredita toda la suite. Antes del
+build comprueba manifiesto, hashes y compatibilidad de entorno/binarios. La
+comparación conserva `maxDiffPixelRatio: 0.001` y verifica que las referencias
+no cambian durante la ejecución. Los puertos efímeros se excluyen de la identidad
+del entorno visual. Actualizar no admite `--grep`, para que cada manifiesto
+corresponda a un proyecto completo. `--visual --list` solo descubre casos.
 
 Las pruebas usan roles y teclado de Playwright, sin CDP, motores simulados,
 resultados preparados, reintentos ni omisiones para aprobar el recorrido.

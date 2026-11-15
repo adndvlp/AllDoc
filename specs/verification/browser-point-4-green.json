@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "point": 4,
+  "status": "complete",
+  "acceptedAt": "2026-11-15T06:08:55.721060+00:00",
+  "source": "92ea50e9f681e8e2f3b472df3ef73f91ffea12587ece3cd00db8e30a2fcdb62a",
+  "commitBase": "3dbe0ebc93dc13b55836a46d3faca7e652c2b19e",
+  "generation": {
+    "directory": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6",
+    "reportSha256": "8834d7cc3f191b8f39f2adc2b6c68dccdb0a806e67a65971ac7eda75272ab944",
+    "resultsSha256": "b64a8768cadc131e3ab88570d6457fc6241574d7d1f27266e5c1eca9827b9b06",
+    "originalStatus": "visual-generated-awaiting-review",
+    "cases": 26,
+    "expected": 26,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "suiteSeconds": 71,
+    "stable": true
+  },
+  "references": {
+    "approvedImages": 52,
+    "projects": 6,
+    "manifests": [
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-estrecho/manifest.json",
+        "sha256": "12eac90ec329774dfcc3c0ad137985918fd2ec6c329c653ecd655e3369d21c3d"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-tableta/manifest.json",
+        "sha256": "077e0cdcb93e50872d6f7e53e4a430e3f6572770011aef0d5fdf872718e16b82"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/firefox-escritorio/manifest.json",
+        "sha256": "9ba7727b13e9ae38673acf18b0495b106ef00f0b6ee5e85c6a4d8271ac9199c0"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-estrecho/manifest.json",
+        "sha256": "3959e7f8e7572a230d18da1469c1e57bec30ebebcf924cce84aec026b20cbcaa"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-tableta/manifest.json",
+        "sha256": "ef10eff15db5f2d67ac261700f9c2da2389c415b4c193874edd968abab1e7e13"
+      },
+      {
+        "path": "tests/cross-browser/__screenshots__/webkit-escritorio/manifest.json",
+        "sha256": "2b7836f90e2d412d693a4591405940621b02cec3d43a19f321146126773b5a1c"
+      }
+    ],
+    "review": {
+      "path": "specs/verification/browser-point-4-visual-review.json",
+      "sha256": "6df7fc062c2d6e70f2fa823c0be9e5e5a0636e76bdc7a63972a28db3fa0a531d"
+    }
+  },
+  "packages": {
+    "@playwright/test": "1.65.1",
+    "@codemirror/view": "6.43.15",
+    "@sqlite.org/sqlite-wasm": "3.54.1-build1",
+    "pyodide": "314.0.8"
+  },
+  "environment": {
+    "node": "v26.0.0",
+    "platform": "darwin",
+    "release": "27.0.0",
+    "arch": "arm64",
+    "cpu": "Apple M1"
+  },
+  "browsers": [
+    {
+      "engine": "firefox",
+      "status": "ready",
+      "durationMs": 3951.4098749999994,
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "durationMs": 4715.010542000001,
+      "version": "27.2"
+    }
+  ],
+  "projects": [
+    {
+      "name": "firefox-estrecho",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "firefox-tableta",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "firefox-escritorio",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-estrecho",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-tableta",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "name": "webkit-escritorio",
+      "use": {
+        "baseURL": "http://127.0.0.1:64689",
+        "headless": true,
+        "locale": "es-MX",
+        "colorScheme": "dark",
+        "reducedMotion": "reduce",
+        "trace": "retain-on-failure",
+        "screenshot": "only-on-failure",
+        "browserName": "webkit",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      }
+    }
+  ],
+  "native": {
+    "command": "node --experimental-strip-types --test --test-concurrency=2 tests/*.test.ts tests/*.test.mjs",
+    "passed": 248,
+    "failed": 0,
+    "skipped": 0
+  },
+  "types": {
+    "app": "passed",
+    "tests": "passed"
+  },
+  "localEvidence": "specs/verification/browser-point-4-local-green.json",
+  "build": {
+    "app": {
+      "status": "passed",
+      "durationMs": 11226
+    },
+    "runtime": {
+      "status": "passed",
+      "durationMs": 2270
+    },
+    "inventory": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/bundle.json",
+    "manifest": "benchmarks/browser-verifications/2026-11-15T06-01-15-407Z-92ea50e9f6/runtime-manifest.json",
+    "routes": {
+      "status": "passed",
+      "pages": [
+        {
+          "route": "404.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/404",
+          "servedAs": "404.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos",
+          "servedAs": "apuntes/analisis-de-datos.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/pandas/dataframe.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/pandas/dataframe",
+          "servedAs": "apuntes/analisis-de-datos/pandas/dataframe.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/sql/comentarios",
+          "servedAs": "apuntes/analisis-de-datos/sql/comentarios.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/limit.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/sql/limit",
+          "servedAs": "apuntes/analisis-de-datos/sql/limit.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/order-by.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/sql/order-by",
+          "servedAs": "apuntes/analisis-de-datos/sql/order-by.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/select.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/sql/select",
+          "servedAs": "apuntes/analisis-de-datos/sql/select.html"
+        },
+        {
+          "route": "apuntes/analisis-de-datos/sql/where.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/analisis-de-datos/sql/where",
+          "servedAs": "apuntes/analisis-de-datos/sql/where.html"
+        },
+        {
+          "route": "apuntes/desarrollo-web.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/desarrollo-web",
+          "servedAs": "apuntes/desarrollo-web.html"
+        },
+        {
+          "route": "apuntes/ia.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/apuntes/ia",
+          "servedAs": "apuntes/ia.html"
+        },
+        {
+          "route": "index.html",
+          "h1": 1,
+          "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+          "url": "/",
+          "servedAs": "index.html"
+        }
+      ],
+      "homeJS": {
+        "loaderFound": true,
+        "chunkIds": [
+          869,
+          30,
+          583
+        ],
+        "bodyAssets": [
+          "assets/js/notes-data-products.1386ebf4.js",
+          "assets/js/notes-pandas.f8007dcf.js",
+          "assets/js/notes-sql.074b0574.js"
+        ],
+        "loadedBodies": []
+      },
+      "failures": []
+    }
+  },
+  "invariants": {
+    "sourceUnchangedDuringGeneration": true,
+    "toolingUnchangedDuringGeneration": true,
+    "chromiumSnapshotsUnchanged": 165,
+    "allManifestsAndPngHashesVerified": true,
+    "imageDimensionsMatchRecordedViewports": true
+  },
+  "pending": "Punto 5: comparación visual sin actualización, regresión pertinente y aceptación global CA-01 a CA-12. No se declara esa aceptación ni hardware físico."
+}

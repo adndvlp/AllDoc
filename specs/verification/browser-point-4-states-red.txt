@@ -1,0 +1,50 @@
+(node:95578) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ referencias: 52 imágenes independientes, 26 casos y adaptación solo en proyectos estrechos (1.451333ms)
+✔ referencias: generación pendiente de revisión, archivos exactos y dimensiones reales de cada estado (8.229375ms)
+✔ referencias: rechaza entorno o binario distintos sin comparar silenciosamente entre plataformas (0.773625ms)
+✔ referencias: falta de manifiesto, edición manual, PNG ajeno o política ampliada bloquean la comparación (0.849417ms)
+✔ referencias: evaluación estricta rechaza huecos, duplicados, fallos, reintentos y contadores inventados (0.6135ms)
+✖ referencias: los estados capturados corresponden exactamente a los casos seleccionados, también al comparar (0.491834ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.113417
+
+✖ failing tests:
+
+test at tests/browser-visual.test.ts:53:1
+✖ referencias: los estados capturados corresponden exactamente a los casos seleccionados, también al comparar (0.491834ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "Estados visuales incompletos o duplicados: firefox-estrecho"
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts:55:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: Estados visuales incompletos o duplicados: firefox-estrecho
+        at checkVisualStates (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-visual.ts:38:88)
+        at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts:55:27
+        at getActual (node:assert:580:5)
+        at strict.doesNotThrow (node:assert:748:32)
+        at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts:55:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }

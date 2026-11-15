@@ -1,0 +1,2 @@
+/* CodeMirror dibuja su cursor fuera del caret nativo del navegador. */
+.cm-cursor, .cm-dropCursor { visibility: hidden !important; }

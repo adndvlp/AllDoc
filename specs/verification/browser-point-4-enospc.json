@@ -1,0 +1,23 @@
+{
+  "point": 4,
+  "recordedAt": "2026-11-15T05:52:44.188190+00:00",
+  "execution": "benchmarks/browser-verifications/2026-11-15T05-38-31-733Z-92ea50e9f6",
+  "error": {
+    "code": "ENOSPC",
+    "stage": "01-build-app",
+    "unhandledStreamError": true
+  },
+  "originalReportWritten": false,
+  "buildAndVisualApproval": false,
+  "cleanup": [
+    {
+      "action": "archive-empty-lock",
+      "from": ".docusaurus-browser-verification-lock",
+      "to": "benchmarks/browser-verifications/2026-11-15T05-38-31-733Z-92ea50e9f6/interrupted-lock"
+    },
+    {
+      "action": "remove-empty-owned-temporary",
+      "path": "/private/var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-browser-sneHry"
+    }
+  ]
+}

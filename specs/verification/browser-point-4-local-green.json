@@ -1,0 +1,50 @@
+{
+  "point": 4,
+  "phase": "local-green",
+  "recordedAt": "2026-11-15T05:59:16.862922+00:00",
+  "native": {
+    "command": "node --experimental-strip-types --test --test-concurrency=2 tests/*.test.ts tests/*.test.mjs",
+    "passed": 248,
+    "failed": 0,
+    "skipped": 0
+  },
+  "types": {
+    "app": "passed",
+    "tests": "passed"
+  },
+  "discovery": {
+    "cases": 26,
+    "images": 52,
+    "projects": 6
+  },
+  "logs": {
+    "code": {
+      "path": "specs/verification/browser-point-4-code-green.txt",
+      "sha256": "2616a040a2469ff1676bb694d1da29b26005d59d7cffaba6ad080ff359b95a09"
+    },
+    "types-app": {
+      "path": "specs/verification/browser-point-4-types-app-green.txt",
+      "sha256": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1"
+    },
+    "types-tests": {
+      "path": "specs/verification/browser-point-4-types-tests-green.txt",
+      "sha256": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902"
+    }
+  },
+  "ui": "pending-real-run-and-image-review",
+  "environmentReport": "benchmarks/browser-verifications/2026-11-15T05-57-14-413Z-92ea50e9f6/verification.json",
+  "build": "benchmarks/browser-verifications/2026-11-15T05-53-08-411Z-92ea50e9f6/verification.json",
+  "logErrorRegression": {
+    "passed": 9,
+    "log": "specs/verification/browser-point-4-code-green.txt",
+    "scope": "4 casos de proceso/log y 5 de espacio/CLI"
+  },
+  "earlierNativeFailure": {
+    "path": "specs/verification/browser-point-4-native-load-failure.txt",
+    "passed": 245,
+    "failed": 1,
+    "case": "SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado",
+    "productCodeChanged": false,
+    "followup": "Pas\u00f3 aislado; luego los 247 casos pasaron con concurrencia 2, sin alterar presupuesto ni expectativa."
+  }
+}

@@ -1,7 +1,7 @@
 # AllDoc — SDD de pruebas automáticas en Firefox y WebKit
 
 **Fecha:** 14 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 3 completados; puntos 4 y 5 pendientes. [Evidencia del punto 1](verification/browser-point-1.md). [Evidencia del punto 2](verification/browser-point-2.md). [Evidencia del punto 3](verification/browser-point-3.md).
+**Estado:** puntos 1 a 4 completados; punto 5 pendiente. [Evidencia del punto 1](verification/browser-point-1.md). [Evidencia del punto 2](verification/browser-point-2.md). [Evidencia del punto 3](verification/browser-point-3.md). [Evidencia del punto 4](verification/browser-point-4.md).
 **Objetivo:** comprobar automáticamente el comportamiento de AllDoc y su práctica SQL/pandas en los motores Firefox y WebKit de Playwright.  
 **Alcance solicitado:** únicamente las pruebas automáticas del punto 1. No incluye pruebas en aparatos físicos ni publicación de la app.
 
@@ -92,13 +92,14 @@ Se conservan CSP, sandbox del iframe, validación del puente, MIME y Content-Len
 
 ### 4.4 Comandos previstos
 
-Los dos primeros comandos están implementados. Desde el punto 3, la ejecución predeterminada cubre los seis proyectos. Los comandos de referencias y aceptación global se incorporan en los puntos posteriores:
+Los comandos funcionales y visuales están implementados. Desde el punto 3, la ejecución predeterminada cubre los seis proyectos; el punto 4 añade generación y comparación visual dedicadas. El comando de aceptación global corresponde al punto 5:
 
 | Comando propuesto | Alcance |
 | --- | --- |
 | `npm run test:browser:smoke` | Primera comprobación, un caso SQL y uno pandas por motor, en escritorio |
 | `npm run test:browser` | 168 casos aplicables en seis proyectos; admite selección con `--project=nombre` y `--grep=expresión`. `--desktop` conserva los veinte casos iniciales del punto 2 |
-| `npm run test:browser:update` | Generar únicamente las nuevas referencias de Firefox/WebKit, después de revisar los resultados funcionales |
+| `npm run test:browser:update` | Generar únicamente las nuevas referencias de Firefox/WebKit: 26 casos y 52 imágenes; admite selección de proyectos completos. La generación queda pendiente de inspección |
+| `npm run test:browser -- --visual` | Comparar únicamente las referencias nuevas, sin creación automática; exige manifiestos, entorno compatible y hashes intactos |
 | `npm run verify:browser` | Preflight, código/tipos pertinentes, build, matriz estricta, invariantes e informe final |
 
 Los filtros permiten repetir solo el caso y motor que falló. La ejecución dedicada no relanza los 24 benchmarks Chromium ni toda su suite por defecto. Si una corrección cambia código de aplicación o utilidades compartidas, se ejecutan primero sus regresiones Chromium afectadas; una única regresión completa de la suite actual cierra la entrega con la fuente final. Si cambia un camino medido de práctica, se repite también la medición afectada y la comprobación final necesaria.
@@ -154,6 +155,8 @@ Las diferencias de renderizado se resuelven con referencias por proyecto y entor
 ## 7. Referencias visuales
 
 Cada proyecto nuevo guarda sus propias referencias, separadas de las 165 existentes. La ruta propuesta es `tests/cross-browser/__screenshots__/{projectName}/`, con un manifiesto de entorno que registra SO, arquitectura y versiones. Las capturas de un entorno distinto requieren referencias propias o una regeneración explícita y revisada; no se comparan silenciosamente entre plataformas. [Comparaciones visuales de Playwright](https://playwright.dev/docs/test-snapshots).
+
+El punto 4 implementa una suite visual separada: cuatro casos por proyecto y un quinto caso de adaptación en los dos proyectos estrechos, para un total de 26 casos y 52 PNG. Cada proyecto conserva `manifest.json` con hashes, entorno, binario, herramientas y dimensiones reales de cada captura. Los manifiestos nacen como `awaiting-review`; la inspección se registra aparte y no se deduce de la generación. La comparación usa `--update-snapshots=none`, incluso si falta una imagen. Se pueden regenerar proyectos completos; un filtro de casos solo permite comparar.
 
 Estados mínimos de captura:
 
@@ -217,7 +220,7 @@ Durante una corrección se ejecuta primero el caso/motor afectado. La matriz com
 | CA-11 | El informe conserva procedencia, casos reales, límites de cobertura y progreso observable; una ejecución interrumpida no queda completa |
 | CA-12 | El cierre declara Firefox/WebKit de Playwright en el entorno registrado, sin atribuir pruebas físicas o Safari comercial |
 
-El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. El punto 2 acredita editor, sugerencias y ejecución de SQL/pandas en escritorio. El punto 3 completa los 168 casos funcionales mediante ejecuciones compatibles con procedencia revisada, 231 pruebas de código, tipos y build. Las referencias visuales propias y el cierre global permanecen pendientes de los puntos 4 y 5.
+El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. El punto 2 acredita editor, sugerencias y ejecución de SQL/pandas en escritorio. El punto 3 completa los 168 casos funcionales mediante ejecuciones compatibles con procedencia revisada, 231 pruebas de código, tipos y build. El punto 4 genera y revisa 52 referencias propias con sus seis manifiestos, 26 casos visuales, 248 pruebas de código, tipos y build aprobados. La comparación estricta independiente, regresión pertinente y cierre global permanecen pendientes del punto 5.
 
 ## 11. Secuencia de implementación
 
@@ -226,7 +229,7 @@ El estado global `complete` se registra solo después de la revisión funcional 
 | 1 | Registrar referencia actual, matriz, configuración dedicada y preflight por selección, con TDD | Completado: [evidencia](verification/browser-point-1.md), 208 pruebas de código, tipos y arranque/cierre real de Firefox/WebKit con Playwright 1.65.1; configuración Chromium y 165 referencias intactas |
 | 2 | Ampliar la comprobación básica a editor, sugerencias y ejecución real SQL/pandas en escritorio | Completado: veinte casos reales aprobados, ocho capturas de diagnóstico revisadas, 218 pruebas de código, tipos y build; [evidencia](verification/browser-point-2.md) |
 | 3 | Completar navegación, diálogos, persistencia, adaptación, scroll, aislamiento y errores de la matriz | Completado: 168 casos aprobados en seis proyectos, evidencia consolidada y revisada por CB/proyecto, 231 pruebas de código, tipos y build; [evidencia](verification/browser-point-3.md) |
-| 4 | Generar y revisar las referencias propias de Firefox/WebKit | Capturas aprobadas, hashes y manifiesto del entorno |
+| 4 | Generar y revisar las referencias propias de Firefox/WebKit | Completado: 26 casos visuales aprobados, 52 imágenes inspeccionadas y aprobadas, seis manifiestos con hashes/entorno, 248 pruebas de código, tipos y build; [evidencia](verification/browser-point-4.md) |
 | 5 | Ejecutar comparación estricta, regresión pertinente y aceptación consolidada | CA-01 a CA-12 con evidencia, progreso visible y alcance documentado |
 
 ## 12. Fuentes y límites de las afirmaciones
@@ -238,4 +241,4 @@ El estado global `complete` se registra solo después de la revisión funcional 
 - [Reporters](https://playwright.dev/docs/test-reporters): salida observable y resultados estructurados de ejecución.
 - [Timeouts](https://playwright.dev/docs/test-timeouts): plazos de prueba y aserción, distintos del timeout del programa ejecutado por la app.
 
-La matriz, los comandos y la selección de cobertura son decisiones de este diseño. El punto 1 verifica configuración y preflight. El punto 2 verifica la práctica real de escritorio en Firefox/WebKit. El punto 3 completa la matriz funcional y conserva la revisión de capturas de diagnóstico. En WebKit móvil, el scroll comprueba desplazamiento del DOM y contención CSS porque Playwright no permite rueda en esa configuración; no acredita física de gestos. Las referencias visuales propias y la aceptación global corresponden a los puntos 4 y 5.
+La matriz, los comandos y la selección de cobertura son decisiones de este diseño. El punto 1 verifica configuración y preflight. El punto 2 verifica la práctica real de escritorio en Firefox/WebKit. El punto 3 completa la matriz funcional y conserva la revisión de capturas de diagnóstico. En WebKit móvil, el scroll comprueba desplazamiento del DOM y contención CSS porque Playwright no permite rueda en esa configuración; no acredita física de gestos. El punto 4 genera e inspecciona las referencias propias. La comparación estricta independiente y aceptación global corresponden al punto 5.
