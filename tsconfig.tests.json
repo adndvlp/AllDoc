@@ -4,5 +4,5 @@
     "allowImportingTsExtensions": true,
     "types": ["node"]
   },
-  "include": ["tests/**/*.ts", "playwright.config.ts"]
+  "include": ["tests/**/*.ts", "playwright.config.ts", "playwright.cross-browser.config.ts"]
 }

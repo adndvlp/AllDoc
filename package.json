@@ -17,6 +17,7 @@
     "test:ui": "playwright test",
     "test:ui:update": "playwright test --update-snapshots",
     "test:ui:report": "playwright show-report",
+    "test:browser:preflight": "node --experimental-strip-types scripts/browser-preflight.mjs",
     "test:ui:practice": "playwright test tests/ui/practice.spec.ts",
     "test:ui:sql": "playwright test tests/ui/sqlite.spec.ts",
     "test:ui:actions": "playwright test tests/ui/practice-actions.spec.ts",

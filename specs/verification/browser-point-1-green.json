@@ -1,0 +1,68 @@
+{
+  "point": 1,
+  "status": "complete",
+  "reviewedAt": "2026-11-15T03:03:45.884Z",
+  "reference": "benchmarks/browser-verifications/2026-11-15T02-48-24-937Z-eab186a574/reference.json",
+  "sourceSha256": "46bfeb9159046c3b5887480645b094d77f89ecc287636c5cd83698c87c2e0557",
+  "localEvidence": {
+    "path": "specs/verification/browser-point-1-local-green.json",
+    "sha256": "72656fb9105e8d458292681fca5af41875f6b94e82155ff421889b641a62b6fd"
+  },
+  "realPreflight": {
+    "path": "benchmarks/browser-verifications/2026-11-15T03-01-48-183Z-46bfeb9159/preflight.json",
+    "sha256": "624ec37602bb3bfcdd57062625e4f16f8c5099c414d9ab2ce71f966d6f1591ce",
+    "result": {
+      "status": "ready",
+      "projects": [
+        "firefox-estrecho",
+        "firefox-tableta",
+        "firefox-escritorio",
+        "webkit-estrecho",
+        "webkit-tableta",
+        "webkit-escritorio"
+      ],
+      "engines": [
+        {
+          "engine": "firefox",
+          "status": "ready",
+          "durationMs": 4384.888790999999,
+          "version": "159.0"
+        },
+        {
+          "engine": "webkit",
+          "status": "ready",
+          "durationMs": 8425.144625,
+          "version": "27.2"
+        }
+      ],
+      "diagnostic": null
+    },
+    "packages": {
+      "playwright": "1.65.1"
+    },
+    "environment": {
+      "node": "v26.0.0",
+      "platform": "darwin",
+      "release": "27.0.0",
+      "arch": "arm64",
+      "cpu": "Apple M1"
+    }
+  },
+  "checks": {
+    "nativePassed": 208,
+    "appTypes": "passed",
+    "testTypes": "passed",
+    "sixDedicatedProjects": true,
+    "selectionWithNoChromiumDependency": "verified-by-native-and-CLI-tests",
+    "noBuildOrServerInPreflight": true,
+    "legacyConfigurationUnchanged": true,
+    "legacyGlobalSetupUnchanged": true,
+    "legacyVisualReferencesUnchanged": 165
+  },
+  "sourceChanges": [
+    "package-lock.json",
+    "package.json"
+  ],
+  "productFilesUnchanged": true,
+  "scope": "Completa referencia, matriz, configuración y preflight del punto 1. No acredita CB-01 a CB-20 ni compatibilidad funcional de AllDoc; esos casos empiezan en el punto 2."
+}
