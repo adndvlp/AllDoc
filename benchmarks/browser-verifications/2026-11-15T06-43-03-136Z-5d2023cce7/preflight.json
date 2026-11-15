@@ -1,0 +1,24 @@
+{
+  "status": "ready",
+  "engines": [
+    {
+      "engine": "firefox",
+      "status": "ready",
+      "durationMs": 3686.7890830000006,
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "durationMs": 838.6792499999992,
+      "version": "27.2"
+    },
+    {
+      "engine": "chromium",
+      "status": "ready",
+      "durationMs": 2259.7054580000004,
+      "version": "159.0.8154.6"
+    }
+  ],
+  "diagnostic": null
+}

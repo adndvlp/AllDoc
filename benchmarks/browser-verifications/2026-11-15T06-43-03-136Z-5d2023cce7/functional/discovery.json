@@ -1,0 +1,2427 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.browser-verification.config.ts",
+      "--update-snapshots=none",
+      "--retries=0",
+      "--workers=2",
+      "--list",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.browser-verification.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "browser-final-verification",
+      "suite": "functional"
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-escritorio"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/functional/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "functional"
+        },
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": "**/visual.spec.ts",
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "none",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "application.spec.ts",
+      "file": "application.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[APP-01] portada, catálogo, áreas y navegación de concepto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-290908466a3fe7d24688",
+          "file": "application.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "[APP-02] encabezado, búsqueda por teclado, Esc y foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-b614bf8fb9f578a8f2d9",
+          "file": "application.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "[APP-03] práctica, temas y búsqueda mantienen un modal y foco útil",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-fa935fe0df09a77611f8",
+          "file": "application.spec.ts",
+          "line": 56,
+          "column": 1
+        },
+        {
+          "title": "[APP-04] acento, favoritos y recientes persisten al recargar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-3326dfaeb3462961c7dc",
+          "file": "application.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "[APP-05] lector y sidebar independientes, extremos y contenido que cabe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-28436c3af1a08bc0593d",
+          "file": "application.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "[APP-06] texto al 200%, 320 px y cambio de disposición",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ac4d568caf1644a25ff7-e3e1ca868276721c3511",
+          "file": "application.spec.ts",
+          "line": 146,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice-desktop.spec.ts",
+      "file": "practice-desktop.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SQL",
+          "file": "practice-desktop.spec.ts",
+          "line": 6,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[SQL-01] @smoke SQL: editor diferido y filtro real con columnas y números correctos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-b4f56f9d467870979882",
+              "file": "practice-desktop.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "[SQL-02] SQL: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-3f872d07f1eb5dd019f3",
+              "file": "practice-desktop.spec.ts",
+              "line": 25,
+              "column": 5
+            },
+            {
+              "title": "[SQL-03] SQL: sugerencias reales e inserción sin ejecutar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-eb3db0422fd5ad7cf199",
+              "file": "practice-desktop.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "[SQL-04] SQL: selección, error con ubicación y recuperación",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-7831ceb42a1f0d9c3c03",
+              "file": "practice-desktop.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "[SQL-05] @desktop SQL: atajo durante preparación sin ejecución pendiente",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-2d79d5f9c5f455a9d0d3",
+              "file": "practice-desktop.spec.ts",
+              "line": 88,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "pandas",
+          "file": "practice-desktop.spec.ts",
+          "line": 6,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[PY-01] @smoke pandas: editor diferido y filtro real con columnas y números correctos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-6067c9b7a6e9a92210c7",
+              "file": "practice-desktop.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "[PY-02] pandas: resaltado, escritura, deshacer, rehacer, Tab y atajo listo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-ead6eb85ff1b156b93ca",
+              "file": "practice-desktop.spec.ts",
+              "line": 25,
+              "column": 5
+            },
+            {
+              "title": "[PY-03] pandas: sugerencias reales e inserción sin ejecutar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-dbe0159ac99edfb06f0b",
+              "file": "practice-desktop.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "[PY-04] pandas: selección, error con ubicación y recuperación",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-f538500756bf5b68d1f0",
+              "file": "practice-desktop.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "[PY-05] @desktop pandas: atajo durante preparación sin ejecución pendiente",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "86a2568fe8eaac2a09cd-2febe553ab972cf9439d",
+              "file": "practice-desktop.spec.ts",
+              "line": 88,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "practice-flow.spec.ts",
+      "file": "practice-flow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[FLOW-01] contexto SQL/pandas, borradores IndexedDB y recarga sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bab451c322e56adf24a2-b142c7496a937303fed4",
+          "file": "practice-flow.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "[FLOW-02] editor y tabla desplazan solo su región",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bab451c322e56adf24a2-a50509b7eb17aa40194c",
+          "file": "practice-flow.spec.ts",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice-state.spec.ts",
+      "file": "practice-state.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SQL",
+          "file": "practice-state.spec.ts",
+          "line": 8,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[SQL-06] SQL: sesión viva, esquema actualizado y reinicio limpio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-2fbc9c64a13cd1afdb8f",
+              "file": "practice-state.spec.ts",
+              "line": 10,
+              "column": 5
+            },
+            {
+              "title": "[SQL-07] SQL: probar, recuperar y restaurar código conserva datos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-056ba69981bd0cdcbf65",
+              "file": "practice-state.spec.ts",
+              "line": 39,
+              "column": 5
+            },
+            {
+              "title": "[SQL-08] SQL: cero filas, null y HTML como texto seguro",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-4d4740ea27c01cddc7be",
+              "file": "practice-state.spec.ts",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "[SQL-09] SQL: origen separado, almacenamiento, red y navegación protegidos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-d1df4bcd68e4e63f1d0b",
+              "file": "practice-state.spec.ts",
+              "line": 71,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "pandas",
+          "file": "practice-state.spec.ts",
+          "line": 8,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[PY-06] pandas: sesión viva, esquema actualizado y reinicio limpio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-9e3ed03c8fee60ad3677",
+              "file": "practice-state.spec.ts",
+              "line": 10,
+              "column": 5
+            },
+            {
+              "title": "[PY-07] pandas: probar, recuperar y restaurar código conserva datos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-1bcc43ed19740d165626",
+              "file": "practice-state.spec.ts",
+              "line": 39,
+              "column": 5
+            },
+            {
+              "title": "[PY-08] pandas: cero filas, null y HTML como texto seguro",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-82996c5da6e465b722b7",
+              "file": "practice-state.spec.ts",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "[PY-09] pandas: origen separado, almacenamiento, red y navegación protegidos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-estrecho",
+                  "projectName": "firefox-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-tableta",
+                  "projectName": "firefox-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-estrecho",
+                  "projectName": "webkit-estrecho",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-tableta",
+                  "projectName": "webkit-tableta",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d4c849ec2a004a41aeb-c243770f804d2797622c",
+              "file": "practice-state.spec.ts",
+              "line": 71,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "practice-errors.spec.ts",
+      "file": "practice-errors.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[ERR-01] @desktop carga tardía, cierre y descarga del panel fallida con reintento",
+          "ok": true,
+          "tags": [
+            "desktop"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f0da8704bd4b896d1f62-89302dae7f7fe75dc510",
+          "file": "practice-errors.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "[ERR-02] @desktop IndexedDB bloqueado, memoria y reintento sin perder edición",
+          "ok": true,
+          "tags": [
+            "desktop"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f0da8704bd4b896d1f62-da6c48a7746f2ec91810",
+          "file": "practice-errors.spec.ts",
+          "line": 65,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "SQL",
+          "file": "practice-errors.spec.ts",
+          "line": 7,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[SQL-10] @desktop SQL: cancelación conserva edición y permite ejecutar después",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-aca3ff211cbd2911bd1a",
+              "file": "practice-errors.spec.ts",
+              "line": 10,
+              "column": 5
+            },
+            {
+              "title": "[SQL-11] @desktop SQL: timeout real reinicia el motor y conserva el borrador",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-7076433d37fc9cd3ddef",
+              "file": "practice-errors.spec.ts",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "[SQL-12] @desktop SQL: salida grande acotada y aviso de truncamiento",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-ae56e92c81eac5648081",
+              "file": "practice-errors.spec.ts",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "[SQL-13] @desktop SQL: descarga del motor fallida y reintento conserva código",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-e6b8a1d78e0d320a24c6",
+              "file": "practice-errors.spec.ts",
+              "line": 31,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "pandas",
+          "file": "practice-errors.spec.ts",
+          "line": 7,
+          "column": 8,
+          "specs": [
+            {
+              "title": "[PY-10] @desktop pandas: cancelación conserva edición y permite ejecutar después",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-521b3afe1462bcd0e1fe",
+              "file": "practice-errors.spec.ts",
+              "line": 10,
+              "column": 5
+            },
+            {
+              "title": "[PY-11] @desktop pandas: timeout real reinicia el motor y conserva el borrador",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-3034b990df3b425859da",
+              "file": "practice-errors.spec.ts",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "[PY-12] @desktop pandas: salida grande acotada y aviso de truncamiento",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-d1f80c70c662da7660e1",
+              "file": "practice-errors.spec.ts",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "[PY-13] @desktop pandas: descarga del motor fallida y reintento conserva código",
+              "ok": true,
+              "tags": [
+                "desktop"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-escritorio",
+                  "projectName": "firefox-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                },
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-escritorio",
+                  "projectName": "webkit-escritorio",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f0da8704bd4b896d1f62-66e14b326f745fa29500",
+              "file": "practice-errors.spec.ts",
+              "line": 31,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T06:44:46.890Z",
+    "duration": 35.88399999999996,
+    "expected": 0,
+    "skipped": 168,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

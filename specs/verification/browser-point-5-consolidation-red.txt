@@ -1,0 +1,117 @@
+(node:6192) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-acceptance.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales (2.501792ms)
+✖ consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta (0.236667ms)
+✖ consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables (0.146292ms)
+✖ consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones (0.155875ms)
+✖ consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento (0.167167ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 461.90525
+
+✖ failing tests:
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:13:1
+✖ consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales (2.501792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'consolidated-evidence'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'consolidated-evidence',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:21:1
+✖ consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta (0.236667ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:23:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /sin revisión/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:27:1
+✖ consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables (0.146292ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:29:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /duplicado/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:32:1
+✖ consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones (0.155875ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:35:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /sin aprobación/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:38:1
+✖ consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento (0.167167ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:41:51)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /ajeno/,
+    operator: 'throws',
+    diff: 'simple'
+  }

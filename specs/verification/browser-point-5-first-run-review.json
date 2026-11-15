@@ -1,0 +1,33 @@
+{
+  "point": 5,
+  "reviewedAt": "2026-11-15T07:22:17.257Z",
+  "directory": "benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7",
+  "reportSha256": "3a9cafaf9e09bb643a4817feb7deb7259492b552d16fa7284b1205bc1375dc33",
+  "source": "5d2023cce70b83c736dfc1e2f7a0351d35d3fe81dbaf39c2482b7a75aadee435",
+  "invariantsCheckedAfterAbort": [
+    "source",
+    "tooling",
+    "references",
+    "review",
+    "packages"
+  ],
+  "approvedPhases": {
+    "visual": 26,
+    "functional": 168
+  },
+  "chromium": {
+    "passed": 441,
+    "knownSkipped": 7,
+    "failed": 1,
+    "interrupted": 1,
+    "notRun": 117
+  },
+  "failure": {
+    "project": "laptop",
+    "file": "practice.spec.ts",
+    "title": "responsive: rotación y texto al 200% conservan editor, selección y controles accesibles",
+    "snapshot": "practice-200.png",
+    "pixelsDifferent": 1198
+  },
+  "analysis": "La traza conserva .cm-line con style=\"color: rgb(55, 148, 255); font-size: 16px;\" después de fill y durante la captura al 200%; la prueba solo medía el contenedor."
+}

@@ -42,7 +42,7 @@ export function parseBrowserPreflightArgs(args: readonly string[]): {projects: s
 const message = (error: unknown) => (error instanceof Error ? error.message : String(error)).replace(/\u001b\[[0-9;]*m/g, '');
 const summary = (error: unknown) => message(error).split('\n')[0].slice(0, 400);
 
-async function closeBrowser(browser: BrowserHandle, timeoutMs: number) {
+export async function closeBrowser(browser: BrowserHandle, timeoutMs: number) {
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
     await Promise.race([browser.close(), new Promise<never>((_, reject) => {

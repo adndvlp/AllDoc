@@ -1,0 +1,470 @@
+[
+  {
+    "project": "firefox-estrecho",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "inicio.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "sql-codigo.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "sql-resultado.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "sql-datos.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "pandas-resultado.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "pandas-sugerencias.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-tableta",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-escritorio",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-tableta",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "practica-busqueda.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "webkit-escritorio",
+    "image": "practica-temas.png",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "fontScale": 1
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "320-texto-200.png",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "fontScale": 2
+  },
+  {
+    "project": "firefox-estrecho",
+    "image": "horizontal-texto-200.png",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "fontScale": 2
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "320-texto-200.png",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "fontScale": 2
+  },
+  {
+    "project": "webkit-estrecho",
+    "image": "horizontal-texto-200.png",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "fontScale": 2
+  }
+]

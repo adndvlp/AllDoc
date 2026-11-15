@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "point": 5,
+  "status": "complete",
+  "acceptedAt": "2026-11-15T07:55:06.377Z",
+  "source": "5d2023cce70b83c736dfc1e2f7a0351d35d3fe81dbaf39c2482b7a75aadee435",
+  "commitBase": "d3d4ad3ff0d112eb1d186cf7c196ee28bd0a42a7",
+  "evidence": {
+    "path": "specs/verification/browser-point-5-acceptance.json",
+    "sha256": "a9b35fadc1a651757927d4efab7f27fe96ae485f6ffa97609728881056c0589f",
+    "kind": "consolidated-evidence",
+    "originalReportsPreserved": true
+  },
+  "inputs": [
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7",
+      "sha256": "3a9cafaf9e09bb643a4817feb7deb7259492b552d16fa7284b1205bc1375dc33",
+      "status": "partial"
+    },
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T07-41-58-702Z-5d2023cce7",
+      "sha256": "9d571a09c77836a4a1f2480f9c4b0497d1c75029f174e62b432ad613544e6aa5",
+      "status": "subset-complete"
+    },
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7",
+      "sha256": "38800b370095bcdd898025645c9816f9f2e85c2f3e75318f3151408287ee3e0b",
+      "status": "subset-complete"
+    }
+  ],
+  "selection": [
+    {
+      "execution": "benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7",
+      "selectedCases": 400
+    },
+    {
+      "execution": "benchmarks/browser-verifications/2026-11-15T07-41-58-702Z-5d2023cce7",
+      "selectedCases": 5
+    },
+    {
+      "execution": "benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7",
+      "selectedCases": 162
+    }
+  ],
+  "cases": {
+    "visual": {
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0
+    },
+    "functional": {
+      "passed": 168,
+      "failed": 0,
+      "skipped": 0
+    },
+    "chromium": {
+      "discovered": 567,
+      "passed": 558,
+      "failed": 0,
+      "knownSkipped": 9
+    }
+  },
+  "native": {
+    "passed": 275,
+    "files": 48,
+    "failed": 0,
+    "skipped": 0
+  },
+  "supplemental": {
+    "passed": 4,
+    "failed": 0,
+    "evidence": {
+      "path": "specs/verification/browser-point-5-close-tdd.json",
+      "sha256": "9ae7f7bcf02405bbc266393f6226a57ef3fa8c4e72eddff7322da36c64118435"
+    }
+  },
+  "checks": {
+    "native": {
+      "status": "passed",
+      "title": "02-código",
+      "durationMs": 19740
+    },
+    "typesApp": {
+      "status": "passed",
+      "title": "03-tipos-app",
+      "durationMs": 585
+    },
+    "typesTests": {
+      "status": "passed",
+      "title": "04-tipos-pruebas",
+      "durationMs": 320
+    },
+    "buildApp": {
+      "status": "passed",
+      "title": "05-build-app",
+      "durationMs": 10816
+    },
+    "runtime": {
+      "status": "passed",
+      "title": "06-runtime-rutas-inventario",
+      "durationMs": 2108
+    }
+  },
+  "environment": {
+    "node": "v26.0.0",
+    "platform": "darwin",
+    "release": "27.0.0",
+    "arch": "arm64",
+    "cpu": "Apple M1"
+  },
+  "packages": {
+    "@playwright/test": "1.65.1",
+    "@docusaurus/core": "3.10.2",
+    "react": "19.3.1",
+    "typescript": "7.0.2",
+    "@codemirror/view": "6.43.15",
+    "@sqlite.org/sqlite-wasm": "3.54.1-build1",
+    "pyodide": "314.0.8"
+  },
+  "browsers": [
+    {
+      "engine": "firefox",
+      "status": "ready",
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "status": "ready",
+      "version": "27.2"
+    },
+    {
+      "engine": "chromium",
+      "status": "ready",
+      "version": "159.0.8154.6"
+    }
+  ],
+  "references": {
+    "crossBrowserImages": 52,
+    "manifests": 6,
+    "chromiumImages": 165,
+    "unchanged": true,
+    "comparison": "none",
+    "review": {
+      "path": "specs/verification/browser-point-4-visual-review.json",
+      "sha256": "6df7fc062c2d6e70f2fa823c0be9e5e5a0636e76bdc7a63972a28db3fa0a531d"
+    }
+  },
+  "tdd": {
+    "original": {
+      "path": "specs/verification/browser-point-5-red.json",
+      "sha256": "88dc984a66e854040ad3a74618d5ace309b6c96ac91d5ae4c47b33b32830d8e6"
+    },
+    "regression": {
+      "path": "specs/verification/browser-point-5-chromium-red.json",
+      "sha256": "a030d497e3bdeac7ea3edd9f0d6ca29700079b4a9a5f31d70fe3c74264312608"
+    },
+    "filter": {
+      "path": "specs/verification/browser-point-5-filter-input.json",
+      "sha256": "80ceb06ba4e7d66b15959493ae9f6f02e84b485ba15879c8b0b3b1028333839b"
+    },
+    "consolidation": {
+      "path": "specs/verification/browser-point-5-consolidation-tdd.json",
+      "sha256": "0f6e021bb85c43e7e8b698798281acfcc95e564e0cfa44a344f60aeaa76ce2bc"
+    },
+    "resumption": {
+      "path": "specs/verification/browser-point-5-resume-review.json",
+      "sha256": "359f6b92df7a652be8044f92531bf3648865f574aeaf15175af52cad73248119"
+    },
+    "closing": {
+      "path": "specs/verification/browser-point-5-close-tdd.json",
+      "sha256": "9ae7f7bcf02405bbc266393f6226a57ef3fa8c4e72eddff7322da36c64118435"
+    }
+  },
+  "criteria": [
+    {
+      "id": "CA-01",
+      "title": "Motores requeridos iniciados y versionados",
+      "status": "passed"
+    },
+    {
+      "id": "CA-02",
+      "title": "Seis proyectos y configuración efectiva de la matriz",
+      "status": "passed"
+    },
+    {
+      "id": "CA-03",
+      "title": "CB-01 a CB-20 completos según alcance",
+      "status": "passed"
+    },
+    {
+      "id": "CA-04",
+      "title": "Ejecución real SQL y pandas",
+      "status": "passed"
+    },
+    {
+      "id": "CA-05",
+      "title": "Edición, sugerencias, estado y recuperación",
+      "status": "passed"
+    },
+    {
+      "id": "CA-06",
+      "title": "Navegación, diálogos, foco, scroll y adaptación",
+      "status": "passed"
+    },
+    {
+      "id": "CA-07",
+      "title": "Aislamiento y entrega de producción",
+      "status": "passed"
+    },
+    {
+      "id": "CA-08",
+      "title": "Referencias aprobadas comparadas sin actualización",
+      "status": "passed"
+    },
+    {
+      "id": "CA-09",
+      "title": "Regresión Chromium y referencias conservadas",
+      "status": "passed"
+    },
+    {
+      "id": "CA-10",
+      "title": "Código, tipos, build y herramientas aprobados con TDD",
+      "status": "passed"
+    },
+    {
+      "id": "CA-11",
+      "title": "Procedencia, invariantes y progreso",
+      "status": "passed"
+    },
+    {
+      "id": "CA-12",
+      "title": "Alcance sin atribuir hardware físico ni Safari comercial",
+      "status": "passed"
+    }
+  ],
+  "invariants": {
+    "source": true,
+    "tooling": true,
+    "references": true,
+    "review": true,
+    "packages": true,
+    "chromiumBaseline": true,
+    "currentHashesVerified": true,
+    "productSourceUnchanged": true,
+    "toolingChangesReviewedByHash": true
+  },
+  "scope": {
+    "physicalDevices": false,
+    "commercialSafari": false,
+    "fieldINP": false,
+    "browserDistributions": "Playwright"
+  },
+  "review": {
+    "status": "approved",
+    "method": "Se contrastaron los casos seleccionados con el descubrimiento, hashes de los originales, aprobación visual previa, configuraciones efectivas, versiones, cambios de herramientas y todos los criterios. Los informes parciales y sus errores permanecen intactos."
+  }
+}

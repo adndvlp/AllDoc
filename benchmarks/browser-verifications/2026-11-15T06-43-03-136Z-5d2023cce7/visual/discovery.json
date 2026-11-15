@@ -1,0 +1,698 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.browser-verification.config.ts",
+      "--update-snapshots=none",
+      "--retries=0",
+      "--workers=2",
+      "--list",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.browser-verification.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "browser-final-verification",
+      "suite": "visual"
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-escritorio"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual"
+        },
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "none",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "visual.spec.ts",
+      "file": "visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[VIS-01] portada con catálogo y buscador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-0bc8693662bd3bba33e3",
+          "file": "visual.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "[VIS-02] SQL real: código, resultado y datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-a63207c04ca050213cfd",
+          "file": "visual.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "[VIS-03] pandas real: resultado y sugerencias Jedi",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-d0625995bd0db35bf0e4",
+          "file": "visual.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "[VIS-04] práctica con búsqueda y temas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-ce4d5917cbba37ab702c",
+          "file": "visual.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "[VIS-05] @narrow 320 px y ventana horizontal al 200%",
+          "ok": true,
+          "tags": [
+            "narrow"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-45a3b0739b8322cdbfd6",
+          "file": "visual.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T06:43:40.897Z",
+    "duration": 15.26400000000001,
+    "expected": 0,
+    "skipped": 26,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

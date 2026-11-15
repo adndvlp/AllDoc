@@ -1,0 +1,17 @@
+{
+  "point": 5,
+  "recordedAt": "2026-11-15T07:38:36.812426+00:00",
+  "execution": "benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7",
+  "reportSha256": "0d321d498326a86c016e70a7feb6ffb219c772cef81e23a9d6577a31845ff384",
+  "observedFilter": "responsive:\n  rotación y texto",
+  "failure": "No tests found: salto de línea dentro del filtro entrecomillado",
+  "appCasesExecuted": 0,
+  "nativePassed": 266,
+  "correction": "El parser rechaza LF/CR antes del trabajo pesado; scripts/check-zoom.mjs usa un filtro fijo sin espacios y descubre siete casos.",
+  "red": {
+    "command": "node --experimental-strip-types --test --test-name-pattern='filtros y modos' tests/browser-acceptance.test.ts",
+    "exitCode": 1,
+    "log": "specs/verification/browser-point-5-filter-red.txt",
+    "sha256": "c9419c05dc94d37a1f95dfa3fd8e3c7972ac952d868b8626bb4895111367e37c"
+  }
+}

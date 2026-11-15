@@ -1,0 +1,29 @@
+{
+  "point": 5,
+  "phase": "native-green",
+  "recordedAt": "2026-11-15T07:43:38.063300+00:00",
+  "red": [
+    {
+      "log": "specs/verification/browser-point-5-consolidation-red.txt",
+      "sha256": "6762cce099ef5808775253c0ce9e99fa897583456bc2132f76b64f6340b74ef1",
+      "exitCode": 1
+    },
+    {
+      "log": "specs/verification/browser-point-5-consolidation-extra-red.txt",
+      "sha256": "458c50d078a9fe2210050f9311605e8b2a8e7f415ca9a4837572d9e0beafcc70",
+      "exitCode": 1
+    }
+  ],
+  "tests": 7,
+  "passed": 7,
+  "checks": [
+    "procedencia por caso",
+    "sin duplicados ni huecos",
+    "sin reintentos ni resultados fallidos seleccionados",
+    "errores originales preservados y revisados",
+    "comparación estricta sin actualizar referencias",
+    "cambios de herramientas revisados por hash"
+  ],
+  "greenLogSha256": "e401eccbf3ecb6bc41a9f3bf8607bf8cfc32edb2735cf75d4bc8f960deae7826",
+  "browserAcceptance": "pending"
+}

@@ -1,0 +1,116 @@
+✖ cierre: admite puertos propios diferentes con las mismas fuentes, versiones, referencias y configuración efectiva (1.307333ms)
+✖ cierre: rechaza cambios de producto, referencias, herramientas, motor y viewport (1.294792ms)
+✖ cierre: exige comprobaciones e invariantes y vincula los orígenes del runtime al build (0.260708ms)
+✖ cierre: solo la pasada original revisada puede estar abortada y los cambios de herramienta exigen hashes exactos (0.193458ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119.053375
+
+✖ failing tests:
+
+test at specs/verification/browser-point-5-close.test.mjs:18:1
+✖ cierre: admite puertos propios diferentes con las mismas fuentes, versiones, referencias y configuración efectiva (1.307333ms)
+  TypeError: closing.checkCompatibleRun is not a function
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:20:24)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at specs/verification/browser-point-5-close.test.mjs:22:1
+✖ cierre: rechaza cambios de producto, referencias, herramientas, motor y viewport (1.294792ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /incompatible|no revisado/. Input:
+  
+  'TypeError: closing.checkCompatibleRun is not a function'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:24:62)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: closing.checkCompatibleRun is not a function
+        at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:24:81
+        at getActual (node:assert:580:5)
+        at strict.throws (node:assert:728:24)
+        at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:24:62)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3),
+    expected: /incompatible|no revisado/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-close.test.mjs:27:1
+✖ cierre: exige comprobaciones e invariantes y vincula los orígenes del runtime al build (0.260708ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /incompatible|incompleta/. Input:
+  
+  'TypeError: closing.checkCompatibleRun is not a function'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:29:62)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: closing.checkCompatibleRun is not a function
+        at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:29:81
+        at getActual (node:assert:580:5)
+        at strict.throws (node:assert:728:24)
+        at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:29:62)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /incompatible|incompleta/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-close.test.mjs:32:1
+✖ cierre: solo la pasada original revisada puede estar abortada y los cambios de herramienta exigen hashes exactos (0.193458ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /incompleta/. Input:
+  
+  'TypeError: closing.checkCompatibleRun is not a function'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: closing.checkCompatibleRun is not a function
+        at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:34:29
+        at getActual (node:assert:580:5)
+        at strict.throws (node:assert:728:24)
+        at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-close.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /incompleta/,
+    operator: 'throws',
+    diff: 'simple'
+  }

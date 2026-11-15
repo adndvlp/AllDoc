@@ -130,7 +130,7 @@ test('error de descarga permite reintentar el editor sin duplicarlo ni perder el
 });
 
 test('responsive: rotación y texto al 200% conservan editor, selección y controles accesibles', async ({page}) => {
-  await go(page); await open(page); await code(page).fill('SELECT nombre FROM productos;');
+  await go(page); await open(page); /* Las teclas evitan estilos en línea de fill en contenteditable. */ await code(page).press('ControlOrMeta+a'); await code(page).pressSequentially('SELECT nombre FROM productos;');
   await panel(page).locator('.cm-editor').evaluate((element) => {element.setAttribute('data-instance-test', 'original');});
   await page.setViewportSize({width: 1920, height: 1080}); await expect(panel(page)).toHaveAttribute('data-layout', 'parallel');
   await page.addStyleTag({content: 'html {font-size: 200% !important}'}); await expect(panel(page)).toHaveAttribute('data-layout', 'modal');
@@ -138,7 +138,7 @@ test('responsive: rotación y texto al 200% conservan editor, selección y contr
   await page.setViewportSize({width: 768, height: 1024}); await expect(panel(page)).toHaveAttribute('data-layout', 'bottom');
   await page.setViewportSize({width: 390, height: 844}); await expect(panel(page)).toHaveAttribute('data-layout', 'modal');
   await page.addStyleTag({content: 'html {font-size: 200% !important}'});
-  await expect.poll(() => code(page).evaluate((element) => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(27);
+  await expect.poll(() => code(page).evaluate((element) => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(27); await expect.poll(() => code(page).locator('.cm-line').first().evaluate((element) => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(27);
   await expect(panel(page).locator('.cm-editor')).toHaveAttribute('data-instance-test', 'original');
   await expect(code(page)).toHaveText('SELECT nombre FROM productos;'); await fits(page, panel(page));
   for (const button of await panel(page).getByRole('button').all()) {

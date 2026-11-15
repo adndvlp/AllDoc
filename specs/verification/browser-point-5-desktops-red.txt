@@ -1,0 +1,48 @@
+✖ CLI de pendientes: descubre solo los 162 casos de laptop y escritorio (79.759375ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 187.305792
+
+✖ failing tests:
+
+test at tests/browser-acceptance-cli.test.mjs:26:1
+✖ CLI de pendientes: descubre solo los 162 casos de laptop y escritorio (79.759375ms)
+  AssertionError [ERR_ASSERTION]: node:internal/modules/cjs/loader:1478
+    throw err;
+    ^
+  
+  Error: Cannot find module '/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/check-desktops.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1475:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1048:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1072:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1093:12)
+      at Module._load (node:internal/modules/cjs/loader:1261:25)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+  
+  Node.js v26.0.0
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-cli.test.mjs:29:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

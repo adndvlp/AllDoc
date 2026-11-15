@@ -1,7 +1,7 @@
 # AllDoc — SDD de pruebas automáticas en Firefox y WebKit
 
 **Fecha:** 14 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 4 completados; punto 5 pendiente. [Evidencia del punto 1](verification/browser-point-1.md). [Evidencia del punto 2](verification/browser-point-2.md). [Evidencia del punto 3](verification/browser-point-3.md). [Evidencia del punto 4](verification/browser-point-4.md).
+**Estado:** puntos 1 a 5 completados; CA-01 a CA-12 aprobados. [Evidencia del punto 1](verification/browser-point-1.md). [Evidencia del punto 2](verification/browser-point-2.md). [Evidencia del punto 3](verification/browser-point-3.md). [Evidencia del punto 4](verification/browser-point-4.md). [Aceptación del punto 5](verification/browser-point-5.md).
 **Objetivo:** comprobar automáticamente el comportamiento de AllDoc y su práctica SQL/pandas en los motores Firefox y WebKit de Playwright.  
 **Alcance solicitado:** únicamente las pruebas automáticas del punto 1. No incluye pruebas en aparatos físicos ni publicación de la app.
 
@@ -100,9 +100,19 @@ Los comandos funcionales y visuales están implementados. Desde el punto 3, la e
 | `npm run test:browser` | 168 casos aplicables en seis proyectos; admite selección con `--project=nombre` y `--grep=expresión`. `--desktop` conserva los veinte casos iniciales del punto 2 |
 | `npm run test:browser:update` | Generar únicamente las nuevas referencias de Firefox/WebKit: 26 casos y 52 imágenes; admite selección de proyectos completos. La generación queda pendiente de inspección |
 | `npm run test:browser -- --visual` | Comparar únicamente las referencias nuevas, sin creación automática; exige manifiestos, entorno compatible y hashes intactos |
-| `npm run verify:browser` | Preflight, código/tipos pertinentes, build, matriz estricta, invariantes e informe final |
+| `npm run verify:browser` | Preflight de Firefox/WebKit/Chromium, código/tipos, un build compartido, 26 comparaciones visuales, 168 casos funcionales, regresión Chromium completa, invariantes y CA-01 a CA-12 |
 
 Los filtros permiten repetir solo el caso y motor que falló. La ejecución dedicada no relanza los 24 benchmarks Chromium ni toda su suite por defecto. Si una corrección cambia código de aplicación o utilidades compartidas, se ejecutan primero sus regresiones Chromium afectadas; una única regresión completa de la suite actual cierra la entrega con la fuente final. Si cambia un camino medido de práctica, se repite también la medición afectada y la comprobación final necesaria.
+
+El comando de cierre está implementado en el punto 5. Comparte un build y dos
+servidores propios entre las tres suites, que se ejecutan secuencialmente.
+Chromium conserva siete proyectos, 567 casos descubiertos y nueve omisiones
+previstas; se exige cada identidad, motivo y resultado, sin aceptar contadores
+favorables con huecos. Las comparaciones son estrictas incluso ante referencias
+ausentes. `--list` solo descubre; `--code-only` y `--suite=visual|functional|chromium`
+son modos parciales. `--project`/`--grep` requieren una suite y no acreditan el
+cierre. La revisión previa se verifica por hash y los resultados originales de
+cada fase se conservan separados. El comando nunca instala binarios.
 
 ## 5. Cobertura funcional obligatoria
 
@@ -220,7 +230,7 @@ Durante una corrección se ejecuta primero el caso/motor afectado. La matriz com
 | CA-11 | El informe conserva procedencia, casos reales, límites de cobertura y progreso observable; una ejecución interrumpida no queda completa |
 | CA-12 | El cierre declara Firefox/WebKit de Playwright en el entorno registrado, sin atribuir pruebas físicas o Safari comercial |
 
-El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. El punto 2 acredita editor, sugerencias y ejecución de SQL/pandas en escritorio. El punto 3 completa los 168 casos funcionales mediante ejecuciones compatibles con procedencia revisada, 231 pruebas de código, tipos y build. El punto 4 genera y revisa 52 referencias propias con sus seis manifiestos, 26 casos visuales, 248 pruebas de código, tipos y build aprobados. La comparación estricta independiente, regresión pertinente y cierre global permanecen pendientes del punto 5.
+El estado global `complete` se registra solo después de la revisión funcional y visual. CA-01 y CA-02 tienen evidencia en el punto 1: motores requeridos iniciados y seis proyectos configurados. El punto 2 acredita editor, sugerencias y ejecución de SQL/pandas en escritorio. El punto 3 completa los 168 casos funcionales mediante ejecuciones compatibles con procedencia revisada, 231 pruebas de código, tipos y build. El punto 4 genera y revisa 52 referencias propias con sus seis manifiestos, 26 casos visuales, 248 pruebas de código, tipos y build aprobados. El punto 5 aprueba la comparación estricta independiente de 26 casos, repite los 168 funcionales y completa la regresión Chromium con 558 aprobaciones y nueve omisiones previstas. La aceptación consolidada y revisada aprueba CA-01 a CA-12; conserva las 165 referencias Chromium, 275 pruebas de código, cuatro comprobaciones adicionales del cierre, tipos y build/runtime.
 
 ## 11. Secuencia de implementación
 
@@ -230,7 +240,7 @@ El estado global `complete` se registra solo después de la revisión funcional 
 | 2 | Ampliar la comprobación básica a editor, sugerencias y ejecución real SQL/pandas en escritorio | Completado: veinte casos reales aprobados, ocho capturas de diagnóstico revisadas, 218 pruebas de código, tipos y build; [evidencia](verification/browser-point-2.md) |
 | 3 | Completar navegación, diálogos, persistencia, adaptación, scroll, aislamiento y errores de la matriz | Completado: 168 casos aprobados en seis proyectos, evidencia consolidada y revisada por CB/proyecto, 231 pruebas de código, tipos y build; [evidencia](verification/browser-point-3.md) |
 | 4 | Generar y revisar las referencias propias de Firefox/WebKit | Completado: 26 casos visuales aprobados, 52 imágenes inspeccionadas y aprobadas, seis manifiestos con hashes/entorno, 248 pruebas de código, tipos y build; [evidencia](verification/browser-point-4.md) |
-| 5 | Ejecutar comparación estricta, regresión pertinente y aceptación consolidada | CA-01 a CA-12 con evidencia, progreso visible y alcance documentado |
+| 5 | Ejecutar comparación estricta, regresión pertinente y aceptación consolidada | Completado: CA-01 a CA-12 aprobados; 26 comparaciones visuales, 168 casos funcionales y Chromium con 558 aprobaciones y nueve omisiones previstas; 275 pruebas de código, cuatro comprobaciones adicionales del cierre, tipos y build/runtime. Evidencia por caso, referencias intactas y TDD; [aceptación](verification/browser-point-5.md) |
 
 ## 12. Fuentes y límites de las afirmaciones
 
@@ -241,4 +251,4 @@ El estado global `complete` se registra solo después de la revisión funcional 
 - [Reporters](https://playwright.dev/docs/test-reporters): salida observable y resultados estructurados de ejecución.
 - [Timeouts](https://playwright.dev/docs/test-timeouts): plazos de prueba y aserción, distintos del timeout del programa ejecutado por la app.
 
-La matriz, los comandos y la selección de cobertura son decisiones de este diseño. El punto 1 verifica configuración y preflight. El punto 2 verifica la práctica real de escritorio en Firefox/WebKit. El punto 3 completa la matriz funcional y conserva la revisión de capturas de diagnóstico. En WebKit móvil, el scroll comprueba desplazamiento del DOM y contención CSS porque Playwright no permite rueda en esa configuración; no acredita física de gestos. El punto 4 genera e inspecciona las referencias propias. La comparación estricta independiente y aceptación global corresponden al punto 5.
+La matriz, los comandos y la selección de cobertura son decisiones de este diseño. El punto 1 verifica configuración y preflight. El punto 2 verifica la práctica real de escritorio en Firefox/WebKit. El punto 3 completa la matriz funcional y conserva la revisión de capturas de diagnóstico. En WebKit móvil, el scroll comprueba desplazamiento del DOM y contención CSS porque Playwright no permite rueda en esa configuración; no acredita física de gestos. El punto 4 genera e inspecciona las referencias propias. El punto 5 completa la comparación estricta independiente y la aceptación global con procedencia revisada de las ejecuciones compatibles.

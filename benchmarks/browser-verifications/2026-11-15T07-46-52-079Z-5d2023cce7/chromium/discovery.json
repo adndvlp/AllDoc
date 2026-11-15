@@ -1,0 +1,2697 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.browser-verification.config.ts",
+      "--update-snapshots=none",
+      "--retries=0",
+      "--workers=2",
+      "--list",
+      "--reporter=json",
+      "--project=laptop",
+      "--project=escritorio"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.browser-verification.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "browser-final-verification",
+      "suite": "chromium"
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:55223",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "laptop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:55223",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "none",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "catalog.spec.ts",
+      "file": "catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-4664fb9f70edbcbc57d3",
+          "file": "catalog.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-8e4bc44fc07f5fd71cd2",
+          "file": "catalog.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-9f4757d86a52b5a3d9c4",
+          "file": "catalog.spec.ts",
+          "line": 89,
+          "column": 1
+        },
+        {
+          "title": "buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-f989dfde0c5b0b255f0b",
+          "file": "catalog.spec.ts",
+          "line": 110,
+          "column": 1
+        },
+        {
+          "title": "URL directa de WHERE y recarga conservan todos los temas contraídos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-8c970ca09f04ce4f8388",
+          "file": "catalog.spec.ts",
+          "line": 127,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "header.spec.ts",
+      "file": "header.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "encabezado compacto: una fila, selector de áreas y controles táctiles sin footer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-157a520456aee5db0546",
+          "file": "header.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "selector de áreas: teclado, cierre, foco y consulta conservada en portada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-e9211a7b4361d814ccc0",
+          "file": "header.spec.ts",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "texto al 200%: altura natural, controles sin solaparse y sidebar legible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-02c5e7d10ac48e68207b",
+          "file": "header.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-a0137f6f1af78b2092ad",
+          "file": "header.spec.ts",
+          "line": 158,
+          "column": 1
+        },
+        {
+          "title": "rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-25e0c7f05f557e2356f2",
+          "file": "header.spec.ts",
+          "line": 215,
+          "column": 1
+        },
+        {
+          "title": "paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2de9cb50cb022a3f1ddd-df68389fc5e9d06e8334",
+          "file": "header.spec.ts",
+          "line": 240,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "notes.spec.ts",
+      "file": "notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "una envoltura por ejemplo, tipografía legible y contenido esencial compacto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-63f40d5404e0f16b0fab",
+          "file": "notes.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "resultados independientes, tabla semántica y scroll horizontal limitado al resultado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-49e6efa609b6b5c7d44f",
+          "file": "notes.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "copiar cada variante conserva la consulta completa y mantiene la posición del contenido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-e18f889b4de21811c4ea",
+          "file": "notes.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "anterior y siguiente conservan rutas, teclado y alineación con la ficha",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-6bfe013521b05163714e",
+          "file": "notes.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-5198d3c498929c994064",
+          "file": "notes.spec.ts",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-28fff643c785a390f0e2",
+          "file": "notes.spec.ts",
+          "line": 165,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pandas.spec.ts",
+      "file": "pandas.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "3ca722d59afbb6206c07-7f1f783e4ec00aef5c08",
+          "file": "pandas.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "3ca722d59afbb6206c07-71caace3df5436b6a554",
+          "file": "pandas.spec.ts",
+          "line": 39,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "personal-library.spec.ts",
+      "file": "personal-library.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-4dff73d3cf7aa7b433e9",
+          "file": "personal-library.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-abb83092cae016d6ed30",
+          "file": "personal-library.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-28449bad84c3e64a8ab2",
+          "file": "personal-library.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-b3528c5913c30cd13b00",
+          "file": "personal-library.spec.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-2b3d010930ab59ba47bf",
+          "file": "personal-library.spec.ts",
+          "line": 131,
+          "column": 3
+        },
+        {
+          "title": "almacenamiento lleno: lectura, navegación y favoritos siguen en memoria",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-7617766abd9645b5f98b",
+          "file": "personal-library.spec.ts",
+          "line": 131,
+          "column": 3
+        },
+        {
+          "title": "dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "23b16bb91e446619d6af-38dac48af9e734140dee",
+          "file": "personal-library.spec.ts",
+          "line": 158,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice-actions.spec.ts",
+      "file": "practice-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-c98d3fc82815169cad9f",
+          "file": "practice-actions.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-c048ed3a4a1110fccc1d",
+          "file": "practice-actions.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-d56bbddb2b0dcfdf6f11",
+          "file": "practice-actions.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-a8e9d033e1a0664d9ca9",
+          "file": "practice-actions.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-552af0e06b813193e8d0",
+          "file": "practice-actions.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-1798f2a58a93f24f9c9b",
+          "file": "practice-actions.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-d2347f33307d24189700",
+          "file": "practice-actions.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice-storage.spec.ts",
+      "file": "practice-storage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1eeb9783fd11eab24f92-553ddd74fa35b84f91ce",
+          "file": "practice-storage.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1eeb9783fd11eab24f92-13d1f61c2179453d2ba7",
+          "file": "practice-storage.spec.ts",
+          "line": 48,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice.spec.ts",
+      "file": "practice.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "entrada contextual: apertura diferida, editor real y SQL ejecutable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-d6b9242a8a2fab4f1d8f",
+          "file": "practice.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-92ffea5ae42c4eff175d",
+          "file": "practice.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "datos: tabla común tipada y pestañas por teclado sin resultados inventados",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-f524bacd936bef45a8da",
+          "file": "practice.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-cb2849500184c1a011d7",
+          "file": "practice.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-a8358116b0f4db1ee336",
+          "file": "practice.spec.ts",
+          "line": 89,
+          "column": 1
+        },
+        {
+          "title": "descarga tardía del editor no reabre práctica después de colapsar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-d28bac24817d8edcce33",
+          "file": "practice.spec.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-bd02c3fcd5b032a44f83",
+          "file": "practice.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "responsive: rotación y texto al 200% conservan editor, selección y controles accesibles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-61cf7c78fbc751036b8e",
+          "file": "practice.spec.ts",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-83e563540280e5fe10e2",
+          "file": "practice.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-624a75cf70b49327ec32",
+          "file": "practice.spec.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-df319b0888d6ff63e2ad",
+          "file": "practice.spec.ts",
+          "line": 182,
+          "column": 1
+        },
+        {
+          "title": "separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0011e267bb7a139fed4-f4452669bce970724a04",
+          "file": "practice.spec.ts",
+          "line": 194,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "python.spec.ts",
+      "file": "python.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-b7019b039f41265deec6",
+          "file": "python.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-25b2ca36deb9af9f8aba",
+          "file": "python.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-83cf494203c9cd47e7b5",
+          "file": "python.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-31813cd396da730097ca",
+          "file": "python.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "salida Python: selección, stdout, cero filas y errores seguros con archivo y línea",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-db63b3576fdb9704f6bb",
+          "file": "python.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-fc35b33bccb6e82fc20c",
+          "file": "python.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-cd3b1ab893a4513d8407",
+          "file": "python.spec.ts",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-48cc60dfaf5eb3370e7f",
+          "file": "python.spec.ts",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "874b6a89a86b021200a4-479020820a39115b8c9d",
+          "file": "python.spec.ts",
+          "line": 148,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "responsive.spec.ts",
+      "file": "responsive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "inicio sin desbordamientos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-f9edb0237301e4d58b3d",
+          "file": "responsive.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "apunte compacto y resultados legibles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-922898a0d88ca7387de3",
+          "file": "responsive.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "grupos contraídos, logos y navegación desde el menú",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-87b78ccc079f58053d91",
+          "file": "responsive.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "buscador accesible y dentro de la pantalla",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-791cf53d3258f4548ab5",
+          "file": "responsive.spec.ts",
+          "line": 126,
+          "column": 1
+        },
+        {
+          "title": "selector de texto visible y elección persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-35b4ad5c279b2fdab109",
+          "file": "responsive.spec.ts",
+          "line": 149,
+          "column": 1
+        },
+        {
+          "title": "la navegación se adapta al girar el dispositivo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-4bfd230f497f2fe42b7a",
+          "file": "responsive.spec.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "las áreas se pueden abrir desde el encabezado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-5681ce1f50f02b4ed969",
+          "file": "responsive.spec.ts",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "scroll independiente del contenido y el sidebar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-ac8b01a15189332442fe",
+          "file": "responsive.spec.ts",
+          "line": 203,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "search.spec.ts",
+      "file": "search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "buscador de portada: carga diferida, consulta pedagógica y navegación por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-02bc17d466417ac4df61",
+          "file": "search.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-f069d0e51ac8f415bd1d",
+          "file": "search.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-c2cd8d6d544c76856c1f",
+          "file": "search.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-bb2c8f0097e4b6a9b634",
+          "file": "search.spec.ts",
+          "line": 76,
+          "column": 3
+        },
+        {
+          "title": "atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-c3476667ea6e5d1bd70d",
+          "file": "search.spec.ts",
+          "line": 76,
+          "column": 3
+        },
+        {
+          "title": "una carga tardía conserva lo escrito y no vuelve a abrir el diálogo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-b8b1e8a5a9ce3c926b53",
+          "file": "search.spec.ts",
+          "line": 101,
+          "column": 1
+        },
+        {
+          "title": "error del índice y reintento visible sin perder la consulta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-5631270698ddbbc3af1b",
+          "file": "search.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "sin coincidencias, solo auxiliares y Enter durante composición IME",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-b9b76a24c76568c81e36",
+          "file": "search.spec.ts",
+          "line": 132,
+          "column": 1
+        },
+        {
+          "title": "diálogo ajustado a un viewport visual reducido por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-914feecccca85c9b2167",
+          "file": "search.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "el diálogo contiene el scroll sin desplazar el apunte del fondo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-2a8685fe190bccd95350",
+          "file": "search.spec.ts",
+          "line": 166,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sqlite.spec.ts",
+      "file": "sqlite.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-e464b3c09c1a00f8d146",
+          "file": "sqlite.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-55d7dbd83df4d825b9a8",
+          "file": "sqlite.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-9054f556909c44dddb38",
+          "file": "sqlite.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-f4ed991f66f5ce6bf90e",
+          "file": "sqlite.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-3959c74f365ba6a6e2ee",
+          "file": "sqlite.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "datos mutables: reiniciar conserva el código y restaura solo la sesión SQL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-43caf2960c6ae22ae769",
+          "file": "sqlite.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "escritorio",
+              "projectName": "escritorio",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-b50786723cd2831bccd5",
+          "file": "sqlite.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T07:47:26.918Z",
+    "duration": 272.542,
+    "expected": 0,
+    "skipped": 162,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

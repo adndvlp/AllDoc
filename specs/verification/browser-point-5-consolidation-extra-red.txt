@@ -1,0 +1,52 @@
+(node:7251) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-acceptance.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales (1.745709ms)
+✔ consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta (0.345833ms)
+✔ consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables (0.271791ms)
+✔ consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones (0.215584ms)
+✔ consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento (0.33875ms)
+✖ consolidación: ninguna fuente puede actualizar capturas aunque sus casos estén aprobados (0.585ms)
+✖ compatibilidad: exige hashes idénticos salvo cada cambio de herramienta revisado explícitamente (0.097542ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 584.979792
+
+✖ failing tests:
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:45:1
+✖ consolidación: ninguna fuente puede actualizar capturas aunque sus casos estén aprobados (0.585ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:47:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /actualizar/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at specs/verification/browser-point-5-consolidate.test.mjs:50:1
+✖ compatibilidad: exige hashes idénticos salvo cada cambio de herramienta revisado explícitamente (0.097542ms)
+  TypeError: evidence.reviewToolingChanges is not a function
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/specs/verification/browser-point-5-consolidate.test.mjs:53:29)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)

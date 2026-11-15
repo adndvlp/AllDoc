@@ -21,6 +21,7 @@
     "test:browser:smoke": "node --experimental-strip-types scripts/test-browser.mjs --smoke",
     "test:browser": "node --experimental-strip-types scripts/test-browser.mjs",
     "test:browser:update": "node --experimental-strip-types scripts/test-browser.mjs --visual --update-snapshots",
+    "verify:browser": "node --experimental-strip-types scripts/verify-browser.mjs",
     "test:ui:practice": "playwright test tests/ui/practice.spec.ts",
     "test:ui:sql": "playwright test tests/ui/sqlite.spec.ts",
     "test:ui:actions": "playwright test tests/ui/practice-actions.spec.ts",

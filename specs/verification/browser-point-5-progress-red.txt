@@ -1,0 +1,30 @@
+✖ progreso compacto: conserva contadores, caso/fase y fallo breve sin una línea por cada inicio y éxito (5.962584ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 97.983958
+
+✖ failing tests:
+
+test at tests/browser-progress-compact.test.mjs:5:1
+✖ progreso compacto: conserva contadores, caso/fase y fallo breve sin una línea por cada inicio y éxito (5.962584ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!lines.some(l=>l.startsWith('Inicio:')||l.startsWith('passed:')))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-progress-compact.test.mjs:12:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

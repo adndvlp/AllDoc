@@ -1,0 +1,58 @@
+{
+  "point": 5,
+  "phase": "green",
+  "recordedAt": "2026-11-15T07:50:08.203435+00:00",
+  "exitCode": 0,
+  "files": [
+    {
+      "path": "specs/verification/browser-point-5-close.mjs",
+      "sha256": "7baba5d43a09656dff1b3ba518fc8ebc7e6252d1f495ef0c266e4eca3e4143c4"
+    },
+    {
+      "path": "specs/verification/browser-point-5-close.test.mjs",
+      "sha256": "e256b04e4112bae1323149b51d82a6f3e6511173b65c0389e984ef94b8cb2bf1"
+    }
+  ],
+  "cases": [
+    {
+      "file": "specs/verification/browser-point-5-close.test.mjs",
+      "name": "cierre: admite puertos propios diferentes con las mismas fuentes, versiones, referencias y configuración efectiva",
+      "status": "passed",
+      "skipped": false,
+      "line": 18,
+      "durationMs": 2.736375
+    },
+    {
+      "file": "specs/verification/browser-point-5-close.test.mjs",
+      "name": "cierre: rechaza cambios de producto, referencias, herramientas, motor y viewport",
+      "status": "passed",
+      "skipped": false,
+      "line": 22,
+      "durationMs": 1.068959
+    },
+    {
+      "file": "specs/verification/browser-point-5-close.test.mjs",
+      "name": "cierre: exige comprobaciones e invariantes y vincula los orígenes del runtime al build",
+      "status": "passed",
+      "skipped": false,
+      "line": 27,
+      "durationMs": 0.574791
+    },
+    {
+      "file": "specs/verification/browser-point-5-close.test.mjs",
+      "name": "cierre: solo la pasada original revisada puede estar abortada y los cambios de herramienta exigen hashes exactos",
+      "status": "passed",
+      "skipped": false,
+      "line": 32,
+      "durationMs": 0.291417
+    }
+  ],
+  "red": {
+    "path": "specs/verification/browser-point-5-close-red.txt",
+    "sha256": "b9a8920f265a8783f1ad730cc1c57c7b6e0b74fb9eb379d51b5f3a76916611cc"
+  },
+  "green": {
+    "path": "specs/verification/browser-point-5-close-green.ndjson",
+    "sha256": "c70a03e5371fb7466101111011faa800c578a07fe8e9a4ae9fb776a15c481064"
+  }
+}

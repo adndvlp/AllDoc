@@ -1,0 +1,146 @@
+import legacy from '../../playwright.config.ts';
+import {browserProjects,selectBrowserProjects} from './browser-foundation.ts';
+import {visualFilesFor} from './browser-visual.ts';
+import {assessVisualRun,referenceRoot} from './browser-visual.ts';
+import {assessBrowserRun} from './browser-run.ts';
+
+export type AcceptanceSuite='functional'|'visual'|'chromium';
+export type AcceptanceOptions={mode:'full'|'code-only'|'subset';list:boolean;suite?:AcceptanceSuite;projects:string[];grep?:string};
+export const acceptanceSuites:AcceptanceSuite[]=['visual','functional','chromium'];
+export const chromiumNames=legacy.projects!.map(p=>p.name!);
+export function parseBrowserAcceptanceArgs(args:readonly string[]):AcceptanceOptions {
+  const options:AcceptanceOptions={mode:'full',list:false,projects:[]};
+  for(let i=0;i<args.length;i++) {
+    const arg=args[i];
+    if(arg==='--code-only')options.mode='code-only';
+    else if(arg==='--list')options.list=true;
+    else if(arg==='--suite'||arg.startsWith('--suite=')) {
+      const value=arg==='--suite'?args[++i]:arg.slice(8);
+      if(!acceptanceSuites.includes(value as AcceptanceSuite))throw new Error('Suite desconocida: '+value);
+      options.suite=value as AcceptanceSuite;
+    } else if(arg==='--project'||arg.startsWith('--project=')) {
+      const value=arg==='--project'?args[++i]:arg.slice(10);if(!value||value.startsWith('-'))throw new Error('Falta --project');options.projects.push(value);
+    } else if(arg==='--grep'||arg.startsWith('--grep=')||arg==='-g') {
+      const value=arg.startsWith('--grep=')?arg.slice(7):args[++i];if(!value)throw new Error('Falta --grep');if(/[\r\n]/.test(value))throw new Error('El filtro --grep contiene un salto de línea; usa un argumento en una sola línea.');new RegExp(value);options.grep=value;
+    } else throw new Error('Opción desconocida: '+arg+'. La aceptación nunca actualiza referencias.');
+  }
+  if(options.mode==='code-only'&&(options.suite||options.projects.length||options.grep))throw new Error('--code-only no admite filtros');
+  if((options.projects.length||options.grep)&&!options.suite)throw new Error('Selecciona --suite para filtrar');
+  if(options.suite) {
+    options.mode='subset';const names=options.suite==='chromium'?chromiumNames:browserProjects().map(p=>p.name);
+    if(options.projects.some(p=>!names.includes(p)))throw new Error('Proyecto fuera de la suite');
+    options.projects=names.filter(p=>!options.projects.length||options.projects.includes(p));
+  }
+  return options;
+}
+export function projectsForSuite(suite:AcceptanceSuite,names:string[]=[]) {
+  return suite==='chromium'?legacy.projects!.filter(p=>!names.length||names.includes(p.name!)):selectBrowserProjects(names);
+}
+export const expectedVisualFiles=()=>browserProjects().flatMap(p=>visualFilesFor(p.name));
+export const sameFiles=(a:{path:string;sha256:string}[],b:{path:string;sha256:string}[])=>{
+  const sorted=(rows:typeof a)=>rows.map(r=>r.path+'\0'+r.sha256).sort();
+  return new Set(a.map(r=>r.path)).size===a.length&&new Set(b.map(r=>r.path)).size===b.length&&JSON.stringify(sorted(a))===JSON.stringify(sorted(b));
+};
+
+const record=(v:unknown):Record<string,any>=>v!==null&&typeof v==='object'?v as Record<string,any>:{};
+const list=(v:unknown):any[]=>Array.isArray(v)?v:[];
+const sorted=(values:string[])=>JSON.stringify([...values].sort());
+export function assessReviewedReferences(input:unknown) {
+  const data=record(input),approval=record(data.approval),review=record(data.review),refs=record(approval.references),reasons:string[]=[];
+  const images=list(data.images),manifests=list(data.manifests),expected=expectedVisualFiles();
+  if(approval.point!==4||approval.status!=='complete'||review.point!==4||review.status!=='approved'||refs.approvedImages!==52||refs.projects!==6)reasons.push('Falta aprobación revisada del punto 4');
+  if(review.source!==approval.source||review.execution!==record(approval.generation).directory)reasons.push('Procedencia de revisión distinta');
+  if(record(refs.review).path!==record(data.reviewFile).path||record(refs.review).sha256!==record(data.reviewFile).sha256)reasons.push('El hash de la revisión cambió');
+  if(sorted(images.map(i=>i.path))!==sorted(expected)||images.some(i=>!/^([a-f0-9]{64})$/.test(i.sha256)))reasons.push('Inventario de PNG incompleto o ajeno');
+  if(!sameFiles(images,list(review.images))||list(review.images).some(i=>i.status!=='approved'))reasons.push('PNG no aprobado o modificado');
+  const expectedManifests=browserProjects().map(p=>referenceRoot+'/'+p.name+'/manifest.json');
+  if(sorted(manifests.map(f=>f.path))!==sorted(expectedManifests)||!sameFiles(manifests,list(review.manifests))||!sameFiles(manifests,list(refs.manifests)))reasons.push('Manifiestos sin aprobación idéntica');
+  return {status:reasons.length?'blocked':'approved',reasons,images:images.length,manifests:manifests.length};
+}
+
+export type ReportCase={project:string;file:string;title:string;line:number;column:number;test:Record<string,any>;key:string};
+export function browserReportCases(input:unknown):ReportCase[] {
+  const output:ReportCase[]=[];
+  const visit=(value:unknown)=>{
+    const suite=record(value);
+    for(const item of list(suite.specs)) {
+      const spec=record(item),file=String(spec.file??suite.file??'');
+      for(const test of list(spec.tests)) {
+        const project=String(test.projectName??''),title=String(spec.title??''),line=Number(spec.line??0),column=Number(spec.column??0);
+        output.push({project,file,title,line,column,test,key:JSON.stringify([project,file,line,column,title])});
+      }
+    }
+    for(const child of list(suite.suites))visit(child);
+  };
+  for(const suite of list(record(input).suites))visit(suite);
+  return output;
+}
+export function strictReportReasons(input:unknown,suite:AcceptanceSuite) {
+  const raw=record(input),config=record(raw.config),reasons:string[]=[];
+  if(config.updateSnapshots!=='none')reasons.push('La comparación permite actualizar referencias');
+  if(!(config.workers>0&&config.workers<=2))reasons.push('Concurrencia fuera del contrato');
+  if(record(config.metadata).suite!==suite)reasons.push('Suite efectiva distinta');
+  if(!list(config.projects).length||list(config.projects).some(p=>p.retries!==0||p.repeatEach!==1))reasons.push('Reintentos o repeticiones habilitados');
+  if(config.shard)reasons.push('Una partición no acredita la suite completa');
+  return reasons;
+}
+const skipPolicies=[
+  {file:'practice.spec.ts',title:'separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente',projects:['celular-pequeno','celular','celular-horizontal'],reason:'El modo modal ocupa el área visible y no tiene separador.'},
+  {file:'responsive.spec.ts',title:'la navegación se adapta al girar el dispositivo',projects:['laptop','escritorio'],reason:'La rotación se prueba en los proyectos táctiles.'},
+  {file:'responsive.spec.ts',title:'scroll independiente del contenido y el sidebar',projects:['celular-pequeno','celular','celular-horizontal','ipad'],reason:'En pantallas pequeñas los temas están en un panel móvil.'},
+];
+export function assessChromiumRegression(input:unknown,discovery:unknown,names:readonly string[]=chromiumNames) {
+  const raw=record(input),stats=record(raw.stats),cases=browserReportCases(raw),expected=browserReportCases(discovery),reasons=strictReportReasons(input,'chromium');
+  const keys=cases.map(c=>c.key),expectedKeys=expected.map(c=>c.key),failures:string[]=[];let passed=0,skipped=0;
+  if(!cases.length||new Set(keys).size!==keys.length||new Set(expectedKeys).size!==expectedKeys.length||sorted(keys)!==sorted(expectedKeys))reasons.push('Casos Chromium ausentes, duplicados o distintos del descubrimiento');
+  if(sorted([...new Set(cases.map(c=>c.project))])!==sorted([...names]))reasons.push('Falta un proyecto Chromium');
+  for(const c of cases) {
+    const t=c.test,results=list(t.results),result=record(results[0]),policy=skipPolicies.find(p=>p.file===c.file&&p.title===c.title&&p.projects.includes(c.project));
+    if(['failed','timedOut'].includes(result.status))failures.push('Caso Chromium fallido: '+c.project+'/'+c.title+' ('+result.status+')');
+    const isPassed=t.expectedStatus==='passed'&&t.status==='expected'&&result.status==='passed';
+    const isSkipped=policy&&t.expectedStatus==='skipped'&&t.status==='skipped'&&result.status==='skipped'&&list(t.annotations).some(a=>a.type==='skip'&&a.description===policy.reason);
+    if(results.length!==1||result.retry!==0||list(result.errors).length||(!isPassed&&!isSkipped))reasons.push('Caso Chromium sin aprobación estricta: '+c.project+'/'+c.title);
+    if(isPassed)passed++;else if(isSkipped)skipped++;
+  }
+  if(list(raw.errors).length||stats.unexpected!==0||stats.flaky!==0||stats.expected!==passed||stats.skipped!==skipped||passed+skipped!==cases.length)reasons.push('Contadores o errores Chromium incompatibles');
+  return {status:reasons.length?'incomplete':'passed',reasons:[...failures,...reasons],passed,skipped,cases:cases.map(({test,...c})=>({...c,status:list(test.results)[0]?.status??'missing'}))};
+}
+
+const criterionTitles=[
+  'Motores requeridos iniciados y versionados','Seis proyectos y configuración efectiva de la matriz',
+  'CB-01 a CB-20 completos según alcance','Ejecución real SQL y pandas','Edición, sugerencias, estado y recuperación',
+  'Navegación, diálogos, foco, scroll y adaptación','Aislamiento y entrega de producción',
+  'Referencias aprobadas comparadas sin actualización','Regresión Chromium y referencias conservadas',
+  'Código, tipos, build y herramientas aprobados con TDD','Procedencia, invariantes y progreso',
+  'Alcance sin atribuir hardware físico ni Safari comercial',
+];
+export function assessBrowserAcceptance(input:unknown) {
+  const data=record(input),suites=record(data.suites),projects=browserProjects().map(p=>p.name),checks=record(data.checks),invariants=record(data.invariants);
+  const functional=assessBrowserRun(suites.functional,{projects,smoke:false,list:false,buildOnly:false});
+  const visual=assessVisualRun(suites.visual??{}, {projects});
+  const chromium=assessChromiumRegression(suites.chromium,data.chromiumDiscovery);
+  const preflight=record(data.preflight),engines=list(preflight.engines),native=list(data.nativeCases),nativeFiles=list(data.nativeFiles);
+  const nativeGood=native.length>0&&native.every(c=>c.status==='passed'&&!c.skipped)&&new Set(native.map(c=>JSON.stringify([c.file,c.name,c.line]))).size===native.length&&nativeFiles.length>0&&nativeFiles.every(file=>native.some(c=>c.file===file));
+  const checked=(name:string)=>record(checks[name]).status==='passed';
+  const coverage=(ids:string[])=>functional.status==='passed'&&functional.coverage.filter(c=>ids.includes(c.requirement)).every(c=>c.status==='passed'||c.status==='not-applicable');
+  const runtime=record(data.runtimeManifest),published=record(data.published),scope=record(data.scope);
+  let isolated=false;try{isolated=new URL(runtime.appOrigin).hostname!==new URL(runtime.runtimeOrigin).hostname;}catch{}
+  const allRaw=[suites.functional,suites.visual,suites.chromium];
+  const fresh=Number.isFinite(Date.parse(data.startedAt))&&allRaw.every(raw=>Number.isFinite(Date.parse(record(record(raw).stats).startTime))&&Date.parse(record(record(raw).stats).startTime)>=Date.parse(data.startedAt));
+  const flags=[
+    preflight.status==='ready'&&['firefox','webkit','chromium'].every(engine=>engines.some(e=>e.engine===engine&&e.status==='ready'&&typeof e.version==='string'&&e.version)),
+    functional.status==='passed'&&strictReportReasons(suites.functional,'functional').length===0&&list(record(record(suites.functional).config).projects).map(p=>p.name).sort().join()===projects.sort().join(),
+    functional.status==='passed'&&functional.coverage.every(c=>c.status==='passed'||c.status==='not-applicable'),
+    functional.status==='passed'&&projects.every(project=>['SQL-01','PY-01'].every(id=>functional.cases.some(c=>c.project===project&&c.id===id&&c.status==='passed'))),
+    coverage(['CB-07','CB-08','CB-09','CB-10','CB-11','CB-12','CB-13','CB-14']),
+    coverage(['CB-01','CB-02','CB-03','CB-04','CB-05','CB-17','CB-18','CB-19']),
+    coverage(['CB-16'])&&isolated&&published.status==='passed'&&list(published.pages).length>0&&checked('runtime'),
+    record(data.review).status==='approved'&&record(data.review).images===52&&record(data.review).manifests===6&&visual.status==='passed'&&strictReportReasons(suites.visual,'visual').length===0&&invariants.references===true&&invariants.review===true,
+    chromium.status==='passed'&&invariants.chromiumBaseline===true&&invariants.references===true,
+    nativeGood&&['native','typesApp','typesTests','buildApp','runtime'].every(checked)&&record(data.tdd).status==='recorded'&&record(data.productPaths).status==='unchanged',
+    fresh&&data.mode==='full'&&['source','tooling','references','review','packages'].every(key=>invariants[key]===true)&&record(data.artifacts).status==='hashed',
+    scope.physicalDevices===false&&scope.commercialSafari===false&&scope.fieldINP===false&&scope.browserDistributions==='Playwright',
+  ];
+  const criteria=criterionTitles.map((title,i)=>({id:'CA-'+String(i+1).padStart(2,'0'),title,status:flags[i]?'passed':'pending'}));
+  return {status:flags.every(Boolean)?'complete':'incomplete',criteria,functional,visual,chromium,native:{count:native.length,status:nativeGood?'passed':'incomplete'}};
+}

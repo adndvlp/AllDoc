@@ -1,0 +1,119 @@
+(node:99433) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ aceptación: filtros y modos parciales nunca se confunden con cierre; actualizar referencias se rechaza (0.984833ms)
+✖ referencias aprobadas: exige las 52 imágenes y los seis manifiestos ligados a la revisión (0.947083ms)
+✖ Chromium: contrasta todos los casos descubiertos y rechaza resumen favorable con huecos, duplicados o retries (0.287792ms)
+✖ Chromium: una omisión nueva no se acredita como aprobada (0.150666ms)
+✖ cierre global: faltan pruebas, revisión y navegadores aunque se declare un contador favorable (0.082666ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 328.90725
+
+✖ failing tests:
+
+test at tests/browser-acceptance.test.ts:23:1
+✖ referencias aprobadas: exige las 52 imágenes y los seis manifiestos ligados a la revisión (0.947083ms)
+  AssertionError [ERR_ASSERTION]: Falta assessReviewedReferences
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at fn (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:7:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:24:37)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-acceptance.test.ts:34:1
+✖ Chromium: contrasta todos los casos descubiertos y rechaza resumen favorable con huecos, duplicados o retries (0.287792ms)
+  AssertionError [ERR_ASSERTION]: Falta assessChromiumRegression
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at fn (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:7:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:35:68)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-acceptance.test.ts:40:1
+✖ Chromium: una omisión nueva no se acredita como aprobada (0.150666ms)
+  AssertionError [ERR_ASSERTION]: Falta assessChromiumRegression
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at fn (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:7:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:42:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-acceptance.test.ts:44:1
+✖ cierre global: faltan pruebas, revisión y navegadores aunque se declare un contador favorable (0.082666ms)
+  AssertionError [ERR_ASSERTION]: Falta assessBrowserAcceptance
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at fn (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:7:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts:45:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

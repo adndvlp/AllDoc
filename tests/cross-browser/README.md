@@ -89,3 +89,41 @@ En WebKit móvil, Playwright no admite `mouse.wheel`: se comprueba `scrollBy`
 real del DOM, contención CSS e independencia de las regiones. El informe anota
 esa condición; no acredita la física de un gesto. Los controles configurados
 para toque utilizan `tap`. Los otros proyectos comprueban rueda nativa.
+
+## Aceptación final (punto 5)
+
+```sh
+npm run verify:browser
+```
+
+Comprueba espacio, referencias aprobadas y los tres motores antes del trabajo
+pesado. Ejecuta código con concurrencia 2 y tipos, construye app/runtime una sola
+vez y comparte esos servidores entre 26 comparaciones visuales, 168 casos
+funcionales y los 567 casos descubiertos de Chromium. Las nueve omisiones de
+Chromium previstas por disposición conservan identidad y motivo; no se cuentan
+como aprobadas. No repite las mediciones de rendimiento si las fuentes del
+producto y el lockfile coinciden con la generación aprobada.
+
+El cierre fuerza `--update-snapshots=none`, sin reintentos y con dos workers.
+Exige revisión ligada a los 52 PNG y seis manifiestos; comprueba los 165 PNG
+Chromium y hashes de fuente, herramientas, paquetes y evidencia antes/después.
+La configuración dedicada reutiliza los proyectos y las rutas de referencias
+originales, con preflight y servidores controlados por el verificador.
+
+La terminal muestra progreso cada quince segundos, caso/fase activa y fallo
+breve. Los resultados originales, descubrimiento, NDJSON de código, HTML,
+versiones y CA-01 a CA-12 quedan en el informe. `ready-for-review` exige todos
+los criterios; el cierre revisado se registra después sin modificar sus datos.
+
+Para descubrir sin abrir motores, o repetir solo un caso:
+
+```sh
+npm run verify:browser -- --list
+npm run verify:browser -- --suite=visual --project=webkit-estrecho --grep=VIS-05
+```
+
+`--suite=visual|functional|chromium` permite una ejecución parcial. La selección
+solo exige sus motores; nunca acredita la aceptación completa. `--code-only`
+comprueba código, tipos, build/runtime e invariantes sin abrir servidores ni
+navegadores. Todos esos modos conservan criterios pendientes. Para instalar
+los binarios requeridos explícitamente: `npx playwright install chromium firefox webkit`.

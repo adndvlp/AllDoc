@@ -1,0 +1,447 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.browser-verification.config.ts",
+      "--update-snapshots=none",
+      "--retries=0",
+      "--workers=2",
+      "--list",
+      "--reporter=json",
+      "--project=celular-pequeno",
+      "--project=celular",
+      "--project=celular-horizontal",
+      "--project=ipad",
+      "--project=ipad-horizontal",
+      "--project=laptop",
+      "--project=escritorio",
+      "--grep=responsive:\n  rotación y texto"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.browser-verification.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "browser-final-verification",
+      "suite": "chromium"
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 320,
+            "height": 568
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular-pequeno"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 844,
+            "height": 390
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular-horizontal"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "ipad"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "ipad-horizontal"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "laptop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T07-24-44-097Z-5d2023cce7/chromium/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "chromium"
+        },
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:54846",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "headless": true,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "none",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "Error: No tests found",
+      "stack": "Error: No tests found"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-15T07:25:19.736Z",
+    "duration": 452.33500000000004,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

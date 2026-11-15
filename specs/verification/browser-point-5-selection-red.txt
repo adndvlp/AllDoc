@@ -1,0 +1,35 @@
+✖ CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight (938.240875ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1027.042209
+
+✖ failing tests:
+
+test at tests/browser-acceptance-cli.test.mjs:19:1
+✖ CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight (938.240875ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /firefox:|02-código|05-build-app/. Input:
+  
+  '00-espacio-disponible\n' +
+    '01-preflight\n' +
+    'firefox: checking\n' +
+    'firefox: missing-executable\n' +
+    'webkit: checking\n' +
+    'webkit: missing-executable\n' +
+    'Resultado: partial\n' +
+    'Informe: benchmarks/browser-verifications/2026-11-15T06-36-15-704Z-5d2023cce7/README.md\n'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-cli.test.mjs:22:82)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '00-espacio-disponible\n01-preflight\nfirefox: checking\nfirefox: missing-executable\nwebkit: checking\nwebkit: missing-executable\nResultado: partial\nInforme: benchmarks/browser-verifications/2026-11-15T06-36-15-704Z-5d2023cce7/README.md\n',
+    expected: /firefox:|02-código|05-build-app/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }

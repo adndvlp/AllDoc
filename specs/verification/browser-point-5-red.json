@@ -1,0 +1,31 @@
+{
+  "point": 5,
+  "phase": "red",
+  "recordedAt": "2026-11-15T06:30:36.905441+00:00",
+  "cases": [
+    {
+      "command": "node --experimental-strip-types --test tests/browser-acceptance-config.test.ts",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-5-config-red.txt",
+      "sha256": "4a6b2e8f2fca0bc99f7fc106f95618baa713477d09b2043e2de7fba97a29d6ad"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/browser-acceptance.test.ts",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-5-evaluator-red.txt",
+      "sha256": "518b983f1b5335f7c41ae5e2530e86bcc5f33506fd3cf870221439532479bb1b"
+    },
+    {
+      "command": "node --test tests/browser-progress-compact.test.mjs",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-5-progress-red.txt",
+      "sha256": "58a2c6d90e15c5d08d1c083f09fdec41c75a4cc191502f8d6923a2023baca8ea"
+    },
+    {
+      "command": "node --test --test-name-pattern='solo el motor' tests/browser-acceptance-cli.test.mjs",
+      "exitCode": 1,
+      "log": "specs/verification/browser-point-5-selection-red.txt",
+      "sha256": "14f8c2727fd3e47abb19f028a34b6e126f7afff399c6286c85e895e4686cf16f"
+    }
+  ]
+}

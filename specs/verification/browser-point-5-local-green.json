@@ -1,0 +1,72 @@
+{
+  "point": 5,
+  "phase": "local-green",
+  "recordedAt": "2026-11-15T06:42:16.533172+00:00",
+  "source": "5d2023cce70b83c736dfc1e2f7a0351d35d3fe81dbaf39c2482b7a75aadee435",
+  "execution": "benchmarks/browser-verifications/2026-11-15T06-39-27-825Z-5d2023cce7",
+  "reportSha256": "2075612bc6e14745d63c3b1e73d5eeeb88e93e880232dbbf964eba8587696e17",
+  "native": {
+    "passed": 265,
+    "failed": 0,
+    "skipped": 0,
+    "files": 47,
+    "concurrency": 2
+  },
+  "checks": {
+    "space": {
+      "status": "passed",
+      "title": "00-espacio-disponible",
+      "durationMs": 0
+    },
+    "native": {
+      "status": "passed",
+      "title": "02-código",
+      "durationMs": 17635
+    },
+    "typesApp": {
+      "status": "passed",
+      "title": "03-tipos-app",
+      "durationMs": 599
+    },
+    "typesTests": {
+      "status": "passed",
+      "title": "04-tipos-pruebas",
+      "durationMs": 339
+    },
+    "buildApp": {
+      "status": "passed",
+      "title": "05-build-app",
+      "durationMs": 10947
+    },
+    "runtime": {
+      "status": "passed",
+      "title": "06-runtime-rutas-inventario",
+      "durationMs": 2129
+    },
+    "invariants": {
+      "status": "passed",
+      "title": "09-invariantes-y-criterios",
+      "durationMs": 58
+    }
+  },
+  "invariants": {
+    "source": true,
+    "tooling": true,
+    "references": true,
+    "review": true,
+    "packages": true,
+    "chromiumBaseline": true
+  },
+  "review": {
+    "status": "approved",
+    "reasons": [],
+    "images": 52,
+    "manifests": 6
+  },
+  "productPaths": {
+    "status": "unchanged",
+    "reason": "Se comparan fuentes del producto, configuración y lockfile con la generación aprobada. Un cambio exige revisar la regresión/medición afectada."
+  },
+  "ui": "pending-real-execution-and-review",
+  "globalAcceptance": "incomplete"
+}

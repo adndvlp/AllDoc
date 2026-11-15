@@ -1,0 +1,29 @@
+{
+  "point": 5,
+  "phase": "red",
+  "recordedAt": "2026-11-15T07:24:25.973793+00:00",
+  "ui": {
+    "execution": "benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7",
+    "project": "laptop",
+    "case": "responsive: rotación y texto al 200% conservan editor, selección y controles accesibles",
+    "expectedLineFontAt200Percent": 28,
+    "observedInlineLineFont": 16,
+    "originalCodeFontCheckOnlyMeasuredContainer": true,
+    "screenshot": "practice-200.png",
+    "appSourceChanged": false
+  },
+  "diagnostic": {
+    "command": "node --experimental-strip-types --test --test-name-pattern='diagnóstico prioriza' tests/browser-acceptance.test.ts",
+    "exitCode": 1,
+    "log": "specs/verification/browser-point-5-diagnostic-red.txt",
+    "sha256": "b4ddb8e97348afe5f46648c441e26326e54a5b657f7f7701f0a5f6575196a210"
+  },
+  "reviewedUiChange": {
+    "file": "tests/ui/practice.spec.ts",
+    "before": "8fa8b6f1d96bd212a1050b4c85dd76332c91da0bbdd0ec48fac66fd274c1cce9",
+    "after": "7ad0b0ee86d64ec09558589a419929ea7762be9db83c1d0136a1fdc7d66911cd",
+    "outsideCaseUnchanged": true,
+    "lineNumbersUnchanged": true,
+    "summary": "Entrada por teclado real y comprobación adicional de font-size en .cm-line; mantiene instancia, texto, controles, desbordamiento y captura original."
+  }
+}

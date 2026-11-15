@@ -1,0 +1,1843 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.browser-verification.config.ts",
+      "--update-snapshots=none",
+      "--retries=0",
+      "--workers=2"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.browser-verification.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "stage": "browser-final-verification",
+      "suite": "visual",
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "firefox-estrecho",
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "firefox-tableta",
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "firefox-escritorio",
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "webkit-estrecho",
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "webkit-tableta",
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "id": "webkit-escritorio",
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": [
+          "/(?:application|practice-[^/]+)\\.spec\\.ts$/"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "firefox-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "firefox-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "firefox-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-escritorio"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "webkit-estrecho",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-estrecho"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "webkit-tableta",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-tableta"
+      },
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "stage": "browser-final-verification",
+          "suite": "visual",
+          "actualWorkers": 2
+        },
+        "name": "webkit-escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/cross-browser",
+        "testIgnore": {},
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:65349",
+          "headless": true,
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "isMobile": false,
+          "hasTouch": false,
+          "deviceScaleFactor": 1
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-escritorio"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-progress.mjs",
+        {
+          "compact": true
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "none",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "visual.spec.ts",
+      "file": "visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[VIS-01] portada con catálogo y buscador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1948,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 173
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:41.617Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-firefox-estrecho/attachments/visual-state-inicio-png-60fda55d468fac4fc05a169e082247350629d4c8.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1682,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 150
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:51.739Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-firefox-tableta/attachments/visual-state-inicio-png-c9e51028bbddad88cc1fcb8fd63a7c87b26c7169.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1721,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 162
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:04.103Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-firefox-escritorio/attachments/visual-state-inicio-png-78372769f4d492071b50ae3b9cbb2d1652f58eb7.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1954,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 100
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:14.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-webkit-estrecho/attachments/visual-state-inicio-png-487f7c6f144500e99fee978943e4bda7c3442904.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 117
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:26.592Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-webkit-tableta/attachments/visual-state-inicio-png-4be84f02491df543e1c25a4aca5f22692add3b5c.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Referencia visual: inicio.png",
+                      "duration": 131
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:32.807Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-inicio.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-01-portada-con-catálogo-y-buscador-webkit-escritorio/attachments/visual-state-inicio-png-2f8ee6c7cd69571412234884594a3eb9728a452b.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-0bc8693662bd3bba33e3",
+          "file": "visual.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "[VIS-02] SQL real: código, resultado y datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3834,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1604
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 80
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 91
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 247
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 154
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 97
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:41.617Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-estrecho/attachments/visual-state-sql-codigo-png-b07d18b2af2703981c22215d0f4aa1b2f1799696.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-estrecho/attachments/visual-state-sql-resultado-png-b7b4c923ae05f9f16834f84fbace29921858eb63.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-estrecho/attachments/visual-state-sql-datos-png-9532c044eaddf0e696c5a62e30aa7561b2fd2f89.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 920
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 110
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 178
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 235
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 125
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 121
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:54.808Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-tableta/attachments/visual-state-sql-codigo-png-e2b602bf18573a8c0b4b0a989f981674cb732245.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-tableta/attachments/visual-state-sql-resultado-png-0edfbb17eb3afbfde3baa35594ae8bb40f1c6a70.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-tableta/attachments/visual-state-sql-datos-png-b5dd9385c5f8c72ac011d6b47f8bde9cda17d641.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2397,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 985
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 17
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 145
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 228
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 151
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 138
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:06.380Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-escritorio/attachments/visual-state-sql-codigo-png-049c8c8eb3ed4d183964463819dd6b1864ff5f3e.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-escritorio/attachments/visual-state-sql-resultado-png-ed14de013bf391ee30580c972d94ae14adad09f3.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-firefox-escritorio/attachments/visual-state-sql-datos-png-d49fe86013fceaebe1a3923a072e2c49a33da27e.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2228,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1063
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 33
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 73
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 178
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 77
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 80
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:18.416Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-estrecho/attachments/visual-state-sql-codigo-png-3df5d0362af01d671ad1bec763970c96cb7c7911.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-estrecho/attachments/visual-state-sql-resultado-png-ffe4e365573b46bea3b288cb0db5fda5e7bcc641.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-estrecho/attachments/visual-state-sql-datos-png-f995b7e375464e5f9b7f668cec932a5bbbba0271.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 903
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 100
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 99
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 172
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 80
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 84
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:28.133Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-tableta/attachments/visual-state-sql-codigo-png-ad25bd2994a0d9c58ce719d870d6733305c9dd36.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-tableta/attachments/visual-state-sql-resultado-png-20c47067f20fbb6ead6dfcfcad99268f9dfa3a83.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-tableta/attachments/visual-state-sql-datos-png-49cfedd451e95b5f77a7a25f00ef68cdfda437e5.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2232,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 951
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 27
+                    },
+                    {
+                      "title": "Referencia visual: sql-codigo.png",
+                      "duration": 105
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 176
+                    },
+                    {
+                      "title": "Referencia visual: sql-resultado.png",
+                      "duration": 106
+                    },
+                    {
+                      "title": "Referencia visual: sql-datos.png",
+                      "duration": 112
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:34.319Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-sql-codigo.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-escritorio/attachments/visual-state-sql-codigo-png-a43ad69850f701ff75f0096a47420b5e06f5dac1.json"
+                    },
+                    {
+                      "name": "visual-state-sql-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-escritorio/attachments/visual-state-sql-resultado-png-38ef8c7556b33f81191215be0a1670ace4cb2578.json"
+                    },
+                    {
+                      "name": "visual-state-sql-datos.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-02-SQL-real-código-resultado-y-datos-webkit-escritorio/attachments/visual-state-sql-datos-png-7d090e24137d9fc1f4e7a463684668a379535cda.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-a63207c04ca050213cfd",
+          "file": "visual.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "[VIS-03] pandas real: resultado y sugerencias Jedi",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 958
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 10481
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 240
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 100
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 95
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:45.904Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-estrecho/attachments/visual-state-pandas-resultado-png-f53a24d7f0152c73416d52969e5b161aedf75944.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-estrecho/attachments/visual-state-pandas-sugerencias-png-7fa3420618772a1aa467825f3bf30d2e49aaf948.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 12436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 970
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 9974
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 281
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 119
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 87
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:57.218Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-tableta/attachments/visual-state-pandas-resultado-png-41c7fb1ec4c457e5fe9330a7e28149bae3743740.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-tableta/attachments/visual-state-pandas-sugerencias-png-0d3afb14c67fdeef6dfbbbec7c1a7caf741c2802.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 980
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 10020
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 249
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 172
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 119
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:08.785Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-escritorio/attachments/visual-state-pandas-resultado-png-a98f4908ea4333fdc2c3a2bc7c638221f557c837.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-firefox-escritorio/attachments/visual-state-pandas-sugerencias-png-f2f6fd29c538f7d9f3701e8d35f6afff556e884a.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1041
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 6857
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 202
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 102
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 85
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:20.653Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-estrecho/attachments/visual-state-pandas-resultado-png-774641328fc6d1fe89bf45b2e5412e64cb56eaaa.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-estrecho/attachments/visual-state-pandas-sugerencias-png-cd1158e90de4178407446558c186501eea52044b.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10128,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 850
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 7568
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 228
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 176
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 130
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:30.352Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-tableta/attachments/visual-state-pandas-resultado-png-c189b4ce40d3cebb295ea431006f5b2fa866d1f0.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-tableta/attachments/visual-state-pandas-sugerencias-png-6739c31f7b304af832853b9edc074c7ab3e35b16.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9509,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 887
+                    },
+                    {
+                      "title": "Motor real preparado: pandas",
+                      "duration": 7085
+                    },
+                    {
+                      "title": "Ejecución explícita y resultado del motor",
+                      "duration": 215
+                    },
+                    {
+                      "title": "Referencia visual: pandas-resultado.png",
+                      "duration": 155
+                    },
+                    {
+                      "title": "Referencia visual: pandas-sugerencias.png",
+                      "duration": 154
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:36.561Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-pandas-resultado.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-escritorio/attachments/visual-state-pandas-resultado-png-8f8d685a23f78afc666f6aa7f7d19f615ed639a5.json"
+                    },
+                    {
+                      "name": "visual-state-pandas-sugerencias.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-03-pandas-real-resultado-y-sugerencias-Jedi-webkit-escritorio/attachments/visual-state-pandas-sugerencias-png-6a616ff092ec168ef795426d719a8d63747759ec.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-d0625995bd0db35bf0e4",
+          "file": "visual.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "[VIS-04] práctica con búsqueda y temas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 982
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 43
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 98
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 78
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:47.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-estrecho/attachments/visual-state-practica-busqueda-png-2723838464854b09095a227cfb77e3c467e66489.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-estrecho/attachments/visual-state-practica-temas-png-7b522411d698da28c1489a516adc92f1b21b058b.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-tableta",
+              "projectName": "firefox-tableta",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2875,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1147
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 102
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 125
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 104
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:59.590Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-tableta/attachments/visual-state-practica-busqueda-png-0b33234a593ddf0a5770149744032ba9ec91d1a5.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-tableta/attachments/visual-state-practica-temas-png-21f9464ef394e3c3f5ca3bed7bfc5f6a5f416e7a.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-escritorio",
+              "projectName": "firefox-escritorio",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1127
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 103
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 154
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 116
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:10.281Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-escritorio/attachments/visual-state-practica-busqueda-png-6797569cfd8a00b78f504a651ad4617d93fa0682.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-firefox-escritorio/attachments/visual-state-practica-temas-png-45eefeba0ec2a103e3e0bafdb24a088174994819.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 974
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 12
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 120
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 104
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:22.112Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-estrecho/attachments/visual-state-practica-busqueda-png-0fe025dee9a55575aeb88987c913fc810d1552c4.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-estrecho/attachments/visual-state-practica-temas-png-a9054a2600279fa8da5ee6f69e0db4d3b87430f1.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-tableta",
+              "projectName": "webkit-tableta",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2157,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 939
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 6
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 213
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 163
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:30.294Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-tableta/attachments/visual-state-practica-busqueda-png-5fa53605fe3acb247dc58e64eab946c28b01eab2.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-tableta/attachments/visual-state-practica-temas-png-886d42a348e2292cb965714effe0ecdaecd9368b.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-escritorio",
+              "projectName": "webkit-escritorio",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2565,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 1163
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 88
+                    },
+                    {
+                      "title": "Referencia visual: practica-busqueda.png",
+                      "duration": 157
+                    },
+                    {
+                      "title": "Referencia visual: practica-temas.png",
+                      "duration": 124
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:42.295Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-practica-busqueda.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-escritorio/attachments/visual-state-practica-busqueda-png-fd5a756eb1feca989b6bc912db919d3da0874ccf.json"
+                    },
+                    {
+                      "name": "visual-state-practica-temas.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-04-práctica-con-búsqueda-y-temas-webkit-escritorio/attachments/visual-state-practica-temas-png-0ad7f2c7e908f8d0ea00e33259303278d3fe9299.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-ce4d5917cbba37ab702c",
+          "file": "visual.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "[VIS-05] @narrow 320 px y ventana horizontal al 200%",
+          "ok": true,
+          "tags": [
+            "narrow"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-estrecho",
+              "projectName": "firefox-estrecho",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1514,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 915
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 14
+                    },
+                    {
+                      "title": "Referencia visual: 320-texto-200.png",
+                      "duration": 66
+                    },
+                    {
+                      "title": "Referencia visual: horizontal-texto-200.png",
+                      "duration": 64
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:43:49.589Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-320-texto-200.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-05-narrow-320-px-y-ventana-horizontal-al-200--firefox-estrecho/attachments/visual-state-320-texto-200-png-73577e0350556bf6c7e04f7862ce00a6eaa73c16.json"
+                    },
+                    {
+                      "name": "visual-state-horizontal-texto-200.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-05-narrow-320-px-y-ventana-horizontal-al-200--firefox-estrecho/attachments/visual-state-horizontal-texto-200-png-1095a5e148aa7375777808e342ab3bd6716f7882.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-estrecho",
+              "projectName": "webkit-estrecho",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1673,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Apunte hidratado y apertura explícita del editor",
+                      "duration": 903
+                    },
+                    {
+                      "title": "Motor real preparado: SQL",
+                      "duration": 38
+                    },
+                    {
+                      "title": "Referencia visual: 320-texto-200.png",
+                      "duration": 98
+                    },
+                    {
+                      "title": "Referencia visual: horizontal-texto-200.png",
+                      "duration": 100
+                    }
+                  ],
+                  "startTime": "2026-11-15T06:44:24.538Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "visual-state-320-texto-200.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-05-narrow-320-px-y-ventana-horizontal-al-200--webkit-estrecho/attachments/visual-state-320-texto-200-png-6bb17408396fe249f7dadd2d41130b9155994c84.json"
+                    },
+                    {
+                      "name": "visual-state-horizontal-texto-200.png",
+                      "contentType": "application/json",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7/visual/artifacts/visual--VIS-05-narrow-320-px-y-ventana-horizontal-al-200--webkit-estrecho/attachments/visual-state-horizontal-texto-200-png-158f444dc54d28cd144a4170ade587f9097f82d1.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-45a3b0739b8322cdbfd6",
+          "file": "visual.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T06:43:41.307Z",
+    "duration": 65095.693,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

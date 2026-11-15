@@ -1,0 +1,60 @@
+(node:99164) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-config.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ aceptación: comparación estricta, sin actualización, reintentos ni servidores/preflight duplicados (1.505584ms)
+✖ aceptación: descubre los 168 casos funcionales sin iniciar navegadores y sin mezclar Chromium (794.111625ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1210.745583
+
+✖ failing tests:
+
+test at tests/browser-acceptance-config.test.ts:6:1
+✖ aceptación: comparación estricta, sin actualización, reintentos ni servidores/preflight duplicados (1.505584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'none'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-config.test.ts:7:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-acceptance-config.test.ts:12:1
+✖ aceptación: descubre los 168 casos funcionales sin iniciar navegadores y sin mezclar Chromium (794.111625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  567 !== 168
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-config.test.ts:19:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 567,
+    expected: 168,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

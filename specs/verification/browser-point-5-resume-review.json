@@ -1,0 +1,551 @@
+{
+  "point": 5,
+  "kind": "reviewed-resumption",
+  "recordedAt": "2026-11-15T07:45:40.635Z",
+  "source": "5d2023cce70b83c736dfc1e2f7a0351d35d3fe81dbaf39c2482b7a75aadee435",
+  "inputs": [
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T06-43-03-136Z-5d2023cce7",
+      "reportSha256": "3a9cafaf9e09bb643a4817feb7deb7259492b552d16fa7284b1205bc1375dc33",
+      "status": "partial",
+      "reviewedChanges": [
+        {
+          "path": "scripts/check-desktops.mjs",
+          "before": null,
+          "after": "295bf2171f008ed83c6756f3d5a37c6ac632545fc9601d892afdb11759485b0e",
+          "reason": "Entrada corta para los dos proyectos pendientes; descubrimiento probado de 162 casos."
+        },
+        {
+          "path": "scripts/check-zoom.mjs",
+          "before": null,
+          "after": "08043439377b15e91eb7aee9aec40b5346667bcd3b837902e69755fbbd005ed2",
+          "reason": "Entrada corta del filtro de zoom; siete casos reales aprobados."
+        },
+        {
+          "path": "scripts/lib/browser-acceptance.ts",
+          "before": "c721ad3646dc853c0885af9faefc9cc019de3cd0a4f07774857d8cbc1e94fa18",
+          "after": "a67aafbdb6c5b8f0a9090db5078a336413f3f313d120b58423e5d3ecf52aa3c1",
+          "reason": "Rechazo temprano de LF/CR en el filtro y prioridad del fallo real en el diagnóstico; no cambia criterios de aprobación."
+        },
+        {
+          "path": "tests/browser-acceptance-cli.test.mjs",
+          "before": "2563d80664ae417f521f7d2807efb40f46edaae693d0a9d75a31294871e24eb7",
+          "after": "c9740dbff9c65595bb0f1afabe3988182669b37220554dc853fa24801bcfc043",
+          "reason": "Pruebas de descubrimiento de los dos comandos cortos."
+        },
+        {
+          "path": "tests/browser-acceptance-consolidation.test.mjs",
+          "before": null,
+          "after": "dfab0d3e303818b0fc7f33b682b7a6d925a1a96db4936a103853130224c39b2d",
+          "reason": "Siete pruebas de procedencia, huecos, duplicados, reintentos, errores originales y comparación estricta."
+        },
+        {
+          "path": "tests/browser-acceptance.test.ts",
+          "before": "3c500d0600b5ead093222e06024afd7e9f780a27144b2133279e3619278e6da0",
+          "after": "4563008deabc6e5b3cf0b963e6570f0b1f5c64583eb238717155fb251ed6d026",
+          "reason": "Casos de filtro LF/CR y prioridad del diagnóstico."
+        },
+        {
+          "path": "tests/ui/practice.spec.ts",
+          "before": "8fa8b6f1d96bd212a1050b4c85dd76332c91da0bbdd0ec48fac66fd274c1cce9",
+          "after": "7ad0b0ee86d64ec09558589a419929ea7762be9db83c1d0136a1fdc7d66911cd",
+          "reason": "Solo preparación por teclado y comprobación adicional de la línea al 200%; siete proyectos aprobados con las referencias originales."
+        }
+      ]
+    },
+    {
+      "directory": "benchmarks/browser-verifications/2026-11-15T07-41-58-702Z-5d2023cce7",
+      "reportSha256": "9d571a09c77836a4a1f2480f9c4b0497d1c75029f174e62b432ad613544e6aa5",
+      "status": "subset-complete",
+      "reviewedChanges": [
+        {
+          "path": "scripts/check-desktops.mjs",
+          "before": null,
+          "after": "295bf2171f008ed83c6756f3d5a37c6ac632545fc9601d892afdb11759485b0e",
+          "reason": "Entrada corta para los dos proyectos pendientes; descubrimiento probado de 162 casos."
+        },
+        {
+          "path": "tests/browser-acceptance-cli.test.mjs",
+          "before": "9633330b436cdccfb85d8472cae264e1fe0250792c22da3c3ebed6854bc317c9",
+          "after": "c9740dbff9c65595bb0f1afabe3988182669b37220554dc853fa24801bcfc043",
+          "reason": "Pruebas de descubrimiento de los dos comandos cortos."
+        },
+        {
+          "path": "tests/browser-acceptance-consolidation.test.mjs",
+          "before": null,
+          "after": "dfab0d3e303818b0fc7f33b682b7a6d925a1a96db4936a103853130224c39b2d",
+          "reason": "Siete pruebas de procedencia, huecos, duplicados, reintentos, errores originales y comparación estricta."
+        }
+      ]
+    }
+  ],
+  "targetTooling": [
+    {
+      "path": "playwright.browser-verification.config.ts",
+      "sha256": "3340e2d29c5908768866335979be8fe2b7b0807b693de9e4f41cb4170078b7c1"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "68910a55d318f979d8384d37ccb44d1962b346084829f358b305e065423a90a4"
+    },
+    {
+      "path": "playwright.cross-browser.config.ts",
+      "sha256": "a03ab0e97edb28e710b9b6cf8ff38bae615b48c698e9035406b8d1adfe66bf8a"
+    },
+    {
+      "path": "scripts/browser-preflight.mjs",
+      "sha256": "c68203e480234f7307f40d53962f2d06fe3c353c186cbe0f1b17829eb4912b0c"
+    },
+    {
+      "path": "scripts/build-practice-runtime.mjs",
+      "sha256": "ecfd08e270b7171e88f39db39c1bf11bbca90a1770345e66df85e93f34fa40ec"
+    },
+    {
+      "path": "scripts/capture-baseline.mjs",
+      "sha256": "c4f59b479119f9891d0aa7e52c03ee0a48010b3b31daaceb5b6aeb0694dd94a2"
+    },
+    {
+      "path": "scripts/check-desktops.mjs",
+      "sha256": "295bf2171f008ed83c6756f3d5a37c6ac632545fc9601d892afdb11759485b0e"
+    },
+    {
+      "path": "scripts/check-zoom.mjs",
+      "sha256": "08043439377b15e91eb7aee9aec40b5346667bcd3b837902e69755fbbd005ed2"
+    },
+    {
+      "path": "scripts/lib/baseline-browser.mjs",
+      "sha256": "e31ccda4093c741c3413ba7920ccfe297ecd39e9f907d8896a1598f236fe7e48"
+    },
+    {
+      "path": "scripts/lib/baseline.ts",
+      "sha256": "280408d097d39ba6772e3907d6e016f13aac4dedb0132a510673740858b1ca1a"
+    },
+    {
+      "path": "scripts/lib/benchmark-comparison.mjs",
+      "sha256": "fa38ba1a8e65f1cbabd06fce500111010ff3be4570dd45067d78e4cbb3799a49"
+    },
+    {
+      "path": "scripts/lib/browser-acceptance-preflight.ts",
+      "sha256": "708cf41e5a30d3b3249390b4c506c6551f8f74d003ac88f34e1670bc35634f96"
+    },
+    {
+      "path": "scripts/lib/browser-acceptance.ts",
+      "sha256": "a67aafbdb6c5b8f0a9090db5078a336413f3f313d120b58423e5d3ecf52aa3c1"
+    },
+    {
+      "path": "scripts/lib/browser-cases.ts",
+      "sha256": "51d81f1bcb1e80a768b9654d3b49bcdcf85587e927cf70c89d86dcbd49cb2088"
+    },
+    {
+      "path": "scripts/lib/browser-command.mjs",
+      "sha256": "cd0fb31bd850b994d683e9bcd56026589fd1163bd435b95a6a00db8b77983514"
+    },
+    {
+      "path": "scripts/lib/browser-foundation.ts",
+      "sha256": "9dda984ca14e1ffa931c59a9ba1826c938c03e10bf674df17c8a69308a0ae5c6"
+    },
+    {
+      "path": "scripts/lib/browser-progress.mjs",
+      "sha256": "eb9935a648cc898eb6f85f64c0374552c5b3f3a68f8d7ef68fe01d09e3bd3953"
+    },
+    {
+      "path": "scripts/lib/browser-run.ts",
+      "sha256": "8c145f02404f582f1f56fb943293c3057fc847e19063faf0c7cc61eed61bd902"
+    },
+    {
+      "path": "scripts/lib/browser-storage.mjs",
+      "sha256": "8087e6fa8d1e241d4f8109086fa0bbfcb76e301e6996ac33644b80783ea27f62"
+    },
+    {
+      "path": "scripts/lib/browser-visual.ts",
+      "sha256": "0e430094e35e74a040104384450df2507e3d254e9b8416fb11adb45d081214f7"
+    },
+    {
+      "path": "scripts/lib/final-verification.ts",
+      "sha256": "30edcc48edabc5b9c87509b3a19514cb3c8416e242f7541969d6c8894d6f57bb"
+    },
+    {
+      "path": "scripts/lib/practice-browser.mjs",
+      "sha256": "ec9f7511cdd5c17bacd8fff06a7596434e8dee07c9e71c54b859c1fa8a2fafe0"
+    },
+    {
+      "path": "scripts/lib/practice-test-reporter.mjs",
+      "sha256": "6db02ef8989b6002fe23294f99f187216c8c489e56646c91256f2d91604d992c"
+    },
+    {
+      "path": "scripts/lib/python-assets.ts",
+      "sha256": "f7e4f0c835d547d9e4ab1e6198cdf2ba1fe014a0bc9b9394486c1b95b6426675"
+    },
+    {
+      "path": "scripts/lib/runtime-http.mjs",
+      "sha256": "8d01d17e1ce182bf350470dded2a7d30851b7627dd97998f4799d521be3bbdc4"
+    },
+    {
+      "path": "scripts/lib/runtime-typescript-loader.cjs",
+      "sha256": "95f97f75dbc36e1860b1c6c072199ccdf35b20e43d46444e1e1d50dd2c55df46"
+    },
+    {
+      "path": "scripts/prepare-python-runtime.mjs",
+      "sha256": "5ab0da897cf2b1472d4f8804370230c2b37411c5684657778a9029d39b2d6574"
+    },
+    {
+      "path": "scripts/serve-with-runtime.mjs",
+      "sha256": "17f7e8117e2d4228dbbef2f7593d39163442b1eb340534b10ea11ee90a81b81a"
+    },
+    {
+      "path": "scripts/test-browser.mjs",
+      "sha256": "f6c42c655b6bf654bf8991afb0d55206773d8e9003ab69fad40e2d794de2e9d3"
+    },
+    {
+      "path": "scripts/update-stack.mjs",
+      "sha256": "20eb1c1cd4deb823b556fe4ad82fc7a1ef1dc3108245ad89ac1b14960cebce96"
+    },
+    {
+      "path": "scripts/verify-browser.mjs",
+      "sha256": "7ec3a91c3c21703180d5098202b90ea403bd80b45d9846ca227ef5509b28ac0e"
+    },
+    {
+      "path": "scripts/verify-final.mjs",
+      "sha256": "e3e0fd06f9bd569ff433fbb1dbd3fd3d1bd0c4e58c7ba99a2df085f796578fb5"
+    },
+    {
+      "path": "scripts/verify-practice-data.mjs",
+      "sha256": "ad737f1a3a065803714397893ab2f6cf2e50ac8d5d2d35561e2cdd81bb40c41d"
+    },
+    {
+      "path": "scripts/verify-practice.mjs",
+      "sha256": "4fd0b8f4a07a4f1b82ca245384dede0619c7731889c5ab8b7f57451b19274975"
+    },
+    {
+      "path": "tests/baseline.test.ts",
+      "sha256": "1cc9d8af46dcd958bcca6c37d10b6c4b309cf0e93d5578d703cdbb76417f144a"
+    },
+    {
+      "path": "tests/browser-acceptance-cli.test.mjs",
+      "sha256": "c9740dbff9c65595bb0f1afabe3988182669b37220554dc853fa24801bcfc043"
+    },
+    {
+      "path": "tests/browser-acceptance-config.test.ts",
+      "sha256": "f228128b88f3302ff22cbd9f2afd3e6a82992cd631908336a824574f1f403a49"
+    },
+    {
+      "path": "tests/browser-acceptance-consolidation.test.mjs",
+      "sha256": "dfab0d3e303818b0fc7f33b682b7a6d925a1a96db4936a103853130224c39b2d"
+    },
+    {
+      "path": "tests/browser-acceptance-preflight.test.ts",
+      "sha256": "5493c4b0882e4d51d446798f6aa1e51926f6bd75bebe9fbe5b03635b597305ca"
+    },
+    {
+      "path": "tests/browser-acceptance.test.ts",
+      "sha256": "4563008deabc6e5b3cf0b963e6570f0b1f5c64583eb238717155fb251ed6d026"
+    },
+    {
+      "path": "tests/browser-command.test.mjs",
+      "sha256": "62afe2b3434407563171edc4c70fb762f85680eedcb93b7dd30d6e9b89bcf355"
+    },
+    {
+      "path": "tests/browser-config.test.ts",
+      "sha256": "6ebad254882b365cc70bc4f47732376ea9a9d365c54fa571c166ecff2550fbb5"
+    },
+    {
+      "path": "tests/browser-consolidation.test.mjs",
+      "sha256": "a62f9008ac265ed4755b658c6c859d1ff956fc40924beb64cd26b9abdbc4eed4"
+    },
+    {
+      "path": "tests/browser-foundation.test.ts",
+      "sha256": "4d14a65fb4a507ba65cb2c2d07238f102b663e9323f835c304f7c4e1373a32a4"
+    },
+    {
+      "path": "tests/browser-matrix.test.ts",
+      "sha256": "abf629ae2dd65c8dfcf74de031ffb839de6efb7836e5001965f37b6ee06c0fd8"
+    },
+    {
+      "path": "tests/browser-preflight-cli.test.mjs",
+      "sha256": "a827b4b53a6bd1f9cc43a0ec741cbcf8906f933b4abbbf5d0fbd5afc520cab6a"
+    },
+    {
+      "path": "tests/browser-progress-compact.test.mjs",
+      "sha256": "594369782ecbe9596068f025276f369ac1448f06141bffd3bffdc7190c884857"
+    },
+    {
+      "path": "tests/browser-run-cli.test.mjs",
+      "sha256": "c8d619e8c2e04858d399f7f46655644671ad6f58a62b68677ede64b4c99af28d"
+    },
+    {
+      "path": "tests/browser-run.test.ts",
+      "sha256": "fc1a0757e12a6852322bfcfa854b1def0a3153b55d2fba8e5ea542c6b8106e5c"
+    },
+    {
+      "path": "tests/browser-storage.test.mjs",
+      "sha256": "227e0bbb18b8ecc2ff7f8737a4c735b819168a7ead3cb4b08f3776a7a0d7ca78"
+    },
+    {
+      "path": "tests/browser-visual-cli.test.mjs",
+      "sha256": "6acd0fa6d4aefe38dcc0e194a864ae59bbdd4dfe551ff78b6770f730d5c6c521"
+    },
+    {
+      "path": "tests/browser-visual.test.ts",
+      "sha256": "ebc2de4709fbe41d223d2dbe9a5a6dae6bfe6735f66415a35ad0076d25ad4edd"
+    },
+    {
+      "path": "tests/catalog.test.ts",
+      "sha256": "287b5b5e0d6af4d47c98bd2a2959e2432a1099f393b0499fc96ff5c5d5006178"
+    },
+    {
+      "path": "tests/client-compilation.test.ts",
+      "sha256": "b86700817c4fb154cfda3957447233095f44c62422572bcdf8e9bf63f6ef0335"
+    },
+    {
+      "path": "tests/cross-browser/README.md",
+      "sha256": "b38311d06bd95185e5801c2289ada9adc78149dcc32a7978e70c8f766231bdc8"
+    },
+    {
+      "path": "tests/cross-browser/application-helpers.ts",
+      "sha256": "d3838fde984513a9a9541ebab64911723518601f842e2b4219f955ea6c61e56e"
+    },
+    {
+      "path": "tests/cross-browser/application.spec.ts",
+      "sha256": "e24b2abf21033b055c9f22896b3775298ff16d14bee8bbeafdfa0f3ef9eaa40e"
+    },
+    {
+      "path": "tests/cross-browser/practice-desktop.spec.ts",
+      "sha256": "8840fd20ed6cd45eac630a24b1ac90dff4c6a26d7da1102ffa4e52138037cfe3"
+    },
+    {
+      "path": "tests/cross-browser/practice-errors.spec.ts",
+      "sha256": "b6a4395856d163c3e1b9e8f2be5e7c10a14ad2c3cac7625654d0fb56a71b1c07"
+    },
+    {
+      "path": "tests/cross-browser/practice-flow.spec.ts",
+      "sha256": "d5976b22775968abb6959cac4a9d070352195018b3005639d979860cddf8182d"
+    },
+    {
+      "path": "tests/cross-browser/practice-helpers.ts",
+      "sha256": "f4fedbd0d149604071a8d9a816184a17d80aa098673514f1e3d183015fb397fe"
+    },
+    {
+      "path": "tests/cross-browser/practice-state.spec.ts",
+      "sha256": "7ce13039af0de96fb4280fd1bec708d7cff37d9c38e728cf470e292e29b7933f"
+    },
+    {
+      "path": "tests/cross-browser/visual-stabilize.css",
+      "sha256": "fb717a67dcfc66185e2f8c1853758cd5d3b5d88d6fee78c2b6743ef318399799"
+    },
+    {
+      "path": "tests/cross-browser/visual.spec.ts",
+      "sha256": "071d05d3ea47bae41a700fcd7eb7cf3fe399b94fa1e66bbca470056ca503bc90"
+    },
+    {
+      "path": "tests/final-verification.test.ts",
+      "sha256": "c5e515eb8918572c721431198f1c7601d15075abac91e6ba3a0b63271dfd8e5e"
+    },
+    {
+      "path": "tests/fixtures/practice-session.ts",
+      "sha256": "a0d9413bb5323e6136ce84a2cd34d47382fe6620927d9677513901035e19e8fb"
+    },
+    {
+      "path": "tests/fixtures/practice.ts",
+      "sha256": "823b57adeef03bf62adcd49aa144687381bfcea827b4cb82e0d228e0a9caa0ce"
+    },
+    {
+      "path": "tests/palettes.test.ts",
+      "sha256": "87f05b456f0576ffdc8b0d736f3f3e60ff35d768cbe731a94030e93710cd1222"
+    },
+    {
+      "path": "tests/personal-library.test.ts",
+      "sha256": "1b506c4001ac17af953a496999010562ec3b95268f1a8adf291ef4226faba627"
+    },
+    {
+      "path": "tests/practice-actions.test.ts",
+      "sha256": "00d0977d04ceff40057a84d49fa711a7cc6a57cf48ef9f9fb13a0a5daad11d1d"
+    },
+    {
+      "path": "tests/practice-bridge.test.ts",
+      "sha256": "42d289e595cfab3e4f30d743bc0dcf1dc1c0d8dee25da9957cc5d4537bb17d0c"
+    },
+    {
+      "path": "tests/practice-browser.test.mjs",
+      "sha256": "1bbf8a16a80c2146b3d8e978026024b7a8cdc7aab479e27b96eff59fed6c2749"
+    },
+    {
+      "path": "tests/practice-context.test.ts",
+      "sha256": "a1fe14e643add212c60b799cbb55c5822fcc9467c6f4803a34c3996f37141bc9"
+    },
+    {
+      "path": "tests/practice-contracts.test.ts",
+      "sha256": "45d4f6fd81a781103a2e7ebea7d4267f08652d116eb2ef2e0825dda5147bccba"
+    },
+    {
+      "path": "tests/practice-data.test.ts",
+      "sha256": "992827f9af68c588e48bdfa832543f02ddff535d5f6c479230a30caabfc53ba5"
+    },
+    {
+      "path": "tests/practice-drafts.test.ts",
+      "sha256": "71bd37cd8e72db2f5ba4ef151922ee11d2fc1219935da7ba1fd6283e3d5a7cd1"
+    },
+    {
+      "path": "tests/practice-editor-completion.test.ts",
+      "sha256": "8e9e106a33140a9fa65c5a2e9ae4a39b91183073b892401ca7e08f5d782596dc"
+    },
+    {
+      "path": "tests/practice-editor.test.ts",
+      "sha256": "d13131a34888dc4648c630e56ec3dedb313107c5b7912335cf9d4c81eb9b7053"
+    },
+    {
+      "path": "tests/practice-examples.test.ts",
+      "sha256": "6614a1842e659212e86f2de60ed84743c178f143ad4ad02195100387ada8a2af"
+    },
+    {
+      "path": "tests/practice-interaction.test.ts",
+      "sha256": "a2d0ae2c4e76d49131f3ad088e5146f10b177ffcf4e8d1011a5e1c511099c9a1"
+    },
+    {
+      "path": "tests/practice-isolation.test.ts",
+      "sha256": "e8c55a998b4e32995f6247068d5a23a5d28489092ddd846a20d5c3cebeb970e8"
+    },
+    {
+      "path": "tests/practice-panel.test.ts",
+      "sha256": "86b8b1b032f34b58958506e0397d19ac48a2effbc5624a9e1f0f0ed1c283dd3a"
+    },
+    {
+      "path": "tests/practice-providers.test.ts",
+      "sha256": "32aaa3ac6a15147b8fe3840fabaebbaac17f174855349cb114fd3c272848e462"
+    },
+    {
+      "path": "tests/practice-python-initialization.test.ts",
+      "sha256": "89b72100434fc95ceb2dada53d022e22e5e5c692cf9db17a2bd7b45483b5e0e9"
+    },
+    {
+      "path": "tests/practice-python.test.ts",
+      "sha256": "f468b768a83770645d9a54c8e123837a325ce65548ca1026bf5cb00196b4a870"
+    },
+    {
+      "path": "tests/practice-session.test.ts",
+      "sha256": "5fc894ae828b505e5c514bfcdca02565918757c9b1861a7a727ad0ffef33d634"
+    },
+    {
+      "path": "tests/practice-sqlite.test.ts",
+      "sha256": "d0378563c4bff426db82a53f8ee3a07a12f9e91ffbd8f961b962d06f753821b1"
+    },
+    {
+      "path": "tests/practice-types.ts",
+      "sha256": "e453636cce695eefe5ad0514ad7898102e50ccb164341c94e785f68f28086fdf"
+    },
+    {
+      "path": "tests/practice-verification.test.ts",
+      "sha256": "4681de542e6f8ce29061c57a419876f2b3e1592e9bdc6e000c387e092fd91b22"
+    },
+    {
+      "path": "tests/python-assets.test.ts",
+      "sha256": "fa1e82c015be46b5e9be5ed557faf07026cd27c0aef65222dced8a95b82cf324"
+    },
+    {
+      "path": "tests/runtime-assets.test.mjs",
+      "sha256": "14b82046f1fc5a3a740228e7d49268b7ccbf203262c5c76fbce81b9209da17af"
+    },
+    {
+      "path": "tests/runtime-http.test.mjs",
+      "sha256": "08d5068a023d82a6756f8dd5b026de2aedf8db21dce14c829a480dd31d68442b"
+    },
+    {
+      "path": "tests/search-store.test.ts",
+      "sha256": "7014a95b97dd4c3a7f69c227bf0d2acb3444209e16414916f10e2ed2cfe8ecff"
+    },
+    {
+      "path": "tests/search.test.ts",
+      "sha256": "b5035d7d69ace957ec37dbb7ac5fa6ee82d14ea86881f96e1be160da9815f47e"
+    },
+    {
+      "path": "tests/sql.test.ts",
+      "sha256": "a2a30a712e9ed57995a03e2d84df94ad501c63c2ea0e57fce279ef068f5748d2"
+    },
+    {
+      "path": "tests/ui/catalog.spec.ts",
+      "sha256": "2e661dae4ed1a1107d13677e9caf132e99b8fb6d0982aae730f663b810734676"
+    },
+    {
+      "path": "tests/ui/global-setup.ts",
+      "sha256": "b0476b2a956225872cd9ef673968a44b53e03735499a3d804561db7022dd46f4"
+    },
+    {
+      "path": "tests/ui/header-helpers.ts",
+      "sha256": "08c110160dde101e513e4ef6eb022d47dc94563e8ddba9e205551d413bfe1b98"
+    },
+    {
+      "path": "tests/ui/header.spec.ts",
+      "sha256": "e6215d40b1478c5d2e18cbc86bfda8ecf251fdcd544d3715465341dc7bea8fe3"
+    },
+    {
+      "path": "tests/ui/notes.spec.ts",
+      "sha256": "b5567c5a8125f6588d02bacdf236583c4a8888ffe5d739b01e7e8aeae1d75353"
+    },
+    {
+      "path": "tests/ui/pandas.spec.ts",
+      "sha256": "d02c1bf56eff5605bcd1f2007576edf60fd1cbc65d171e0bfbe865fa2a9f7f32"
+    },
+    {
+      "path": "tests/ui/personal-library.spec.ts",
+      "sha256": "40a9ca9b65106f9594f4f09eda47a741060ef8ba5df41a4c6aca9a28b9abc8f1"
+    },
+    {
+      "path": "tests/ui/practice-actions.spec.ts",
+      "sha256": "b5a8574bab1348d09a9e92eb00cc8d67baad7da0afb92b0a1e51d27377637447"
+    },
+    {
+      "path": "tests/ui/practice-storage.spec.ts",
+      "sha256": "4c11bedd62822c304439f21240a920d69319ac6b8728d83d3039402c873723d1"
+    },
+    {
+      "path": "tests/ui/practice.spec.ts",
+      "sha256": "7ad0b0ee86d64ec09558589a419929ea7762be9db83c1d0136a1fdc7d66911cd"
+    },
+    {
+      "path": "tests/ui/python.spec.ts",
+      "sha256": "c1a6e9f8a14a36dbce67da4181f70a304ff6fe16de30b1a92354441d8ac9e525"
+    },
+    {
+      "path": "tests/ui/responsive.spec.ts",
+      "sha256": "ea87ba18a57f1835d731a40c6c47506da2b92882f09ffb3af12019553edf2f3c"
+    },
+    {
+      "path": "tests/ui/search.spec.ts",
+      "sha256": "d350aa70dfc72e0d1c38ce7961936292be28860f8b143144a823f424c0809b7a"
+    },
+    {
+      "path": "tests/ui/sqlite.spec.ts",
+      "sha256": "13bd10cebacdea50496ba8a905aca6b9bba614cbc60e3a1c4c5a79fce8c62447"
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "sha256": "40421c606068e3f544c8424b3bfa9635923f689983aa190ce8a44a6f37e6488b"
+    }
+  ],
+  "supplementalTooling": [
+    {
+      "path": "specs/verification/browser-point-5-consolidate.mjs",
+      "sha256": "ce645d54fa0b99f36a2768c5948d39e9357e1d51c0b7c53632ce6349cfa7fb6b"
+    }
+  ],
+  "zoom": {
+    "passed": 7,
+    "originalReferencesUnchanged": true
+  },
+  "uiDelta": {
+    "outsideCaseUnchanged": true,
+    "lineNumbersUnchanged": true
+  },
+  "tdd": {
+    "red": {
+      "path": "specs/verification/browser-point-5-desktops-red.txt",
+      "sha256": "d854f359a5dd5d9bb9d9fc950c3563e12b8516dd35eb8c0b5e4e0783bc343dcc",
+      "exitCode": 1
+    },
+    "green": {
+      "cases": 12,
+      "passed": 12,
+      "sha256": "a68a204d0a58c5cee2973eb1a79a8f196b8b65dce77f50b149f0d70075dd43c0"
+    }
+  },
+  "status": "awaiting-desktop-run"
+}
