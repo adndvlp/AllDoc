@@ -1,11 +1,11 @@
 # AllDoc — SDD del panel de práctica contextual
 
 **Fecha:** 13 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 7 completados; punto 8 pendiente.
+**Estado:** puntos 1 a 8 completados. [Aceptación global y rendimiento](verification/practice-point-8.md).
 **Objetivo de esta etapa:** validar la estructura y el contrato con SQL y pandas, para incorporar después más lenguajes, librerías y frameworks.  
 **Base:** [SDD del rediseño](alldoc-sdd.md), cuyos ocho puntos están completados. Este documento define una ampliación y conserva su evidencia histórica.
 
-Los puntos 1 a 7 implementan y verifican el panel con SQLite y Pyodide/pandas reales, acciones de ejemplos y recuperación de código. La aceptación global y sus presupuestos de rendimiento permanecen en el punto 8. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
+Los puntos 1 a 7 implementan y verifican el panel con SQLite y Pyodide/pandas reales, acciones de ejemplos y recuperación de código. El punto 8 cierra los 27 criterios, la comparación visual y los 24 presupuestos de rendimiento, con 192 pruebas de código y 558 de UI aprobadas y nueve omisiones previstas. Están publicadas y verificadas las cinco fichas SQL y el miniapunte DataFrame de pandas; el punto 2 conserva su evidencia de datos, UI y tamaños.
 
 ## 1. Resultado esperado
 
@@ -545,7 +545,7 @@ Las referencias visuales nuevas se aceptan después de inspección y luego se co
 
 ## 15. Secuencia de implementación
 
-Los puntos 1 a 7 están completados; el punto 8 permanece pendiente. Su orden valida
+Los puntos 1 a 8 están completados. Su orden valida
 primero el contrato y después sus dos implementaciones; no amplía esta entrega
 a todos los motores de la sección 3.2.
 
@@ -558,7 +558,7 @@ a todos los motores de la sección 3.2.
 | 5 | Implementar aislamiento y adaptador SQLite WASM real | Completado con TDD: [evidencia](verification/practice-point-5.md), 137 pruebas de código, tipos, build y 446 de UI con comparación independiente |
 | 6 | Implementar adaptador Pyodide/pandas y completado real | Completado con TDD: [evidencia](verification/practice-point-6.md), 162 pruebas de código, tipos, build y 509 de UI con comparación independiente |
 | 7 | Conectar acciones de ejemplos y endurecer recuperación | Completado con TDD: [evidencia](verification/practice-point-7.md), 175 pruebas de código, tipos, build y 558 de UI con comparación independiente |
-| 8 | Ejecutar aceptación global, revisar capturas y comparar rendimiento | PA-01 a PA-27 con evidencia; contrato validado con dos motores reales |
+| 8 | Ejecutar aceptación global, revisar capturas y comparar rendimiento | Completado con TDD: [evidencia](verification/practice-point-8.md), PA-01 a PA-27, 192 pruebas de código, 558 de UI y 24 presupuestos aprobados; 165 referencias sin cambios, 12 capturas y cuatro trazas revisadas |
 
 La fase 3 usa dobles intencionalmente para probar el gestor; no permite cerrar la entrega antes de los motores reales de las fases 5 y 6. El documento completo se valida cuando ambos funcionan con el mismo panel y contrato. Los futuros adaptadores podrán reutilizar la suite de conformidad, pero cada uno exigirá pruebas de su lenguaje, librerías, datos y resultados.
 
@@ -718,7 +718,7 @@ sin fallos ni casos inestables. Se revisaron 97 imágenes nuevas o modificadas
 y las 165 referencias conservaron sus hashes en la comparación final. El JS/CSS
 inicial añade 411 bytes gzip frente al punto 6; el incremento desde el punto 3
 es de 4908 bytes, dentro de 5 KiB. La medición de archivos no acredita latencia
-ni INP; la aceptación global permanece en el punto 8.
+ni INP; la aceptación global quedó registrada en el [punto 8](verification/practice-point-8.md).
 [Evidencia roja/verde, configuración y límites](verification/practice-point-7.md).
 
 ## 16. Fuentes y decisiones documentadas

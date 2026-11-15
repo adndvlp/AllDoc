@@ -1,0 +1,34 @@
+{
+  "point": 8,
+  "status": "code-only-complete",
+  "report": "benchmarks/practice-verifications/2026-11-15T01-44-40-525Z-9a3941baa3/verification.json",
+  "sourceSha256": "9a3941baa36fa76f6b70e84f5efe263c2f9e5b39cc316483e487d34dd06c70c1",
+  "passed": 187,
+  "checks": {
+    "01-código": {
+      "status": "passed",
+      "log": "01-código.log"
+    },
+    "02-tipos-app": {
+      "status": "passed",
+      "log": "02-tipos-app.log"
+    },
+    "03-tipos-pruebas": {
+      "status": "passed",
+      "log": "03-tipos-pruebas.log"
+    },
+    "04-build": {
+      "status": "passed",
+      "log": "04-build.log"
+    },
+    "05-runtime": {
+      "status": "passed"
+    }
+  },
+  "browserValidation": "pending",
+  "changes": [
+    "Lectura explícita de PerformanceMeasure.detail en la página y Workers",
+    "Borrador preparado visible antes de disponer el motor anterior, sin habilitar ejecución",
+    "La reproducción de diagnóstico incluye cambios SQL ↔ pandas"
+  ]
+}

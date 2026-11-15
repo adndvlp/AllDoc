@@ -12,6 +12,24 @@ function setup(options: Partial<SessionOptions> = {}) {
   return {engines, drafts, repository, manager, async close() {await manager.dispose(); await drafts.close();}};
 }
 
+test('medición de práctica: fases independientes por perfil sin conservar texto del usuario', async () => {
+  const names = ['bootstrap', 'draft', 'dataset', 'runtime-init', 'inspect'];
+  for (const name of names) performance.clearMeasures('alldoc-practice/' + name);
+  const f = setup();
+  try {
+    await f.manager.setContext(context()); await f.manager.open();
+    for (const name of names) {
+      const entries = performance.getEntriesByName('alldoc-practice/' + name) as PerformanceMeasure[];
+      assert.equal(entries.length, 1, name);
+      assert.ok(entries[0].duration >= 0); assert.equal(entries[0].detail.profileId, context().profile.id);
+      assert.equal(entries[0].detail.status, 'success');
+      assert.equal(JSON.stringify(entries[0].detail).includes('SELECT'), false);
+    }
+    await f.manager.collapse(); await f.manager.open();
+    for (const name of names) assert.equal(performance.getEntriesByName('alldoc-practice/' + name).length, 1);
+  } finally {await f.close();}
+});
+
 test('sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor', async () => {
   const f = setup();
   try {
@@ -45,6 +63,75 @@ test('sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL
   assert.equal(f.manager.getSnapshot().draft!.workspace.files[0].content, 'SELECT 42;');
   assert.equal(f.engines.calls.maxActive, 1); assert.equal(f.engines.calls.runs.length, 0);
   assert.match(f.manager.getSnapshot().notice ?? '', /reinici|restaur/i); await f.close();
+});
+
+test('sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla', async () => {
+  const f = setup(); const gate = deferred(); let changing: Promise<void> | undefined;
+  try {
+    await f.manager.setContext(context('pandas')); await f.manager.open();
+    f.manager.edit('main.py', 'productos.head(2)');
+    await f.manager.setContext(context());
+    const prepared = f.drafts.get(context('pandas').workspaceKey);
+    f.engines.deferDispose(gate.promise);
+    changing = f.manager.setContext(context('pandas'));
+    const snapshot = f.manager.getSnapshot();
+    assert.equal(snapshot.context?.workspaceKey, context('pandas').workspaceKey);
+    assert.equal(snapshot.phase, 'loading'); assert.equal(snapshot.draft, prepared);
+    assert.equal(f.engines.calls.created, 2); assert.equal(f.engines.calls.runs.length, 0);
+    assert.equal(await f.manager.complete(2), null);
+    f.manager.edit('main.py', 'productos.head(3)');
+    gate.resolve(); await changing;
+    assert.equal(f.manager.getSnapshot().draft?.workspace.files[0].content, 'productos.head(3)');
+    assert.equal(f.engines.calls.maxActive, 1);
+  } finally {gate.resolve(); await changing; await f.close();}
+});
+
+test('sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior', async () => {
+  const f = setup(); const gate = deferred(); let changing: Promise<void> | undefined;
+  try {
+    await f.manager.setContext(context('pandas')); await f.manager.open();
+    await f.manager.setContext(context());
+    f.engines.deferDispose(gate.promise);
+    const before = f.manager.getSnapshot(); const snapshots: ReturnType<typeof f.manager.getSnapshot>[] = [];
+    const unsubscribe = f.manager.subscribe(() => snapshots.push(f.manager.getSnapshot()));
+    changing = f.manager.setContext(context('pandas'));
+    unsubscribe();
+    assert.equal(snapshots.length, 1);
+    assert.equal(snapshots[0].generation, before.generation + 1);
+    assert.equal(snapshots[0].context?.workspaceKey, context('pandas').workspaceKey);
+    assert.equal(snapshots[0].draft?.workspace.id, context('pandas').workspaceKey);
+    assert.equal(snapshots[0].phase, 'loading');
+  } finally {gate.resolve(); await changing; await f.close();}
+});
+
+test('sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo', async () => {
+  const f = setup();
+  try {
+    await f.manager.setContext(context()); await f.manager.open();
+    await f.manager.setContext(context('pandas'));
+    const before = f.manager.getSnapshot(); let notifications = 0;
+    const unsubscribe = f.manager.subscribe(() => {notifications++;});
+    f.drafts.edit(context().workspaceKey, 'main.sql', 'SELECT 9;');
+    await f.drafts.flush(context().workspaceKey);
+    assert.equal(f.manager.getSnapshot(), before); assert.equal(notifications, 0);
+    f.manager.edit('main.py', 'productos.head(2)');
+    assert.notEqual(f.manager.getSnapshot(), before); assert.equal(notifications, 1);
+    assert.equal(f.manager.getSnapshot().draft?.workspace.files[0].content, 'productos.head(2)');
+    unsubscribe();
+  } finally {await f.close();}
+});
+
+test('sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores', async () => {
+  const f = setup();
+  try {
+    await f.manager.setContext(context()); await f.manager.open();
+    const before = f.manager.getSnapshot(); let notifications = 0;
+    const unsubscribe = f.manager.subscribe(() => {notifications++;});
+    await f.manager.open();
+    assert.equal(f.manager.getSnapshot(), before); assert.equal(notifications, 0);
+    assert.equal(f.engines.calls.created, 1); assert.equal(f.engines.calls.init, 1);
+    unsubscribe();
+  } finally {await f.close();}
 });
 
 test('sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado', async () => {

@@ -1,0 +1,26 @@
+{
+  "point": 8,
+  "stage": "red",
+  "recordedAt": "2026-11-14T22:16:28.325Z",
+  "command": "node --experimental-strip-types --test --test-name-pattern='medición' tests/practice-python-initialization.test.ts tests/practice-session.test.ts",
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "tests/practice-session.test.ts",
+      "sha256": "8fa0d6357176954586fec4884ad9616440b544a4fec5f0b0d3d2800514ad8bdf"
+    },
+    {
+      "path": "tests/practice-python-initialization.test.ts",
+      "sha256": "89b72100434fc95ceb2dada53d022e22e5e5c692cf9db17a2bd7b45483b5e0e9"
+    },
+    {
+      "path": "src/practice/session-manager.ts",
+      "sha256": "0b5d25ad775a95c674940026f3f4709c9d3b7d9d3084570b74222f4db35aa644"
+    },
+    {
+      "path": "src/practice/adapters/python/initialize.ts",
+      "sha256": "a9bf6ba8543e4f4b32729a82cac31d3194826139ba291aa084826c9fad2ff84a"
+    }
+  ],
+  "log": "(node:64877) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✖ medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados (3.766041ms)\n(node:64878) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✖ medición de práctica: fases independientes por perfil sin conservar texto del usuario (5.689833ms)\nℹ tests 2\nℹ suites 0\nℹ pass 0\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 203.212375\n\n✖ failing tests:\n\ntest at tests/practice-python-initialization.test.ts:7:1\n✖ medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados (3.766041ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 1\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts:13:10)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 1,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests/practice-session.test.ts:15:1\n✖ medición de práctica: fases independientes por perfil sin conservar texto del usuario (5.689833ms)\n  AssertionError [ERR_ASSERTION]: bootstrap\n  \n  0 !== 1\n  \n      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts:23:14)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.run (node:internal/test_runner/test:1208:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 1,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+}

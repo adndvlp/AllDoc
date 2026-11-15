@@ -1,0 +1,35 @@
+{
+  "point": 8,
+  "status": "code-only-complete",
+  "report": "benchmarks/practice-verifications/2026-11-15T01-57-07-294Z-eab186a574/verification.json",
+  "sourceSha256": "eab186a5744af50b4a3c666c577f6c964748c782b0a24d84ccf07b07d0c6cf46",
+  "passed": 190,
+  "checks": {
+    "01-código": {
+      "status": "passed",
+      "log": "01-código.log"
+    },
+    "02-tipos-app": {
+      "status": "passed",
+      "log": "02-tipos-app.log"
+    },
+    "03-tipos-pruebas": {
+      "status": "passed",
+      "log": "03-tipos-pruebas.log"
+    },
+    "04-build": {
+      "status": "passed",
+      "log": "04-build.log"
+    },
+    "05-runtime": {
+      "status": "passed"
+    }
+  },
+  "browserValidation": "pending",
+  "changes": [
+    "Generación, contexto y borrador se publican en una sola notificación",
+    "Guardados de otros workspaces no notifican al lector activo",
+    "Un patch sin cambios no reemplaza el snapshot ni notifica",
+    "Solo el botón Probar consume el estado de práctica dentro de la ficha"
+  ]
+}

@@ -27,6 +27,7 @@
     "test:ui:overlay": "playwright install chromium && playwright test tests/ui/search.spec.ts --project=celular -g 'atajo desde'",
     "baseline": "node scripts/capture-baseline.mjs",
     "verify:final": "node scripts/verify-final.mjs",
+    "verify:practice": "node --experimental-strip-types scripts/verify-practice.mjs",
     "build:ui": "PRACTICE_ORIGIN=http://localhost:4174 DOCUSAURUS_GENERATED_FILES_DIR_NAME=.docusaurus-ui docusaurus build --out-dir .ui-build",
     "serve:ui": "node --experimental-strip-types scripts/serve-with-runtime.mjs ui",
     "update:stack": "node scripts/update-stack.mjs"

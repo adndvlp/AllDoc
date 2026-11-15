@@ -1,6 +1,7 @@
 import type {CompletionAdapter, CompletionResult, EnvironmentManifest, PracticeEditorContext, PracticeRegistry, RunRequest, RuntimeAdapter, RuntimeEvent, RuntimeSchema, Workspace} from './contracts.ts';
 import {copyWorkspace, MAX_CODE_BYTES, type DraftState, type DraftStore} from './drafts.ts';
 import {identifier} from './guards.ts';
+import {practicePhase} from './timing.ts';
 import {isCompletionResult, isRuntimeEvent} from './protocol.ts';
 
 export type SessionSnapshot = Readonly<{
@@ -47,7 +48,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
   let retirement: Promise<void> = Promise.resolve(); let retirementError: Error | null = null;
   let idle: ReturnType<typeof setTimeout> | undefined; let activeRun: Run | null = null; let sequence = 0; let completionSequence = 0; let codeAction = 0;
   const publish = (patch: Partial<SessionSnapshot>) => {
-    if (disposed) return;
+    if (disposed || (Object.keys(patch) as (keyof SessionSnapshot)[]).every(key => Object.is(state[key], patch[key]))) return;
     state = Object.freeze({...state, ...patch}); for (const listener of Array.from(listeners)) listener();
   };
   const live = (generation: number) => !disposed && state.generation === generation;
@@ -92,10 +93,10 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     })();
     return run.stopping;
   }
-  function invalidate() {
+  function invalidate(patch: Partial<SessionSnapshot> = {}) {
     codeAction++;
     clearTimeout(idle); controller?.abort(); completionAbort?.abort(); loading = null; resetting = null;
-    publish({generation: state.generation + 1});
+    publish({...patch, generation: state.generation + 1});
   }
   async function retireCurrent() {
     const running = activeRun; const target = resource;
@@ -104,7 +105,8 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
   }
   const unsubscribe = options.drafts.subscribe(() => {
     const key = state.context?.workspaceKey;
-    if (key && state.draft) publish({draft: options.drafts.get(key) ?? state.draft});
+    const draft = key ? options.drafts.get(key) : null;
+    if (state.draft && draft && draft !== state.draft) publish({draft});
   });
 
   async function prepare(duringReset = false): Promise<void> {
@@ -119,10 +121,11 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       let own: Resource | null = null; let allocatedCompletion: CompletionAdapter | null = null;
       let allocatedRuntime: RuntimeAdapter | null = null;
       try {
-        const seed = await options.bootstrap(ctx);
+        const detail = {profileId: ctx.profile.id, generation};
+        const seed = await practicePhase('bootstrap', () => options.bootstrap(ctx), detail);
         if (!live(generation) || abort.signal.aborted) return;
         if (seed.workspace.id !== ctx.workspaceKey || (seed.environment && seed.workspace.environmentVersion !== seed.environment.version)) throw new Error('Contexto inicial incompatible');
-        const draft = await options.drafts.load(seed.workspace);
+        const draft = await practicePhase('draft', () => options.drafts.load(seed.workspace), detail);
         if (!live(generation) || abort.signal.aborted) return;
         publish({draft, ...(draft.environmentChanged ? {notice: 'El entorno cambió de versión; tu código se conserva.'} : {})});
         if (ctx.profile.availability === 'planned') {
@@ -131,7 +134,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
         if (!seed.environment) throw new Error('Falta el manifiesto del entorno');
         const factories = await options.registry.loadProviders(ctx.profile.id);
         if (!live(generation) || abort.signal.aborted) return;
-        const dataset = await factories.createDataset().materialize(ctx.profile.defaultDataset, ctx.profile.runtimeId, abort.signal);
+        const dataset = await practicePhase('dataset', () => factories.createDataset().materialize(ctx.profile.defaultDataset, ctx.profile.runtimeId, abort.signal), detail);
         await retirement;
         if (!live(generation) || abort.signal.aborted) return;
         if (retirementError) throw retirementError;
@@ -141,9 +144,9 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
         allocatedCompletion = factories.createCompletion(allocatedRuntime);
         own = {runtime: allocatedRuntime, completion: allocatedCompletion, controller: abort, ready: false, retired: false};
         resource = own;
-        await own.runtime.init({profile: ctx.profile, environment: seed.environment, dataset}, abort.signal);
+        await practicePhase('runtime-init', () => own!.runtime.init({profile: ctx.profile as import('./contracts.ts').EnabledPracticeProfile, environment: seed.environment!, dataset}, abort.signal), detail);
         if (!live(generation) || abort.signal.aborted || own.retired) return;
-        const schema = await own.runtime.inspect();
+        const schema = await practicePhase('inspect', () => own!.runtime.inspect(), detail);
         if (!live(generation) || abort.signal.aborted || own.retired) return;
         own.ready = true;
         publish({phase: 'ready', schema,
@@ -198,8 +201,10 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     async setContext(context) {
       if (disposed) return;
       if (context?.workspaceKey === state.context?.workspaceKey) {publish({context}); return;}
-      const previous = state.context?.workspaceKey; invalidate();
-      publish({context, draft: null, events: [], schema: {version: 0, entities: []}, error: null, notice: null,
+      const previous = state.context?.workspaceKey;
+      // El borrador validado en memoria no depende de destruir o arrancar una VM.
+      // La ejecución permanece bloqueada hasta preparar el motor del contexto nuevo.
+      invalidate({context, draft: context ? options.drafts.get(context.workspaceKey) ?? null : null, events: [], schema: {version: 0, entities: []}, error: null, notice: null,
         visible: context !== null && state.openRequested, phase: !context ? 'hidden' : state.openRequested ? 'loading' : 'collapsed'});
       // Encolar el último texto no bloquea publicar el contexto nuevo.
       if (previous && options.drafts.get(previous)) void options.drafts.flush(previous);

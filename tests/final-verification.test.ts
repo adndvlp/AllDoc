@@ -35,6 +35,22 @@ function fixture(after = false) {
   };
 }
 
+test('auditoría publicada: comprueba la ruta canónica de cada HTML antes de ejecutar UI', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'alldoc-published-routes-'));
+  try {
+    await mkdir(path.join(directory, 'apuntes/area/sql'), {recursive: true});
+    await writeFile(path.join(directory, 'index.html'), '<h1>Inicio</h1>');
+    await writeFile(path.join(directory, 'apuntes/area.html'), '<h1>Área</h1>');
+    await writeFile(path.join(directory, 'apuntes/area/sql/select.html'), '<h1>SELECT</h1>');
+    const result = await auditPublishedBuild(directory);
+    assert.equal(result.status, 'passed');
+    assert.deepEqual(Object.fromEntries(result.pages.map(p => [p.url, p.servedAs])), {
+      '/apuntes/area/sql/select': 'apuntes/area/sql/select.html',
+      '/apuntes/area': 'apuntes/area.html', '/': 'index.html',
+    });
+  } finally {await rm(directory, {recursive: true, force: true});}
+});
+
 test('comparación final: distingue bundle total e inicial y favoritos sin referencia previa', () => {
   const result = compareRuns(fixture(), fixture(true));
   assert.equal(result.status, 'complete');

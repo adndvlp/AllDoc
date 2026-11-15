@@ -5,6 +5,7 @@ import {isCompletionResult} from '../../protocol.ts';
 import {createPythonEngine, type PythonEngine} from './core.ts';
 import {pythonPackages} from './packages.ts';
 import {initializePythonVM} from './initialize.ts';
+import {practicePhase} from '../../timing.ts';
 
 // Webpack emite los assets intactos. El SDK carga su módulo WASM y stdlib desde
 // este directorio; los wheels compatibles se añaden al manifiesto del runtime.
@@ -32,8 +33,8 @@ scope.onmessage = ({data: request}) => {
       if (pyodide.version !== context.environment.runtime.version) throw new Error('Versión de Pyodide incompatible');
       engine = createPythonEngine(pyodide); await engine.init(context.dataset);
       const document = 'import pandas as pd\npd.Da';
-      const check = engine.complete({requestId: 'prepare', generation: 0, revision: 0, workspaceId: 'prepare',
-        file: 'main.py', document, position: document.length, schema: engine.inspect()});
+      const check = await practicePhase('python-jedi', async () => engine!.complete({requestId: 'prepare', generation: 0, revision: 0, workspaceId: 'prepare',
+        file: 'main.py', document, position: document.length, schema: engine!.inspect()}));
       if (!check.items.some((item) => item.label === 'DataFrame')) throw new Error('Jedi no pudo validar el análisis de pandas');
     } else {
       if (!engine) throw new Error('Python sin inicializar');

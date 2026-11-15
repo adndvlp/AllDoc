@@ -9,12 +9,22 @@ type Example = {id: string; title: string; code: string; hint: string; output: {
 }};
 type Note = {title: string; description: string; examples: readonly Example[]; remember: string; note?: string};
 
+// Solo la acción depende de la sesión. Los cambios del editor no vuelven a
+// renderizar el contenido editorial, sus tablas ni el resaltado de código.
+function TryExample({example, language}: {example: Example; language: string}) {
+  const practice = usePractice();
+  if (practice.context?.profile.languageId !== language) return null;
+  return <button className={styles.tryExample} type="button"
+    data-practice-example={example.id} aria-label={'Probar este ejemplo: ' + example.title}
+    aria-haspopup="dialog" aria-controls="alldoc-practice-panel" title="Probar este ejemplo"
+    onClick={(event) => {event.currentTarget.focus({preventScroll: true}); void practice.openExample({id: example.id, code: example.code, languageId: language});}}>Probar</button>;
+}
+
 /** La presentación compacta es común; cada herramienta aporta lenguaje y contenido. */
 export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page'}: {
   concept: Note; conceptId: string; kind: string; language: string; htmlClassName?: string;
 }) {
   const resultId = useId();
-  const practice = usePractice();
   return <HtmlClassNameProvider className={htmlClassName}>
     <section className={styles.concept} {...{[`data-${kind}-concept`]: conceptId}} aria-label={concept.title}>
       <p className={styles.definition}>{concept.description}</p>
@@ -23,10 +33,7 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
           <div key={example.id} className={styles.variant} {...{[`data-${kind}-example`]: example.title}}>
             <div className={styles.variantHeading}>
               <h2 className={styles.variantTitle}>{example.title}</h2>
-              {practice.context?.profile.languageId === language && <button className={styles.tryExample} type="button"
-                data-practice-example={example.id} aria-label={'Probar este ejemplo: ' + example.title}
-                aria-haspopup="dialog" aria-controls="alldoc-practice-panel" title="Probar este ejemplo"
-                onClick={(event) => {event.currentTarget.focus({preventScroll: true}); void practice.openExample({id: example.id, code: example.code, languageId: language});}}>Probar</button>}
+              <TryExample example={example} language={language} />
             </div>
             <CodeBlock language={language}>{example.code}</CodeBlock>
             <p className={styles.hint}>{example.hint}</p>

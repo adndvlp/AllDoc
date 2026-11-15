@@ -1,0 +1,428 @@
+{
+  "reviewedAt": "2026-11-15T02:28:45.078Z",
+  "sourceSha256": "eab186a5744af50b4a3c666c577f6c964748c782b0a24d84ccf07b07d0c6cf46",
+  "screenshots": [
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-python-pandas-data.png",
+      "sha256": "bed72e7a3f40f7cd940ce90a7352c3f7e10c566993383f156e595d90856c318b",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-python-pandas-ready.png",
+      "sha256": "97e4e4251284d03ff877cd1ee35ada46550a7d13ea59ab661b21bcf23f9c844a",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-python-pandas-result.png",
+      "sha256": "bd1fc9039591d9857caa85f947524e0bdd28cffeccc781c67f6bd9e3335631a2",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-sql-sqlite-data.png",
+      "sha256": "4155fe168c53c5d64517f80eeca15450b71d68908ff854ef86258b018a2326c1",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-sql-sqlite-ready.png",
+      "sha256": "ffc0509916c9e6e0361b3c2c450ea27cc16c83aced8312f69b869d828e86d86e",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/celular-sql-sqlite-result.png",
+      "sha256": "4b91396c8111f9923bcd44f3a5193d21923638f175c5a62636a57e63f6f84cd7",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-python-pandas-data.png",
+      "sha256": "d6e3e77a9ec89b7de45b627f2e9546eefff9da78d79f1027ca16c1b1a292883e",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-python-pandas-ready.png",
+      "sha256": "0082270e5569be709c292bf6339b23808d7cf284443aec0c8ea120d8b3546d07",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-python-pandas-result.png",
+      "sha256": "1746da4ddc448bee7340f4fb4d51a24378893ba886a709ec6f67ab203a46c652",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-sql-sqlite-data.png",
+      "sha256": "9284d1f9be43f4cba4133209172d7cb9b5c8bfd0b13aa538be14cb5f72d999de",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-sql-sqlite-ready.png",
+      "sha256": "75fecd1bd7d68a237fb8a581d478d6baecb8dad1ac316d9626978913b8db5a75",
+      "status": "reviewed"
+    },
+    {
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/screenshots/laptop-sql-sqlite-result.png",
+      "sha256": "b46bfe690e71073c8223e724ece1b054c348389c85118f6ee26947bdd1e4476d",
+      "status": "reviewed"
+    }
+  ],
+  "traces": [
+    {
+      "project": "laptop",
+      "profileId": "sql-sqlite",
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/traces/laptop-sql-sqlite.json",
+      "sha256": "34db0f31dde5b5dabb143c9c50a94d9b7d4aec038a98458ea9d4fe544271c506",
+      "status": "reviewed",
+      "markers": [
+        "practice-diagnostic-context-pandas",
+        "practice-diagnostic-context-SQL"
+      ],
+      "largestContextReplayEvents": [
+        {
+          "name": "EventDispatch",
+          "durationMs": 12.234,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 11.943
+        },
+        {
+          "name": "EventDispatch",
+          "durationMs": 10.002,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 9.47
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 6.94,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "C6D7F1D2573F547848B153C966F978DC",
+            "functionName": "",
+            "isolate": "5683316744477476314",
+            "lineNumber": 2,
+            "sampleTraceId": 7128647230301746,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        }
+      ],
+      "note": "Reproducción posterior; sus tiempos no sustituyen las treinta muestras ni prueban la causa exacta de un valor atípico de otra ejecución."
+    },
+    {
+      "project": "laptop",
+      "profileId": "python-pandas",
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/traces/laptop-python-pandas.json",
+      "sha256": "8ab80a8b9cce8792788c7f771f7b25baa09acc685733307509e55a9ca99d7656",
+      "status": "reviewed",
+      "markers": [
+        "practice-diagnostic-context-SQL",
+        "practice-diagnostic-context-pandas"
+      ],
+      "largestContextReplayEvents": [
+        {
+          "name": "EventDispatch",
+          "durationMs": 12.974,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 12.689
+        },
+        {
+          "name": "EventDispatch",
+          "durationMs": 9.788,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 9.592
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 5.173,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "9FF05CBB7986088E7347E6D9090787CC",
+            "functionName": "",
+            "isolate": "2867279439104360890",
+            "lineNumber": 2,
+            "sampleTraceId": 6051384871098545,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        }
+      ],
+      "note": "Reproducción posterior; sus tiempos no sustituyen las treinta muestras ni prueban la causa exacta de un valor atípico de otra ejecución."
+    },
+    {
+      "project": "celular",
+      "profileId": "sql-sqlite",
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/traces/celular-sql-sqlite.json",
+      "sha256": "64af5041fa781ce752b7a91a44dce847d38eb4048126a9c405dd225b0742553e",
+      "status": "reviewed",
+      "markers": [
+        "practice-diagnostic-context-pandas",
+        "practice-diagnostic-context-SQL"
+      ],
+      "largestContextReplayEvents": [
+        {
+          "name": "EventDispatch",
+          "durationMs": 44.561,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 43.329
+        },
+        {
+          "name": "EventDispatch",
+          "durationMs": 41.512,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 39.228
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 31.813,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "1AFF0AF0AA2BAABC67053C97BE8B9DBC",
+            "functionName": "",
+            "isolate": "271747181342495444",
+            "lineNumber": 2,
+            "sampleTraceId": 6235196917109395,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        },
+        {
+          "name": "EvaluateScript",
+          "durationMs": 25.377,
+          "data": {
+            "columnNumber": 1,
+            "frame": "1AFF0AF0AA2BAABC67053C97BE8B9DBC",
+            "lineNumber": 1,
+            "scriptId": 0,
+            "url": "http://127.0.0.1:52868/assets/js/practice-python-language.f0d68731.js"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 25.301
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 17.464,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "1AFF0AF0AA2BAABC67053C97BE8B9DBC",
+            "functionName": "",
+            "isolate": "271747181342495444",
+            "lineNumber": 2,
+            "sampleTraceId": 6235196917110910,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        }
+      ],
+      "note": "Reproducción posterior; sus tiempos no sustituyen las treinta muestras ni prueban la causa exacta de un valor atípico de otra ejecución."
+    },
+    {
+      "project": "celular",
+      "profileId": "python-pandas",
+      "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/traces/celular-python-pandas.json",
+      "sha256": "9fdfa853ece706e8d32acc52f775d43955dd9396fb7dcaec0005d136c68fcdf4",
+      "status": "reviewed",
+      "markers": [
+        "practice-diagnostic-context-SQL",
+        "practice-diagnostic-context-pandas"
+      ],
+      "largestContextReplayEvents": [
+        {
+          "name": "EventDispatch",
+          "durationMs": 31.745,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "EventDispatch",
+          "durationMs": 31.687,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 31.547
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 31.068
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 14.185,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "EA2AE582BEF7F6D8484E13FADEFBC990",
+            "functionName": "",
+            "isolate": "10077940738324727537",
+            "lineNumber": 2,
+            "sampleTraceId": 6570171750906269,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        },
+        {
+          "name": "EventDispatch",
+          "durationMs": 12.71,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "RunMicrotasks",
+          "durationMs": 12.658
+        },
+        {
+          "name": "FunctionCall",
+          "durationMs": 12.508,
+          "data": {
+            "columnNumber": 162621,
+            "frame": "EA2AE582BEF7F6D8484E13FADEFBC990",
+            "functionName": "",
+            "isolate": "10077940738324727537",
+            "lineNumber": 2,
+            "sampleTraceId": 6570171750904990,
+            "scriptId": "8",
+            "url": "http://127.0.0.1:52868/assets/js/main.34a3bb68.js"
+          }
+        }
+      ],
+      "note": "Reproducción posterior; sus tiempos no sustituyen las treinta muestras ni prueban la causa exacta de un valor atípico de otra ejecución."
+    }
+  ],
+  "longTasks": [
+    {
+      "project": "laptop",
+      "measurementProfile": "sql-sqlite",
+      "name": "self",
+      "startTime": 143.2999999821186,
+      "duration": 59,
+      "phase": "outside-timed-action",
+      "classification": "arranque de lectura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "sql-sqlite",
+      "name": "self",
+      "startTime": 347.59999999403954,
+      "duration": 226,
+      "phase": "outside-timed-action",
+      "classification": "arranque de lectura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "sql-sqlite",
+      "name": "self",
+      "startTime": 1540.3999999761581,
+      "duration": 221,
+      "phase": "outside-timed-action",
+      "classification": "primera apertura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "sql-sqlite",
+      "name": "self",
+      "startTime": 1976.699999988079,
+      "duration": 65,
+      "phase": "outside-timed-action",
+      "classification": "primera apertura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "sql-sqlite",
+      "name": "self",
+      "startTime": 9866,
+      "duration": 136,
+      "phase": "outside-timed-action",
+      "classification": "preparación o intervalo entre muestras"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "python-pandas",
+      "name": "self",
+      "startTime": 165,
+      "duration": 173,
+      "phase": "outside-timed-action",
+      "classification": "arranque de lectura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "python-pandas",
+      "name": "self",
+      "startTime": 1152.5,
+      "duration": 63,
+      "phase": "outside-timed-action",
+      "classification": "primera apertura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "python-pandas",
+      "name": "self",
+      "startTime": 1374.5,
+      "duration": 56,
+      "phase": "outside-timed-action",
+      "classification": "primera apertura"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "python-pandas",
+      "name": "self",
+      "startTime": 25149.90000000596,
+      "duration": 57,
+      "phase": "outside-timed-action",
+      "classification": "preparación o intervalo entre muestras"
+    },
+    {
+      "project": "celular",
+      "measurementProfile": "python-pandas",
+      "name": "self",
+      "startTime": 41380,
+      "duration": 59,
+      "phase": "context",
+      "classification": "cambio SQL ↔ pandas"
+    }
+  ],
+  "findings": [
+    "Las doce capturas conservan negro puro, resaltado, editor y tablas dentro del panel; los controles y cierres son visibles. El código largo usa el scroll horizontal del editor.",
+    "No se modificaron las 165 referencias revisadas. La suite comparó los siete tamaños con la tolerancia existente, sin actualizar capturas.",
+    "No se observaron tareas largas durante las muestras preparadas de apertura/cierre, escritura o sugerencias. Se observó una tarea de 59 ms en el flujo móvil SQL ↔ pandas; las entradas de 50 ms exactos no superan el umbral >50 ms.",
+    "Los Long Animation Frames del cambio de contexto contienen dispatch de interfaz y trabajo de estilos/layout; se revisaron las cuatro trazas con los dos marcadores de contexto. La reproducción móvil desde pandas tuvo dispatch de contexto de hasta 31.745 ms. No se atribuye esa duración a la muestra original de 59 ms.",
+    "Hay tareas largas durante arranque, primera apertura y preparación entre muestras; se conservan separadas. El p95 preparado no acredita apertura fría instantánea ni ausencia de tareas largas.",
+    "Los cambios en generación/contexto, notificaciones de borradores inactivos y snapshots idénticos tienen pruebas rojas y verdes. La ficha editorial ya no consume las actualizaciones de la sesión completa."
+  ],
+  "limitations": [
+    "Firefox y WebKit no estaban instalados: sus casos no se ejecutaron. La validación en Chromium emulado no equivale a Safari/iPad físicos.",
+    "Laboratorio local, CPU 4× aplicado por CDP a la página; no acredita ralentización equivalente del Worker ni INP de campo.",
+    "La referencia anterior a práctica permite comparar bytes iniciales, no latencias de un panel que todavía no existía.",
+    "Los presupuestos se aprueban para las treinta muestras y formas de completado declaradas; no acreditan cualquier programa o cualquier forma de inferencia Python."
+  ]
+}

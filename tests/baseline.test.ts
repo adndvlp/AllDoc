@@ -14,6 +14,23 @@ test('percentiles de referencia: nearest rank, valores cero y muestras ausentes'
   assert.throws(() => summarize([-1]), /inválida/);
 });
 
+test('servidor de referencia: resuelve HTML hermano aunque exista el directorio de sus fichas', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'alldoc-area-route-'));
+  try {
+    await mkdir(path.join(directory, 'apuntes/analisis-de-datos/sql'), {recursive: true});
+    const area = path.join(directory, 'apuntes/analisis-de-datos.html');
+    await writeFile(area, '<h1>Análisis de datos</h1>');
+    await writeFile(path.join(directory, 'apuntes/analisis-de-datos/sql/select.html'), '<h1>SELECT</h1>');
+    for (const route of ['/apuntes/analisis-de-datos', '/apuntes/analisis-de-datos/']) assert.equal(await buildFile(directory, route), area);
+    assert.equal(await buildFile(directory, '/apuntes/analisis-de-datos/sql/select'), path.join(directory, 'apuntes/analisis-de-datos/sql/select.html'));
+    const index = path.join(directory, 'apuntes/analisis-de-datos/index.html');
+    await writeFile(index, '<h1>Índice</h1>');
+    assert.equal(await buildFile(directory, '/apuntes/analisis-de-datos/'), index);
+    assert.equal(await buildFile(directory, '/apuntes/analisis-de-datos/sql'), null);
+    assert.equal(await buildFile(directory, '/../analisis-de-datos'), null);
+  } finally {await rm(directory, {recursive: true, force: true});}
+});
+
 test('assets declarados: incluye preloads JS/CSS y elimina duplicados, sin contar fuentes o scripts inline', () => {
   const html = `<script defer src="/assets/main.js"></script><script src='/assets/main.js'></script>
     <link rel="stylesheet" href="/assets/site.css"><link rel="preload" href="/assets/lazy.js">

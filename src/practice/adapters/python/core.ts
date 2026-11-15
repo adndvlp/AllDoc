@@ -4,6 +4,7 @@ import type {CompletionRequest, CompletionResult, MaterializedDataset, RunReques
 import {pythonHelper} from './helpers.ts';
 import {isRuntimeEvent} from '../../protocol.ts';
 import {isRuntimeSchema} from '../../isolation/messages.ts';
+import {practicePhase} from '../../timing.ts';
 
 export interface PythonEngine {
   init(dataset: MaterializedDataset): Promise<void>;
@@ -37,7 +38,7 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
       if (disposed) throw new Error('El entorno Python está dispuesto');
       if (scope) throw new Error('El entorno Python ya está preparado');
       scope = pyodide.runPython('dict()') as Namespace;
-      try {pyodide.runPython(pythonHelper, {globals: scope}); seed = dataset; await reset();}
+      try {await practicePhase('python-data', async () => {pyodide.runPython(pythonHelper, {globals: scope!}); seed = dataset; await reset();});}
       catch (error) {scope.destroy(); scope = null; throw error;}
     },
     async run(request, emit) {

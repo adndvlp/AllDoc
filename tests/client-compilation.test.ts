@@ -89,7 +89,8 @@ test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan 
   const guards = compile<typeof import('../src/practice/guards.ts')>('../src/practice/guards.ts');
   const drafts = compile<typeof import('../src/practice/drafts.ts')>('../src/practice/drafts.ts', {'./guards.ts': guards});
   const protocol = compile<typeof import('../src/practice/protocol.ts')>('../src/practice/protocol.ts', {'./guards.ts': guards, './contracts.ts': {PRACTICE_PROTOCOL_VERSION: 1}});
-  const sessions = compile<typeof import('../src/practice/session-manager.ts')>('../src/practice/session-manager.ts', {'./protocol.ts': protocol, './drafts.ts': drafts, './guards.ts': guards});
+  const timing = compile<typeof import('../src/practice/timing.ts')>('../src/practice/timing.ts');
+  const sessions = compile<typeof import('../src/practice/session-manager.ts')>('../src/practice/session-manager.ts', {'./protocol.ts': protocol, './drafts.ts': drafts, './guards.ts': guards, './timing.ts': timing});
   const repo = memoryRepository(); const store = drafts.createDraftStore(() => repo.repository); const engines = engineFixture();
   const manager = sessions.createPracticeSessionManager({registry: engines.registry, drafts: store,
     bootstrap: async (ctx) => ({workspace: workspace(ctx), environment})});

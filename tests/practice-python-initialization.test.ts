@@ -4,6 +4,17 @@ import type {PyodideAPI, loadPyodide} from 'pyodide';
 import {initializePythonVM} from '../src/practice/adapters/python/initialize.ts';
 import {deferred, until} from './fixtures/practice-session.ts';
 
+test('medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados', async () => {
+  for (const name of ['python-sdk', 'python-packages']) performance.clearMeasures('alldoc-practice/' + name);
+  const vm = {async loadPackage() {throw new Error('descarga interrumpida');}} as unknown as PyodideAPI;
+  await assert.rejects(initializePythonVM((async () => vm) as typeof loadPyodide, {}), /descarga interrumpida/);
+  const sdk = performance.getEntriesByName('alldoc-practice/python-sdk') as PerformanceMeasure[];
+  const packages = performance.getEntriesByName('alldoc-practice/python-packages') as PerformanceMeasure[];
+  assert.equal(sdk.length, 1); assert.equal(packages.length, 1);
+  assert.equal(sdk[0].detail.status, 'success'); assert.equal(packages[0].detail.status, 'error');
+  assert.ok(sdk[0].duration >= 0); assert.ok(packages[0].startTime >= sdk[0].startTime + sdk[0].duration);
+});
+
 test('inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes', async () => {
   const packages = deferred(); const calls: string[][] = [];
   // Doble solo del ciclo de vida. La conformidad del núcleo usa Pyodide real.

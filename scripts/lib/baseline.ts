@@ -109,19 +109,17 @@ export async function archiveUiReferences(root: string, output: string) {
 }
 
 export async function buildFile(root: string, pathname: string): Promise<string | null> {
-  let filename = path.resolve(root, '.' + pathname);
+  const filename = path.resolve(root, '.' + pathname);
   if (filename !== root && !filename.startsWith(root + path.sep)) return null;
-  try {
-    if ((await stat(filename)).isDirectory()) filename = path.join(filename, 'index.html');
-    return (await stat(filename)).isFile() ? filename : null;
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-    if (!path.extname(filename)) {
-      try {if ((await stat(filename + '.html')).isFile()) return filename + '.html';}
-      catch (fallback) {if ((fallback as NodeJS.ErrnoException).code !== 'ENOENT') throw fallback;}
-    }
-    return null;
+  // Con trailingSlash:false, área.html puede coexistir con área/sql/select.html.
+  // Un index ausente no debe descartar el HTML hermano de ese directorio.
+  const candidates = [filename, path.join(filename, 'index.html'),
+    ...(!path.extname(filename) && filename !== root ? [filename + '.html'] : [])];
+  for (const candidate of candidates) {
+    try {if ((await stat(candidate)).isFile()) return candidate;}
+    catch (error) {if (!['ENOENT', 'ENOTDIR'].includes((error as NodeJS.ErrnoException).code ?? '')) throw error;}
   }
+  return null;
 }
 
 // Servidor propio en un puerto efímero. No reutiliza ni modifica el servidor del usuario.

@@ -1,0 +1,86 @@
+{
+  "status": "complete",
+  "budgetBytes": 5120,
+  "reasons": [],
+  "pages": [
+    {
+      "html": "404.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/limit.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/order-by.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/select.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos/sql/where.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/analisis-de-datos.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/desarrollo-web.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "apuntes/ia.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    },
+    {
+      "html": "index.html",
+      "before": 177301,
+      "after": 182222,
+      "deltaBytes": 4921,
+      "status": "met"
+    }
+  ],
+  "interactionBaseline": "not-available",
+  "note": "La referencia precede al panel; permite comparar archivos iniciales, no inventar latencias previas de práctica."
+}

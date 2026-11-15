@@ -1,7 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {performance} from 'node:perf_hooks';
-import {filesUnder, summarize} from './baseline.ts';
+import {filesUnder, summarize, buildFile} from './baseline.ts';
 import {prepareSearchIndex, searchPreparedEntries} from '../../src/lib/search.ts';
 
 type RecordValue = Record<string, unknown>;
@@ -138,7 +138,11 @@ export async function auditPublishedBuild(directory: string) {
     if (/repaso(?:-completo)?|vistazo/i.test(route)) failures.push(`${route}: ruta retirada publicada`);
     const viewport = html.match(/<meta\b(?=[^>]*name=["']viewport["'])[^>]*>/i)?.[0] ?? '';
     if (/user-scalable\s*=\s*(?:no|0)|maximum-scale\s*=\s*(?:0(?:\.\d+)?|1(?:\.0+)?)\b/i.test(viewport)) failures.push(`${route}: zoom bloqueado`);
-    pages.push({route, h1, viewport});
+    const url = route === 'index.html' ? '/' : '/' + route.replace(/(?:\/index)?\.html$/, '');
+    const resolved = await buildFile(path.resolve(directory), url);
+    const servedAs = resolved ? path.relative(directory, resolved).split(path.sep).join('/') : null;
+    if (servedAs !== route) failures.push(`${route}: la ruta ${url} resuelve a ${servedAs ?? '404'}`);
+    pages.push({route, h1, viewport, url, servedAs});
   }
   if (!pages.length) failures.push('No hay HTML publicado');
   const homeJS = {loaderFound: false, chunkIds: [] as number[], bodyAssets: [] as string[], loadedBodies: [] as string[]};
@@ -186,4 +190,128 @@ export function syntheticSearchBenchmark() {
     commonMatches: searchPreparedEntries(index, 'operación').length,
     prepareMs, samples: summarize(samples), rawSamplesMs: samples,
     environment: 'Node; no mide renderizado ni teclado de navegador'};
+}
+
+export const practiceActions = ['open', 'close', 'write', 'completionKeyword', 'completionColumns', 'context'] as const;
+export const practicePhases = ['bootstrap', 'draft', 'dataset', 'runtime-init', 'inspect'] as const;
+export const pythonPhases = ['python-sdk', 'python-packages', 'python-data', 'python-jedi'] as const;
+
+/** Solo los timestamps de las muestras deciden el presupuesto; no sus resúmenes. */
+export function assessPracticeMetrics(input: unknown) {
+  const reasons: string[] = [];
+  const profiles = list(at(input, 'profiles'));
+  if (at(input, 'schemaVersion') !== 1 || at(input, 'metric') !== 'DOM + siguiente rAF') reasons.push('Formato de medición desconocido');
+  if (profiles.length !== 4) reasons.push('Se requieren los cuatro perfiles de medición');
+  const metrics: {project: string; profileId: string; action: string; count: number; p95: number | null; budgetMs: number;
+    status: 'pending' | 'met' | 'exceeded'; eventTiming: {observedCount: number; samplesWithoutEntries: number; p95: number | null}}[] = [];
+  for (const project of ['laptop', 'celular']) for (const profileId of ['sql-sqlite', 'python-pandas']) {
+    const matches = profiles.filter(p => at(p, 'project') === project && at(p, 'profileId') === profileId);
+    const p = matches[0]; const label = project + '/' + profileId;
+    if (matches.length !== 1 || at(p, 'status') !== 'complete') reasons.push(label + ': perfil ausente, repetido o incompleto');
+    if (at(p, 'samplesPerAction') !== 30 || at(p, 'cpuRate') !== (project === 'laptop' ? 1 : 4)
+      || !same(at(p, 'viewport'), project === 'laptop' ? {width: 1280, height: 800} : {width: 390, height: 844})) reasons.push(label + ': condiciones distintas de las declaradas');
+    for (const name of ['editorReadyMs', 'runtimeReadyMs']) if (!validNumber(at(p, 'cold', name))) reasons.push(label + ': falta ' + name);
+    for (const name of practicePhases) if (!validNumber(at(p, 'cold', 'phases', name, 'duration')) || at(p, 'cold', 'phases', name, 'status') !== 'success') reasons.push(label + ': fase incompleta ' + name);
+    if (profileId === 'python-pandas') for (const name of pythonPhases) if (!validNumber(at(p, 'cold', 'workerPhases', name, 'duration')) || at(p, 'cold', 'workerPhases', name, 'status') !== 'success') reasons.push(label + ': fase Python incompleta ' + name);
+    for (const action of practiceActions) {
+      const samples = list(at(p, 'actions', action));
+      const ids = samples.map(s => at(s, 'id'));
+      const valid = samples.length === 30 && ids.every(id => typeof id === 'string' && id.length > 0) && new Set(ids).size === 30
+        && samples.every(s => validNumber(at(s, 'armedAt')) && validNumber(at(s, 'eventAt')) && validNumber(at(s, 'observedAt'))
+          && (at(s, 'eventAt') as number) >= (at(s, 'armedAt') as number) && (at(s, 'observedAt') as number) >= (at(s, 'eventAt') as number) && at(s, 'satisfied') === true);
+      const measured = valid ? summarize(samples.map(s => (at(s, 'observedAt') as number) - (at(s, 'eventAt') as number))) : null;
+      const eventMaxima = samples.map(s => list(at(s, 'eventTiming')).map(e => at(e, 'duration')).filter(validNumber)).filter(events => events.length).map(events => Math.max(...events));
+      const observed = summarize(eventMaxima);
+      const budgetMs = profileId === 'python-pandas' && action.startsWith('completion') ? 300 : 100;
+      if (!valid) reasons.push(label + '/' + action + ': faltan 30 muestras válidas y distintas');
+      metrics.push({project, profileId, action, count: samples.length, p95: measured?.p95 ?? null, budgetMs,
+        status: !valid ? 'pending' : measured!.p95! <= budgetMs ? 'met' : 'exceeded',
+        eventTiming: {observedCount: eventMaxima.length, samplesWithoutEntries: samples.length - eventMaxima.length, p95: observed.p95}});
+    }
+  }
+  const longTasks = profiles.flatMap(p => list(at(p, 'longTasks')).filter(task => validNumber(at(task, 'duration')) && (at(task, 'duration') as number) > 50)
+    .map(task => ({project: at(p, 'project'), profileId: at(p, 'profileId'), ...record(task)})));
+  return {status: reasons.length ? 'incomplete' : metrics.some(m => m.status === 'exceeded') ? 'budget-exceeded' : 'complete',
+    metric: 'DOM + siguiente rAF', inp: 'not-measured', reasons, metrics, longTasks, requiresTraceReview: longTasks.length > 0};
+}
+
+export function assessPracticeBundle(before: unknown, after: unknown) {
+  const reasons: string[] = []; const oldPages = list(at(before, 'pages')), newPages = list(at(after, 'pages'));
+  if (!oldPages.length || !newPages.length) reasons.push('Falta inventario por página');
+  const pages = oldPages.map(old => {
+    const html = at(old, 'html'); const current = newPages.find(p => at(p, 'html') === html);
+    const sizes = [at(old, 'js', 'gzipBytes'), at(old, 'css', 'gzipBytes'), at(current, 'js', 'gzipBytes'), at(current, 'css', 'gzipBytes')];
+    const valid = sizes.every(validNumber);
+    if (!valid) reasons.push(String(html) + ': faltan tamaños iniciales');
+    const deltaBytes = valid ? (sizes[2] as number) + (sizes[3] as number) - (sizes[0] as number) - (sizes[1] as number) : null;
+    return {html, before: valid ? (sizes[0] as number) + (sizes[1] as number) : null,
+      after: valid ? (sizes[2] as number) + (sizes[3] as number) : null, deltaBytes, status: !valid ? 'pending' : deltaBytes! <= 5120 ? 'met' : 'exceeded'};
+  });
+  return {status: reasons.length ? 'incomplete' : pages.some(p => p.status === 'exceeded') ? 'budget-exceeded' : 'complete', budgetBytes: 5120, reasons, pages,
+    interactionBaseline: 'not-available', note: 'La referencia precede al panel; permite comparar archivos iniciales, no inventar latencias previas de práctica.'};
+}
+
+export type PracticeUICase = {file: string; title: string; projectName: string; status: 'passed' | 'failed' | 'skipped'};
+export function practiceUICases(input: unknown): PracticeUICase[] {
+  const result: PracticeUICase[] = [];
+  function visit(suite: unknown, inheritedFile = '') {
+    const file = String(at(suite, 'file') ?? inheritedFile);
+    for (const spec of list(at(suite, 'specs'))) for (const test of list(at(spec, 'tests'))) {
+      const final = at(list(at(test, 'results')).at(-1), 'status');
+      result.push({file: String(at(spec, 'file') ?? file), title: String(at(spec, 'title') ?? ''), projectName: String(at(test, 'projectName') ?? ''),
+        status: at(test, 'status') === 'skipped' && final === 'skipped' ? 'skipped'
+          : at(test, 'status') === 'expected' && final === 'passed' ? 'passed' : 'failed'});
+    }
+    for (const child of list(at(suite, 'suites'))) visit(child, file);
+  }
+  visit(input); return result;
+}
+
+// Se requieren casos ejecutados; la presencia de un archivo no acredita un criterio.
+const acceptanceRequirements = [
+  ['Contexto habilitado', 'practice-context.test.ts', 'practice.spec.ts', 'entrada contextual'],
+  ['Workspaces por herramienta', 'practice-session.test.ts', 'python.spec.ts', 'cambio SQL'],
+  ['Cambio abierto y colapsado', 'practice-session.test.ts', 'practice.spec.ts', 'borradores'],
+  ['Cargas tardías y reintento', 'practice-session.test.ts', 'practice.spec.ts', 'descarga tardía'],
+  ['Persistencia de borradores', 'practice-drafts.test.ts', 'practice.spec.ts', 'borradores'],
+  ['Ejemplos y revisión anterior', 'practice-actions.test.ts', 'practice-actions.spec.ts', 'revisión anterior'],
+  ['Miniapunte pandas', 'practice-data.test.ts', 'python.spec.ts', 'DataFrame real'],
+  ['Ocho ejemplos SQL', 'practice-sqlite.test.ts', 'sqlite.spec.ts', 'consulta real'],
+  ['Dataset común tipado', 'practice-data.test.ts', 'python.spec.ts', 'DataFrame real'],
+  ['Mutación y reinicio', 'practice-sqlite.test.ts', 'python.spec.ts', 'pandas vivo'],
+  ['Completado SQL', 'practice-editor.test.ts', 'sqlite.spec.ts', 'esquema vivo'],
+  ['Completado pandas/Jedi', 'practice-python.test.ts', 'python.spec.ts', 'Jedi y columnas'],
+  ['Respuestas de sugerencias obsoletas', 'practice-editor-completion.test.ts', 'python.spec.ts', 'Jedi y columnas'],
+  ['Éxito, error, timeout y cancelación', 'practice-session.test.ts', 'python.spec.ts', 'timeout Python'],
+  ['Detener conserva edición', 'practice-session.test.ts', 'sqlite.spec.ts', 'cancelación real'],
+  ['Identidad de respuestas', 'practice-contracts.test.ts', 'python.spec.ts', 'cambio SQL'],
+  ['Salidas seguras y acotadas', 'practice-contracts.test.ts', 'sqlite.spec.ts', 'selección:'],
+  ['Extensibilidad mediante contrato', 'practice-context.test.ts', '', ''],
+  ['Perfil futuro sin ejecución ficticia', 'practice-panel.test.ts', '', ''],
+  ['Diálogo único y foco', 'practice-panel.test.ts', 'practice.spec.ts', 'modal:'],
+  ['Scroll independiente', 'practice-panel.test.ts', 'practice.spec.ts', 'separador:'],
+  ['Adaptación y accesibilidad', 'practice-panel.test.ts', 'practice.spec.ts', 'responsive:'],
+  ['Almacenamiento no disponible o corrupto', 'practice-drafts.test.ts', 'practice-actions.spec.ts', 'almacenamiento bloqueado'],
+  ['Carga diferida y liberación', 'practice-session.test.ts', 'sqlite.spec.ts', 'aislamiento real'],
+  ['Rendimiento y bundle', 'practice-verification.test.ts', '', ''],
+  ['Aislamiento entre orígenes', 'practice-isolation.test.ts', 'python.spec.ts', 'aislamiento Python'],
+  ['Regresión global y capturas', 'client-compilation.test.ts', 'notes.spec.ts', 'una envoltura'],
+] as const;
+
+export function assessPracticeAcceptance(input: unknown) {
+  const native = list(at(input, 'nativeCases')), ui = list(at(input, 'uiCases'));
+  const criteria = acceptanceRequirements.map(([title, nativeFile, uiFile, pattern], index) => {
+    const matchesFile = (c: unknown, name: string) => String(at(c, 'file')) === name || String(at(c, 'file')).endsWith('/' + name);
+    const nativeEvidence = native.filter(c => matchesFile(c, nativeFile) && at(c, 'status') === 'passed' && !at(c, 'skipped'));
+    const uiEvidence = uiFile ? ui.filter(c => matchesFile(c, uiFile) && String(at(c, 'title')).includes(pattern) && at(c, 'status') === 'passed') : [];
+    const checks = record(at(input, 'checks'));
+    const extra = index === 24 ? checks.performance === true && checks.bundle === true
+      : index === 26 ? checks.types === true && checks.build === true && checks.stable === true && checks.strictUI === true : true;
+    return {id: 'PA-' + String(index + 1).padStart(2, '0'), title,
+      status: nativeEvidence.length > 0 && (!uiFile || uiEvidence.length > 0) && extra ? 'verified' : 'pending', nativeEvidence, uiEvidence};
+  });
+  const projects = ['celular-pequeno', 'celular', 'celular-horizontal', 'ipad', 'ipad-horizontal', 'laptop', 'escritorio'];
+  const missingProjects = projects.filter(project => !ui.some(c => at(c, 'projectName') === project && at(c, 'status') === 'passed'));
+  const failed = ui.filter(c => at(c, 'status') === 'failed');
+  return {status: criteria.every(c => c.status === 'verified') && !missingProjects.length && !failed.length ? 'complete' : 'incomplete', criteria, missingProjects, failed};
 }
