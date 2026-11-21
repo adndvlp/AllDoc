@@ -11,7 +11,7 @@ export interface DraftRepository {
   recoveries(id: string): Promise<readonly RecoveryDraft[]>;
   close(): void;
 }
-export type DraftState = Readonly<{workspace: Workspace; previous: Workspace | null; status: 'clean' | 'dirty' | 'saving' | 'saved' | 'memory' | 'conflict'; environmentChanged: boolean}>;
+export type DraftState = Readonly<{workspace: Workspace; previous: Workspace | null; status: 'clean' | 'dirty' | 'saving' | 'saved' | 'memory' | 'conflict'; environmentChanged: boolean;migrationSourceId?:string}>;
 export interface DraftStore {
   load(seed: Workspace): Promise<DraftState>;
   get(id: string): DraftState | undefined;
@@ -57,7 +57,7 @@ export function readDraft(value: unknown, id: string): StoredDraft | null {
     return workspace.id === id ? Object.freeze({formatVersion: 1, storageRevision: value.storageRevision, savedAt: value.savedAt, workspace, previous}) : null;
   } catch {return null;}
 }
-export function createDraftStore(repository: () => DraftRepository, options: {debounceMs?: number; now?: () => number} = {}): DraftStore {
+export function createDraftStore(repository: () => DraftRepository, options: {debounceMs?: number; now?: () => number;migrationCandidates?:(seed:Workspace)=>readonly string[]} = {}): DraftStore {
   type Entry = {state: DraftState; expected: number | null; persisted: Workspace | null; timer?: ReturnType<typeof setTimeout>; writing?: Promise<void>};
   const entries = new Map<string, Entry>(); const pending = new Map<string, Promise<DraftState>>();
   const listeners = new Set<() => void>(); let adapter: DraftRepository | undefined; let closed = false;
@@ -102,12 +102,29 @@ export function createDraftStore(repository: () => DraftRepository, options: {de
       const existing = entries.get(initial.id); if (existing) return Promise.resolve(existing.state);
       const loading = pending.get(initial.id); if (loading) return loading;
       const task = (async () => {
-        let saved: StoredDraft | null = null; let failed = false;
-        try {const raw = await repo().read(initial.id); saved = readDraft(raw, initial.id); failed = raw != null && !saved;}
+        let saved: StoredDraft | null = null; let failed = false;let migrated:Workspace|null=null;let migrationSourceId:string|undefined;let conflict=false;
+        try {
+          const raw = await repo().read(initial.id); saved = readDraft(raw, initial.id); failed = raw != null && !saved;
+          if(raw==null)for(const sourceId of new Set(options.migrationCandidates?.(initial)??[])){
+            if(sourceId===initial.id)continue;
+            const oldRaw=await repo().read(sourceId);if(oldRaw==null)continue;
+            const old=readDraft(oldRaw,sourceId);
+            if(!old||old.workspace.toolKey!==initial.toolKey||old.workspace.profileId!==initial.profileId)throw new Error('Borrador anterior incompatible');
+            migrated=copyWorkspace({...initial,files:old.workspace.files,activeFile:old.workspace.activeFile,revision:old.workspace.revision});
+            migrationSourceId=sourceId;
+            if(closed)throw new Error('Almacén cerrado');
+            // Copia no destructiva. CAS(null) impide sustituir una edición que
+            // otra conexión haya creado desde nuestra lectura. El origen se conserva.
+            const result=await repo().write(migrated,null,now(),migrated);
+            if(result.status==='saved')saved=result.record;
+            else {conflict=true;saved=readDraft(await repo().read(initial.id),initial.id);if(!saved)throw new Error('Destino de migración incompatible');}
+            break;
+          }
+        }
         catch {failed = true;}
         const environmentChanged = saved !== null && saved.workspace.environmentVersion !== initial.environmentVersion;
-        const value = saved ? copyWorkspace({...saved.workspace, environmentVersion: initial.environmentVersion}) : initial;
-        const entry: Entry = {state: Object.freeze({workspace: value, previous: saved?.previous ?? null, status: failed ? 'memory' : 'clean', environmentChanged}),
+        const value = saved ? copyWorkspace({...saved.workspace, environmentVersion: initial.environmentVersion}) : migrated??initial;
+        const entry: Entry = {state: Object.freeze({workspace: value, previous: saved?.previous ?? migrated, status: failed ? 'memory' : conflict?'conflict':'clean', environmentChanged,...(migrationSourceId?{migrationSourceId}:{})}),
           expected: saved?.storageRevision ?? null, persisted: value};
         if (closed) throw new Error('Almacén cerrado');
         entries.set(initial.id, entry); emit(); return entry.state;

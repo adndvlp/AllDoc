@@ -48,11 +48,15 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
         [capi.SQLITE_LIMIT_VDBE_OP, 200_000]] as const) capi.sqlite3_limit(connection.pointer!, id, value);
       const parsed: unknown = JSON.parse(seed.bootstrap);
       if (!record(parsed) || parsed.format !== 'alldoc/sql-seed@1' || !Array.isArray(parsed.statements) || parsed.statements.length > 1000) throw new Error('Preparación SQL inválida');
+      if(parsed.foreignKeys===true){connection.exec('PRAGMA foreign_keys=ON;');if(Number(connection.selectValue('PRAGMA foreign_keys'))!==1)throw new Error('No se pudo activar la integridad referencial');}
+      connection.exec('BEGIN;');
       for (const statement of parsed.statements) {
         if (!record(statement) || !text(statement.sql) || !Array.isArray(statement.parameters)
           || !statement.parameters.every((value: unknown) => value === null || typeof value === 'string' || (typeof value === 'number' && Number.isFinite(value)))) throw new Error('Parámetros SQL inválidos');
         connection.exec(statement.sql, {bind: statement.parameters});
       }
+      if(parsed.foreignKeys===true&&connection.selectArrays('PRAGMA foreign_key_check').length)throw new Error('La semilla viola claves foráneas');
+      connection.exec('COMMIT;');
       capi.sqlite3_set_authorizer(connection.pointer!, (_arg, action, a, b) => {
         if (action === capi.SQLITE_ATTACH || action === capi.SQLITE_DETACH) return capi.SQLITE_DENY;
         if (action === capi.SQLITE_PRAGMA && ['hard_heap_limit', 'soft_heap_limit', 'temp_store_directory', 'data_store_directory', 'writable_schema'].includes(String(a).toLowerCase())) return capi.SQLITE_DENY;

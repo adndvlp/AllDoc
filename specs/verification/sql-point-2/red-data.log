@@ -1,0 +1,93 @@
+(node:46422) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset (24.856ms)
+✖ negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas (1.3095ms)
+✖ negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales (0.135167ms)
+✖ negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia (0.123166ms)
+✖ negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión (0.108791ms)
+✖ materializador: restricciones de un dataset se crean incluso fuera del registro de negocio (45.437542ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 296.167375
+
+✖ failing tests:
+
+test at tests/sql-business-data.test.ts:22:1
+✖ negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset (24.856ms)
+  AssertionError [ERR_ASSERTION]: El dataset relacional debe estar registrado
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:23:49)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-business-data.test.ts:32:1
+✖ negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas (1.3095ms)
+  Error: Dataset desconocido o versión no disponible
+      at Object.materialize (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/datasets/index.ts:11:47)
+      at engine (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:17:112)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:33:17)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/sql-business-data.test.ts:37:1
+✖ negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales (0.135167ms)
+  Error: Dataset desconocido o versión no disponible
+      at Object.materialize (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/datasets/index.ts:11:47)
+      at engine (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:17:112)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:38:17)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/sql-business-data.test.ts:46:1
+✖ negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia (0.123166ms)
+  Error: Dataset desconocido o versión no disponible
+      at Object.materialize (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/datasets/index.ts:11:47)
+      at engine (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:17:112)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:47:17)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/sql-business-data.test.ts:53:1
+✖ negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión (0.108791ms)
+  Error: Dataset desconocido o versión no disponible
+      at Object.materialize (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/datasets/index.ts:11:47)
+      at engine (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:17:112)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:54:17)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/sql-business-data.test.ts:58:1
+✖ materializador: restricciones de un dataset se crean incluso fuera del registro de negocio (45.437542ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(run(e,'INSERT INTO hijos(id,padre_id) VALUES(2,999);').some(e=>e.type==='error'))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:64:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

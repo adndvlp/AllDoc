@@ -14,7 +14,7 @@ async function open(page: Page) {
 async function savedCode(page: Page, content: string) {
   await expect.poll(() => page.evaluate(async (content) => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {const r = indexedDB.open('alldoc-practice', 1); r.onsuccess = () => resolve(r.result); r.onerror = () => reject(r.error);});
-    try {return await new Promise<boolean>((resolve, reject) => {const r = db.transaction('drafts').objectStore('drafts').get(JSON.stringify(['analisis-de-datos/sql', 'sql-sqlite', 'productos-basico', 1])); r.onsuccess = () => resolve(r.result?.workspace.files[0].content === content); r.onerror = () => reject(r.error);});}
+    try {return await new Promise<boolean>((resolve, reject) => {const r = db.transaction('drafts').objectStore('drafts').get(JSON.stringify(['analisis-de-datos/sql', 'sql-sqlite', 'negocio-relacional', 1])); r.onsuccess = () => resolve(r.result?.workspace.files[0].content === content); r.onerror = () => reject(r.error);});}
     finally {db.close();}
   }, content)).toBe(true);
 }
@@ -52,7 +52,7 @@ test('restaurar código: conserva las mutaciones y el menú cabe al ampliar el t
   await action(page, 'Restaurar código inicial'); await expect(code(page)).toHaveText('SELECT * FROM productos;');
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
   await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', 'Accesorios', '1']);
+  await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado', 'Accesorios', '1','45','1','1']);
   await page.evaluate(() => document.documentElement.style.fontSize = '200%');
   await panel(page).getByRole('button', {name: 'Opciones de código', exact: true}).click();
   const menu = page.getByRole('region', {name: 'Opciones de código', exact: true}); await expect(menu).toBeVisible();

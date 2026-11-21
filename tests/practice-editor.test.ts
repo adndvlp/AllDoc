@@ -19,8 +19,12 @@ test('editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados', asyn
       assert.equal(seed.environment?.runtime.id, 'pyodide');
       assert.equal(seed.workspace.environmentVersion, seed.environment?.version);
     }
-    assert.equal(seed.schema.entities[0].rowCount, 3);
-    assert.deepEqual(seed.schema.entities[0].columns, editorDataset.tables[0].columns);
+    if(tool==='sql'){
+      assert.equal(seed.schema.entities.length,13);assert.equal(seed.schema.entities.find(t=>t.name==='productos')?.rowCount,18);
+    }else{
+      assert.equal(seed.schema.entities[0].rowCount, 3);
+      assert.deepEqual(seed.schema.entities[0].columns, editorDataset.tables[0].columns);
+    }
     assert.match(seed.workspace.files[0].content, tool === 'sql' ? /SELECT \* FROM productos;/ : /pd.DataFrame/);
   }
 });

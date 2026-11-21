@@ -1,0 +1,63 @@
+{
+  "status": "reviewed",
+  "method": "Inspección de las diez imágenes; comparación de hashes antes/después y región izquierda del lector en sqlite-schema.",
+  "changed": [
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-actions.png",
+      "sha256": "a86951ca0bb68bded49bd80cc2bfb0fd14492448477827c30bc2c825cb4109b8",
+      "beforeSha256": "dc3dc8fc8233d4df33d4375a9846e5de3adbe1b6c98a63c2d07df9dc11fdf120"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-data.png",
+      "sha256": "e4be63c4d5eb4aaac430e341b1466e61059e6ec3897210368091c697180c4850",
+      "beforeSha256": "8c4cb687d4fdb70331974048131ea305e39d4b4de4b5703ba74d38911b9ed10b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sqlite-schema.png",
+      "sha256": "7ce18bcb9cee3aefc04226e2a3adf6adbf166df10ad4962816a168b13b96b57a",
+      "beforeSha256": "c656100d8bce819299db926c1897b39fdc2312f0bd075a65386edf430db96efc"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-actions.png",
+      "sha256": "da13e101373948e864b717b7e15177ca050507d8fdcba2b045e7991722d9cce2",
+      "beforeSha256": "c78afbe8fff3718a8584a8591a3c4db8dfef16b0cdad905355295184c35a398b"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-data.png",
+      "sha256": "22d97e459c8442d0f8905d7af2c9c467d673d11b0fa3ab5157789d8e61235fba",
+      "beforeSha256": "9284d1f9be43f4cba4133209172d7cb9b5c8bfd0b13aa538be14cb5f72d999de"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sqlite-schema.png",
+      "sha256": "71b7f0dc5a040facbb710203e1bffa17a94e5afb54f350274b14c3211f3e60d2",
+      "beforeSha256": "72ac2da38053e7c6a4dda16aa5fd4ad31e79c72b80d097741e64533d90c539ba"
+    }
+  ],
+  "added": [
+    {
+      "path": "tests/ui/__screenshots__/celular/business-data.png",
+      "sha256": "e4be63c4d5eb4aaac430e341b1466e61059e6ec3897210368091c697180c4850"
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/business-result.png",
+      "sha256": "e70e5f617b70edb0b53d36a426c982234a650ff0b7617a07fc87d21c127648ca"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/business-data.png",
+      "sha256": "22d97e459c8442d0f8905d7af2c9c467d673d11b0fa3ab5157789d8e61235fba"
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/business-result.png",
+      "sha256": "df45b73fc5dd590dfa3ac1966ef415d5f3b31da5a3a303c00caef915a8e60b9c"
+    }
+  ],
+  "notes": [
+    "Datos muestra las trece tablas con scroll propio.",
+    "El resultado del CTE conserva filas y números esperados.",
+    "Resultados de SELECT * incorpora id, stock, proveedor_id y activo.",
+    "El menú de código conserva controles visibles al 200%.",
+    "Umbral visual sin cambios: maxDiffPixelRatio=0.001."
+  ],
+  "unchangedSinceBeforeRegressionCount": 163,
+  "unchangedExistingCount": 159
+}

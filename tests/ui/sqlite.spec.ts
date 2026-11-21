@@ -19,7 +19,7 @@ async function execute(page: Page, sql: string) {
 test('consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado', async ({page}) => {
   await open(page);
   await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled();
-  await execute(page, 'SELECT nombre, precio FROM productos WHERE precio > 300 ORDER BY precio DESC;');
+  await execute(page, 'SELECT nombre, precio FROM productos WHERE precio > 300 AND id <= 3 ORDER BY precio DESC;');
   const table = panel(page).getByRole('table');
   await expect(table.getByRole('row')).toHaveCount(3);
   await expect(table.getByRole('row').nth(1).getByRole('cell')).toHaveText(['Monitor', '3500']);
@@ -38,7 +38,7 @@ test('esquema vivo: cambios parciales aparecen en Datos y completado aunque una 
   await panel(page).getByRole('tab', {name: 'Datos', exact: true}).click();
   await expect(panel(page).getByRole('table', {name: 'Datos de ventas', exact: true})).toContainText('7');
   const products = panel(page).getByRole('table', {name: 'Datos de productos', exact: true});
-  await expect(products.getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', 'Accesorios', '1']);
+  await expect(products.getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado', 'Accesorios', '1','45','1','1']);
   await expect(panel(page).getByText('Guardado local', {exact: true})).toBeVisible();
   await expect(page).toHaveScreenshot('sqlite-schema.png');
   await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();

@@ -127,7 +127,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
         if (seed.workspace.id !== ctx.workspaceKey || (seed.environment && seed.workspace.environmentVersion !== seed.environment.version)) throw new Error('Contexto inicial incompatible');
         const draft = await practicePhase('draft', () => options.drafts.load(seed.workspace), detail);
         if (!live(generation) || abort.signal.aborted) return;
-        publish({draft, ...(draft.environmentChanged ? {notice: 'El entorno cambió de versión; tu código se conserva.'} : {})});
+        publish({draft, ...(draft.migrationSourceId?{notice:'Dataset actualizado; tu borrador anterior se conserva.'}:draft.environmentChanged ? {notice: 'El entorno cambió de versión; tu código se conserva.'} : {})});
         if (ctx.profile.availability === 'planned') {
           publish({phase: 'ready', schema: seed.schema ?? {version: 0, entities: []}}); return;
         }

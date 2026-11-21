@@ -70,6 +70,13 @@ async function verify(options) {
   try {
     report.before=await fingerprint();
     await phase('space','00-espacio-disponible',async()=>{report.storage=await requireBrowserSpace([root,tmpdir()]);});
+    const suites=suiteNames(options);
+    if(options.mode!=='code-only')await phase('preflight','01-preflight',async()=>{
+      const engines=[...new Set(suites.flatMap(s=>s==='chromium'?['chromium']:projectsForSuite(s,options.projects).map(p=>p.use.browserName)))];
+      report.preflight=await preflightAcceptance(engines,{firefox,webkit,chromium},event=>console.log(event.engine+': '+event.status));
+      await json('preflight.json',report.preflight);if(report.preflight.status!=='ready')throw new Error(report.preflight.diagnostic??'Preflight bloqueado');
+    });
+    stage='references';
     const approval=await jsonRead(proofFiles[0]),review=await jsonRead(proofFiles[1]);
     const generation=await jsonRead(approval.generation.directory+'/verification.json');
     const generationHash=sha256(await readFile(path.join(root,approval.generation.directory,'verification.json')));
@@ -90,11 +97,7 @@ async function verify(options) {
     for(const entry of red.cases??[])if(entry.exitCode!==1||sha256(await readFile(path.join(root,entry.log)))!==entry.sha256)throw new Error('Evidencia TDD no verificable');
     report.tdd={status:red.phase==='red'&&red.cases?.length?'recorded':'missing',file:proofFiles[2]};
     if(report.tdd.status!=='recorded')throw new Error('Falta evidencia TDD del cierre');
-    const suites=suiteNames(options);
-    if(options.mode!=='code-only')await phase('preflight','01-preflight',async()=>{
-      const engines=[...new Set(suites.flatMap(s=>s==='chromium'?['chromium']:projectsForSuite(s,options.projects).map(p=>p.use.browserName)))];
-      report.preflight=await preflightAcceptance(engines,{firefox,webkit,chromium},event=>console.log(event.engine+': '+event.status));
-      await json('preflight.json',report.preflight);if(report.preflight.status!=='ready')throw new Error(report.preflight.diagnostic??'Preflight bloqueado');
+    if(options.mode!=='code-only'){
       const selectedCross=new Set(suites.filter(s=>s!=='chromium').flatMap(s=>projectsForSuite(s,options.projects).map(p=>p.name)));
       for(const p of browserProjects().filter(p=>selectedCross.has(p.name))) {
         const filename=referenceRoot+'/'+p.name+'/manifest.json',manifest=await jsonRead(filename);
@@ -104,7 +107,7 @@ async function verify(options) {
         const check=checkVisualManifest(manifest,context,images.filter(f=>f.path.startsWith(referenceRoot+'/'+p.name+'/')));
         if(check.status!=='compatible')throw new Error(p.name+': '+check.reasons.join('; '));
       }
-    });
+    }
     report.nativeFiles=await nativeFiles();
     await phase('native','02-código',async()=>{
       const filename=path.join(output,'native-cases.ndjson');

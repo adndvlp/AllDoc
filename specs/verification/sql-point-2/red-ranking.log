@@ -1,0 +1,50 @@
+(node:47963) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO clientes(id,nombre,email,ciudad,fecha_alta) VALUES(100,'X','cliente1@ejemplo.test','X','2026-01-01');
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE productos SET precio=-1 WHERE id=1;
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = UPDATE productos SET proveedor_id=9999 WHERE id=1;
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO inventario(almacen_id,producto_id,unidades) VALUES(1,1,5);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO hijos(id,padre_id) VALUES(2,999);
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO hijos VALUES(1,1,2);
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE hijos SET cantidad=0;
+✔ negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset (29.314083ms)
+✔ negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas (54.052875ms)
+✖ negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales (17.751ms)
+✔ negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia (29.255542ms)
+✔ negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión (17.545541ms)
+✔ materializador: restricciones de un dataset se crean incluso fuera del registro de negocio (1.018583ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 395.787458
+
+✖ failing tests:
+
+test at tests/sql-business-data.test.ts:37:1
+✖ negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales (17.751ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   10300,
+  +   6500
+  -   2000,
+  -   2000
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts:45:60)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 10300, 6500 ],
+    expected: [ 2000, 2000 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

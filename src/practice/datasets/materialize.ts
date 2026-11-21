@@ -1,18 +1,19 @@
 import type {PracticeDataset} from './types.ts';
 import type {Cell, MaterializedDataset, RuntimeSchema} from '../contracts.ts';
-export type SqlSeed = {format: 'alldoc/sql-seed@1'; statements: {sql: string; parameters: (string | number | null)[]}[]};
+import {createTableSql,validateDataset} from './sql-ddl.ts';
+export type SqlSeed = {format: 'alldoc/sql-seed@1';foreignKeys?:true; statements: {sql: string; parameters: (string | number | null)[]}[]};
 
 const quote = (name: string) => '"' + name.replaceAll('"', '""') + '"';
-const sqlTypes = {text: 'TEXT', integer: 'INTEGER', number: 'REAL', boolean: 'INTEGER', bigint: 'TEXT', decimal: 'TEXT', date: 'TEXT', datetime: 'TEXT'};
 
 export function sqlSeedFor(dataset: PracticeDataset): SqlSeed {
+  validateDataset(dataset);
   const statements: SqlSeed['statements'] = [];
+  for(const table of dataset.tables)statements.push({sql:createTableSql(table),parameters:[]});
   for (const table of dataset.tables) {
-    statements.push({sql: `CREATE TABLE ${quote(table.name)} (${table.columns.map((column) => `${quote(column.name)} ${sqlTypes[column.type]}`).join(', ')});`, parameters: []});
     const sql = `INSERT INTO ${quote(table.name)} (${table.columns.map(({name}) => quote(name)).join(', ')}) VALUES (${table.columns.map(() => '?').join(', ')});`;
     for (const row of table.rows) statements.push({sql, parameters: row.map((value) => typeof value === 'boolean' ? Number(value) : value)});
   }
-  return {format: 'alldoc/sql-seed@1', statements};
+  return {format: 'alldoc/sql-seed@1',...(dataset.tables.some(t=>t.foreignKeys?.length)?{foreignKeys:true as const}:{}), statements};
 }
 
 function pythonLiteral(value: Cell): string {

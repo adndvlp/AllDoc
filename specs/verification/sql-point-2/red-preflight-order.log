@@ -1,0 +1,32 @@
+✖ CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight (591.024833ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 691.588416
+
+✖ failing tests:
+
+test at tests/browser-acceptance-cli.test.mjs:32:1
+✖ CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight (591.024833ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /chromium: missing-executable/. Input:
+  
+  '00-espacio-disponible\n' +
+    'Resultado: partial\n' +
+    'Informe: benchmarks/browser-verifications/2026-11-21T23-35-44-239Z-fa8381d90c/README.md\n'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-cli.test.mjs:35:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '00-espacio-disponible\nResultado: partial\nInforme: benchmarks/browser-verifications/2026-11-21T23-35-44-239Z-fa8381d90c/README.md\n',
+    expected: /chromium: missing-executable/,
+    operator: 'match',
+    diff: 'simple'
+  }

@@ -21,7 +21,7 @@ for(const profile of profiles) {
         await expect(completion(page,'importe')).toBeVisible(); await code(page,profile).press('Escape');
       }
       await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
-      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado','Accesorios','1']);
+      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
       const kept=profile.id==='SQL'?'SELECT * FROM productos;':'pd.DataFrame=None'; await fillCode(page,profile,kept);
       if(profile.id==='PY') {await runButton(page).click(); await showResults(page); await expect(panel(page).getByText('Ejecución completada',{exact:true})).toBeVisible();}
       await panel(page).getByRole('button',{name:'Reiniciar entorno',exact:true}).click();
@@ -51,7 +51,7 @@ for(const profile of profiles) {
       await codeAction(page,'Recuperar código anterior'); await expectCode(page,profile,mutation);
       await codeAction(page,'Restaurar código inicial'); await expectCode(page,profile,initial);
       await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
-      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado','Accesorios','1']);
+      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
       await savedCode(page,profile,initial); await page.reload({waitUntil:'networkidle'});
       await page.getByRole('button',{name:'Practicar '+profile.label,exact:true}).click(); await ready(page,profile);
       await codeAction(page,'Recuperar código anterior'); await expectCode(page,profile,mutation); await expect(code(page,profile)).toBeFocused();

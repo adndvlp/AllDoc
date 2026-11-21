@@ -24,6 +24,8 @@
     "verify:browser": "node --experimental-strip-types scripts/verify-browser.mjs",
     "test:ui:practice": "playwright test tests/ui/practice.spec.ts",
     "test:ui:sql": "playwright test tests/ui/sqlite.spec.ts",
+    "test:ui:business": "playwright test tests/ui/sql-business.spec.ts --project=celular --project=laptop",
+    "test:ui:sql:regression": "playwright test tests/ui/sql-business.spec.ts tests/ui/sqlite.spec.ts tests/ui/practice.spec.ts tests/ui/practice-actions.spec.ts tests/ui/practice-storage.spec.ts --project=celular --project=laptop",
     "test:ui:actions": "playwright test tests/ui/practice-actions.spec.ts",
     "test:ui:actions:smoke": "playwright test tests/ui/practice-actions.spec.ts --project=celular -g 'ejemplo explícito'",
     "test:ui:python": "playwright test tests/ui/python.spec.ts",

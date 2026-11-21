@@ -95,7 +95,7 @@ for (const profile of profiles) {
       await ready(page, profile); await expectNoExecution(page);
       await code(page, profile).press('ControlOrMeta+Enter'); await showResults(page);
       await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
-      await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(4);
+      await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(profile.id === 'SQL' ? 19 : 4);
     });
   });
 }

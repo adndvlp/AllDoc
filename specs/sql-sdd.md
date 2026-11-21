@@ -1,7 +1,7 @@
 # AllDoc — SDD de SQL: apuntes, dialectos y práctica relacional
 
 **Fecha:** 21 de noviembre de 2026, America/Mexico_City.  
-**Estado:** punto 1 completado; puntos 2 a 9 pendientes. [Evidencia del punto 1](verification/sql-point-1.md).  
+**Estado:** puntos 1 y 2 completados; puntos 3 a 9 pendientes. [Evidencia del punto 1](verification/sql-point-1.md) · [Evidencia del punto 2](verification/sql-point-2.md).
 **Objetivo:** convertir la base de `tmp/SQL` en apuntes completos, compactos y progresivos, compartidos entre Análisis de datos y Lenguajes, con variantes por dialecto y una práctica libre sobre un único dataset relacional.  
 **Entrega inicial:** este SDD. El punto 1 incorpora inventario y contratos sin modificar los apuntes originales ni publicar contenido incompleto. Las funciones de las entregas posteriores siguen pendientes.
 

@@ -2,7 +2,7 @@ import {expect, test, type Page, type TestInfo} from '@playwright/test';
 
 export const profiles = [
   {id: 'SQL', label: 'SQL', route: '/apuntes/analisis-de-datos/sql/select', seed: 'SELECT * FROM productos;',
-    query: 'SELECT nombre, precio FROM productos WHERE precio > 300 ORDER BY precio DESC;',
+    query: 'SELECT nombre, precio FROM productos WHERE precio > 300 AND id <= 3 ORDER BY precio DESC;',
     rows: [['Monitor', '3500'], ['Teclado', '500']], keyword: 'SELECT'},
   {id: 'PY', label: 'pandas', route: '/apuntes/analisis-de-datos/pandas/dataframe', seed: 'pd.DataFrame',
     query: 'productos[productos["precio"] > 300][["nombre", "precio"]]',
@@ -78,7 +78,7 @@ export async function savedCode(page: Page, profile: Profile, content: string) {
   await expect.poll(()=>page.evaluate(async ({tool,engine})=>{
     const db=await new Promise<IDBDatabase>((resolve,reject)=>{const request=indexedDB.open('alldoc-practice',1); request.onsuccess=()=>resolve(request.result); request.onerror=()=>reject(request.error);});
     try {return await new Promise<string|undefined>((resolve,reject)=>{
-      const request=db.transaction('drafts').objectStore('drafts').get(JSON.stringify(['analisis-de-datos/'+tool,engine,'productos-basico',1]));
+      const request=db.transaction('drafts').objectStore('drafts').get(JSON.stringify(['analisis-de-datos/'+tool,engine,tool==='sql'?'negocio-relacional':'productos-basico',1]));
       request.onsuccess=()=>resolve(request.result?.workspace.files[0].content); request.onerror=()=>reject(request.error);
     });} finally {db.close();}
   },{tool,engine})).toBe(content);

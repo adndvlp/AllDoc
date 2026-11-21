@@ -7,7 +7,7 @@ export const practiceRegistry = createPracticeRegistry([
     languageId: 'sql', runtimeId: 'sqlite-wasm', completionId: 'sql-schema',
     completionDescription: 'SQLite · Sugerencias del esquema actual',
     defaultExampleId: 'sql/select/todas-las-columnas',
-    defaultDataset: {id: 'productos-basico', version: 1},
+    defaultDataset: {id: 'negocio-relacional', version: 1},
     executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
     capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
   }, loaders: {

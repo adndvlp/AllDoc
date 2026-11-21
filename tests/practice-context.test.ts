@@ -12,7 +12,8 @@ test('SQL y pandas habilitan sus proveedores diferidos sin crear motores al reso
     ['sql-sqlite', 'analisis-de-datos/sql', 'enabled'],
     ['python-pandas', 'analisis-de-datos/pandas', 'enabled'],
   ]);
-  assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'productos-basico', version: 1});
+  assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'negocio-relacional', version: 1});
+  assert.deepEqual(practiceRegistry.get('python-pandas')?.defaultDataset, {id: 'productos-basico', version: 1});
   const providers = await practiceRegistry.loadProviders('sql-sqlite');
   assert.equal(typeof providers.createRuntime, 'function');
   assert.equal(typeof (await practiceRegistry.loadProviders('python-pandas')).createRuntime, 'function');

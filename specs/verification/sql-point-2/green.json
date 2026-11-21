@@ -1,0 +1,119 @@
+{
+  "status": "complete",
+  "point": 2,
+  "completedAt": "2026-11-21T23:38:24.892Z",
+  "dataset": {
+    "id": "negocio-relacional",
+    "version": 1
+  },
+  "totalRows": 379,
+  "native": {
+    "passed": 305,
+    "failed": 0,
+    "skipped": 0
+  },
+  "ui": {
+    "projects": [
+      "celular",
+      "laptop"
+    ],
+    "passed": 61,
+    "skipped": 1,
+    "failed": 0,
+    "flaky": 0,
+    "updates": false
+  },
+  "types": "passed",
+  "build": "passed",
+  "pandasNative": "passed",
+  "otherDatabaseExports": "generated-and-reviewed-not-executed",
+  "artifacts": [
+    {
+      "path": "specs/verification/sql-point-2/red-data.log",
+      "sha256": "6482b62e87b541f599ea5a262908fea5d49d491a06f69b5db3d061e7b62c5ccf"
+    },
+    {
+      "path": "specs/verification/sql-point-2/red-migration.log",
+      "sha256": "bc258753de37313a26c95fc30e6c0f434339aba0c51fc0b1903632cb80c5b652"
+    },
+    {
+      "path": "specs/verification/sql-point-2/red-ranking.log",
+      "sha256": "09605e69edcbb92ccaf918950ef9dbd2ca48d86ea2ee914c29e697f6e7ac251f"
+    },
+    {
+      "path": "specs/verification/sql-point-2/red-exports.log",
+      "sha256": "90194011c09c5325260f70c7df5587cc81b63e3637b0bc648691649e24b95d1e"
+    },
+    {
+      "path": "specs/verification/sql-point-2/red-export-engine.log",
+      "sha256": "8204215892210ceb4be9ccef084cd904f59248bb534cd3dee87a2139389af9d3"
+    },
+    {
+      "path": "specs/verification/sql-point-2/red-preflight-order.log",
+      "sha256": "9bfc81618514242905ec44787441dab6a2d1323f368932034a2046a307d9f4d6"
+    },
+    {
+      "path": "specs/verification/sql-point-2/green-exports.log",
+      "sha256": "a6c0a73535d07d4dae01f054edff07bb713e25d0349c22064f7b46b1814cd1dc"
+    },
+    {
+      "path": "specs/verification/sql-point-2/green-preflight-order.log",
+      "sha256": "0e0192260b2b1358541b8566a30d80a1e3073275f09338e9e30aba7e1561f4b3"
+    },
+    {
+      "path": "specs/verification/sql-point-2/native.log",
+      "sha256": "3fbb090193a3c2a600b83d16d900dd5d3f5643afd3b33d8f1b3901e87a7d5030"
+    },
+    {
+      "path": "specs/verification/sql-point-2/native.tap",
+      "sha256": "2a9aaccd573d9a21c52128c8c344047e3091fad3c5d75a3b90684105bc10d489"
+    },
+    {
+      "path": "specs/verification/sql-point-2/types-app.log",
+      "sha256": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1"
+    },
+    {
+      "path": "specs/verification/sql-point-2/types-tests.log",
+      "sha256": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902"
+    },
+    {
+      "path": "specs/verification/sql-point-2/pandas.log",
+      "sha256": "081028eab22ed9db8130b373416ec757d604ac7bf0c4f16c9763b6c31b3f5493"
+    },
+    {
+      "path": "specs/verification/sql-point-2/build.log",
+      "sha256": "428505faf56b871d9822151718b739a717722cd7a562b00aeee0263511be265a"
+    },
+    {
+      "path": "specs/verification/sql-point-2/production.json",
+      "sha256": "e050ea21bc2a736c731823e532032d7c8a32fd6e249fd65d0500308b1935df27"
+    },
+    {
+      "path": "specs/verification/sql-point-2/dataset.json",
+      "sha256": "3eec30af4e602ead069aaec2055ab141c6049662a0c3137276b2d6991f2fe8ed"
+    },
+    {
+      "path": "specs/verification/sql-point-2/ui-business-update.json",
+      "sha256": "32d92f4e3188f49b6bc6c2fdd58408c110c77d4db4313d42cdfc1bc7ae717f00"
+    },
+    {
+      "path": "specs/verification/sql-point-2/ui-regression-update.json",
+      "sha256": "d29c5930b1b6eeff20b0e26c0068f87893480d39927fc8a3f1553efd5aeeeee2"
+    },
+    {
+      "path": "specs/verification/sql-point-2/ui-regression-compare.json",
+      "sha256": "283dc46df663fd77cb19132458d086cebd5c1f4abae006ca4b35ebe94ac57255"
+    },
+    {
+      "path": "specs/verification/sql-point-2/visual-review.json",
+      "sha256": "d946a6a2b67dee75bc27a794dd947050cb0d7199ae36b1d559ad535345c73158"
+    },
+    {
+      "path": "specs/verification/sql-point-2/snapshots-before-regression.json",
+      "sha256": "756971fe83de76cbed7fcc350b74bddfb1ccf61fb597da83598f742709dea55e"
+    }
+  ],
+  "exportImportExecution": [
+    "sqlite"
+  ]
+}

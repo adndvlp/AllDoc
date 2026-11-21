@@ -1,0 +1,17 @@
+(node:55578) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dataset-export.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ exportación: seis scripts deterministas, mismos datos y restricciones, sin DROP ni credenciales (40.484083ms)
+✔ exportación: script SQLite se importa entero y comprueba FK, texto Unicode y fechas (32.796125ms)
+✔ exportación: fechas Oracle, Unicode SQL Server y charset MySQL tienen sintaxis propia (30.943958ms)
+✔ exportación: valores con comillas y backslash no rompen los literales ni interpolan identificadores (0.836666ms)
+✔ exportación: archivos estáticos publicados coinciden byte a byte con el generador (36.434125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 428.054708

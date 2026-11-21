@@ -1,0 +1,777 @@
+{
+  "dataset": {
+    "id": "negocio-relacional",
+    "version": 1
+  },
+  "totalRows": 379,
+  "sha256": "4dcc4980643e130811a131b38d88785ebd9411952e6720d0c0414874a299f043",
+  "tables": [
+    {
+      "name": "categorias",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "descripcion",
+          "type": "text",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "unique": [
+        [
+          "nombre"
+        ]
+      ],
+      "rowCount": 6,
+      "rowsSha256": "de6e2b920c33c0a521cd63dd37fd5694d095c98fef255c93bbdac36b41859533"
+    },
+    {
+      "name": "proveedores",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "pais",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "nullable": true
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "rowCount": 6,
+      "rowsSha256": "54b475e61d28ed0fb44630d4fa3dcab3848ad2ac635904955ae98879cdca3df9"
+    },
+    {
+      "name": "productos",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "categoria",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "precio",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "stock",
+          "type": "integer",
+          "nullable": false,
+          "default": 0
+        },
+        {
+          "name": "proveedor_id",
+          "type": "integer",
+          "nullable": true
+        },
+        {
+          "name": "activo",
+          "type": "boolean",
+          "nullable": false,
+          "default": true
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "categoria"
+          ],
+          "references": {
+            "table": "categorias",
+            "columns": [
+              "nombre"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "proveedor_id"
+          ],
+          "references": {
+            "table": "proveedores",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "SET NULL"
+        }
+      ],
+      "checks": [
+        {
+          "column": "precio",
+          "operator": ">=",
+          "value": 0
+        },
+        {
+          "column": "stock",
+          "operator": ">=",
+          "value": 0
+        },
+        {
+          "column": "activo",
+          "operator": "in",
+          "value": [
+            0,
+            1
+          ]
+        }
+      ],
+      "rowCount": 18,
+      "rowsSha256": "f14da4ad43c7880bebd5a8414b2f021af7e959ad5031f3a37341a432a908f11c"
+    },
+    {
+      "name": "clientes",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "ciudad",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "fecha_alta",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "telefono",
+          "type": "text",
+          "nullable": true
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "unique": [
+        [
+          "email"
+        ]
+      ],
+      "rowCount": 24,
+      "rowsSha256": "d8087c28cd93ba2c21ce8791e9915d86d9971de72cfcb77aee201df84d462ab8"
+    },
+    {
+      "name": "departamentos",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "unique": [
+        [
+          "nombre"
+        ]
+      ],
+      "rowCount": 4,
+      "rowsSha256": "87f87197c86821a535234dc338d1e6e83ddc3346657c950cbd96b55f945408dd"
+    },
+    {
+      "name": "empleados",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "departamento_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "gerente_id",
+          "type": "integer",
+          "nullable": true
+        },
+        {
+          "name": "salario",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "fecha_ingreso",
+          "type": "date",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "departamento_id"
+          ],
+          "references": {
+            "table": "departamentos",
+            "columns": [
+              "id"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "gerente_id"
+          ],
+          "references": {
+            "table": "empleados",
+            "columns": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "checks": [
+        {
+          "column": "salario",
+          "operator": ">",
+          "value": 0
+        }
+      ],
+      "rowCount": 12,
+      "rowsSha256": "585cefb7ddb0c28f013d2a411623629a8438693804880c2a995b397249750382"
+    },
+    {
+      "name": "pedidos",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "cliente_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "empleado_id",
+          "type": "integer",
+          "nullable": true
+        },
+        {
+          "name": "fecha",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "estado",
+          "type": "text",
+          "nullable": false,
+          "default": "pendiente"
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "cliente_id"
+          ],
+          "references": {
+            "table": "clientes",
+            "columns": [
+              "id"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "empleado_id"
+          ],
+          "references": {
+            "table": "empleados",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "SET NULL"
+        }
+      ],
+      "checks": [
+        {
+          "column": "estado",
+          "operator": "in",
+          "value": [
+            "pendiente",
+            "entregado",
+            "cancelado"
+          ]
+        }
+      ],
+      "rowCount": 48,
+      "rowsSha256": "657315af08fb4c48bb3f2d28b123effba32593641a0372fd4e60572a8ded03dd"
+    },
+    {
+      "name": "detalle_pedidos",
+      "columns": [
+        {
+          "name": "pedido_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "producto_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "cantidad",
+          "type": "integer",
+          "nullable": false,
+          "default": 1
+        },
+        {
+          "name": "precio_unitario",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "descuento",
+          "type": "integer",
+          "nullable": false,
+          "default": 0
+        }
+      ],
+      "primaryKey": [
+        "pedido_id",
+        "producto_id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "pedido_id"
+          ],
+          "references": {
+            "table": "pedidos",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "CASCADE"
+        },
+        {
+          "columns": [
+            "producto_id"
+          ],
+          "references": {
+            "table": "productos",
+            "columns": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "checks": [
+        {
+          "column": "cantidad",
+          "operator": ">",
+          "value": 0
+        },
+        {
+          "column": "precio_unitario",
+          "operator": ">=",
+          "value": 0
+        },
+        {
+          "column": "descuento",
+          "operator": ">=",
+          "value": 0
+        },
+        {
+          "column": "descuento",
+          "operator": "<=",
+          "value": 100
+        }
+      ],
+      "rowCount": 96,
+      "rowsSha256": "86dda2dfeb8ee15774e1ff2fdf4180cc8572f8fe22711ed490c0db125b87b158"
+    },
+    {
+      "name": "pagos",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "pedido_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "fecha",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "importe",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "metodo",
+          "type": "text",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "pedido_id"
+          ],
+          "references": {
+            "table": "pedidos",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "CASCADE"
+        }
+      ],
+      "checks": [
+        {
+          "column": "importe",
+          "operator": ">",
+          "value": 0
+        },
+        {
+          "column": "metodo",
+          "operator": "in",
+          "value": [
+            "tarjeta",
+            "transferencia",
+            "efectivo"
+          ]
+        }
+      ],
+      "rowCount": 43,
+      "rowsSha256": "4b4b30b7d8f11d5fdb6f0d32bf2cb9537f7f2497a4589a817917116b26820a17"
+    },
+    {
+      "name": "almacenes",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "nombre",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "ciudad",
+          "type": "text",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "rowCount": 3,
+      "rowsSha256": "c60c2ef10d455bfbee413d407df86882905861dc4c8f4c5f749d7ef583f6f440"
+    },
+    {
+      "name": "inventario",
+      "columns": [
+        {
+          "name": "almacen_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "producto_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "unidades",
+          "type": "integer",
+          "nullable": false,
+          "default": 0
+        }
+      ],
+      "primaryKey": [
+        "almacen_id",
+        "producto_id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "almacen_id"
+          ],
+          "references": {
+            "table": "almacenes",
+            "columns": [
+              "id"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "producto_id"
+          ],
+          "references": {
+            "table": "productos",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "CASCADE"
+        }
+      ],
+      "checks": [
+        {
+          "column": "unidades",
+          "operator": ">=",
+          "value": 0
+        }
+      ],
+      "rowCount": 54,
+      "rowsSha256": "d94c6ee145447f21abab29b523ef0d40f96a24ea1c0ca9b183878ff8ef59f732"
+    },
+    {
+      "name": "movimientos_stock",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "producto_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "almacen_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "empleado_id",
+          "type": "integer",
+          "nullable": true
+        },
+        {
+          "name": "fecha",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "tipo",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "cantidad",
+          "type": "integer",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "producto_id"
+          ],
+          "references": {
+            "table": "productos",
+            "columns": [
+              "id"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "almacen_id"
+          ],
+          "references": {
+            "table": "almacenes",
+            "columns": [
+              "id"
+            ]
+          }
+        },
+        {
+          "columns": [
+            "empleado_id"
+          ],
+          "references": {
+            "table": "empleados",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "SET NULL"
+        }
+      ],
+      "checks": [
+        {
+          "column": "cantidad",
+          "operator": ">",
+          "value": 0
+        },
+        {
+          "column": "tipo",
+          "operator": "in",
+          "value": [
+            "entrada",
+            "salida"
+          ]
+        }
+      ],
+      "rowCount": 41,
+      "rowsSha256": "f4cfe029fad2bbfa8fa22f7f37445fb82bcb561de02080d29ec45758d94d73f2"
+    },
+    {
+      "name": "cuentas",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "cliente_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "saldo",
+          "type": "integer",
+          "nullable": false,
+          "default": 0
+        },
+        {
+          "name": "fecha_apertura",
+          "type": "date",
+          "nullable": false
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "unique": [
+        [
+          "cliente_id"
+        ]
+      ],
+      "foreignKeys": [
+        {
+          "columns": [
+            "cliente_id"
+          ],
+          "references": {
+            "table": "clientes",
+            "columns": [
+              "id"
+            ]
+          },
+          "onDelete": "CASCADE"
+        }
+      ],
+      "checks": [
+        {
+          "column": "saldo",
+          "operator": ">=",
+          "value": 0
+        }
+      ],
+      "rowCount": 24,
+      "rowsSha256": "cdb1a625a8d0f37ddd4263f9a5d24cdb41dadb06a621df409b47d50d15111b0b"
+    }
+  ],
+  "exports": {
+    "sqlite": "68b0de814fa2f9e56b66145f7f413b2b087c2ce00e06e215bf1dfed93d08b449",
+    "postgresql": "7e4fbb6536c8d7ea80e704ef8733b16e16e570fd26ea1f7244f3eeb8b795ae1f",
+    "mysql": "5427be99ad6db8a6490c774a1e36dfd599eea4eddeea0add7245f6fbed84e5ea",
+    "sqlserver": "fefbcad227219f89723272302e984fe0e109375b756e528912c45fb01ce69999",
+    "mariadb": "903fbcda128856c55bf54780fb543c9b6f1533a88df10131edfcf641f8637317",
+    "oracle": "29e0cd487e9a9036dc27fc009d9b0d5dd5178e948852155bea1fdc67280e154b"
+  },
+  "unchangedFiles": {
+    "src/practice/datasets/manifest.ts": "3db901f9b1c80007d5f77f50f59edd435f8e1697f6b2484aa818f948f0d10f02",
+    "src/practice/datasets/rows/products.ts": "942250d78fdb9af8fb24c785eaad1c05f3b1ee9ecb906c018138911ff899761e",
+    "src/practice/datasets/products.ts": "739a34459560648750b7ba475e82847246ce405893a4b6c0b77cb800b17c8464",
+    "package-lock.json": "80773547eb6278f03dc4077b877e85d12ee0f05acc0de4ea4bea3b1071cf3385"
+  }
+}

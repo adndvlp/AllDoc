@@ -62,7 +62,7 @@ test('datos: tabla común tipada y pestañas por teclado sin resultados inventad
   const data = panel(page).getByRole('tab', {name: 'Datos', exact: true});
   await data.click(); await expect(data).toHaveAttribute('aria-selected', 'true');
   const table = panel(page).getByRole('table', {name: 'Datos de productos'});
-  await expect(table).toBeVisible(); await expect(table.getByRole('row')).toHaveCount(4);
+  await expect(table).toBeVisible(); await expect(table.getByRole('row')).toHaveCount(19);
   await expect(table).toContainText('Teclado'); await expect(table).toContainText('3500');
   await expect(panel(page)).toContainText('precio'); await expect(panel(page)).toContainText('integer');
   await expect(page).toHaveScreenshot('practice-data.png');
