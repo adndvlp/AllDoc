@@ -29,6 +29,7 @@ coverage/
 
 # Registros
 *.log
+!/specs/verification/**/*.log
 
 # Archivos temporales del sistema y del editor
 .DS_Store

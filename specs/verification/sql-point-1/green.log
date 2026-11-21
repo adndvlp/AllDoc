@@ -1,0 +1,26 @@
+(node:38624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible (2.560125ms)
+✔ SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras (2.945875ms)
+✔ SQL: publicación sigue limitada a los cinco conceptos reales y no importa cuerpos, filas o motores (9.457917ms)
+✔ SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes (44.799875ms)
+✔ SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace (0.613792ms)
+✔ SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos (0.117666ms)
+✔ SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito (1.137416ms)
+✔ SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime (0.310666ms)
+✔ SQL: ausencia de sintaxis nativa se explica y no publica código ni ejecución local ficticios (0.950333ms)
+✔ SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código (0.641583ms)
+✔ SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL (0.292708ms)
+✔ SQL: estados y modos de ejecución mal serializados no eluden la revisión (0.238416ms)
+✔ SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado (0.321125ms)
+✔ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.379333ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 274.260291

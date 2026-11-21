@@ -1,0 +1,226 @@
+(node:34748) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible (3.447125ms)
+✔ SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras (0.481042ms)
+✔ SQL: publicación sigue limitada a los cinco conceptos reales y no importa cuerpos, filas o motores (6.825584ms)
+✖ SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes (0.630875ms)
+✖ SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace (6.836875ms)
+✔ SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos (0.1885ms)
+✔ SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito (0.137208ms)
+✖ SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime (0.158666ms)
+✖ SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código (0.115375ms)
+✔ SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL (0.123084ms)
+✖ SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado (0.097125ms)
+✖ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.102917ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 5
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.736417
+
+✖ failing tests:
+
+test at tests/sql-foundation.test.ts:21:1
+✖ SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible (3.447125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'select',
+  -   'limit',
+      'where',
+  -   'between',
+  -   'in',
+  -   'like',
+      'order-by',
+  +   'limit',
+  +   'comentarios'
+  -   'distinct',
+  -   'join',
+  -   'outer-joins',
+  -   'null',
+  -   'coalesce',
+  -   'case',
+  -   'cast',
+  -   'text-functions',
+  -   'numeric-functions',
+  -   'aggregation',
+  -   'group-by',
+  -   'logical-order',
+  -   'insert',
+  -   'update',
+  -   'delete',
+  -   'create-table',
+  -   'alter-table',
+  -   'drop-table',
+  -   'views',
+  -   'indexes',
+  -   'subqueries',
+  -   'union',
+  -   'intersect',
+  -   'except',
+  -   'cte',
+  -   'window-functions',
+  -   'transactions'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:22:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'select', 'where', 'order-by', 'limit', 'comentarios' ],
+    expected: [
+      'select',           'limit',
+      'where',            'between',
+      'in',               'like',
+      'order-by',         'distinct',
+      'join',             'outer-joins',
+      'null',             'coalesce',
+      'case',             'cast',
+      'text-functions',   'numeric-functions',
+      'aggregation',      'group-by',
+      'logical-order',    'insert',
+      'update',           'delete',
+      'create-table',     'alter-table',
+      'drop-table',       'views',
+      'indexes',          'subqueries',
+      'union',            'intersect',
+      'except',           'cte',
+      'window-functions', 'transactions'
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:44:1
+✖ SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes (0.630875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 99
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:46:50)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 99,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:58:1
+✖ SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace (6.836875ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(alias)
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:62:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:81:1
+✖ SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime (0.158666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'pending'
+  - 'reviewed'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:83:57)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:86:1
+✖ SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código (0.115375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'pending' !== 'ready'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:99:1
+✖ SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado (0.097125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'pending' !== 'ready'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:101:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-foundation.test.ts:105:1
+✖ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.102917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'pending' !== 'ready'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:107:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

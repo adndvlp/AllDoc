@@ -1,0 +1,46 @@
+(node:36846) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible (2.206375ms)
+✔ SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras (2.750958ms)
+✔ SQL: publicación sigue limitada a los cinco conceptos reales y no importa cuerpos, filas o motores (4.896667ms)
+✔ SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes (19.321917ms)
+✔ SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace (0.415333ms)
+✔ SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos (0.092458ms)
+✔ SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito (0.983042ms)
+✔ SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime (0.0955ms)
+✔ SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código (0.292875ms)
+✔ SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL (0.118916ms)
+✔ SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado (0.174208ms)
+✖ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.82ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 217.896666
+
+✖ failing tests:
+
+test at tests/sql-foundation.test.ts:106:1
+✖ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.82ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+  
+  'ready'
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts:112:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ready',
+    expected: 'ready',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
