@@ -1,0 +1,44 @@
+{
+  "phase": "red",
+  "recordedAt": "2026-11-21T22:40:48.587Z",
+  "command": "node --experimental-strip-types --test tests/sql-foundation.test.ts",
+  "exitCode": 1,
+  "tests": 12,
+  "passed": 5,
+  "failed": 7,
+  "log": {
+    "path": "specs/verification/sql-point-1/red.log",
+    "sha256": "210e9af996ec1a1db3d6a4ba858ad14686d3e24ecdf5a42d37c570d1ca6e3891"
+  },
+  "baseline": "Proyección de los cinco conceptos actuales y contratos en estado pendiente; todavía sin currículo completo, inventario ni variantes revisadas. No es un fallo de instalación o de importación.",
+  "files": [
+    {
+      "path": "src/content/sql/contracts.ts",
+      "sha256": "813c3252554bf3a5f63f2fe84f1287ebb8c867af0c03f9f8565941245c263966"
+    },
+    {
+      "path": "src/content/sql/curriculum.ts",
+      "sha256": "d6654aa8e5350ffc87a9191590de09bac1dca9d29110a83cf7eec01b263a09da"
+    },
+    {
+      "path": "src/content/sql/capabilities.ts",
+      "sha256": "ff60ef26a5f76ea57d89f0565355525829b57a13c918f2ee203868fc5fa9e591"
+    },
+    {
+      "path": "src/content/sql/placements.ts",
+      "sha256": "df30fa47f068ee7351a5e0d027e7e401eac5de81135da15776c7130a43fecfa2"
+    },
+    {
+      "path": "src/content/sql/variants.ts",
+      "sha256": "b4c8ca99ca4839a3d79912cb4af97a5e77fb37cd7d7060b637a3411e8b63fb42"
+    },
+    {
+      "path": "specs/sql/source-inventory.json",
+      "sha256": "4a0fdc3772986a69140e8be6e2c5f43c78cd20fca02fa53cccdd42305946be64"
+    },
+    {
+      "path": "tests/sql-foundation.test.ts",
+      "sha256": "8df2e86aad139e28ef49b189132ed21e3464d18d13e4b16673b8c4d3978c9582"
+    }
+  ]
+}

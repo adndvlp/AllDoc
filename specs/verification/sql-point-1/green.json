@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "point": 1,
+  "status": "complete",
+  "completedAt": "2026-11-21T22:56:58.122Z",
+  "scope": "Inventario y contratos. No publica contenido nuevo ni implementa los puntos 2 a 9.",
+  "inventory": {
+    "sources": 99,
+    "emptySources": 11,
+    "instructions": 2,
+    "groups": 34,
+    "plannedDestinations": 153,
+    "additions": 2,
+    "snapshotHash": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe"
+  },
+  "capabilities": {
+    "dialects": [
+      "sqlite",
+      "postgresql",
+      "mysql",
+      "sqlserver",
+      "mariadb",
+      "oracle"
+    ],
+    "keys": 90,
+    "cells": 540,
+    "documentallyReviewed": 30,
+    "pending": 510,
+    "externalEnginesStarted": false
+  },
+  "publication": {
+    "legacyConceptIds": [
+      "analisis-de-datos/sql/select",
+      "analisis-de-datos/sql/comentarios",
+      "analisis-de-datos/sql/limit",
+      "analisis-de-datos/sql/where",
+      "analisis-de-datos/sql/order-by"
+    ],
+    "newPages": 0,
+    "languagesArea": "planned"
+  },
+  "tdd": {
+    "reds": [
+      {
+        "path": "specs/verification/sql-point-1/red.log",
+        "sha256": "210e9af996ec1a1db3d6a4ba858ad14686d3e24ecdf5a42d37c570d1ca6e3891",
+        "exitCode": 1,
+        "tests": 12,
+        "passed": 5,
+        "failed": 7
+      },
+      {
+        "path": "specs/verification/sql-point-1/red-contracts.log",
+        "sha256": "f4f0b765e8825138dc00a6cf15c4d72ad9528e54fbb5e53e690f04d912db9020",
+        "exitCode": 1,
+        "tests": 12,
+        "passed": 6,
+        "failed": 6
+      },
+      {
+        "path": "specs/verification/sql-point-1/red-equivalence.log",
+        "sha256": "5939ad94d0fa5e3984ce270ebc473f26b7e4d65a8bb9b3486eca363fe597cd43",
+        "exitCode": 1,
+        "tests": 12,
+        "passed": 11,
+        "failed": 1
+      },
+      {
+        "path": "specs/verification/sql-point-1/red-unavailable.log",
+        "sha256": "5748611e8fa89262a03774ca17d64b5a736934cace3fc3834b6c4ae5c362fb6a",
+        "exitCode": 1,
+        "tests": 13,
+        "passed": 12,
+        "failed": 1
+      },
+      {
+        "path": "specs/verification/sql-point-1/red-serialized-states.log",
+        "sha256": "dcc453ebd1b4ea65bd59b3004ae865f58389281552741640a7cc344c7720508b",
+        "exitCode": 1,
+        "tests": 14,
+        "passed": 13,
+        "failed": 1
+      }
+    ],
+    "focusedPassed": 14,
+    "green": "specs/verification/sql-point-1/green.log"
+  },
+  "native": {
+    "files": 49,
+    "passed": 289,
+    "failed": 0,
+    "skipped": 0,
+    "cases": "specs/verification/sql-point-1/native.ndjson"
+  },
+  "types": {
+    "app": {
+      "status": "passed",
+      "exitCode": 0,
+      "log": "specs/verification/sql-point-1/types-app.log"
+    },
+    "tests": {
+      "status": "passed",
+      "exitCode": 0,
+      "log": "specs/verification/sql-point-1/types-tests.log"
+    }
+  },
+  "build": {
+    "status": "passed",
+    "exitCode": 0,
+    "log": "specs/verification/sql-point-1/build.log",
+    "audit": "specs/verification/sql-point-1/build-audit.json",
+    "routes": 11
+  },
+  "invariants": {
+    "existingFiles": 383,
+    "existingFilesUnchanged": true,
+    "pngReferencesUnchanged": 217,
+    "visualManifestsUnchanged": 6,
+    "inputSourcesUnchanged": true,
+    "packagesAndLockfileUnchanged": true
+  },
+  "files": [
+    {
+      "path": "src/content/sql/capabilities.ts",
+      "sha256": "99914eceb54c1122c6dfde807a7bbcf99b5123cebc0eed902511b0c5ce393870"
+    },
+    {
+      "path": "src/content/sql/contracts.ts",
+      "sha256": "076cd4922d57b8cdb790119b0a310b0ad3b1c65429356720d4d8c724929efb2a"
+    },
+    {
+      "path": "src/content/sql/curriculum.ts",
+      "sha256": "6afeb7d02d2efe911a7ae43608ebea1f4969ff13acdfc724dfa3cf1486df340a"
+    },
+    {
+      "path": "src/content/sql/placements.ts",
+      "sha256": "a1d56fc3f9a1dc71da239b64b440e2e641ea5d24ad978206be7cc4eac31b7aaf"
+    },
+    {
+      "path": "src/content/sql/variants.ts",
+      "sha256": "8dac788c26a19389f5088cd870c4bef08c459543b632b88931a4b93522833773"
+    },
+    {
+      "path": "tests/sql-foundation.test.ts",
+      "sha256": "7fc7adad2236d8460c342864786ea9e1f35fd0f17969de4cf8adf7225c9e5a61"
+    },
+    {
+      "path": "specs/sql/source-inventory.json",
+      "sha256": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe"
+    },
+    {
+      "path": "specs/sql-sdd.md",
+      "sha256": "06c8d23754db31b4ff646a2743524209aee2626480263f397c58cdca3fa95b0d"
+    },
+    {
+      "path": "specs/verification/sql-point-1.md",
+      "sha256": "d4b7b9b626cdd3d49ff2aede49d1b2f6fcf0c995e1bdb8956cfc0ee4553b09db"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "specs/verification/sql-point-1/before.json",
+      "sha256": "40e809a730b9da09d8197934a5871dc9a4cdd44baa007e9355028ac4e1f5dd72"
+    },
+    {
+      "path": "specs/verification/sql-point-1/red.json",
+      "sha256": "67392d6762600d3a7bd95a349605fcb1f939fde89cb155070dc7eafe27caf5ff"
+    },
+    {
+      "path": "specs/verification/sql-point-1/green.log",
+      "sha256": "d45493819a49130f94df92ebad7f23296346f3e01396dbb956e9181ada465bb9"
+    },
+    {
+      "path": "specs/verification/sql-point-1/native.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "specs/verification/sql-point-1/native.ndjson",
+      "sha256": "24e5d668708c243b04c06622191f28a1ed549cbc976a428dd46d6dac6953abad"
+    },
+    {
+      "path": "specs/verification/sql-point-1/types-app.log",
+      "sha256": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1"
+    },
+    {
+      "path": "specs/verification/sql-point-1/types-tests.log",
+      "sha256": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902"
+    },
+    {
+      "path": "specs/verification/sql-point-1/build.log",
+      "sha256": "8fa5b32919ecbab33e44b8d7a17e137e025eea8501367ecec26d7efee2a47d32"
+    },
+    {
+      "path": "specs/verification/sql-point-1/build-audit.json",
+      "sha256": "3357506e7cd7e070c32639deaa0cc730a8fe1ec472235a5adbc61a7352d761a5"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "P1-01",
+      "title": "99 fuentes con snapshot/hash, destino y razón de revisión",
+      "status": "passed"
+    },
+    {
+      "id": "P1-02",
+      "title": "34 grupos ordenados, Definición inicial y 153 destinos sin duplicados",
+      "status": "passed"
+    },
+    {
+      "id": "P1-03",
+      "title": "Cinco IDs/rutas históricos y ubicaciones compartidas sin duplicar workspace",
+      "status": "passed"
+    },
+    {
+      "id": "P1-04",
+      "title": "Seis dialectos y matriz con estados revisados o pendientes, sin soporte implícito",
+      "status": "passed"
+    },
+    {
+      "id": "P1-05",
+      "title": "Contratos de variantes y acciones con fuentes y evidencias locales; sin ejecución automática",
+      "status": "passed"
+    },
+    {
+      "id": "P1-06",
+      "title": "TDD, código, tipos, build y conservación de producto/capturas existentes",
+      "status": "passed"
+    }
+  ]
+}

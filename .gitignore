@@ -5,6 +5,7 @@ build/
 .ui-build/
 .runtime-build/
 .python-packages/
+/tmp/
 
 # Cachés
 .cache/

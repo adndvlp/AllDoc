@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "pages": [
+    {
+      "route": "404.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/404",
+      "servedAs": "404.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos",
+      "servedAs": "apuntes/analisis-de-datos.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/pandas/dataframe",
+      "servedAs": "apuntes/analisis-de-datos/pandas/dataframe.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/comentarios",
+      "servedAs": "apuntes/analisis-de-datos/sql/comentarios.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/limit.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/limit",
+      "servedAs": "apuntes/analisis-de-datos/sql/limit.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/select.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/select",
+      "servedAs": "apuntes/analisis-de-datos/sql/select.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where",
+      "servedAs": "apuntes/analisis-de-datos/sql/where.html"
+    },
+    {
+      "route": "apuntes/desarrollo-web.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/desarrollo-web",
+      "servedAs": "apuntes/desarrollo-web.html"
+    },
+    {
+      "route": "apuntes/ia.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/ia",
+      "servedAs": "apuntes/ia.html"
+    },
+    {
+      "route": "index.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/",
+      "servedAs": "index.html"
+    }
+  ],
+  "homeJS": {
+    "loaderFound": true,
+    "chunkIds": [
+      869,
+      30,
+      583
+    ],
+    "bodyAssets": [
+      "assets/js/notes-data-products.1386ebf4.js",
+      "assets/js/notes-pandas.f8007dcf.js",
+      "assets/js/notes-sql.074b0574.js"
+    ],
+    "loadedBodies": []
+  },
+  "failures": []
+}

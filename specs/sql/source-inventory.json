@@ -1,0 +1,1552 @@
+{
+  "schemaVersion": 1,
+  "inputRoot": "tmp/SQL",
+  "snapshotPolicy": "Fuentes originales versionadas en este inventario; no se importan en la app ni se depende de tmp para verificar sus hashes.",
+  "groups": [
+    {
+      "sourceFolder": "tmp/SQL/1.- SELECT",
+      "key": "select",
+      "order": 1
+    },
+    {
+      "sourceFolder": "tmp/SQL/2.- LIMIT",
+      "key": "limit",
+      "order": 2
+    },
+    {
+      "sourceFolder": "tmp/SQL/3.- WHERE",
+      "key": "where",
+      "order": 3
+    },
+    {
+      "sourceFolder": "tmp/SQL/4.- BEtweem",
+      "key": "between",
+      "order": 4
+    },
+    {
+      "sourceFolder": "tmp/SQL/5.- IN",
+      "key": "in",
+      "order": 5
+    },
+    {
+      "sourceFolder": "tmp/SQL/6.- LIke",
+      "key": "like",
+      "order": 6
+    },
+    {
+      "sourceFolder": "tmp/SQL/7.- ORDER BY",
+      "key": "order-by",
+      "order": 7
+    },
+    {
+      "sourceFolder": "tmp/SQL/8.- Distinct",
+      "key": "distinct",
+      "order": 8
+    },
+    {
+      "sourceFolder": "tmp/SQL/9.- Join",
+      "key": "join",
+      "order": 9
+    },
+    {
+      "sourceFolder": "tmp/SQL/10.- joins extremos",
+      "key": "outer-joins",
+      "order": 10
+    },
+    {
+      "sourceFolder": "tmp/SQL/11.- NULL",
+      "key": "null",
+      "order": 11
+    },
+    {
+      "sourceFolder": "tmp/SQL/12.- COALESCE",
+      "key": "coalesce",
+      "order": 12
+    },
+    {
+      "sourceFolder": "tmp/SQL/13.- CASE WHEN",
+      "key": "case",
+      "order": 13
+    },
+    {
+      "sourceFolder": "tmp/SQL/14.- CAST",
+      "key": "cast",
+      "order": 14
+    },
+    {
+      "sourceFolder": "tmp/SQL/15.- Funciones de texto",
+      "key": "text-functions",
+      "order": 15
+    },
+    {
+      "sourceFolder": "tmp/SQL/16.- Funciones numércias",
+      "key": "numeric-functions",
+      "order": 16
+    },
+    {
+      "sourceFolder": "tmp/SQL/17.- Agregación",
+      "key": "aggregation",
+      "order": 17
+    },
+    {
+      "sourceFolder": "tmp/SQL/18.- GROUP BY",
+      "key": "group-by",
+      "order": 18
+    },
+    {
+      "sourceFolder": "tmp/SQL/19.- orden de ejecución",
+      "key": "logical-order",
+      "order": 19
+    },
+    {
+      "sourceFolder": "tmp/SQL/20.- INSERT INTO",
+      "key": "insert",
+      "order": 20
+    },
+    {
+      "sourceFolder": "tmp/SQL/21.- UPDATE",
+      "key": "update",
+      "order": 21
+    },
+    {
+      "sourceFolder": "tmp/SQL/22.- DELETE",
+      "key": "delete",
+      "order": 22
+    },
+    {
+      "sourceFolder": "tmp/SQL/23.- CREATE TABLE",
+      "key": "create-table",
+      "order": 23
+    },
+    {
+      "sourceFolder": "tmp/SQL/24.- ALTER TABLE",
+      "key": "alter-table",
+      "order": 24
+    },
+    {
+      "sourceFolder": "tmp/SQL/25.- DROP TABLE",
+      "key": "drop-table",
+      "order": 25
+    },
+    {
+      "sourceFolder": "tmp/SQL/26.- VIEWs",
+      "key": "views",
+      "order": 26
+    },
+    {
+      "sourceFolder": "tmp/SQL/27.- INDEX",
+      "key": "indexes",
+      "order": 27
+    },
+    {
+      "sourceFolder": "tmp/SQL/28.- SUBconsultas",
+      "key": "subqueries",
+      "order": 28
+    },
+    {
+      "sourceFolder": "tmp/SQL/29.- UNION",
+      "key": "union",
+      "order": 29
+    },
+    {
+      "sourceFolder": "tmp/SQL/30.- INTERSECT",
+      "key": "intersect",
+      "order": 30
+    },
+    {
+      "sourceFolder": "tmp/SQL/31.- EXCEPT",
+      "key": "except",
+      "order": 31
+    },
+    {
+      "sourceFolder": "tmp/SQL/32.- CTEs",
+      "key": "cte",
+      "order": 32
+    },
+    {
+      "sourceFolder": "tmp/SQL/33.- Funciones ventana",
+      "key": "window-functions",
+      "order": 33
+    },
+    {
+      "sourceFolder": "tmp/SQL/34.- Transacciones",
+      "key": "transactions",
+      "order": 34
+    }
+  ],
+  "instructions": [
+    {
+      "path": "tmp/SQL/Prompt.md",
+      "content": "Ya tengo un tipo de base para sql, no está completa, la idea es que tú la completes respetando los criterios. Incluso los que ahorita pueden parecer completos, pueden no estarlo entonces si encuentras pertinente cambiar una definición, refinarla, o complementarla, hazlo.\n\nLa numeración de conceptos no debe estar, pero si se debe respetar el orden en el que están. El primer archivo de cada sentencia o concepto(carpetas) debe llamarse definición salvo que sea como la agregación que directamente empieza con una sentencia, aún no sé si poner el de definición y luego ahora si los siguiente con las sentencias. La idea de todo es que se separe correctamente para dar más legibilidad a toda la estructura, es decir tener ese tipo de arq modular representado por subsecciones collapsables\n\n",
+      "bytes": 800,
+      "sha256": "9ad98c2a83da5e12b21011f26c3b5c465887fc8e554ca3603150c29b0cbefab2"
+    },
+    {
+      "path": "tmp/SQL/0.- Criterios.md",
+      "content": "\nCada concepto debe tener\n1.- Definición pedagógica, sencilla, fácil de entender\n\n1.5.- Solo en caso de haber algo representativo se puede colocar un \"tipo de esquema base\" para ayudar a entender mejor el concepto, ejemplo: \n\nSELECT columna1, columna2 \nFROM tabla;\n\n2.- Ejemplo aplicado real:\n\nSELECT product_id, stock\nFROM products;\n\n3.- Si y solo si es estrictamente importante: un tip, consejo, comentario\n\n\n\n\nEstructura general de toda la sección:\nDebe ser progresivo, en cada nombre nuevo, si puede sostenerse por si solo, es mejor ponerlo antes que aquel que no, por ejemplo FROM no puede usarse sin select, entonces es necesario ponerlo junto con select. Desc o ASC es dependiente a order by, entonces no deben ponerse aparte\n\nEntonces los independientes deben ponerse primero, los dependientes junto con los independientes y aquellos que son independientes pero que se pueden combinar solo después de haber visto ambos independientes, por ejemplo limit se puede ver independiente y combinar con otros como order by\n\nse me pasaron agregar los consejos, reglas, confusiones comunes que se suelen usar incluso preguntar en entrevistas técnicas, por concepto u operación\n\n\nVale la pena poner un selector de lenguaje (solo para esta sección de sql) para que se pueda cambiar entre los distintos sql y ver las implementaciones de cada uno. Toda la sección de sql será compartida por la de Análisis de datos y lenguajes.\n\nINlcuir los más usados, ejemplo: sqlite, mysql, postgresql, sql server, mariadb, oracle etc, Aquí convendrá agregar o quitar secciones o en su caso poner un mensaje para cuando entre lenguajes hay cosas que existen y cosas que no, por ejemplo plsql agrega cosas y hay unos que no implementan lo que otros\n\n\nEDITOR:\nel editor debe aparecer abajo o en todo caso mandar a el al ejecutar, si es teclado de computadora debe poder ejecutarse con command enter, debe ser un solo set de datos al que se le puedan ejecutar todo tipo de consultas es decir que si estoy en select debo poder hacer cualquier otra y obtener resultados, es decir que no debe haber un set de datos fjios según la lección del momento, es agnóstico a la lección, es para abrir y practicar cualquier consulta\n\n\n\nLink de referencia para crawl y scratch: https://www.aprendesql.dev/\n",
+      "bytes": 2287,
+      "sha256": "d22db8978ef11a8c4fa42245e568918117830987dd7fb0918efdb6a54102344f"
+    }
+  ],
+  "sources": [
+    {
+      "path": "tmp/SQL/1.- SELECT/1.- base.md",
+      "content": "La sentencia `SELECT` te permite recuperar datos de una base de datos.\n\nSELECT columna1, columna2\nFROM tabla;\n\nSELECT * FROM videogames;\n\nSELECT title, year FROM videogames;\n\nhttps://www.aprendesql.dev/consultas-select-basicas",
+      "bytes": 226,
+      "sha256": "b2f9a1d996d3de2bce07e94cc99d60654c5b75a1e176c88aff2d08597403c392",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/select",
+        "analisis-de-datos/sql/select/todas-las-columnas",
+        "analisis-de-datos/sql/select/columnas-concretas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/1.- base.md",
+      "content": "La cláusula `LIMIT` te permite indicar cuántas filas quieres obtener como máximo:\n\nSELECT * FROM tabla\nLIMIT cantidad;\n\nSELECT * FROM videogames LIMIT 5;\n\nSELECT title FROM videogames LIMIT 3;\n\nhttps://www.aprendesql.dev/consultas-select-basicas\n",
+      "bytes": 249,
+      "sha256": "b9de45f3087c2b399e3f62dfb4abd04e354fc1ab0784971996f765769fa5bf61",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/limit",
+        "analisis-de-datos/sql/limit/filas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/2.- Offset.md",
+      "content": "\n`OFFSET` indica cuántas filas saltar antes de empezar a devolver resultados. Combinado con `LIMIT`\n\nSELECT * FROM tabla\nLIMIT cantidad OFFSET salto;\n\nSELECT * FROM videogames\nLIMIT 10 OFFSET 20;",
+      "bytes": 196,
+      "sha256": "74796b3332301640be89d82a83f1fc801b47406fc5f189c9b57bbd5a91cc3480",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/limit/offset"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/1.- Base, Operadores y tipos.md",
+      "content": "La cláusula `WHERE` te permite filtrar las filas que devuelve una consulta. Solo se mostrarán las filas que cumplan la condición especificada.\n\nSELECT columnas\nFROM tabla\nWHERE condición;\n\nSELECT * FROM videogames WHERE year = 2018;\n\nSELECT title, playtime_hours\nFROM videogames\nWHERE playtime_hours > 50;\n\nSELECT * FROM videogames WHERE developer = 'Nintendo';\n\n\nhttps://www.aprendesql.dev/filtrando-datos",
+      "bytes": 410,
+      "sha256": "c7c32461e71312b2e6c13d1c6d48a528f645b059e43447aa23a8ebf91b651bbb",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/where",
+        "analisis-de-datos/sql/where/operadores",
+        "analisis-de-datos/sql/where/tipos"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar operadores y tipos; aclarar precedencia y NULL sin anticipar combinaciones no explicadas."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- And.md",
+      "content": "\n`AND` devuelve solo las filas que cumplen **todas** las condiciones a la vez:\n\nSELECT * FROM videogames\nWHERE year >= 2010 AND playtime_hours > 50;",
+      "bytes": 148,
+      "sha256": "083b55ffd58a2dc3f0ad67d692d273615b58d53794223f8a319f8f7c5d546f3c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/where/and"
+      ],
+      "decision": "review",
+      "reason": "Separar operadores y tipos; aclarar precedencia y NULL sin anticipar combinaciones no explicadas."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- OR.md",
+      "content": "\n`OR` devuelve las filas que cumplen **al menos una** de las condiciones:\n\nSELECT * FROM videogames\nWHERE developer = 'Nintendo' OR developer = 'Valve';",
+      "bytes": 152,
+      "sha256": "013859f78243789b53690467fcde73ef9fc36270839dec74a828c1a5fb870d19",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/where/or"
+      ],
+      "decision": "review",
+      "reason": "Separar operadores y tipos; aclarar precedencia y NULL sin anticipar combinaciones no explicadas."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/3.- NOt.md",
+      "content": "\n`NOT` invierte una condición, es decir, devuelve las filas que **no** la cumplen:\n\nSELECT * FROM videogames\nWHERE NOT developer = 'Nintendo';",
+      "bytes": 143,
+      "sha256": "02bc0293f7872aee0b7bc770bf9f82aa1d9fd0053cdae89a0fd847e117ed2f88",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/where/not"
+      ],
+      "decision": "review",
+      "reason": "Separar operadores y tipos; aclarar precedencia y NULL sin anticipar combinaciones no explicadas."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/4.- combinado and or not.md",
+      "content": "Cuando mezclas `AND` y `OR` en la misma consulta, el orden de evaluación importa. SQL evalúa `AND` antes que `OR`, lo que puede dar resultados inesperados. Usa **paréntesis** para dejar claro qué quieres agrupar:\n\nSELECT * FROM videogames\nWHERE (developer = 'Nintendo' OR developer = 'Valve')\nAND year > 2000;",
+      "bytes": 313,
+      "sha256": "548102d7fdee98fd3a46496e9d6b61c7ab7842715f931746c416a19074239e37",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/where/combinaciones"
+      ],
+      "decision": "review",
+      "reason": "Separar operadores y tipos; aclarar precedencia y NULL sin anticipar combinaciones no explicadas."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/1.- base, and.md",
+      "content": "\n`BETWEEN` selecciona valores dentro de un rango (ambos extremos incluidos):\n\n\nSELECT * FROM videogames\nWHERE year BETWEEN 2010 AND 2015;\n\nSELECT title, year FROM videogames\nWHERE year BETWEEN 2010 AND 2015;\n\nhttps://www.aprendesql.dev/busquedas-avanzadas\n\n\n\n\n",
+      "bytes": 260,
+      "sha256": "acfb438d77d544f6afd57177438f108b222e68454098c3ca4369cb57d0173478",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/between",
+        "analisis-de-datos/sql/between/rango"
+      ],
+      "decision": "split-and-review",
+      "reason": "Corregir BETWEEN y conservar extremos incluidos y negación."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/2.-Not.md",
+      "content": "\n**NOT BETWEEN** — Excluye un rango de valores:\n\nSELECT * FROM videogames\nWHERE year NOT BETWEEN 2010 AND 2015;",
+      "bytes": 113,
+      "sha256": "2f64f30a96abe37842a0550e9223448600afd1ae8612305647c4df8118998c01",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/between/not-between"
+      ],
+      "decision": "review",
+      "reason": "Corregir BETWEEN y conservar extremos incluidos y negación."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/1.- base.md",
+      "content": "\n`IN` permite comprobar si un valor coincide con alguno de una lista:\n\n\nSELECT * FROM videogames\nWHERE developer IN ('Nintendo', 'Valve', 'Bungie');\n\nSELECT title, developer FROM videogames\nWHERE developer IN ('Nintendo', 'Valve');\n\n",
+      "bytes": 233,
+      "sha256": "2a0f1f01dbfb8e3ae80c4a35c77f036fa3390b9d00478311002ee00792058e74",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/in",
+        "analisis-de-datos/sql/in/lista"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/2.- not.md",
+      "content": "\n**NOT IN** — Excluye valores de una lista:\n\nSELECT * FROM videogames\nWHERE developer NOT IN ('Nintendo', 'Valve');",
+      "bytes": 117,
+      "sha256": "75f3fc2037fc0ec5bdc7cb07a99ae298b4c9e09077df27a43d4df10344f11b5b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/in/not-in"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/1.- LIKe.md",
+      "content": "\n`LIKE` permite buscar texto que coincida con un patrón. Los comodines disponibles son:\n\nSELECT * FROM videogames\nWHERE title LIKE 'The%';\n\nComodín: \n|Comodín|Descripción|Ejemplo|\n|---|---|---|\n|`%`|Cualquier secuencia de caracteres|`'The%'`|\n|`_`|Un solo carácter|`'_inecraft'`|\n\n",
+      "bytes": 286,
+      "sha256": "8f6b4493264196df6e75cee45ea499ec718690110f6eec4fd2afd1db11b872fe",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/like",
+        "analisis-de-datos/sql/like/comodines"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/2.- NOt.md",
+      "content": "\n**NOT LIKE** — Excluye un patrón de texto:\n\nSELECT * FROM videogames\nWHERE title NOT LIKE 'The%';\n",
+      "bytes": 102,
+      "sha256": "21d3544f0deb7b297e0727cadcc57def934853fbcff30f2cd267777a3449d6d4",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/like/not-like"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/1.- Base.md",
+      "content": "\nCon `ORDER BY` puedes controlar el orden\n\nSELECT title, year FROM videogames\nORDER BY year;\n\nSELECT title, year FROM videogames\nORDER BY year ASC;\n\nPor default es asc\n\n\n\nhttps://www.aprendesql.dev/ordenando-resultados",
+      "bytes": 218,
+      "sha256": "a57ec8c632e6849900a47464be4fd513f7ca6465f9318efb62f2e384706c97f8",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/order-by",
+        "analisis-de-datos/sql/order-by/asc"
+      ],
+      "decision": "split-and-review",
+      "reason": "Mantener ASC y DESC dependientes de ORDER BY; separar varias columnas de la combinación con LIMIT."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/3.- DESC.md",
+      "content": "SELECT title, year FROM videogames\nORDER BY year DESC;",
+      "bytes": 54,
+      "sha256": "5955ab790e5c2e3534582b85e1bbb50d6f0f4d440237694ff4eac272dd867f57",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/order-by/desc"
+      ],
+      "decision": "review",
+      "reason": "Mantener ASC y DESC dependientes de ORDER BY; separar varias columnas de la combinación con LIMIT."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/4.- combinado.md",
+      "content": "Puedes ordenar por más de una columna separándolas por comas.\n\n\nSELECT title, playtime_hours FROM videogames\nORDER BY playtime_hours DESC\nLIMIT 3;\n\nSELECT title, year, playtime_hours FROM videogames\nORDER BY year DESC, playtime_hours ASC;\n\n\nCada columna puede tener su propia dirección (`ASC` o `DESC`):",
+      "bytes": 306,
+      "sha256": "666263fb99be9ef6ca100ac2d5512f9721cada44681c2fc45fc53db3d29fb4c7",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/order-by/varias-columnas",
+        "analisis-de-datos/sql/order-by/con-limit"
+      ],
+      "decision": "split-and-review",
+      "reason": "Mantener ASC y DESC dependientes de ORDER BY; separar varias columnas de la combinación con LIMIT."
+    },
+    {
+      "path": "tmp/SQL/8.- Distinct/1.- Base.md",
+      "content": "\n`DISTINCT` elimina las filas duplicadas del resultado, devolviendo solo valores únicos.\n\n\nSELECT DISTINCT columna\nFROM tabla;\n\nSELECT DISTINCT developer FROM videogames;\n",
+      "bytes": 172,
+      "sha256": "2371c0b78a0daeae06216817a7f188a2fa3d5d9473da6087530bb4b21b46181d",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/distinct",
+        "analisis-de-datos/sql/distinct/columna",
+        "analisis-de-datos/sql/distinct/varias-columnas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/1.- Base.md",
+      "content": "\nEl `INNER JOIN` devuelve solo las filas que tienen coincidencias en ambas tablas.\n\nLa tabla principal es (`FROM`) \"tabla1\" y la tabla que unes (`JOIN`)\"tabla2\" . Solo se devuelven las filas donde ambas tablas coinciden en la condición de unión.\n\nLa cláusula `ON` define la condición de unión, es decir, qué columnas relacionan ambas tablas.\n\nSELECT columnas\nFROM tabla1\nINNER JOIN tabla2 ON tabla1.columna = tabla2.columna;\n\nejemplo\n\nSELECT videogames.title, developers.name\nFROM videogames\nINNER JOIN developers ON videogames.developer_id = developers.id;\n\n\nJOIN por default es inner join\n\n\nhttps://www.aprendesql.dev/uniendo-tablas",
+      "bytes": 640,
+      "sha256": "2295558aae8553ef17abacbf7f3c04984ffce08d98004dbc5e95bf4b6895e2ec",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/join",
+        "analisis-de-datos/sql/join/on"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/2.- aliases.md",
+      "content": "Escribir el nombre completo de cada tabla una y otra vez resulta tedioso. En la práctica, se usan **aliases** (abreviaturas) para las tablas.\n\nSELECT v.title, d.name\nFROM videogames v\nINNER JOIN developers d ON v.developer_id = d.id;",
+      "bytes": 234,
+      "sha256": "66cdb0f628ec339cb953748d86e681b972505829c4a248731013828b36d439a8",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/join/alias"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/3.- self join.md",
+      "content": "\nUn **self join** es un JOIN donde una tabla se une **consigo misma**. Se necesitan aliases obligatoriamente para distinguir las dos “copias” de la tabla.\n\nSELECT v1.title AS juego_1, v2.title AS juego_2, v1.developer_id\nFROM videogames v1\nINNER JOIN videogames v2\n  ON v1.developer_id = v2.developer_id\n  AND v1.id < v2.id;",
+      "bytes": 328,
+      "sha256": "e79bd911afa33a43b8d9a75a2bc1805f9bc2bda1e6ba26d6acffd90a59071694",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/join/self-join"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/4.- cross join.md",
+      "content": "\nProducto Cartesiano\n\nUn `CROSS JOIN` combina **cada fila** de una tabla con **todas las filas** de la otra. No necesita condición `ON`\n\nSELECT v.title, d.name\nFROM videogames v\nCROSS JOIN developers d;",
+      "bytes": 203,
+      "sha256": "c0781f94a32249861dcca466421cd0293ce9340e06a76a52a4ec8f713b76676c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/join/cross-join"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/1.- left join.md",
+      "content": "\nDevuelve **todas** las filas de la tabla izquierda (A), y las coincidencias de la derecha (B). Si no hay coincidencia, muestra `NULL`:\n\n\nSELECT columnas\nFROM tabla_izquierda\nLEFT JOIN tabla_derecha ON condición;\n\nSELECT videogames.title, developers.name\nFROM videogames\nLEFT JOIN developers ON videogames.developer_id = developers.id;",
+      "bytes": 336,
+      "sha256": "e45d21c57b9d2b9ac7c5f6a1b3cd0d3d72d2bf8235462b6e693a725f07570512",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/outer-joins",
+        "analisis-de-datos/sql/outer-joins/left-join"
+      ],
+      "decision": "split-and-review",
+      "reason": "Explicar ausencias y multiplicación de filas; verificar disponibilidad de cada JOIN por dialecto."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/2.- right join.md",
+      "content": "Lo opuesto: devuelve **todas** las filas de la tabla derecha (B):\n\nSELECT columnas\nFROM tabla_izquierda\nRIGHT JOIN tabla_derecha ON condición;",
+      "bytes": 143,
+      "sha256": "fecf1620e4b21cbb364953f5306bcb5cb0065d4db4cd1e4db25aa8f668678381",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/outer-joins/right-join"
+      ],
+      "decision": "review",
+      "reason": "Explicar ausencias y multiplicación de filas; verificar disponibilidad de cada JOIN por dialecto."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/3.- full outer join.md",
+      "content": "\nDevuelve **todas** las filas de ambas tablas, con `NULL` donde no haya coincidencia:\n\nSELECT columnas\nFROM tabla1\nFULL OUTER JOIN tabla2 ON condición;\n",
+      "bytes": 153,
+      "sha256": "fc6408f4350e6fd92d8cef012bef75c45486965fc9ea08f07e38e088bbb73627",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/outer-joins/full-outer-join"
+      ],
+      "decision": "review",
+      "reason": "Explicar ausencias y multiplicación de filas; verificar disponibilidad de cada JOIN por dialecto."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/4.- anti join.md",
+      "content": "\nUn truco muy útil es combinar `LEFT JOIN` con `WHERE ... IS NULL` para encontrar registros **sin coincidencia**. A esto se le llama **anti-join**:\n\nSELECT v.title\nFROM videogames v\nLEFT JOIN developers d ON v.developer_id = d.id\nWHERE d.id IS NULL;",
+      "bytes": 250,
+      "sha256": "60340ddce096ea33f81dd39cdc1918747d199b4a666258e6b5411fdf24f4d8ac",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/outer-joins/anti-join"
+      ],
+      "decision": "review",
+      "reason": "Explicar ausencias y multiplicación de filas; verificar disponibilidad de cada JOIN por dialecto."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/1.- base.md",
+      "content": "\n\nEn SQL, `NULL` representa la **ausencia de valor**. No es lo mismo que cero, una cadena vacía o falso: es simplemente “no hay dato”.\n\n-- Filas donde developer NO tiene valor\nSELECT * FROM videogames WHERE developer IS NULL;\n",
+      "bytes": 231,
+      "sha256": "4c369062a1a62e0de5655b36c1ed3f0e060262a092e395125beb5f360deae6b2",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/null",
+        "analisis-de-datos/sql/null/is-null"
+      ],
+      "decision": "split-and-review",
+      "reason": "Renombrar NOT NULL a IS NOT NULL en consultas y NULL IF a NULLIF; no confundir con la restricción de tabla."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/2.- NOT NULL.md",
+      "content": "\n\n\nNo puedes comparar con `NULL` usando `=`. Debes usar operadores especiales:\n\n-- Filas donde developer SÍ tiene valor\nSELECT * FROM videogames WHERE developer IS NOT NULL;\n",
+      "bytes": 175,
+      "sha256": "6f7d73a827b153989b5debbaa698f3d3bfd8803eb4b0d17cf940f9005e4099b2",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/null/is-not-null"
+      ],
+      "decision": "review",
+      "reason": "Renombrar NOT NULL a IS NOT NULL en consultas y NULL IF a NULLIF; no confundir con la restricción de tabla."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/3.- NULL IF.md",
+      "content": "\n`NULLIF(a, b)` devuelve `NULL` si `a` es igual a `b`. En caso contrario, devuelve `a`.\n\n\nSELECT title, playtime_hours / NULLIF(year - 2000, 0) AS ratio\nFROM videogames;",
+      "bytes": 169,
+      "sha256": "16b588955156b17e45be435d0ae091dec7a907dd22a9faee2dd02685f0b2d015",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/null/nullif"
+      ],
+      "decision": "review",
+      "reason": "Renombrar NOT NULL a IS NOT NULL en consultas y NULL IF a NULLIF; no confundir con la restricción de tabla."
+    },
+    {
+      "path": "tmp/SQL/12.- COALESCE/1.- base.md",
+      "content": "`COALESCE` devuelve el primer valor no nulo de una lista de argumentos. Es perfecto para reemplazar `NULL` con un valor por defecto:\n\nSELECT title, COALESCE(developer, 'Desconocido') AS developer\nFROM videogames;",
+      "bytes": 212,
+      "sha256": "1c736b59f46bf42093f0314a032d1fc5329d9fedd39986aebb514a0af539e96b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/coalesce",
+        "analisis-de-datos/sql/coalesce/alternativas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/13.- CASE WHEN/1.- Base.md",
+      "content": "\n`CASE WHEN` permite crear columnas con valores basados en condiciones, similar a un `if/else`:\n\nSELECT title,\n  CASE\n    WHEN year < 2000 THEN 'Clásico'\n    WHEN year < 2015 THEN 'Moderno'\n    ELSE 'Reciente'\n  END AS categoria\nFROM videogames;\n\n\nLa palabra clave `AS` te permite dar un nombre personalizado a una columna calculada. Ya lo hemos visto en los ejemplos anteriores.",
+      "bytes": 380,
+      "sha256": "f20770357e9f96f520e6391a657591f45363c51d591c02a1ad5e1b8b0ce63652",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/case",
+        "analisis-de-datos/sql/case/condiciones"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/14.- CAST/1.- base.md",
+      "content": "\nPuedes usar operadores matemáticos en el `SELECT`:\n\nSELECT title,\n  CAST(strftime('%Y', 'now') AS INTEGER) - year AS antiguedad\nFROM videogames;\n\n\n\nConcatenación de texto\nSQLite:\nSELECT title || ' (' || year || ')' AS info\nFROM videogames;",
+      "bytes": 242,
+      "sha256": "ded86bfe96fb03f6c6e4ef4b63ad1042f4c73556099b512bddb06720db046347",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/cast",
+        "analisis-de-datos/sql/cast/conversion",
+        "analisis-de-datos/sql/cast/tipos",
+        "analisis-de-datos/sql/text-functions/concat"
+      ],
+      "decision": "split-and-review",
+      "reason": "Rehacer la definición de conversión y trasladar concatenación a funciones de texto."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/1.- UPPER(texto).md",
+      "content": "| Función                             | Descripción                           | Ejemplo                                            |\n| ----------------------------------- | ------------------------------------- | -------------------------------------------------- |\n| `UPPER(texto)`                      | Convierte a mayúsculas                | `UPPER('hola')` → `'HOLA'`                         |\n| `LOWER(texto)`                      | Convierte a minúsculas                | `LOWER('HOLA')` → `'hola'`                         |\n| `LENGTH(texto)`                     | Devuelve el número de caracteres      | `LENGTH('Zelda')` → `5`                            |\n| `SUBSTR(texto, inicio, longitud)`   | Extrae una parte del texto            | `SUBSTR('Minecraft', 1, 4)` → `'Mine'`             |\n| `TRIM(texto)`                       | Elimina espacios al inicio y al final | `TRIM(' hola ')` → `'hola'`                        |\n| `REPLACE(texto, buscar, reemplazo)` | Reemplaza ocurrencias                 | `REPLACE('2015-03-20', '-', '/')` → `'2015/03/20'` |\n\nSELECT UPPER(title) AS titulo_mayusculas FROM videogames;",
+      "bytes": 1139,
+      "sha256": "d06bbda021d91bfeda597495a5ace76093f610fee284aaacb86a08107757f2b1",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions",
+        "analisis-de-datos/sql/text-functions/upper",
+        "analisis-de-datos/sql/text-functions/lower",
+        "analisis-de-datos/sql/text-functions/length",
+        "analisis-de-datos/sql/text-functions/substring",
+        "analisis-de-datos/sql/text-functions/trim",
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/2.- LOWER(texto).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions/lower"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/3.- LENGTH(texto).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions/length"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/4.- SUBSTR(texto, inicio, longitud).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions/substring"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/5.- TRIM(texto).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions/trim"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/6.- REPLACE(texto, buscar, reemplazo).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar la tabla de funciones mezcladas en UPPER y completar las fichas vacías; evitar seis copias de la tabla."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/1.- ROUND(número, decimales).md",
+      "content": "| Función                    | Descripción                              | Ejemplo                      |\n| -------------------------- | ---------------------------------------- | ---------------------------- |\n| `ROUND(número, decimales)` | Redondea al número de decimales indicado | `ROUND(3.14159, 2)` → `3.14` |\n| `ABS(número)`              | Devuelve el valor absoluto               | `ABS(-42)` → `42`            |\n\nTen en cuenta que `MIN` y `MAX` también pueden usarse como funciones escalares (no solo como funciones de agregación). Por ejemplo, `MIN(a, b)` devuelve el menor de dos valores en una expresión.\n\n\n```\nSELECT title, ROUND(playtime_hours * 1.0 / 12, 1) AS horas_por_mes\nFROM videogames;\n```\n",
+      "bytes": 722,
+      "sha256": "578241ca02f984a7f14ec0749fa7079b7ad9ba04d2a5cf8028faac38189f4a95",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/numeric-functions",
+        "analisis-de-datos/sql/numeric-functions/round",
+        "analisis-de-datos/sql/numeric-functions/division",
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar funciones escalares y completar ABS; verificar división y redondeo por motor."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/2.- ABS(número).md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Separar funciones escalares y completar ABS; verificar división y redondeo por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/1.- COUNT.md",
+      "content": "\n- `COUNT(*)` cuenta **todas** las filas, sin importar si tienen valores NULL o no.\n- `COUNT(columna)` cuenta solo las filas donde esa columna **no es NULL**.\n\nSELECT COUNT(*) AS total FROM videogames;\n\n\nSELECT COUNT(*) AS total_filas, COUNT(developer) AS con_developer\nFROM videogames;\n\n",
+      "bytes": 288,
+      "sha256": "4580df481cae9acc53d772c02452c0535d1765727c41d90cf12aafee1b3a395c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation",
+        "analisis-de-datos/sql/aggregation/count"
+      ],
+      "decision": "split-and-review",
+      "reason": "Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/2.- SUM.md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/sum"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/3.- AVG.md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/avg"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/4.- MIN.md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/min"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/5-. MAX.md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/max"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/6.- GROUP_CONCAT.md",
+      "content": "SELECT developer, GROUP_CONCAT(title) AS juegos\nFROM videogames\nGROUP BY developer;\n",
+      "bytes": 84,
+      "sha256": "cdf4764628bd7495feb9dc7667d6e0dc4170c32b80a9f81fc4e7c36de6f37415",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/string-aggregate"
+      ],
+      "decision": "review",
+      "reason": "Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/7-. Combinación.md",
+      "content": "SELECT\n  COUNT(*) AS total,\n  MIN(year) AS primer_anio,\n  MAX(year) AS ultimo_anio\nFROM videogames;\n\n",
+      "bytes": 101,
+      "sha256": "20175fa3be51063d4e25088dc9130ce47614d3df0872b8ad3ebe9184410f3057",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/combinaciones"
+      ],
+      "decision": "review",
+      "reason": "Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/8-. Con flitro WHERE.md",
+      "content": "SELECT AVG(playtime_hours) AS avg_hours\nFROM videogames\nWHERE year > 2010;\n\n\nUn dato importante: las funciones `SUM`, `AVG`, `MIN` y `MAX` **ignoran los valores NULL** automáticamente. Si tienes 10 filas pero 3 tienen `NULL` en `playtime_hours`, `AVG(playtime_hours)` calculará el promedio solo con las 7 filas que sí tienen valor. Esto suele ser el comportamiento deseado, pero conviene saberlo para no llevarte sorpresas con los cálculos.",
+      "bytes": 444,
+      "sha256": "ad7c60037c15fb31012406d1243fd10d746c46bbb7ee89dcdff151913fd6ae17",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/aggregation/con-where"
+      ],
+      "decision": "review",
+      "reason": "Completar agregados vacíos y tratar NULL; presentar concatenación global antes de GROUP BY."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/1.- base.md",
+      "content": "SELECT developer, COUNT(*) AS total\nFROM videogames\nGROUP BY developer;\n\nSELECT developer, year, COUNT(*) AS total\nFROM videogames\nGROUP BY developer, year;",
+      "bytes": 156,
+      "sha256": "9a5a0b282968d9da1dd37ec776950d06e3849aaadd253d7028ad0bcea87a904c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/group-by",
+        "analisis-de-datos/sql/group-by/varias-columnas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/2.- HAVING.md",
+      "content": "SELECT developer, COUNT(*) AS total\nFROM videogames\nGROUP BY developer\nHAVING COUNT(*) > 1;",
+      "bytes": 91,
+      "sha256": "f051c3225475b91aca48a4f2f63a7e805611dfb0fdbbfb20a6cc8d5b1d6d216d",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/group-by/having"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/3.- diff having y where.md",
+      "content": "\nSELECT developer, COUNT(*) AS total\nFROM videogames\nWHERE year > 2000         -- Primero filtra filas\nGROUP BY developer        -- Luego agrupa\nHAVING COUNT(*) > 1;      -- Finalmente filtra grupos",
+      "bytes": 198,
+      "sha256": "a03cba77548de8ea4e8de723e2f494f178d1dde1e367b01582026a9c3bbbfb06",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/group-by/where-y-having"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/19.- orden de ejecución/1.-  base.md",
+      "content": "https://www.aprendesql.dev/orden-de-ejecucion",
+      "bytes": 45,
+      "sha256": "a560b4bb973f7efdbd5e6a931a7334f1f68ca7ff53178e57ad25fb331181b027",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/logical-order",
+        "analisis-de-datos/sql/logical-order/orden-logico",
+        "analisis-de-datos/sql/logical-order/plan-fisico"
+      ],
+      "decision": "split-and-review",
+      "reason": "Convertir la referencia externa en una definición y ejemplo propios; distinguir orden lógico del plan físico."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/1.- base.md",
+      "content": "INSERT INTO tabla (columna1, columna2, ...)\nVALUES (valor1, valor2, ...);\n\nINSERT INTO tabla\nVALUES (valor1, valor2, valor3, ...);\n\nINSERT INTO tabla VALUES\n(valor1a, valor2a, ...),\n(valor1b, valor2b, ...);",
+      "bytes": 206,
+      "sha256": "143882d0f392b117768e8985576cad2d5efb5b4043e0186eea2f7d5539393e7b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/insert",
+        "analisis-de-datos/sql/insert/columnas",
+        "analisis-de-datos/sql/insert/varias-filas",
+        "analisis-de-datos/sql/insert/sin-lista"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar formas de inserción; IGNORE/REPLACE requieren revisión por dialecto y no son UPDATE universal."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/2.- INSERT OR IGNORE.md",
+      "content": "INSERT OR IGNORE INTO videogames\n  (id, title, developer, year, playtime_hours)\nVALUES (1, 'Otro juego', 'Otro dev', 2020, 50);\n-- No hace nada porque ya existe id = 1",
+      "bytes": 167,
+      "sha256": "ff6dfad473b306fdbcc2af49d12e051547cc5bbcaabe26012189e994b693c1db",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/insert/ignore"
+      ],
+      "decision": "review",
+      "reason": "Separar formas de inserción; IGNORE/REPLACE requieren revisión por dialecto y no son UPDATE universal."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/3.- INSERT OR REPLACE.md",
+      "content": "INSERT OR REPLACE INTO videogames\n  (id, title, developer, year, playtime_hours)\nVALUES (1, 'Zelda Remaster', 'Nintendo', 2024, 30);\n-- Sustituye el registro con id = 1",
+      "bytes": 168,
+      "sha256": "a589ddbbca3bc217713277d7c50ef603589274549846f37daaa7470d49d0f9ba",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/insert/replace"
+      ],
+      "decision": "review",
+      "reason": "Separar formas de inserción; IGNORE/REPLACE requieren revisión por dialecto y no son UPDATE universal."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/1.- base.md",
+      "content": "UPDATE tabla\nSET columna1 = valor1, columna2 = valor2\nWHERE condición;\n\nUPDATE videogames\nSET playtime_hours = playtime_hours + 10\nWHERE developer = 'Nintendo';\n\nUPDATE videogames\nSET developer = 'CD Projekt', year = 2016\nWHERE title = 'The Witcher 3';",
+      "bytes": 253,
+      "sha256": "df4a7ecb5561980723bc5155002b7fd09a4525494286ee7cac91341e8d0b8237",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/update",
+        "analisis-de-datos/sql/update/varias-columnas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/2.- SELECT y UPDATE.md",
+      "content": "-- Primero comprueba qué filas se van a ver afectadas\nSELECT * FROM videogames WHERE developer = 'Nintendo';\n\n-- Si el resultado es el esperado, ejecuta el UPDATE\nUPDATE videogames\nSET playtime_hours = playtime_hours + 10\nWHERE developer = 'Nintendo';\n",
+      "bytes": 253,
+      "sha256": "7e5a5e08448f676b05418ec9ba99445c97ea289cfd00285335282910605e75b5",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/update/comprobar-con-select"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/1.- base.md",
+      "content": "DELETE FROM tabla\nWHERE condición;\n\nDELETE FROM videogames WHERE year < 1990;\nDELETE FROM videogames WHERE developer = 'Valve';\nDELETE FROM videogames WHERE playtime_hours > 1000;",
+      "bytes": 180,
+      "sha256": "851036a0340b4dae25c98f7da973ad4feeb62ebae507b42b5339a542897456e8",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/delete",
+        "analisis-de-datos/sql/delete/condiciones"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/2.- SELECT y DELETE.md",
+      "content": "-- Primero revisa qué vas a eliminar\nSELECT * FROM videogames WHERE year < 1990;\n\n-- Si estás conforme, ejecuta el DELETE\nDELETE FROM videogames WHERE year < 1990;",
+      "bytes": 165,
+      "sha256": "c583ba10c9d5f4fa2ac0d1756197ea4ac213b7b459945e9c45ff1d81510c67dd",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/delete/comprobar-con-select"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/1.- base.md",
+      "content": "CREATE TABLE nombre_tabla (\n  columna1 tipo restricciones,\n  columna2 tipo restricciones,\n  ...\n);\n\n## [Tipos de datos comunes](https://www.aprendesql.dev/creando-tablas#tipos-de-datos-comunes)\n\n|Tipo|Descripción|\n|---|---|\n|`INTEGER`|Números enteros|\n|`TEXT`|Cadenas de texto|\n|`REAL`|Números decimales|\n\n## [Restricciones](https://www.aprendesql.dev/creando-tablas#restricciones)\n\n| Restricción   | Descripción                               |\n| ------------- | ----------------------------------------- |\n| `PRIMARY KEY` | Identificador único de cada fila          |\n| `NOT NULL`    | La columna no puede tener valores nulos   |\n| `UNIQUE`      | Cada valor debe ser único en la columna   |\n| `DEFAULT`     | Valor por defecto si no se especifica uno |\n| `CHECK`       | Valida que el valor cumpla una condición  |\nlevel INTEGER NOT NULL CHECK(level > 0)",
+      "bytes": 864,
+      "sha256": "54b97ed8234c6478eca77e70b7a536f58739e49d15559cf4989cdbcf2d0eeb40",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table",
+        "analisis-de-datos/sql/create-table/tipos",
+        "analisis-de-datos/sql/create-table/not-null",
+        "analisis-de-datos/sql/create-table/unique",
+        "analisis-de-datos/sql/create-table/default",
+        "analisis-de-datos/sql/create-table/check"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/2.- IF NOT EXISTS.md",
+      "content": "CREATE TABLE IF NOT EXISTS players (\n  id INTEGER PRIMARY KEY,\n  name TEXT NOT NULL,\n  level INTEGER NOT NULL DEFAULT 1\n);",
+      "bytes": 122,
+      "sha256": "f103c52684313137dcf7473cde3c76c8788d2f610d2bf14e9218721bd5f0fabe",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/if-not-exists"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/3.- PRIMARY KEY.md",
+      "content": "\n// Auto incrementa los ids cada que se crea un registro\n\n\nCREATE TABLE players (\n  id INTEGER PRIMARY KEY, \n  name TEXT NOT NULL\n);\n\n```\nINSERT INTO players (name) VALUES ('Ana');    -- id = 1 (automático)\nINSERT INTO players (name) VALUES ('Carlos'); -- id = 2 (automático)\n```\n\nCREATE TABLE players (\n  id INTEGER PRIMARY KEY,\n  name TEXT NOT NULL,\n  email TEXT UNIQUE,\n  level INTEGER NOT NULL DEFAULT 1,\n  score INTEGER DEFAULT 0\n);\n",
+      "bytes": 440,
+      "sha256": "129911b217509d88d1245701c99e6264ecd2337787908363f8ca41b467c6aecd",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/primary-key"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/4.- FOREIGN KEY.md",
+      "content": "\nCREATE TABLE scores (\n  id INTEGER PRIMARY KEY,\n  player_id INTEGER NOT NULL,\n  game_id INTEGER NOT NULL,\n  points INTEGER NOT NULL,\n  FOREIGN KEY (player_id) REFERENCES players(id)\n);\n\nCREATE TABLE videogames (\n  id INTEGER PRIMARY KEY,\n  title TEXT NOT NULL,\n  developer_id INTEGER NOT NULL,\n  FOREIGN KEY (developer_id) REFERENCES developers(id)\n);\n\nSQLite \nPRAGMA foreign_keys = ON;\n\n\nCREATE TABLE developers (\n  id INTEGER PRIMARY KEY,\n  name TEXT NOT NULL\n);\n\nINSERT INTO developers VALUES (1, 'Nintendo'), (2, 'Valve');\n\n\nCREATE TABLE videogames (\n  id INTEGER PRIMARY KEY,\n  title TEXT NOT NULL,\n  developer_id INTEGER NOT NULL,\n  FOREIGN KEY (developer_id) REFERENCES developers(id)\n);\n\nINSERT INTO videogames VALUES (1, 'Zelda', 1);    -- ✓ Nintendo existe\nINSERT INTO videogames VALUES (2, 'Portal 2', 2); -- ✓ Valve existe\n\n\nINSERT INTO videogames VALUES (3, 'Juego X', 99);\n-- ✗ Error: 99 no existe",
+      "bytes": 918,
+      "sha256": "49ccd83d8765c6ba9a0f45d28d537c235fd0879b3af46cc855ee3553475e96a8",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/foreign-key"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/5.- Múltiples claves foráneas.md",
+      "content": "\nCREATE TABLE scores (\n  id INTEGER PRIMARY KEY,\n  player_id INTEGER NOT NULL,\n  game_id INTEGER NOT NULL,\n  points INTEGER NOT NULL,\n  FOREIGN KEY (player_id) REFERENCES players(id),\n  FOREIGN KEY (game_id) REFERENCES videogames(id)\n);",
+      "bytes": 236,
+      "sha256": "8159574395caf4801a11be5e2ada49fc064417ae4c079224535af29a54ac5a4e",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/varias-foreign-key"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/6.- ON DELETE CASCADE.md",
+      "content": "CREATE TABLE videogames (\n  id INTEGER PRIMARY KEY,\n  title TEXT NOT NULL,\n  developer_id INTEGER,\n  FOREIGN KEY (developer_id) REFERENCES developers(id)\n    ON DELETE CASCADE\n);\n\nDELETE FROM developers WHERE id = 1;\n-- También borra todos los juegos con developer_id = 1",
+      "bytes": 272,
+      "sha256": "93312ab80faa88226902dc02246b142e4a562b8e50f3811b6e2967ea82ddf253",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/on-delete-cascade"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/7.- ON DELETE SET NULL.md",
+      "content": "CREATE TABLE videogames (\n  id INTEGER PRIMARY KEY,\n  title TEXT NOT NULL,\n  developer_id INTEGER,\n  FOREIGN KEY (developer_id) REFERENCES developers(id)\n    ON DELETE SET NULL\n);\n\nDELETE FROM developers WHERE id = 1;\n-- Los juegos de Nintendo ahora tienen developer_id = NULL\n\nCREATE TABLE scores (\n  id INTEGER PRIMARY KEY,\n  player_id INTEGER NOT NULL,\n  game_id INTEGER NOT NULL,\n  points INTEGER NOT NULL,\n  FOREIGN KEY (player_id) REFERENCES players(id),\n  FOREIGN KEY (game_id) REFERENCES videogames(id)\n);",
+      "bytes": 513,
+      "sha256": "080e6475a35707a2c95dd36026d2c4426253a959e72c7e35c5102280b8bde605",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/create-table/on-delete-set-null"
+      ],
+      "decision": "review",
+      "reason": "Separar tipos y restricciones; no presentar autoincremento como consecuencia universal de PRIMARY KEY."
+    },
+    {
+      "path": "tmp/SQL/24.- ALTER TABLE/1.- base.md",
+      "content": "ALTER TABLE videogames\nADD COLUMN rating REAL;\n\nALTER TABLE videogames\nRENAME COLUMN playtime_hours TO hours;\n\nALTER TABLE videogames\nRENAME TO games;\n\nALTER TABLE videogames\nDROP COLUMN playtime_hours;\n\n\nBEGIN TRANSACTION;\nALTER TABLE videogames ADD COLUMN rating REAL DEFAULT 0;\n-- Si todo va bien:\nCOMMIT;\n-- Si algo falla:\n-- ROLLBACK;",
+      "bytes": 339,
+      "sha256": "743504c465946153c78c1995f8b9bfc1c92a4ff019c184ef688f403c7c09d00c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/alter-table",
+        "analisis-de-datos/sql/alter-table/add-column",
+        "analisis-de-datos/sql/alter-table/rename-column",
+        "analisis-de-datos/sql/alter-table/rename-table",
+        "analisis-de-datos/sql/alter-table/drop-column"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar operaciones ALTER y verificar capacidades por motor; no anticipar transacciones como regla universal."
+    },
+    {
+      "path": "tmp/SQL/25.- DROP TABLE/1.- base.md",
+      "content": "DROP TABLE nombre_tabla;\n\n\nDROP TABLE IF EXISTS nombre_tabla;\n\n\nhttps://www.aprendesql.dev/eliminando-tablas",
+      "bytes": 108,
+      "sha256": "68ebabc9c0a14e34ac4d688f9bd25d71e968e0c50e758b3c95932faf56603b78",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/drop-table",
+        "analisis-de-datos/sql/drop-table/if-exists"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/1.- CREATE VIEW.md",
+      "content": "CREATE VIEW nombre_vista AS\nSELECT columnas\nFROM tabla\nWHERE condición;\n\nCREATE VIEW juegos_modernos AS\nSELECT title, developer, year, playtime_hours\nFROM videogames\nWHERE year > 2010;\n\n\nSELECT * FROM juegos_modernos;\nSELECT title FROM juegos_modernos WHERE playtime_hours > 50;",
+      "bytes": 279,
+      "sha256": "888f9334a6e067e987d67e4fda411a076514c222de82bace815aef006a182047",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/views",
+        "analisis-de-datos/sql/views/create-view"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar creación, consulta y reemplazo; revisar restricciones de las vistas por motor."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/2-. CREATE VIEW con JOINs.md",
+      "content": "CREATE VIEW catalogo AS\nSELECT v.title, d.name AS developer, d.country, v.year\nFROM videogames v\nJOIN developers d ON v.developer_id = d.id;\n\nSELECT * FROM catalogo WHERE country = 'Japón';",
+      "bytes": 190,
+      "sha256": "48b6e7de1b8b8f2dd67e9cac275f5b728952700063b47930e3e3229db005cac0",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/views/con-join"
+      ],
+      "decision": "review",
+      "reason": "Separar creación, consulta y reemplazo; revisar restricciones de las vistas por motor."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/3.- CREATE VIEW IF NOT EXISTS.md",
+      "content": "CREATE VIEW IF NOT EXISTS nombre_vista AS\nSELECT ...;\n\n\nSQLite: - SQLite **no soporta** `CREATE OR REPLACE VIEW`. Si necesitas modificar una vista, debes eliminarla primero con `DROP VIEW` y volver a crearla.\n- Las vistas son de **solo lectura** en SQLite: no puedes hacer `INSERT`, `UPDATE` o `DELETE` directamente sobre una vista.\n",
+      "bytes": 333,
+      "sha256": "c518cf6f0870640f0db63cb595d101f5ac8920d21a203e22e1b3789820ef7632",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/views/if-not-exists",
+        "analisis-de-datos/sql/views/replace-view"
+      ],
+      "decision": "split-and-review",
+      "reason": "Separar creación, consulta y reemplazo; revisar restricciones de las vistas por motor."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/4.- DROP VIEW.md",
+      "content": "DROP VIEW nombre_vista;\n\nDROP VIEW IF EXISTS nombre_vista;",
+      "bytes": 58,
+      "sha256": "0c8ede1a9125ebe8a2d8bebbf8f7cd788ae894b64ae6dbcb6f77526c5685437b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/views/drop-view"
+      ],
+      "decision": "review",
+      "reason": "Separar creación, consulta y reemplazo; revisar restricciones de las vistas por motor."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/1.- base.md",
+      "content": "CREATE INDEX nombre_indice ON tabla(columna);\n\nCREATE INDEX idx_videogames_year ON videogames(year);\n\n\nCREATE INDEX idx_videogames_dev_year ON videogames(developer, year);\n\nEste índice acelera consultas como:\n\n- `WHERE developer = 'Nintendo'` (usa la primera columna)\n- `WHERE developer = 'Nintendo' AND year > 2000` (usa ambas columnas)\n\nPero **no** ayuda con `WHERE year > 2000` solo (porque `year` no es la primera columna del índice).\n\nhttps://www.aprendesql.dev/indices",
+      "bytes": 476,
+      "sha256": "3db21382f6aa74c581cb55339675550e7729777448abf9b85da37dd9b0049bfd",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/indexes",
+        "analisis-de-datos/sql/indexes/simple-y-compuesto"
+      ],
+      "decision": "split-and-review",
+      "reason": "Eliminar afirmaciones absolutas sobre uso de índices; revisar índice compuesto y plan real."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/2.- UNIQUE.md",
+      "content": "CREATE UNIQUE INDEX idx_videogames_title ON videogames(title);\n\n",
+      "bytes": 64,
+      "sha256": "2c2fb23901c7f0e9cb68be3c8e3755558a6d7ed71f9b83548b9db9d744f9c42a",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/indexes/unique"
+      ],
+      "decision": "review",
+      "reason": "Eliminar afirmaciones absolutas sobre uso de índices; revisar índice compuesto y plan real."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/3.- SELECT.md",
+      "content": "```\nSELECT name, tbl_name\nFROM sqlite_master\nWHERE type = 'index';\n```\n",
+      "bytes": 71,
+      "sha256": "806ac571959d1ed7eb8247ccec63571101175aa63cf730f4170d150b77e25a1b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/indexes/consultar"
+      ],
+      "decision": "review",
+      "reason": "Eliminar afirmaciones absolutas sobre uso de índices; revisar índice compuesto y plan real."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/4.- DROP.md",
+      "content": "DROP INDEX nombre_indice;\n\nDROP INDEX IF EXISTS nombre_indice;",
+      "bytes": 62,
+      "sha256": "cf69cac5a9a57534f8f0b1b0415f09fd200a366ba2a89d12637a06ffd6e9b344",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/indexes/drop"
+      ],
+      "decision": "review",
+      "reason": "Eliminar afirmaciones absolutas sobre uso de índices; revisar índice compuesto y plan real."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/1.- WHERE.md",
+      "content": "SELECT title, year\nFROM videogames\nWHERE year = (SELECT MAX(year) FROM videogames);",
+      "bytes": 83,
+      "sha256": "e728a385269cabac7fbf008370525adce938f07f3b225935c1c98f3e5c639c85",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/subqueries",
+        "analisis-de-datos/sql/subqueries/where"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/2.- IN.md",
+      "content": "SELECT title, developer\nFROM videogames\nWHERE developer IN (\n  SELECT developer\n  FROM videogames\n  GROUP BY developer\n  HAVING COUNT(*) > 1\n);",
+      "bytes": 143,
+      "sha256": "0659b98b977a5b3a344710118a98518c13c62252caa74aefba8ec359853245ff",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/subqueries/in"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/3.- SELECT.md",
+      "content": "SELECT title,\n       playtime_hours,\n       (SELECT MAX(playtime_hours) FROM videogames) AS max_horas\nFROM videogames;\n",
+      "bytes": 119,
+      "sha256": "07a85dcb5a0128997551ace9bafa9cce25111d6550b1e279a4a07776878e9c0c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/subqueries/select"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/4.- EXISTS.md",
+      "content": "\nSELECT title\nFROM videogames v\nWHERE EXISTS (\n  SELECT 1\n  FROM videogames v2\n  WHERE v2.developer = v.developer\n    AND v2.id != v.id\n);",
+      "bytes": 138,
+      "sha256": "0ad7fd58316192e3140fa24dfe693b3f792e6e66ca2d7cca2e80e190b970ac90",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/subqueries/exists"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/5.- NOT EXISTS.md",
+      "content": "SELECT title, developer\nFROM videogames v\nWHERE NOT EXISTS (\n  SELECT 1\n  FROM videogames v2\n  WHERE v2.developer = v.developer\n    AND v2.id != v.id\n);",
+      "bytes": 152,
+      "sha256": "daa3bcc30042953f206778e3a261b7a19a2445cad9b868df7ce4261c112bb930",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/subqueries/not-exists"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/1.- base.md",
+      "content": "SELECT columnas FROM tabla1\nUNION\nSELECT columnas FROM tabla2;\n\n\nSELECT developer FROM videogames WHERE year < 2000\nUNION\nSELECT developer FROM videogames WHERE playtime_hours > 50;",
+      "bytes": 181,
+      "sha256": "673dd4cffd5a005a99396d50b51a5cee74f2088c8e6636a521a9631ec8985963",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/union"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/2.- UNION ALL.md",
+      "content": "SELECT developer FROM videogames WHERE year < 2000\nUNION ALL\nSELECT developer FROM videogames WHERE playtime_hours > 50;",
+      "bytes": 120,
+      "sha256": "44cca17934aa61ba0d773512616009f5d5a6a8de2d02ceb83fff84c29e1ac5d0",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/union/union-all"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/3.- ORDER BY con UNION.md",
+      "content": "SELECT title, year FROM videogames WHERE year < 2000\nUNION\nSELECT title, year FROM videogames WHERE year > 2015\nORDER BY year;",
+      "bytes": 126,
+      "sha256": "f736aa11ff339da52b6189c41d820f8d3c16dfa2bfe49a67039965b6a2fdfa9f",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/union/order-by"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/30.- INTERSECT/1.- base.md",
+      "content": "SELECT developer FROM videogames WHERE year < 2015\nINTERSECT\nSELECT developer FROM videogames WHERE playtime_hours > 50;\n",
+      "bytes": 121,
+      "sha256": "0c80de3d96f601ec107ebbc9def83ff8d407fae33dccec647c11563f70028233",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/intersect",
+        "analisis-de-datos/sql/intersect/columnas"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/31.- EXCEPT/1.- base.md",
+      "content": "SELECT developer FROM videogames WHERE year < 2015\nEXCEPT\nSELECT developer FROM videogames WHERE playtime_hours > 50;",
+      "bytes": 117,
+      "sha256": "9c13e2031722258e578b8391175f3999ca8d627078a8946e35ba3904d326db77",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/except",
+        "analisis-de-datos/sql/except/equivalentes"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/32.- CTEs/1.- base.md",
+      "content": "\nUna **CTE** (Common Table Expression) es una consulta temporal con nombre que puedes definir antes de tu consulta principal usando la palabra clave `WITH`. Piensa en ella como una **variable** que almacena un resultado intermedio para usarlo después\n\nWITH nombre_cte AS (\n  SELECT ...\n)\nSELECT * FROM nombre_cte;\n",
+      "bytes": 315,
+      "sha256": "2e2703c7f8b8565e71e28c761830f7649e6c8e7c6548049cec625294c27ccbad",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/cte",
+        "analisis-de-datos/sql/cte/with"
+      ],
+      "decision": "split-and-review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/32.- CTEs/2.- Múltiples ctes.md",
+      "content": "WITH\njuegos_largos AS (\n  SELECT title, developer, playtime_hours\n  FROM videogames\n  WHERE playtime_hours > 50\n),\nconteo_devs AS (\n  SELECT developer, COUNT(*) AS total\n  FROM videogames\n  GROUP BY developer\n)\nSELECT j.title, j.playtime_hours, c.total\nFROM juegos_largos j\nJOIN conteo_devs c ON j.developer = c.developer;",
+      "bytes": 322,
+      "sha256": "05b961e047c7bb919d132cfaaa0f51b1e0ae6c9b2eefefc2142e9ee9647384ed",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/cte/multiples"
+      ],
+      "decision": "review",
+      "reason": "Revisar definición, ejemplo de negocio y diferencias de dialecto; conservar la dependencia dentro de su grupo."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/1.- base.md",
+      "content": "\n\nSELECT title, playtime_hours,\n  SUM(playtime_hours) OVER() AS total_horas\nFROM videogames;",
+      "bytes": 92,
+      "sha256": "1a099175afc49c95daa8d1bd90a7e30d0ef5f45f9859319b1cdbe7522ce7892b",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions",
+        "analisis-de-datos/sql/window-functions/over"
+      ],
+      "decision": "split-and-review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/2.- PARTITION BY.md",
+      "content": "SELECT title, developer, playtime_hours,\n  SUM(playtime_hours) OVER(PARTITION BY developer) AS horas_del_dev\nFROM videogames;\n",
+      "bytes": 126,
+      "sha256": "e7029c045de816260767ee8f8ad8f0c4cee056794907240683e1f3869c6532b1",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/partition-by"
+      ],
+      "decision": "review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/3.- PARTITION BY y ORDER BY.md",
+      "content": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/order-by",
+        "analisis-de-datos/sql/window-functions/frame"
+      ],
+      "decision": "complete",
+      "reason": "Archivo vacío: redactar definición y ejemplo empresarial. Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/4.- ROW_NUMBER().md",
+      "content": "SELECT title, playtime_hours,\n  ROW_NUMBER() OVER(ORDER BY playtime_hours DESC) AS posicion\nFROM videogames;",
+      "bytes": 108,
+      "sha256": "e3e2b555adaa04e7c7ce55e45477078731812c19c8df12944d360160bec811b5",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/row-number"
+      ],
+      "decision": "review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/5.- RANK() y DENSE_RANK().md",
+      "content": "SELECT title, year,\n  RANK() OVER(ORDER BY year) AS rank,\n  DENSE_RANK() OVER(ORDER BY year) AS dense_rank\nFROM videogames;",
+      "bytes": 123,
+      "sha256": "c5de68fd57047e4be8b697a26ea1fcd0d837845d59ca80d60668a74b190d1e9e",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/rank"
+      ],
+      "decision": "review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/6.- LAG() y LEAD().md",
+      "content": "SELECT title, year,\n  LAG(title) OVER(ORDER BY year) AS juego_anterior,\n  LEAD(title) OVER(ORDER BY year) AS juego_siguiente\nFROM videogames;\n\nSELECT title, year,\n  year - LAG(year) OVER(ORDER BY year) AS anos_desde_anterior\nFROM videogames;",
+      "bytes": 241,
+      "sha256": "af339a7ac2810df5828025d6ae0a8ce87a279f4901e58cfd55799c592865d8a0",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/lag-lead"
+      ],
+      "decision": "review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/7.- Agregaciones.md",
+      "content": "SELECT title, playtime_hours,\n  AVG(playtime_hours) OVER() AS promedio_global,\n  playtime_hours - AVG(playtime_hours) OVER() AS diferencia\nFROM videogames;",
+      "bytes": 155,
+      "sha256": "1b12ebb78f9dd3df39009e2c16c6b603b741c4e029f839cb8dd5a0e4bb133346",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/window-functions/agregados"
+      ],
+      "decision": "review",
+      "reason": "Completar PARTITION BY y ORDER BY; añadir marco de filas y desempates cuando cambien el resultado."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/1.- base.md",
+      "content": "BEGIN TRANSACTION;\n\n-- Operaciones que forman la transacción\nUPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;\nUPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;\n\nCOMMIT;\n\n\n\nBEGIN TRANSACTION;\n\n-- Paso 1: Restar de la cuenta origen\nUPDATE cuentas SET saldo = saldo - 500\nWHERE id = 1 AND saldo >= 500;\n\n-- Paso 2: Sumar a la cuenta destino\nUPDATE cuentas SET saldo = saldo + 500\nWHERE id = 2;\n\nCOMMIT;\n\n\n\nSQLite \n\n-- Las tres formas son equivalentes en SQLite:\nBEGIN TRANSACTION;\nBEGIN;\n\n-- Y para confirmar:\nCOMMIT;\nEND;",
+      "bytes": 527,
+      "sha256": "de667119cfef44eed543670e0e35695b7d103751bc5e9a65f6e90fd03f0cb4a7",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/transactions",
+        "analisis-de-datos/sql/transactions/begin"
+      ],
+      "decision": "split-and-review",
+      "reason": "Corregir transferencia: un débito que afecta cero filas no permite acreditar al destino; revisar autocommit por motor."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/2.- COMMIT.md",
+      "content": "BEGIN TRANSACTION;\nINSERT INTO pedidos (cliente_id, total) VALUES (5, 59.99);\nUPDATE clientes SET total_compras = total_compras + 59.99 WHERE id = 5;\nCOMMIT;",
+      "bytes": 157,
+      "sha256": "1a43fd27e27452055d4a334eccb98e312f32d93294f848f3143f212c3757683c",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/transactions/commit"
+      ],
+      "decision": "review",
+      "reason": "Corregir transferencia: un débito que afecta cero filas no permite acreditar al destino; revisar autocommit por motor."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/3.- ROLLBACK.md",
+      "content": "BEGIN TRANSACTION;\nDELETE FROM videogames WHERE developer = 'Valve';\n-- ¡Ups! No queríamos borrar todos los juegos de Valve\nROLLBACK;\n-- La tabla queda como estaba antes del DELETE\n",
+      "bytes": 183,
+      "sha256": "eadc108c6794e80a9ef28a0ba37ef71791acb0922da9806df9504902539d5b1d",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/transactions/rollback"
+      ],
+      "decision": "review",
+      "reason": "Corregir transferencia: un débito que afecta cero filas no permite acreditar al destino; revisar autocommit por motor."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/4.- Autocommit.md",
+      "content": "## [Comportamiento por defecto: autocommit](https://www.aprendesql.dev/transacciones#comportamiento-por-defecto-autocommit)\n\n-- Esto se confirma automáticamente\nDELETE FROM videogames WHERE id = 1;\n-- El registro ya se borró permanentemente, no hay ROLLBACK posible",
+      "bytes": 267,
+      "sha256": "d282267ecc7d6cdea9561ae8f320e885ebaa0073dc3531db8832c4f2db891235",
+      "empty": false,
+      "state": "pending-editorial-review",
+      "targets": [
+        "analisis-de-datos/sql/transactions/autocommit"
+      ],
+      "decision": "review",
+      "reason": "Corregir transferencia: un débito que afecta cero filas no permite acreditar al destino; revisar autocommit por motor."
+    }
+  ],
+  "additions": [
+    {
+      "conceptId": "analisis-de-datos/sql/select/alias",
+      "key": "select/alias",
+      "origin": "new",
+      "reason": "Separar o incorporar este concepto exigido por el SDD, con redacción y ejemplo propios."
+    },
+    {
+      "conceptId": "analisis-de-datos/sql/comentarios",
+      "key": "select/comentarios",
+      "origin": "existing",
+      "reason": "Conservar Comentarios y su identidad publicada dentro de SELECT."
+    }
+  ]
+}
