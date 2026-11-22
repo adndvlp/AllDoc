@@ -1,0 +1,2427 @@
+TAP version 13
+# (node:65790) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/baseline.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: percentiles de referencia: nearest rank, valores cero y muestras ausentes
+ok 1 - percentiles de referencia: nearest rank, valores cero y muestras ausentes
+  ---
+  duration_ms: 1.858541
+  type: 'test'
+  ...
+# Subtest: servidor de referencia: resuelve HTML hermano aunque exista el directorio de sus fichas
+ok 2 - servidor de referencia: resuelve HTML hermano aunque exista el directorio de sus fichas
+  ---
+  duration_ms: 11.699667
+  type: 'test'
+  ...
+# Subtest: assets declarados: incluye preloads JS/CSS y elimina duplicados, sin contar fuentes o scripts inline
+ok 3 - assets declarados: incluye preloads JS/CSS y elimina duplicados, sin contar fuentes o scripts inline
+  ---
+  duration_ms: 0.754709
+  type: 'test'
+  ...
+# Subtest: inventario: separa total del build y assets declarados por página y usa gzip real
+ok 4 - inventario: separa total del build y assets declarados por página y usa gzip real
+  ---
+  duration_ms: 21.732125
+  type: 'test'
+  ...
+# Subtest: huella: detecta cambios de la app y excluye los informes y resultados generados
+ok 5 - huella: detecta cambios de la app y excluye los informes y resultados generados
+  ---
+  duration_ms: 5.312416
+  type: 'test'
+  ...
+# Subtest: servidor de referencia: resuelve rutas estáticas con y sin trailing slash y bloquea salir del build
+ok 6 - servidor de referencia: resuelve rutas estáticas con y sin trailing slash y bloquea salir del build
+  ---
+  duration_ms: 6.950917
+  type: 'test'
+  ...
+# Subtest: CLI final: descubre 26/168/637 casos sin motores, build ni multiplicar la suite Chromium
+ok 7 - CLI final: descubre 26/168/637 casos sin motores, build ni multiplicar la suite Chromium
+  ---
+  duration_ms: 3071.343417
+  type: 'test'
+  ...
+# Subtest: CLI final: selección de un caso no pretende aceptación completa y no permite actualizar
+ok 8 - CLI final: selección de un caso no pretende aceptación completa y no permite actualizar
+  ---
+  duration_ms: 1093.371
+  type: 'test'
+  ...
+# Subtest: CLI corto de zoom: descubre siete casos sin un filtro que pueda romperse al copiar
+ok 9 - CLI corto de zoom: descubre siete casos sin un filtro que pueda romperse al copiar
+  ---
+  duration_ms: 1047.989334
+  type: 'test'
+  ...
+# Subtest: CLI de pendientes: descubre solo los 182 casos de laptop y escritorio
+ok 10 - CLI de pendientes: descubre solo los 182 casos de laptop y escritorio
+  ---
+  duration_ms: 1039.523459
+  type: 'test'
+  ...
+# Subtest: CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight
+ok 11 - CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight
+  ---
+  duration_ms: 1178.254417
+  type: 'test'
+  ...
+# (node:65916) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-config.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: aceptación: comparación estricta, sin actualización, reintentos ni servidores/preflight duplicados
+ok 12 - aceptación: comparación estricta, sin actualización, reintentos ni servidores/preflight duplicados
+  ---
+  duration_ms: 1.491334
+  type: 'test'
+  ...
+# Subtest: aceptación: conserva siete proyectos Chromium, seis por motor/tamaño y rutas originales de referencias
+ok 13 - aceptación: conserva siete proyectos Chromium, seis por motor/tamaño y rutas originales de referencias
+  ---
+  duration_ms: 1.219792
+  type: 'test'
+  ...
+# Subtest: aceptación: descubre los 168 casos funcionales sin iniciar navegadores y sin mezclar Chromium
+ok 14 - aceptación: descubre los 168 casos funcionales sin iniciar navegadores y sin mezclar Chromium
+  ---
+  duration_ms: 579.528833
+  type: 'test'
+  ...
+# (node:65920) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-acceptance.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales
+ok 15 - consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales
+  ---
+  duration_ms: 1.76
+  type: 'test'
+  ...
+# Subtest: consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta
+ok 16 - consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta
+  ---
+  duration_ms: 0.324917
+  type: 'test'
+  ...
+# Subtest: consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables
+ok 17 - consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables
+  ---
+  duration_ms: 0.244708
+  type: 'test'
+  ...
+# Subtest: consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones
+ok 18 - consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones
+  ---
+  duration_ms: 0.231833
+  type: 'test'
+  ...
+# Subtest: consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento
+ok 19 - consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento
+  ---
+  duration_ms: 0.323917
+  type: 'test'
+  ...
+# Subtest: consolidación: ninguna fuente puede actualizar capturas aunque sus casos estén aprobados
+ok 20 - consolidación: ninguna fuente puede actualizar capturas aunque sus casos estén aprobados
+  ---
+  duration_ms: 0.11125
+  type: 'test'
+  ...
+# Subtest: compatibilidad: exige hashes idénticos salvo cada cambio de herramienta revisado explícitamente
+ok 21 - compatibilidad: exige hashes idénticos salvo cada cambio de herramienta revisado explícitamente
+  ---
+  duration_ms: 9.695583
+  type: 'test'
+  ...
+# (node:65922) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-preflight.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: preflight final: los tres motores arrancan y cierran antes del build; selección solo Chromium
+ok 22 - preflight final: los tres motores arrancan y cierran antes del build; selección solo Chromium
+  ---
+  duration_ms: 3.704333
+  type: 'test'
+  ...
+# Subtest: preflight final: Chromium ausente impide el cierre y conserva la liberación de otros motores
+ok 23 - preflight final: Chromium ausente impide el cierre y conserva la liberación de otros motores
+  ---
+  duration_ms: 0.387958
+  type: 'test'
+  ...
+# Subtest: preflight final: versión vacía y cierre fallido nunca acreditan Chromium
+ok 24 - preflight final: versión vacía y cierre fallido nunca acreditan Chromium
+  ---
+  duration_ms: 0.196708
+  type: 'test'
+  ...
+# (node:65923) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: aceptación: filtros y modos parciales nunca se confunden con cierre; actualizar referencias se rechaza
+ok 25 - aceptación: filtros y modos parciales nunca se confunden con cierre; actualizar referencias se rechaza
+  ---
+  duration_ms: 1.167459
+  type: 'test'
+  ...
+# Subtest: referencias aprobadas: exige las 52 imágenes y los seis manifiestos ligados a la revisión
+ok 26 - referencias aprobadas: exige las 52 imágenes y los seis manifiestos ligados a la revisión
+  ---
+  duration_ms: 2.192
+  type: 'test'
+  ...
+# Subtest: Chromium: contrasta todos los casos descubiertos y rechaza resumen favorable con huecos, duplicados o retries
+ok 27 - Chromium: contrasta todos los casos descubiertos y rechaza resumen favorable con huecos, duplicados o retries
+  ---
+  duration_ms: 0.820292
+  type: 'test'
+  ...
+# Subtest: cierre global: doce criterios dependen de evidencia ejecutada, revisión, invariantes y fuente final
+ok 28 - cierre global: doce criterios dependen de evidencia ejecutada, revisión, invariantes y fuente final
+  ---
+  duration_ms: 17.193709
+  type: 'test'
+  ...
+# Subtest: Chromium: una omisión nueva no se acredita como aprobada
+ok 29 - Chromium: una omisión nueva no se acredita como aprobada
+  ---
+  duration_ms: 0.17225
+  type: 'test'
+  ...
+# Subtest: Chromium: el diagnóstico prioriza el fallo real frente a casos que no llegaron a ejecutarse
+ok 30 - Chromium: el diagnóstico prioriza el fallo real frente a casos que no llegaron a ejecutarse
+  ---
+  duration_ms: 0.18675
+  type: 'test'
+  ...
+# Subtest: Chromium: las nueve omisiones previstas conservan identidad y motivo; un motivo distinto se rechaza
+ok 31 - Chromium: las nueve omisiones previstas conservan identidad y motivo; un motivo distinto se rechaza
+  ---
+  duration_ms: 0.298958
+  type: 'test'
+  ...
+# Subtest: cierre global: faltan pruebas, revisión y navegadores aunque se declare un contador favorable
+ok 32 - cierre global: faltan pruebas, revisión y navegadores aunque se declare un contador favorable
+  ---
+  duration_ms: 0.290667
+  type: 'test'
+  ...
+# Subtest: ENOSPC al escribir el log: rechaza, termina el hijo y espera su cierre sin error global
+ok 33 - ENOSPC al escribir el log: rechaza, termina el hijo y espera su cierre sin error global
+  ---
+  duration_ms: 3.618792
+  type: 'test'
+  ...
+# Subtest: ENOSPC al cerrar el log: un proceso con código cero no se presenta como aprobado
+ok 34 - ENOSPC al cerrar el log: un proceso con código cero no se presenta como aprobado
+  ---
+  duration_ms: 0.755084
+  type: 'test'
+  ...
+# Subtest: comando real: espera stdout/stderr y cierre del log sin cambiar el código de salida
+ok 35 - comando real: espera stdout/stderr y cierre del log sin cambiar el código de salida
+  ---
+  duration_ms: 74.046417
+  type: 'test'
+  ...
+# Subtest: fallo al crear el log no inicia un proceso y fallo de spawn no deja la promesa pendiente
+ok 36 - fallo al crear el log no inicia un proceso y fallo de spawn no deja la promesa pendiente
+  ---
+  duration_ms: 1.12425
+  type: 'test'
+  ...
+# (node:65927) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-config.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: configuración dedicada: seis proyectos, idioma/tema y referencias independientes, sin arranque pesado automático
+ok 37 - configuración dedicada: seis proyectos, idioma/tema y referencias independientes, sin arranque pesado automático
+  ---
+  duration_ms: 1.690708
+  type: 'test'
+  ...
+# Subtest: configuración Chromium: conserva los siete proyectos y la ruta de referencias existentes
+ok 38 - configuración Chromium: conserva los siete proyectos y la ruta de referencias existentes
+  ---
+  duration_ms: 0.09675
+  type: 'test'
+  ...
+# (node:65929) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/baseline.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: consolidación: acredita solo un cambio limitado a APP-04 y conserva hashes de las partes sin cambios
+ok 39 - consolidación: acredita solo un cambio limitado a APP-04 y conserva hashes de las partes sin cambios
+  ---
+  duration_ms: 1.728667
+  type: 'test'
+  ...
+# Subtest: consolidación: rechaza cambios fuera de APP-04 y marcadores ausentes o repetidos
+ok 40 - consolidación: rechaza cambios fuera de APP-04 y marcadores ausentes o repetidos
+  ---
+  duration_ms: 0.166459
+  type: 'test'
+  ...
+# Subtest: consolidación: recalcula contadores de los resultados reales y conserva procedencia por caso
+ok 41 - consolidación: recalcula contadores de los resultados reales y conserva procedencia por caso
+  ---
+  duration_ms: 0.797292
+  type: 'test'
+  ...
+# Subtest: consolidación: no oculta un fallo con un contador favorable ni acepta duplicar un caso
+ok 42 - consolidación: no oculta un fallo con un contador favorable ni acepta duplicar un caso
+  ---
+  duration_ms: 0.202542
+  type: 'test'
+  ...
+# Subtest: consolidación: selección explícita separa el foco corregido de los casos históricos
+ok 43 - consolidación: selección explícita separa el foco corregido de los casos históricos
+  ---
+  duration_ms: 0.117208
+  type: 'test'
+  ...
+# (node:65931) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: matriz de compatibilidad: seis proyectos con tamaños y capacidades propios, sin modificar otra lectura
+ok 44 - matriz de compatibilidad: seis proyectos con tamaños y capacidades propios, sin modificar otra lectura
+  ---
+  duration_ms: 1.821334
+  type: 'test'
+  ...
+# Subtest: selección de compatibilidad: todos por defecto, subconjunto deduplicado y error para un nombre desconocido
+ok 45 - selección de compatibilidad: todos por defecto, subconjunto deduplicado y error para un nombre desconocido
+  ---
+  duration_ms: 0.379959
+  type: 'test'
+  ...
+# Subtest: selección CLI: admite proyectos repetidos y listado; rechaza valores ausentes y opciones desconocidas
+ok 46 - selección CLI: admite proyectos repetidos y listado; rechaza valores ausentes y opciones desconocidas
+  ---
+  duration_ms: 0.180958
+  type: 'test'
+  ...
+# Subtest: preflight: seleccionar Firefox no abre WebKit ni Chromium y cierra la única instancia
+ok 47 - preflight: seleccionar Firefox no abre WebKit ni Chromium y cierra la única instancia
+  ---
+  duration_ms: 1.699917
+  type: 'test'
+  ...
+# Subtest: preflight: seleccionar solo WebKit funciona sin un launcher Chromium o Firefox
+ok 48 - preflight: seleccionar solo WebKit funciona sin un launcher Chromium o Firefox
+  ---
+  duration_ms: 0.1345
+  type: 'test'
+  ...
+# Subtest: preflight completo: cada motor arranca una vez, con versión y liberación comprobadas
+ok 49 - preflight completo: cada motor arranca una vez, con versión y liberación comprobadas
+  ---
+  duration_ms: 0.170875
+  type: 'test'
+  ...
+# Subtest: preflight: binarios ausentes dejan el resultado bloqueado con un diagnóstico agregado
+ok 50 - preflight: binarios ausentes dejan el resultado bloqueado con un diagnóstico agregado
+  ---
+  duration_ms: 0.31825
+  type: 'test'
+  ...
+# Subtest: preflight: un motor listo no compensa un fallo del otro y no se recomienda instalar por un error de permisos
+ok 51 - preflight: un motor listo no compensa un fallo del otro y no se recomienda instalar por un error de permisos
+  ---
+  duration_ms: 0.189125
+  type: 'test'
+  ...
+# Subtest: preflight: un proyecto desconocido se rechaza antes de abrir cualquier motor
+ok 52 - preflight: un proyecto desconocido se rechaza antes de abrir cualquier motor
+  ---
+  duration_ms: 0.135709
+  type: 'test'
+  ...
+# Subtest: preflight: una versión ausente o un cierre fallido no se declaran listos
+ok 53 - preflight: una versión ausente o un cierre fallido no se declaran listos
+  ---
+  duration_ms: 0.259333
+  type: 'test'
+  ...
+# Subtest: preflight: un cierre que no responde tiene un límite y bloquea continuar
+ok 54 - preflight: un cierre que no responde tiene un límite y bloquea continuar
+  ---
+  duration_ms: 4.737459
+  type: 'test'
+  ...
+# Subtest: preflight: informa qué motor está comprobando y conserva el estado final de cada uno
+ok 55 - preflight: informa qué motor está comprobando y conserva el estado final de cada uno
+  ---
+  duration_ms: 0.209042
+  type: 'test'
+  ...
+# (node:65932) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-matrix.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: matriz: valores por defecto cubren seis proyectos; smoke conserva cuatro casos y se puede seleccionar estrecho
+ok 56 - matriz: valores por defecto cubren seis proyectos; smoke conserva cuatro casos y se puede seleccionar estrecho
+  ---
+  duration_ms: 1.689208
+  type: 'test'
+  ...
+# Subtest: matriz: registra los veinte requisitos y configura exclusiones por alcance sin tests omitidos
+ok 57 - matriz: registra los veinte requisitos y configura exclusiones por alcance sin tests omitidos
+  ---
+  duration_ms: 0.238625
+  type: 'test'
+  ...
+# Subtest: matriz: exige cada caso aplicable con archivo correcto y rechaza huecos aunque el contador sea favorable
+ok 58 - matriz: exige cada caso aplicable con archivo correcto y rechaza huecos aunque el contador sea favorable
+  ---
+  duration_ms: 3.754625
+  type: 'test'
+  ...
+# Subtest: matriz: veinte casos históricos de escritorio no acreditan la matriz ampliada
+ok 59 - matriz: veinte casos históricos de escritorio no acreditan la matriz ampliada
+  ---
+  duration_ms: 0.687375
+  type: 'test'
+  ...
+# Subtest: matriz: filtros de casos de escritorio no exigen resultados inventados en los otros tamaños
+ok 60 - matriz: filtros de casos de escritorio no exigen resultados inventados en los otros tamaños
+  ---
+  duration_ms: 0.342084
+  type: 'test'
+  ...
+# Subtest: matriz: el informe acredita cada requisito con sus casos reales y distingue capacidades no aplicables
+ok 61 - matriz: el informe acredita cada requisito con sus casos reales y distingue capacidades no aplicables
+  ---
+  duration_ms: 4.938958
+  type: 'test'
+  ...
+# Subtest: informe: registra el origen efímero efectivo sin arrastrar la baseURL por defecto ni mutar opciones
+ok 62 - informe: registra el origen efímero efectivo sin arrastrar la baseURL por defecto ni mutar opciones
+  ---
+  duration_ms: 0.171875
+  type: 'test'
+  ...
+# Subtest: CLI de preflight: listado completo y selección WebKit sin iniciar navegadores o declarar pruebas aprobadas
+ok 63 - CLI de preflight: listado completo y selección WebKit sin iniciar navegadores o declarar pruebas aprobadas
+  ---
+  duration_ms: 684.140834
+  type: 'test'
+  ...
+# Subtest: CLI de preflight: un proyecto desconocido falla una vez antes del trabajo pesado
+ok 64 - CLI de preflight: un proyecto desconocido falla una vez antes del trabajo pesado
+  ---
+  duration_ms: 346.202041
+  type: 'test'
+  ...
+# Subtest: progreso compacto: conserva contadores, caso/fase y fallo breve sin una línea por cada inicio y éxito
+ok 65 - progreso compacto: conserva contadores, caso/fase y fallo breve sin una línea por cada inicio y éxito
+  ---
+  duration_ms: 1.241791
+  type: 'test'
+  ...
+# Subtest: CLI de compatibilidad: descubre la matriz sin iniciar motores ni incluir la suite Chromium
+ok 66 - CLI de compatibilidad: descubre la matriz sin iniciar motores ni incluir la suite Chromium
+  ---
+  duration_ms: 775.529958
+  type: 'test'
+  ...
+# Subtest: CLI de escritorio: smoke, motor y filtro reducen los casos antes de construir
+ok 67 - CLI de escritorio: smoke, motor y filtro reducen los casos antes de construir
+  ---
+  duration_ms: 1541.437542
+  type: 'test'
+  ...
+# Subtest: CLI de compatibilidad: rechaza un proyecto desconocido con un único diagnóstico
+ok 68 - CLI de compatibilidad: rechaza un proyecto desconocido con un único diagnóstico
+  ---
+  duration_ms: 353.225791
+  type: 'test'
+  ...
+# Subtest: CLI de compatibilidad: selección estrecha ejecuta sus casos aplicables y conserva el recorrido histórico de escritorio
+ok 69 - CLI de compatibilidad: selección estrecha ejecuta sus casos aplicables y conserva el recorrido histórico de escritorio
+  ---
+  duration_ms: 1549.6285
+  type: 'test'
+  ...
+# (node:65970) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-run.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: runner de escritorio: valores por defecto, selección y filtro como un solo argumento
+ok 70 - runner de escritorio: valores por defecto, selección y filtro como un solo argumento
+  ---
+  duration_ms: 2.24825
+  type: 'test'
+  ...
+# Subtest: runner de escritorio: preflight bloqueado impide construir o iniciar un servidor
+ok 71 - runner de escritorio: preflight bloqueado impide construir o iniciar un servidor
+  ---
+  duration_ms: 0.290958
+  type: 'test'
+  ...
+# Subtest: informe de escritorio: exige cada caso aprobado en ambos motores, no solo un contador favorable
+ok 72 - informe de escritorio: exige cada caso aprobado en ambos motores, no solo un contador favorable
+  ---
+  duration_ms: 1.205167
+  type: 'test'
+  ...
+# Subtest: informe de escritorio: rechaza omisiones, resultados ausentes, duplicados y pruebas de otro proyecto
+ok 73 - informe de escritorio: rechaza omisiones, resultados ausentes, duplicados y pruebas de otro proyecto
+  ---
+  duration_ms: 0.709334
+  type: 'test'
+  ...
+# Subtest: informe de escritorio: fallo, interrupción y reintento no quedan como aprobados
+ok 74 - informe de escritorio: fallo, interrupción y reintento no quedan como aprobados
+  ---
+  duration_ms: 1.238792
+  type: 'test'
+  ...
+# Subtest: informe de escritorio: smoke y filtros no acreditan la cobertura completa
+ok 75 - informe de escritorio: smoke y filtros no acreditan la cobertura completa
+  ---
+  duration_ms: 0.428042
+  type: 'test'
+  ...
+# Subtest: informe de escritorio: el diagnóstico principal identifica el fallo real antes de los casos no ejecutados
+ok 76 - informe de escritorio: el diagnóstico principal identifica el fallo real antes de los casos no ejecutados
+  ---
+  duration_ms: 0.249917
+  type: 'test'
+  ...
+# Subtest: espacio: mide los destinos y exige margen antes de iniciar navegadores/build
+ok 77 - espacio: mide los destinos y exige margen antes de iniciar navegadores/build
+  ---
+  duration_ms: 1.541584
+  type: 'test'
+  ...
+# Subtest: espacio: el temporal lleno bloquea aunque el destino de informes tenga espacio
+ok 78 - espacio: el temporal lleno bloquea aunque el destino de informes tenga espacio
+  ---
+  duration_ms: 0.341583
+  type: 'test'
+  ...
+# Subtest: espacio: usa bloques disponibles al usuario y admite el límite exacto
+ok 79 - espacio: usa bloques disponibles al usuario y admite el límite exacto
+  ---
+  duration_ms: 0.113375
+  type: 'test'
+  ...
+# Subtest: CLI con disco sin margen: diagnóstico único, informe parcial y ningún navegador o build iniciado
+ok 80 - CLI con disco sin margen: diagnóstico único, informe parcial y ningún navegador o build iniciado
+  ---
+  duration_ms: 422.397709
+  type: 'test'
+  ...
+# Subtest: CLI: si falta el navegador después de medir espacio, el informe identifica preflight
+ok 81 - CLI: si falta el navegador después de medir espacio, el informe identifica preflight
+  ---
+  duration_ms: 430.191042
+  type: 'test'
+  ...
+# (node:65995) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-run.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: visual: selección explícita separada, seis proyectos y actualización solo intencional
+ok 82 - visual: selección explícita separada, seis proyectos y actualización solo intencional
+  ---
+  duration_ms: 1.275
+  type: 'test'
+  ...
+# Subtest: visual: descubrimiento de 26 casos sin motores ni casos funcionales y configuración estricta
+ok 83 - visual: descubrimiento de 26 casos sin motores ni casos funcionales y configuración estricta
+  ---
+  duration_ms: 1153.674583
+  type: 'test'
+  ...
+# (node:66006) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: referencias: 52 imágenes independientes, 26 casos y adaptación solo en proyectos estrechos
+ok 84 - referencias: 52 imágenes independientes, 26 casos y adaptación solo en proyectos estrechos
+  ---
+  duration_ms: 2.031292
+  type: 'test'
+  ...
+# Subtest: referencias: generación pendiente de revisión, archivos exactos y dimensiones reales de cada estado
+ok 85 - referencias: generación pendiente de revisión, archivos exactos y dimensiones reales de cada estado
+  ---
+  duration_ms: 10.611833
+  type: 'test'
+  ...
+# Subtest: referencias: rechaza entorno o binario distintos sin comparar silenciosamente entre plataformas
+ok 86 - referencias: rechaza entorno o binario distintos sin comparar silenciosamente entre plataformas
+  ---
+  duration_ms: 0.861
+  type: 'test'
+  ...
+# Subtest: referencias: falta de manifiesto, edición manual, PNG ajeno o política ampliada bloquean la comparación
+ok 87 - referencias: falta de manifiesto, edición manual, PNG ajeno o política ampliada bloquean la comparación
+  ---
+  duration_ms: 0.983041
+  type: 'test'
+  ...
+# Subtest: referencias: evaluación estricta rechaza huecos, duplicados, fallos, reintentos y contadores inventados
+ok 88 - referencias: evaluación estricta rechaza huecos, duplicados, fallos, reintentos y contadores inventados
+  ---
+  duration_ms: 0.73025
+  type: 'test'
+  ...
+# Subtest: referencias: los estados capturados corresponden exactamente a los casos seleccionados, también al comparar
+ok 89 - referencias: los estados capturados corresponden exactamente a los casos seleccionados, también al comparar
+  ---
+  duration_ms: 0.35575
+  type: 'test'
+  ...
+# (node:66007) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/catalog.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: el catálogo conserva tres áreas, diecinueve herramientas y los cinco grupos en su orden
+ok 90 - el catálogo conserva tres áreas, diecinueve herramientas y los cinco grupos en su orden
+  ---
+  duration_ms: 2.031958
+  type: 'test'
+  ...
+# Subtest: el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos
+ok 91 - el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos
+  ---
+  duration_ms: 0.605542
+  type: 'test'
+  ...
+# Subtest: metadata, páginas MDX, palabras clave y cuerpos tienen los mismos conceptos e IDs únicos
+ok 92 - metadata, páginas MDX, palabras clave y cuerpos tienen los mismos conceptos e IDs únicos
+  ---
+  duration_ms: 14.239459
+  type: 'test'
+  ...
+# Subtest: el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado
+ok 93 - el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado
+  ---
+  duration_ms: 2.793417
+  type: 'test'
+  ...
+# Subtest: catálogo, sidebar y búsqueda admiten conceptos en cualquier área sin depender de SQL
+ok 94 - catálogo, sidebar y búsqueda admiten conceptos en cualquier área sin depender de SQL
+  ---
+  duration_ms: 0.213708
+  type: 'test'
+  ...
+# Subtest: el catálogo rechaza conceptos huérfanos e IDs repetidos antes de publicar enlaces inválidos
+ok 95 - el catálogo rechaza conceptos huérfanos e IDs repetidos antes de publicar enlaces inválidos
+  ---
+  duration_ms: 0.318292
+  type: 'test'
+  ...
+# Subtest: Docusaurus recibe la metadata canónica conservando contenido, opciones y descripciones SEO
+ok 96 - Docusaurus recibe la metadata canónica conservando contenido, opciones y descripciones SEO
+  ---
+  duration_ms: 1.710416
+  type: 'test'
+  ...
+# (node:66008) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible
+ok 97 - ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible
+  ---
+  duration_ms: 375.13475
+  type: 'test'
+  ...
+# Subtest: preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar
+ok 98 - preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar
+  ---
+  duration_ms: 35.781041
+  type: 'test'
+  ...
+# Subtest: preset cliente: las sugerencias priorizan recientes y eliminan duplicados
+ok 99 - preset cliente: las sugerencias priorizan recientes y eliminan duplicados
+  ---
+  duration_ms: 21.054875
+  type: 'test'
+  ...
+# Subtest: preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores
+ok 100 - preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores
+  ---
+  duration_ms: 48.403
+  type: 'test'
+  ...
+# Subtest: preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map
+ok 101 - preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map
+  ---
+  duration_ms: 219.960792
+  type: 'test'
+  ...
+# Subtest: salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor
+ok 102 - salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor
+  ---
+  duration_ms: 13.17
+  type: 'test'
+  ...
+# Subtest: panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes
+ok 103 - panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes
+  ---
+  duration_ms: 82.893375
+  type: 'test'
+  ...
+# (node:66009) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/final-verification.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: auditoría publicada: comprueba la ruta canónica de cada HTML antes de ejecutar UI
+ok 104 - auditoría publicada: comprueba la ruta canónica de cada HTML antes de ejecutar UI
+  ---
+  duration_ms: 23.259083
+  type: 'test'
+  ...
+# Subtest: comparación final: distingue bundle total e inicial y favoritos sin referencia previa
+ok 105 - comparación final: distingue bundle total e inicial y favoritos sin referencia previa
+  ---
+  duration_ms: 2.970958
+  type: 'test'
+  ...
+# Subtest: presupuesto: recalcula p95 de muestras crudas y no acepta un resumen antiguo favorable
+ok 106 - presupuesto: recalcula p95 de muestras crudas y no acepta un resumen antiguo favorable
+  ---
+  duration_ms: 0.650458
+  type: 'test'
+  ...
+# Subtest: muestras ausentes o inválidas no se convierten en cero ni acreditan el presupuesto
+ok 107 - muestras ausentes o inválidas no se convierten en cero ni acreditan el presupuesto
+  ---
+  duration_ms: 1.315125
+  type: 'test'
+  ...
+# Subtest: comparación: ejecuciones parciales, perfiles o rutas eliminados y favoritos sin medir quedan pendientes
+ok 108 - comparación: ejecuciones parciales, perfiles o rutas eliminados y favoritos sin medir quedan pendientes
+  ---
+  duration_ms: 1.631875
+  type: 'test'
+  ...
+# Subtest: comparación: cambiar navegador, CPU, viewport o red impide atribuir diferencias a la aplicación
+ok 109 - comparación: cambiar navegador, CPU, viewport o red impide atribuir diferencias a la aplicación
+  ---
+  duration_ms: 1.1455
+  type: 'test'
+  ...
+# Subtest: Event Timing: conserva cobertura parcial y no etiqueta el proxy DOM como INP
+ok 110 - Event Timing: conserva cobertura parcial y no etiqueta el proxy DOM como INP
+  ---
+  duration_ms: 0.362875
+  type: 'test'
+  ...
+# Subtest: procedencia incompleta o esquema desconocido no permiten una comparación aprobada
+ok 111 - procedencia incompleta o esquema desconocido no permiten una comparación aprobada
+  ---
+  duration_ms: 1.207792
+  type: 'test'
+  ...
+# Subtest: crecimiento: mil entradas sintéticas conservan IDs únicos y ranking del motor real
+ok 112 - crecimiento: mil entradas sintéticas conservan IDs únicos y ranking del motor real
+  ---
+  duration_ms: 6.570833
+  type: 'test'
+  ...
+# Subtest: auditoría publicada: detecta repaso retirado, h1 duplicado y zoom bloqueado
+ok 113 - auditoría publicada: detecta repaso retirado, h1 duplicado y zoom bloqueado
+  ---
+  duration_ms: 6.158625
+  type: 'test'
+  ...
+# Subtest: auditoría publicada: los literales de scripts no se cuentan como estructura visible
+ok 114 - auditoría publicada: los literales de scripts no se cuentan como estructura visible
+  ---
+  duration_ms: 1.81575
+  type: 'test'
+  ...
+# Subtest: portada: el cargador no debe descargar un chunk compartido con cuerpos de apuntes
+ok 115 - portada: el cargador no debe descargar un chunk compartido con cuerpos de apuntes
+  ---
+  duration_ms: 4.370417
+  type: 'test'
+  ...
+# (node:66010) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/palettes.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: restaura cualquiera de los ocho colores guardados antes de pintar
+ok 116 - restaura cualquiera de los ocho colores guardados antes de pintar
+  ---
+  duration_ms: 3.927166
+  type: 'test'
+  ...
+# Subtest: convierte las antiguas paletas al color equivalente
+ok 117 - convierte las antiguas paletas al color equivalente
+  ---
+  duration_ms: 1.160875
+  type: 'test'
+  ...
+# Subtest: una elección inválida o la falta de almacenamiento conserva un color válido
+ok 118 - una elección inválida o la falta de almacenamiento conserva un color válido
+  ---
+  duration_ms: 1.821125
+  type: 'test'
+  ...
+# Subtest: los colores del texto tienen contraste suficiente sobre negro
+ok 119 - los colores del texto tienen contraste suficiente sobre negro
+  ---
+  duration_ms: 0.221333
+  type: 'test'
+  ...
+# (node:66011) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/personal-library.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: recientes: valida fechas e IDs, deduplica por fecha, desempata por ID y limita a veinte
+ok 120 - recientes: valida fechas e IDs, deduplica por fecha, desempata por ID y limita a veinte
+  ---
+  duration_ms: 1.987125
+  type: 'test'
+  ...
+# Subtest: versiones y formas inválidas se recuperan sin lanzar; favoritos filtran sin cambiar orden
+ok 121 - versiones y formas inválidas se recuperan sin lanzar; favoritos filtran sin cambiar orden
+  ---
+  duration_ms: 0.200792
+  type: 'test'
+  ...
+# Subtest: SSR vacío y estable; hidratar lee ambas colecciones sin escribir ni sobrescribirlas
+ok 122 - SSR vacío y estable; hidratar lee ambas colecciones sin escribir ni sobrescribirlas
+  ---
+  duration_ms: 0.43825
+  type: 'test'
+  ...
+# Subtest: activación directa antes de hidratar espera la lectura; efectos repetidos registran una sola visita
+ok 123 - activación directa antes de hidratar espera la lectura; efectos repetidos registran una sola visita
+  ---
+  duration_ms: 0.549917
+  type: 'test'
+  ...
+# Subtest: visitas y revisitas en cualquier área: una por activación, fechas crecientes y máximo veinte
+ok 124 - visitas y revisitas en cualquier área: una por activación, fechas crecientes y máximo veinte
+  ---
+  duration_ms: 0.630375
+  type: 'test'
+  ...
+# Subtest: favoritos conservan inserción y quitar/guardar envía al final; cada escritura afecta solo su clave
+ok 125 - favoritos conservan inserción y quitar/guardar envía al final; cada escritura afecta solo su clave
+  ---
+  duration_ms: 0.235666
+  type: 'test'
+  ...
+# Subtest: corrupción de una clave no borra la otra ni escribe al iniciar
+ok 126 - corrupción de una clave no borra la otra ni escribe al iniciar
+  ---
+  duration_ms: 0.177084
+  type: 'test'
+  ...
+# Subtest: almacenamiento inaccesible: conserva memoria y solo avisa tras una acción; no sobrescribe lo que no pudo leer
+ok 127 - almacenamiento inaccesible: conserva memoria y solo avisa tras una acción; no sobrescribe lo que no pudo leer
+  ---
+  duration_ms: 0.172792
+  type: 'test'
+  ...
+# Subtest: cuota llena: acción inmediata en memoria, siguientes escrituras pueden recuperar persistencia
+ok 128 - cuota llena: acción inmediata en memoria, siguientes escrituras pueden recuperar persistencia
+  ---
+  duration_ms: 0.144666
+  type: 'test'
+  ...
+# Subtest: storage sincroniza solo la clave afectada, última escritura gana y nunca responde con otra escritura
+ok 129 - storage sincroniza solo la clave afectada, última escritura gana y nunca responde con otra escritura
+  ---
+  duration_ms: 0.192541
+  type: 'test'
+  ...
+# (node:66012) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-actions.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: acciones: sustituir y recuperar conserva todos los archivos, revisiones y el backup al recargar
+ok 130 - acciones: sustituir y recuperar conserva todos los archivos, revisiones y el backup al recargar
+  ---
+  duration_ms: 5.149792
+  type: 'test'
+  ...
+# Subtest: acciones: sustituciones iguales no consumen backup y las inválidas no cambian el borrador
+ok 131 - acciones: sustituciones iguales no consumen backup y las inválidas no cambian el borrador
+  ---
+  duration_ms: 0.71575
+  type: 'test'
+  ...
+# Subtest: acciones: un backup corrupto o ajeno no descarta el código principal y el formato anterior sigue válido
+ok 132 - acciones: un backup corrupto o ajeno no descarta el código principal y el formato anterior sigue válido
+  ---
+  duration_ms: 0.129042
+  type: 'test'
+  ...
+# Subtest: acciones: fallo de escritura conserva backup en memoria y el reintento guarda la edición más reciente
+ok 133 - acciones: fallo de escritura conserva backup en memoria y el reintento guarda la edición más reciente
+  ---
+  duration_ms: 0.435084
+  type: 'test'
+  ...
+# Subtest: acciones: una escritura pendiente no guarda una revisión anterior como backup de la nueva
+ok 134 - acciones: una escritura pendiente no guarda una revisión anterior como backup de la nueva
+  ---
+  duration_ms: 0.305583
+  type: 'test'
+  ...
+# Subtest: acciones: un ejemplo abre, conserva la revisión anterior y no ejecuta ni reinicia el motor
+ok 135 - acciones: un ejemplo abre, conserva la revisión anterior y no ejecuta ni reinicia el motor
+  ---
+  duration_ms: 3.986208
+  type: 'test'
+  ...
+# Subtest: acciones: un ejemplo idéntico no anuncia una recuperación inexistente
+ok 136 - acciones: un ejemplo idéntico no anuncia una recuperación inexistente
+  ---
+  duration_ms: 0.338291
+  type: 'test'
+  ...
+# Subtest: acciones: el ejemplo queda editable aunque la descarga falle; reintentar no reemplaza el texto
+ok 137 - acciones: el ejemplo queda editable aunque la descarga falle; reintentar no reemplaza el texto
+  ---
+  duration_ms: 4.947458
+  type: 'test'
+  ...
+# Subtest: acciones: navegar o colapsar durante una sustitución tardía no reemplaza ni reabre el contexto
+ok 138 - acciones: navegar o colapsar durante una sustitución tardía no reemplaza ni reabre el contexto
+  ---
+  duration_ms: 3.363917
+  type: 'test'
+  ...
+# Subtest: acciones: los IDs y lenguajes incompatibles se rechazan antes de modificar código o crear recursos
+ok 139 - acciones: los IDs y lenguajes incompatibles se rechazan antes de modificar código o crear recursos
+  ---
+  duration_ms: 0.860708
+  type: 'test'
+  ...
+# (node:66013) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera
+ok 140 - puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera
+  ---
+  duration_ms: 1.067167
+  type: 'test'
+  ...
+# Subtest: puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido
+ok 141 - puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido
+  ---
+  duration_ms: 0.391916
+  type: 'test'
+  ...
+# Subtest: puente: contexto SQL y esquema serializables, con límites y tipos completos
+ok 142 - puente: contexto SQL y esquema serializables, con límites y tipos completos
+  ---
+  duration_ms: 0.165917
+  type: 'test'
+  ...
+# Subtest: medición de navegador: conserva detail aunque PerformanceMeasure.toJSON lo omita
+ok 143 - medición de navegador: conserva detail aunque PerformanceMeasure.toJSON lo omita
+  ---
+  duration_ms: 2.236333
+  type: 'test'
+  ...
+# (node:66015) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-context.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SQL y pandas habilitan sus proveedores diferidos sin crear motores al resolver contexto
+ok 144 - SQL y pandas habilitan sus proveedores diferidos sin crear motores al resolver contexto
+  ---
+  duration_ms: 49.665042
+  type: 'test'
+  ...
+# Subtest: SELECT y WHERE comparten identidad de workspace; no se deriva contexto de categorías ni de títulos
+ok 145 - SELECT y WHERE comparten identidad de workspace; no se deriva contexto de categorías ni de títulos
+  ---
+  duration_ms: 0.292
+  type: 'test'
+  ...
+# Subtest: pandas cambia de perfil y workspace mediante su metadata publicada
+ok 146 - pandas cambia de perfil y workspace mediante su metadata publicada
+  ---
+  duration_ms: 0.200834
+  type: 'test'
+  ...
+# Subtest: la clave separa herramienta, perfil, dataset y versión; no depende del concepto ni de versiones del motor
+ok 147 - la clave separa herramienta, perfil, dataset y versión; no depende del concepto ni de versiones del motor
+  ---
+  duration_ms: 0.08875
+  type: 'test'
+  ...
+# Subtest: un tercer lenguaje y varios perfiles SQL usan el mismo registro y resolver sin ramas por lenguaje
+ok 148 - un tercer lenguaje y varios perfiles SQL usan el mismo registro y resolver sin ramas por lenguaje
+  ---
+  duration_ms: 0.320916
+  type: 'test'
+  ...
+# Subtest: consultar perfiles es puro; cargar proveedores es explícito, comparte promesa y no construye motores
+ok 149 - consultar perfiles es puro; cargar proveedores es explícito, comparte promesa y no construye motores
+  ---
+  duration_ms: 0.129875
+  type: 'test'
+  ...
+# Subtest: una carga fallida puede reintentarse y no queda guardada como proveedor válido
+ok 150 - una carga fallida puede reintentarse y no queda guardada como proveedor válido
+  ---
+  duration_ms: 0.427209
+  type: 'test'
+  ...
+# Subtest: el registro rechaza identidades ambiguas, capacidades inválidas y perfiles habilitados sin proveedores
+ok 151 - el registro rechaza identidades ambiguas, capacidades inválidas y perfiles habilitados sin proveedores
+  ---
+  duration_ms: 0.347916
+  type: 'test'
+  ...
+# Subtest: un perfil inválido no muta el registro después de crearlo y el contexto exige metadata coherente
+ok 152 - un perfil inválido no muta el registro después de crearlo y el contexto exige metadata coherente
+  ---
+  duration_ms: 0.153625
+  type: 'test'
+  ...
+# (node:66016) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-contracts.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: el protocolo acepta eventos de ambos motores sin handles o clases del runtime
+ok 153 - el protocolo acepta eventos de ambos motores sin handles o clases del runtime
+  ---
+  duration_ms: 1.039917
+  type: 'test'
+  ...
+# Subtest: versiones, tipos desconocidos, identidades ausentes y respuestas de otro contexto se rechazan
+ok 154 - versiones, tipos desconocidos, identidades ausentes y respuestas de otro contexto se rechazan
+  ---
+  duration_ms: 0.118
+  type: 'test'
+  ...
+# Subtest: columnas y valores coinciden sin confundir null, vacío, booleanos o enteros grandes
+ok 155 - columnas y valores coinciden sin confundir null, vacío, booleanos o enteros grandes
+  ---
+  duration_ms: 0.219542
+  type: 'test'
+  ...
+# Subtest: el protocolo limita tablas y exige estados finales y localizaciones de error válidos
+ok 156 - el protocolo limita tablas y exige estados finales y localizaciones de error válidos
+  ---
+  duration_ms: 0.115
+  type: 'test'
+  ...
+# Subtest: arrays dispersos no se aceptan como filas, columnas o sugerencias completas
+ok 157 - arrays dispersos no se aceptan como filas, columnas o sugerencias completas
+  ---
+  duration_ms: 0.125792
+  type: 'test'
+  ...
+# Subtest: sugerencias validadas por archivo, workspace, revisión y offsets UTF-16 del documento
+ok 158 - sugerencias validadas por archivo, workspace, revisión y offsets UTF-16 del documento
+  ---
+  duration_ms: 0.104708
+  type: 'test'
+  ...
+# (node:66017) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-data.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: el dataset canónico conserva tres columnas, tres productos y el precio entero, sin id añadido
+ok 159 - el dataset canónico conserva tres columnas, tres productos y el precio entero, sin id añadido
+  ---
+  duration_ms: 1.691959
+  type: 'test'
+  ...
+# Subtest: materializar el dataset histórico SQLite prepara parámetros y conserva sus tres productos
+ok 160 - materializar el dataset histórico SQLite prepara parámetros y conserva sus tres productos
+  ---
+  duration_ms: 15.164167
+  type: 'test'
+  ...
+# Subtest: los valores con comillas o SQL se enlazan como datos, sin interpolarlos en sentencias
+ok 161 - los valores con comillas o SQL se enlazan como datos, sin interpolarlos en sentencias
+  ---
+  duration_ms: 0.254708
+  type: 'test'
+  ...
+# Subtest: Python recibe el mismo JSON tipado y cada materialización tiene su propia copia
+ok 162 - Python recibe el mismo JSON tipado y cada materialización tiene su propia copia
+  ---
+  duration_ms: 0.404
+  type: 'test'
+  ...
+# Subtest: dataset y runtime desconocidos o una operación abortada no preparan otro entorno por defecto
+ok 163 - dataset y runtime desconocidos o una operación abortada no preparan otro entorno por defecto
+  ---
+  duration_ms: 0.468209
+  type: 'test'
+  ...
+# Subtest: DataFrame está publicado bajo Pandas, con búsqueda propia y un único ejemplo breve
+ok 164 - DataFrame está publicado bajo Pandas, con búsqueda propia y un único ejemplo breve
+  ---
+  duration_ms: 7.689167
+  type: 'test'
+  ...
+# Subtest: las cinco rutas históricas conservan su identidad y ejemplos al revisar el contenido; el snapshot original sigue disponible
+ok 165 - las cinco rutas históricas conservan su identidad y ejemplos al revisar el contenido; el snapshot original sigue disponible
+  ---
+  duration_ms: 3.136
+  type: 'test'
+  ...
+# Subtest: anterior y siguiente permanecen dentro de la misma herramienta
+ok 166 - anterior y siguiente permanecen dentro de la misma herramienta
+  ---
+  duration_ms: 0.502208
+  type: 'test'
+  ...
+# (node:66018) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-drafts.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: borradores: carga diferida, edición inmediata, revisiones y guardado agrupado por herramienta
+ok 167 - borradores: carga diferida, edición inmediata, revisiones y guardado agrupado por herramienta
+  ---
+  duration_ms: 1.979542
+  type: 'test'
+  ...
+# Subtest: borradores: recuperar en otra sesión conserva texto y avisa del cambio de entorno
+ok 168 - borradores: recuperar en otra sesión conserva texto y avisa del cambio de entorno
+  ---
+  duration_ms: 0.326667
+  type: 'test'
+  ...
+# Subtest: borradores: una escritura tardía no declara guardada una edición posterior
+ok 169 - borradores: una escritura tardía no declara guardada una edición posterior
+  ---
+  duration_ms: 0.338584
+  type: 'test'
+  ...
+# Subtest: borradores: fallo de almacenamiento conserva edición en memoria
+ok 170 - borradores: fallo de almacenamiento conserva edición en memoria
+  ---
+  duration_ms: 0.254875
+  type: 'test'
+  ...
+# Subtest: borradores: conflicto entre sesiones guarda copia recuperable sin sobrescribir la ganadora
+ok 171 - borradores: conflicto entre sesiones guarda copia recuperable sin sobrescribir la ganadora
+  ---
+  duration_ms: 0.402417
+  type: 'test'
+  ...
+# Subtest: borradores: valida clave, archivos, versión, UTF-8 y restaura una copia inmutable
+ok 172 - borradores: valida clave, archivos, versión, UTF-8 y restaura una copia inmutable
+  ---
+  duration_ms: 2.082333
+  type: 'test'
+  ...
+# (node:66019) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor-completion.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación
+ok 173 - editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación
+  ---
+  duration_ms: 2.125584
+  type: 'test'
+  ...
+# Subtest: editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual
+ok 174 - editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual
+  ---
+  duration_ms: 0.227542
+  type: 'test'
+  ...
+# Subtest: editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas
+ok 175 - editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas
+  ---
+  duration_ms: 0.175709
+  type: 'test'
+  ...
+# (node:66020) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados
+ok 176 - editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados
+  ---
+  duration_ms: 9.160625
+  type: 'test'
+  ...
+# Subtest: editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales
+ok 177 - editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales
+  ---
+  duration_ms: 42.152667
+  type: 'test'
+  ...
+# (node:66021) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-examples.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ejemplos: IDs únicos para las 61 variantes SQL y pandas; ocho IDs anteriores y defaults conservados
+ok 178 - ejemplos: IDs únicos para las 61 variantes SQL y pandas; ocho IDs anteriores y defaults conservados
+  ---
+  duration_ms: 0.86675
+  type: 'test'
+  ...
+# (node:66022) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-interaction.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ejecutar: botón y atajo comparten permiso solo para un workspace habilitado y listo
+ok 179 - ejecutar: botón y atajo comparten permiso solo para un workspace habilitado y listo
+  ---
+  duration_ms: 0.881833
+  type: 'test'
+  ...
+# (node:66023) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-isolation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: aislamiento: exige otro hostname y origen HTTP(S), sin credenciales, rutas o downgrade
+ok 180 - aislamiento: exige otro hostname y origen HTTP(S), sin credenciales, rutas o downgrade
+  ---
+  duration_ms: 3.894959
+  type: 'test'
+  ...
+# Subtest: aislamiento: origen exacto normalizado, sin prefijos engañosos ni aceptar null
+ok 181 - aislamiento: origen exacto normalizado, sin prefijos engañosos ni aceptar null
+  ---
+  duration_ms: 0.395833
+  type: 'test'
+  ...
+# Subtest: aislamiento: CSP propia restringe red, frames hijos, formularios y Workers al origen del runtime
+ok 182 - aislamiento: CSP propia restringe red, frames hijos, formularios y Workers al origen del runtime
+  ---
+  duration_ms: 0.41125
+  type: 'test'
+  ...
+# (node:66024) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: panel: resolver reconoce SQL/pandas ejecutables, sin categorías
+ok 183 - panel: resolver reconoce SQL/pandas ejecutables, sin categorías
+  ---
+  duration_ms: 1.161084
+  type: 'test'
+  ...
+# Subtest: panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo
+ok 184 - panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo
+  ---
+  duration_ms: 0.096958
+  type: 'test'
+  ...
+# Subtest: panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible
+ok 185 - panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible
+  ---
+  duration_ms: 0.111125
+  type: 'test'
+  ...
+# Subtest: panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados
+ok 186 - panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados
+  ---
+  duration_ms: 3.860208
+  type: 'test'
+  ...
+# Subtest: panel: añadir un perfil futuro no activa automáticamente un editor sin preparación
+ok 187 - panel: añadir un perfil futuro no activa automáticamente un editor sin preparación
+  ---
+  duration_ms: 0.411375
+  type: 'test'
+  ...
+# Subtest: diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda
+ok 188 - diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda
+  ---
+  duration_ms: 0.222916
+  type: 'test'
+  ...
+# Subtest: diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente
+ok 189 - diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente
+  ---
+  duration_ms: 2.250542
+  type: 'test'
+  ...
+# (node:66026) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-providers.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: proveedores: el completador recibe el mismo runtime del workspace sin crear otra VM
+ok 190 - proveedores: el completador recibe el mismo runtime del workspace sin crear otra VM
+  ---
+  duration_ms: 9.127917
+  type: 'test'
+  ...
+# Subtest: proveedores: un fallo al crear el completador libera el runtime ya creado
+ok 191 - proveedores: un fallo al crear el completador libera el runtime ya creado
+  ---
+  duration_ms: 1.330375
+  type: 'test'
+  ...
+# (node:66027) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados
+ok 192 - medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados
+  ---
+  duration_ms: 2.739083
+  type: 'test'
+  ...
+# Subtest: inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes
+ok 193 - inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes
+  ---
+  duration_ms: 2.416708
+  type: 'test'
+  ...
+# Subtest: inicialización Python: un error de paquetes rechaza la preparación y no entrega una VM parcial
+ok 194 - inicialización Python: un error de paquetes rechaza la preparación y no entrega una VM parcial
+  ---
+  duration_ms: 0.188417
+  type: 'test'
+  ...
+# Subtest: inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial
+ok 195 - inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial
+  ---
+  duration_ms: 0.145625
+  type: 'test'
+  ...
+# (node:66028) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Pyodide real: dataset compartido, DataFrame filtrado y precio numérico
+ok 196 - Pyodide real: dataset compartido, DataFrame filtrado y precio numérico
+  ---
+  duration_ms: 5560.404875
+  type: 'test'
+  ...
+# Subtest: Pyodide real: variables y cambios parciales persisten; reiniciar datos no modifica el paquete ni otra sesión
+ok 197 - Pyodide real: variables y cambios parciales persisten; reiniciar datos no modifica el paquete ni otra sesión
+  ---
+  duration_ms: 37.660291
+  type: 'test'
+  ...
+# Subtest: Pyodide real: stdout/stderr, await y última expresión; sintaxis y traceback conservan archivo y línea
+ok 198 - Pyodide real: stdout/stderr, await y última expresión; sintaxis y traceback conservan archivo y línea
+  ---
+  duration_ms: 15.32525
+  type: 'test'
+  ...
+# Subtest: Pyodide real: selección UTF-16 no ejecuta el resto y sitúa errores en el archivo original
+ok 199 - Pyodide real: selección UTF-16 no ejecuta el resto y sitúa errores en el archivo original
+  ---
+  duration_ms: 13.673833
+  type: 'test'
+  ...
+# Subtest: Pyodide real: null, vacío, booleano, bigint, fechas, cero filas y truncamiento son serializables
+ok 200 - Pyodide real: null, vacío, booleano, bigint, fechas, cero filas y truncamiento son serializables
+  ---
+  duration_ms: 22.338208
+  type: 'test'
+  ...
+# Subtest: Pyodide real: Jedi completa pandas sin ejecutar el programa; columnas siguen solo DataFrames registrados
+ok 201 - Pyodide real: Jedi completa pandas sin ejecutar el programa; columnas siguen solo DataFrames registrados
+  ---
+  duration_ms: 2878.398666
+  type: 'test'
+  ...
+# Subtest: Pyodide real: offsets de sugerencia son UTF-16 y disponer libera el entorno del núcleo
+ok 202 - Pyodide real: offsets de sugerencia son UTF-16 y disponer libera el entorno del núcleo
+  ---
+  duration_ms: 13.728458
+  type: 'test'
+  ...
+# Subtest: Pyodide real: completar columnas usa el esquema y no invoca propiedades del objeto del usuario
+ok 203 - Pyodide real: completar columnas usa el esquema y no invoca propiedades del objeto del usuario
+  ---
+  duration_ms: 11.895833
+  type: 'test'
+  ...
+# Error thrown in write:
+# Error: Se alcanzó el límite de salida de 1 MiB
+#     at send (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:55:82)
+#     at flush (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:61:9)
+#     at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:67:105)
+#     at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660783
+#     at handleEAGAIN (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659665)
+#     at readWriteHelper (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659781)
+#     at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660765)
+#     at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:84421)
+#     at doWritev (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:228608)
+#     at _fd_write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:230179)
+# Subtest: Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando
+ok 204 - Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando
+  ---
+  duration_ms: 16.283541
+  type: 'test'
+  ...
+# Subtest: Pyodide real: una función de una ejecución anterior conserva su excepción y señala la llamada actual
+ok 205 - Pyodide real: una función de una ejecución anterior conserva su excepción y señala la llamada actual
+  ---
+  duration_ms: 11.191291
+  type: 'test'
+  ...
+# (node:66031) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: medición de práctica: fases independientes por perfil sin conservar texto del usuario
+ok 206 - medición de práctica: fases independientes por perfil sin conservar texto del usuario
+  ---
+  duration_ms: 5.211625
+  type: 'test'
+  ...
+# Subtest: sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor
+ok 207 - sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor
+  ---
+  duration_ms: 3.497208
+  type: 'test'
+  ...
+# Subtest: sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores
+ok 208 - sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores
+  ---
+  duration_ms: 0.220125
+  type: 'test'
+  ...
+# Subtest: sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes
+ok 209 - sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes
+  ---
+  duration_ms: 1.298625
+  type: 'test'
+  ...
+# Subtest: sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla
+ok 210 - sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla
+  ---
+  duration_ms: 0.812416
+  type: 'test'
+  ...
+# Subtest: sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior
+ok 211 - sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior
+  ---
+  duration_ms: 0.651583
+  type: 'test'
+  ...
+# Subtest: sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo
+ok 212 - sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo
+  ---
+  duration_ms: 0.48025
+  type: 'test'
+  ...
+# Subtest: sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores
+ok 213 - sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores
+  ---
+  duration_ms: 0.253292
+  type: 'test'
+  ...
+# Subtest: sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado
+ok 214 - sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado
+  ---
+  duration_ms: 0.454917
+  type: 'test'
+  ...
+# Subtest: sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor
+ok 215 - sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor
+  ---
+  duration_ms: 2.972459
+  type: 'test'
+  ...
+# Subtest: sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores
+ok 216 - sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores
+  ---
+  duration_ms: 1.63
+  type: 'test'
+  ...
+# Subtest: sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run
+ok 217 - sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run
+  ---
+  duration_ms: 2.82725
+  type: 'test'
+  ...
+# Subtest: sesión: cancelación y eventos tardíos no contaminan el nuevo contexto
+ok 218 - sesión: cancelación y eventos tardíos no contaminan el nuevo contexto
+  ---
+  duration_ms: 1.741708
+  type: 'test'
+  ...
+# Subtest: sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end
+ok 219 - sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end
+  ---
+  duration_ms: 21.742583
+  type: 'test'
+  ...
+# Subtest: sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado
+ok 220 - sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado
+  ---
+  duration_ms: 5.677042
+  type: 'test'
+  ...
+# Subtest: sesión: completar ignora respuestas de una revisión anterior y no bloquea editar
+ok 221 - sesión: completar ignora respuestas de una revisión anterior y no bloquea editar
+  ---
+  duration_ms: 0.359583
+  type: 'test'
+  ...
+# Subtest: sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad
+ok 222 - sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad
+  ---
+  duration_ms: 6.008792
+  type: 'test'
+  ...
+# Subtest: sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar
+ok 223 - sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar
+  ---
+  duration_ms: 1.932416
+  type: 'test'
+  ...
+# Subtest: sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó
+ok 224 - sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó
+  ---
+  duration_ms: 1.917417
+  type: 'test'
+  ...
+# Subtest: sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución
+ok 225 - sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución
+  ---
+  duration_ms: 1.65475
+  type: 'test'
+  ...
+# Subtest: sesión: reinicios concurrentes comparten operación sin construir otro motor
+ok 226 - sesión: reinicios concurrentes comparten operación sin construir otro motor
+  ---
+  duration_ms: 0.460958
+  type: 'test'
+  ...
+# Subtest: sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor
+ok 227 - sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor
+  ---
+  duration_ms: 6.327917
+  type: 'test'
+  ...
+# Subtest: sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior
+ok 228 - sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior
+  ---
+  duration_ms: 0.706083
+  type: 'test'
+  ...
+# Subtest: sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal
+ok 229 - sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal
+  ---
+  duration_ms: 1.64325
+  type: 'test'
+  ...
+# Subtest: sesión: SQL → pandas → SQL durante descarga solo construye el último motor
+ok 230 - sesión: SQL → pandas → SQL durante descarga solo construye el último motor
+  ---
+  duration_ms: 0.508667
+  type: 'test'
+  ...
+# Subtest: sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código
+ok 231 - sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código
+  ---
+  duration_ms: 1.694958
+  type: 'test'
+  ...
+# (node:66032) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+# Subtest: SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero
+ok 232 - SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero
+  ---
+  duration_ms: 129.640542
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor
+ok 233 - SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor
+  ---
+  duration_ms: 23.869792
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores
+ok 234 - SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores
+  ---
+  duration_ms: 1.73375
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión
+ok 235 - SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión
+  ---
+  duration_ms: 2.224
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción
+ok 236 - SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción
+  ---
+  duration_ms: 0.837083
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión
+ok 237 - SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión
+  ---
+  duration_ms: 0.816041
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total
+ok 238 - SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total
+  ---
+  duration_ms: 1.727458
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar
+ok 239 - SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar
+  ---
+  duration_ms: 12.748667
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado
+ok 240 - SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado
+  ---
+  duration_ms: 25.344792
+  type: 'test'
+  ...
+# Subtest: SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito
+ok 241 - SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito
+  ---
+  duration_ms: 171.941917
+  type: 'test'
+  ...
+# (node:66034) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-verification.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: aceptación de tiempos: exige cuatro perfiles, treinta muestras por acción y fases frías separadas
+ok 242 - aceptación de tiempos: exige cuatro perfiles, treinta muestras por acción y fases frías separadas
+  ---
+  duration_ms: 3.299625
+  type: 'test'
+  ...
+# Subtest: aceptación de tiempos: un resumen favorable no oculta muestras lentas ni redefine el presupuesto
+ok 243 - aceptación de tiempos: un resumen favorable no oculta muestras lentas ni redefine el presupuesto
+  ---
+  duration_ms: 1.451458
+  type: 'test'
+  ...
+# Subtest: aceptación de tiempos: muestras ausentes, repetidas, negativas y fases incompletas impiden aprobar
+ok 244 - aceptación de tiempos: muestras ausentes, repetidas, negativas y fases incompletas impiden aprobar
+  ---
+  duration_ms: 3.100417
+  type: 'test'
+  ...
+# Subtest: aceptación de tiempos: Event Timing no observado se conserva como ausente y no se declara INP
+ok 245 - aceptación de tiempos: Event Timing no observado se conserva como ausente y no se declara INP
+  ---
+  duration_ms: 0.668
+  type: 'test'
+  ...
+# Subtest: aceptación de tiempos: pandas admite 300 ms de completado y el resto conserva 100 ms
+ok 246 - aceptación de tiempos: pandas admite 300 ms de completado y el resto conserva 100 ms
+  ---
+  duration_ms: 0.538291
+  type: 'test'
+  ...
+# Subtest: aceptación del bundle: compara iniciales por página, sin confundir chunks diferidos con descarga inicial
+ok 247 - aceptación del bundle: compara iniciales por página, sin confundir chunks diferidos con descarga inicial
+  ---
+  duration_ms: 0.187542
+  type: 'test'
+  ...
+# Subtest: aceptación global: no basta con declarar que la suite pasó ni con omitir un tamaño
+ok 248 - aceptación global: no basta con declarar que la suite pasó ni con omitir un tamaño
+  ---
+  duration_ms: 0.217125
+  type: 'test'
+  ...
+# Subtest: informe UI: conserva fallos, omisiones y proyecto al recorrer suites anidadas
+ok 249 - informe UI: conserva fallos, omisiones y proyecto al recorrer suites anidadas
+  ---
+  duration_ms: 0.959875
+  type: 'test'
+  ...
+# (node:66035) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/python-assets.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: assets Python: cierre transitivo determinista sin paquetes ajenos y con hashes completos
+ok 250 - assets Python: cierre transitivo determinista sin paquetes ajenos y con hashes completos
+  ---
+  duration_ms: 11.75925
+  type: 'test'
+  ...
+# Subtest: assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones
+ok 251 - assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones
+  ---
+  duration_ms: 0.141875
+  type: 'test'
+  ...
+# Subtest: assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin integridad
+ok 252 - assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin integridad
+  ---
+  duration_ms: 0.229
+  type: 'test'
+  ...
+# (node:66036) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/isolation/policy.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:66036) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# Subtest: runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin
+ok 253 - runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin
+  ---
+  duration_ms: 3065.273834
+  type: 'test'
+  ...
+# Subtest: HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked
+ok 254 - HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked
+  ---
+  duration_ms: 17.156917
+  type: 'test'
+  ...
+# (node:66042) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search-store.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: consultas pedagógicas: auxiliares, acentos, preguntas y operadores de comentarios
+ok 255 - consultas pedagógicas: auxiliares, acentos, preguntas y operadores de comentarios
+  ---
+  duration_ms: 3.90475
+  type: 'test'
+  ...
+# Subtest: título completo y prefijo superan coincidencias de palabras y los empates conservan orden
+ok 256 - título completo y prefijo superan coincidencias de palabras y los empates conservan orden
+  ---
+  duration_ms: 0.137875
+  type: 'test'
+  ...
+# Subtest: índice preparado: mil entradas conservan coincidencias sin reconstruir la normalización
+ok 257 - índice preparado: mil entradas conservan coincidencias sin reconstruir la normalización
+  ---
+  duration_ms: 1.800583
+  type: 'test'
+  ...
+# Subtest: la carga es diferida, comparte promesa y resuelve la consulta más reciente sin reabrir el diálogo
+ok 258 - la carga es diferida, comparte promesa y resuelve la consulta más reciente sin reabrir el diálogo
+  ---
+  duration_ms: 0.457792
+  type: 'test'
+  ...
+# Subtest: un error permite reintentar sin perder la consulta; elegir un resultado limpia y conserva la caché
+ok 259 - un error permite reintentar sin perder la consulta; elegir un resultado limpia y conserva la caché
+  ---
+  duration_ms: 0.414334
+  type: 'test'
+  ...
+# Subtest: los resultados se muestran en lotes de diez y una consulta nueva restaura el límite
+ok 260 - los resultados se muestran en lotes de diez y una consulta nueva restaura el límite
+  ---
+  duration_ms: 0.229708
+  type: 'test'
+  ...
+# Subtest: salir de la landing elimina su superficie y las suscripciones se pueden limpiar
+ok 261 - salir de la landing elimina su superficie y las suscripciones se pueden limpiar
+  ---
+  duration_ms: 0.299291
+  type: 'test'
+  ...
+# Subtest: buscador vacío: recientes primero sin duplicados; una consulta conserva su ranking
+ok 262 - buscador vacío: recientes primero sin duplicados; una consulta conserva su ranking
+  ---
+  duration_ms: 0.619584
+  type: 'test'
+  ...
+# Subtest: recientes recibidos durante la carga se usan al resolver; no mueven enlaces de un diálogo ya visible
+ok 263 - recientes recibidos durante la carga se usan al resolver; no mueven enlaces de un diálogo ya visible
+  ---
+  duration_ms: 0.237416
+  type: 'test'
+  ...
+# (node:66043) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: encuentra un concepto por lo que hace, sin recordar su nombre
+ok 264 - encuentra un concepto por lo que hace, sin recordar su nombre
+  ---
+  duration_ms: 2.151208
+  type: 'test'
+  ...
+# Subtest: ignora acentos y mayúsculas, y permite combinar área y concepto
+ok 265 - ignora acentos y mayúsculas, y permite combinar área y concepto
+  ---
+  duration_ms: 0.175792
+  type: 'test'
+  ...
+# Subtest: una coincidencia exacta en el título precede una mención en la descripción
+ok 266 - una coincidencia exacta en el título precede una mención en la descripción
+  ---
+  duration_ms: 0.098083
+  type: 'test'
+  ...
+# Subtest: una consulta sin coincidencias devuelve una lista vacía
+ok 267 - una consulta sin coincidencias devuelve una lista vacía
+  ---
+  duration_ms: 0.068375
+  type: 'test'
+  ...
+# (node:66044) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO clientes(id,nombre,email,ciudad,fecha_alta) VALUES(100,'X','cliente1@ejemplo.test','X','2026-01-01');
+# sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE productos SET precio=-1 WHERE id=1;
+# sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = UPDATE productos SET proveedor_id=9999 WHERE id=1;
+# sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO inventario(almacen_id,producto_id,unidades) VALUES(1,1,5);
+# sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO hijos(id,padre_id) VALUES(2,999);
+# sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO hijos VALUES(1,1,2);
+# sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE hijos SET cantidad=0;
+# Subtest: negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset
+ok 268 - negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset
+  ---
+  duration_ms: 22.872166
+  type: 'test'
+  ...
+# Subtest: negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas
+ok 269 - negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas
+  ---
+  duration_ms: 43.58925
+  type: 'test'
+  ...
+# Subtest: negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales
+ok 270 - negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales
+  ---
+  duration_ms: 13.398041
+  type: 'test'
+  ...
+# Subtest: negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia
+ok 271 - negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia
+  ---
+  duration_ms: 26.989042
+  type: 'test'
+  ...
+# Subtest: negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión
+ok 272 - negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión
+  ---
+  duration_ms: 18.305625
+  type: 'test'
+  ...
+# Subtest: materializador: restricciones de un dataset se crean incluso fuera del registro de negocio
+ok 273 - materializador: restricciones de un dataset se crean incluso fuera del registro de negocio
+  ---
+  duration_ms: 1.0755
+  type: 'test'
+  ...
+# (node:66045) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-client.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: preset cliente SQL: la matriz conserva capacidades y acciones revisadas para todas las fichas
+ok 274 - preset cliente SQL: la matriz conserva capacidades y acciones revisadas para todas las fichas
+  ---
+  duration_ms: 460.78675
+  type: 'test'
+  ...
+# Subtest: preset cliente SQL: seleccionar y navegar notifican al selector de React
+ok 275 - preset cliente SQL: seleccionar y navegar notifican al selector de React
+  ---
+  duration_ms: 6.870041
+  type: 'test'
+  ...
+# (node:66047) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dataset-export.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: exportación: seis scripts deterministas, mismos datos y restricciones, sin DROP ni credenciales
+ok 276 - exportación: seis scripts deterministas, mismos datos y restricciones, sin DROP ni credenciales
+  ---
+  duration_ms: 12.722792
+  type: 'test'
+  ...
+# Subtest: exportación: script SQLite se importa entero y comprueba FK, texto Unicode y fechas
+ok 277 - exportación: script SQLite se importa entero y comprueba FK, texto Unicode y fechas
+  ---
+  duration_ms: 4.067667
+  type: 'test'
+  ...
+# Subtest: exportación: fechas Oracle, Unicode SQL Server y charset MySQL tienen sintaxis propia
+ok 278 - exportación: fechas Oracle, Unicode SQL Server y charset MySQL tienen sintaxis propia
+  ---
+  duration_ms: 2.665167
+  type: 'test'
+  ...
+# Subtest: exportación: valores con comillas y backslash no rompen los literales ni interpolan identificadores
+ok 279 - exportación: valores con comillas y backslash no rompen los literales ni interpolan identificadores
+  ---
+  duration_ms: 0.317459
+  type: 'test'
+  ...
+# Subtest: exportación: archivos estáticos publicados coinciden byte a byte con el generador
+ok 280 - exportación: archivos estáticos publicados coinciden byte a byte con el generador
+  ---
+  duration_ms: 11.546
+  type: 'test'
+  ...
+# (node:66048) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dataset-migration.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migración SQL: copia código una vez, guarda revisión recuperable y conserva el registro original
+ok 281 - migración SQL: copia código una vez, guarda revisión recuperable y conserva el registro original
+  ---
+  duration_ms: 5.58875
+  type: 'test'
+  ...
+# Subtest: migración SQL: no sustituye un borrador nuevo ya editado y nunca migra pandas u otro dataset
+ok 282 - migración SQL: no sustituye un borrador nuevo ya editado y nunca migra pandas u otro dataset
+  ---
+  duration_ms: 0.427417
+  type: 'test'
+  ...
+# Subtest: migración SQL: dos conexiones conservan la ganadora por CAS y el origen sigue íntegro
+ok 283 - migración SQL: dos conexiones conservan la ganadora por CAS y el origen sigue íntegro
+  ---
+  duration_ms: 0.382667
+  type: 'test'
+  ...
+# Subtest: migración SQL: fallo de escritura conserva la copia en memoria y permite reintentar sin borrar el origen
+ok 284 - migración SQL: fallo de escritura conserva la copia en memoria y permite reintentar sin borrar el origen
+  ---
+  duration_ms: 0.411583
+  type: 'test'
+  ...
+# Subtest: migración SQL: cerrar durante la lectura no escribe un seed vacío ni borra el origen
+ok 285 - migración SQL: cerrar durante la lectura no escribe un seed vacío ni borra el origen
+  ---
+  duration_ms: 0.988042
+  type: 'test'
+  ...
+# (node:66049) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable
+ok 286 - dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable
+  ---
+  duration_ms: 1.017875
+  type: 'test'
+  ...
+# Subtest: dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia
+ok 287 - dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia
+  ---
+  duration_ms: 0.713542
+  type: 'test'
+  ...
+# Subtest: dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza
+ok 288 - dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza
+  ---
+  duration_ms: 0.179209
+  type: 'test'
+  ...
+# (node:66050) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores
+ok 289 - bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores
+  ---
+  duration_ms: 15.385584
+  type: 'test'
+  ...
+# Subtest: bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente
+ok 290 - bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente
+  ---
+  duration_ms: 0.947833
+  type: 'test'
+  ...
+# Subtest: bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo
+ok 291 - bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo
+  ---
+  duration_ms: 0.326875
+  type: 'test'
+  ...
+# Subtest: bloque SELECT → CAST: documentos modulares resuelven todos los destinos sin importar el corpus completo
+ok 292 - bloque SELECT → CAST: documentos modulares resuelven todos los destinos sin importar el corpus completo
+  ---
+  duration_ms: 52.402209
+  type: 'test'
+  ...
+# Subtest: bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM
+ok 293 - bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM
+  ---
+  duration_ms: 57.470833
+  type: 'test'
+  ...
+# (node:66051) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible
+ok 294 - SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible
+  ---
+  duration_ms: 2.483708
+  type: 'test'
+  ...
+# Subtest: SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras
+ok 295 - SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras
+  ---
+  duration_ms: 2.940667
+  type: 'test'
+  ...
+# Subtest: SQL: publicación incluye solo los 53 conceptos revisados y no importa cuerpos, filas o motores
+ok 296 - SQL: publicación incluye solo los 53 conceptos revisados y no importa cuerpos, filas o motores
+  ---
+  duration_ms: 8.05125
+  type: 'test'
+  ...
+# Subtest: SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes
+ok 297 - SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes
+  ---
+  duration_ms: 45.184083
+  type: 'test'
+  ...
+# Subtest: SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace
+ok 298 - SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace
+  ---
+  duration_ms: 0.389708
+  type: 'test'
+  ...
+# Subtest: SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos
+ok 299 - SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos
+  ---
+  duration_ms: 0.094084
+  type: 'test'
+  ...
+# Subtest: SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito
+ok 300 - SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito
+  ---
+  duration_ms: 2.05125
+  type: 'test'
+  ...
+# Subtest: SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime
+ok 301 - SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime
+  ---
+  duration_ms: 0.110167
+  type: 'test'
+  ...
+# Subtest: SQL: ausencia de sintaxis nativa se explica y no publica código ni ejecución local ficticios
+ok 302 - SQL: ausencia de sintaxis nativa se explica y no publica código ni ejecución local ficticios
+  ---
+  duration_ms: 0.35975
+  type: 'test'
+  ...
+# Subtest: SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código
+ok 303 - SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código
+  ---
+  duration_ms: 0.208167
+  type: 'test'
+  ...
+# Subtest: SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL
+ok 304 - SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL
+  ---
+  duration_ms: 0.097791
+  type: 'test'
+  ...
+# Subtest: SQL: estados y modos de ejecución mal serializados no eluden la revisión
+ok 305 - SQL: estados y modos de ejecución mal serializados no eluden la revisión
+  ---
+  duration_ms: 0.086
+  type: 'test'
+  ...
+# Subtest: SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado
+ok 306 - SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado
+  ---
+  duration_ms: 0.094334
+  type: 'test'
+  ...
+# Subtest: SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto
+ok 307 - SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto
+  ---
+  duration_ms: 0.179083
+  type: 'test'
+  ...
+# (node:66052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SELECT / Todas las columnas: resultado correcto
+ok 308 - SELECT / Todas las columnas: resultado correcto
+  ---
+  duration_ms: 1.95
+  type: 'test'
+  ...
+# Subtest: SELECT / Columnas concretas: resultado correcto
+ok 309 - SELECT / Columnas concretas: resultado correcto
+  ---
+  duration_ms: 0.105583
+  type: 'test'
+  ...
+# Subtest: SELECT · Todas las columnas / Todas las columnas: resultado correcto
+ok 310 - SELECT · Todas las columnas / Todas las columnas: resultado correcto
+  ---
+  duration_ms: 0.111083
+  type: 'test'
+  ...
+# Subtest: SELECT · Columnas concretas / Columnas concretas: resultado correcto
+ok 311 - SELECT · Columnas concretas / Columnas concretas: resultado correcto
+  ---
+  duration_ms: 0.081041
+  type: 'test'
+  ...
+# Subtest: SELECT · Alias AS / Un nombre claro en el resultado: resultado correcto
+ok 312 - SELECT · Alias AS / Un nombre claro en el resultado: resultado correcto
+  ---
+  duration_ms: 0.084416
+  type: 'test'
+  ...
+# Subtest: Comentarios / Una línea o al final: resultado correcto
+ok 313 - Comentarios / Una línea o al final: resultado correcto
+  ---
+  duration_ms: 0.101209
+  type: 'test'
+  ...
+# Subtest: Comentarios / Varias líneas: resultado correcto
+ok 314 - Comentarios / Varias líneas: resultado correcto
+  ---
+  duration_ms: 0.102625
+  type: 'test'
+  ...
+# Subtest: LIMIT / Hasta 5 filas completas: resultado correcto
+ok 315 - LIMIT / Hasta 5 filas completas: resultado correcto
+  ---
+  duration_ms: 0.071041
+  type: 'test'
+  ...
+# Subtest: LIMIT / Hasta 3 nombres: resultado correcto
+ok 316 - LIMIT / Hasta 3 nombres: resultado correcto
+  ---
+  duration_ms: 0.065458
+  type: 'test'
+  ...
+# Subtest: LIMIT · Máximo de filas / Hasta 5 filas completas: resultado correcto
+ok 317 - LIMIT · Máximo de filas / Hasta 5 filas completas: resultado correcto
+  ---
+  duration_ms: 0.108083
+  type: 'test'
+  ...
+# Subtest: LIMIT · OFFSET / Saltar 3 y mostrar hasta 3: resultado correcto
+ok 318 - LIMIT · OFFSET / Saltar 3 y mostrar hasta 3: resultado correcto
+  ---
+  duration_ms: 0.059292
+  type: 'test'
+  ...
+# Subtest: WHERE / Cumplir una condición: resultado correcto
+ok 319 - WHERE / Cumplir una condición: resultado correcto
+  ---
+  duration_ms: 0.058292
+  type: 'test'
+  ...
+# Subtest: WHERE · Operadores / Mayor o igual: resultado correcto
+ok 320 - WHERE · Operadores / Mayor o igual: resultado correcto
+  ---
+  duration_ms: 0.0505
+  type: 'test'
+  ...
+# Subtest: WHERE · Operadores / Distinto de: resultado correcto
+ok 321 - WHERE · Operadores / Distinto de: resultado correcto
+  ---
+  duration_ms: 0.867541
+  type: 'test'
+  ...
+# Subtest: WHERE · Texto, números y fechas / Comparar texto y números: resultado correcto
+ok 322 - WHERE · Texto, números y fechas / Comparar texto y números: resultado correcto
+  ---
+  duration_ms: 0.079042
+  type: 'test'
+  ...
+# Subtest: WHERE · Texto, números y fechas / Comparar una fecha: resultado correcto
+ok 323 - WHERE · Texto, números y fechas / Comparar una fecha: resultado correcto
+  ---
+  duration_ms: 0.066542
+  type: 'test'
+  ...
+# Subtest: WHERE · AND / Audio de al menos 1000 pesos: resultado correcto
+ok 324 - WHERE · AND / Audio de al menos 1000 pesos: resultado correcto
+  ---
+  duration_ms: 0.040833
+  type: 'test'
+  ...
+# Subtest: WHERE · OR / Audio o pantallas: resultado correcto
+ok 325 - WHERE · OR / Audio o pantallas: resultado correcto
+  ---
+  duration_ms: 0.045958
+  type: 'test'
+  ...
+# Subtest: WHERE · NOT / Excluir accesorios: resultado correcto
+ok 326 - WHERE · NOT / Excluir accesorios: resultado correcto
+  ---
+  duration_ms: 0.047
+  type: 'test'
+  ...
+# Subtest: WHERE · AND, OR y NOT / Dos categorías con un precio mínimo: resultado correcto
+ok 327 - WHERE · AND, OR y NOT / Dos categorías con un precio mínimo: resultado correcto
+  ---
+  duration_ms: 0.03525
+  type: 'test'
+  ...
+# Subtest: BETWEEN / De 250 a 1000 pesos: resultado correcto
+ok 328 - BETWEEN / De 250 a 1000 pesos: resultado correcto
+  ---
+  duration_ms: 0.041916
+  type: 'test'
+  ...
+# Subtest: BETWEEN · Extremos incluidos / De 250 a 1000 pesos: resultado correcto
+ok 329 - BETWEEN · Extremos incluidos / De 250 a 1000 pesos: resultado correcto
+  ---
+  duration_ms: 0.05425
+  type: 'test'
+  ...
+# Subtest: BETWEEN · NOT BETWEEN / Fuera de ese rango: resultado correcto
+ok 330 - BETWEEN · NOT BETWEEN / Fuera de ese rango: resultado correcto
+  ---
+  duration_ms: 0.048292
+  type: 'test'
+  ...
+# Subtest: IN / Elegir categorías: resultado correcto
+ok 331 - IN / Elegir categorías: resultado correcto
+  ---
+  duration_ms: 0.037
+  type: 'test'
+  ...
+# Subtest: IN · Lista de valores / Elegir categorías: resultado correcto
+ok 332 - IN · Lista de valores / Elegir categorías: resultado correcto
+  ---
+  duration_ms: 0.033792
+  type: 'test'
+  ...
+# Subtest: IN · NOT IN / Excluir dos proveedores: resultado correcto
+ok 333 - IN · NOT IN / Excluir dos proveedores: resultado correcto
+  ---
+  duration_ms: 0.035
+  type: 'test'
+  ...
+# Subtest: IN · NOT IN / Por qué un NULL cambia la comparación: resultado correcto
+ok 334 - IN · NOT IN / Por qué un NULL cambia la comparación: resultado correcto
+  ---
+  duration_ms: 0.034875
+  type: 'test'
+  ...
+# Subtest: LIKE / Nombres que empiezan por M: resultado correcto
+ok 335 - LIKE / Nombres que empiezan por M: resultado correcto
+  ---
+  duration_ms: 0.043792
+  type: 'test'
+  ...
+# Subtest: LIKE · Comodines % y _ / Nombres que empiezan por M: resultado correcto
+ok 336 - LIKE · Comodines % y _ / Nombres que empiezan por M: resultado correcto
+  ---
+  duration_ms: 0.034917
+  type: 'test'
+  ...
+# Subtest: LIKE · Comodines % y _ / M y cuatro caracteres más: resultado correcto
+ok 337 - LIKE · Comodines % y _ / M y cuatro caracteres más: resultado correcto
+  ---
+  duration_ms: 0.032333
+  type: 'test'
+  ...
+# Subtest: LIKE · NOT LIKE / Excluir un prefijo: resultado correcto
+ok 338 - LIKE · NOT LIKE / Excluir un prefijo: resultado correcto
+  ---
+  duration_ms: 0.043292
+  type: 'test'
+  ...
+# Subtest: ORDER BY / Del más barato al más caro: resultado correcto
+ok 339 - ORDER BY / Del más barato al más caro: resultado correcto
+  ---
+  duration_ms: 0.052709
+  type: 'test'
+  ...
+# Subtest: ORDER BY · ASC / Del más barato al más caro: resultado correcto
+ok 340 - ORDER BY · ASC / Del más barato al más caro: resultado correcto
+  ---
+  duration_ms: 0.054791
+  type: 'test'
+  ...
+# Subtest: ORDER BY · DESC / Del más caro al más barato: resultado correcto
+ok 341 - ORDER BY · DESC / Del más caro al más barato: resultado correcto
+  ---
+  duration_ms: 0.0475
+  type: 'test'
+  ...
+# Subtest: ORDER BY · Varias columnas / Categoría, precio y desempate: resultado correcto
+ok 342 - ORDER BY · Varias columnas / Categoría, precio y desempate: resultado correcto
+  ---
+  duration_ms: 0.053167
+  type: 'test'
+  ...
+# Subtest: ORDER BY · ORDER BY y LIMIT / Los 3 productos más caros: resultado correcto
+ok 343 - ORDER BY · ORDER BY y LIMIT / Los 3 productos más caros: resultado correcto
+  ---
+  duration_ms: 0.04475
+  type: 'test'
+  ...
+# Subtest: DISTINCT / Categorías que tienen productos: resultado correcto
+ok 344 - DISTINCT / Categorías que tienen productos: resultado correcto
+  ---
+  duration_ms: 0.042583
+  type: 'test'
+  ...
+# Subtest: DISTINCT · Una columna / Categorías que tienen productos: resultado correcto
+ok 345 - DISTINCT · Una columna / Categorías que tienen productos: resultado correcto
+  ---
+  duration_ms: 0.038
+  type: 'test'
+  ...
+# Subtest: DISTINCT · Combinación de columnas / Pares de categoría y proveedor: resultado correcto
+ok 346 - DISTINCT · Combinación de columnas / Pares de categoría y proveedor: resultado correcto
+  ---
+  duration_ms: 0.049792
+  type: 'test'
+  ...
+# Subtest: JOIN / Pedidos con el nombre del cliente: resultado correcto
+ok 347 - JOIN / Pedidos con el nombre del cliente: resultado correcto
+  ---
+  duration_ms: 0.075625
+  type: 'test'
+  ...
+# Subtest: JOIN · Condición ON / Pedidos con el nombre del cliente: resultado correcto
+ok 348 - JOIN · Condición ON / Pedidos con el nombre del cliente: resultado correcto
+  ---
+  duration_ms: 0.071
+  type: 'test'
+  ...
+# Subtest: JOIN · Alias de tablas / Nombres cortos para las tablas: resultado correcto
+ok 349 - JOIN · Alias de tablas / Nombres cortos para las tablas: resultado correcto
+  ---
+  duration_ms: 0.075834
+  type: 'test'
+  ...
+# Subtest: JOIN · Self join / Empleado y su gerente: resultado correcto
+ok 350 - JOIN · Self join / Empleado y su gerente: resultado correcto
+  ---
+  duration_ms: 0.047209
+  type: 'test'
+  ...
+# Subtest: JOIN · CROSS JOIN / Todas las parejas de almacén y cliente: resultado correcto
+ok 351 - JOIN · CROSS JOIN / Todas las parejas de almacén y cliente: resultado correcto
+  ---
+  duration_ms: 0.097375
+  type: 'test'
+  ...
+# Subtest: JOIN externos / Clientes con o sin pedidos: resultado correcto
+ok 352 - JOIN externos / Clientes con o sin pedidos: resultado correcto
+  ---
+  duration_ms: 0.107792
+  type: 'test'
+  ...
+# Subtest: JOIN externos · LEFT JOIN / Clientes con o sin pedidos: resultado correcto
+ok 353 - JOIN externos · LEFT JOIN / Clientes con o sin pedidos: resultado correcto
+  ---
+  duration_ms: 0.097625
+  type: 'test'
+  ...
+# Subtest: JOIN externos · LEFT JOIN / Condición dentro de ON: resultado correcto
+ok 354 - JOIN externos · LEFT JOIN / Condición dentro de ON: resultado correcto
+  ---
+  duration_ms: 0.062959
+  type: 'test'
+  ...
+# Subtest: JOIN externos · RIGHT JOIN / Conservar clientes desde la derecha: resultado correcto
+ok 355 - JOIN externos · RIGHT JOIN / Conservar clientes desde la derecha: resultado correcto
+  ---
+  duration_ms: 0.095791
+  type: 'test'
+  ...
+# Subtest: JOIN externos · FULL OUTER JOIN / Productos y proveedores sin pareja: resultado correcto
+ok 356 - JOIN externos · FULL OUTER JOIN / Productos y proveedores sin pareja: resultado correcto
+  ---
+  duration_ms: 0.060917
+  type: 'test'
+  ...
+# Subtest: JOIN externos · Anti join / Clientes que no han pedido: resultado correcto
+ok 357 - JOIN externos · Anti join / Clientes que no han pedido: resultado correcto
+  ---
+  duration_ms: 0.055542
+  type: 'test'
+  ...
+# Subtest: NULL / Clientes sin teléfono: resultado correcto
+ok 358 - NULL / Clientes sin teléfono: resultado correcto
+  ---
+  duration_ms: 0.03425
+  type: 'test'
+  ...
+# Subtest: NULL · IS NULL / Clientes sin teléfono: resultado correcto
+ok 359 - NULL · IS NULL / Clientes sin teléfono: resultado correcto
+  ---
+  duration_ms: 0.033666
+  type: 'test'
+  ...
+# Subtest: NULL · IS NOT NULL / Clientes con teléfono presente: resultado correcto
+ok 360 - NULL · IS NOT NULL / Clientes con teléfono presente: resultado correcto
+  ---
+  duration_ms: 0.039041
+  type: 'test'
+  ...
+# Subtest: NULL · NULLIF / Tratar el precio cero como ausente: resultado correcto
+ok 361 - NULL · NULLIF / Tratar el precio cero como ausente: resultado correcto
+  ---
+  duration_ms: 0.031208
+  type: 'test'
+  ...
+# Subtest: COALESCE / Mostrar un valor de reserva: resultado correcto
+ok 362 - COALESCE / Mostrar un valor de reserva: resultado correcto
+  ---
+  duration_ms: 0.043
+  type: 'test'
+  ...
+# Subtest: COALESCE · Varios valores alternativos / Teléfono, email y valor de reserva: resultado correcto
+ok 363 - COALESCE · Varios valores alternativos / Teléfono, email y valor de reserva: resultado correcto
+  ---
+  duration_ms: 0.04875
+  type: 'test'
+  ...
+# Subtest: CASE WHEN / Etiquetar el precio: resultado correcto
+ok 364 - CASE WHEN / Etiquetar el precio: resultado correcto
+  ---
+  duration_ms: 0.040708
+  type: 'test'
+  ...
+# Subtest: CASE WHEN · Condiciones y ELSE / Varias condiciones, en orden: resultado correcto
+ok 365 - CASE WHEN · Condiciones y ELSE / Varias condiciones, en orden: resultado correcto
+  ---
+  duration_ms: 0.039417
+  type: 'test'
+  ...
+# Subtest: CAST / Precio como texto: resultado correcto
+ok 366 - CAST / Precio como texto: resultado correcto
+  ---
+  duration_ms: 0.030667
+  type: 'test'
+  ...
+# Subtest: CAST · Conversión explícita / Texto numérico a entero: resultado correcto
+ok 367 - CAST · Conversión explícita / Texto numérico a entero: resultado correcto
+  ---
+  duration_ms: 0.028041
+  type: 'test'
+  ...
+# Subtest: CAST · Tipos por motor / Precio como texto: resultado correcto
+ok 368 - CAST · Tipos por motor / Precio como texto: resultado correcto
+  ---
+  duration_ms: 0.026292
+  type: 'test'
+  ...
+1..368
+# tests 368
+# suites 0
+# pass 368
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21190.49375

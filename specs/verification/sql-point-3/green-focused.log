@@ -1,0 +1,30 @@
+(node:64139) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-client.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preset cliente SQL: la matriz conserva capacidades y acciones revisadas para todas las fichas (402.985834ms)
+✔ preset cliente SQL: seleccionar y navegar notifican al selector de React (5.478917ms)
+(node:64140) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable (2.83975ms)
+✔ dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia (2.391ms)
+✔ dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza (0.2285ms)
+(node:64141) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores (17.141167ms)
+✔ bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente (1.032791ms)
+✔ bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo (0.332458ms)
+✔ bloque SELECT → CAST: documentos modulares resuelven todos los destinos sin importar el corpus completo (13.90375ms)
+✔ bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM (62.365084ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 715.444125

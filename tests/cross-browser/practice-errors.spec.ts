@@ -46,16 +46,16 @@ test(caseTitle('ERR-01'),async({page,context})=>{
   let release!:()=>void; const gate=new Promise<void>(resolve=>{release=resolve;}); let requested=false;
   await page.route(pattern,async route=>{requested=true; await gate; await route.continue();});
   try {
-    await go(page,sql.route); await page.getByRole('button',{name:'Probar este ejemplo: Columnas concretas',exact:true}).click();
+    await go(page,sql.route); await page.getByRole('button',{name:'Probar en SQLite: Columnas concretas',exact:true}).click();
     await expect.poll(()=>requested).toBe(true); await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
   } finally {release();}
   await expect(panel(page)).toBeHidden(); await page.unroute(pattern);
-  await page.getByRole('button',{name:'Probar este ejemplo: Columnas concretas',exact:true}).click(); await ready(page,sql);
+  await page.getByRole('button',{name:'Probar en SQLite: Columnas concretas',exact:true}).click(); await ready(page,sql);
   await expectCode(page,sql,'SELECT nombre, precio FROM productos;'); await expectNoExecution(page);
   const other=await context.newPage();
   try {
     await other.route(pattern,route=>route.abort()); await go(other,sql.route);
-    await other.getByRole('button',{name:'Probar este ejemplo: Columnas concretas',exact:true}).click();
+    await other.getByRole('button',{name:'Probar en SQLite: Columnas concretas',exact:true}).click();
     await expect(panel(other).getByRole('button',{name:'Reintentar',exact:true})).toBeVisible();
     await other.unroute(pattern); await panel(other).getByRole('button',{name:'Reintentar',exact:true}).click(); await ready(other,sql);
     await expectCode(other,sql,'SELECT nombre, precio FROM productos;'); await expectNoExecution(other); await expect(panel(other).locator('.cm-editor')).toHaveCount(1);

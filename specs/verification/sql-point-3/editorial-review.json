@@ -1,0 +1,412 @@
+{
+  "block": "SELECT → CAST",
+  "sourceInventorySha256": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe",
+  "sources": [
+    {
+      "path": "tmp/SQL/1.- SELECT/1.- base.md",
+      "sha256": "b2f9a1d996d3de2bce07e94cc99d60654c5b75a1e176c88aff2d08597403c392",
+      "publishedTargets": [
+        "analisis-de-datos/sql/select",
+        "analisis-de-datos/sql/select/todas-las-columnas",
+        "analisis-de-datos/sql/select/columnas-concretas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/1.- base.md",
+      "sha256": "b9de45f3087c2b399e3f62dfb4abd04e354fc1ab0784971996f765769fa5bf61",
+      "publishedTargets": [
+        "analisis-de-datos/sql/limit",
+        "analisis-de-datos/sql/limit/filas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/2.- Offset.md",
+      "sha256": "74796b3332301640be89d82a83f1fc801b47406fc5f189c9b57bbd5a91cc3480",
+      "publishedTargets": [
+        "analisis-de-datos/sql/limit/offset"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/1.- Base, Operadores y tipos.md",
+      "sha256": "c7c32461e71312b2e6c13d1c6d48a528f645b059e43447aa23a8ebf91b651bbb",
+      "publishedTargets": [
+        "analisis-de-datos/sql/where",
+        "analisis-de-datos/sql/where/operadores",
+        "analisis-de-datos/sql/where/tipos"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- And.md",
+      "sha256": "083b55ffd58a2dc3f0ad67d692d273615b58d53794223f8a319f8f7c5d546f3c",
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/and"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- OR.md",
+      "sha256": "013859f78243789b53690467fcde73ef9fc36270839dec74a828c1a5fb870d19",
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/or"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/3.- NOt.md",
+      "sha256": "02bc0293f7872aee0b7bc770bf9f82aa1d9fd0053cdae89a0fd847e117ed2f88",
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/not"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/4.- combinado and or not.md",
+      "sha256": "548102d7fdee98fd3a46496e9d6b61c7ab7842715f931746c416a19074239e37",
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/combinaciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/1.- base, and.md",
+      "sha256": "acfb438d77d544f6afd57177438f108b222e68454098c3ca4369cb57d0173478",
+      "publishedTargets": [
+        "analisis-de-datos/sql/between",
+        "analisis-de-datos/sql/between/rango"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/2.-Not.md",
+      "sha256": "2f64f30a96abe37842a0550e9223448600afd1ae8612305647c4df8118998c01",
+      "publishedTargets": [
+        "analisis-de-datos/sql/between/not-between"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/1.- base.md",
+      "sha256": "2a0f1f01dbfb8e3ae80c4a35c77f036fa3390b9d00478311002ee00792058e74",
+      "publishedTargets": [
+        "analisis-de-datos/sql/in",
+        "analisis-de-datos/sql/in/lista"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/2.- not.md",
+      "sha256": "75f3fc2037fc0ec5bdc7cb07a99ae298b4c9e09077df27a43d4df10344f11b5b",
+      "publishedTargets": [
+        "analisis-de-datos/sql/in/not-in"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/1.- LIKe.md",
+      "sha256": "8f6b4493264196df6e75cee45ea499ec718690110f6eec4fd2afd1db11b872fe",
+      "publishedTargets": [
+        "analisis-de-datos/sql/like",
+        "analisis-de-datos/sql/like/comodines"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/2.- NOt.md",
+      "sha256": "21d3544f0deb7b297e0727cadcc57def934853fbcff30f2cd267777a3449d6d4",
+      "publishedTargets": [
+        "analisis-de-datos/sql/like/not-like"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/1.- Base.md",
+      "sha256": "a57ec8c632e6849900a47464be4fd513f7ca6465f9318efb62f2e384706c97f8",
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by",
+        "analisis-de-datos/sql/order-by/asc"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/3.- DESC.md",
+      "sha256": "5955ab790e5c2e3534582b85e1bbb50d6f0f4d440237694ff4eac272dd867f57",
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by/desc"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/4.- combinado.md",
+      "sha256": "666263fb99be9ef6ca100ac2d5512f9721cada44681c2fc45fc53db3d29fb4c7",
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by/varias-columnas",
+        "analisis-de-datos/sql/order-by/con-limit"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/8.- Distinct/1.- Base.md",
+      "sha256": "2371c0b78a0daeae06216817a7f188a2fa3d5d9473da6087530bb4b21b46181d",
+      "publishedTargets": [
+        "analisis-de-datos/sql/distinct",
+        "analisis-de-datos/sql/distinct/columna",
+        "analisis-de-datos/sql/distinct/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/1.- Base.md",
+      "sha256": "2295558aae8553ef17abacbf7f3c04984ffce08d98004dbc5e95bf4b6895e2ec",
+      "publishedTargets": [
+        "analisis-de-datos/sql/join",
+        "analisis-de-datos/sql/join/on"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/2.- aliases.md",
+      "sha256": "66cdb0f628ec339cb953748d86e681b972505829c4a248731013828b36d439a8",
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/alias"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/3.- self join.md",
+      "sha256": "e79bd911afa33a43b8d9a75a2bc1805f9bc2bda1e6ba26d6acffd90a59071694",
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/self-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/4.- cross join.md",
+      "sha256": "c0781f94a32249861dcca466421cd0293ce9340e06a76a52a4ec8f713b76676c",
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/cross-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/1.- left join.md",
+      "sha256": "e45d21c57b9d2b9ac7c5f6a1b3cd0d3d72d2bf8235462b6e693a725f07570512",
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins",
+        "analisis-de-datos/sql/outer-joins/left-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/2.- right join.md",
+      "sha256": "fecf1620e4b21cbb364953f5306bcb5cb0065d4db4cd1e4db25aa8f668678381",
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/right-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/3.- full outer join.md",
+      "sha256": "fc6408f4350e6fd92d8cef012bef75c45486965fc9ea08f07e38e088bbb73627",
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/full-outer-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/4.- anti join.md",
+      "sha256": "60340ddce096ea33f81dd39cdc1918747d199b4a666258e6b5411fdf24f4d8ac",
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/anti-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/1.- base.md",
+      "sha256": "4c369062a1a62e0de5655b36c1ed3f0e060262a092e395125beb5f360deae6b2",
+      "publishedTargets": [
+        "analisis-de-datos/sql/null",
+        "analisis-de-datos/sql/null/is-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/2.- NOT NULL.md",
+      "sha256": "6f7d73a827b153989b5debbaa698f3d3bfd8803eb4b0d17cf940f9005e4099b2",
+      "publishedTargets": [
+        "analisis-de-datos/sql/null/is-not-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/3.- NULL IF.md",
+      "sha256": "16b588955156b17e45be435d0ae091dec7a907dd22a9faee2dd02685f0b2d015",
+      "publishedTargets": [
+        "analisis-de-datos/sql/null/nullif"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/12.- COALESCE/1.- base.md",
+      "sha256": "1c736b59f46bf42093f0314a032d1fc5329d9fedd39986aebb514a0af539e96b",
+      "publishedTargets": [
+        "analisis-de-datos/sql/coalesce",
+        "analisis-de-datos/sql/coalesce/alternativas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/13.- CASE WHEN/1.- Base.md",
+      "sha256": "f20770357e9f96f520e6391a657591f45363c51d591c02a1ad5e1b8b0ce63652",
+      "publishedTargets": [
+        "analisis-de-datos/sql/case",
+        "analisis-de-datos/sql/case/condiciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/14.- CAST/1.- base.md",
+      "sha256": "ded86bfe96fb03f6c6e4ef4b63ad1042f4c73556099b512bddb06720db046347",
+      "publishedTargets": [
+        "analisis-de-datos/sql/cast",
+        "analisis-de-datos/sql/cast/conversion",
+        "analisis-de-datos/sql/cast/tipos"
+      ],
+      "pendingTargets": [
+        "analisis-de-datos/sql/text-functions/concat"
+      ],
+      "status": "partial",
+      "decision": "Separar conversión explícita de concatenación; esta última queda en el punto 4."
+    }
+  ],
+  "capabilities": {
+    "sqlite": {
+      "reviewed": true
+    },
+    "postgresql": {
+      "reviewed": true
+    },
+    "mysql": {
+      "reviewed": true
+    },
+    "sqlserver": {
+      "reviewed": true
+    },
+    "mariadb": {
+      "reviewed": true
+    },
+    "oracle": {
+      "reviewed": true
+    }
+  },
+  "additions": [
+    {
+      "conceptId": "analisis-de-datos/sql/select/alias",
+      "key": "select/alias",
+      "origin": "new",
+      "reason": "Separar o incorporar este concepto exigido por el SDD, con redacción y ejemplo propios."
+    },
+    {
+      "conceptId": "analisis-de-datos/sql/comentarios",
+      "key": "select/comentarios",
+      "origin": "existing",
+      "reason": "Conservar Comentarios y su identidad publicada dentro de SELECT."
+    }
+  ],
+  "matrix": {
+    "cells": 540,
+    "reviewed": 138,
+    "pending": 402
+  },
+  "conservedFiles": [
+    {
+      "path": "package-lock.json",
+      "sha256": "80773547eb6278f03dc4077b877e85d12ee0f05acc0de4ea4bea3b1071cf3385"
+    },
+    {
+      "path": "src/practice/datasets/business-manifest.ts",
+      "sha256": "f98143418e885d11479d20a9e798085031fc60d05214faf64bbbc5da337d9106"
+    },
+    {
+      "path": "src/practice/datasets/rows/business.ts",
+      "sha256": "e01ca77170112f275de4f5a1b31a131509648edecd7baec1d262d5f00a10f2bd"
+    },
+    {
+      "path": "src/practice/datasets/rows/products.ts",
+      "sha256": "942250d78fdb9af8fb24c785eaad1c05f3b1ee9ecb906c018138911ff899761e"
+    },
+    {
+      "path": "src/content/notes/pandas.ts",
+      "sha256": "7b278264faeb1832dabff608a337710d7a036ceda2df3213c061615b98c4a280"
+    },
+    {
+      "path": "specs/sql/source-inventory.json",
+      "sha256": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe"
+    }
+  ]
+}

@@ -3,5 +3,6 @@ hide_table_of_contents: true
 ---
 
 import {SqlConceptCard} from '@site/src/components/SqlNotes';
+import {notes} from '@site/src/content/notes/sql/select';
 
-<SqlConceptCard conceptId="comentarios" />
+<SqlConceptCard concept={notes.find(note => note.key === "select/comentarios")} />

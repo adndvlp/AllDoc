@@ -8,7 +8,7 @@ export type SqlCapability =
   | Readonly<{status: 'reviewed'; support: SqlSupport; syntax: string; explanation: string; sources: readonly SqlSource[]}>;
 export type SqlConceptPlan = Readonly<{
   key: string; id: string; label: string; order: number; feature: string;
-  canonicalPath: string; file: string; stage: 'planned' | 'published-legacy';
+  canonicalPath: string; file: string; stage: 'planned' | 'published-legacy' | 'published';
 }>;
 export type SqlGroupPlan = Readonly<{
   key: string; label: string; order: number; collapsed: true; children: readonly SqlConceptPlan[];

@@ -1,0 +1,241 @@
+(node:60216) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable (1.535541ms)
+✖ dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia (0.778416ms)
+✖ dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza (0.2115ms)
+(node:60217) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores (24.24625ms)
+✖ bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente (0.748458ms)
+✖ bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM (49.142208ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 288.657917
+
+✖ failing tests:
+
+test at tests/sql-dialect-store.test.ts:4:1
+✖ dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable (1.535541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'sqlite' !== 'mysql'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts:6:27)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'sqlite',
+    expected: 'mysql',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-dialect-store.test.ts:9:1
+✖ dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia (0.778416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'sqlite'
+  - 'postgresql'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts:11:43)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'sqlite',
+    expected: 'postgresql',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-dialect-store.test.ts:15:1
+✖ dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza (0.2115ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'sqlite'
+  - 'mariadb'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts:17:152)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'sqlite',
+    expected: 'mariadb',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-first-block.test.ts:12:1
+✖ bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores (24.24625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'analisis-de-datos/sql/select',
+  -   'analisis-de-datos/sql/select/todas-las-columnas',
+  -   'analisis-de-datos/sql/select/columnas-concretas',
+  -   'analisis-de-datos/sql/select/alias',
+  -   'analisis-de-datos/sql/comentarios',
+  -   'analisis-de-datos/sql/limit',
+  -   'analisis-de-datos/sql/limit/filas',
+  -   'analisis-de-datos/sql/limit/offset',
+      'analisis-de-datos/sql/where',
+  -   'analisis-de-datos/sql/where/operadores',
+  -   'analisis-de-datos/sql/where/tipos',
+  -   'analisis-de-datos/sql/where/and',
+  -   'analisis-de-datos/sql/where/or',
+  -   'analisis-de-datos/sql/where/not',
+  -   'analisis-de-datos/sql/where/combinaciones',
+  -   'analisis-de-datos/sql/between',
+  -   'analisis-de-datos/sql/between/rango',
+  -   'analisis-de-datos/sql/between/not-between',
+  -   'analisis-de-datos/sql/in',
+  -   'analisis-de-datos/sql/in/lista',
+  -   'analisis-de-datos/sql/in/not-in',
+  -   'analisis-de-datos/sql/like',
+  -   'analisis-de-datos/sql/like/comodines',
+  -   'analisis-de-datos/sql/like/not-like',
+      'analisis-de-datos/sql/order-by',
+  +   'analisis-de-datos/sql/limit',
+  +   'analisis-de-datos/sql/comentarios'
+  -   'analisis-de-datos/sql/order-by/asc',
+  -   'analisis-de-datos/sql/order-by/desc',
+  -   'analisis-de-datos/sql/order-by/varias-columnas',
+  -   'analisis-de-datos/sql/order-by/con-limit',
+  -   'analisis-de-datos/sql/distinct',
+  -   'analisis-de-datos/sql/distinct/columna',
+  -   'analisis-de-datos/sql/distinct/varias-columnas',
+  -   'analisis-de-datos/sql/join',
+  -   'analisis-de-datos/sql/join/on',
+  -   'analisis-de-datos/sql/join/alias',
+  -   'analisis-de-datos/sql/join/self-join',
+  -   'analisis-de-datos/sql/join/cross-join',
+  -   'analisis-de-datos/sql/outer-joins',
+  -   'analisis-de-datos/sql/outer-joins/left-join',
+  -   'analisis-de-datos/sql/outer-joins/right-join',
+  -   'analisis-de-datos/sql/outer-joins/full-outer-join',
+  -   'analisis-de-datos/sql/outer-joins/anti-join',
+  -   'analisis-de-datos/sql/null',
+  -   'analisis-de-datos/sql/null/is-null',
+  -   'analisis-de-datos/sql/null/is-not-null',
+  -   'analisis-de-datos/sql/null/nullif',
+  -   'analisis-de-datos/sql/coalesce',
+  -   'analisis-de-datos/sql/coalesce/alternativas',
+  -   'analisis-de-datos/sql/case',
+  -   'analisis-de-datos/sql/case/condiciones',
+  -   'analisis-de-datos/sql/cast',
+  -   'analisis-de-datos/sql/cast/conversion',
+  -   'analisis-de-datos/sql/cast/tipos'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts:14:43)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'analisis-de-datos/sql/select', 'analisis-de-datos/sql/where', 'analisis-de-datos/sql/order-by', 'analisis-de-datos/sql/limit', 'analisis-de-datos/sql/comentarios' ],
+    expected: [
+      'analisis-de-datos/sql/select',                      'analisis-de-datos/sql/select/todas-las-columnas',
+      'analisis-de-datos/sql/select/columnas-concretas',   'analisis-de-datos/sql/select/alias',
+      'analisis-de-datos/sql/comentarios',                 'analisis-de-datos/sql/limit',
+      'analisis-de-datos/sql/limit/filas',                 'analisis-de-datos/sql/limit/offset',
+      'analisis-de-datos/sql/where',                       'analisis-de-datos/sql/where/operadores',
+      'analisis-de-datos/sql/where/tipos',                 'analisis-de-datos/sql/where/and',
+      'analisis-de-datos/sql/where/or',                    'analisis-de-datos/sql/where/not',
+      'analisis-de-datos/sql/where/combinaciones',         'analisis-de-datos/sql/between',
+      'analisis-de-datos/sql/between/rango',               'analisis-de-datos/sql/between/not-between',
+      'analisis-de-datos/sql/in',                          'analisis-de-datos/sql/in/lista',
+      'analisis-de-datos/sql/in/not-in',                   'analisis-de-datos/sql/like',
+      'analisis-de-datos/sql/like/comodines',              'analisis-de-datos/sql/like/not-like',
+      'analisis-de-datos/sql/order-by',                    'analisis-de-datos/sql/order-by/asc',
+      'analisis-de-datos/sql/order-by/desc',               'analisis-de-datos/sql/order-by/varias-columnas',
+      'analisis-de-datos/sql/order-by/con-limit',          'analisis-de-datos/sql/distinct',
+      'analisis-de-datos/sql/distinct/columna',            'analisis-de-datos/sql/distinct/varias-columnas',
+      'analisis-de-datos/sql/join',                        'analisis-de-datos/sql/join/on',
+      'analisis-de-datos/sql/join/alias',                  'analisis-de-datos/sql/join/self-join',
+      'analisis-de-datos/sql/join/cross-join',             'analisis-de-datos/sql/outer-joins',
+      'analisis-de-datos/sql/outer-joins/left-join',       'analisis-de-datos/sql/outer-joins/right-join',
+      'analisis-de-datos/sql/outer-joins/full-outer-join', 'analisis-de-datos/sql/outer-joins/anti-join',
+      'analisis-de-datos/sql/null',                        'analisis-de-datos/sql/null/is-null',
+      'analisis-de-datos/sql/null/is-not-null',            'analisis-de-datos/sql/null/nullif',
+      'analisis-de-datos/sql/coalesce',                    'analisis-de-datos/sql/coalesce/alternativas',
+      'analisis-de-datos/sql/case',                        'analisis-de-datos/sql/case/condiciones',
+      'analisis-de-datos/sql/cast',                        'analisis-de-datos/sql/cast/conversion',
+      'analisis-de-datos/sql/cast/tipos'
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-first-block.test.ts:19:1
+✖ bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente (0.748458ms)
+  AssertionError [ERR_ASSERTION]: select/comentarios/postgresql
+  + actual - expected
+  
+  + 'pending'
+  - 'reviewed'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts:20:112)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-first-block.test.ts:26:1
+✖ bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM (49.142208ms)
+  AssertionError [ERR_ASSERTION]: analisis-de-datos/sql/select
+  + actual - expected
+  
+    [
+  +   'id',
+      'nombre',
+      'categoria',
+      'precio',
+  +   'stock',
+  +   'proveedor_id',
+  +   'activo'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts:32:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'id', 'nombre', 'categoria', 'precio', 'stock', 'proveedor_id', 'activo' ],
+    expected: [ 'nombre', 'categoria', 'precio' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

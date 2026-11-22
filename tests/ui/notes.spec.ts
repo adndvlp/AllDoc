@@ -1,5 +1,6 @@
 import {test, expect, type Page, type Locator} from '@playwright/test';
-import {sqlConcepts} from '../../src/content/sql';
+import {sqlConcepts as publishedSqlNotes,getSqlConcept} from '../../src/content/sql';
+const sqlConcepts=['select','where','order-by','limit','comentarios'].map(id=>getSqlConcept(id)!);
 import {palettes} from '../../src/content/palettes';
 
 const route = (id: string) => `/apuntes/analisis-de-datos/sql/${id}`;
@@ -67,8 +68,8 @@ test('resultados independientes, tabla semántica y scroll horizontal limitado a
   await expect(first.locator('details')).toHaveAttribute('open', '');
   await expect(second.locator('details')).not.toHaveAttribute('open');
   const table = first.getByRole('table', {name: 'Resultado de SELECT: Todas las columnas', exact: true});
-  await expect(table.getByRole('columnheader')).toHaveText(['nombre', 'categoria', 'precio']);
-  await expect(table.locator('tbody tr')).toHaveCount(3);
+  await expect(table.getByRole('columnheader')).toHaveText(['id','nombre', 'categoria', 'precio','stock','proveedor_id','activo']);
+  await expect(table.locator('tbody tr')).toHaveCount(18);
   expect(await table.locator('th').evaluateAll((headers) => headers.every((header) => header.getAttribute('scope') === 'col'))).toBe(true);
   const wrapper = table.locator('..');
   await expect(wrapper).toHaveAttribute('role', 'region');
@@ -88,6 +89,14 @@ test('resultados independientes, tabla semántica y scroll horizontal limitado a
   await page.keyboard.press('Enter');
   await expect(first.locator('details')).not.toHaveAttribute('open');
   await expect(second.locator('details')).not.toHaveAttribute('open');
+});
+
+test('recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios',async({page})=>{
+ await go(page,'comentarios');const remember=card(page).getByText(getSqlConcept('comentarios')!.remember,{exact:true});
+ const dock=await page.getByRole('button',{name:'Practicar SQL',exact:true}).boundingBox();expect(dock).not.toBeNull();
+ const letters=await remember.evaluate(element=>{const range=document.createRange(),walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);const rectangles=[];for(let node=walker.nextNode();node;node=walker.nextNode())for(let i=0;i<(node.textContent?.length??0);i++){if(!node.textContent![i].trim())continue;range.setStart(node,i);range.setEnd(node,i+1);const r=range.getBoundingClientRect();rectangles.push({text:node.textContent![i],x:r.x,y:r.y,right:r.right,bottom:r.bottom});}return rectangles;});
+ const hidden=letters.filter(r=>r.x<dock!.x+dock!.width&&r.right>dock!.x&&r.y<dock!.y+dock!.height&&r.bottom>dock!.y);
+ expect(hidden,'El botón no debe tapar ninguna letra de la clave importante').toEqual([]);
 });
 
 test('copiar cada variante conserva la consulta completa y mantiene la posición del contenido', async ({page, context}) => {
@@ -113,28 +122,18 @@ test('copiar cada variante conserva la consulta completa y mantiene la posición
 });
 
 test('anterior y siguiente conservan rutas, teclado y alineación con la ficha', async ({page}) => {
+  const sequence=publishedSqlNotes.slice(0,6);
   await go(page);
-  for (let i = 0; i < sqlConcepts.length; i++) {
-    const pagination = page.getByRole('navigation', {name: 'Página del documento', exact: true});
-    const previous = page.locator('.pagination-nav__link--prev');
-    const next = page.locator('.pagination-nav__link--next');
-    if (i) await expect(previous).toHaveAttribute('href', sqlConcepts[i - 1].slug);
-    else await expect(previous).toHaveCount(0);
-    if (i < sqlConcepts.length - 1) await expect(next).toHaveAttribute('href', sqlConcepts[i + 1].slug);
-    else await expect(next).toHaveCount(0);
-    const [navBounds, articleBounds] = await Promise.all([pagination.boundingBox(), page.locator('article').boundingBox()]);
-    expect(Math.abs(navBounds!.x - articleBounds!.x)).toBeLessThanOrEqual(1);
-    expect(Math.abs(navBounds!.width - articleBounds!.width)).toBeLessThanOrEqual(1);
-    if (i < sqlConcepts.length - 1) {
-      await next.focus();
-      await next.press('Enter');
-      await expect(page).toHaveURL(new RegExp(`/sql/${sqlConcepts[i + 1].id}$`));
-      await expect(examples(page).locator('details[open]')).toHaveCount(0);
-    }
+  for (let i=0;i<sequence.length;i++) {
+    const previous=page.locator('.pagination-nav__link--prev'),next=page.locator('.pagination-nav__link--next');
+    if(i)await expect(previous).toHaveAttribute('href',sequence[i-1].slug);else await expect(previous).toHaveCount(0);
+    await expect(next).toHaveAttribute('href',publishedSqlNotes[i+1].slug);
+    const [nav,article]=await Promise.all([page.getByRole('navigation',{name:'Página del documento',exact:true}).boundingBox(),page.locator('article').boundingBox()]);
+    expect(Math.abs(nav!.x-article!.x)).toBeLessThanOrEqual(1);expect(Math.abs(nav!.width-article!.width)).toBeLessThanOrEqual(1);
+    if(i<sequence.length-1){await next.focus();await next.press('Enter');await expect(page).toHaveURL(new RegExp('/sql/'+sequence[i+1].id+'$'));await expect(examples(page).locator('details[open]')).toHaveCount(0);}
   }
-  await page.locator('.pagination-nav__link--prev').focus();
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/sql\/limit$/);
+  await go(page,'cast/tipos');await expect(page.locator('.pagination-nav__link--next')).toHaveCount(0);
+  await page.locator('.pagination-nav__link--prev').focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/sql\/cast\/conversion$/);
 });
 
 test('texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página', async ({page}) => {

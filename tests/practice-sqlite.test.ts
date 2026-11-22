@@ -10,11 +10,12 @@ import {sqliteEnvironment} from '../src/practice/adapters/sqlite/environment.ts'
 import {createSQLCompletion} from '../src/practice/adapters/sqlite/completion.ts';
 import {readFile} from 'node:fs/promises';
 
-let sqlite: Sqlite3Static; let dataset: MaterializedDataset;
+let sqlite: Sqlite3Static; let dataset: MaterializedDataset;let businessSeed:MaterializedDataset;
 const engines: SQLiteEngine[] = [];
 before(async () => {
   sqlite = await (initSQLite as unknown as (options: object) => Promise<Sqlite3Static>)({print() {}, printErr() {}});
   dataset = await createDatasetAdapter().materialize({id: 'productos-basico', version: 1}, 'sqlite-wasm', new AbortController().signal);
+  businessSeed=await createDatasetAdapter().materialize({id:'negocio-relacional',version:1},'sqlite-wasm',new AbortController().signal);
 });
 after(() => {for (const engine of engines) engine.dispose();});
 function engine() {const value = createSQLiteEngine(sqlite); engines.push(value); value.init(dataset); return value;}
@@ -31,12 +32,13 @@ const tables = (events: RuntimeEvent[]) => events.filter((event) => event.type =
 
 test('SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero', () => {
   const db = engine();
+  db.init(businessSeed);
   for (const id of ['select', 'where', 'order-by', 'limit', 'comentarios']) {
     const note = getSqlConcept('analisis-de-datos/sql/' + id)!;
     for (const example of note.examples) {
       const result = tables(run(db, example.code)); assert.equal(result.length, 1);
       assert.deepEqual(result[0].columns.map((column) => column.name), example.output.columns);
-      assert.deepEqual(result[0].rows.map((row) => row.map(String)), example.output.rows);
+      assert.deepEqual(result[0].rows.map((row) => row.map(value=>value===null?'NULL':String(value))), example.output.rows);
       if (result[0].columns.some((column) => column.name === 'precio')) assert.equal(result[0].columns.find((column) => column.name === 'precio')!.type, 'integer');
     }
   }

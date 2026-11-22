@@ -1,151 +1,19 @@
-import {concepts, type Concept, type ConceptId, type ConceptMeta} from '../concepts.ts';
-import {selectAllProductsQuery} from '../sql-preview.ts';
-import {productsDataset} from '../../practice/datasets/products.ts';
-
-const sqlMetadata = concepts.filter((concept): concept is Extract<Concept, {areaId: 'analisis-de-datos'; topicId: 'sql'}> =>
-  concept.areaId === 'analisis-de-datos' && concept.topicId === 'sql');
-export const sqlBasePath = sqlMetadata[0].slug.slice(0, sqlMetadata[0].slug.lastIndexOf('/'));
-
-export type SqlExample = {
-  id: string;
-  title: string;
-  code: string;
-  hint: string;
-  output: {columns: string[]; rows: string[][]};
-};
-
-export type SqlConcept = Omit<ConceptMeta, 'id'> & {
-  id: string;
-  conceptId: string;
-  number: string;
-  examples: [SqlExample, ...SqlExample[]];
-  remember: string;
-  note?: string;
-};
-
-export const sqlTable = {
-  name: productsDataset.tables[0].name,
-  columns: productsDataset.tables[0].columns.map(({name}) => name),
-  rows: productsDataset.tables[0].rows.map((row) => row.map(String)),
-};
-
-type SqlBody = Pick<SqlConcept, 'examples' | 'remember' | 'note'>;
-type SqlConceptId = Extract<ConceptId, `analisis-de-datos/sql/${string}`>;
-
-// Solo cuerpos. Los títulos, descripciones, rutas y orden vienen de concepts.ts.
-const bodies = {
-  'analisis-de-datos/sql/select': {
-    examples: [
-      {
-        id: 'sql/select/todas-las-columnas',
-        title: 'Todas las columnas',
-        code: selectAllProductsQuery,
-        hint: 'El asterisco (*) pide todas.',
-        output: {
-          columns: ['nombre', 'categoria', 'precio'],
-          rows: [
-            ['Teclado', 'Accesorios', '500'],
-            ['Mouse', 'Accesorios', '250'],
-            ['Monitor', 'Pantallas', '3500'],
-          ],
-        },
-      },
-      {
-        id: 'sql/select/columnas-concretas',
-        title: 'Columnas concretas',
-        code: 'SELECT nombre, precio FROM productos;',
-        hint: 'Escribe sus nombres separados por comas.',
-        output: {
-          columns: ['nombre', 'precio'],
-          rows: [['Teclado', '500'], ['Mouse', '250'], ['Monitor', '3500']],
-        },
-      },
-    ],
-    remember: 'SELECT elige las columnas. FROM indica la tabla.',
-  },
-  'analisis-de-datos/sql/where': {
-    examples: [{
-      id: 'sql/where/condicion',
-      title: 'Cumplir una condición',
-      code: 'SELECT nombre FROM productos\nWHERE precio >= 1000;',
-      hint: 'Solo productos con un precio de 1000 o más.',
-      output: {columns: ['nombre'], rows: [['Monitor']]},
-    }],
-    remember: 'WHERE filtra filas.',
-  },
-  'analisis-de-datos/sql/order-by': {
-    examples: [{
-      id: 'sql/order-by/precio-ascendente',
-      title: 'Del más barato al más caro',
-      code: 'SELECT nombre, precio FROM productos\nORDER BY precio ASC;',
-      hint: 'Ordena los productos por precio.',
-      output: {
-        columns: ['nombre', 'precio'],
-        rows: [['Mouse', '250'], ['Teclado', '500'], ['Monitor', '3500']],
-      },
-    }],
-    remember: 'ASC: de menor a mayor. DESC: de mayor a menor.',
-  },
-  'analisis-de-datos/sql/limit': {
-    examples: [
-      {
-        id: 'sql/limit/filas-completas',
-        title: 'Hasta 5 filas completas',
-        code: 'SELECT * FROM productos LIMIT 5;',
-        hint: 'Todas las columnas de un máximo de 5 productos.',
-        output: {
-          columns: ['nombre', 'categoria', 'precio'],
-          rows: [
-            ['Teclado', 'Accesorios', '500'],
-            ['Mouse', 'Accesorios', '250'],
-            ['Monitor', 'Pantallas', '3500'],
-          ],
-        },
-      },
-      {
-        id: 'sql/limit/nombres',
-        title: 'Hasta 3 nombres',
-        code: 'SELECT nombre FROM productos LIMIT 3;',
-        hint: 'Solo la columna nombre, con un máximo de 3 productos.',
-        output: {
-          columns: ['nombre'],
-          rows: [['Teclado'], ['Mouse'], ['Monitor']],
-        },
-      },
-    ],
-    remember: 'LIMIT fija un máximo de filas. Si la tabla tiene menos, verás menos.',
-    note: 'Esta forma de LIMIT funciona en PostgreSQL, MySQL y SQLite.',
-  },
-  'analisis-de-datos/sql/comentarios': {
-    examples: [
-      {
-        id: 'sql/comentarios/una-linea',
-        title: 'Una línea o al final',
-        code: '-- Consultar productos\nSELECT * FROM productos; -- Nota',
-        hint: '-- comenta desde los guiones hasta el final de esa línea.',
-        output: {columns: sqlTable.columns, rows: sqlTable.rows},
-      },
-      {
-        id: 'sql/comentarios/varias-lineas',
-        title: 'Varias líneas',
-        code: '/* Esta consulta obtiene\n   todos los productos */\nSELECT * FROM productos;',
-        hint: 'Encierra el comentario entre /* y */.',
-        output: {columns: sqlTable.columns, rows: sqlTable.rows},
-      },
-    ],
-    remember: 'SQL ignora los comentarios al ejecutar la consulta.',
-  },
-} satisfies Record<SqlConceptId, SqlBody>;
-
-// Adaptador para las páginas MDX actuales, que todavía reciben el ID corto.
-export const sqlConcepts: SqlConcept[] = sqlMetadata.map((metadata) => ({
-  ...metadata,
-  ...bodies[metadata.id],
-  conceptId: metadata.id,
-  id: metadata.id.split('/').at(-1)!,
-  number: String(metadata.order).padStart(2, '0'),
-}));
-
-export function getSqlConcept(id: string): SqlConcept | undefined {
-  return sqlConcepts.find((concept) => concept.id === id || concept.conceptId === id);
-}
+// Agregador para validación nativa. Las páginas importan solo su grupo.
+import {notes as group0} from './sql/select.ts';
+import {notes as group1} from './sql/limit.ts';
+import {notes as group2} from './sql/where.ts';
+import {notes as group3} from './sql/between.ts';
+import {notes as group4} from './sql/in.ts';
+import {notes as group5} from './sql/like.ts';
+import {notes as group6} from './sql/order-by.ts';
+import {notes as group7} from './sql/distinct.ts';
+import {notes as group8} from './sql/join.ts';
+import {notes as group9} from './sql/outer-joins.ts';
+import {notes as group10} from './sql/null.ts';
+import {notes as group11} from './sql/coalesce.ts';
+import {notes as group12} from './sql/case.ts';
+import {notes as group13} from './sql/cast.ts';
+export type {SqlConcept,SqlExample} from './sql/factory.ts';
+export const sqlBasePath='/apuntes/analisis-de-datos/sql';
+export const sqlConcepts=[...group0,...group1,...group2,...group3,...group4,...group5,...group6,...group7,...group8,...group9,...group10,...group11,...group12,...group13];
+export function getSqlConcept(id:string){return sqlConcepts.find(c=>c.id===id||c.conceptId===id);}

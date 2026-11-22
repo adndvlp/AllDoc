@@ -1,0 +1,132 @@
+[
+  {
+    "path": "tests/ui/__screenshots__/celular/area.png",
+    "sha256": "6a50a20cf78cb2a137340e66237b49455340cf9b793b22f81f64b41cee23fb57",
+    "afterSha256": "80f16c228046331cb1a3f531af0eeb2871e4422e11f961a4f92ef58b1b03f5ee"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/buscador.png",
+    "sha256": "5b203036a843c32beefe4bfe10d1a473ce86118d894ecc59a11f21811d62d0c5",
+    "afterSha256": "639c8977cc46e58478d99896707a319f25633cf4436cb4d67c8c73070a86d7ae"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/business-data.png",
+    "sha256": "e4be63c4d5eb4aaac430e341b1466e61059e6ec3897210368091c697180c4850",
+    "afterSha256": "30487789805bc2ca58e26eb872d41ddf0a2f4fe670c9ae08872b598130e15055"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/business-result.png",
+    "sha256": "e70e5f617b70edb0b53d36a426c982234a650ff0b7617a07fc87d21c127648ca",
+    "afterSha256": "077e654fe60f416cf65e63871728f0c9e2de19954626b8100ae0f9cd1f9d194f"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/catalogo.png",
+    "sha256": "5c60bf92b69fd69202ed83285f5a24575996a41f3ce7ef9f8fdab69c2de7da7f",
+    "afterSha256": "73a7b4a53d6fb2a5d6a5de78a276b656a699583ca2c75ec10190a0af1fcdb14b"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/color-texto.png",
+    "sha256": "c8408c37650ece3cb86800b4b012bda7d14074ee27fb59d2456bbea74a6134c7",
+    "afterSha256": "43f6a55d3d3a87716f4b4d4a283657a4fc37189461737e182d086abc76d4f66a"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/comentarios.png",
+    "sha256": "9c0641c7935c948b7262fad32f71fca17304bfb8c5afe5166402a7078978afa8",
+    "afterSha256": "cc64e5542433e2d2fbc2cff461fd2ef24a12a9925dcbbfabaa0eaa33c5c6d0ff"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/menu.png",
+    "sha256": "108ea0387c85b09ea2c7a2efcb94c5d0ad23bd0515e706ff61dd73afe83a3cda",
+    "afterSha256": "b893aa7f6ab1d941f7443d1f25f63d4dcab79b8c33de5121e5c9855171fd933f"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/practice-actions.png",
+    "sha256": "a86951ca0bb68bded49bd80cc2bfb0fd14492448477827c30bc2c825cb4109b8",
+    "afterSha256": "874db7d44638f48369aa63b0cc17f7af8d7cf4a0b032c052611ebfd4d8f57564"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/select-texto-200.png",
+    "sha256": "130485b07ecdab130e1cb3301a2b6a491d792bff13ef9c9001a02f48bdc4cf60",
+    "afterSha256": "8d4cc5ddefefbf6285edf36c86ded96f7f80b46ef531ea6b5b463a9fe7265c1e"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/select.png",
+    "sha256": "cb5a7bdf5a0d00c023983bfa6bbd77f053e51db3bf154d0913720a6298709328",
+    "afterSha256": "51b14dee92516414f0f64871a394ea4688e2c44b268ca7978c96bcdf5a4b5673"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/sqlite-result.png",
+    "sha256": "5f2499fd9734b2dc477ada9cbe97c9ddcf3340210d9d745e974f588dc748685a",
+    "afterSha256": "389529f62c5e89d96f290d20c9120d0d13f1f652a3497d82287aa49f9e8abe86"
+  },
+  {
+    "path": "tests/ui/__screenshots__/celular/sqlite-schema.png",
+    "sha256": "7ce18bcb9cee3aefc04226e2a3adf6adbf166df10ad4962816a168b13b96b57a",
+    "afterSha256": "7497eb5c435bc7c42c229665acd2dc590991cd20aa00a547416d70b663fc9224"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/area.png",
+    "sha256": "f26d8e328844b3d0bf2483c1e3e9ad753d2a758cc4be864403c925226d2390bb",
+    "afterSha256": "33e2b8715ec9a6a7d551cda2336344b884321ef3105458110b6f47d14fe446cf"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/buscador.png",
+    "sha256": "b217f45cecb8c3ea413c1da07f420fe0f8f92023ab771f3c7d46c303560d9582",
+    "afterSha256": "5c77a79b546bad3491ee27a4348c962bd71db9e1557bb694ca3c71dffc524680"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/business-data.png",
+    "sha256": "22d97e459c8442d0f8905d7af2c9c467d673d11b0fa3ab5157789d8e61235fba",
+    "afterSha256": "3658ecdd043c9d05575d64fb488132249fa56396f88b12101ebdf50dd13e4487"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/business-result.png",
+    "sha256": "df45b73fc5dd590dfa3ac1966ef415d5f3b31da5a3a303c00caef915a8e60b9c",
+    "afterSha256": "88ae665c7bc0a1094f191b96e84d95d3439cf7b7729c569b2b57db65e5afcfef"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/catalogo.png",
+    "sha256": "94ac549862bdd67d464db9bfdeb6e3a1e4617cf5de12b1b15476ad1f79d526d9",
+    "afterSha256": "2ed33a6b5e6dc8f31065ab293ab263a5162e59d17d7d13fa2773215feaaefc77"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/color-texto.png",
+    "sha256": "d1f21b1d4d120e86e61ad7046c9c91b5af436baac719c227ccc21556e6202993",
+    "afterSha256": "39c7bf960f45cfdbf5a21d381b36c5e532cea8bf14751c4a61a81929238036f1"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/comentarios.png",
+    "sha256": "5d7ecdcb57ad61f9fe398cd4c01f62ed05aa13515f2b799f4e5f4dbbe53cd874",
+    "afterSha256": "23dd6c99c21a44153ce6b081ae078f39dd55af67e17bc55fd17f7e6d0c48d2d6"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/menu.png",
+    "sha256": "3c537a25ccbae7c02b2d7cc95ad9fce0a3beda309b2817a11b64b5c45b45504f",
+    "afterSha256": "b426af293dd6d82e09f8ca2b5aa3d58e6c44b8a646260032f210c3091d82cd9e"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/practice-actions.png",
+    "sha256": "da13e101373948e864b717b7e15177ca050507d8fdcba2b045e7991722d9cce2",
+    "afterSha256": "8d09a2d226a68ae28d69b7c06e7058161b8c4bd585e5b4d4e0ff55a9a127ecff"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/select-texto-200.png",
+    "sha256": "57d75d91e99e4204bfd400bac5b65f30a0a0efc6d8d05199657e92ff4c25d20d",
+    "afterSha256": "99ab82b7ba250cea80d21dfdc7dabd2377f41bfede1adc2170f15cf9b6b00cd2"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/select.png",
+    "sha256": "991696f662e5ca97a5c5439a870d93cd35763bda8d2c8d4f9389bc8cfef28cdf",
+    "afterSha256": "a4cfc6cf3dfd7bfd5438ae16b4c83a0aa0f14b8c030366149f32ddacc8ecd286"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/sqlite-result.png",
+    "sha256": "7b2acf26c1b66e824c2e4e0170f82c51c50ca76dd46acba17d728db205932b76",
+    "afterSha256": "0731cc56f80f3eebcd3d00a976122d9e0b1b002bfb85be5540d01aa0c8212577"
+  },
+  {
+    "path": "tests/ui/__screenshots__/laptop/sqlite-schema.png",
+    "sha256": "71b7f0dc5a040facbb710203e1bffa17a94e5afb54f350274b14c3211f3e60d2",
+    "afterSha256": "b9d08aa108b6a39dba3c65d587ec7bf46ec584ffaecfd3d5623f3c68cfd5898e"
+  }
+]

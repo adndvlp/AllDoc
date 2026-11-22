@@ -22,7 +22,7 @@ async function savedCode(page: Page, content: string) {
 test('ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar', async ({page}) => {
   await page.goto(sql, {waitUntil: 'networkidle'});
   const variant = page.locator('[data-sql-example="Columnas concretas"]');
-  await variant.getByRole('button', {name: 'Probar este ejemplo: Columnas concretas', exact: true}).click();
+  await variant.getByRole('button', {name: 'Probar en SQLite: Columnas concretas', exact: true}).click();
   await expect(code(page)).toHaveText('SELECT nombre, precio FROM productos;'); await ready(page);
   await expect(code(page)).toBeFocused();
   await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
@@ -66,7 +66,7 @@ test('restaurar código: conserva las mutaciones y el menú cabe al ampliar el t
 test('descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar', async ({page}) => {
   await page.route('**/alldoc-sqlite.*.js', route => route.abort());
   await page.goto(sql, {waitUntil: 'networkidle'});
-  await page.locator('[data-sql-example="Columnas concretas"]').getByRole('button', {name: /^Probar este ejemplo:/}).click();
+  await page.locator('[data-sql-example="Columnas concretas"]').getByRole('button', {name: /^Probar en SQLite:/}).click();
   await expect(code(page)).toHaveText('SELECT nombre, precio FROM productos;');
   await expect(panel(page).getByRole('button', {name: 'Reintentar', exact: true})).toBeVisible({timeout: 15_000});
   await code(page).fill('SELECT 73;'); await savedCode(page, 'SELECT 73;');
@@ -113,7 +113,7 @@ test('ejemplo pandas: conserva el entorno y recupera su código anterior sin eje
 test('carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor', async ({page}) => {
   await page.route('**/*practice-session*.js', route => route.abort());
   await page.goto(sql, {waitUntil: 'networkidle'});
-  await page.getByRole('button', {name: 'Probar este ejemplo: Columnas concretas', exact: true}).click();
+  await page.getByRole('button', {name: 'Probar en SQLite: Columnas concretas', exact: true}).click();
   await expect(panel(page).getByRole('button', {name: 'Reintentar', exact: true})).toBeVisible();
   await page.unroute('**/*practice-session*.js'); await panel(page).getByRole('button', {name: 'Reintentar', exact: true}).click();
   await ready(page); await expect(code(page)).toHaveText('SELECT nombre, precio FROM productos;');

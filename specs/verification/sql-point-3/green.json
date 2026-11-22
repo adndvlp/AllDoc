@@ -1,0 +1,131 @@
+{
+  "status": "complete",
+  "point": 3,
+  "completedAt": "2026-11-22T00:27:12.015Z",
+  "publication": {
+    "groups": 14,
+    "concepts": 53,
+    "sqliteExamples": 61,
+    "dialects": 6,
+    "variantResolutions": 366,
+    "pages": 59
+  },
+  "checks": {
+    "native": {
+      "passed": 368,
+      "failed": 0,
+      "skipped": 0
+    },
+    "types": "passed",
+    "build": "passed",
+    "pandasNative": "passed",
+    "ui": {
+      "projects": [
+        "celular",
+        "laptop"
+      ],
+      "engine": "Chromium Playwright",
+      "passed": 88,
+      "skipped": 2,
+      "failed": 0,
+      "flaky": 0,
+      "snapshotsUpdated": false
+    }
+  },
+  "scope": {
+    "otherDatabaseServersExecuted": false,
+    "fullBrowserMatrix": false,
+    "physicalDevices": false,
+    "performanceMeasurement": false
+  },
+  "artifacts": [
+    {
+      "path": "specs/verification/sql-point-3/build.log",
+      "sha256": "17eea7804cca6d60fe2656b97001ec17fef32ddc14b703bb1c332f7a09780693"
+    },
+    {
+      "path": "specs/verification/sql-point-3/changed-snapshots.json",
+      "sha256": "7619b9d6307515f60726ed98d12270d5539ce006d9691609ebac7b1b44028d70"
+    },
+    {
+      "path": "specs/verification/sql-point-3/editorial-review.json",
+      "sha256": "77a850d814dc58d11c36781631e96e165f8a7ad320ea3396869ee53c79d6c5e3"
+    },
+    {
+      "path": "specs/verification/sql-point-3/green-focused.log",
+      "sha256": "2cebd0ac91efe88ca75d4d260d3d7f63b4de8e7866f4c204c70970c3a7320c80"
+    },
+    {
+      "path": "specs/verification/sql-point-3/native.log",
+      "sha256": "cf0ed6a5eca2048c190af13ec6e5fe6b856447a03ae0a968e0fcfa93e750947b"
+    },
+    {
+      "path": "specs/verification/sql-point-3/native.tap",
+      "sha256": "7c0511cbdc0f89762e93a22b711683ba5886084730d4434893bb535747a092b0"
+    },
+    {
+      "path": "specs/verification/sql-point-3/pandas.log",
+      "sha256": "f98d202eef0c3128e5aa26b4316394c8e3c25086db8418da86899a44c5a88091"
+    },
+    {
+      "path": "specs/verification/sql-point-3/production.json",
+      "sha256": "dec112bc75bb9384fe1a5d7947f4fcebbc94267a996e7f8b9f33552627827eff"
+    },
+    {
+      "path": "specs/verification/sql-point-3/red-client.log",
+      "sha256": "75f9acfaedddadb460f6db8fca85293fec425e4edf6414cbe79c1aa71e3dc7fe"
+    },
+    {
+      "path": "specs/verification/sql-point-3/red-unverified.log",
+      "sha256": "916ce4bd087b04f704ea590b36713ca1366cd11c9b9ea89d65df206dc1426d1f"
+    },
+    {
+      "path": "specs/verification/sql-point-3/red.log",
+      "sha256": "368b1bd4aaa255cf94fcbea6d27dc1f529c0ef10c972777cdf5a3b05c44ec1a7"
+    },
+    {
+      "path": "specs/verification/sql-point-3/snapshots-before.json",
+      "sha256": "1d9d4ab1d873acd62a75ba889c5ec707e9c127b7f947a209277b516f10f9a6d8"
+    },
+    {
+      "path": "specs/verification/sql-point-3/types-app.log",
+      "sha256": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1"
+    },
+    {
+      "path": "specs/verification/sql-point-3/types-tests.log",
+      "sha256": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-dialects-update.json",
+      "sha256": "01b9f7bcea317b89a5b04911ad98947868afb69fb8365ea8ed3ce90995fa3f6d"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-editorial-before-compact.json",
+      "sha256": "0e9e1137aae74a8b591195c046218326ca936f951f4e1a3294e2f139b612e649"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-editorial-compare.json",
+      "sha256": "2eb144ac3b779f3e2618df364540cf9f0a7654e83288a430f90ef6396fc26485"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-editorial-update.json",
+      "sha256": "930bc32a72c5befed664b5ef1a4f662f3b6b4bd0e9aa56b1ddacf797d0854661"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-first-attempt.json",
+      "sha256": "d2de76a3a0f25fce3230d87d1199ab0273191acf901905db5e17be3a1da8fa40"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-red-overlap.json",
+      "sha256": "391232878a7c2948372a853dbb7b7547330a7f322c30015d3c2a203df73421f4"
+    },
+    {
+      "path": "specs/verification/sql-point-3/ui-red.json",
+      "sha256": "a3b560607921cadf361d7706f365fdeb5b9ec7998597b836bceeb66c6d4000f4"
+    },
+    {
+      "path": "specs/verification/sql-point-3/visual-review.json",
+      "sha256": "a1104cd2c70ed5dc14b38680fc6a527e08b5397069d7de51b1cd6c5f6a4ccce6"
+    }
+  ]
+}

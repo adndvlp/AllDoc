@@ -1,0 +1,151 @@
+// Salida de referencia: SQLite, negocio-relacional@1. Verificación WASM en tests/sql-first-block.test.ts.
+export default {
+  "sql/limit/filas-completas": {
+    "columns": [
+      "id",
+      "nombre",
+      "categoria",
+      "precio",
+      "stock",
+      "proveedor_id",
+      "activo"
+    ],
+    "rows": [
+      [
+        "1",
+        "Teclado",
+        "Accesorios",
+        "500",
+        "45",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "Mouse",
+        "Accesorios",
+        "250",
+        "35",
+        "2",
+        "1"
+      ],
+      [
+        "3",
+        "Monitor",
+        "Pantallas",
+        "3500",
+        "25",
+        "3",
+        "1"
+      ],
+      [
+        "4",
+        "Bocina",
+        "Audio",
+        "800",
+        "15",
+        "4",
+        "1"
+      ],
+      [
+        "5",
+        "Audífonos",
+        "Audio",
+        "1200",
+        "30",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "sql/limit/nombres": {
+    "columns": [
+      "nombre"
+    ],
+    "rows": [
+      [
+        "Teclado"
+      ],
+      [
+        "Mouse"
+      ],
+      [
+        "Monitor"
+      ]
+    ]
+  },
+  "sql/limit/filas/ejemplo-1": {
+    "columns": [
+      "id",
+      "nombre",
+      "categoria",
+      "precio",
+      "stock",
+      "proveedor_id",
+      "activo"
+    ],
+    "rows": [
+      [
+        "1",
+        "Teclado",
+        "Accesorios",
+        "500",
+        "45",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "Mouse",
+        "Accesorios",
+        "250",
+        "35",
+        "2",
+        "1"
+      ],
+      [
+        "3",
+        "Monitor",
+        "Pantallas",
+        "3500",
+        "25",
+        "3",
+        "1"
+      ],
+      [
+        "4",
+        "Bocina",
+        "Audio",
+        "800",
+        "15",
+        "4",
+        "1"
+      ],
+      [
+        "5",
+        "Audífonos",
+        "Audio",
+        "1200",
+        "30",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "sql/limit/offset/ejemplo-1": {
+    "columns": [
+      "nombre"
+    ],
+    "rows": [
+      [
+        "Bocina"
+      ],
+      [
+        "Audífonos"
+      ],
+      [
+        "SSD"
+      ]
+    ]
+  }
+};

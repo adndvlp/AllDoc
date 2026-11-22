@@ -23,7 +23,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
     'Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
     'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau',
   ]);
-  await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('5 conceptos');
+  await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('53 conceptos');
   expect(await library(page).locator('[data-topic-icon]:not([data-icon-kind="group"])').evaluateAll((icons) => icons.map((icon) => icon.getAttribute('data-topic-icon')))).toEqual([
     'Excel', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
@@ -40,7 +40,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await noOverflow(page);
   await library(page).locator('img[data-topic-icon]').evaluateAll((images) => Promise.all(images.map((image) => (image as HTMLImageElement).decode())));
   await expect(page).toHaveScreenshot('catalogo.png');
-  await item(page, 'sql').getByRole('link').filter({hasText: 'WHERE'}).click();
+  await item(page, 'sql').getByRole('link').filter({has: page.getByText('WHERE',{exact:true})}).click();
   await expect(page).toHaveURL(/\/sql\/where$/);
   await expect(page.getByRole('heading', {name: 'WHERE', exact: true})).toBeVisible();
   if (page.viewportSize()!.width <= 996) await page.locator('.navbar__toggle').click();
@@ -91,7 +91,7 @@ test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías
   await expect(library(page).locator('details')).toHaveCount(24);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
-  await expect(item(page, 'sql').getByRole('link')).toHaveCount(5);
+  await expect(item(page, 'sql').getByRole('link')).toHaveCount(53);
   await noOverflow(page);
   await expect(page).toHaveScreenshot('area.png');
   if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');

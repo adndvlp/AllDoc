@@ -13,7 +13,7 @@ import {workspaceKey} from '../src/practice/context.ts';
 import type {SqlVariant,VerifiedSqliteExample,SqlGroupPlan} from '../src/content/sql/contracts.ts';
 
 const groupKeys=['select','limit','where','between','in','like','order-by','distinct','join','outer-joins','null','coalesce','case','cast','text-functions','numeric-functions','aggregation','group-by','logical-order','insert','update','delete','create-table','alter-table','drop-table','views','indexes','subqueries','union','intersect','except','cte','window-functions','transactions'];
-const legacy=concepts.filter(c=>c.topicId==='sql');
+const legacy=concepts.filter(c=>['select','where','order-by','limit','comentarios'].some(id=>c.id==='analisis-de-datos/sql/'+id));
 const source={url:'https://sqlite.org/lang_select.html',targetVersion:'SQLite 3.54',checkedAt:'2026-11-21'};
 const example:VerifiedSqliteExample={id:'test/select',conceptId:'analisis-de-datos/sql/select',code:'SELECT 1;',runtimeId:'sqlite-wasm',status:'verified'};
 const variant:SqlVariant={conceptId:'analisis-de-datos/sql/select',feature:'select',dialectId:'sqlite',stage:'reviewed',support:'native',code:example.code,sources:[source],localExecution:{kind:'sqlite',exampleId:example.id}};
@@ -33,12 +33,12 @@ test('SQL: rechaza árboles con identidad repetida, definición ausente, orden a
     const changed=structuredClone(base);mutate(changed);assert.ok(inspectSqlCurriculum(changed as SqlGroupPlan[]).length>0);
   }
 });
-test('SQL: publicación sigue limitada a los cinco conceptos reales y no importa cuerpos, filas o motores',async()=>{
+test('SQL: publicación incluye solo los 53 conceptos revisados y no importa cuerpos, filas o motores',async()=>{
   const published=getPublishedSqlCurriculum().flatMap(g=>g.children);
-  assert.deepEqual(published.map(c=>c.id).sort(),legacy.map(c=>c.id).sort());
-  for(const c of sqlConceptPlans){assert.equal(c.stage,legacy.some(l=>l.id===c.id)?'published-legacy':'planned');assert.match(c.file,/^[a-z][a-z0-9/-]*\.mdx$/);}
+  assert.deepEqual(published.map(c=>c.id).sort(),concepts.filter(c=>c.topicId==='sql').map(c=>c.id).sort());
+  for(const c of sqlConceptPlans){assert.equal(c.stage,legacy.some(l=>l.id===c.id)?'published-legacy':concepts.some(l=>l.id===c.id)?'published':'planned');assert.match(c.file,/^[a-z][a-z0-9/-]*\.mdx$/);}
   assert.deepEqual(catalog.map(a=>a.id),['analisis-de-datos','desarrollo-web','ia']);
-  assert.equal((await readdir('docs/analisis-de-datos/sql')).filter(f=>f.endsWith('.mdx')).length,5);
+  assert.equal((await readdir('docs/analisis-de-datos/sql',{recursive:true})).filter(f=>f.endsWith('.mdx')).length,53);
   for(const file of ['curriculum','contracts','capabilities','placements','variants'])assert.doesNotMatch(await readFile('src/content/sql/'+file+'.ts','utf8'),/import\s.*(?:notes\/|datasets\/rows|sqlite-wasm|pyodide|PracticeEditor)/);
 });
 test('SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes',async()=>{

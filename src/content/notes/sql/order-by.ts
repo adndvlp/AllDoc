@@ -1,0 +1,9 @@
+import {defineSqlGroup} from './factory.ts';import results from './results/order-by.ts';
+const asc={title:'Del más barato al más caro',code:'SELECT nombre, precio FROM productos\nORDER BY precio ASC, id ASC;',hint:'id desempata los precios iguales y hace reproducible la salida.'};
+export const notes=defineSqlGroup([
+ {key:'order-by/definicion',examples:[{...asc,id:'sql/order-by/precio-ascendente'}],remember:'ASC: de menor a mayor. DESC: de mayor a menor.'},
+ {key:'order-by/asc',examples:[asc],remember:'ASC es el orden predeterminado; escribirlo hace explícita tu intención.'},
+ {key:'order-by/desc',examples:[{title:'Del más caro al más barato',code:'SELECT nombre, precio FROM productos\nORDER BY precio DESC, id ASC;',hint:'El precio baja; ante un empate, id sube.'}],remember:'Cada columna puede tener su propio ASC o DESC.'},
+ {key:'order-by/varias-columnas',examples:[{title:'Categoría, precio y desempate',code:'SELECT nombre, categoria, precio FROM productos\nORDER BY categoria ASC, precio DESC, id ASC;',hint:'Primero agrupa visualmente por categoría; dentro de ella ordena por precio.'}],remember:'La segunda columna solo desempata a la primera. La posición de NULL cambia entre motores.'},
+ {key:'order-by/con-limit',examples:[{title:'Los 3 productos más caros',code:'SELECT nombre, precio FROM productos\nORDER BY precio DESC, id ASC LIMIT 3;',hint:'Ordena primero y toma después las tres primeras filas.',changes:{sqlserver:{code:'SELECT TOP (3) nombre, precio FROM productos\nORDER BY precio DESC, id ASC;',explanation:'TOP limita el resultado ordenado en SQL Server.'},oracle:{code:'SELECT nombre, precio FROM productos\nORDER BY precio DESC, id ASC FETCH FIRST 3 ROWS ONLY;',explanation:'FETCH FIRST limita el resultado ordenado en Oracle.'}}}],remember:'Un desempate único evita que los empates cambien qué filas entran en el límite.'},
+],results);

@@ -1,5 +1,5 @@
 import CodeBlock from '@theme/CodeBlock';
-import {useId} from 'react';
+import {useId,type ReactNode} from 'react';
 import {HtmlClassNameProvider} from '@docusaurus/theme-common';
 import {usePractice} from '../PracticeProvider';
 import styles from '../SqlNotes/styles.module.css';
@@ -21,24 +21,26 @@ function TryExample({example, language}: {example: Example; language: string}) {
 }
 
 /** La presentación compacta es común; cada herramienta aporta lenguaje y contenido. */
-export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page'}: {
+export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page', controls, afterContent, renderAction, showResults=true, resultLabel='Ver resultado'}: {
   concept: Note; conceptId: string; kind: string; language: string; htmlClassName?: string;
+  controls?:ReactNode;afterContent?:ReactNode;renderAction?:(example:Example)=>ReactNode;showResults?:boolean;resultLabel?:string;
 }) {
   const resultId = useId();
   return <HtmlClassNameProvider className={htmlClassName}>
     <section className={styles.concept} {...{[`data-${kind}-concept`]: conceptId}} aria-label={concept.title}>
       <p className={styles.definition}>{concept.description}</p>
+      {controls}
       <div className={styles.variants}>
         {concept.examples.map((example, index) => (
           <div key={example.id} className={styles.variant} {...{[`data-${kind}-example`]: example.title}}>
             <div className={styles.variantHeading}>
               <h2 className={styles.variantTitle}>{example.title}</h2>
-              <TryExample example={example} language={language} />
+              {renderAction?renderAction(example):<TryExample example={example} language={language} />}
             </div>
-            <CodeBlock language={language}>{example.code}</CodeBlock>
+            {example.code&&<CodeBlock language={language}>{example.code}</CodeBlock>}
             <p className={styles.hint}>{example.hint}</p>
-            <details className={styles.result}>
-              <summary>Ver resultado <span>{example.output.rows.length} filas</span></summary>
+            {showResults&&example.code&&<details className={styles.result}>
+              <summary>{resultLabel} <span>{example.output.rows.length} filas</span></summary>
               <div className={styles.tableWrapper} role="region" tabIndex={0} aria-labelledby={`${resultId}-${index}`}>
                 <table>
                   <caption id={`${resultId}-${index}`} className="sr-only">Resultado de {concept.title}: {example.title}</caption>
@@ -54,12 +56,13 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
                   ))}</tbody>
                 </table>
               </div>
-            </details>
+            </details>}
           </div>
         ))}
       </div>
       <p className={styles.remember}>{concept.remember}</p>
       {concept.note && <p className={styles.note}>{concept.note}</p>}
+      {afterContent}
     </section>
   </HtmlClassNameProvider>;
 }

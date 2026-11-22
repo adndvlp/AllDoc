@@ -1,9 +1,9 @@
 # AllDoc — SDD de SQL: apuntes, dialectos y práctica relacional
 
 **Fecha:** 21 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 y 2 completados; puntos 3 a 9 pendientes. [Evidencia del punto 1](verification/sql-point-1.md) · [Evidencia del punto 2](verification/sql-point-2.md).
+**Estado:** puntos 1 a 3 completados; puntos 4 a 9 pendientes. [Punto 1](verification/sql-point-1.md) · [Punto 2](verification/sql-point-2.md) · [Punto 3](verification/sql-point-3.md).
 **Objetivo:** convertir la base de `tmp/SQL` en apuntes completos, compactos y progresivos, compartidos entre Análisis de datos y Lenguajes, con variantes por dialecto y una práctica libre sobre un único dataset relacional.  
-**Entrega inicial:** este SDD. El punto 1 incorpora inventario y contratos sin modificar los apuntes originales ni publicar contenido incompleto. Las funciones de las entregas posteriores siguen pendientes.
+**Entrega inicial:** este SDD. Los puntos 1 a 3 incorporan inventario y contratos, dataset relacional y el bloque editorial SELECT → CAST. Los puntos 4 a 9 siguen pendientes.
 
 ## 1. Entradas y base comprobada
 
@@ -416,8 +416,8 @@ Cada punto termina en una entrega revisable y evidencia de sus comprobaciones. L
 | Punto | Entrega | Cierre del punto |
 | --- | --- | --- |
 | 1 | Inventario definitivo, árbol SQL, contratos de variante/ubicación/ejecución y matriz de capacidades | Completado: 99 fuentes con snapshot/hash y destino, 34 grupos y 153 destinos; cinco IDs/rutas conservados, contratos y matriz de seis dialectos con revisión explícita o pendiente; 14 pruebas nuevas, 289 de código en total, tipos y build aprobados. [Evidencia](verification/sql-point-1.md) |
-| 2 | Dataset `negocio-relacional@1`, restricciones, preparación/migración de SQL y exportaciones por dialecto | Consultas simples y complejas reales, FK activas, reinicio, transacciones y migración comprobados; pandas conserva su dataset |
-| 3 | Renderer modular, primer bloque SELECT → CAST y selector de dialecto | Apuntes revisados, rutas previas válidas, variantes y acciones honestas sobre el motor local; pruebas de SQL y UI afectada |
+| 2 | Dataset `negocio-relacional@1`, restricciones, preparación/migración de SQL y exportaciones por dialecto | Completado: 13 tablas, 379 filas, restricciones, transacciones, reinicio, migración y seis exportaciones; pandas conserva su dataset. [Evidencia](verification/sql-point-2.md) |
+| 3 | Renderer modular, primer bloque SELECT → CAST y selector de dialecto | Completado: 53 fichas en 14 grupos, 61 ejemplos SQLite, selector de seis dialectos y acciones locales explícitas; rutas anteriores conservadas, 368 pruebas de código y 88 de UI aprobadas, dos omisiones previstas, tipos y build correctos. [Evidencia](verification/sql-point-3.md) |
 | 4 | Segundo bloque: funciones de texto → CREATE TABLE | Funciones y agregaciones completas, agrupación, orden lógico, DML y restricciones; ejemplos/variantes contrastados |
 | 5 | Tercer bloque: ALTER TABLE → Transacciones | Vistas, índices, subconsultas, conjuntos, CTE, ventanas y transacciones completos; once archivos vacíos resueltos y cobertura editorial completa |
 | 6 | Catálogo/sidebars SQL colapsables y entrada compartida en Lenguajes | Una sola fuente, rutas de ambas ubicaciones, búsquedas sin duplicados, favoritos/recientes y sesión común comprobados |

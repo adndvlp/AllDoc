@@ -128,7 +128,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
     }}>
     <div className={styles.frame}>
       <header className={styles.header}>
-        <h2 id={id + '-title'}>Práctica <strong>{label}</strong></h2>
+        <h2 id={id + '-title'}>Práctica <strong>{label}</strong>{practice.context?.profile.id==='sql-sqlite'&&<small className={styles.localEngine}>Motor local: SQLite</small>}</h2>
         <div className={styles.actions}>
           <button type="button" aria-label="Buscar un concepto" onClick={() => {void search.openDialog();}}><Icon name="search" size={18} /></button>
           {topics.shouldRender && <button type="button" aria-label="Abrir temas" onClick={topics.toggle}><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 4h12M3 9h12M3 14h12" stroke="currentColor" strokeWidth="1.5" /></svg></button>}

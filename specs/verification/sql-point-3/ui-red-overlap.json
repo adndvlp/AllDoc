@@ -1,0 +1,311 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/notes.spec.ts",
+      "--project=celular",
+      "-g",
+      "recuerdo sin tapar"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "notes.spec.ts",
+      "file": "notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1117,
+                  "error": {
+                    "message": "Error: El botón no debe tapar ninguna letra de la clave importante\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 93\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 223.859375,\u001b[39m\n\u001b[31m+     \"text\": \"s\",\u001b[39m\n\u001b[31m+     \"x\": 216.671875,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 235.21875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 227.625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 238.609375,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 235.203125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 250.25,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 242.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 253.546875,\u001b[39m\n\u001b[31m+     \"text\": \"j\",\u001b[39m\n\u001b[31m+     \"x\": 250.234375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 261.390625,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 253.53125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 269.078125,\u001b[39m\n\u001b[31m+     \"text\": \"c\",\u001b[39m\n\u001b[31m+     \"x\": 261.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 277.09375,\u001b[39m\n\u001b[31m+     \"text\": \"u\",\u001b[39m\n\u001b[31m+     \"x\": 269.0625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 282.03125,\u001b[39m\n\u001b[31m+     \"text\": \"t\",\u001b[39m\n\u001b[31m+     \"x\": 277.078125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 289.609375,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 282.015625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 294.78125,\u001b[39m\n\u001b[31m+     \"text\": \"r\",\u001b[39m\n\u001b[31m+     \"x\": 289.59375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 301.96875,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 298.5625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 309.546875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 301.953125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: El botón no debe tapar ninguna letra de la clave importante\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 93\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 223.859375,\u001b[39m\n\u001b[31m+     \"text\": \"s\",\u001b[39m\n\u001b[31m+     \"x\": 216.671875,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 235.21875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 227.625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 238.609375,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 235.203125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 250.25,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 242.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 253.546875,\u001b[39m\n\u001b[31m+     \"text\": \"j\",\u001b[39m\n\u001b[31m+     \"x\": 250.234375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 261.390625,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 253.53125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 269.078125,\u001b[39m\n\u001b[31m+     \"text\": \"c\",\u001b[39m\n\u001b[31m+     \"x\": 261.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 277.09375,\u001b[39m\n\u001b[31m+     \"text\": \"u\",\u001b[39m\n\u001b[31m+     \"x\": 269.0625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 282.03125,\u001b[39m\n\u001b[31m+     \"text\": \"t\",\u001b[39m\n\u001b[31m+     \"x\": 277.078125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 289.609375,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 282.015625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 294.78125,\u001b[39m\n\u001b[31m+     \"text\": \"r\",\u001b[39m\n\u001b[31m+     \"x\": 289.59375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 301.96875,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 298.5625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 309.546875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 301.953125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts:99:79",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts",
+                      "column": 79,
+                      "line": 99
+                    },
+                    "snippet": " \u001b[90m  97 |\u001b[39m  \u001b[36mconst\u001b[39m letters\u001b[33m=\u001b[39m\u001b[36mawait\u001b[39m remember\u001b[33m.\u001b[39mevaluate(element\u001b[33m=>\u001b[39m{\u001b[36mconst\u001b[39m range\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mcreateRange()\u001b[33m,\u001b[39mwalker\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mcreateTreeWalker(element\u001b[33m,\u001b[39m\u001b[33mNodeFilter\u001b[39m\u001b[33m.\u001b[39m\u001b[33mSHOW_TEXT\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mconst\u001b[39m rectangles\u001b[33m=\u001b[39m[]\u001b[33m;\u001b[39m\u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m node\u001b[33m=\u001b[39mwalker\u001b[33m.\u001b[39mnextNode()\u001b[33m;\u001b[39mnode\u001b[33m;\u001b[39mnode\u001b[33m=\u001b[39mwalker\u001b[33m.\u001b[39mnextNode())\u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m(node\u001b[33m.\u001b[39mtextContent\u001b[33m?.\u001b[39mlength\u001b[33m??\u001b[39m\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m){\u001b[36mif\u001b[39m(\u001b[33m!\u001b[39mnode\u001b[33m.\u001b[39mtextContent\u001b[33m!\u001b[39m[i]\u001b[33m.\u001b[39mtrim())\u001b[36mcontinue\u001b[39m\u001b[33m;\u001b[39mrange\u001b[33m.\u001b[39msetStart(node\u001b[33m,\u001b[39mi)\u001b[33m;\u001b[39mrange\u001b[33m.\u001b[39msetEnd(node\u001b[33m,\u001b[39mi\u001b[33m+\u001b[39m\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mconst\u001b[39m r\u001b[33m=\u001b[39mrange\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m;\u001b[39mrectangles\u001b[33m.\u001b[39mpush({text\u001b[33m:\u001b[39mnode\u001b[33m.\u001b[39mtextContent\u001b[33m!\u001b[39m[i]\u001b[33m,\u001b[39mx\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mx\u001b[33m,\u001b[39my\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39my\u001b[33m,\u001b[39mright\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mright\u001b[33m,\u001b[39mbottom\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mbottom})\u001b[33m;\u001b[39m}\u001b[36mreturn\u001b[39m rectangles\u001b[33m;\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m  98 |\u001b[39m  \u001b[36mconst\u001b[39m hidden\u001b[33m=\u001b[39mletters\u001b[33m.\u001b[39mfilter(r\u001b[33m=>\u001b[39mr\u001b[33m.\u001b[39mx\u001b[33m<\u001b[39m\u001b[33mdock\u001b[39m\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mx\u001b[33m+\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mwidth\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39mright\u001b[33m>\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mx\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39my\u001b[33m<\u001b[39m\u001b[33mdock\u001b[39m\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my\u001b[33m+\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mheight\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39mbottom\u001b[33m>\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  99 |\u001b[39m  expect(hidden\u001b[33m,\u001b[39m\u001b[32m'El botón no debe tapar ninguna letra de la clave importante'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 100 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 101 |\u001b[39m\n \u001b[90m 102 |\u001b[39m test(\u001b[32m'copiar cada variante conserva la consulta completa y mantiene la posición del contenido'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page\u001b[33m,\u001b[39m context}) \u001b[33m=>\u001b[39m {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts",
+                        "column": 79,
+                        "line": 99
+                      },
+                      "message": "Error: El botón no debe tapar ninguna letra de la clave importante\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 93\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 223.859375,\u001b[39m\n\u001b[31m+     \"text\": \"s\",\u001b[39m\n\u001b[31m+     \"x\": 216.671875,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 235.21875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 227.625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 238.609375,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 235.203125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 250.25,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 242.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 253.546875,\u001b[39m\n\u001b[31m+     \"text\": \"j\",\u001b[39m\n\u001b[31m+     \"x\": 250.234375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 261.390625,\u001b[39m\n\u001b[31m+     \"text\": \"e\",\u001b[39m\n\u001b[31m+     \"x\": 253.53125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 269.078125,\u001b[39m\n\u001b[31m+     \"text\": \"c\",\u001b[39m\n\u001b[31m+     \"x\": 261.375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 277.09375,\u001b[39m\n\u001b[31m+     \"text\": \"u\",\u001b[39m\n\u001b[31m+     \"x\": 269.0625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 282.03125,\u001b[39m\n\u001b[31m+     \"text\": \"t\",\u001b[39m\n\u001b[31m+     \"x\": 277.078125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 289.609375,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 282.015625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 294.78125,\u001b[39m\n\u001b[31m+     \"text\": \"r\",\u001b[39m\n\u001b[31m+     \"x\": 289.59375,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 301.96875,\u001b[39m\n\u001b[31m+     \"text\": \"l\",\u001b[39m\n\u001b[31m+     \"x\": 298.5625,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"bottom\": 795.71875,\u001b[39m\n\u001b[31m+     \"right\": 309.546875,\u001b[39m\n\u001b[31m+     \"text\": \"a\",\u001b[39m\n\u001b[31m+     \"x\": 301.953125,\u001b[39m\n\u001b[31m+     \"y\": 778.71875,\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n \u001b[90m  97 |\u001b[39m  \u001b[36mconst\u001b[39m letters\u001b[33m=\u001b[39m\u001b[36mawait\u001b[39m remember\u001b[33m.\u001b[39mevaluate(element\u001b[33m=>\u001b[39m{\u001b[36mconst\u001b[39m range\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mcreateRange()\u001b[33m,\u001b[39mwalker\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mcreateTreeWalker(element\u001b[33m,\u001b[39m\u001b[33mNodeFilter\u001b[39m\u001b[33m.\u001b[39m\u001b[33mSHOW_TEXT\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mconst\u001b[39m rectangles\u001b[33m=\u001b[39m[]\u001b[33m;\u001b[39m\u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m node\u001b[33m=\u001b[39mwalker\u001b[33m.\u001b[39mnextNode()\u001b[33m;\u001b[39mnode\u001b[33m;\u001b[39mnode\u001b[33m=\u001b[39mwalker\u001b[33m.\u001b[39mnextNode())\u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m(node\u001b[33m.\u001b[39mtextContent\u001b[33m?.\u001b[39mlength\u001b[33m??\u001b[39m\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m){\u001b[36mif\u001b[39m(\u001b[33m!\u001b[39mnode\u001b[33m.\u001b[39mtextContent\u001b[33m!\u001b[39m[i]\u001b[33m.\u001b[39mtrim())\u001b[36mcontinue\u001b[39m\u001b[33m;\u001b[39mrange\u001b[33m.\u001b[39msetStart(node\u001b[33m,\u001b[39mi)\u001b[33m;\u001b[39mrange\u001b[33m.\u001b[39msetEnd(node\u001b[33m,\u001b[39mi\u001b[33m+\u001b[39m\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mconst\u001b[39m r\u001b[33m=\u001b[39mrange\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m;\u001b[39mrectangles\u001b[33m.\u001b[39mpush({text\u001b[33m:\u001b[39mnode\u001b[33m.\u001b[39mtextContent\u001b[33m!\u001b[39m[i]\u001b[33m,\u001b[39mx\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mx\u001b[33m,\u001b[39my\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39my\u001b[33m,\u001b[39mright\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mright\u001b[33m,\u001b[39mbottom\u001b[33m:\u001b[39mr\u001b[33m.\u001b[39mbottom})\u001b[33m;\u001b[39m}\u001b[36mreturn\u001b[39m rectangles\u001b[33m;\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m  98 |\u001b[39m  \u001b[36mconst\u001b[39m hidden\u001b[33m=\u001b[39mletters\u001b[33m.\u001b[39mfilter(r\u001b[33m=>\u001b[39mr\u001b[33m.\u001b[39mx\u001b[33m<\u001b[39m\u001b[33mdock\u001b[39m\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mx\u001b[33m+\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mwidth\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39mright\u001b[33m>\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mx\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39my\u001b[33m<\u001b[39m\u001b[33mdock\u001b[39m\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my\u001b[33m+\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mheight\u001b[33m&&\u001b[39mr\u001b[33m.\u001b[39mbottom\u001b[33m>\u001b[39mdock\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  99 |\u001b[39m  expect(hidden\u001b[33m,\u001b[39m\u001b[32m'El botón no debe tapar ninguna letra de la clave importante'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 100 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 101 |\u001b[39m\n \u001b[90m 102 |\u001b[39m test(\u001b[32m'copiar cada variante conserva la consulta completa y mantiene la posición del contenido'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page\u001b[33m,\u001b[39m context}) \u001b[33m=>\u001b[39m {\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts:99:79\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:12:54.545Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/notes-recuerdo-sin-tapar-l-c3564-a-las-letras-de-comentarios-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/notes-recuerdo-sin-tapar-l-c3564-a-las-letras-de-comentarios-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/notes-recuerdo-sin-tapar-l-c3564-a-las-letras-de-comentarios-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/notes.spec.ts",
+                    "column": 79,
+                    "line": 99
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-07df48915885ef520f70",
+          "file": "notes.spec.ts",
+          "line": 94,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-22T00:12:43.717Z",
+    "duration": 12114.166,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

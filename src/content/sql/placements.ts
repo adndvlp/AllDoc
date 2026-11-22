@@ -7,7 +7,7 @@ export const sqlLocations=Object.freeze([
 ]);
 export type SqlPlacement=Readonly<{
   conceptId:string;canonicalPath:string;path:string;locationId:SqlLocationId;
-  stage:'planned'|'published-legacy';locationStage:'existing'|'planned';practice:typeof sqlPracticeIdentity;
+  stage:'planned'|'published-legacy'|'published';locationStage:'existing'|'planned';practice:typeof sqlPracticeIdentity;
 }>;
 
 /** Resuelve el plan; no registra rutas ni habilita el área en Docusaurus. */

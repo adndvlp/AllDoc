@@ -44,7 +44,7 @@ for(const profile of profiles) {
       await execute(page,profile,mutation); await savedCode(page,profile,mutation);
       await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
       const example=profile.id==='SQL'?'Columnas concretas':'Crear una tabla de productos';
-      await page.getByRole('button',{name:'Probar este ejemplo: '+example,exact:true}).click();
+      await page.getByRole('button',{name:(profile.id==='SQL'?'Probar en SQLite: ':'Probar este ejemplo: ')+example,exact:true}).click();
       await expect(code(page,profile)).toBeFocused();
       if(profile.id==='SQL') await expectCode(page,profile,'SELECT nombre, precio FROM productos;'); else await expectCode(page,profile,initial);
       await showResults(page); await expect(panel(page).getByText('Este resultado corresponde a una versión anterior del código.',{exact:true})).toBeVisible();

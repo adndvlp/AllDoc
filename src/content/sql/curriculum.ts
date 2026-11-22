@@ -1,9 +1,8 @@
-import {concepts} from '../concepts.ts';
 import type {SqlConceptPlan,SqlGroupPlan} from './contracts.ts';
 
 type Leaf = readonly [key:string,label:string,feature?:string];
 type Group = readonly [key:string,label:string,children:readonly Leaf[]];
-// Solo metadata de planificación. No es el catálogo publicado ni importa cuerpos.
+// Metadata compartida: nunca importa cuerpos, filas ni motores.
 const definitions: readonly Group[] = [
   ['select','SELECT',[
     ['todas-las-columnas','Todas las columnas'],['columnas-concretas','Columnas concretas'],
@@ -84,7 +83,8 @@ const definitions: readonly Group[] = [
 ];
 
 const prefix='analisis-de-datos/sql/';
-const published=new Map<string,string>(concepts.filter(c=>c.topicId==='sql').map(c=>[c.id,c.slug]));
+export const publishedSqlGroupCount=14;
+const published=new Map(['select','where','order-by','limit','comentarios'].map(id=>[prefix+id,'/apuntes/'+prefix+id]));
 const legacyIds: Readonly<Record<string,string>>={
   'select/definicion':'select','where/definicion':'where','order-by/definicion':'order-by',
   'limit/definicion':'limit','select/comentarios':'comentarios',
@@ -96,7 +96,7 @@ export const sqlCurriculum: readonly SqlGroupPlan[] = Object.freeze(definitions.
     const id=prefix+(legacyIds[conceptKey]??(leaf==='definicion'?key:conceptKey));
     return Object.freeze({key:conceptKey,id,label,order:i+1,feature:feature??key,
       canonicalPath:published.get(id)??'/apuntes/'+id,file:conceptKey+'.mdx',
-      stage:published.has(id)?'published-legacy':'planned'});
+      stage:published.has(id)?'published-legacy':index<publishedSqlGroupCount?'published':'planned'});
   })),
 })));
 export const sqlConceptPlans: readonly SqlConceptPlan[]=Object.freeze(sqlCurriculum.flatMap(g=>g.children));
@@ -116,7 +116,7 @@ export function inspectSqlCurriculum(groups:readonly SqlGroupPlan[]):string[] {
       if(!c.key.startsWith(g.key+'/')||c.key.split('/').length!==2||!c.key.split('/').every(p=>segment.test(p))||c.order!==j+1||!c.feature||!c.label.trim()||/^\d+[.\-]/.test(c.label))errors.push('Concepto inválido: '+c.key);
       if(c.file!==c.key+'.mdx'||files.has(c.file))errors.push('Archivo inválido: '+c.file);files.add(c.file);
       if(c.canonicalPath!=='/apuntes/'+c.id||!c.id.startsWith(prefix)||paths.has(c.canonicalPath))errors.push('Ruta inválida: '+c.canonicalPath);paths.add(c.canonicalPath);
-      if(!['planned','published-legacy'].includes(c.stage)||(c.stage==='published-legacy'&&!published.has(c.id)))errors.push('Estado no publicable: '+c.id);
+      if(!['planned','published-legacy','published'].includes(c.stage)||(c.stage==='published-legacy'&&!published.has(c.id)))errors.push('Estado no publicable: '+c.id);
       const expected=legacyIds[c.key];if(expected&&c.id!==prefix+expected)errors.push('Identidad histórica cambiada: '+c.key);
       const suffix=expected??(c.key.endsWith('/definicion')?g.key:c.key);
       if(c.id!==prefix+suffix)errors.push('Identidad incoherente con el árbol: '+c.key);
@@ -126,7 +126,7 @@ export function inspectSqlCurriculum(groups:readonly SqlGroupPlan[]):string[] {
   return errors;
 }
 
-/** La planificación no publica automáticamente los cuerpos todavía inexistentes. */
+/** Solo los bloques entregados se publican; el resto sigue planificado. */
 export function getPublishedSqlCurriculum():readonly SqlGroupPlan[] {
-  return Object.freeze(sqlCurriculum.map(g=>Object.freeze({...g,children:Object.freeze(g.children.filter(c=>c.stage==='published-legacy'))})).filter(g=>g.children.length));
+  return Object.freeze(sqlCurriculum.map(g=>Object.freeze({...g,children:Object.freeze(g.children.filter(c=>c.stage!=='planned'))})).filter(g=>g.children.length));
 }

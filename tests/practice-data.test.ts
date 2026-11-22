@@ -10,7 +10,7 @@ import {concepts, getConcept} from '../src/content/concepts.ts';
 import {catalog, countConcepts} from '../src/content/catalog.ts';
 import {entries} from '../src/content/search-index.ts';
 import {searchEntries} from '../src/lib/search.ts';
-import {sqlConcepts, sqlTable} from '../src/content/sql.ts';
+import {sqlConcepts,getSqlConcept} from '../src/content/sql.ts';
 import {parseConceptFrontMatter} from '../src/lib/concept-front-matter.ts';
 import path from 'node:path';
 
@@ -28,17 +28,15 @@ test('el dataset canónico conserva tres columnas, tres productos y el precio en
   assert.deepEqual(manifest.reference, reference);
 });
 
-test('materializar SQLite prepara parámetros y sus ocho consultas conservan resultados', async () => {
+test('materializar el dataset histórico SQLite prepara parámetros y conserva sus tres productos', async () => {
   const materialized = await createDatasetAdapter().materialize(reference, 'sqlite-wasm', signal());
   const seed = JSON.parse(materialized.bootstrap) as SqlSeed;
   assert.equal(seed.format, 'alldoc/sql-seed@1');
   const db = new DatabaseSync(':memory:');
   try {
     for (const statement of seed.statements) db.prepare(statement.sql).run(...statement.parameters);
-    for (const concept of sqlConcepts) for (const example of concept.examples) {
-      const result = db.prepare(example.code).all();
-      assert.deepEqual(result.map((row) => example.output.columns.map((column) => String(row[column]))), example.output.rows);
-    }
+    const result=db.prepare('SELECT nombre,categoria,precio FROM productos').all();
+    assert.deepEqual(result.map(row=>expectedColumns.map(c=>row[c])),expectedRows);
     assert.equal(db.prepare('SELECT typeof(precio) AS tipo FROM productos LIMIT 1').get()?.tipo, 'integer');
     assert.deepEqual(materialized.schema.entities[0].columns.map(({name}) => name), expectedColumns);
     assert.equal(materialized.schema.entities[0].kind, 'table');
@@ -90,23 +88,22 @@ test('DataFrame está publicado bajo Pandas, con búsqueda propia y un único ej
   assert.deepEqual(note.examples[0].output.columns, expectedColumns);
   assert.deepEqual(note.examples[0].output.rows, expectedRows.map((row) => row.map(String)));
   assert.deepEqual(note.examples[0].output.rowLabels, ['0', '1', '2']);
-  assert.equal(countConcepts(catalog[0].items), 6);
-  assert.equal(concepts.filter(({topicId}) => topicId === 'sql').length, 5);
+  assert.equal(countConcepts(catalog[0].items), 54);
+  assert.equal(concepts.filter(({topicId}) => topicId === 'sql').length, 53);
   assert.equal(searchEntries(entries, 'crear una tabla con pandas')[0]?.id, id);
   assert.match(await readFile('docs/' + id + '.mdx', 'utf8'), /PandasConceptCard/);
 });
 
-test('el dataset compartido no cambia las consultas, resultados ni contenido de las ocho variantes SQL', async () => {
+test('las cinco rutas históricas conservan su identidad y ejemplos al revisar el contenido; el snapshot original sigue disponible', async () => {
   const before = JSON.parse(await readFile('specs/verification/practice-point-2-before.json', 'utf8'));
-  assert.deepEqual(sqlTable, before.sqlTable);
-  // Los IDs de práctica nuevos son metadata; el contenido editorial permanece intacto.
-  assert.deepEqual(sqlConcepts.map(note => ({...note, examples: note.examples.map(({id, ...example}) => example)})), before.sqlConcepts);
+  assert.deepEqual(before.sqlTable.rows,productsDataset.tables[0].rows.map(row=>row.map(String)));
+  for(const previous of before.sqlConcepts){const current=getSqlConcept(previous.conceptId);assert.ok(current);assert.equal(current.slug,previous.slug);for(const e of previous.examples)assert.ok(current.examples.some(example=>example.title===e.title));}
 });
 
 test('anterior y siguiente permanecen dentro de la misma herramienta', async () => {
   for (const [id, previous, next] of [
-    ['analisis-de-datos/sql/select', null, 'analisis-de-datos/sql/where'],
-    ['analisis-de-datos/sql/comentarios', 'analisis-de-datos/sql/limit', null],
+    ['analisis-de-datos/sql/select', null, 'analisis-de-datos/sql/select/todas-las-columnas'],
+    ['analisis-de-datos/sql/comentarios', 'analisis-de-datos/sql/select/alias', 'analisis-de-datos/sql/limit'],
     ['analisis-de-datos/pandas/dataframe', null, null],
   ] as const) {
     const result = await parseConceptFrontMatter({filePath: path.resolve('docs', id + '.mdx'), fileContent: '',

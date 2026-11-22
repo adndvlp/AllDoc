@@ -1,5 +1,6 @@
-import {sqlConceptPlans} from './curriculum.ts';
+import {sqlConceptPlans,sqlCurriculum} from './curriculum.ts';
 import {isSqlSource,isOfficialSqlSource,type SqlCapability,type SqlDialectId,type SqlSupport,type SqlSource} from './contracts.ts';
+import {firstBlockSources} from './first-block-sources.ts';
 export const sqlDialects: readonly Readonly<{id:SqlDialectId;label:string}>[]=Object.freeze([
   {id:'sqlite',label:'SQLite'},{id:'postgresql',label:'PostgreSQL'},{id:'mysql',label:'MySQL'},
   {id:'sqlserver',label:'SQL Server'},{id:'mariadb',label:'MariaDB'},{id:'oracle',label:'Oracle SQL'},
@@ -44,8 +45,26 @@ facts['full-outer-join']={
   mysql:reviewed('unavailable','','La gramática MySQL 9.7 no incluye FULL OUTER JOIN nativo. Una emulación requiere una variante y pruebas propias.',[source('https://dev.mysql.com/doc/refman/9.7/en/join.html','MySQL 9.7')]),
 };
 
+for(const feature of Array.from(new Set(sqlCurriculum.slice(0,14).flatMap(g=>g.children.map(c=>c.feature))))){
+  for(const dialect of sqlDialects){
+    if(feature==='limit'){
+      const prior=facts.limit[dialect.id]!;if(prior.status==='reviewed')facts.limit[dialect.id]=reviewed(prior.support,prior.syntax,prior.explanation,firstBlockSources[dialect.id]);
+      continue; // TOP/FETCH conservan su clasificación explícita.
+    }
+    const unavailable=feature==='full-outer-join'&&['mysql','mariadb'].includes(dialect.id);
+    const offsetEquivalent=feature==='offset'&&['sqlserver','oracle'].includes(dialect.id);
+    (facts[feature]??={})[dialect.id]=reviewed(unavailable?'unavailable':offsetEquivalent?'equivalent':'native',unavailable?'':offsetEquivalent?'OFFSET / FETCH':feature,
+      unavailable?`${dialect.label} no tiene FULL OUTER JOIN nativo en la gramática revisada. Usa LEFT JOIN y consulta la alternativa anti join.`:
+      feature==='comments'&&['mysql','mariadb'].includes(dialect.id)?'Después de -- escribe un espacio. Los comentarios de bloque usan /* ... */.':
+      feature==='cast'?'El tipo de destino y el tratamiento de valores inválidos dependen del motor.':
+      feature==='like'?'La distinción de mayúsculas y acentos depende del motor y de su collation.':
+      feature==='null'&&dialect.id==='oracle'?'Oracle trata la cadena vacía como NULL; cero es un valor distinto.':
+      offsetEquivalent?'OFFSET/FETCH exige adaptar la sintaxis; en SQL Server requiere ORDER BY.':'Sintaxis revisada para este concepto. No acredita ejecución en un servidor externo.',firstBlockSources[dialect.id]);
+  }
+}
+
 export const sqlCapabilityMatrix:Readonly<Record<string,Readonly<Record<SqlDialectId,SqlCapability>>>>=Object.freeze(Object.fromEntries(
-  [...new Set(sqlConceptPlans.map(c=>c.feature))].map(feature=>[feature,Object.freeze(Object.fromEntries(
+  Array.from(new Set(sqlConceptPlans.map(c=>c.feature))).map(feature=>[feature,Object.freeze(Object.fromEntries(
     sqlDialects.map(d=>[d.id,facts[feature]?.[d.id]??pending]),
   ) as Record<SqlDialectId,SqlCapability>)]),
 ));

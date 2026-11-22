@@ -8,7 +8,7 @@ function sidebarItem(node: CatalogNode): SidebarCategory {
   const items: SidebarItemConfig[] = node.kind === 'group'
     ? node.items.map(sidebarItem)
     : node.concepts.length
-      ? node.concepts.map((concept) => concept.id)
+      ? node.concepts.map((concept) => concept.docId??concept.id)
       : [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}];
   return {
     type: 'category', label: node.label, collapsed: true, collapsible: true,
