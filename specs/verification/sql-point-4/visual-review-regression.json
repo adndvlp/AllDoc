@@ -1,0 +1,18 @@
+{
+  "reviewed": 2,
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/catalogo.png",
+      "sha256": "5d65648414fee82a262be9b5cc782928e7a5ffe7f113fd0a65c6679fa435d707",
+      "viewed": true,
+      "notes": "El catálogo abierto muestra los conceptos nuevos hasta CREATE TABLE. El foco en Pandas desplaza el lector hasta ese tramo; los controles y filas mantienen la disposición previa."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/catalogo.png",
+      "sha256": "e40d4e6275f68770594dd4b5de88793780349135326ca4375699017be921337b",
+      "viewed": true,
+      "notes": "El catálogo abierto muestra los conceptos nuevos hasta CREATE TABLE. El foco en Pandas desplaza el lector hasta ese tramo; los controles y filas mantienen la disposición previa."
+    }
+  ],
+  "unchangedReferences": 225
+}

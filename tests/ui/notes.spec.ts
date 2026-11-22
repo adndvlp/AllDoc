@@ -132,7 +132,7 @@ test('anterior y siguiente conservan rutas, teclado y alineación con la ficha',
     expect(Math.abs(nav!.x-article!.x)).toBeLessThanOrEqual(1);expect(Math.abs(nav!.width-article!.width)).toBeLessThanOrEqual(1);
     if(i<sequence.length-1){await next.focus();await next.press('Enter');await expect(page).toHaveURL(new RegExp('/sql/'+sequence[i+1].id+'$'));await expect(examples(page).locator('details[open]')).toHaveCount(0);}
   }
-  await go(page,'cast/tipos');await expect(page.locator('.pagination-nav__link--next')).toHaveCount(0);
+  await go(page,'cast/tipos');await expect(page.locator('.pagination-nav__link--next')).toHaveAttribute('href','/apuntes/analisis-de-datos/sql/text-functions');
   await page.locator('.pagination-nav__link--prev').focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/sql\/cast\/conversion$/);
 });
 

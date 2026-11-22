@@ -1,6 +1,7 @@
 import {sqlConceptPlans,sqlCurriculum} from './curriculum.ts';
 import {isSqlSource,isOfficialSqlSource,type SqlCapability,type SqlDialectId,type SqlSupport,type SqlSource} from './contracts.ts';
 import {firstBlockSources} from './first-block-sources.ts';
+import {secondBlockSources,type SqlSourceFamily} from './second-block-sources.ts';
 export const sqlDialects: readonly Readonly<{id:SqlDialectId;label:string}>[]=Object.freeze([
   {id:'sqlite',label:'SQLite'},{id:'postgresql',label:'PostgreSQL'},{id:'mysql',label:'MySQL'},
   {id:'sqlserver',label:'SQL Server'},{id:'mariadb',label:'MariaDB'},{id:'oracle',label:'Oracle SQL'},
@@ -61,6 +62,23 @@ for(const feature of Array.from(new Set(sqlCurriculum.slice(0,14).flatMap(g=>g.c
       feature==='null'&&dialect.id==='oracle'?'Oracle trata la cadena vacía como NULL; cero es un valor distinto.':
       offsetEquivalent?'OFFSET/FETCH exige adaptar la sintaxis; en SQL Server requiere ORDER BY.':'Sintaxis revisada para este concepto. No acredita ejecución en un servidor externo.',firstBlockSources[dialect.id]);
   }
+}
+
+for(const group of sqlCurriculum.slice(14,23)){
+ const family:SqlSourceFamily=group.order===15?'text':group.order===16?'numeric':group.order===17?'aggregate':group.order<20?'query':group.order<23?'write':'ddl';
+ for(const feature of Array.from(new Set(group.children.map(c=>c.feature))))for(const {id,label} of sqlDialects){
+  const unavailable=(feature==='insert-replace'&&['postgresql','sqlserver','oracle'].includes(id))
+   ||(feature==='insert-ignore'&&['sqlserver','oracle'].includes(id))
+   ||(feature==='create-table-if-not-exists'&&id==='sqlserver');
+  const equivalent=(['insert-ignore','insert-replace'].includes(feature)&&id!=='sqlite')
+   ||(feature==='string-aggregate'&&['postgresql','sqlserver','oracle'].includes(id))
+   ||(feature==='length'&&['mysql','mariadb','sqlserver'].includes(id))
+   ||(feature==='substring'&&id==='sqlserver')
+   ||(feature==='concat'&&['mysql','mariadb','sqlserver'].includes(id));
+  (facts[feature]??={})[id]=reviewed(unavailable?'unavailable':equivalent?'equivalent':'native',unavailable?'':feature,
+   unavailable?`${label} no ofrece esta sintaxis con la semántica descrita. Consulta la variante SQLite y su explicación.`:
+   'Revisión documental del ejemplo y sus diferencias. La salida guardada corresponde exclusivamente a SQLite.',secondBlockSources(id,family));
+ }
 }
 
 export const sqlCapabilityMatrix:Readonly<Record<string,Readonly<Record<SqlDialectId,SqlCapability>>>>=Object.freeze(Object.fromEntries(

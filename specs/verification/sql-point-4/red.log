@@ -1,0 +1,174 @@
+(node:69428) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ segundo bloque: 52 fichas nuevas completas, nueve grupos y corte antes de ALTER TABLE (22.048375ms)
+✖ segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas (0.612125ms)
+✖ segundo bloque: agregación global antes de GROUP BY y secuencias de escritura explícitas (0.179042ms)
+✖ segundo bloque: cada programa completo reproduce su salida desde semilla limpia en WASM (0.235917ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 219.879375
+
+✖ failing tests:
+
+test at tests/sql-second-block.test.ts:15:1
+✖ segundo bloque: 52 fichas nuevas completas, nueve grupos y corte antes de ALTER TABLE (22.048375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   'analisis-de-datos/sql/text-functions',
+  -   'analisis-de-datos/sql/text-functions/upper',
+  -   'analisis-de-datos/sql/text-functions/lower',
+  -   'analisis-de-datos/sql/text-functions/length',
+  -   'analisis-de-datos/sql/text-functions/substring',
+  -   'analisis-de-datos/sql/text-functions/trim',
+  -   'analisis-de-datos/sql/text-functions/replace',
+  -   'analisis-de-datos/sql/text-functions/concat',
+  -   'analisis-de-datos/sql/numeric-functions',
+  -   'analisis-de-datos/sql/numeric-functions/round',
+  -   'analisis-de-datos/sql/numeric-functions/abs',
+  -   'analisis-de-datos/sql/numeric-functions/division',
+  -   'analisis-de-datos/sql/aggregation',
+  -   'analisis-de-datos/sql/aggregation/count',
+  -   'analisis-de-datos/sql/aggregation/sum',
+  -   'analisis-de-datos/sql/aggregation/avg',
+  -   'analisis-de-datos/sql/aggregation/min',
+  -   'analisis-de-datos/sql/aggregation/max',
+  -   'analisis-de-datos/sql/aggregation/string-aggregate',
+  -   'analisis-de-datos/sql/aggregation/combinaciones',
+  -   'analisis-de-datos/sql/aggregation/con-where',
+  -   'analisis-de-datos/sql/group-by',
+  -   'analisis-de-datos/sql/group-by/varias-columnas',
+  -   'analisis-de-datos/sql/group-by/having',
+  -   'analisis-de-datos/sql/group-by/where-y-having',
+  -   'analisis-de-datos/sql/logical-order',
+  -   'analisis-de-datos/sql/logical-order/orden-logico',
+  -   'analisis-de-datos/sql/logical-order/plan-fisico',
+  -   'analisis-de-datos/sql/insert',
+  -   'analisis-de-datos/sql/insert/columnas',
+  -   'analisis-de-datos/sql/insert/varias-filas',
+  -   'analisis-de-datos/sql/insert/sin-lista',
+  -   'analisis-de-datos/sql/insert/ignore',
+  -   'analisis-de-datos/sql/insert/replace',
+  -   'analisis-de-datos/sql/update',
+  -   'analisis-de-datos/sql/update/varias-columnas',
+  -   'analisis-de-datos/sql/update/comprobar-con-select',
+  -   'analisis-de-datos/sql/delete',
+  -   'analisis-de-datos/sql/delete/condiciones',
+  -   'analisis-de-datos/sql/delete/comprobar-con-select',
+  -   'analisis-de-datos/sql/create-table',
+  -   'analisis-de-datos/sql/create-table/tipos',
+  -   'analisis-de-datos/sql/create-table/if-not-exists',
+  -   'analisis-de-datos/sql/create-table/primary-key',
+  -   'analisis-de-datos/sql/create-table/not-null',
+  -   'analisis-de-datos/sql/create-table/unique',
+  -   'analisis-de-datos/sql/create-table/default',
+  -   'analisis-de-datos/sql/create-table/check',
+  -   'analisis-de-datos/sql/create-table/foreign-key',
+  -   'analisis-de-datos/sql/create-table/varias-foreign-key',
+  -   'analisis-de-datos/sql/create-table/on-delete-cascade',
+  -   'analisis-de-datos/sql/create-table/on-delete-set-null'
+  - ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:16:37)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [
+      'analisis-de-datos/sql/text-functions',                 'analisis-de-datos/sql/text-functions/upper',
+      'analisis-de-datos/sql/text-functions/lower',           'analisis-de-datos/sql/text-functions/length',
+      'analisis-de-datos/sql/text-functions/substring',       'analisis-de-datos/sql/text-functions/trim',
+      'analisis-de-datos/sql/text-functions/replace',         'analisis-de-datos/sql/text-functions/concat',
+      'analisis-de-datos/sql/numeric-functions',              'analisis-de-datos/sql/numeric-functions/round',
+      'analisis-de-datos/sql/numeric-functions/abs',          'analisis-de-datos/sql/numeric-functions/division',
+      'analisis-de-datos/sql/aggregation',                    'analisis-de-datos/sql/aggregation/count',
+      'analisis-de-datos/sql/aggregation/sum',                'analisis-de-datos/sql/aggregation/avg',
+      'analisis-de-datos/sql/aggregation/min',                'analisis-de-datos/sql/aggregation/max',
+      'analisis-de-datos/sql/aggregation/string-aggregate',   'analisis-de-datos/sql/aggregation/combinaciones',
+      'analisis-de-datos/sql/aggregation/con-where',          'analisis-de-datos/sql/group-by',
+      'analisis-de-datos/sql/group-by/varias-columnas',       'analisis-de-datos/sql/group-by/having',
+      'analisis-de-datos/sql/group-by/where-y-having',        'analisis-de-datos/sql/logical-order',
+      'analisis-de-datos/sql/logical-order/orden-logico',     'analisis-de-datos/sql/logical-order/plan-fisico',
+      'analisis-de-datos/sql/insert',                         'analisis-de-datos/sql/insert/columnas',
+      'analisis-de-datos/sql/insert/varias-filas',            'analisis-de-datos/sql/insert/sin-lista',
+      'analisis-de-datos/sql/insert/ignore',                  'analisis-de-datos/sql/insert/replace',
+      'analisis-de-datos/sql/update',                         'analisis-de-datos/sql/update/varias-columnas',
+      'analisis-de-datos/sql/update/comprobar-con-select',    'analisis-de-datos/sql/delete',
+      'analisis-de-datos/sql/delete/condiciones',             'analisis-de-datos/sql/delete/comprobar-con-select',
+      'analisis-de-datos/sql/create-table',                   'analisis-de-datos/sql/create-table/tipos',
+      'analisis-de-datos/sql/create-table/if-not-exists',     'analisis-de-datos/sql/create-table/primary-key',
+      'analisis-de-datos/sql/create-table/not-null',          'analisis-de-datos/sql/create-table/unique',
+      'analisis-de-datos/sql/create-table/default',           'analisis-de-datos/sql/create-table/check',
+      'analisis-de-datos/sql/create-table/foreign-key',       'analisis-de-datos/sql/create-table/varias-foreign-key',
+      'analisis-de-datos/sql/create-table/on-delete-cascade', 'analisis-de-datos/sql/create-table/on-delete-set-null'
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-second-block.test.ts:21:1
+✖ segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas (0.612125ms)
+  AssertionError [ERR_ASSERTION]: text-functions/definicion/sqlite
+  + actual - expected
+  
+  + 'pending'
+  - 'reviewed'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:23:53)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-second-block.test.ts:30:1
+✖ segundo bloque: agregación global antes de GROUP BY y secuencias de escritura explícitas (0.179042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 52
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:31:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 52,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-second-block.test.ts:40:1
+✖ segundo bloque: cada programa completo reproduce su salida desde semilla limpia en WASM (0.235917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 52
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:41:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 52,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -11,8 +11,8 @@ import styles from './styles.module.css';
 
 const dialectStore=createSqlDialectStore(()=>window.localStorage);
 function TrySql({concept,exampleId,dialect}:{concept:SqlConcept;exampleId:string;dialect:SqlDialectId}){
- const practice=usePractice();const example=concept.examples.find(e=>e.id===exampleId)!;const {action}=resolveNoteExample(concept,example,dialect);
- if(action.kind==='external')return <Link className={styles.tryExample} to="/apuntes/analisis-de-datos/sql/outer-joins/anti-join">Ver anti join</Link>;
+ const practice=usePractice();const example=concept.examples.find(e=>e.id===exampleId)!;const {action,alternative}=resolveNoteExample(concept,example,dialect);
+ if(action.kind==='external'&&alternative)return <Link className={styles.tryExample} to={alternative.href}>{alternative.label}</Link>;
  if(action.kind==='disabled')return <span>{action.label}</span>;
  if(practice.context?.profile.languageId!=='sql')return null;
  return <button className={styles.tryExample} type="button" data-practice-example={example.id}
@@ -27,7 +27,7 @@ export function SqlConceptCard({concept}:{concept:SqlConcept|undefined}) {
  if(!concept)throw new Error('Ficha SQL desconocida');
  const group=groupForConcept(concept);const label=sqlDialects.find(d=>d.id===dialect)!.label;
  const resolved={...concept,examples:concept.examples.map(e=>{const {variant}=resolveNoteExample(concept,e,dialect);return {...e,code:variant.code??'',hint:e.changes?.[dialect]?.explanation?e.hint+' '+e.changes[dialect]!.explanation:e.hint};})};
- return <ConceptNote concept={resolved} conceptId={concept.id} kind="sql" language="sql" htmlClassName="sql-concept-page" showResults={dialect==='sqlite'} resultLabel="Ver resultado en SQLite"
+ return <ConceptNote concept={resolved} conceptId={concept.id} kind="sql" language="sql" htmlClassName="sql-concept-page" showResults={dialect==='sqlite'} resultLabel={group.order>=20?'Ver resultado final en SQLite':'Ver resultado en SQLite'}
   renderAction={example=><TrySql concept={concept} exampleId={example.id} dialect={dialect}/>}
   controls={<div className={styles.dialectControls}>
    <label htmlFor={id}>Dialecto SQL <select id={id} value={dialect} onChange={e=>{

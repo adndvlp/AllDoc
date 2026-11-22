@@ -1,0 +1,670 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/sql-second-block.spec.ts",
+      "--project=celular",
+      "--project=laptop",
+      "--update-snapshots"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "laptop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "changed",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "sql-second-block.spec.ts",
+      "file": "sql-second-block.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2174,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-text-length.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:41.640Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-text-length-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-text-length.png"
+                    },
+                    {
+                      "name": "sql-text-length-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-35fb7-a-directa-con-grupo-abierto-celular/sql-text-length-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1841,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-text-length.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:46.127Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-text-length-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-text-length.png"
+                    },
+                    {
+                      "name": "sql-text-length-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-35fb7-a-directa-con-grupo-abierto-laptop/sql-text-length-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-7273c54b6ee5a7f57858",
+          "file": "sql-second-block.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2831,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-aggregate-empty.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:41.639Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-aggregate-empty-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-aggregate-empty.png"
+                    },
+                    {
+                      "name": "sql-aggregate-empty-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-021ad-tenación-agregada-por-motor-celular/sql-aggregate-empty-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2362,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-aggregate-empty.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:48.108Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-aggregate-empty-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-aggregate-empty.png"
+                    },
+                    {
+                      "name": "sql-aggregate-empty-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-021ad-tenación-agregada-por-motor-laptop/sql-aggregate-empty-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-5099d566893381a50f21",
+          "file": "sql-second-block.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1440,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-update-final.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:43.946Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-update-final-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-update-final.png"
+                    },
+                    {
+                      "name": "sql-update-final-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-e9ef8-stra-antes-y-después-reales-celular/sql-update-final-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1510,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-update-final.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:48.491Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-update-final-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-update-final.png"
+                    },
+                    {
+                      "name": "sql-update-final-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-e9ef8-stra-antes-y-después-reales-laptop/sql-update-final-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-19ad8105cc46ddd4db77",
+          "file": "sql-second-block.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1209,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:44.601Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1276,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:50.109Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-a7831de08e79cb8dae2d",
+          "file": "sql-second-block.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2739,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-create-200.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:45.395Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-create-200-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-create-200.png"
+                    },
+                    {
+                      "name": "sql-create-200-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-b9ddf-entidad-y-controles-al-200--celular/sql-create-200-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2741,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-create-200.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:47:50.476Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-create-200-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-create-200.png"
+                    },
+                    {
+                      "name": "sql-create-200-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-second-block-segundo-b-b9ddf-entidad-y-controles-al-200--laptop/sql-create-200-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-3f96dda7453d1bf85a27",
+          "file": "sql-second-block.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-22T00:47:33.967Z",
+    "duration": 19317.083,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

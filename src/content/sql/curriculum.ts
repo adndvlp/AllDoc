@@ -83,7 +83,7 @@ const definitions: readonly Group[] = [
 ];
 
 const prefix='analisis-de-datos/sql/';
-export const publishedSqlGroupCount=14;
+export const publishedSqlGroupCount=23;
 const published=new Map(['select','where','order-by','limit','comentarios'].map(id=>[prefix+id,'/apuntes/'+prefix+id]));
 const legacyIds: Readonly<Record<string,string>>={
   'select/definicion':'select','where/definicion':'where','order-by/definicion':'order-by',

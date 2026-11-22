@@ -1,0 +1,106 @@
+
+> alldoc@0.1.0 test:ui:sql:editorial
+> playwright test tests/ui/sql-second-block.spec.ts tests/ui/sql-dialects.spec.ts tests/ui/notes.spec.ts tests/ui/responsive.spec.ts tests/ui/catalog.spec.ts tests/ui/practice-actions.spec.ts tests/ui/sql-business.spec.ts tests/ui/sqlite.spec.ts tests/ui/pandas.spec.ts --project=celular --project=laptop --list
+
+Listing tests:
+  [celular] › catalog.spec.ts:16:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [celular] › catalog.spec.ts:55:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [celular] › catalog.spec.ts:89:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [celular] › catalog.spec.ts:110:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [celular] › catalog.spec.ts:127:1 › URL directa de WHERE y recarga conservan todos los temas contraídos
+  [celular] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [celular] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [celular] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [celular] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [celular] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [celular] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [celular] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [celular] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [celular] › practice-actions.spec.ts:22:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:35:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [celular] › practice-actions.spec.ts:47:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [celular] › practice-actions.spec.ts:66:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:80:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [celular] › practice-actions.spec.ts:98:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [celular] › practice-actions.spec.ts:113:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [celular] › responsive.spec.ts:59:1 › inicio sin desbordamientos
+  [celular] › responsive.spec.ts:67:1 › apunte compacto y resultados legibles
+  [celular] › responsive.spec.ts:77:1 › grupos contraídos, logos y navegación desde el menú
+  [celular] › responsive.spec.ts:126:1 › buscador accesible y dentro de la pantalla
+  [celular] › responsive.spec.ts:149:1 › selector de texto visible y elección persistente
+  [celular] › responsive.spec.ts:171:1 › la navegación se adapta al girar el dispositivo
+  [celular] › responsive.spec.ts:192:1 › las áreas se pueden abrir desde el encabezado
+  [celular] › responsive.spec.ts:203:1 › scroll independiente del contenido y el sidebar
+  [celular] › sql-business.spec.ts:15:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [celular] › sql-business.spec.ts:26:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [celular] › sql-business.spec.ts:40:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [celular] › sql-dialects.spec.ts:8:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [celular] › sql-dialects.spec.ts:15:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [celular] › sql-dialects.spec.ts:22:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [celular] › sql-dialects.spec.ts:28:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [celular] › sql-dialects.spec.ts:36:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [celular] › sql-dialects.spec.ts:42:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [celular] › sql-second-block.spec.ts:16:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [celular] › sql-second-block.spec.ts:29:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [celular] › sql-second-block.spec.ts:41:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [celular] › sql-second-block.spec.ts:53:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [celular] › sql-second-block.spec.ts:63:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [celular] › sqlite.spec.ts:19:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular] › sqlite.spec.ts:31:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular] › sqlite.spec.ts:49:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular] › sqlite.spec.ts:67:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular] › sqlite.spec.ts:93:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular] › sqlite.spec.ts:103:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular] › sqlite.spec.ts:113:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [laptop] › catalog.spec.ts:16:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [laptop] › catalog.spec.ts:55:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [laptop] › catalog.spec.ts:89:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [laptop] › catalog.spec.ts:110:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [laptop] › catalog.spec.ts:127:1 › URL directa de WHERE y recarga conservan todos los temas contraídos
+  [laptop] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [laptop] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [laptop] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [laptop] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [laptop] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [laptop] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [laptop] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [laptop] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [laptop] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [laptop] › practice-actions.spec.ts:22:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:35:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [laptop] › practice-actions.spec.ts:47:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [laptop] › practice-actions.spec.ts:66:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:80:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [laptop] › practice-actions.spec.ts:98:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [laptop] › practice-actions.spec.ts:113:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [laptop] › responsive.spec.ts:59:1 › inicio sin desbordamientos
+  [laptop] › responsive.spec.ts:67:1 › apunte compacto y resultados legibles
+  [laptop] › responsive.spec.ts:77:1 › grupos contraídos, logos y navegación desde el menú
+  [laptop] › responsive.spec.ts:126:1 › buscador accesible y dentro de la pantalla
+  [laptop] › responsive.spec.ts:149:1 › selector de texto visible y elección persistente
+  [laptop] › responsive.spec.ts:171:1 › la navegación se adapta al girar el dispositivo
+  [laptop] › responsive.spec.ts:192:1 › las áreas se pueden abrir desde el encabezado
+  [laptop] › responsive.spec.ts:203:1 › scroll independiente del contenido y el sidebar
+  [laptop] › sql-business.spec.ts:15:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [laptop] › sql-business.spec.ts:26:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [laptop] › sql-business.spec.ts:40:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [laptop] › sql-dialects.spec.ts:8:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [laptop] › sql-dialects.spec.ts:15:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [laptop] › sql-dialects.spec.ts:22:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [laptop] › sql-dialects.spec.ts:28:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [laptop] › sql-dialects.spec.ts:36:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [laptop] › sql-dialects.spec.ts:42:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [laptop] › sql-second-block.spec.ts:16:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [laptop] › sql-second-block.spec.ts:29:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [laptop] › sql-second-block.spec.ts:41:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [laptop] › sql-second-block.spec.ts:53:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [laptop] › sql-second-block.spec.ts:63:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [laptop] › sqlite.spec.ts:19:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [laptop] › sqlite.spec.ts:31:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [laptop] › sqlite.spec.ts:49:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [laptop] › sqlite.spec.ts:67:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [laptop] › sqlite.spec.ts:93:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [laptop] › sqlite.spec.ts:103:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [laptop] › sqlite.spec.ts:113:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+Total: 100 tests in 9 files

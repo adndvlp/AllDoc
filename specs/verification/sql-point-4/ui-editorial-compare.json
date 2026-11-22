@@ -1,0 +1,3226 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/sql-second-block.spec.ts",
+      "tests/ui/sql-dialects.spec.ts",
+      "tests/ui/notes.spec.ts",
+      "tests/ui/responsive.spec.ts",
+      "tests/ui/catalog.spec.ts",
+      "tests/ui/practice-actions.spec.ts",
+      "tests/ui/sql-business.spec.ts",
+      "tests/ui/sqlite.spec.ts",
+      "tests/ui/pandas.spec.ts",
+      "--project=celular",
+      "--project=laptop"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "laptop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "catalog.spec.ts",
+      "file": "catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:41.078Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1198,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:22.861Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-3d48672755417d27652e",
+          "file": "catalog.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:41.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:24.175Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-b0fb777afeb8bad19e2c",
+          "file": "catalog.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1088,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:42.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1099,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:25.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-8a7d2ab019d98436617d",
+          "file": "catalog.spec.ts",
+          "line": 89,
+          "column": 1
+        },
+        {
+          "title": "buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 993,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:43.573Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:26.956Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-be365fd7642840e6b94c",
+          "file": "catalog.spec.ts",
+          "line": 110,
+          "column": 1
+        },
+        {
+          "title": "URL directa de WHERE y recarga conservan todos los temas contraídos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:44.032Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1381,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:27.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30aa42b97d8966d0c2dc-3edd2b66d3b273739de9",
+          "file": "catalog.spec.ts",
+          "line": 127,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "notes.spec.ts",
+      "file": "notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "una envoltura por ejemplo, tipografía legible y contenido esencial compacto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:44.593Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3861,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:29.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-cd299d65c21870d4823a",
+          "file": "notes.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "resultados independientes, tabla semántica y scroll horizontal limitado al resultado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:45.605Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:30.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-e1607f2a7b918dcfd0c4",
+          "file": "notes.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 791,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:46.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:31.981Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-07df48915885ef520f70",
+          "file": "notes.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "copiar cada variante conserva la consulta completa y mantiene la posición del contenido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 903,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:47.348Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 906,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:32.798Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-4066b63db6cab385405a",
+          "file": "notes.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "anterior y siguiente conservan rutas, teclado y alineación con la ficha",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1729,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:48.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1596,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:33.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-6dc2d24b37a25ed76ba9",
+          "file": "notes.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:48.402Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:33.716Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-9011ddca7f415a649672",
+          "file": "notes.spec.ts",
+          "line": 139,
+          "column": 1
+        },
+        {
+          "title": "ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:49.461Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3383,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:34.841Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ac91c6ddef81ae1436f-8061b0ec62b8592e7548",
+          "file": "notes.spec.ts",
+          "line": 164,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pandas.spec.ts",
+      "file": "pandas.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:49.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1396,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:34.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3ca722d59afbb6206c07-81d0b44636263b514e96",
+          "file": "pandas.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:51.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:36.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3ca722d59afbb6206c07-42eb8b3a836e56a1960c",
+          "file": "pandas.spec.ts",
+          "line": 39,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "practice-actions.spec.ts",
+      "file": "practice-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1206,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:52.222Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:37.282Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-8a02e67310cc46c3ba51",
+          "file": "practice-actions.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2406,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:52.821Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:38.235Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-43e6aa34c65f859d18bf",
+          "file": "practice-actions.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:53.435Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:38.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-3e900544edb21c38c7d1",
+          "file": "practice-actions.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1637,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:55.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:40.286Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-3065a69bd1eaf35befb3",
+          "file": "practice-actions.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:55.232Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1774,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:40.734Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-f93b7112c2f3ddf64cd1",
+          "file": "practice-actions.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:56.764Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8497,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:41.913Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-961d1d731bb4e4fbfb18",
+          "file": "practice-actions.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1079,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:56.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1162,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:42.513Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c3835419d8976b5c20fa-5d4738516ff2abb7b208",
+          "file": "practice-actions.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "responsive.spec.ts",
+      "file": "responsive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "inicio sin desbordamientos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:58.056Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 838,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:43.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-1a5320a9ea0cd76df7f1",
+          "file": "responsive.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "apunte compacto y resultados legibles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:58.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1026,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:44.529Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-e0fe7dba40cb29f1d251",
+          "file": "responsive.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "grupos contraídos, logos y navegación desde el menú",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1314,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:58:59.745Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1324,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:45.562Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-15d80d65831378212d65",
+          "file": "responsive.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "buscador accesible y dentro de la pantalla",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:01.065Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 991,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:46.895Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-02daf342578b66625f98",
+          "file": "responsive.spec.ts",
+          "line": 126,
+          "column": 1
+        },
+        {
+          "title": "selector de texto visible y elección persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:02.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1626,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:47.893Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-40a148d1e28eb5ce6b25",
+          "file": "responsive.spec.ts",
+          "line": 149,
+          "column": 1
+        },
+        {
+          "title": "la navegación se adapta al girar el dispositivo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 959,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:03.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "La rotación se prueba en los proyectos táctiles.",
+                  "location": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/responsive.spec.ts",
+                    "line": 172,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 84,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:49.525Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "La rotación se prueba en los proyectos táctiles.",
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/responsive.spec.ts",
+                        "line": 172,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "e0223b006feb3d306446-d59fe94a48dc673fb679",
+          "file": "responsive.spec.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "las áreas se pueden abrir desde el encabezado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 873,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:04.559Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 847,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:49.615Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-d0f2b9107dce8c68c235",
+          "file": "responsive.spec.ts",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "scroll independiente del contenido y el sidebar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "En pantallas pequeñas los temas están en un panel móvil.",
+                  "location": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/responsive.spec.ts",
+                    "line": 204,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 98,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:05.168Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "En pantallas pequeñas los temas están en un panel móvil.",
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/responsive.spec.ts",
+                        "line": 204,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2465,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:50.421Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0223b006feb3d306446-16f646e37bb9fb8b403a",
+          "file": "responsive.spec.ts",
+          "line": 203,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sql-business.spec.ts",
+      "file": "sql-business.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2046,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:05.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:50.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6934cfc6ef7ce01b497e-00dfa4add07b23dbd087",
+          "file": "sql-business.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1844,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:05.632Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1896,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:52.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6934cfc6ef7ce01b497e-2dc421132ae8ade0e461",
+          "file": "sql-business.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 213,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:07.483Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:53.135Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6934cfc6ef7ce01b497e-14896565814d7c27c0f6",
+          "file": "sql-business.spec.ts",
+          "line": 40,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sql-dialects.spec.ts",
+      "file": "sql-dialects.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:07.665Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:53.376Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-c71ca8134e8edd74ea32",
+          "file": "sql-dialects.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2622,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:07.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:54.770Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-d834bb022ccf54708668",
+          "file": "sql-dialects.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 760,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:09.148Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:54.854Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-dbf0106ebe41537f871d",
+          "file": "sql-dialects.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:09.913Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1458,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:55.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-85998c736e234664cc1b",
+          "file": "sql-dialects.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "subsección directa y cambio de dialecto conservan despliegue y posición del lector",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:10.335Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:57.148Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-bc2728ea7af74f508cdf",
+          "file": "sql-dialects.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:11.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 897,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:57.425Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef185be3513aab9b1c89-9e27235a5612b16a056a",
+          "file": "sql-dialects.spec.ts",
+          "line": 42,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sql-second-block.spec.ts",
+      "file": "sql-second-block.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1549,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:11.318Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:58.232Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-7273c54b6ee5a7f57858",
+          "file": "sql-second-block.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2153,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:12.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2232,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:58.330Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-5099d566893381a50f21",
+          "file": "sql-second-block.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1241,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:12.873Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1329,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:59.944Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-19ad8105cc46ddd4db77",
+          "file": "sql-second-block.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:14.121Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1229,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:00.568Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-a7831de08e79cb8dae2d",
+          "file": "sql-second-block.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2653,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:14.238Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2623,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:01.278Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8288382a371ecbaefec4-3f96dda7453d1bf85a27",
+          "file": "sql-second-block.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sqlite.spec.ts",
+      "file": "sqlite.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:15.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:01.806Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-55ded29ed1764d0098c4",
+          "file": "sqlite.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:16.795Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:03.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-91701840b48de7128e29",
+          "file": "sqlite.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:16.899Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:03.909Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-f350c8bb96958bb864f5",
+          "file": "sqlite.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1276,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:18.446Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:04.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-7b81bf981792d645a6fe",
+          "file": "sqlite.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:18.650Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:05.712Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-22059f2ca1b8f8c7d567",
+          "file": "sqlite.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "datos mutables: reiniciar conserva el código y restaura solo la sesión SQL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:19.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1441,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:06.262Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-224723db0307a2beeb54",
+          "file": "sqlite.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T00:59:21.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T01:00:07.709Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6a5ff0b76ad79529b270-61eeeb368a31193f6b71",
+          "file": "sqlite.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-22T00:58:32.198Z",
+    "duration": 105367.51599999999,
+    "expected": 98,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

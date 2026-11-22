@@ -1,0 +1,33 @@
+(node:70083) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ segundo bloque: buscar nombres de otros dialectos encuentra el mismo concepto sin duplicarlo (18.56075ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.564667
+
+✖ failing tests:
+
+test at tests/sql-second-block.test.ts:17:1
+✖ segundo bloque: buscar nombres de otros dialectos encuentra el mismo concepto sin duplicarlo (18.56075ms)
+  AssertionError [ERR_ASSERTION]: CHAR_LENGTH
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:19:98)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

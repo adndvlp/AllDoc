@@ -1,0 +1,27 @@
+(node:70335) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ segundo bloque: buscar nombres de otros dialectos encuentra el mismo concepto sin duplicarlo (15.498541ms)
+✔ segundo bloque: 52 fichas nuevas completas, nueve grupos y corte antes de ALTER TABLE (1.012292ms)
+✔ segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas (8.600709ms)
+✔ segundo bloque: una variante no disponible lleva al mismo concepto SQLite, nunca a un anti join ajeno (0.168625ms)
+✔ segundo bloque: las fechas de DELETE son explícitas para motores con formato de sesión (0.195917ms)
+✔ segundo bloque: agregación global antes de GROUP BY y secuencias de escritura explícitas (0.286209ms)
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO practica_clave VALUES (101, 'Duplicado');
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = INSERT INTO practica_obligatorio VALUES (2, NULL);
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO practica_correo VALUES (2, 'compras@empresa.test');
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = INSERT INTO practica_regla VALUES (2, -1);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO practica_reservas VALUES (2, 9999);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO practica_solicitudes VALUES (9999, 1);
+✔ segundo bloque: las fuentes originales y diez vacíos tienen destinos revisados y verificables (2.837666ms)
+✔ segundo bloque: cada programa completo reproduce su salida desde semilla limpia en WASM (355.727916ms)
+✔ segundo bloque: las restricciones de las tablas enseñadas rechazan datos inválidos realmente (42.779041ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 606.76725

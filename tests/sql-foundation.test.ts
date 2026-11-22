@@ -33,12 +33,12 @@ test('SQL: rechaza árboles con identidad repetida, definición ausente, orden a
     const changed=structuredClone(base);mutate(changed);assert.ok(inspectSqlCurriculum(changed as SqlGroupPlan[]).length>0);
   }
 });
-test('SQL: publicación incluye solo los 53 conceptos revisados y no importa cuerpos, filas o motores',async()=>{
+test('SQL: publicación incluye solo los 105 conceptos revisados y no importa cuerpos, filas o motores',async()=>{
   const published=getPublishedSqlCurriculum().flatMap(g=>g.children);
   assert.deepEqual(published.map(c=>c.id).sort(),concepts.filter(c=>c.topicId==='sql').map(c=>c.id).sort());
   for(const c of sqlConceptPlans){assert.equal(c.stage,legacy.some(l=>l.id===c.id)?'published-legacy':concepts.some(l=>l.id===c.id)?'published':'planned');assert.match(c.file,/^[a-z][a-z0-9/-]*\.mdx$/);}
   assert.deepEqual(catalog.map(a=>a.id),['analisis-de-datos','desarrollo-web','ia']);
-  assert.equal((await readdir('docs/analisis-de-datos/sql',{recursive:true})).filter(f=>f.endsWith('.mdx')).length,53);
+  assert.equal((await readdir('docs/analisis-de-datos/sql',{recursive:true})).filter(f=>f.endsWith('.mdx')).length,105);
   for(const file of ['curriculum','contracts','capabilities','placements','variants'])assert.doesNotMatch(await readFile('src/content/sql/'+file+'.ts','utf8'),/import\s.*(?:notes\/|datasets\/rows|sqlite-wasm|pyodide|PracticeEditor)/);
 });
 test('SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes',async()=>{

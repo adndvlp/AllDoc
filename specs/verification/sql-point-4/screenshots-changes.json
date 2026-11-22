@@ -1,0 +1,18 @@
+{
+  "changed": [
+    "tests/ui/__screenshots__/celular/catalogo.png",
+    "tests/ui/__screenshots__/laptop/catalogo.png"
+  ],
+  "new": [
+    "tests/ui/__screenshots__/laptop/sql-create-200.png",
+    "tests/ui/__screenshots__/laptop/sql-text-length.png",
+    "tests/ui/__screenshots__/laptop/sql-update-final.png",
+    "tests/ui/__screenshots__/laptop/sql-aggregate-empty.png",
+    "tests/ui/__screenshots__/celular/sql-create-200.png",
+    "tests/ui/__screenshots__/celular/sql-text-length.png",
+    "tests/ui/__screenshots__/celular/sql-update-final.png",
+    "tests/ui/__screenshots__/celular/sql-aggregate-empty.png"
+  ],
+  "unchanged": 225,
+  "removed": []
+}

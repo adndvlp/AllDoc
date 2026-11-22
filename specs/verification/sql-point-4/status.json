@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "scope": "SQL punto 4, funciones de texto → CREATE TABLE",
+  "native": {
+    "passed": 377,
+    "failed": 0
+  },
+  "types": "passed",
+  "build": "passed",
+  "ui": {
+    "discovered": 100,
+    "projects": [
+      "celular",
+      "laptop"
+    ],
+    "executed": true,
+    "passed": 98,
+    "failed": 0,
+    "visualReviewed": 10,
+    "comparisonWithoutUpdate": true,
+    "skipped": 2,
+    "regressionPassed": true,
+    "skipReasons": [
+      "laptop: rotación cubierta por proyectos táctiles; celular sí la ejecutó.",
+      "celular: sidebar de escritorio no aplica al panel móvil; laptop sí verifica independencia de scroll."
+    ],
+    "focusedDiscovered": 10,
+    "finalCommand": "npm run test:ui:sql:editorial",
+    "snapshotUpdateMode": "default",
+    "reviewedImageHashesUnchanged": 10,
+    "previousReferencesUnchanged": 225
+  },
+  "artifacts": {
+    "red.log": "94f5e09404925f6c95a3b1128d116aec2ad8dbdb4d14e7e042ded1266a413f0c",
+    "red-alternative.log": "baa23c6a7cbd82f25b50b84584ab546752b788a7ac6ae90a0783aab3c76af2ed",
+    "red-search.log": "30dd3c5558f95224d867459ca3ddf1401bf7660ef378805f187a0f67d13885b2",
+    "red-dates.log": "4186c785249b923d484f52ceb5eedc43641bbe05618ee54f32a3354242d03912",
+    "green-focused.log": "6b0e4e417d9029c0519dcf8dd3fecf727a616df2e930367885f0aa824023ae68",
+    "native.log": "9eab8cafc4f8ba004040a33571d835a6cb116bd3750e99ccdbbc834948765024",
+    "types-app.log": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1",
+    "types-tests.log": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902",
+    "prepare.log": "bc93427bbe5e11bfa7a1e051972a6fbc4d96d0e3cb2b01e7c56093a774b00fd6",
+    "build.log": "90a06201aa0bdabf729f3852c1e8bf6b292906d53601aa3f032e911f76577d8c",
+    "production.json": "427b10393ed40eff928eb90120e577c15a824c246c3fe24b5a1b9fc7c4c239e2",
+    "editorial-review.json": "936a10b3717548c5d055ced58128d661310bd2218643446e7e85a24aa31e6c20",
+    "ui-discovery.log": "e0d0de6867cfed323ed6a015570306045cf72e34a1d8dc9a02d6082efa592d73",
+    "screenshots-before.json": "3a19f102cbab094d267f0b1f25dcf6d36268b849f0eef0f178ca5d96e98f4666",
+    "ui-second-update.json": "05d930362951c73cb93f2ae0fb9eb44633e383fb6328e20779179d6d3a06b530",
+    "visual-review-new.json": "69dc8beeee61fe16c56479ec06aba60c9eda22082c05ba0d402fd6f080b3cb21",
+    "ui-editorial-update.json": "629cf26ec7e3b497e2067b6c3374904928415b07b8dc63b6332802d5066a7038",
+    "visual-review-regression.json": "25b5e5dc113293035aa7ecc04456e02bd2948630a3ad884f0cf7949e15a9f9d4",
+    "screenshots-changes.json": "57726a0ae3034ba428eb8352c7edf18dc9c46c8960cdb103ea7e65e92db7d96c",
+    "ui-editorial-discovery.log": "39fae075ab225ca0977184e99b1dcbc9f83af5bd6b8c3f389f0e5ae823da35c6",
+    "ui-editorial-compare.json": "dfea850d2da532d488de1fb23ea59fd6ce8e8a4a9e5361359c95e428eb27aafb"
+  }
+}

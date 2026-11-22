@@ -8,4 +8,14 @@ const legacy:Readonly<Record<string,readonly string[]>> = {
   'analisis-de-datos/sql/comentarios': ['comentario', 'comentarios', 'notas', 'anotar', 'documentar', 'guiones', 'bloque', 'linea', 'línea', '--', '/*', '*/'],
   'analisis-de-datos/pandas/dataframe': ['crear', 'tabla', 'pandas', 'python', 'dataframe', 'columnas', 'filas', 'listas', 'productos', 'datos'],
 };
-export const searchKeywords=Object.fromEntries(concepts.map(c=>[c.id,legacy[c.id]??[c.title,c.label,c.description]])) as Record<ConceptId,readonly string[]>;
+// Nombres equivalentes llevan a la misma identidad, favorito y sesión SQL.
+const sqlAliases:Readonly<Record<string,readonly string[]>>={
+ 'text-functions/length':['LENGTH','CHAR_LENGTH','CHARACTER_LENGTH','LEN'],
+ 'text-functions/substring':['SUBSTR','SUBSTRING'],
+ 'text-functions/concat':['CONCAT','concatenar'],
+ 'aggregation/string-aggregate':['GROUP_CONCAT','STRING_AGG','LISTAGG'],
+ 'insert/ignore':['INSERT OR IGNORE','INSERT IGNORE','ON CONFLICT','DO NOTHING'],
+ 'insert/replace':['INSERT OR REPLACE','REPLACE INTO'],
+ 'create-table/primary-key':['IDENTITY','AUTO_INCREMENT','GENERATED ALWAYS','autoincremento'],
+};
+export const searchKeywords=Object.fromEntries(concepts.map(c=>[c.id,legacy[c.id]??[c.title,c.label,c.description,...(sqlAliases[c.id.replace('analisis-de-datos/sql/','')]??[])]])) as Record<ConceptId,readonly string[]>;

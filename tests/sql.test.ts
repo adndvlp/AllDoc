@@ -10,7 +10,9 @@ database.exec('PRAGMA foreign_keys=ON;');
 for(const s of sqlSeedFor(businessDataset).statements)database.prepare(s.sql).run(...s.parameters);
 after(() => database.close());
 
-for (const concept of sqlConcepts) {
+// Primer bloque, consultas de una sentencia. Los programas DDL/DML se verifican
+// completos y desde semilla limpia en sql-second-block.test.ts con SQLite WASM.
+for (const concept of sqlConcepts.filter(c=>c.order<1500)) {
   for (const example of concept.examples) {
     test(concept.title + ' / ' + example.title + ': resultado correcto', () => {
       const statement=database.prepare(example.code);const result = statement.all();

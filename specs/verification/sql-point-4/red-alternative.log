@@ -1,0 +1,42 @@
+(node:69601) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ segundo bloque: 52 fichas nuevas completas, nueve grupos y corte antes de ALTER TABLE (14.884875ms)
+✔ segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas (8.079375ms)
+✖ segundo bloque: una variante no disponible lleva al mismo concepto SQLite, nunca a un anti join ajeno (1.631583ms)
+✔ segundo bloque: agregación global antes de GROUP BY y secuencias de escritura explícitas (0.342791ms)
+✔ segundo bloque: cada programa completo reproduce su salida desde semilla limpia en WASM (359.273334ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 559.1995
+
+✖ failing tests:
+
+test at tests/sql-second-block.test.ts:30:1
+✖ segundo bloque: una variante no disponible lleva al mismo concepto SQLite, nunca a un anti join ajeno (1.631583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   href: '/apuntes/analisis-de-datos/sql/insert/replace?dialect=sqlite',
+  -   label: 'Ver variante SQLite'
+  - }
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts:34:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { label: 'Ver variante SQLite', href: '/apuntes/analisis-de-datos/sql/insert/replace?dialect=sqlite' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,423 @@
+{
+  "block": "Funciones de texto → CREATE TABLE",
+  "sourceInventorySha256": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe",
+  "sources": [
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/1.- UPPER(texto).md",
+      "sha256": "d06bbda021d91bfeda597495a5ace76093f610fee284aaacb86a08107757f2b1",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions",
+        "analisis-de-datos/sql/text-functions/upper",
+        "analisis-de-datos/sql/text-functions/lower",
+        "analisis-de-datos/sql/text-functions/length",
+        "analisis-de-datos/sql/text-functions/substring",
+        "analisis-de-datos/sql/text-functions/trim",
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/2.- LOWER(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/lower"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/3.- LENGTH(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/length"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/4.- SUBSTR(texto, inicio, longitud).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/substring"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/5.- TRIM(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/trim"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/6.- REPLACE(texto, buscar, reemplazo).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/1.- ROUND(número, decimales).md",
+      "sha256": "578241ca02f984a7f14ec0749fa7079b7ad9ba04d2a5cf8028faac38189f4a95",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/numeric-functions",
+        "analisis-de-datos/sql/numeric-functions/round",
+        "analisis-de-datos/sql/numeric-functions/division",
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "ROUND y ABS; división decimal explícita y MIN/MAX escalares de SQLite no portátiles."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/2.- ABS(número).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. ROUND y ABS; división decimal explícita y MIN/MAX escalares de SQLite no portátiles."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/1.- COUNT.md",
+      "sha256": "4580df481cae9acc53d772c02452c0535d1765727c41d90cf12aafee1b3a395c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation",
+        "analisis-de-datos/sql/aggregation/count"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/2.- SUM.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/sum"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/3.- AVG.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/avg"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/4.- MIN.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/min"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/5-. MAX.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/max"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/6.- GROUP_CONCAT.md",
+      "sha256": "cdf4764628bd7495feb9dc7667d6e0dc4170c32b80a9f81fc4e7c36de6f37415",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/string-aggregate"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/7-. Combinación.md",
+      "sha256": "20175fa3be51063d4e25088dc9130ce47614d3df0872b8ad3ebe9184410f3057",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/combinaciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/8-. Con flitro WHERE.md",
+      "sha256": "ad7c60037c15fb31012406d1243fd10d746c46bbb7ee89dcdff151913fd6ae17",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/con-where"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/1.- base.md",
+      "sha256": "9a5a0b282968d9da1dd37ec776950d06e3849aaadd253d7028ad0bcea87a904c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by",
+        "analisis-de-datos/sql/group-by/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/2.- HAVING.md",
+      "sha256": "f051c3225475b91aca48a4f2f63a7e805611dfb0fdbbfb20a6cc8d5b1d6d216d",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by/having"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/3.- diff having y where.md",
+      "sha256": "a03cba77548de8ea4e8de723e2f494f178d1dde1e367b01582026a9c3bbbfb06",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by/where-y-having"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/19.- orden de ejecución/1.-  base.md",
+      "sha256": "a560b4bb973f7efdbd5e6a931a7334f1f68ca7ff53178e57ad25fb331181b027",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/logical-order",
+        "analisis-de-datos/sql/logical-order/orden-logico",
+        "analisis-de-datos/sql/logical-order/plan-fisico"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Orden lógico de vinculación separado del plan físico elegido por el optimizador."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/1.- base.md",
+      "sha256": "143882d0f392b117768e8985576cad2d5efb5b4043e0186eea2f7d5539393e7b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert",
+        "analisis-de-datos/sql/insert/columnas",
+        "analisis-de-datos/sql/insert/varias-filas",
+        "analisis-de-datos/sql/insert/sin-lista"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/2.- INSERT OR IGNORE.md",
+      "sha256": "ff6dfad473b306fdbcc2af49d12e051547cc5bbcaabe26012189e994b693c1db",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert/ignore"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/3.- INSERT OR REPLACE.md",
+      "sha256": "a589ddbbca3bc217713277d7c50ef603589274549846f37daaa7470d49d0f9ba",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/1.- base.md",
+      "sha256": "df4a7ecb5561980723bc5155002b7fd09a4525494286ee7cac91341e8d0b8237",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/update",
+        "analisis-de-datos/sql/update/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "WHERE explícito, revisión mediante selección del SELECT inicial y resultado final del programa."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/2.- SELECT y UPDATE.md",
+      "sha256": "7e5a5e08448f676b05418ec9ba99445c97ea289cfd00285335282910605e75b5",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/update/comprobar-con-select"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "WHERE explícito, revisión mediante selección del SELECT inicial y resultado final del programa."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/1.- base.md",
+      "sha256": "851036a0340b4dae25c98f7da973ad4feeb62ebae507b42b5339a542897456e8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/delete",
+        "analisis-de-datos/sql/delete/condiciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisión mediante selección, alcance sin WHERE, integridad referencial y literales de fecha explícitos."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/2.- SELECT y DELETE.md",
+      "sha256": "c583ba10c9d5f4fa2ac0d1756197ea4ac213b7b459945e9c45ff1d81510c67dd",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/delete/comprobar-con-select"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Revisión mediante selección, alcance sin WHERE, integridad referencial y literales de fecha explícitos."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/1.- base.md",
+      "sha256": "54b97ed8234c6478eca77e70b7a536f58739e49d15559cf4989cdbcf2d0eeb40",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table",
+        "analisis-de-datos/sql/create-table/tipos",
+        "analisis-de-datos/sql/create-table/not-null",
+        "analisis-de-datos/sql/create-table/unique",
+        "analisis-de-datos/sql/create-table/default",
+        "analisis-de-datos/sql/create-table/check"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/2.- IF NOT EXISTS.md",
+      "sha256": "f103c52684313137dcf7473cde3c76c8788d2f610d2bf14e9218721bd5f0fabe",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/if-not-exists"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/3.- PRIMARY KEY.md",
+      "sha256": "129911b217509d88d1245701c99e6264ecd2337787908363f8ca41b467c6aecd",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/primary-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/4.- FOREIGN KEY.md",
+      "sha256": "49ccd83d8765c6ba9a0f45d28d537c235fd0879b3af46cc855ee3553475e96a8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/foreign-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/5.- Múltiples claves foráneas.md",
+      "sha256": "8159574395caf4801a11be5e2ada49fc064417ae4c079224535af29a54ac5a4e",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/varias-foreign-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/6.- ON DELETE CASCADE.md",
+      "sha256": "93312ab80faa88226902dc02246b142e4a562b8e50f3811b6e2967ea82ddf253",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/on-delete-cascade"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/7.- ON DELETE SET NULL.md",
+      "sha256": "080e6475a35707a2c95dd36026d2c4426253a959e72c7e35c5102280b8bde605",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/on-delete-set-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    }
+  ],
+  "carryOver": [
+    {
+      "path": "tmp/SQL/14.- CAST/1.- base.md",
+      "sha256": "ded86bfe96fb03f6c6e4ef4b63ad1042f4c73556099b512bddb06720db046347",
+      "resolvedTargets": [
+        "analisis-de-datos/sql/text-functions/concat"
+      ],
+      "decision": "La concatenación citada en el apunte CAST se desarrolla en Funciones de texto; CAST conserva conversión real."
+    }
+  ],
+  "scope": {
+    "newConcepts": 52,
+    "newExamples": 55,
+    "totalSQLConcepts": 105,
+    "totalSQLExamples": 116,
+    "groups": 23,
+    "reviewedCapabilities": 360,
+    "emptySourcesResolved": 10,
+    "externalExecutions": 0
+  }
+}

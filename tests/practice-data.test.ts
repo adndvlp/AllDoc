@@ -88,8 +88,8 @@ test('DataFrame está publicado bajo Pandas, con búsqueda propia y un único ej
   assert.deepEqual(note.examples[0].output.columns, expectedColumns);
   assert.deepEqual(note.examples[0].output.rows, expectedRows.map((row) => row.map(String)));
   assert.deepEqual(note.examples[0].output.rowLabels, ['0', '1', '2']);
-  assert.equal(countConcepts(catalog[0].items), 54);
-  assert.equal(concepts.filter(({topicId}) => topicId === 'sql').length, 53);
+  assert.equal(countConcepts(catalog[0].items), 106);
+  assert.equal(concepts.filter(({topicId}) => topicId === 'sql').length, 105);
   assert.equal(searchEntries(entries, 'crear una tabla con pandas')[0]?.id, id);
   assert.match(await readFile('docs/' + id + '.mdx', 'utf8'), /PandasConceptCard/);
 });

@@ -1,0 +1,53 @@
+{
+  "reviewed": 8,
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-text-length.png",
+      "sha256": "7e6d5b802a84ebfb29e2a6c1fe2b7006c3b38c07aae35206f3d174418d43d8b0",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-aggregate-empty.png",
+      "sha256": "91e15475565d9e09afa8c24ac7e6a305c5003203eecd4a8242521a8a385d77d6",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-update-final.png",
+      "sha256": "a69a12d971230d21dfd787afcaf500492b6930fc9cf52e1b8d5fa6b79a96d721",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-create-200.png",
+      "sha256": "ee3f89b962d0e08b15123b7b1a8f6b50eb07f1911d35b3079befa7d05e023982",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-text-length.png",
+      "sha256": "116b38b65367fdbd32805ced2ff86da2c135c5ff04983aed22afdee41531fe54",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-aggregate-empty.png",
+      "sha256": "2c9fccd79b14cb1d5fb381c6ffc192d99fb646a8dea9ce21539e7db7a2690d27",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-update-final.png",
+      "sha256": "23f06b5642d2009b251c10a030bd1ec78a263b1d7c842f623080697e53282585",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-create-200.png",
+      "sha256": "ee3f89b962d0e08b15123b7b1a8f6b50eb07f1911d35b3079befa7d05e023982",
+      "viewed": true,
+      "notes": "Revisión de código, resultados y controles del estado capturado. El caso 200% conserva el ajuste de líneas del renderer actual; el recorrido se valida en la prueba."
+    }
+  ]
+}

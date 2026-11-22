@@ -10,17 +10,18 @@ import {createSQLiteEngine} from '../src/practice/adapters/sqlite/core.ts';
 import type {RuntimeEvent} from '../src/practice/contracts.ts';
 import {resolveNoteExample} from '../src/content/notes/sql/factory.ts';
 import {readFile} from 'node:fs/promises';
+const firstBlock=sqlConcepts.filter(c=>c.order<1500);
 
 test('bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores',()=>{
   const expected=sqlCurriculum.slice(0,14).flatMap(g=>g.children.map(c=>c.id));
-  assert.equal(expected.length,53);assert.deepEqual(concepts.filter(c=>c.topicId==='sql').map(c=>c.id),expected);
-  assert.deepEqual(sqlConcepts.map(c=>c.conceptId),expected);
-  for(const c of sqlConcepts){assert.ok(c.description.trim());assert.ok(c.examples.length);assert.ok(c.examples.every(e=>e.code.trim()));}
+  assert.equal(expected.length,53);assert.deepEqual(concepts.filter(c=>c.topicId==='sql'&&c.order<1500).map(c=>c.id),expected);
+  assert.deepEqual(firstBlock.map(c=>c.conceptId),expected);
+  for(const c of firstBlock){assert.ok(c.description.trim());assert.ok(c.examples.length);assert.ok(c.examples.every(e=>e.code.trim()));}
   for(const id of ['select','where','limit','order-by','comentarios'])assert.ok(sqlConcepts.some(c=>c.conceptId==='analisis-de-datos/sql/'+id));
 });
 test('bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente',()=>{
   for(const group of sqlCurriculum.slice(0,14))for(const c of group.children)for(const d of sqlDialects)assert.equal(getSqlCapability(c.feature,d.id).status,'reviewed',c.key+'/'+d.id);
-  assert.equal(getSqlCapability('create-table','mysql').status,'pending');
+  assert.equal(getSqlCapability('alter-table','mysql').status,'pending');
   for(const dialect of ['mysql','mariadb'] as const){const c=getSqlCapability('full-outer-join',dialect);assert.equal(c.status,'reviewed');if(c.status==='reviewed')assert.equal(c.support,'unavailable');}
 });
 test('bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo',()=>{
@@ -34,7 +35,7 @@ before(async()=>{sqlite=await (initSQLite as unknown as (o:object)=>Promise<Sqli
 test('bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM',async()=>{
  const engine=createSQLiteEngine(sqlite);try{
   engine.init(await createDatasetAdapter().materialize({id:'negocio-relacional',version:1},'sqlite-wasm',new AbortController().signal));let id=0;
-  for(const c of sqlConcepts)for(const example of c.examples){const events:RuntimeEvent[]=[];
+  for(const c of firstBlock)for(const example of c.examples){const events:RuntimeEvent[]=[];
    engine.run({runId:'editorial-'+(++id),workspaceId:'editorial',generation:1,revision:1,entryFile:'consulta.sql',files:[{path:'consulta.sql',languageId:'sql',content:example.code}]},e=>events.push(e));
    assert.ok(!events.some(e=>e.type==='error'),c.conceptId+': '+JSON.stringify(events));const table=events.filter(e=>e.type==='table').at(-1);assert.ok(table&&table.type==='table');
    assert.deepEqual(table.columns.map(c=>c.name),example.output.columns,c.conceptId);

@@ -23,7 +23,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
     'Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
     'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau',
   ]);
-  await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('53 conceptos');
+  await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('105 conceptos');
   expect(await library(page).locator('[data-topic-icon]:not([data-icon-kind="group"])').evaluateAll((icons) => icons.map((icon) => icon.getAttribute('data-topic-icon')))).toEqual([
     'Excel', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
@@ -91,7 +91,7 @@ test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías
   await expect(library(page).locator('details')).toHaveCount(24);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
-  await expect(item(page, 'sql').getByRole('link')).toHaveCount(53);
+  await expect(item(page, 'sql').getByRole('link')).toHaveCount(105);
   await noOverflow(page);
   await expect(page).toHaveScreenshot('area.png');
   if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
