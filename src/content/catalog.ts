@@ -1,8 +1,9 @@
 import type {IconName} from '../components/Icon';
 import type {AreaId} from './areas';
 import {concepts, type ConceptMeta} from './concepts.ts';
+import {getPublishedSqlCurriculum} from './sql/curriculum.ts';
 
-type TopicDefinition = {kind: 'topic'; id: string; label: string};
+type TopicDefinition = {kind: 'topic'; id: string; label: string; sharedFrom?:AreaId};
 type GroupDefinition = {kind: 'group'; id: string; label: string; items: readonly TopicDefinition[]};
 export type AreaDefinition = {
   id: AreaId;
@@ -14,7 +15,8 @@ export type AreaDefinition = {
   items: readonly (TopicDefinition | GroupDefinition)[];
 };
 
-export type CatalogTopic = TopicDefinition & {areaId: AreaId; concepts: readonly ConceptMeta[]};
+export type CatalogSection={id:string;label:string;collapsed:true;concepts:readonly ConceptMeta[]};
+export type CatalogTopic = TopicDefinition & {areaId: AreaId; concepts: readonly ConceptMeta[]; sections?:readonly CatalogSection[]};
 export type CatalogGroup = Omit<GroupDefinition, 'items'> & {items: readonly CatalogTopic[]};
 export type CatalogNode = CatalogTopic | CatalogGroup;
 export type CatalogArea = Omit<AreaDefinition, 'items'> & {items: readonly CatalogNode[]};
@@ -52,12 +54,18 @@ const definitions: readonly AreaDefinition[] = [
     id: 'ia', sidebarId: 'ia', number: '03',
     title: 'IA', description: 'Ideas y herramientas de inteligencia artificial.', icon: 'ai', items: [],
   },
+  {
+    id:'lenguajes',sidebarId:'lenguajes',number:'04',title:'Lenguajes',
+    description:'Conceptos y sintaxis para recordar y practicar.',icon:'book',
+    items:[{...topic('sql','SQL'),sharedFrom:'analisis-de-datos'}],
+  },
 ];
 
 export function buildCatalog(areas: readonly AreaDefinition[], entries: readonly ConceptMeta[]): CatalogArea[] {
   if (new Set(entries.map((entry) => entry.id)).size !== entries.length) throw new Error('IDs de concepto duplicados');
   if (new Set(areas.map((area) => area.id)).size !== areas.length) throw new Error('IDs de área duplicados');
   const assigned = new Set<string>();
+  const sectionsByTopic=new Map<string,readonly CatalogSection[]>();
   const result = areas.map((area): CatalogArea => {
     const nodeIds = new Set<string>();
     const register = (id: string) => {
@@ -66,10 +74,17 @@ export function buildCatalog(areas: readonly AreaDefinition[], entries: readonly
     };
     const attach = (definition: TopicDefinition): CatalogTopic => {
       register(definition.id);
-      const members = entries.filter((entry) => entry.areaId === area.id && entry.topicId === definition.id)
+      const sourceArea=definition.sharedFrom??area.id;
+      const members = entries.filter((entry) => entry.areaId === sourceArea && entry.topicId === definition.id)
         .sort((a, b) => a.order - b.order);
       members.forEach((entry) => assigned.add(entry.id));
-      return {...definition, areaId: area.id, concepts: members};
+      let sections:readonly CatalogSection[]|undefined;
+      if(sourceArea==='analisis-de-datos'&&definition.id==='sql'){
+        const key=sourceArea+'/'+definition.id;
+        sections=sectionsByTopic.get(key);
+        if(!sections){const byId=new Map(members.map(c=>[c.id,c]));sections=getPublishedSqlCurriculum().map(g=>({id:g.key,label:g.label,collapsed:true as const,concepts:g.children.flatMap(c=>byId.has(c.id)?[byId.get(c.id)!]:[])})).filter(g=>g.concepts.length);sectionsByTopic.set(key,sections);}
+      }
+      return {...definition, areaId: area.id, concepts: members,...(sections?.length?{sections}:{})};
     };
     return {...area, items: area.items.map((item) => {
       if (item.kind === 'topic') return attach(item);

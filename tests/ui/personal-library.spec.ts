@@ -1,3 +1,4 @@
+import {openSqlGroup, openCatalogSqlGroup} from './sql-tree-helpers';
 import {test, expect, type Page} from '@playwright/test';
 import {RECENTS_KEY, FAVORITES_KEY} from '../../src/lib/personal-library';
 import {goHome} from './header-helpers';
@@ -29,10 +30,9 @@ test('recientes: entrada directa, categorías sin visita, historial, recarga y s
   const menu = page.viewportSize()!.width <= 996
     ? page.locator('.navbar-sidebar .theme-doc-sidebar-menu')
     : page.locator('.theme-doc-sidebar-container .theme-doc-sidebar-menu');
-  await menu.getByRole('button', {name: 'SQL', exact: true}).click();
-  await expect(menu.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
+  const where = await openSqlGroup(menu, 'WHERE');
   expect(await storedRecents(page)).toEqual(first);
-  await menu.getByRole('link', {name: 'WHERE', exact: true}).click();
+  await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/where$/);
   await expect.poll(async () => (await storedRecents(page)).map(({conceptId}) => conceptId)).toEqual([id('where'), id('select')]);
   await page.goBack();
@@ -46,9 +46,14 @@ test('recientes: entrada directa, categorías sin visita, historial, recarga y s
   await expect(recents(page).getByRole('link')).toHaveText(['SELECTSQL · Análisis de datos', 'WHERESQL · Análisis de datos']);
   await page.getByRole('button', {name: 'Buscar un concepto', exact: true}).click();
   const dialog = page.getByRole('dialog', {name: 'Buscar en tus apuntes'});
-  await expect(dialog.getByRole('link').first()).toContainText('SELECT');
-  await expect(dialog.getByRole('link').nth(1)).toContainText('WHERE');
-  await expect(dialog.getByRole('link')).toHaveCount(6);
+  const suggestions = dialog.getByRole('link');
+  await expect(suggestions).toHaveCount(10);
+  await expect(suggestions.first()).toHaveAttribute('href', route('select'));
+  await expect(suggestions.nth(1)).toHaveAttribute('href', route('where'));
+  const links = await suggestions.evaluateAll(elements => elements.map(element => element.getAttribute('href')));
+  expect(new Set(links).size).toBe(links.length);
+  expect(links.every(link => link?.startsWith('/apuntes/analisis-de-datos/'))).toBe(true);
+  await expect(dialog.getByRole('button', {name: /^Mostrar más resultados/})).toBeVisible();
 });
 
 test('favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último', async ({page}) => {
@@ -90,8 +95,9 @@ test('colecciones visibles: orden, quitar conserva foco útil y buscar no despla
   await page.keyboard.press('Space');
   await expect(favorites(page).getByRole('button', {name: 'Quitar LIMIT de favoritos'})).toBeFocused();
   await search(page).fill('filtrar');
-  const results = page.locator('[data-search-surface="inline"]').getByRole('link');
+  const results = page.locator('[data-search-surface="inline"]').getByRole('link').filter({has: page.getByText('WHERE', {exact: true})});
   await expect(results).toHaveCount(1);
+  await expect(results).toHaveAttribute('href', '/apuntes/analisis-de-datos/sql/where');
   const before = await results.first().boundingBox();
   const other = await context.newPage();
   await go(other);
@@ -121,8 +127,8 @@ test('datos dañados o retirados: no se escriben al iniciar; la siguiente acció
   expect(await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!).conceptIds, FAVORITES_KEY)).toEqual([]);
   expect(await page.evaluate((key) => localStorage.getItem(key), RECENTS_KEY)).toBe('{roto');
   expect(await page.evaluate(() => localStorage.getItem('alldoc-palette'))).toBe('rojo');
-  await page.locator('[data-catalog]').getByLabel('SQL', {exact: true}).click();
-  await page.locator('[data-catalog]').getByRole('link').filter({hasText: 'SELECT'}).click();
+  const select = await openCatalogSqlGroup(page, 'SELECT');
+  await select.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/select$/);
   await expect.poll(async () => (await storedRecents(page)).map(({conceptId}) => conceptId)).toEqual([id('select')]);
 });
@@ -167,8 +173,8 @@ test('dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra c
   await expect(star(page)).toHaveAttribute('aria-pressed', 'false');
   await expect(star(page)).toBeFocused();
   expect(await storedRecents(page)).toEqual(visited);
-  await other.locator('[data-catalog]').getByLabel('SQL', {exact: true}).click();
-  await other.locator('[data-catalog]').getByRole('link').filter({hasText: 'WHERE'}).click();
+  const where = await openCatalogSqlGroup(other, 'WHERE');
+  await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(other).toHaveURL(/\/where$/);
   await goHome(page);
   await expect(recents(page).getByRole('link').first()).toContainText('WHERE');

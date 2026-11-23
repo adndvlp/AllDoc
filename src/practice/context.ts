@@ -19,6 +19,10 @@ function createResolver({registry, entries = concepts}: {registry: PracticeRegis
     }
     ids.add(entry.id);
     byPath.set(entry.slug, Object.freeze({...entry}));
+    for(const alias of entry.aliases??[]){
+      if(!alias.startsWith(docsBasePath+'/')||alias.includes('\\')||/[?#]/.test(alias)||byPath.has(alias))throw new Error('Alias de concepto inválido o duplicado: '+alias);
+      byPath.set(alias,byPath.get(entry.slug)!);
+    }
   }
   return (pathname: string): PracticeEditorContext | null => {
     if (!pathname.startsWith('/') || pathname.startsWith('//')) return null;

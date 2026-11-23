@@ -12,8 +12,8 @@ import {createSidebars} from '../src/lib/catalog-sidebar.ts';
 import {parseConceptFrontMatter} from '../src/lib/concept-front-matter.ts';
 import {searchEntries} from '../src/lib/search.ts';
 
-test('el catálogo conserva tres áreas, diecinueve herramientas y los cinco grupos en su orden', () => {
-  assert.deepEqual(catalog.map((area) => area.id), ['analisis-de-datos', 'desarrollo-web', 'ia']);
+test('el catálogo incluye Lenguajes y conserva, diecinueve herramientas y los cinco grupos en su orden', () => {
+  assert.deepEqual(catalog.map((area) => area.id), ['analisis-de-datos', 'desarrollo-web', 'ia', 'lenguajes']);
   assert.deepEqual(getTopics('analisis-de-datos').map((topic) => topic.label), [
     'Excel', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
@@ -27,14 +27,14 @@ test('el catálogo conserva tres áreas, diecinueve herramientas y los cinco gru
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 154 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [154, 0, 0]);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 154 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [154, 0, 0, 153]);
   assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
   const sidebars = createSidebars(catalog);
-  assert.deepEqual(Object.keys(sidebars), ['analisisDeDatos']);
+  assert.deepEqual(Object.keys(sidebars), ['analisisDeDatos', 'lenguajes']);
   const items = sidebars.analisisDeDatos;
   assert.deepEqual(items.map((item) => item.label), catalog[0].items.map((item) => item.label));
   const check = (item: (typeof items)[number]) => {
@@ -47,7 +47,10 @@ test('el sidebar deriva del catálogo, conserva categorías contraídas y solo e
     }
   };
   items.forEach(check);
-  assert.deepEqual(items.find((item) => item.label === 'SQL')?.items, getConceptsForTopic('analisis-de-datos', 'sql').map((concept) => concept.docId??concept.id));
+  const sqlGroups=items.find(item=>item.label==='SQL')!.items;
+  assert.ok(Array.isArray(sqlGroups));
+  assert.equal(sqlGroups.length,34);
+  assert.deepEqual(sqlGroups.flatMap((g:any)=>g.items.map((leaf:any)=>leaf.id)),getConceptsForTopic('analisis-de-datos','sql').map(c=>c.docId??c.id));
   const files = items.find((item) => item.label === 'Tablas y archivos')!;
   assert.ok(Array.isArray(files.items));
   const pandas = files.items.find((item) => typeof item === 'object' && item.type === 'category' && item.label === 'Pandas');
@@ -137,9 +140,10 @@ test('Docusaurus recibe la metadata canónica conservando contenido, opciones y 
     assert.equal(result.content, parsed.content);
     assert.deepEqual(result.frontMatter, {
       ...parsed.frontMatter,
-      title: concept.title, sidebar_label: concept.title, sidebar_position: concept.order,
+      title: concept.title, sidebar_label: concept.topicId==='sql'?concept.label:concept.title, sidebar_position: concept.order,
       description: ('seoDescription' in concept ? concept.seoDescription : concept.description),
       slug: concept.slug.slice(docsBasePath.length),
+      ...(concept.topicId==='sql'?{displayed_sidebar:'analisisDeDatos',alldoc_canonical:concept.slug}:{}),
       pagination_prev: siblings[position - 1]?.docId??siblings[position - 1]?.id ?? null,
       pagination_next: siblings[position + 1]?.docId??siblings[position + 1]?.id ?? null,
     });

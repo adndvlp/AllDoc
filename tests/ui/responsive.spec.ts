@@ -1,3 +1,4 @@
+import {openSqlGroup, openCatalogSqlGroup} from './sql-tree-helpers';
 import {test, expect} from '@playwright/test';
 import type {Locator, Page} from '@playwright/test';
 import {chooseHeaderArea} from './header-helpers';
@@ -77,12 +78,15 @@ test('apunte compacto y resultados legibles', async ({page}) => {
 test('grupos contraídos, logos y navegación desde el menú', async ({page}) => {
   await openPage(page);
   const menu = await openTopics(page);
-  for (const label of ['SQL', 'Tablas y archivos', 'Cálculo científico']) {
+  await expect(menu.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
+  await expect(menu.getByRole('button', {name: 'SELECT', exact: true})).toHaveAttribute('aria-expanded', 'true');
+  for (const label of ['Tablas y archivos', 'Cálculo científico']) {
     await expect(menu.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-expanded', 'false');
   }
   const originalUrl = page.url();
   for (const label of ['SQL', 'Tablas y archivos', 'Conexiones SQL']) {
-    await menu.getByRole('button', {name: label, exact: true}).click();
+    const button = menu.getByRole('button', {name: label, exact: true});
+    if (await button.getAttribute('aria-expanded') === 'false') await button.click();
     await expect(menu.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-expanded', 'true');
     expect(page.url()).toBe(originalUrl);
   }
@@ -117,7 +121,8 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
   await expect(menu.getByRole('button', {name: 'Excel', exact: true})).toBeInViewport();
   await page.mouse.move(page.viewportSize()!.width - 1, 0);
   await expect(page).toHaveScreenshot('menu.png');
-  await menu.getByRole('link', {name: 'WHERE', exact: true}).click();
+  const where = await openSqlGroup(menu, 'WHERE');
+  await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/sql\/where$/);
   await expect(page.getByRole('heading', {name: 'WHERE', exact: true})).toBeVisible();
   if (page.viewportSize()!.width <= 996) await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
@@ -184,8 +189,8 @@ test('la navegación se adapta al girar el dispositivo', async ({page}, testInfo
   }
   await noPageOverflow(page);
   const menu = await openTopics(page);
-  await menu.getByRole('button', {name: 'SQL', exact: true}).click();
-  await menu.getByRole('link', {name: 'WHERE', exact: true}).click();
+  const where = await openSqlGroup(menu, 'WHERE');
+  await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/sql\/where$/);
 });
 

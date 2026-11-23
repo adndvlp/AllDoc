@@ -42,10 +42,10 @@ export function readFavorites(raw: string | null, knownIds: ReadonlySet<string>)
   return Array.from(new Set(value.conceptIds.filter((id): id is string => typeof id === 'string' && knownIds.has(id))));
 }
 
-export function createPersonalLibrary(entries: readonly {id: string; slug: string}[], now: () => number = Date.now) {
+export function createPersonalLibrary(entries: readonly {id: string; slug: string;aliases?:readonly string[]}[], now: () => number = Date.now) {
   const knownIds = new Set(entries.map(({id}) => id));
   const normalizePath = (path: string) => path.split(/[?#]/)[0].replace(/\/+$/, '') || '/';
-  const routes = new Map(entries.map(({id, slug}) => [normalizePath(slug), id]));
+  const routes = new Map(entries.flatMap(({id, slug,aliases=[]}) => [slug,...aliases].map(path=>[normalizePath(path),id] as const)));
   const initial: LibrarySnapshot = {hydrated: false, recents: [], favorites: [], sessionOnly: {recents: false, favorites: false}};
   let state = initial;
   let storage: LibraryStorage | null = null;
@@ -89,9 +89,10 @@ export function createPersonalLibrary(entries: readonly {id: string; slug: strin
     },
     activateRoute(pathname: string) {
       const path = normalizePath(pathname);
-      if (path === activeRoute) return;
-      activeRoute = path;
       const id = routes.get(path);
+      const route=id?'concept:'+id:'path:'+path;
+      if (route === activeRoute) return;
+      activeRoute = route;
       if (!id) return;
       if (state.hydrated) visit(id); else pendingVisits.push(id);
     },

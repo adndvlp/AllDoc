@@ -1,0 +1,162 @@
+
+> alldoc@0.1.0 test:ui:sql:structure
+> playwright test tests/ui/sql-navigation.spec.ts tests/ui/catalog.spec.ts tests/ui/responsive.spec.ts tests/ui/header.spec.ts tests/ui/personal-library.spec.ts tests/ui/search.spec.ts tests/ui/notes.spec.ts tests/ui/sql-dialects.spec.ts tests/ui/practice.spec.ts tests/ui/sqlite.spec.ts tests/ui/pandas.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0 --list
+
+Listing tests:
+  [celular] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [celular] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [celular] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [celular] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [celular] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [celular] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [celular] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [celular] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [celular] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [celular] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [celular] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [celular] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [celular] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [celular] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [celular] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [celular] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [celular] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [celular] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [celular] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [celular] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [celular] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [celular] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [celular] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [celular] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [celular] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [celular] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [celular] › practice.spec.ts:30:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [celular] › practice.spec.ts:47:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [celular] › practice.spec.ts:60:1 › datos: tabla común tipada y pestañas por teclado sin resultados inventados
+  [celular] › practice.spec.ts:76:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [celular] › practice.spec.ts:89:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [celular] › practice.spec.ts:109:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [celular] › practice.spec.ts:120:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [celular] › practice.spec.ts:132:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [celular] › practice.spec.ts:152:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [celular] › practice.spec.ts:167:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [celular] › practice.spec.ts:182:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [celular] › practice.spec.ts:194:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [celular] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [celular] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [celular] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [celular] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [celular] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [celular] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [celular] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [celular] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [celular] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [celular] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [celular] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [celular] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [celular] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [celular] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [celular] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [celular] › sql-dialects.spec.ts:8:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [celular] › sql-dialects.spec.ts:15:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [celular] › sql-dialects.spec.ts:22:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [celular] › sql-dialects.spec.ts:28:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [celular] › sql-dialects.spec.ts:36:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [celular] › sql-dialects.spec.ts:42:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [celular] › sql-navigation.spec.ts:31:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [celular] › sql-navigation.spec.ts:52:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [celular] › sql-navigation.spec.ts:69:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [celular] › sql-navigation.spec.ts:86:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [celular] › sql-navigation.spec.ts:107:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [celular] › sql-navigation.spec.ts:122:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [celular] › sql-navigation.spec.ts:132:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [celular] › sql-navigation.spec.ts:144:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [celular] › sqlite.spec.ts:19:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular] › sqlite.spec.ts:31:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular] › sqlite.spec.ts:49:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular] › sqlite.spec.ts:67:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular] › sqlite.spec.ts:93:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular] › sqlite.spec.ts:103:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular] › sqlite.spec.ts:113:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [laptop] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [laptop] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [laptop] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [laptop] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [laptop] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [laptop] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [laptop] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [laptop] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [laptop] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [laptop] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [laptop] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [laptop] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [laptop] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [laptop] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [laptop] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [laptop] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [laptop] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [laptop] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [laptop] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [laptop] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [laptop] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [laptop] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [laptop] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [laptop] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [laptop] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [laptop] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [laptop] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [laptop] › practice.spec.ts:30:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [laptop] › practice.spec.ts:47:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [laptop] › practice.spec.ts:60:1 › datos: tabla común tipada y pestañas por teclado sin resultados inventados
+  [laptop] › practice.spec.ts:76:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [laptop] › practice.spec.ts:89:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [laptop] › practice.spec.ts:109:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [laptop] › practice.spec.ts:120:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [laptop] › practice.spec.ts:132:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [laptop] › practice.spec.ts:152:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [laptop] › practice.spec.ts:167:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [laptop] › practice.spec.ts:182:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [laptop] › practice.spec.ts:194:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [laptop] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [laptop] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [laptop] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [laptop] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [laptop] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [laptop] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [laptop] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [laptop] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [laptop] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [laptop] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [laptop] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [laptop] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [laptop] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [laptop] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [laptop] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [laptop] › sql-dialects.spec.ts:8:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [laptop] › sql-dialects.spec.ts:15:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [laptop] › sql-dialects.spec.ts:22:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [laptop] › sql-dialects.spec.ts:28:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [laptop] › sql-dialects.spec.ts:36:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [laptop] › sql-dialects.spec.ts:42:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [laptop] › sql-navigation.spec.ts:31:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [laptop] › sql-navigation.spec.ts:52:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [laptop] › sql-navigation.spec.ts:69:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [laptop] › sql-navigation.spec.ts:86:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [laptop] › sql-navigation.spec.ts:107:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [laptop] › sql-navigation.spec.ts:122:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [laptop] › sql-navigation.spec.ts:132:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [laptop] › sql-navigation.spec.ts:144:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [laptop] › sqlite.spec.ts:19:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [laptop] › sqlite.spec.ts:31:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [laptop] › sqlite.spec.ts:49:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [laptop] › sqlite.spec.ts:67:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [laptop] › sqlite.spec.ts:93:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [laptop] › sqlite.spec.ts:103:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [laptop] › sqlite.spec.ts:113:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+Total: 156 tests in 11 files

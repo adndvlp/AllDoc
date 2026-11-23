@@ -5,13 +5,16 @@ import DocSidebarItems from '@theme/DocSidebarItems';
 import type {Props} from '@theme/DocSidebarItem/Category';
 import TopicIcon from '@site/src/components/TopicIcon';
 import styles from './styles.module.css';
+import {useEffect,useRef} from 'react';
 
 function ToggleCategory({item, activePath, onItemClick, level, tabIndex}: Props) {
-  const {collapsed, setCollapsed} = useCollapsible({
-    // Respect the configured default even when this category contains the current page.
-    initialState: item.collapsed,
-  });
   const isActive = isActiveSidebarItem(item, activePath);
+  const openActive=isActive&&['sidebar-sql-topic','sidebar-sql-group'].includes(item.className??'');
+  const {collapsed, setCollapsed} = useCollapsible({
+    initialState: openActive?false:item.collapsed,
+  });
+  const previousPath=useRef(activePath);
+  useEffect(()=>{if(previousPath.current!==activePath){previousPath.current=activePath;if(openActive)setCollapsed(false);}},[activePath,openActive,setCollapsed]);
 
   return (
     <li
@@ -36,7 +39,7 @@ function ToggleCategory({item, activePath, onItemClick, level, tabIndex}: Props)
             onItemClick?.(item);
             setCollapsed(!collapsed);
           }}>
-          <TopicIcon label={item.label} className={styles.icon} />
+          {item.className!=='sidebar-sql-group'&&<TopicIcon label={item.label} className={styles.icon} />}
           <span className={styles.label}>{item.label}</span>
         </button>
       </div>

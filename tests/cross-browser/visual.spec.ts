@@ -20,7 +20,7 @@ async function reference(page:Page,info:TestInfo,image:string,fontScale=1) {
 }
 
 test(visualTitle('VIS-01'),async({page},info)=>{
-  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(24);
+  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(58);
   await expect(page.locator('[data-catalog] details[open]')).toHaveCount(0);
   await expect(page.locator('[data-search-surface="inline"]').getByRole('searchbox')).toBeVisible();
   await reference(page,info,'inicio.png');

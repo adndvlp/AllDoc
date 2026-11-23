@@ -3,7 +3,7 @@
 .trigger { position: absolute; inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto; display: flex; gap: .6rem; align-items: center; min-height: 44px; padding: .6rem .9rem; max-width: calc(100% - 2rem); color: var(--accent); background: #000; border: 1px solid var(--accent-border); border-radius: .65rem; font: inherit; font-size: .85rem; cursor: pointer; box-shadow: 0 0 0 5px #000; }
 .triggerIcon { font-family: var(--ifm-font-family-monospace); font-weight: 700; }
 .trigger:hover { border-color: var(--accent); }
-@container practice-reader (inline-size < 24rem) or (block-size < 24rem) {
+@container practice-reader (inline-size < 26rem) or (block-size < 24rem) {
   .trigger { width: 44px; height: 44px; min-width: 44px; padding: 0; justify-content: center; }
   .triggerIcon { font-size: 16px; line-height: 1; }
   .triggerLabel { display: none; }

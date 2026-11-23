@@ -1,3 +1,4 @@
+import {openSqlGroup, openCatalogSqlGroup} from './sql-tree-helpers';
 import {test, expect, type Page} from '@playwright/test';
 import {chooseHeaderArea, expectSelectedHeaderArea} from './header-helpers';
 
@@ -17,7 +18,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await go(page);
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   await expect(page.locator('[data-personal-shortcuts]')).toHaveCount(0);
-  await expect(library(page).locator('details')).toHaveCount(24);
+  await expect(library(page).locator('details')).toHaveCount(58);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   expect(await library(page).locator(':scope > ul > li > details > summary').evaluateAll((summaries) => summaries.map((summary) => summary.getAttribute('aria-label')))).toEqual([
     'Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
@@ -40,14 +41,16 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await noOverflow(page);
   await library(page).locator('img[data-topic-icon]').evaluateAll((images) => Promise.all(images.map((image) => (image as HTMLImageElement).decode())));
   await expect(page).toHaveScreenshot('catalogo.png');
-  await item(page, 'sql').getByRole('link').filter({has: page.getByText('WHERE',{exact:true})}).click();
+  const where = await openCatalogSqlGroup(page, 'WHERE');
+  await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/sql\/where$/);
   await expect(page.getByRole('heading', {name: 'WHERE', exact: true})).toBeVisible();
   if (page.viewportSize()!.width <= 996) await page.locator('.navbar__toggle').click();
   const sidebar = page.viewportSize()!.width <= 996
     ? page.locator('.navbar-sidebar .theme-doc-sidebar-menu')
     : page.locator('.theme-doc-sidebar-container .theme-doc-sidebar-menu');
-  await expect(sidebar.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
+  await expect(sidebar.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
+  await expect(sidebar.getByRole('button', {name: 'WHERE', exact: true})).toHaveAttribute('aria-expanded', 'true');
   if (page.viewportSize()!.width <= 996) await page.getByRole('button', {name: 'Cerrar barra de lateral', exact: true}).click();
   await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
 });
@@ -88,10 +91,11 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos');
-  await expect(library(page).locator('details')).toHaveCount(24);
+  await expect(library(page).locator('details')).toHaveCount(58);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
-  await expect(item(page, 'sql').getByRole('link')).toHaveCount(153);
+  await expect(item(page, 'sql').getByRole('link')).toHaveCount(0);
+  await expect(item(page, 'sql').locator('a')).toHaveCount(153);
   await noOverflow(page);
   await expect(page).toHaveScreenshot('area.png');
   if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
@@ -124,7 +128,7 @@ test('buscar y limpiar conserva despliegues; el catálogo no crea otro panel de 
   await expect(item(page, 'conexiones-sql')).toHaveAttribute('open', '');
 });
 
-test('URL directa de WHERE y recarga conservan todos los temas contraídos', async ({page}) => {
+test('URL directa de WHERE y recarga abren solo SQL y sus categorías padre', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos/sql/where');
   for (let pass = 0; pass < 2; pass++) {
     if (pass) {
@@ -134,8 +138,10 @@ test('URL directa de WHERE y recarga conservan todos los temas contraídos', asy
     const compact = page.viewportSize()!.width <= 996;
     if (compact) await page.locator('.navbar__toggle').click();
     const menu = page.locator(compact ? '.navbar-sidebar .theme-doc-sidebar-menu' : '.theme-doc-sidebar-container .theme-doc-sidebar-menu');
-    await expect(menu.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
-    await expect(menu.locator('[aria-expanded="true"]')).toHaveCount(0);
+    await expect(menu.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
+    await expect(menu.getByRole('button', {name: 'WHERE', exact: true})).toHaveAttribute('aria-expanded', 'true');
+    await expect(menu.getByRole('button', {name: 'SELECT', exact: true})).toHaveAttribute('aria-expanded', 'false');
+    await expect(menu.locator('[aria-expanded="true"]')).toHaveCount(2);
     for (const label of ['Tablas y archivos', 'Cálculo científico', 'Visualización', 'Conexiones SQL', 'Peticiones y formatos']) {
       await expect(menu.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-expanded', 'false');
     }

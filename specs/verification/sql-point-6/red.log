@@ -1,0 +1,137 @@
+(node:77884) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ navegación SQL: cuatro áreas y SQL como única entrada compartida en Lenguajes (2.776333ms)
+✖ navegación SQL: catálogo y ambos sidebars usan los 34 grupos con Definición primero (8.742416ms)
+✖ navegación SQL: cada documento alias resuelve la identidad canónica, ruta y contexto de práctica (0.304333ms)
+✖ navegación SQL: los recientes y favoritos guardan una identidad al alternar ubicaciones (0.492125ms)
+✖ navegación SQL: front matter alias usa su sidebar/paginación y conserva canonical hacia Análisis (0.368625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 208.761458
+
+✖ failing tests:
+
+test at tests/sql-navigation.test.ts:14:1
+✖ navegación SQL: cuatro áreas y SQL como única entrada compartida en Lenguajes (2.776333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'analisis-de-datos',
+      'desarrollo-web',
+      'ia',
+  -   'lenguajes'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts:15:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'analisis-de-datos', 'desarrollo-web', 'ia' ],
+    expected: [ 'analisis-de-datos', 'desarrollo-web', 'ia', 'lenguajes' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-navigation.test.ts:20:1
+✖ navegación SQL: catálogo y ambos sidebars usan los 34 grupos con Definición primero (8.742416ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(bars.lenguajes)
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts:21:44)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-navigation.test.ts:26:1
+✖ navegación SQL: cada documento alias resuelve la identidad canónica, ruta y contexto de práctica (0.304333ms)
+  AssertionError [ERR_ASSERTION]: lenguajes/sql/select/definicion
+  + actual - expected
+  
+  + undefined
+  - 'analisis-de-datos/sql/select'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts:28:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'analisis-de-datos/sql/select',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-navigation.test.ts:32:1
+✖ navegación SQL: los recientes y favoritos guardan una identidad al alternar ubicaciones (0.492125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   'analisis-de-datos/sql/select'
+  - ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts:33:130)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 'analisis-de-datos/sql/select' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-navigation.test.ts:36:1
+✖ navegación SQL: front matter alias usa su sidebar/paginación y conserva canonical hacia Análisis (0.368625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - '/lenguajes/sql/select'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts:39:53)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '/lenguajes/sql/select',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

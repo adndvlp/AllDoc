@@ -14,7 +14,8 @@ export async function expectSelectedHeaderArea(page: Page, name: string) {
     await expect(trigger(page)).toHaveAccessibleName('Elegir área: ' + name);
     await expect(trigger(page)).toHaveAttribute('aria-expanded', 'false');
   } else {
-    await expect(page.getByRole('navigation', {name: 'Áreas de estudio', exact: true}).getByRole('button', {name, exact: true})).toHaveAttribute('aria-pressed', 'true');
+    const home = new URL(page.url()).pathname === '/';
+    await expect(page.getByRole('navigation', {name: 'Áreas de estudio', exact: true}).getByRole(home ? 'button' : 'link', {name, exact: true})).toHaveAttribute(home ? 'aria-pressed' : 'aria-current', home ? 'true' : 'page');
   }
 }
 

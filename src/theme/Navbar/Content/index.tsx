@@ -7,12 +7,13 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import SearchBar from '@theme/SearchBar';
 import PaletteSelector from '@site/src/components/PaletteSelector';
 import {areas} from '@site/src/content/areas';
+import {resolveSqlPlacement,sqlAreaTarget} from '@site/src/content/sql/placements';
 import {useHomeArea} from '@site/src/components/HomeAreaProvider';
 import {useHeaderDisclosure} from '@site/src/hooks/useHeaderDisclosure';
 import styles from './styles.module.css';
 
 export default function NavbarContent() {
-  const {pathname} = useLocation();
+  const {pathname,search,hash} = useLocation();
   const previousPath = useRef(pathname);
   const mobileSidebar = useNavbarMobileSidebar();
   const {areaId, selectArea} = useHomeArea();
@@ -46,7 +47,9 @@ export default function NavbarContent() {
       const onChoose = () => {if (closeAfterChoosing) disclosure.close(true);};
       if (pathname === '/') return <button key={area.id} type="button" className={styles.area}
         aria-pressed={active} onClick={() => {selectArea(area.id); onChoose();}}>{area.title}</button>;
-      return <Link key={area.id} to={'/apuntes/' + area.id} className={styles.area}
+      const target=sqlAreaTarget(pathname,area.id);
+      const suffix=resolveSqlPlacement(target)?search+hash:'';
+      return <Link key={area.id} to={target+suffix} className={styles.area}
         aria-current={active ? 'page' : undefined} onClick={onChoose}>{area.title}</Link>;
     });
   }

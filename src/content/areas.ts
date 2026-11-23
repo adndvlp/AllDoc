@@ -1,7 +1,7 @@
 import type {IconName} from '../components/Icon';
 import {catalog, getTopics} from './catalog.ts';
 
-export type AreaId = 'analisis-de-datos' | 'desarrollo-web' | 'ia';
+export type AreaId = 'analisis-de-datos' | 'desarrollo-web' | 'ia' | 'lenguajes';
 
 type Area = {
   id: AreaId;

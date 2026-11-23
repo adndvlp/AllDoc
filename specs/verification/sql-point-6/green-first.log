@@ -1,0 +1,17 @@
+(node:77968) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-navigation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ navegación SQL: cuatro áreas y SQL como única entrada compartida en Lenguajes (1.540333ms)
+✔ navegación SQL: catálogo y ambos sidebars usan los 34 grupos con Definición primero (1.270708ms)
+✔ navegación SQL: cada documento alias resuelve la identidad canónica, ruta y contexto de práctica (70.471833ms)
+✔ navegación SQL: los recientes y favoritos guardan una identidad al alternar ubicaciones (0.663333ms)
+✔ navegación SQL: front matter alias usa su sidebar/paginación y conserva canonical hacia Análisis (0.953291ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 264.8135

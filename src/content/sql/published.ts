@@ -1,4 +1,5 @@
 import {getPublishedSqlCurriculum} from './curriculum.ts';
+import {sqlPathForLocation} from './placements.ts';
 import type {ConceptMeta} from '../concepts.ts';
 
 // Definiciones breves compartidas por navegación y fichas, sin código ni resultados.
@@ -162,5 +163,5 @@ export const publishedSqlMetadata:readonly SqlMetadata[]=Object.freeze(getPublis
  const description=descriptions[c.key];if(!description)throw new Error('Falta definición SQL: '+c.key);
  return Object.freeze({id:c.id as SqlMetadata['id'],docId:c.stage==='published-legacy'?c.id:'analisis-de-datos/sql/'+c.file.replace(/\.mdx$/,''),areaId:'analisis-de-datos' as const,topicId:'sql' as const,slug:c.canonicalPath,
  title:c.key.endsWith('/definicion')?group.label:c.key==='select/comentarios'?'Comentarios':group.label+' · '+c.label,
- label:c.label,description,order:group.order*100+c.order});
+  label:c.label,description,order:group.order*100+c.order,aliases:[sqlPathForLocation(c.id,'lenguajes')!]});
 })));

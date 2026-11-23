@@ -2,16 +2,17 @@ import {test, expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {go, reader, header, fits, noOverflow, activate, scrollRegion, chooseHeaderArea, goHome, searchDialog, topicsDialog} from './application-helpers';
 import {profiles, panel, code, openPractice, fillCode, expectCode, capture} from './practice-helpers';
+import {openCatalogSqlGroup} from '../ui/sql-tree-helpers';
 
 const sql=profiles[0];
 test(caseTitle('APP-01'), async ({page}, info) => {
   await go(page);
   const catalog=page.locator('[data-catalog]');
-  await expect(catalog.locator('details')).toHaveCount(24);
+  await expect(catalog.locator('details')).toHaveCount(58);
   await expect(catalog.locator('details[open]')).toHaveCount(0);
   await activate(catalog.getByLabel('SQL',{exact:true}),info);
   await activate(catalog.getByLabel('Tablas y archivos',{exact:true}),info);
-  await expect(catalog.locator('[data-catalog-item="sql"] details')).toHaveAttribute('open','');
+  await expect(catalog.locator('[data-catalog-item="sql"] > details')).toHaveAttribute('open','');
   await expect(page).toHaveURL(/\/$/);
   for (const area of ['Desarrollo web','IA','Análisis de datos']) {
     await chooseHeaderArea(page,area);
@@ -19,8 +20,9 @@ test(caseTitle('APP-01'), async ({page}, info) => {
     if(area!=='Análisis de datos') {await expect(catalog.getByText('Sin apuntes todavía',{exact:true})).toBeVisible(); await expect(catalog.getByRole('link')).toHaveCount(0);}
   }
   await catalog.getByLabel('SQL',{exact:true}).click();
-  await expect(catalog.locator('[data-catalog-item="sql"]').getByRole('link')).toHaveCount(5);
-  await catalog.locator('[data-catalog-item="sql"]').getByRole('link').filter({hasText:'WHERE'}).click();
+  await expect(catalog.locator('[data-catalog-item="sql"]').getByRole('link')).toHaveCount(0);
+  const where=await openCatalogSqlGroup(page,'WHERE');
+  await where.getByRole('link',{name:'Definición',exact:true}).click();
   await expect(page).toHaveURL(/\/sql\/where$/); await expect(page.getByRole('heading',{name:'WHERE',exact:true})).toBeVisible();
   await go(page,'/apuntes/analisis-de-datos');
   for (const [area,id] of [['Desarrollo web','desarrollo-web'],['IA','ia']]) {
@@ -40,7 +42,7 @@ test(caseTitle('APP-02'), async ({page}, info) => {
     await page.keyboard.press('Escape'); await expect(trigger).toBeFocused(); await expect(trigger).toHaveAttribute('aria-expanded','false');
   }
   const input=page.locator('[data-search-surface="inline"]').getByRole('searchbox');
-  await input.fill('cómo filtrar'); const result=page.locator('[data-search-surface="inline"]').getByRole('link').filter({hasText:'WHERE'});
+  await input.fill('cómo filtrar'); const result=page.locator('[data-search-surface="inline"]').getByRole('link').filter({has:page.getByText('WHERE',{exact:true})});
   await expect(result).toHaveCount(1); await input.press('ArrowDown'); await expect(result).toBeFocused(); await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);
   const search=header(page).getByRole('button',{name:'Buscar un concepto',exact:true});
@@ -106,7 +108,7 @@ test(caseTitle('APP-05'), async ({page},info) => {
   await reader(page).evaluate(el=>{el.scrollTop=30;}); const initial=await reader(page).evaluate(el=>el.scrollTop);
   const compact=width<=996; if(compact) await header(page).locator('.navbar__toggle').click();
   const menu=compact?topicsDialog(page):page.locator('.theme-doc-sidebar-container');
-  for(const label of ['SQL','Tablas y archivos','Pandas','openpyxl','Cálculo científico','NumPy','SciPy','Visualización','Matplotlib','Seaborn','Conexiones SQL','Peticiones y formatos']) await menu.getByRole('button',{name:label,exact:true}).click();
+  for(const label of ['SQL','Tablas y archivos','Pandas','openpyxl','Cálculo científico','NumPy','SciPy','Visualización','Matplotlib','Seaborn','Conexiones SQL','Peticiones y formatos']){const button=menu.getByRole('button',{name:label,exact:true});if(await button.getAttribute('aria-expanded')==='false')await button.click();}
   // Se vuelve a medir después de cerrar el menú: el selector DOM conserva
   // acceso al nodo oculto, mientras getByRole lo excluiría por accesibilidad.
   const side=page.locator(compact?'.navbar-sidebar .navbar-sidebar__item':'.theme-doc-sidebar-container nav.menu');

@@ -1,0 +1,36 @@
+{
+  "before": {
+    "viewport": 2400,
+    "panels": [
+      {
+        "name": "sidebar",
+        "clientHeight": 2343,
+        "scrollHeight": 2350,
+        "scrollTop": 0
+      },
+      {
+        "name": "reader",
+        "clientHeight": 2343,
+        "scrollHeight": 2343,
+        "scrollTop": 0
+      }
+    ]
+  },
+  "after": {
+    "viewport": 2409,
+    "panels": [
+      {
+        "name": "sidebar",
+        "clientHeight": 2352,
+        "scrollHeight": 2352,
+        "scrollTop": 0
+      },
+      {
+        "name": "reader",
+        "clientHeight": 2352,
+        "scrollHeight": 2352,
+        "scrollTop": 0
+      }
+    ]
+  }
+}

@@ -66,12 +66,12 @@ test('encabezado compacto: una fila, selector de áreas y controles táctiles si
     expect((await page.locator('.navbar').boundingBox())!.height).toBeLessThanOrEqual(64);
     await areaTrigger(page).click();
     const areas = page.getByRole('navigation', {name: 'Áreas de estudio', exact: true});
-    await expect(areas.getByRole('button')).toHaveText(['Análisis de datos', 'Desarrollo web', 'IA']);
+    await expect(areas.getByRole('button')).toHaveText(['Análisis de datos', 'Desarrollo web', 'IA', 'Lenguajes']);
     await fits(page, areas);
     await expect(page).toHaveScreenshot('selector-areas.png');
   } else {
     await expect(areaTrigger(page)).toBeHidden();
-    for (const name of ['Análisis de datos', 'Desarrollo web', 'IA']) {
+    for (const name of ['Análisis de datos', 'Desarrollo web', 'IA', 'Lenguajes']) {
       await expect(header(page).getByRole('button', {name, exact: true})).toBeVisible();
     }
   }
@@ -101,7 +101,10 @@ test('selector de áreas: teclado, cierre, foco y consulta conservada en portada
   await expect(trigger).toBeFocused();
   await expect(page).toHaveURL(/\/$/);
   await expect(input).toHaveValue('filtrar');
-  await expect(page.locator('[data-search-surface="inline"]').getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+  const result = page.locator('[data-search-surface="inline"]').getByRole('link').filter({has: page.getByText('WHERE', {exact: true})});
+  await expect(result).toHaveCount(1);
+  await expect(result).toBeVisible();
+  await expect(result).toHaveAttribute('href', '/apuntes/analisis-de-datos/sql/where');
   await trigger.click();
   await choices.getByRole('button', {name: 'Desarrollo web', exact: true}).click();
   await expect(trigger).toHaveAttribute('aria-expanded', 'false');
@@ -121,7 +124,7 @@ test('texto al 200%: altura natural, controles sin solaparse y sidebar legible',
   await page.evaluate(() => new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
   const controls = [searchTrigger(page), textTrigger(page)];
   if (await areaTrigger(page).isVisible()) controls.unshift(areaTrigger(page));
-  else for (const name of ['Análisis de datos', 'Desarrollo web', 'IA'].reverse()) {
+  else for (const name of ['Análisis de datos', 'Desarrollo web', 'IA', 'Lenguajes'].reverse()) {
     controls.unshift(header(page).getByRole('link', {name, exact: true}));
   }
   if (page.viewportSize()!.width <= 996) controls.unshift(header(page).locator('.navbar__toggle'));
@@ -170,9 +173,10 @@ test('menú de temas: modal con inicio, foco contenido y cierre con Esc sin move
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
   await expect(drawer.getByRole('link', {name: 'AllDoc', exact: true})).toBeVisible();
   await expect(drawer.getByRole('link', {name: 'Desarrollo web', exact: true})).toHaveCount(0);
-  await expect(drawer.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
+  await expect(drawer.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
   for (const name of ['SQL', 'Tablas y archivos', 'Pandas', 'openpyxl', 'Cálculo científico', 'NumPy', 'SciPy', 'Visualización', 'Matplotlib', 'Seaborn', 'Conexiones SQL', 'Peticiones y formatos']) {
-    await drawer.getByRole('button', {name, exact: true}).click();
+    const button = drawer.getByRole('button', {name, exact: true});
+    if (await button.getAttribute('aria-expanded') === 'false') await button.click();
   }
   const scroller = drawer.locator('.navbar-sidebar__item');
   await scroller.hover();
@@ -228,7 +232,7 @@ test('rotación con menú abierto elimina la capa modal y permite seguir leyendo
   await searchTrigger(page).click();
   const dialog = page.getByRole('dialog', {name: 'Buscar en tus apuntes'});
   await dialog.getByRole('searchbox').fill('filtrar');
-  await expect(dialog.getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+  await expect(dialog.getByRole('link').filter({has: page.getByText('WHERE', {exact: true})})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();
   await expect(searchTrigger(page)).toBeFocused();
@@ -237,7 +241,7 @@ test('rotación con menú abierto elimina la capa modal y permite seguir leyendo
   await noOverflow(page);
 });
 
-test('paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe', async ({page}) => {
+test('paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe', async ({page}, info) => {
   const width = page.viewportSize()!.width;
   await page.setViewportSize({width, height: 400});
   await go(page);
@@ -258,6 +262,19 @@ test('paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe', asy
   }
   await page.setViewportSize({width, height: 2400});
   await go(page, '/apuntes/analisis-de-datos/sql/where');
+  const dimensions = () => page.evaluate(() => ({
+    viewport: innerHeight,
+    panels: Array.from(document.querySelectorAll<HTMLElement>('[data-scroll-panel="content"], .theme-doc-sidebar-container nav.menu'))
+      .filter(element => element.getClientRects().length > 0)
+      .map(element => ({name: element.matches('[data-scroll-panel]') ? 'reader' : 'sidebar',
+        clientHeight: element.clientHeight, scrollHeight: element.scrollHeight, scrollTop: element.scrollTop})),
+  }));
+  const before = await dimensions();
+  // El escenario que cabe depende del árbol actual, no de una altura fija.
+  const height = Math.ceil(before.viewport + Math.max(0, ...before.panels.map(panel => panel.scrollHeight - panel.clientHeight)) + 2);
+  await page.setViewportSize({width, height});
+  await expect.poll(async () => (await dimensions()).panels.filter(panel => panel.scrollHeight > panel.clientHeight + 1)).toEqual([]);
+  await info.attach('panel-dimensions', {body: JSON.stringify({before, after: await dimensions()}, null, 2), contentType: 'application/json'});
   await expect.poll(() => reader(page).evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
   await reader(page).hover();
   await page.mouse.wheel(0, 2000);

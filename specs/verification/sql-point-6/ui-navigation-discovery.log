@@ -1,0 +1,22 @@
+
+> alldoc@0.1.0 test:ui:sql:navigation
+> playwright test tests/ui/sql-navigation.spec.ts --project=celular --project=laptop --workers=1 --list
+
+Listing tests:
+  [celular] › sql-navigation.spec.ts:30:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [celular] › sql-navigation.spec.ts:51:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [celular] › sql-navigation.spec.ts:68:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [celular] › sql-navigation.spec.ts:85:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [celular] › sql-navigation.spec.ts:106:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [celular] › sql-navigation.spec.ts:121:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [celular] › sql-navigation.spec.ts:131:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [celular] › sql-navigation.spec.ts:143:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [laptop] › sql-navigation.spec.ts:30:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [laptop] › sql-navigation.spec.ts:51:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [laptop] › sql-navigation.spec.ts:68:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [laptop] › sql-navigation.spec.ts:85:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [laptop] › sql-navigation.spec.ts:106:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [laptop] › sql-navigation.spec.ts:121:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [laptop] › sql-navigation.spec.ts:131:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [laptop] › sql-navigation.spec.ts:143:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+Total: 16 tests in 1 file

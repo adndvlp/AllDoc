@@ -1,5 +1,6 @@
 import type {AreaId} from './areas';
 import {publishedSqlMetadata} from './sql/published.ts';
+import {resolveSqlDocument} from './sql/placements.ts';
 
 export const docsBasePath = '/apuntes';
 
@@ -14,6 +15,7 @@ export type ConceptMeta = {
   order: number;
   seoDescription?: string;
   docId?: string;
+  aliases?: readonly string[];
 };
 
 function defineConcept<const T extends Omit<ConceptMeta, 'slug'>>(definition: T) {
@@ -40,6 +42,7 @@ export function getConcept(id: string): ConceptMeta | undefined {
   return byId.get(id);
 }
 export function getConceptByDocId(docId:string):ConceptMeta|undefined {
+  const placement=resolveSqlDocument(docId);if(placement)return byId.get(placement.conceptId);
   return concepts.find(c=>(('docId' in c&&c.docId)||c.id)===docId);
 }
 

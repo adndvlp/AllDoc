@@ -4,7 +4,7 @@ import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import type {Props} from '@theme/DocItem/Content';
-import {getConcept} from '@site/src/content/concepts';
+import {getConceptByDocId} from '@site/src/content/concepts';
 import FavoriteButton, {LibrarySaveStatus} from '@site/src/components/FavoriteButton';
 import styles from './styles.module.css';
 
@@ -12,7 +12,7 @@ import styles from './styles.module.css';
 export default function DocItemContent({children}: Props): ReactNode {
   const {metadata, frontMatter, contentTitle} = useDoc();
   const title = !frontMatter.hide_title && typeof contentTitle === 'undefined' ? metadata.title : null;
-  const concept = getConcept(metadata.id);
+  const concept = getConceptByDocId(metadata.id);
   return <div className={`${ThemeClassNames.docs.docMarkdown} markdown`}>
     {title && <header className={concept ? styles.title : undefined}>
       <Heading as="h1">{title}</Heading>

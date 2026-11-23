@@ -1,0 +1,326 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "regressionReport": "ui-structure-panels-failure.json",
+  "modifiedPrevious": [
+    {
+      "path": "tests/ui/__screenshots__/celular/area.png",
+      "before": "80f16c228046331cb1a3f531af0eeb2871e4422e11f961a4f92ef58b1b03f5ee",
+      "sha256": "bd1ac89f9f6700d182ff02190e34621d1cb8ba80a57850e62d23c469f43f70d5",
+      "review": "reviewed",
+      "notes": "SQL abierto con sus grupos cerrados; sidebar independiente y área Análisis de datos."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/buscador.png",
+      "before": "fcda80c9b6aa52c91571aecd441534d0e06ce9024dadb03cec2faef73a616342",
+      "sha256": "00e73430bc6efa02e98deb5aa660087ad4cbf93bc052147e7d1e9877aff2cd74",
+      "review": "reviewed",
+      "notes": "Dos resultados legítimos de filtrar, WHERE primero; diálogo dentro del viewport y navegación actualizada en el fondo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/catalogo.png",
+      "before": "2ed0e5e111eec9a633e70e6724bf192c5a0f6dc52fe48e19b8eba3dbad334234",
+      "sha256": "3b93a8abedeedf8aec5b2e85c999d4d9caba9d4901720eba50d87483064f22de",
+      "review": "reviewed",
+      "notes": "Catálogo desplazado hasta Pandas; agrupación SQL y agrupación Tablas y archivos independientes, sin panel de scroll adicional."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/color-texto.png",
+      "before": "43f6a55d3d3a87716f4b4d4a283657a4fc37189461737e182d086abc76d4f66a",
+      "sha256": "069044000c18d48fc18137a9c3991ae54697636862f1cd92a957ec4158e6c71f",
+      "review": "reviewed",
+      "notes": "Paleta de texto saturada sobre negro, selección violeta y controles accesibles; árbol y breadcrumbs actualizados."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/comentarios.png",
+      "before": "396013c2d89732d86049c03fa9bbaae7b29132092aa117ba0ce1f5832d6cafe2",
+      "sha256": "22f365ed8d6e122b9e406300eb77766e8127f4093fbf106e483d11727a7d8e23",
+      "review": "reviewed",
+      "notes": "Dos variantes completas, comentarios resaltados y recordatorio visible; control compacto en celular."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/encabezado-texto-200.png",
+      "before": "130485b07ecdab130e1cb3301a2b6a491d792bff13ef9c9001a02f48bdc4cf60",
+      "sha256": "8a0ade7ac7133390ad22a175b72915883d3f784d69d6d5adb947c03e4236e74f",
+      "review": "reviewed",
+      "notes": "Reflujo al 200%, selector de área, controles y breadcrumb visibles; lectura con scroll vertical."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/menu.png",
+      "before": "b893aa7f6ab1d941f7443d1f25f63d4dcab79b8c33de5121e5c9855171fd933f",
+      "sha256": "86133baf4ffb1f3eaa511fcb2bc897a15f2b64f4be501d731d3a40914ad52135",
+      "review": "reviewed",
+      "notes": "Ancestros SQL/SELECT abiertos y Definición activa; grupos siguientes cerrados, drawer o sidebar según proyecto."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/pandas-dataframe.png",
+      "before": "00f8593905d7a8c8428e05371d9152b6b787adf6447f8b00ac099c5b1ddf31ee",
+      "sha256": "fdf19c89c49b1e2fec169cf207ea2ac3ab7b28de4b5b49b62b14eb99ccf720fd",
+      "review": "reviewed",
+      "notes": "Ficha pandas con área en el breadcrumb; ejemplo y recordatorio completos, control de práctica compacto."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-200.png",
+      "before": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef",
+      "sha256": "70006e5ff70e288ad810b265d917f33c4081742225cd7c34691bdc6bb87e62fa",
+      "review": "reviewed",
+      "notes": "Práctica modal al 200%, controles y pestañas en reflujo, editor con scroll propio y cierre accesible."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-data.png",
+      "before": "e4be63c4d5eb4aaac430e341b1466e61059e6ec3897210368091c697180c4850",
+      "sha256": "30487789805bc2ca58e26eb872d41ddf0a2f4fe670c9ae08872b598130e15055",
+      "review": "reviewed",
+      "notes": "Datos tipados reales de la semilla, región con scroll; en escritorio el apunte y el árbol comparten la pantalla con práctica."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/practice-sql.png",
+      "before": "ffc0509916c9e6e0361b3c2c450ea27cc16c83aced8312f69b869d828e86d86e",
+      "sha256": "cccfd6c719ff3450d12ba5f86f74d4ddf3de645b2f6b390887f9c6c1c5131e77",
+      "review": "reviewed",
+      "notes": "Editor SQL operativo, controles e identidad del motor SQLite visibles; en escritorio árbol y breadcrumb nuevos."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/select-texto-200.png",
+      "before": "8d4cc5ddefefbf6285edf36c86ded96f7f80b46ef531ea6b5b463a9fe7265c1e",
+      "sha256": "8a0ade7ac7133390ad22a175b72915883d3f784d69d6d5adb947c03e4236e74f",
+      "review": "reviewed",
+      "notes": "SELECT al 200% con breadcrumb completo, reflujo vertical y controles visibles sin desbordamiento horizontal."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/select.png",
+      "before": "51b14dee92516414f0f64871a394ea4688e2c44b268ca7978c96bcdf5a4b5673",
+      "sha256": "dbe5c91dbbc99eeb1330d0489f41add409749eb8db88841de725a981ea8c8228",
+      "review": "reviewed",
+      "notes": "Definición SELECT con dos variantes, sintaxis y recordatorio; árbol activo y control compacto en celular."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/selector-areas.png",
+      "before": "3935f7d6710073c8fd78465e8c74f1ac98db6a883697c1d8877ff76d55c2aa2c",
+      "sha256": "878a9234393909752521aea948870850d6842e3ae61495eee206a0dced9a62fe",
+      "review": "reviewed",
+      "notes": "Selector móvil con las cuatro áreas, incluida Lenguajes; catálogo de fondo conservado."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-dialect-200.png",
+      "before": "c81f8b8877256d0dd04bd6f26e8f4752cba25bcd7386df0b02df1f6132e11fe9",
+      "sha256": "f79f7fbd472314a0c5e0f46d33a61621dee3f2d4ed5e20bbbb7fdfbb1836ffb4",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200%: código con reflujo y desplazamiento vertical, control compacto accesible."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-dialect-limit.png",
+      "before": "023f2f94aef5b4c574e78763abc13107d1d2afcfb4f81ff4294d391ba84dcac5",
+      "sha256": "e0093205c8695d3fe57225e845aadf9d0dee0afffc64b62ee01b907a2f025d60",
+      "review": "reviewed",
+      "notes": "Variante SQL Server con TOP y acción equivalente SQLite explícita; árbol LIMIT activo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-dialect-section.png",
+      "before": "205554ca4cbedff9b85297e51db8a4ebc40b898b829d99411f7bb187f8c71ddb",
+      "sha256": "9114521b708259c94e2d79758af4c2927c62b4ea24db45b5211aee7b296977d0",
+      "review": "reviewed",
+      "notes": "NOT en Oracle, apartado y posición del lector conservados; árbol WHERE activo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/area.png",
+      "before": "33e2b8715ec9a6a7d551cda2336344b884321ef3105458110b6f47d14fe446cf",
+      "sha256": "9ca0680beac267a7b02226a5b2ff757694f6f6a4e87bb3f54587e5e2b9d43519",
+      "review": "reviewed",
+      "notes": "SQL abierto con sus grupos cerrados; sidebar independiente y área Análisis de datos."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/buscador.png",
+      "before": "e4459ccacb622f6aeb6f7c245b545474eed99434ea1cb1faf95dd66b2215b60f",
+      "sha256": "9ed3dc4318fe6237ef1ac9ff8843c5d4b7180cfefdd77d2919be8e574d481c4a",
+      "review": "reviewed",
+      "notes": "Dos resultados legítimos de filtrar, WHERE primero; diálogo dentro del viewport y navegación actualizada en el fondo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/catalogo.png",
+      "before": "14c32317d804a07643583b0b16abcee210efc58202d1d35290c018a7d1c4800f",
+      "sha256": "90dba6a6e0f8a9d63ad589fdc4b0e97e0e7987aca31a97c80b69eb3203480bff",
+      "review": "reviewed",
+      "notes": "Catálogo desplazado hasta Pandas; agrupación SQL y agrupación Tablas y archivos independientes, sin panel de scroll adicional."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/color-texto.png",
+      "before": "39c7bf960f45cfdbf5a21d381b36c5e532cea8bf14751c4a61a81929238036f1",
+      "sha256": "d8e024f6060e994c9155d9b6173c104d62bdd48fe6bc7b2a538fc391b4bf5989",
+      "review": "reviewed",
+      "notes": "Paleta de texto saturada sobre negro, selección violeta y controles accesibles; árbol y breadcrumbs actualizados."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/comentarios.png",
+      "before": "81117eaaf0602d36af3f686c8ca24e8d51e38e37b58e922221631e286c434eec",
+      "sha256": "4f6cd98e44812e015ddb9856f607c705f597be8d4ffefee11a0550346d29e21a",
+      "review": "reviewed",
+      "notes": "Dos variantes completas, comentarios resaltados y recordatorio visible; control compacto en celular."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/encabezado-texto-200.png",
+      "before": "1d07ca561c47dca526225b56fbb48eeabf9628b2f8e414432af8ab9ef5754de9",
+      "sha256": "b47efac740bb0e83cfed417138da0b6568c09804b4e55fe560fa1013bab8e6d2",
+      "review": "reviewed",
+      "notes": "Reflujo al 200%, selector de área, controles y breadcrumb visibles; lectura con scroll vertical."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/menu.png",
+      "before": "b426af293dd6d82e09f8ca2b5aa3d58e6c44b8a646260032f210c3091d82cd9e",
+      "sha256": "f4ea449afceeb2fffcf113b2df3724567c24726b2ba14fdc4fa6536c426d6545",
+      "review": "reviewed",
+      "notes": "Ancestros SQL/SELECT abiertos y Definición activa; grupos siguientes cerrados, drawer o sidebar según proyecto."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-200.png",
+      "before": "53e435f2439a520a1e20b48033c1f33b270e032bcfe980b01ee58bf1b40915ef",
+      "sha256": "70006e5ff70e288ad810b265d917f33c4081742225cd7c34691bdc6bb87e62fa",
+      "review": "reviewed",
+      "notes": "Práctica modal al 200%, controles y pestañas en reflujo, editor con scroll propio y cierre accesible."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-data.png",
+      "before": "22d97e459c8442d0f8905d7af2c9c467d673d11b0fa3ab5157789d8e61235fba",
+      "sha256": "f8d379387b0aeb1f3fdf5b9c8fedd4f830033ec51bea6643674a83a0719f1dd0",
+      "review": "reviewed",
+      "notes": "Datos tipados reales de la semilla, región con scroll; en escritorio el apunte y el árbol comparten la pantalla con práctica."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-pandas.png",
+      "before": "14800048ddbb10cc223714a59ec0938463b2cbbbf1931505870938f7bfa76bc0",
+      "sha256": "09ba032b19716c240b0a10f6a319ceccdbb8bccc12a0d568f1df8c2042b692aa",
+      "review": "reviewed",
+      "notes": "Editor pandas separado con borrador propio; árbol previamente desplegado se conserva en la sesión."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/practice-sql.png",
+      "before": "75fecd1bd7d68a237fb8a581d478d6baecb8dad1ac316d9626978913b8db5a75",
+      "sha256": "feaa7aa18049d85a084dd4ebb1be5fb1de7bb433a6fa8a602cd0fc1efeb101b4",
+      "review": "reviewed",
+      "notes": "Editor SQL operativo, controles e identidad del motor SQLite visibles; en escritorio árbol y breadcrumb nuevos."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/select-texto-200.png",
+      "before": "99ab82b7ba250cea80d21dfdc7dabd2377f41bfede1adc2170f15cf9b6b00cd2",
+      "sha256": "b47efac740bb0e83cfed417138da0b6568c09804b4e55fe560fa1013bab8e6d2",
+      "review": "reviewed",
+      "notes": "SELECT al 200% con breadcrumb completo, reflujo vertical y controles visibles sin desbordamiento horizontal."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/select.png",
+      "before": "a4cfc6cf3dfd7bfd5438ae16b4c83a0aa0f14b8c030366149f32ddacc8ecd286",
+      "sha256": "f4ea449afceeb2fffcf113b2df3724567c24726b2ba14fdc4fa6536c426d6545",
+      "review": "reviewed",
+      "notes": "Definición SELECT con dos variantes, sintaxis y recordatorio; árbol activo y control compacto en celular."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-dialect-200.png",
+      "before": "c81f8b8877256d0dd04bd6f26e8f4752cba25bcd7386df0b02df1f6132e11fe9",
+      "sha256": "f79f7fbd472314a0c5e0f46d33a61621dee3f2d4ed5e20bbbb7fdfbb1836ffb4",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200%: código con reflujo y desplazamiento vertical, control compacto accesible."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-dialect-limit.png",
+      "before": "37bf7a3c6b5631ce62174627fbedec0b220a3965a77d803f5266105831751a4b",
+      "sha256": "ba1d02efbbf8ed257d21c04630384d225986350f98dd536dc7c4b0728a2059e3",
+      "review": "reviewed",
+      "notes": "Variante SQL Server con TOP y acción equivalente SQLite explícita; árbol LIMIT activo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-dialect-section.png",
+      "before": "94d7e2b4cd2bc9071c5093b1c7482fb72d5333bd6db8be544317f4c3d3064036",
+      "sha256": "aa4b8bb35967bb6abbab20d235411db5211c262475f834c29370a3597eefcfe3",
+      "review": "reviewed",
+      "notes": "NOT en Oracle, apartado y posición del lector conservados; árbol WHERE activo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sqlite-result.png",
+      "before": "0731cc56f80f3eebcd3d00a976122d9e0b1b002bfb85be5540d01aa0c8212577",
+      "sha256": "b9bb94b60df5e56ce0a82ef796387029ae5370cb15abaa2d5a28ee880250b897",
+      "review": "reviewed",
+      "notes": "Resultado real con Monitor/3500 y Teclado/500; árbol y apunte visibles en paralelo."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sqlite-schema.png",
+      "before": "b9d08aa108b6a39dba3c65d587ec7bf46ec584ffaecfd3d5623f3c68cfd5898e",
+      "sha256": "2b8eca89b5d4e741e9b204167bca8004a3ec947f78ab4dd39a11a0f90b778191",
+      "review": "reviewed",
+      "notes": "Datos vivos tipados en la región de práctica; código y navegación independientes."
+    }
+  ],
+  "newImages": [
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-tree-home.png",
+      "sha256": "b277afe0c320724007c144b13371f8ce4f76ced1808f1d7a141ad314e7267d32",
+      "review": "reviewed",
+      "notes": "Catálogo SQL con SELECT abierto, WHERE cerrado e independiente, jerarquía y foco visibles; en celular el lector está desplazado hasta el grupo enfocado.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-tree-sidebar.png",
+      "sha256": "a359495bca34306573a23110404d9243464cf7cb24bf3c72de63b7b33f4555aa",
+      "review": "reviewed",
+      "notes": "SQL y WHERE abiertos, SELECT cerrado, hoja AND activa y controles legibles; drawer móvil y sidebar de escritorio.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-shared-note.png",
+      "sha256": "a172f170a7cbbb9e12324100409cadc7f8b23814a446432a0ffa0b62630c3724",
+      "review": "reviewed",
+      "notes": "Breadcrumb de Lenguajes, apunte NOT, selector y enlaces coherentes con el área; código con sintaxis sobre negro.",
+      "rereviewedAfterCompactFix": true
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-shared-200.png",
+      "sha256": "f2a8a6b11439dc936d1584399bfe32e555bd9e96abb5d93472276b75709b2254",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200% en ambos proyectos: reflujo vertical del encabezado, breadcrumb y título; control de menú y práctica accesibles, sin desbordamiento horizontal. Requiere scroll para leer el resto del apunte.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-languages-area.png",
+      "sha256": "5634eeba006b1fc09a5ce882989f047b2d76d3d27eefdfd9d61701e671c5491b",
+      "review": "reviewed",
+      "notes": "Nueva área con SQL como única entrada y catálogo cerrado; encabezado y sidebar corresponden a Lenguajes.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-tree-home.png",
+      "sha256": "883c42b311f3a955233609f9f71504032b3e2491380a484295488713dddef2f3",
+      "review": "reviewed",
+      "notes": "Catálogo SQL con SELECT abierto, WHERE cerrado e independiente, jerarquía y foco visibles; en celular el lector está desplazado hasta el grupo enfocado.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-tree-sidebar.png",
+      "sha256": "0d9ed091949c27c3d31e6204c458380b5642535132e493235d59830b18884366",
+      "review": "reviewed",
+      "notes": "SQL y WHERE abiertos, SELECT cerrado, hoja AND activa y controles legibles; drawer móvil y sidebar de escritorio.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-shared-note.png",
+      "sha256": "a835e84911dbe4ef78f7cadf28ff33bd2203c1f359863351a7d0a09fcdcee434",
+      "review": "reviewed",
+      "notes": "Breadcrumb de Lenguajes, apunte NOT, selector y enlaces coherentes con el área; código con sintaxis sobre negro.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-shared-200.png",
+      "sha256": "f2a8a6b11439dc936d1584399bfe32e555bd9e96abb5d93472276b75709b2254",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200% en ambos proyectos: reflujo vertical del encabezado, breadcrumb y título; control de menú y práctica accesibles, sin desbordamiento horizontal. Requiere scroll para leer el resto del apunte.",
+      "rereviewedAfterCompactFix": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-languages-area.png",
+      "sha256": "71e28a29e0f040c0cc52fef8c4fa5e3af5682467229c31631de17fc0237fe0d8",
+      "review": "reviewed",
+      "notes": "Nueva área con SQL como única entrada y catálogo cerrado; encabezado y sidebar corresponden a Lenguajes.",
+      "rereviewedAfterCompactFix": false
+    }
+  ],
+  "reviewedTotal": 45,
+  "previousUnchanged": 208,
+  "scope": "35 referencias previas modificadas y diez nuevas; se volvió a revisar la captura móvil de Lenguajes tras compactar el control. Falta aprobar la prueba de altura adaptada y comparar sin actualizar imágenes."
+}

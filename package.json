@@ -44,7 +44,9 @@
     "verify:practice": "node --experimental-strip-types scripts/verify-practice.mjs",
     "build:ui": "PRACTICE_ORIGIN=http://localhost:4174 DOCUSAURUS_GENERATED_FILES_DIR_NAME=.docusaurus-ui docusaurus build --out-dir .ui-build",
     "serve:ui": "node --experimental-strip-types scripts/serve-with-runtime.mjs ui",
-    "update:stack": "node scripts/update-stack.mjs"
+    "update:stack": "node scripts/update-stack.mjs",
+    "test:ui:sql:navigation": "playwright test tests/ui/sql-navigation.spec.ts --project=celular --project=laptop --workers=1",
+    "test:ui:sql:structure": "playwright test tests/ui/sql-navigation.spec.ts tests/ui/catalog.spec.ts tests/ui/responsive.spec.ts tests/ui/header.spec.ts tests/ui/personal-library.spec.ts tests/ui/search.spec.ts tests/ui/notes.spec.ts tests/ui/sql-dialects.spec.ts tests/ui/practice.spec.ts tests/ui/sqlite.spec.ts tests/ui/pandas.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0"
   },
   "dependencies": {
     "@codemirror/autocomplete": "latest",

@@ -1,0 +1,42 @@
+{
+  "modified": [
+    "tests/ui/__screenshots__/celular/area.png",
+    "tests/ui/__screenshots__/celular/buscador.png",
+    "tests/ui/__screenshots__/celular/catalogo.png",
+    "tests/ui/__screenshots__/celular/color-texto.png",
+    "tests/ui/__screenshots__/celular/comentarios.png",
+    "tests/ui/__screenshots__/celular/encabezado-texto-200.png",
+    "tests/ui/__screenshots__/celular/menu.png",
+    "tests/ui/__screenshots__/celular/pandas-dataframe.png",
+    "tests/ui/__screenshots__/celular/practice-200.png",
+    "tests/ui/__screenshots__/celular/practice-data.png",
+    "tests/ui/__screenshots__/celular/practice-sql.png",
+    "tests/ui/__screenshots__/celular/select-texto-200.png",
+    "tests/ui/__screenshots__/celular/select.png",
+    "tests/ui/__screenshots__/celular/selector-areas.png",
+    "tests/ui/__screenshots__/celular/sql-dialect-200.png",
+    "tests/ui/__screenshots__/celular/sql-dialect-limit.png",
+    "tests/ui/__screenshots__/celular/sql-dialect-section.png",
+    "tests/ui/__screenshots__/laptop/area.png",
+    "tests/ui/__screenshots__/laptop/buscador.png",
+    "tests/ui/__screenshots__/laptop/catalogo.png",
+    "tests/ui/__screenshots__/laptop/color-texto.png",
+    "tests/ui/__screenshots__/laptop/comentarios.png",
+    "tests/ui/__screenshots__/laptop/encabezado-texto-200.png",
+    "tests/ui/__screenshots__/laptop/menu.png",
+    "tests/ui/__screenshots__/laptop/practice-200.png",
+    "tests/ui/__screenshots__/laptop/practice-data.png",
+    "tests/ui/__screenshots__/laptop/practice-pandas.png",
+    "tests/ui/__screenshots__/laptop/practice-sql.png",
+    "tests/ui/__screenshots__/laptop/select-texto-200.png",
+    "tests/ui/__screenshots__/laptop/select.png",
+    "tests/ui/__screenshots__/laptop/sql-dialect-200.png",
+    "tests/ui/__screenshots__/laptop/sql-dialect-limit.png",
+    "tests/ui/__screenshots__/laptop/sql-dialect-section.png",
+    "tests/ui/__screenshots__/laptop/sqlite-result.png",
+    "tests/ui/__screenshots__/laptop/sqlite-schema.png"
+  ],
+  "newModified": [
+    "tests/ui/__screenshots__/celular/sql-shared-note.png"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "reviewed",
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-tree-home.png",
+      "sha256": "b277afe0c320724007c144b13371f8ce4f76ced1808f1d7a141ad314e7267d32",
+      "review": "reviewed",
+      "notes": "Catálogo SQL con SELECT abierto, WHERE cerrado e independiente, jerarquía y foco visibles; en celular el lector está desplazado hasta el grupo enfocado."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-tree-sidebar.png",
+      "sha256": "a359495bca34306573a23110404d9243464cf7cb24bf3c72de63b7b33f4555aa",
+      "review": "reviewed",
+      "notes": "SQL y WHERE abiertos, SELECT cerrado, hoja AND activa y controles legibles; drawer móvil y sidebar de escritorio."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-shared-note.png",
+      "sha256": "a3d66a03361544dc4476f81da830266ffdb52adfb0e9301ee5e2132196f0debc",
+      "review": "reviewed",
+      "notes": "Breadcrumb de Lenguajes, apunte NOT, selector y enlaces coherentes con el área; código con sintaxis sobre negro."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-shared-200.png",
+      "sha256": "f2a8a6b11439dc936d1584399bfe32e555bd9e96abb5d93472276b75709b2254",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200% en ambos proyectos: reflujo vertical del encabezado, breadcrumb y título; control de menú y práctica accesibles, sin desbordamiento horizontal. Requiere scroll para leer el resto del apunte."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-languages-area.png",
+      "sha256": "5634eeba006b1fc09a5ce882989f047b2d76d3d27eefdfd9d61701e671c5491b",
+      "review": "reviewed",
+      "notes": "Nueva área con SQL como única entrada y catálogo cerrado; encabezado y sidebar corresponden a Lenguajes."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-tree-home.png",
+      "sha256": "883c42b311f3a955233609f9f71504032b3e2491380a484295488713dddef2f3",
+      "review": "reviewed",
+      "notes": "Catálogo SQL con SELECT abierto, WHERE cerrado e independiente, jerarquía y foco visibles; en celular el lector está desplazado hasta el grupo enfocado."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-tree-sidebar.png",
+      "sha256": "0d9ed091949c27c3d31e6204c458380b5642535132e493235d59830b18884366",
+      "review": "reviewed",
+      "notes": "SQL y WHERE abiertos, SELECT cerrado, hoja AND activa y controles legibles; drawer móvil y sidebar de escritorio."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-shared-note.png",
+      "sha256": "a835e84911dbe4ef78f7cadf28ff33bd2203c1f359863351a7d0a09fcdcee434",
+      "review": "reviewed",
+      "notes": "Breadcrumb de Lenguajes, apunte NOT, selector y enlaces coherentes con el área; código con sintaxis sobre negro."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-shared-200.png",
+      "sha256": "f2a8a6b11439dc936d1584399bfe32e555bd9e96abb5d93472276b75709b2254",
+      "review": "reviewed",
+      "notes": "Escenario forzado de 320 px al 200% en ambos proyectos: reflujo vertical del encabezado, breadcrumb y título; control de menú y práctica accesibles, sin desbordamiento horizontal. Requiere scroll para leer el resto del apunte."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-languages-area.png",
+      "sha256": "71e28a29e0f040c0cc52fef8c4fa5e3af5682467229c31631de17fc0237fe0d8",
+      "review": "reviewed",
+      "notes": "Nueva área con SQL como única entrada y catálogo cerrado; encabezado y sidebar corresponden a Lenguajes."
+    }
+  ],
+  "previousReferences": 243,
+  "previousChanged": [],
+  "scope": "Diez referencias nuevas del punto 6; no acredita comparación posterior sin actualizar ni compatibilidad global."
+}

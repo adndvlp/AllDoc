@@ -84,7 +84,7 @@ test('resultados independientes, tabla semántica y scroll horizontal limitado a
   await expect.poll(() => wrapper.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
   await noPageOverflow(page);
   expect(await page.locator('.navbar').boundingBox()).toEqual(header);
-  if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'false');
+  if (page.viewportSize()!.width > 996) await expect(page.locator('.theme-doc-sidebar-container').getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
   await first.locator('summary').focus();
   await page.keyboard.press('Enter');
   await expect(first.locator('details')).not.toHaveAttribute('open');

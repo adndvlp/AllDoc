@@ -6,12 +6,13 @@ import {createDatasetAdapter} from '../src/practice/datasets/index.ts';
 import {createSQLiteEngine} from '../src/practice/adapters/sqlite/core.ts';
 import {getPublishedSqlCurriculum} from '../src/content/sql/curriculum.ts';
 import {publishedSqlMetadata} from '../src/content/sql/published.ts';
+import {sqlLocations,sqlDocIdForLocation} from '../src/content/sql/placements.ts';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const sqlite=await initSQLite({print(){},printErr(){}});const engine=createSQLiteEngine(sqlite);
 try{
  engine.init(await createDatasetAdapter().materialize({id:'negocio-relacional',version:1},'sqlite-wasm',new AbortController().signal));
- let count=0,notesCount=0;
+ let count=0,notesCount=0,routes=0;
  for(const group of getPublishedSqlCurriculum()){
   const {notes}=await import('../src/content/notes/sql/'+group.key+'.ts');const outputs={};
   for(const note of notes){const m=publishedSqlMetadata.find(c=>c.id===note.conceptId);if(!m)throw new Error('Metadata ausente');
@@ -25,10 +26,12 @@ try{
     outputs[e.id]={columns:table.columns.map(c=>c.name),rows:table.rows.map(r=>r.map(v=>v===null?'NULL':String(v)))};
    }
    notesCount++;
-   const filename=path.join(root,'docs',m.docId+'.mdx');await mkdir(path.dirname(filename),{recursive:true});
-   await writeFile(filename,'---\nhide_table_of_contents: true\n---\n\nimport {SqlConceptCard} from \'@site/src/components/SqlNotes\';\nimport {notes} from \'@site/src/content/notes/sql/'+group.key+'\';\n\n<SqlConceptCard concept={notes.find(note => note.key === '+JSON.stringify(note.key)+')} />\n');
+   for(const location of sqlLocations){
+    const filename=path.join(root,'docs',sqlDocIdForLocation(note.conceptId,location.id)+'.mdx');await mkdir(path.dirname(filename),{recursive:true});
+    await writeFile(filename,'---\nhide_table_of_contents: true\n---\n\nimport {SqlConceptCard} from \'@site/src/components/SqlNotes\';\nimport {notes} from \'@site/src/content/notes/sql/'+group.key+'\';\n\n<SqlConceptCard concept={notes.find(note => note.key === '+JSON.stringify(note.key)+')} />\n');routes++;
+   }
   }
   await writeFile(path.join(root,'src/content/notes/sql/results',group.key+'.ts'),(group.order<15?'// Salida de referencia: SQLite, negocio-relacional@1. Verificación WASM en tests/sql-first-block.test.ts.':'// Salida de referencia: SQLite WASM, negocio-relacional@1; semilla limpia por ejemplo.')+'\nexport default '+JSON.stringify(outputs,null,2)+';\n');
  }
- console.log('SQL: '+notesCount+' fichas preparadas; '+count+' salidas SQLite guardadas por grupo. Sin ejecutar otros RDBMS.');
+ console.log('SQL: '+notesCount+' fichas compartidas, '+routes+' rutas; '+count+' salidas SQLite guardadas por grupo. Sin ejecutar otros RDBMS.');
 }finally{engine.dispose();}
