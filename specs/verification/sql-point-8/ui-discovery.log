@@ -1,0 +1,20 @@
+
+> alldoc@0.1.0 test:ui:sql:completion
+> playwright test tests/ui/sql-completion.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0 --list --reporter=list
+
+Listing tests:
+  [celular] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [celular] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [celular] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [celular] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [laptop] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [laptop] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [laptop] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [laptop] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+Total: 14 tests in 1 file

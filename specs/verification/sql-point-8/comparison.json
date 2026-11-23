@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "passed": 83,
+  "skipped": 1,
+  "failed": 0,
+  "flaky": 0,
+  "report": "ui-regression-compare.json",
+  "projects": [
+    "celular",
+    "laptop"
+  ],
+  "snapshotsUpdated": false,
+  "reviewedImages": 4,
+  "reviewedHashDrift": [],
+  "previousReferences": 265,
+  "previousModified": [],
+  "skipReason": "Modal layout has no separator"
+}

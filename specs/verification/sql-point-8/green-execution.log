@@ -1,0 +1,39 @@
+(node:95140) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición de práctica: fases independientes por perfil sin conservar texto del usuario (6.602709ms)
+✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (3.38175ms)
+✔ sesión: ejecutar durante preparación no encola trabajo cuando el motor queda listo (2.846292ms)
+✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.177125ms)
+✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (0.830416ms)
+✔ sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla (0.531375ms)
+✔ sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior (0.438833ms)
+✔ sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo (0.337458ms)
+✔ sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores (0.172833ms)
+✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (0.296209ms)
+✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (2.192167ms)
+✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (1.506791ms)
+✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (1.667292ms)
+✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (1.56225ms)
+✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (22.183583ms)
+✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (4.3395ms)
+✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.294625ms)
+✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (6.523709ms)
+✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (1.779875ms)
+✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (1.62175ms)
+✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (1.6445ms)
+✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (1.549042ms)
+✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (6.096375ms)
+✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (1.681042ms)
+✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (1.603291ms)
+✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (0.399292ms)
+✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (1.618208ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 248.11625

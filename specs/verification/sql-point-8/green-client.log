@@ -1,0 +1,99 @@
+(node:97280) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preset cliente: autocompletado SQL conserva arrays de columnas CTE y nombres de tablas al transformar iteradores (445.197625ms)
+✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (35.970917ms)
+✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (23.468167ms)
+✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (17.514542ms)
+✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (36.824666ms)
+✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (179.509291ms)
+✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (9.006833ms)
+✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (106.216208ms)
+✔ regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar (101.003584ms)
+(node:97281) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación (4.707583ms)
+✔ editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual (0.26275ms)
+✔ editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas (0.867084ms)
+(node:97282) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados (16.067917ms)
+✔ editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales (29.575417ms)
+(node:97283) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición de práctica: fases independientes por perfil sin conservar texto del usuario (20.634334ms)
+✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (21.968959ms)
+✔ sesión: ejecutar durante preparación no encola trabajo cuando el motor queda listo (11.297959ms)
+✔ sesión: inspección nueva descarta una sugerencia pendiente del esquema anterior aunque no cambie el texto (3.019125ms)
+✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.225084ms)
+✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (0.909334ms)
+✔ sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla (0.615125ms)
+✔ sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior (0.474083ms)
+✔ sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo (0.83325ms)
+✔ sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores (0.824167ms)
+✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (1.160333ms)
+✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (2.401625ms)
+✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (1.2185ms)
+✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (5.181792ms)
+✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (1.741542ms)
+✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (22.962667ms)
+✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (6.030041ms)
+✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.443334ms)
+✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (5.806375ms)
+✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (1.620375ms)
+✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (0.657458ms)
+✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (1.803417ms)
+✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (1.935375ms)
+✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (5.764625ms)
+✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (1.785042ms)
+✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (0.473417ms)
+✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (0.509583ms)
+✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (0.53025ms)
+(node:97284) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL contextual: columnas sin alias se deducen del FROM y no de otra tabla (30.181375ms)
+✔ SQL contextual: prefijo, cursor intermedio y reemplazo no duplican letras (1.584084ms)
+✔ SQL contextual: alias, JOIN, WHERE y ORDER BY limitan columnas al origen calificado (4.845583ms)
+✔ SQL contextual: JOIN sin calificar ofrece fuentes reales y califica nombres ambiguos (1.672208ms)
+✔ SQL contextual: comas en ORDER BY conservan columnas; JOIN y FROM incompletos ofrecen solo tablas (4.332667ms)
+✔ SQL contextual: FROM ofrece tablas y vistas; columnas antes del FROM indican su tabla (2.107292ms)
+✔ SQL contextual: CTE y subconsulta proyectan columnas, alias explícitos y comodines conservadores (3.059458ms)
+✔ SQL contextual: alcances anidados y sentencias separadas no mezclan alias ni fuentes (0.998875ms)
+✔ SQL contextual: comentarios y literales no participan como FROM ni activan sugerencias (0.886791ms)
+✔ SQL contextual: identificadores entre comillas y alias con mayúsculas insertan sin duplicar el calificador (0.421875ms)
+✔ SQL contextual: adaptador conserva columnas y palabras clave con identidades y rangos correctos (4.789791ms)
+(node:97285) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (68.997042ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.16775ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (1.454666ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (2.349792ms)
+✔ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (26.695125ms)
+✔ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (1.069709ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (1.155084ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.577625ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (1.334ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (1.344958ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (17.761291ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (109.305208ms)
+✔ SQL contextual vivo: CREATE, ALTER, vistas, COMMIT, ROLLBACK, DROP y reinicio refrescan columnas sin ejecutar para completar (8.955041ms)
+ℹ tests 66
+ℹ suites 0
+ℹ pass 66
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1463.735958

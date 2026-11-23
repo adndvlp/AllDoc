@@ -1,0 +1,37 @@
+(node:97257) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ preset cliente: autocompletado SQL conserva arrays de columnas CTE y nombres de tablas al transformar iteradores (448.248083ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 822.699959
+
+✖ failing tests:
+
+test at tests/client-compilation.test.ts:37:1
+✖ preset cliente: autocompletado SQL conserva arrays de columnas CTE y nombres de tablas al transformar iteradores (448.248083ms)
+  TypeError: value.replaceAll is not a function
+      at quote (eval at compile (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:27:3), <anonymous>:3:1263)
+      at eval (eval at compile (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:27:3), <anonymous>:6:1264)
+      at Array.map (<anonymous>)
+      at eval (eval at compile (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:27:3), <anonymous>:6:1221)
+      at Generator.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/regenerator.js:52:51)
+      at Generator.next (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/regeneratorDefine.js:11:21)
+      at asyncGeneratorStep (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js:3:17)
+      at _next (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js:17:9)
+      at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js:22:7
+      at new Promise (<anonymous>)
+      at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js:14:12
+      at eval (eval at compile (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:27:3), <anonymous>:6:3668)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:44:22)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

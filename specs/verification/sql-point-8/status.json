@@ -1,0 +1,87 @@
+{
+  "point": 8,
+  "status": "complete",
+  "sqlProviderConnected": true,
+  "nativeCompletion": {
+    "failed": 8,
+    "passed": 2,
+    "report": "red-completion-confirmed.log"
+  },
+  "executionGuard": "green-execution.log",
+  "uiRedCommand": "npm run test:ui:sql:completion:red",
+  "dependenciesChanged": false,
+  "native": {
+    "passed": 415,
+    "failed": 0,
+    "report": "native.log"
+  },
+  "types": {
+    "app": "passed",
+    "tests": "passed"
+  },
+  "build": {
+    "app": "passed",
+    "runtime": "passed"
+  },
+  "uiCases": 14,
+  "uiCommand": "npm run test:ui:sql:completion -- --update-snapshots",
+  "previousReferences": 265,
+  "modifiedReferences": [],
+  "uiFirst": {
+    "passed": 8,
+    "failed": 6,
+    "report": "ui-first.json"
+  },
+  "uiCorrections": [
+    "Array.from for Map/Set iterators under actual client preset",
+    "Ignore modified Enter from compositionStarted, before first IME edit"
+  ],
+  "uiPendingCommand": null,
+  "visualReview": "visual-review.json",
+  "uiCorrectionsResult": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "report": "ui-corrections-green.json"
+  },
+  "regressionCommand": "npm run test:ui:sql:completion:regression",
+  "regressionDiscovered": 84,
+  "reviewedReferenceDrift": [],
+  "uiRegressionFirst": {
+    "passed": 75,
+    "skipped": 1,
+    "failed": 8,
+    "report": "ui-regression-first.json"
+  },
+  "recoveryTDD": {
+    "red": "red-recovery.log",
+    "green": "green-recovery.log",
+    "focusedPassed": 39,
+    "profiles": [
+      "sql",
+      "pandas"
+    ],
+    "causes": [
+      "cancelled",
+      "timeout"
+    ]
+  },
+  "comparison": {
+    "status": "passed",
+    "passed": 83,
+    "skipped": 1,
+    "failed": 0,
+    "flaky": 0,
+    "report": "ui-regression-compare.json",
+    "projects": [
+      "celular",
+      "laptop"
+    ],
+    "snapshotsUpdated": false,
+    "reviewedImages": 4,
+    "reviewedHashDrift": [],
+    "previousReferences": 265,
+    "previousModified": [],
+    "skipReason": "Modal layout has no separator"
+  }
+}

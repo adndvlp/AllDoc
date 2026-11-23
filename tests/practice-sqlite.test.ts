@@ -157,3 +157,16 @@ test('SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaz
   assert.deepEqual(output.filter((event) => event.type === 'end').map((event) => event.status), ['error']);
   assert.ok(output.reduce((sum, event) => sum + new TextEncoder().encode(JSON.stringify(event)).byteLength, 0) < 1_048_576);
 });
+
+test('SQL contextual vivo: CREATE, ALTER, vistas, COMMIT, ROLLBACK, DROP y reinicio refrescan columnas sin ejecutar para completar',async()=>{
+ const db=engine();const adapter=createSQLCompletion();
+ async function columns(table:string){const document=`SELECT  FROM ${table};`;return (await adapter.complete({requestId:'live-'+sequence,workspaceId:'sql',generation:1,revision:sequence,file:'consulta.sql',document,position:7,schema:db.inspect()},new AbortController().signal)).items.map(item=>item.label);}
+ run(db,'CREATE TABLE nueva(id INTEGER);');assert.ok((await columns('nueva')).includes('id'));
+ run(db,'ALTER TABLE nueva ADD COLUMN importe INTEGER; CREATE VIEW vista_nueva AS SELECT importe FROM nueva;');
+ assert.ok((await columns('nueva')).includes('importe'));assert.ok((await columns('vista_nueva')).includes('importe'));
+ run(db,'BEGIN; ALTER TABLE nueva ADD COLUMN temporal TEXT;');assert.ok((await columns('nueva')).includes('temporal'));
+ run(db,'ROLLBACK;');assert.ok(!(await columns('nueva')).includes('temporal'));
+ run(db,'BEGIN; ALTER TABLE nueva ADD COLUMN confirmado TEXT; COMMIT;');assert.ok((await columns('nueva')).includes('confirmado'));
+ run(db,'DROP VIEW vista_nueva; DROP TABLE nueva;');assert.ok(!(await columns('nueva')).includes('importe'));
+ db.reset();assert.ok((await columns('productos')).includes('precio'));assert.ok(!(await columns('nueva')).includes('confirmado'));await adapter.dispose();
+});

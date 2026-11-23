@@ -1,0 +1,177 @@
+(node:94605) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ SQL contextual: columnas sin alias se deducen del FROM y no de otra tabla (9.982791ms)
+✖ SQL contextual: prefijo, cursor intermedio y reemplazo no duplican letras (0.917541ms)
+✔ SQL contextual: alias, JOIN, WHERE y ORDER BY limitan columnas al origen calificado (2.2785ms)
+✖ SQL contextual: JOIN sin calificar ofrece fuentes reales y califica nombres ambiguos (0.480875ms)
+✖ SQL contextual: FROM ofrece tablas y vistas; columnas antes del FROM indican su tabla (6.724417ms)
+✖ SQL contextual: CTE y subconsulta proyectan columnas, alias explícitos y comodines conservadores (0.561833ms)
+✖ SQL contextual: alcances anidados y sentencias separadas no mezclan alias ni fuentes (0.651541ms)
+✖ SQL contextual: comentarios y literales no participan como FROM ni activan sugerencias (0.63675ms)
+✖ SQL contextual: identificadores entre comillas y alias con mayúsculas insertan sin duplicar el calificador (0.549833ms)
+✖ SQL contextual: adaptador conserva columnas y palabras clave con identidades y rangos correctos (1.000208ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 1
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 211.694083
+
+✖ failing tests:
+
+test at tests/practice-sql-completion.test.ts:23:1
+✖ SQL contextual: columnas sin alias se deducen del FROM y no de otra tabla (9.982791ms)
+  AssertionError [ERR_ASSERTION]: nombre
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:25:59)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:28:1
+✖ SQL contextual: prefijo, cursor intermedio y reemplazo no duplican letras (0.917541ms)
+  AssertionError [ERR_ASSERTION]: Falta precio: productos, proveedores, clientes, FALSE, TRUE, UNKNOWN, NULL, ABSOLUTE, ACTION, ADD, AFTER, ALL, ALLOCATE, ALTER, AND, ANY, ARE, AS, ASC, ASSERTION, AT, AUTHORIZATION, BEFORE, BEGIN, BETWEEN, BOTH, BREADTH, BY, CALL, CASCADE, CASCADED, CASE, CAST, CATALOG, CHECK, CLOSE, COLLATE, COLLATION, COLUMN, COMMIT, CONDITION, CONNECT, CONNECTION, CONSTRAINT, CONSTRAINTS, CONSTRUCTOR, CONTINUE, CORRESPONDING, COUNT, CREATE, CROSS, CUBE, CURRENT, CURRENT_DATE, CURRENT_DEFAULT_TRANSFORM_GROUP, CURRENT_TRANSFORM_GROUP_FOR_TYPE, CURRENT_PATH, CURRENT_ROLE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_USER, CURSOR, CYCLE, DATA, DAY, DEALLOCATE, DECLARE, DEFAULT, DEFERRABLE, DEFERRED, DELETE, DEPTH, DEREF, DESC, DESCRIBE, DESCRIPTOR, DETERMINISTIC, DIAGNOSTICS, DISCONNECT, DISTINCT, DO, DOMAIN, DROP, DYNAMIC, EACH, ELSE, ELSEIF, END, END-EXEC, EQUALS, ESCAPE, EXCEPT, EXCEPTION, EXEC, EXECUTE, EXISTS, EXIT, EXTERNAL, FETCH, FIRST, FOR, FOREIGN, FOUND, FROM, FREE, FULL, FUNCTION, GENERAL, GET, GLOBAL, GO, GOTO, GRANT, GROUP, GROUPING, HANDLE, HAVING, HOLD, HOUR, IDENTITY, IF, IMMEDIATE, IN, INDICATOR, INITIALLY, INNER, INOUT, INPUT, INSERT, INTERSECT, INTO, IS, ISOLATION, JOIN, KEY, LANGUAGE, LAST, LATERAL, LEADING, LEAVE, LEFT, LEVEL, LIKE, LIMIT, LOCAL, LOCALTIME, LOCALTIMESTAMP, LOCATOR, LOOP, MAP, MATCH, METHOD, MINUTE, MODIFIES, MODULE, MONTH, NAMES, NATURAL, NESTING, NEW, NEXT, NO, NONE, NOT, OF, OLD, ON, ONLY, OPEN, OPTION, OR, ORDER, ORDINALITY, OUT, OUTER, OUTPUT, OVERLAPS, PAD, PARAMETER, PARTIAL, PATH, PREPARE, PRESERVE, PRIMARY, PRIOR, PRIVILEGES, PROCEDURE, PUBLIC, READ, READS, RECURSIVE, REDO, REF, REFERENCES, REFERENCING, RELATIVE, RELEASE, REPEAT, RESIGNAL, RESTRICT, RESULT, RETURN, RETURNS, REVOKE, RIGHT, ROLE, ROLLBACK, ROLLUP, ROUTINE, ROW, ROWS, SAVEPOINT, SCHEMA, SCROLL, SEARCH, SECOND, SECTION, SELECT, SESSION, SESSION_USER, SET, SETS, SIGNAL, SIMILAR, SIZE, SOME, SPACE, SPECIFIC, SPECIFICTYPE, SQL, SQLEXCEPTION, SQLSTATE, SQLWARNING, START, STATE, STATIC, SYSTEM_USER, TABLE, TEMPORARY, THEN, TIMEZONE_HOUR, TIMEZONE_MINUTE, TO, TRAILING, TRANSACTION, TRANSLATION, TREAT, TRIGGER, UNDER, UNDO, UNION, UNIQUE, UNNEST, UNTIL, UPDATE, USAGE, USER, USING, VALUE, VALUES, VIEW, WHEN, WHENEVER, WHERE, WHILE, WITH, WITHOUT, WORK, WRITE, YEAR, ZONE, ABORT, ANALYZE, ATTACH, AUTOINCREMENT, CONFLICT, DATABASE, DETACH, EXCLUSIVE, FAIL, GLOB, IGNORE, INDEX, INDEXED, INSTEAD, ISNULL, NOTNULL, OFFSET, PLAN, PRAGMA, QUERY, RAISE, REGEXP, REINDEX, RENAME, REPLACE, TEMP, VACUUM, VIRTUAL, ARRAY, BINARY, BIT, BOOLEAN, CHAR, CHARACTER, CLOB, DATE, DECIMAL, DOUBLE, FLOAT, INT, INTEGER, INTERVAL, LARGE, NATIONAL, NCHAR, NCLOB, NUMERIC, OBJECT, PRECISION, REAL, SMALLINT, TIME, TIMESTAMP, VARCHAR, VARYING, BOOL, BLOB, LONG, LONGBLOB, LONGTEXT, MEDIUM, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, TINYBLOB, TINYINT, TINYTEXT, TEXT, BIGINT, INT2, INT8, UNSIGNED, SIGNED, AUTH, BACKUP, BAIL, CHANGES, CLONE, DATABASES, DBINFO, DUMP, ECHO, EQP, EXPLAIN, FULLSCHEMA, HEADERS, HELP, IMPORT, IMPOSTER, INDEXES, IOTRACE, LINT, LOAD, LOG, MODE, NULLVALUE, ONCE, PRINT, PROMPT, QUIT, RESTORE, SAVE, SCANSTATS, SEPARATOR, SHELL, SHOW, STATS, SYSTEM, TABLES, TESTCASE, TIMEOUT, TIMER, TRACE, VFSINFO, VFSLIST, VFSNAME, WIDTH
+      at Object.insert (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:20:154)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:29:66)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:38:1
+✖ SQL contextual: JOIN sin calificar ofrece fuentes reales y califica nombres ambiguos (0.480875ms)
+  AssertionError [ERR_ASSERTION]: precio
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:40:71)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:44:1
+✖ SQL contextual: FROM ofrece tablas y vistas; columnas antes del FROM indican su tabla (6.724417ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(price)
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:50:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:52:1
+✖ SQL contextual: CTE y subconsulta proyectan columnas, alias explícitos y comodines conservadores (0.561833ms)
+  AssertionError [ERR_ASSERTION]: WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:54:48)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:59:1
+✖ SQL contextual: alcances anidados y sentencias separadas no mezclan alias ni fuentes (0.651541ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(nested.labels.includes('telefono'))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:61:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:65:1
+✖ SQL contextual: comentarios y literales no participan como FROM ni activan sugerencias (0.63675ms)
+  AssertionError [ERR_ASSERTION]: SELECT 'FROM clientes pre▏' FROM productos;
+  
+  3 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:66:146)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:69:1
+✖ SQL contextual: identificadores entre comillas y alias con mayúsculas insertan sin duplicar el calificador (0.549833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'SELECT P.`precio final` FROM "Mi tabla" AS P;'
+  - 'SELECT P."precio final" FROM "Mi tabla" AS P;'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:72:58)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'SELECT P.`precio final` FROM "Mi tabla" AS P;',
+    expected: 'SELECT P."precio final" FROM "Mi tabla" AS P;',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/practice-sql-completion.test.ts:74:1
+✖ SQL contextual: adaptador conserva columnas y palabras clave con identidades y rangos correctos (1.000208ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(value.items.some(item=>item.label==='precio'))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:76:82)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

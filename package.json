@@ -51,7 +51,10 @@
     "test:ui:sql:regions": "playwright test tests/ui/practice-regions.spec.ts --project=celular --project=ipad --project=laptop --workers=1 --max-failures=0",
     "test:ui:sql:regions:captures": "playwright test tests/ui/sql-business.spec.ts tests/ui/sqlite.spec.ts tests/ui/python.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0 -g 'negocio real:|consulta real:|DataFrame real:'",
     "test:ui:sql:regions:compare": "npm run test:ui:sql:regions:regression && node -e \"require('node:fs').copyFileSync('test-results/results.json','specs/verification/sql-point-7/ui-regression-compare.json')\" && playwright test tests/ui/practice-regions.spec.ts --project=ipad --workers=1 --max-failures=0",
-    "test:ui:sql:regions:regression": "playwright test tests/ui/practice-regions.spec.ts tests/ui/practice.spec.ts tests/ui/sqlite.spec.ts tests/ui/sql-business.spec.ts tests/ui/practice-actions.spec.ts tests/ui/practice-storage.spec.ts tests/ui/python.spec.ts tests/ui/sql-navigation.spec.ts tests/ui/sql-dialects.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0"
+    "test:ui:sql:regions:regression": "playwright test tests/ui/practice-regions.spec.ts tests/ui/practice.spec.ts tests/ui/sqlite.spec.ts tests/ui/sql-business.spec.ts tests/ui/practice-actions.spec.ts tests/ui/practice-storage.spec.ts tests/ui/python.spec.ts tests/ui/sql-navigation.spec.ts tests/ui/sql-dialects.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0",
+    "test:ui:sql:completion:red": "playwright test tests/ui/sql-completion.spec.ts --project=celular --workers=1 -g 'columnas sin alias:'",
+    "test:ui:sql:completion": "playwright test tests/ui/sql-completion.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0",
+    "test:ui:sql:completion:regression": "playwright test tests/ui/sql-completion.spec.ts tests/ui/sqlite.spec.ts tests/ui/practice.spec.ts tests/ui/python.spec.ts tests/ui/practice-actions.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0"
   },
   "dependencies": {
     "@codemirror/autocomplete": "latest",

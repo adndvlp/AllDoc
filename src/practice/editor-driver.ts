@@ -50,7 +50,8 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
   const extensions = [theme, syntaxHighlighting(highlighting), history(), lineNumbers(), drawSelection(), dropCursor(),
     highlightSpecialChars(), indentOnInput(), closeBrackets(), autocompletion(),
     Prec.highest(keymap.of([{key: 'Mod-Enter', run(view) {
-      if (view.composing) return false;
+      // Block this shortcut from compositionstart; falling through would insert a blank line.
+      if (view.compositionStarted) return true;
       const {from, to, empty} = view.state.selection.main; options.onExecute(empty ? undefined : {from, to}); return true;
     }}])),
     // Ctrl+K pertenece al buscador global. Tab conserva la salida de foco nativa.

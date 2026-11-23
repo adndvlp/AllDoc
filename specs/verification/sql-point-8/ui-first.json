@@ -1,0 +1,966 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/sql-completion.spec.ts",
+      "--project=celular",
+      "--project=laptop",
+      "--workers=1",
+      "--max-failures=0",
+      "--update-snapshots"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "laptop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "changed",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "sql-completion.spec.ts",
+      "file": "sql-completion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3041,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-completion-columns.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:20:56.627Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-completion-columns-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-completion-columns.png"
+                    },
+                    {
+                      "name": "sql-completion-columns-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-columnas-si-41d5c-M-sin-ejecutar-el-documento-celular/sql-completion-columns-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1960,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-completion-columns.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:34.796Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-completion-columns-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-completion-columns.png"
+                    },
+                    {
+                      "name": "sql-completion-columns-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-columnas-si-41d5c-M-sin-ejecutar-el-documento-laptop/sql-completion-columns-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-f2bf7602a234d6e24e60",
+          "file": "sql-completion.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3643,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-completion-join.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:20:59.795Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-completion-join-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/celular/sql-completion-join.png"
+                    },
+                    {
+                      "name": "sql-completion-join-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-alias-y-JOI-b5299-ón-con-teclado-sin-ejecutar-celular/sql-completion-join-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3928,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-completion-join.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:36.857Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "sql-completion-join-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/__screenshots__/laptop/sql-completion-join.png"
+                    },
+                    {
+                      "name": "sql-completion-join-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-alias-y-JOI-b5299-ón-con-teclado-sin-ejecutar-laptop/sql-completion-join-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-f4ecc17ded49b0f9aace",
+          "file": "sql-completion.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8871,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:40:67",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 67,
+                      "line": 40
+                    },
+                    "snippet": " \u001b[90m 38 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m  \u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m marked \u001b[36mof\u001b[39m [\u001b[32m'WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT nombre,precio AS importe FROM productos) q;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'WITH c(corto,importe) AS (SELECT nombre,precio FROM productos) SELECT c.▏ FROM c;'\u001b[39m]){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39mmarked)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(marked\u001b[33m.\u001b[39mreplace(\u001b[32m'▏'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m  }\n \u001b[90m 42 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT precio+1,COUNT(*) AS total FROM productos) q;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'total'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 67,
+                        "line": 40
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n\n\n \u001b[90m 38 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m  \u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m marked \u001b[36mof\u001b[39m [\u001b[32m'WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT nombre,precio AS importe FROM productos) q;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'WITH c(corto,importe) AS (SELECT nombre,precio FROM productos) SELECT c.▏ FROM c;'\u001b[39m]){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39mmarked)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(marked\u001b[33m.\u001b[39mreplace(\u001b[32m'▏'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m  }\n \u001b[90m 42 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT precio+1,COUNT(*) AS total FROM productos) q;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'total'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:40:67\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:03.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 67,
+                    "line": 40
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9053,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:40:67",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 67,
+                      "line": 40
+                    },
+                    "snippet": " \u001b[90m 38 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m  \u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m marked \u001b[36mof\u001b[39m [\u001b[32m'WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT nombre,precio AS importe FROM productos) q;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'WITH c(corto,importe) AS (SELECT nombre,precio FROM productos) SELECT c.▏ FROM c;'\u001b[39m]){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39mmarked)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(marked\u001b[33m.\u001b[39mreplace(\u001b[32m'▏'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m  }\n \u001b[90m 42 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT precio+1,COUNT(*) AS total FROM productos) q;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'total'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 67,
+                        "line": 40
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^importe$/ }) })\u001b[22m\n\n\n \u001b[90m 38 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m  \u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m marked \u001b[36mof\u001b[39m [\u001b[32m'WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT nombre,precio AS importe FROM productos) q;'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'WITH c(corto,importe) AS (SELECT nombre,precio FROM productos) SELECT c.▏ FROM c;'\u001b[39m]){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39mmarked)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(marked\u001b[33m.\u001b[39mreplace(\u001b[32m'▏'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m  }\n \u001b[90m 42 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT q.▏ FROM (SELECT precio+1,COUNT(*) AS total FROM productos) q;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'total'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:40:67\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:40.792Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-laptop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-laptop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-CTE-y-subco-adfad--conservadoras-sin-ejecutar-laptop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 67,
+                    "line": 40
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-f56bab2fc4d89202340a",
+          "file": "sql-completion.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9761,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:54:247",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 247,
+                      "line": 54
+                    },
+                    "snippet": " \u001b[90m 52 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ROLLBACK;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'temporal'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'temporal'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 53 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'BEGIN; ALTER TABLE practica_sugerencias ADD COLUMN confirmado TEXT; COMMIT;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'confirmado'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'confirmado'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'DROP VIEW vista_sugerencias; DROP TABLE practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(choice\u001b[33m.\u001b[39mlocator(\u001b[32m'option[value=\"practica_sugerencias\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT * FROM ▏'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'productos'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'practica_sugerencias'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                                                                                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'Reiniciar entorno'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM productos;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'campo_nuevo'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 247,
+                        "line": 54
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n\n\n \u001b[90m 52 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ROLLBACK;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'temporal'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'temporal'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 53 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'BEGIN; ALTER TABLE practica_sugerencias ADD COLUMN confirmado TEXT; COMMIT;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'confirmado'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'confirmado'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'DROP VIEW vista_sugerencias; DROP TABLE practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(choice\u001b[33m.\u001b[39mlocator(\u001b[32m'option[value=\"practica_sugerencias\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT * FROM ▏'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'productos'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'practica_sugerencias'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                                                                                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'Reiniciar entorno'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM productos;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'campo_nuevo'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:54:247\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:12.773Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 247,
+                    "line": 54
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10084,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:54:247",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 247,
+                      "line": 54
+                    },
+                    "snippet": " \u001b[90m 52 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ROLLBACK;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'temporal'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'temporal'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 53 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'BEGIN; ALTER TABLE practica_sugerencias ADD COLUMN confirmado TEXT; COMMIT;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'confirmado'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'confirmado'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'DROP VIEW vista_sugerencias; DROP TABLE practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(choice\u001b[33m.\u001b[39mlocator(\u001b[32m'option[value=\"practica_sugerencias\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT * FROM ▏'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'productos'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'practica_sugerencias'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                                                                                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'Reiniciar entorno'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM productos;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'campo_nuevo'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 247,
+                        "line": 54
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\nExpected: visible\nTimeout: 7000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) }) with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').locator('.cm-tooltip-autocomplete').getByRole('option').filter({ has: locator('.cm-completionLabel').filter({ hasText: /^productos$/ }) })\u001b[22m\n\n\n \u001b[90m 52 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ROLLBACK;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'temporal'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'importe'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'temporal'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 53 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'BEGIN; ALTER TABLE practica_sugerencias ADD COLUMN confirmado TEXT; COMMIT;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'confirmado'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'confirmado'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'DROP VIEW vista_sugerencias; DROP TABLE practica_sugerencias;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(choice\u001b[33m.\u001b[39mlocator(\u001b[32m'option[value=\"practica_sugerencias\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT * FROM ▏'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'productos'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'practica_sugerencias'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                                                                                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m  \u001b[36mawait\u001b[39m execute(page\u001b[33m,\u001b[39m\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'Reiniciar entorno'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'ALTER TABLE productos ADD COLUMN campo_nuevo INTEGER;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceRegion(page\u001b[33m,\u001b[39m\u001b[32m'data'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'table'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'campo_nuevo'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m  \u001b[36mawait\u001b[39m suggest(page\u001b[33m,\u001b[39m\u001b[32m'SELECT ▏ FROM productos;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'precio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(option(page\u001b[33m,\u001b[39m\u001b[32m'campo_nuevo'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:54:247\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:50.449Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-laptop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-laptop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-esquema-viv-4ff06-reinicio-actualizan-el-menú-laptop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 247,
+                    "line": 54
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-5dbf76ce5b0b6cf6366b",
+          "file": "sql-completion.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "ejecución explícita macOS: botón usa selección y atajo ejecuta el documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1419,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:23.111Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1611,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:22:01.326Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-e8cde01618090530cc6c",
+          "file": "sql-completion.spec.ts",
+          "line": 60,
+          "column": 52
+        },
+        {
+          "title": "ejecución explícita Windows: botón usa selección y atajo ejecuta el documento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1422,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:24.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:22:03.068Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-7dd4ed70e589739c2b3b",
+          "file": "sql-completion.spec.ts",
+          "line": 60,
+          "column": 52
+        },
+        {
+          "title": "preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8308,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:77:88",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 88,
+                      "line": 77
+                    },
+                    "snippet": " \u001b[90m 75 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'-- nota'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-line'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionstart'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m'x'\u001b[39m})\u001b[33m;\u001b[39m\u001b[36mtry\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'ControlOrMeta+Enter'\u001b[39m)\u001b[33m;\u001b[39m}\u001b[36mfinally\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionend'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m})\u001b[33m;\u001b[39m}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m  \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 88,
+                        "line": 77
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 75 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'-- nota'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-line'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionstart'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m'x'\u001b[39m})\u001b[33m;\u001b[39m\u001b[36mtry\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'ControlOrMeta+Enter'\u001b[39m)\u001b[33m;\u001b[39m}\u001b[36mfinally\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionend'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m})\u001b[33m;\u001b[39m}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m  \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:77:88\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:21:26.076Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 88,
+                    "line": 77
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "laptop",
+              "projectName": "laptop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8506,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:77:88",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                      "column": 88,
+                      "line": 77
+                    },
+                    "snippet": " \u001b[90m 75 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'-- nota'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-line'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionstart'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m'x'\u001b[39m})\u001b[33m;\u001b[39m\u001b[36mtry\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'ControlOrMeta+Enter'\u001b[39m)\u001b[33m;\u001b[39m}\u001b[36mfinally\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionend'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m})\u001b[33m;\u001b[39m}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m  \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                        "column": 88,
+                        "line": 77
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel] [data-practice-region=\"results\"]') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel] [data-practice-region=\"results\"]')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 75 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'-- nota'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(code(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-line'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m  \u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mfill(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionstart'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m'x'\u001b[39m})\u001b[33m;\u001b[39m\u001b[36mtry\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mpress(\u001b[32m'ControlOrMeta+Enter'\u001b[39m)\u001b[33m;\u001b[39m}\u001b[36mfinally\u001b[39m{\u001b[36mawait\u001b[39m code(page)\u001b[33m.\u001b[39mdispatchEvent(\u001b[32m'compositionend'\u001b[39m\u001b[33m,\u001b[39m{data\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m})\u001b[33m;\u001b[39m}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m  \u001b[36mawait\u001b[39m expect(code(page))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'SELECT 99;'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(practiceResults(page))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts:77:88\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T23:22:04.623Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-laptop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-laptop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/sql-completion-preparación-272df-s-ni-interceptan-la-edición-laptop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/sql-completion.spec.ts",
+                    "column": 88,
+                    "line": 77
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30636f007f5c156134ce-0a18ae34d039c2f69b7a",
+          "file": "sql-completion.spec.ts",
+          "line": 69,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T23:20:45.502Z",
+    "duration": 87846.31099999999,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

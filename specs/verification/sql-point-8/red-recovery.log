@@ -1,0 +1,50 @@
+(node:99253) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ sesión: recuperación explícita tras cancelled reconstruye SQL/pandas una vez y no encola otro atajo (8.060459ms)
+✖ sesión: recuperación explícita tras timeout reconstruye SQL/pandas una vez y no encola otro atajo (51.98475ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 241.11475
+
+✖ failing tests:
+
+test at tests/practice-session.test.ts:75:54
+✖ sesión: recuperación explícita tras cancelled reconstruye SQL/pandas una vez y no encola otro atajo (8.060459ms)
+  AssertionError [ERR_ASSERTION]: La siguiente ejecución explícita debe preparar otro motor
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts:85:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/practice-session.test.ts:75:54
+✖ sesión: recuperación explícita tras timeout reconstruye SQL/pandas una vez y no encola otro atajo (51.98475ms)
+  AssertionError [ERR_ASSERTION]: La siguiente ejecución explícita debe preparar otro motor
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts:85:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

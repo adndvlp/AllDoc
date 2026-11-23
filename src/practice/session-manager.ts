@@ -247,7 +247,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       if (!disposed && key) await options.drafts.retryPersistence(key);
     },
     async execute(selection) {
-      if (disposed || activeRun || !state.openRequested || state.context?.profile.availability !== 'enabled') return;
+      if (disposed || activeRun || state.phase !== 'ready' || !state.openRequested || state.context?.profile.availability !== 'enabled') return;
       const generation = state.generation;
       await prepare();
       if (!live(generation) || !resource?.ready || !state.draft || activeRun || !state.openRequested) return;
@@ -335,7 +335,8 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
       try {
         const result = await target.completion.complete(request, abort.signal);
         return !abort.signal.aborted && live(request.generation) && resource === target
-          && state.draft?.workspace.revision === request.revision && isCompletionResult(result, request) ? result : null;
+          && state.draft?.workspace.revision === request.revision && state.draft.workspace.id===request.workspaceId
+          && state.draft.workspace.activeFile===request.file && state.schema===request.schema && isCompletionResult(result, request) ? result : null;
       } catch {return null;} finally {signal?.removeEventListener('abort', cancelled);}
     },
     async dispose() {

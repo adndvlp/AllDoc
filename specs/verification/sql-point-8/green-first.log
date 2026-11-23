@@ -1,0 +1,104 @@
+(node:96051) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación (3.152042ms)
+✔ editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual (0.240917ms)
+✔ editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas (0.185125ms)
+(node:96052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados (13.142042ms)
+✔ editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales (32.981333ms)
+(node:96053) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición de práctica: fases independientes por perfil sin conservar texto del usuario (24.031834ms)
+✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (17.234666ms)
+✔ sesión: ejecutar durante preparación no encola trabajo cuando el motor queda listo (2.075875ms)
+✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.280917ms)
+✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (1.135083ms)
+✔ sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla (5.838208ms)
+✔ sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior (2.340791ms)
+✔ sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo (3.073083ms)
+✔ sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores (0.398167ms)
+✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (0.624917ms)
+✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (16.326ms)
+✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (3.08575ms)
+✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (4.181166ms)
+✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (2.385333ms)
+✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (26.183708ms)
+✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (6.738916ms)
+✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.507708ms)
+✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (6.79025ms)
+✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (2.660917ms)
+✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (2.048083ms)
+✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (4.367875ms)
+✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (2.19175ms)
+✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (6.563375ms)
+✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (2.525125ms)
+✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (0.655084ms)
+✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (0.999625ms)
+✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (2.161042ms)
+(node:96054) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL contextual: columnas sin alias se deducen del FROM y no de otra tabla (32.26525ms)
+✔ SQL contextual: prefijo, cursor intermedio y reemplazo no duplican letras (1.659708ms)
+✔ SQL contextual: alias, JOIN, WHERE y ORDER BY limitan columnas al origen calificado (3.334667ms)
+✔ SQL contextual: JOIN sin calificar ofrece fuentes reales y califica nombres ambiguos (2.867542ms)
+✖ SQL contextual: FROM ofrece tablas y vistas; columnas antes del FROM indican su tabla (13.543708ms)
+✔ SQL contextual: CTE y subconsulta proyectan columnas, alias explícitos y comodines conservadores (5.020166ms)
+✔ SQL contextual: alcances anidados y sentencias separadas no mezclan alias ni fuentes (1.994ms)
+✔ SQL contextual: comentarios y literales no participan como FROM ni activan sugerencias (1.034167ms)
+✔ SQL contextual: identificadores entre comillas y alias con mayúsculas insertan sin duplicar el calificador (0.399375ms)
+✔ SQL contextual: adaptador conserva columnas y palabras clave con identidades y rangos correctos (3.306416ms)
+(node:96055) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (88.059208ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.351417ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (1.483792ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (3.715875ms)
+✔ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (34.033834ms)
+✔ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (1.077459ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (0.703208ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.555208ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (1.629ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (1.61825ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (28.849334ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (178.3595ms)
+✔ SQL contextual vivo: CREATE, ALTER, vistas, COMMIT, ROLLBACK, DROP y reinicio refrescan columnas sin ejecutar para completar (40.462709ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 54
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 831.163708
+
+✖ failing tests:
+
+test at tests/practice-sql-completion.test.ts:44:1
+✖ SQL contextual: FROM ofrece tablas y vistas; columnas antes del FROM indican su tabla (13.543708ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!tables.labels.includes('precio'))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sql-completion.test.ts:48:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

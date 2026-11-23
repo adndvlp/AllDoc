@@ -1,0 +1,884 @@
+Listing tests:
+  [celular-pequeno] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [celular-pequeno] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [celular-pequeno] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [celular-pequeno] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [celular-pequeno] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [celular-pequeno] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [celular-pequeno] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [celular-pequeno] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [celular-pequeno] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [celular-pequeno] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [celular-pequeno] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [celular-pequeno] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [celular-pequeno] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [celular-pequeno] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [celular-pequeno] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [celular-pequeno] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular-pequeno] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [celular-pequeno] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [celular-pequeno] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [celular-pequeno] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [celular-pequeno] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [celular-pequeno] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [celular-pequeno] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [celular-pequeno] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [celular-pequeno] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [celular-pequeno] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [celular-pequeno] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [celular-pequeno] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [celular-pequeno] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [celular-pequeno] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [celular-pequeno] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [celular-pequeno] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [celular-pequeno] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [celular-pequeno] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [celular-pequeno] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [celular-pequeno] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [celular-pequeno] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [celular-pequeno] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [celular-pequeno] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [celular-pequeno] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [celular-pequeno] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [celular-pequeno] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [celular-pequeno] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [celular-pequeno] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [celular-pequeno] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [celular-pequeno] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [celular-pequeno] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [celular-pequeno] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [celular-pequeno] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [celular-pequeno] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [celular-pequeno] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [celular-pequeno] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [celular-pequeno] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [celular-pequeno] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [celular-pequeno] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [celular-pequeno] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [celular-pequeno] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [celular-pequeno] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [celular-pequeno] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [celular-pequeno] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [celular-pequeno] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [celular-pequeno] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [celular-pequeno] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [celular-pequeno] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [celular-pequeno] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [celular-pequeno] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [celular-pequeno] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [celular-pequeno] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [celular-pequeno] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [celular-pequeno] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [celular-pequeno] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [celular-pequeno] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [celular-pequeno] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [celular-pequeno] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [celular-pequeno] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [celular-pequeno] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [celular-pequeno] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [celular-pequeno] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [celular-pequeno] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [celular-pequeno] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [celular-pequeno] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [celular-pequeno] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [celular-pequeno] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [celular-pequeno] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [celular-pequeno] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [celular-pequeno] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [celular-pequeno] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [celular-pequeno] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [celular-pequeno] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [celular-pequeno] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [celular-pequeno] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [celular-pequeno] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [celular-pequeno] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [celular-pequeno] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [celular-pequeno] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [celular-pequeno] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [celular-pequeno] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [celular-pequeno] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [celular-pequeno] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [celular-pequeno] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [celular-pequeno] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [celular-pequeno] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [celular-pequeno] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [celular-pequeno] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [celular-pequeno] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [celular-pequeno] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [celular-pequeno] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [celular-pequeno] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [celular-pequeno] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [celular-pequeno] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [celular-pequeno] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [celular-pequeno] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [celular-pequeno] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [celular-pequeno] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [celular-pequeno] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [celular-pequeno] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [celular-pequeno] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [celular-pequeno] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [celular-pequeno] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [celular-pequeno] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular-pequeno] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular-pequeno] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular-pequeno] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular-pequeno] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular-pequeno] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular-pequeno] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [celular] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [celular] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [celular] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [celular] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [celular] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [celular] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [celular] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [celular] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [celular] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [celular] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [celular] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [celular] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [celular] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [celular] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [celular] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [celular] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [celular] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [celular] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [celular] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [celular] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [celular] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [celular] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [celular] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [celular] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [celular] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [celular] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [celular] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [celular] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [celular] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [celular] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [celular] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [celular] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [celular] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [celular] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [celular] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [celular] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [celular] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [celular] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [celular] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [celular] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [celular] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [celular] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [celular] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [celular] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [celular] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [celular] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [celular] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [celular] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [celular] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [celular] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [celular] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [celular] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [celular] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [celular] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [celular] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [celular] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [celular] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [celular] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [celular] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [celular] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [celular] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [celular] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [celular] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [celular] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [celular] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [celular] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [celular] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [celular] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [celular] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [celular] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [celular] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [celular] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [celular] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [celular] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [celular] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [celular] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [celular] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [celular] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [celular] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [celular] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [celular] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [celular] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [celular] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [celular] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [celular] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [celular] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [celular] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [celular] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [celular] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [celular] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [celular] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [celular] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [celular] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [celular] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [celular] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [celular] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [celular] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [celular] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [celular] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [celular] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [celular] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [celular] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [celular] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [celular] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [celular] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [celular] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [celular] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [celular] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [celular] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [celular] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [celular] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [celular-horizontal] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [celular-horizontal] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [celular-horizontal] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [celular-horizontal] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [celular-horizontal] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [celular-horizontal] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [celular-horizontal] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [celular-horizontal] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [celular-horizontal] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [celular-horizontal] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [celular-horizontal] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [celular-horizontal] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [celular-horizontal] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [celular-horizontal] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [celular-horizontal] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [celular-horizontal] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular-horizontal] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [celular-horizontal] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [celular-horizontal] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [celular-horizontal] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [celular-horizontal] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [celular-horizontal] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [celular-horizontal] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [celular-horizontal] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [celular-horizontal] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [celular-horizontal] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [celular-horizontal] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [celular-horizontal] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [celular-horizontal] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [celular-horizontal] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [celular-horizontal] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [celular-horizontal] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [celular-horizontal] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [celular-horizontal] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [celular-horizontal] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [celular-horizontal] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [celular-horizontal] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [celular-horizontal] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [celular-horizontal] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [celular-horizontal] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [celular-horizontal] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [celular-horizontal] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [celular-horizontal] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [celular-horizontal] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [celular-horizontal] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [celular-horizontal] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [celular-horizontal] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [celular-horizontal] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [celular-horizontal] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [celular-horizontal] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [celular-horizontal] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [celular-horizontal] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [celular-horizontal] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [celular-horizontal] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [celular-horizontal] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [celular-horizontal] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [celular-horizontal] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [celular-horizontal] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [celular-horizontal] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [celular-horizontal] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [celular-horizontal] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [celular-horizontal] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [celular-horizontal] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [celular-horizontal] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [celular-horizontal] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [celular-horizontal] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [celular-horizontal] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [celular-horizontal] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [celular-horizontal] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [celular-horizontal] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [celular-horizontal] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [celular-horizontal] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [celular-horizontal] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [celular-horizontal] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [celular-horizontal] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [celular-horizontal] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [celular-horizontal] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [celular-horizontal] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [celular-horizontal] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [celular-horizontal] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [celular-horizontal] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [celular-horizontal] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [celular-horizontal] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [celular-horizontal] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [celular-horizontal] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [celular-horizontal] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [celular-horizontal] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [celular-horizontal] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [celular-horizontal] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [celular-horizontal] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [celular-horizontal] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [celular-horizontal] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [celular-horizontal] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [celular-horizontal] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [celular-horizontal] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [celular-horizontal] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [celular-horizontal] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [celular-horizontal] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [celular-horizontal] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [celular-horizontal] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [celular-horizontal] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [celular-horizontal] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [celular-horizontal] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [celular-horizontal] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [celular-horizontal] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [celular-horizontal] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [celular-horizontal] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [celular-horizontal] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [celular-horizontal] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [celular-horizontal] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [celular-horizontal] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [celular-horizontal] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [celular-horizontal] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [celular-horizontal] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [celular-horizontal] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [celular-horizontal] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [celular-horizontal] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [celular-horizontal] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [celular-horizontal] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [celular-horizontal] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular-horizontal] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular-horizontal] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular-horizontal] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular-horizontal] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular-horizontal] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular-horizontal] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [ipad] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [ipad] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [ipad] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [ipad] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [ipad] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [ipad] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [ipad] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [ipad] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [ipad] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [ipad] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [ipad] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [ipad] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [ipad] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [ipad] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [ipad] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [ipad] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [ipad] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [ipad] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [ipad] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [ipad] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [ipad] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [ipad] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [ipad] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [ipad] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [ipad] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [ipad] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [ipad] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [ipad] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [ipad] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [ipad] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [ipad] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [ipad] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [ipad] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [ipad] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [ipad] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [ipad] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [ipad] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [ipad] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [ipad] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [ipad] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [ipad] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [ipad] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [ipad] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [ipad] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [ipad] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [ipad] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [ipad] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [ipad] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [ipad] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [ipad] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [ipad] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [ipad] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [ipad] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [ipad] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [ipad] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [ipad] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [ipad] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [ipad] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [ipad] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [ipad] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [ipad] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [ipad] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [ipad] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [ipad] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [ipad] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [ipad] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [ipad] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [ipad] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [ipad] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [ipad] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [ipad] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [ipad] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [ipad] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [ipad] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [ipad] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [ipad] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [ipad] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [ipad] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [ipad] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [ipad] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [ipad] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [ipad] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [ipad] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [ipad] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [ipad] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [ipad] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [ipad] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [ipad] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [ipad] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [ipad] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [ipad] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [ipad] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [ipad] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [ipad] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [ipad] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [ipad] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [ipad] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [ipad] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [ipad] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [ipad] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [ipad] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [ipad] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [ipad] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [ipad] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [ipad] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [ipad] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [ipad] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [ipad] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [ipad] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [ipad] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [ipad] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [ipad] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [ipad] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [ipad] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [ipad] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [ipad] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [ipad] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [ipad] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [ipad] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [ipad] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [ipad] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [ipad] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [ipad] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [ipad] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [ipad] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [ipad] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [ipad-horizontal] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [ipad-horizontal] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [ipad-horizontal] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [ipad-horizontal] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [ipad-horizontal] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [ipad-horizontal] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [ipad-horizontal] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [ipad-horizontal] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [ipad-horizontal] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [ipad-horizontal] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [ipad-horizontal] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [ipad-horizontal] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [ipad-horizontal] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [ipad-horizontal] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [ipad-horizontal] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [ipad-horizontal] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [ipad-horizontal] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [ipad-horizontal] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [ipad-horizontal] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [ipad-horizontal] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [ipad-horizontal] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [ipad-horizontal] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [ipad-horizontal] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [ipad-horizontal] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [ipad-horizontal] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [ipad-horizontal] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [ipad-horizontal] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [ipad-horizontal] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [ipad-horizontal] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [ipad-horizontal] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [ipad-horizontal] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [ipad-horizontal] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [ipad-horizontal] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [ipad-horizontal] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [ipad-horizontal] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [ipad-horizontal] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [ipad-horizontal] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [ipad-horizontal] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [ipad-horizontal] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [ipad-horizontal] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [ipad-horizontal] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [ipad-horizontal] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [ipad-horizontal] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [ipad-horizontal] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [ipad-horizontal] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [ipad-horizontal] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [ipad-horizontal] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [ipad-horizontal] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [ipad-horizontal] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [ipad-horizontal] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [ipad-horizontal] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [ipad-horizontal] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [ipad-horizontal] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [ipad-horizontal] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [ipad-horizontal] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [ipad-horizontal] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [ipad-horizontal] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [ipad-horizontal] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [ipad-horizontal] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [ipad-horizontal] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [ipad-horizontal] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [ipad-horizontal] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [ipad-horizontal] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [ipad-horizontal] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [ipad-horizontal] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [ipad-horizontal] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [ipad-horizontal] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [ipad-horizontal] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [ipad-horizontal] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [ipad-horizontal] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [ipad-horizontal] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [ipad-horizontal] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [ipad-horizontal] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [ipad-horizontal] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [ipad-horizontal] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [ipad-horizontal] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [ipad-horizontal] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [ipad-horizontal] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [ipad-horizontal] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [ipad-horizontal] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [ipad-horizontal] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [ipad-horizontal] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [ipad-horizontal] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [ipad-horizontal] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [ipad-horizontal] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [ipad-horizontal] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [ipad-horizontal] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [ipad-horizontal] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [ipad-horizontal] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [ipad-horizontal] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [ipad-horizontal] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [ipad-horizontal] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [ipad-horizontal] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [ipad-horizontal] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [ipad-horizontal] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [ipad-horizontal] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [ipad-horizontal] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [ipad-horizontal] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [ipad-horizontal] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [ipad-horizontal] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [ipad-horizontal] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [ipad-horizontal] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [ipad-horizontal] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [ipad-horizontal] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [ipad-horizontal] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [ipad-horizontal] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [ipad-horizontal] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [ipad-horizontal] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [ipad-horizontal] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [ipad-horizontal] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [ipad-horizontal] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [ipad-horizontal] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [ipad-horizontal] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [ipad-horizontal] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [ipad-horizontal] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [ipad-horizontal] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [ipad-horizontal] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [ipad-horizontal] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [ipad-horizontal] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [ipad-horizontal] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [ipad-horizontal] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [ipad-horizontal] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [ipad-horizontal] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [ipad-horizontal] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [ipad-horizontal] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [ipad-horizontal] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [laptop] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [laptop] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [laptop] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [laptop] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [laptop] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [laptop] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [laptop] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [laptop] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [laptop] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [laptop] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [laptop] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [laptop] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [laptop] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [laptop] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [laptop] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [laptop] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [laptop] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [laptop] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [laptop] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [laptop] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [laptop] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [laptop] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [laptop] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [laptop] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [laptop] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [laptop] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [laptop] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [laptop] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [laptop] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [laptop] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [laptop] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [laptop] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [laptop] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [laptop] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [laptop] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [laptop] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [laptop] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [laptop] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [laptop] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [laptop] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [laptop] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [laptop] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [laptop] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [laptop] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [laptop] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [laptop] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [laptop] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [laptop] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [laptop] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [laptop] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [laptop] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [laptop] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [laptop] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [laptop] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [laptop] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [laptop] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [laptop] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [laptop] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [laptop] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [laptop] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [laptop] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [laptop] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [laptop] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [laptop] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [laptop] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [laptop] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [laptop] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [laptop] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [laptop] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [laptop] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [laptop] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [laptop] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [laptop] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [laptop] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [laptop] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [laptop] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [laptop] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [laptop] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [laptop] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [laptop] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [laptop] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [laptop] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [laptop] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [laptop] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [laptop] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [laptop] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [laptop] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [laptop] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [laptop] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [laptop] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [laptop] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [laptop] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [laptop] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [laptop] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [laptop] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [laptop] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [laptop] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [laptop] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [laptop] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [laptop] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [laptop] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [laptop] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [laptop] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [laptop] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [laptop] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [laptop] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [laptop] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [laptop] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [laptop] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [laptop] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [laptop] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [laptop] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [laptop] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [laptop] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [laptop] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [laptop] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [laptop] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [laptop] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [escritorio] › catalog.spec.ts:17:1 › portada: catálogo completo contraído, despliegues independientes y navegación directa a un concepto
+  [escritorio] › catalog.spec.ts:58:1 › cambiar área conserva URL, búsqueda y accesos globales; contrae el catálogo y no persiste selección
+  [escritorio] › catalog.spec.ts:92:1 › páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio
+  [escritorio] › catalog.spec.ts:114:1 › buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll
+  [escritorio] › catalog.spec.ts:131:1 › URL directa de WHERE y recarga abren solo SQL y sus categorías padre
+  [escritorio] › header.spec.ts:58:1 › encabezado compacto: una fila, selector de áreas y controles táctiles sin footer
+  [escritorio] › header.spec.ts:82:1 › selector de áreas: teclado, cierre, foco y consulta conservada en portada
+  [escritorio] › header.spec.ts:116:1 › texto al 200%: altura natural, controles sin solaparse y sidebar legible
+  [escritorio] › header.spec.ts:161:1 › menú de temas: modal con inicio, foco contenido y cierre con Esc sin mover el apunte
+  [escritorio] › header.spec.ts:219:1 › rotación con menú abierto elimina la capa modal y permite seguir leyendo y buscando
+  [escritorio] › header.spec.ts:244:1 › paneles: extremos sin arrastre y ausencia de scroll cuando todo cabe
+  [escritorio] › notes.spec.ts:22:1 › una envoltura por ejemplo, tipografía legible y contenido esencial compacto
+  [escritorio] › notes.spec.ts:62:1 › resultados independientes, tabla semántica y scroll horizontal limitado al resultado
+  [escritorio] › notes.spec.ts:94:1 › recuerdo sin tapar: la acción de práctica no oculta las letras de comentarios
+  [escritorio] › notes.spec.ts:102:1 › copiar cada variante conserva la consulta completa y mantiene la posición del contenido
+  [escritorio] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [escritorio] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+  [escritorio] › notes.spec.ts:164:1 › ocho acentos conservan negro puro, contraste y sintaxis; la última elección persiste
+  [escritorio] › pandas.spec.ts:6:1 › pandas: navegación, ejemplo compacto, resultado con índice y acceso desde búsqueda
+  [escritorio] › pandas.spec.ts:39:1 › pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla
+  [escritorio] › personal-library.spec.ts:20:1 › recientes: entrada directa, categorías sin visita, historial, recarga y sugerencias del buscador
+  [escritorio] › personal-library.spec.ts:59:1 › favorito accesible: respuesta sin desplazamiento, persistencia y foco al quitar el último
+  [escritorio] › personal-library.spec.ts:83:1 › colecciones visibles: orden, quitar conserva foco útil y buscar no desplaza resultados por sincronización
+  [escritorio] › personal-library.spec.ts:115:1 › datos dañados o retirados: no se escriben al iniciar; la siguiente acción limpia solo su colección
+  [escritorio] › personal-library.spec.ts:137:3 › almacenamiento bloqueado: lectura, navegación y favoritos siguen en memoria
+  [escritorio] › personal-library.spec.ts:137:3 › almacenamiento lleno: lectura, navegación y favoritos siguen en memoria
+  [escritorio] › personal-library.spec.ts:164:1 › dos pestañas sincronizan favoritos y recientes sin sobrescribir la otra colección ni la paleta
+  [escritorio] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [escritorio] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [escritorio] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [escritorio] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [escritorio] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [escritorio] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [escritorio] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [escritorio] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [escritorio] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [escritorio] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [escritorio] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [escritorio] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [escritorio] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [escritorio] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [escritorio] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [escritorio] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [escritorio] › practice-storage.spec.ts:18:1 › IndexedDB real: persistir, reabrir y resolver conflictos atómicos con copia recuperable
+  [escritorio] › practice-storage.spec.ts:48:1 › IndexedDB real: el store recupera archivos activos, revisiones y falla a memoria si no hay almacenamiento
+  [escritorio] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [escritorio] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [escritorio] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [escritorio] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [escritorio] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [escritorio] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [escritorio] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [escritorio] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [escritorio] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [escritorio] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [escritorio] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [escritorio] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [escritorio] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [escritorio] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [escritorio] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [escritorio] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [escritorio] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [escritorio] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [escritorio] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [escritorio] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [escritorio] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [escritorio] › responsive.spec.ts:60:1 › inicio sin desbordamientos
+  [escritorio] › responsive.spec.ts:68:1 › apunte compacto y resultados legibles
+  [escritorio] › responsive.spec.ts:78:1 › grupos contraídos, logos y navegación desde el menú
+  [escritorio] › responsive.spec.ts:131:1 › buscador accesible y dentro de la pantalla
+  [escritorio] › responsive.spec.ts:154:1 › selector de texto visible y elección persistente
+  [escritorio] › responsive.spec.ts:176:1 › la navegación se adapta al girar el dispositivo
+  [escritorio] › responsive.spec.ts:197:1 › las áreas se pueden abrir desde el encabezado
+  [escritorio] › responsive.spec.ts:208:1 › scroll independiente del contenido y el sidebar
+  [escritorio] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [escritorio] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [escritorio] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [escritorio] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [escritorio] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [escritorio] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [escritorio] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [escritorio] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [escritorio] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [escritorio] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [escritorio] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [escritorio] › sql-business.spec.ts:29:1 › migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador
+  [escritorio] › sql-business.spec.ts:43:1 › migración IndexedDB real: CAS entre conexiones conserva ganadora y copia recuperable
+  [escritorio] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [escritorio] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [escritorio] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [escritorio] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [escritorio] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [escritorio] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [escritorio] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [escritorio] › sql-dialects.spec.ts:9:1 › selector SQL: seis dialectos, TOP/FETCH explícitos y preferencia persistente
+  [escritorio] › sql-dialects.spec.ts:16:1 › enlace de dialecto: prioridad local, inválidos seguros y concepto activo estable
+  [escritorio] › sql-dialects.spec.ts:23:1 › FULL OUTER JOIN sin soporte: explicación, alternativa y preparación externa sin resultado inventado
+  [escritorio] › sql-dialects.spec.ts:29:1 › cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción explícita
+  [escritorio] › sql-dialects.spec.ts:37:1 › subsección directa y cambio de dialecto conservan despliegue y posición del lector
+  [escritorio] › sql-dialects.spec.ts:43:1 › 320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página
+  [escritorio] › sql-navigation.spec.ts:32:1 › árbol SQL: 34 grupos contraídos, Definición primero y despliegues independientes en ambas áreas
+  [escritorio] › sql-navigation.spec.ts:53:1 › ruta directa compartida: área y breadcrumb propios, ancestros abiertos y categorías que no navegan
+  [escritorio] › sql-navigation.spec.ts:70:1 › documento compartido: canonical único, favorito visible y enlaces internos y paginación de Lenguajes
+  [escritorio] › sql-navigation.spec.ts:87:1 › sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar
+  [escritorio] › sql-navigation.spec.ts:108:1 › identidad compartida: favoritos, recientes y resultados del buscador no se duplican
+  [escritorio] › sql-navigation.spec.ts:123:1 › dialecto compartido: conserva consulta y hash al cambiar de área y localiza la alternativa documental
+  [escritorio] › sql-navigation.spec.ts:133:1 › árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el lector
+  [escritorio] › sql-navigation.spec.ts:145:1 › entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos
+  [escritorio] › sql-second-block.spec.ts:17:1 › segundo bloque: funciones de texto, longitud por dialecto y ruta directa con grupo abierto
+  [escritorio] › sql-second-block.spec.ts:30:1 › segundo bloque: COUNT distingue NULL, conjunto vacío y concatenación agregada por motor
+  [escritorio] › sql-second-block.spec.ts:42:1 › segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y después reales
+  [escritorio] › sql-second-block.spec.ts:54:1 › segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el efecto real
+  [escritorio] › sql-second-block.spec.ts:64:1 › segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%
+  [escritorio] › sql-third-block.spec.ts:12:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [escritorio] › sql-third-block.spec.ts:20:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [escritorio] › sql-third-block.spec.ts:26:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [escritorio] › sql-third-block.spec.ts:33:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [escritorio] › sql-third-block.spec.ts:40:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [escritorio] › sql-third-block.spec.ts:45:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [escritorio] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [escritorio] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [escritorio] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [escritorio] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [escritorio] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [escritorio] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [escritorio] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+Total: 882 tests in 19 files

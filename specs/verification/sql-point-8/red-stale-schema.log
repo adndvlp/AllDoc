@@ -1,0 +1,54 @@
+(node:96324) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ sesión: inspección nueva descarta una sugerencia pendiente del esquema anterior aunque no cambie el texto (9.758125ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 228.295667
+
+✖ failing tests:
+
+test at tests/practice-session.test.ts:63:1
+✖ sesión: inspección nueva descarta una sugerencia pendiente del esquema anterior aunque no cambie el texto (9.758125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   document: 'SELECT * FROM productos;',
+  +   file: 'main.sql',
+  +   from: 0,
+  +   generation: 1,
+  +   items: [
+  +     {
+  +       insertText: 'eliminada',
+  +       label: 'eliminada'
+  +     }
+  +   ],
+  +   position: 3,
+  +   requestId: 'completion-1',
+  +   revision: 0,
+  +   schema: {
+  +     entities: [],
+  +     version: 0
+  +   },
+  +   to: 3,
+  +   workspaceId: '["analisis-de-datos/sql","sql-sqlite","productos-basico",1]'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts:71:106)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { requestId: 'completion-1', generation: 1, workspaceId: '["analisis-de-datos/sql","sql-sqlite","productos-basico",1]', revision: 0, file: 'main.sql', document: 'SELECT * FROM productos;', position: 3, schema: { version: 0, entities: [] }, from: 0, to: 3, items: [ [Object] ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

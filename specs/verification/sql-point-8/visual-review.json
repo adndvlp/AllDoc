@@ -1,0 +1,16 @@
+{
+  "status": "reviewed-and-compared",
+  "reviewed": {
+    "tests/ui/__screenshots__/celular/sql-completion-columns.png": "8502dbd4bc66e51a7d65626484ffe658fbc607ba19e6e37c0b9bc0a56d3f6cdc",
+    "tests/ui/__screenshots__/celular/sql-completion-join.png": "741239fae62fd383222167b4a49d34875f8d1554dd30437c3742e5d566c2d336",
+    "tests/ui/__screenshots__/laptop/sql-completion-columns.png": "50c761dc57edea63709c61fa9e4ec5ccddc13bf4615c84e6e6beca92aabfdc30",
+    "tests/ui/__screenshots__/laptop/sql-completion-join.png": "15dd02f5952a85875134af02164eb035ab3cf712cf70938e2270b6a35b492a03"
+  },
+  "previousReferenceCount": 265,
+  "modifiedPrevious": [],
+  "notes": [
+    "Real columns from productos, qualified ambiguous names from both JOIN sources and table metadata are visible.",
+    "Completion list scrolls independently; no page layout or font changes."
+  ],
+  "comparison": "comparison.json"
+}

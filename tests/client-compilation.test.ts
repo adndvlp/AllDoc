@@ -34,6 +34,18 @@ function regionModules() {
   return {'./Region':region,'./DataInspector':inspector,'@site/src/practice/layout':compile<typeof import('../src/practice/layout.ts')>('../src/practice/layout.ts')};
 }
 
+test('preset cliente: autocompletado SQL conserva arrays de columnas CTE y nombres de tablas al transformar iteradores',async()=>{
+ const {EditorState}=require('@codemirror/state');const {CompletionContext}=require('@codemirror/autocomplete');const {sql,SQLite,schemaCompletionSource}=require('@codemirror/lang-sql');
+ const {sqlSchemaCompletion}=compile<typeof import('../src/practice/sql-completion.ts')>('../src/practice/sql-completion.ts');
+ const schema={version:1,entities:[{name:'productos',kind:'table' as const,columns:[{name:'nombre',type:'text' as const},{name:'precio',type:'integer' as const}]}]};
+ const source=sqlSchemaCompletion(schema,schemaCompletionSource({dialect:SQLite,schema:{productos:['nombre','precio']}}));
+ for(const [marked,label] of [['WITH c AS (SELECT nombre,precio AS importe FROM productos) SELECT c.▏ FROM c;','importe'],['SELECT * FROM ▏','productos'],['SELECT pre▏','precio']]){
+  const position=marked.indexOf('▏');const state=EditorState.create({doc:marked.replace('▏',''),extensions:[sql({dialect:SQLite})]});
+  const result=await source(new CompletionContext(state,position,true));assert.ok(result?.options.some(option=>option.label===label),marked);
+  assert.ok(result!.options.every(option=>typeof option.label==='string'));
+ }
+});
+
 test('ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible', () => {
   const fixture: {context: ReturnType<typeof practiceContext> | null; openExample(): void} = {context: practiceContext(), openExample() {}};
   const {ConceptNote} = compile<{ConceptNote: import('react').ComponentType<{concept: (typeof sqlConcepts)[number]; conceptId: string; kind: string; language: string}>}>('../src/components/ConceptNote/index.tsx', {

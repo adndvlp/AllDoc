@@ -1,0 +1,7 @@
+
+> alldoc@0.1.0 test:ui:sql:completion:red
+> playwright test tests/ui/sql-completion.spec.ts --project=celular --workers=1 -g 'columnas sin alias:' --list --reporter=list
+
+Listing tests:
+  [celular] › sql-completion.spec.ts:9:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+Total: 1 test in 1 file

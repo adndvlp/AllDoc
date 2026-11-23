@@ -1,0 +1,90 @@
+
+> alldoc@0.1.0 test:ui:sql:completion:regression
+> playwright test tests/ui/sql-completion.spec.ts tests/ui/sqlite.spec.ts tests/ui/practice.spec.ts tests/ui/python.spec.ts tests/ui/practice-actions.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0 --list --reporter=list
+
+Listing tests:
+  [celular] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [celular] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [celular] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [celular] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [celular] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [celular] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [celular] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [celular] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [celular] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [celular] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [celular] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [celular] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [celular] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [celular] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [celular] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [celular] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [celular] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [celular] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [celular] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [celular] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [celular] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [celular] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [celular] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [celular] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [celular] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [celular] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [celular] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [celular] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [celular] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [celular] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [celular] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [celular] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [celular] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [celular] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [celular] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [celular] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [celular] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [celular] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [celular] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+  [laptop] › practice-actions.spec.ts:23:1 › ejemplo explícito: abre el editor, conserva código anterior y prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:36:1 › revisión anterior: persiste tras recargar y restaura la edición sin cambiar datos
+  [laptop] › practice-actions.spec.ts:48:1 › restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto
+  [laptop] › practice-actions.spec.ts:67:1 › descarga fallida: mantiene el ejemplo y la edición; reintentar prepara sin ejecutar
+  [laptop] › practice-actions.spec.ts:81:1 › almacenamiento bloqueado: backup en memoria, reintento de IndexedDB y recuperación tras recargar
+  [laptop] › practice-actions.spec.ts:99:1 › ejemplo pandas: conserva el entorno y recupera su código anterior sin ejecutar
+  [laptop] › practice-actions.spec.ts:114:1 › carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor
+  [laptop] › practice.spec.ts:31:1 › entrada contextual: apertura diferida, editor real y SQL ejecutable
+  [laptop] › practice.spec.ts:48:1 › borradores: SELECT/WHERE comparten edición y pandas conserva su propio contexto tras recargar
+  [laptop] › practice.spec.ts:61:1 › datos: tabla común tipada y regiones por teclado sin resultados inventados
+  [laptop] › practice.spec.ts:80:1 › editor: Tab sale, deshacer funciona y el cambio de acento conserva instancia e historial
+  [laptop] › practice.spec.ts:93:1 › modal: búsqueda y temas suspenden práctica sin apilar ventanas y reanudan con foco visible
+  [laptop] › practice.spec.ts:113:1 › descarga tardía del editor no reabre práctica después de colapsar
+  [laptop] › practice.spec.ts:124:1 › error de descarga permite reintentar el editor sin duplicarlo ni perder el borrador
+  [laptop] › practice.spec.ts:136:1 › responsive: rotación y texto al 200% conservan editor, selección y controles accesibles
+  [laptop] › practice.spec.ts:156:1 › teclado virtual: práctica usa el área visual reducida y mantiene el cierre accesible
+  [laptop] › practice.spec.ts:171:1 › rotación con búsqueda abierta conserva su consulta y suspende la nueva modalidad de práctica
+  [laptop] › practice.spec.ts:186:1 › control compacto: al 200% y con poca altura conserva acceso sin tapar el apunte con una etiqueta grande
+  [laptop] › practice.spec.ts:198:1 › separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente
+  [laptop] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [laptop] › python.spec.ts:39:1 › atajo durante la preparación: Ctrl+Enter respeta el botón desactivado y no deja una ejecución pendiente
+  [laptop] › python.spec.ts:54:1 › pandas vivo: variables, columnas e inspección sobreviven entre ejecuciones y reiniciar crea una VM limpia
+  [laptop] › python.spec.ts:73:1 › Jedi y columnas: sugerencias reales, inserción correcta y esquema actualizado sin ejecutar para completar
+  [laptop] › python.spec.ts:96:1 › salida Python: selección, stdout, cero filas y errores seguros con archivo y línea
+  [laptop] › python.spec.ts:116:1 › cancelación Python: detener un bucle conserva la edición y permite ejecutar con datos iniciales
+  [laptop] › python.spec.ts:126:1 › timeout Python: el Worker ocupado termina en diez segundos y la interfaz conserva el borrador
+  [laptop] › python.spec.ts:135:1 › aislamiento Python: carga diferida y almacenamiento de AllDoc inaccesible desde el código
+  [laptop] › python.spec.ts:151:1 › cambio SQL ↔ pandas: workspace compartido entre conceptos, entornos separados y borradores conservados
+  [laptop] › sql-completion.spec.ts:16:1 › columnas sin alias: prefijo e inserción real desde FROM sin ejecutar el documento
+  [laptop] › sql-completion.spec.ts:23:1 › alias y JOIN: columnas del origen, nombres ambiguos e inserción con teclado sin ejecutar
+  [laptop] › sql-completion.spec.ts:37:1 › CTE y subconsulta: proyecciones conocidas, alias y expresiones conservadoras sin ejecutar
+  [laptop] › sql-completion.spec.ts:45:1 › esquema vivo: CREATE, ALTER, vista, ROLLBACK, COMMIT, DROP y reinicio actualizan el menú
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita macOS: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:60:52 › ejecución explícita Windows: botón usa selección y atajo ejecuta el documento
+  [laptop] › sql-completion.spec.ts:69:1 › preparación, Enter normal e IME no dejan ejecuciones pendientes ni interceptan la edición
+  [laptop] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [laptop] › sqlite.spec.ts:34:1 › esquema vivo: cambios parciales aparecen en Datos y completado aunque una sentencia posterior falle
+  [laptop] › sqlite.spec.ts:52:1 › selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos
+  [laptop] › sqlite.spec.ts:70:1 › aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o navegación superior de la app
+  [laptop] › sqlite.spec.ts:96:1 › timeout real: consulta ocupada termina en diez segundos y el borrador puede ejecutarse después
+  [laptop] › sqlite.spec.ts:106:1 › datos mutables: reiniciar conserva el código y restaura solo la sesión SQL
+  [laptop] › sqlite.spec.ts:116:1 › cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición
+Total: 84 tests in 5 files

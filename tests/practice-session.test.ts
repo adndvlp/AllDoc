@@ -46,6 +46,50 @@ test('sesión: completar mientras llega la inspección no descarta el nuevo esqu
   } finally {await f.close();}
 });
 
+test('sesión: ejecutar durante preparación no encola trabajo cuando el motor queda listo', async () => {
+  const f=setup();const gate=deferred();let opening:Promise<void>|undefined;let requested:Promise<void>|undefined;
+  try {
+    await f.manager.setContext(context());f.engines.deferInit(gate.promise);opening=f.manager.open();
+    await until(()=>f.engines.calls.init===1);assert.equal(f.manager.getSnapshot().phase,'loading');
+    requested=f.manager.execute();gate.resolve();await opening;
+    await new Promise(resolve=>setTimeout(resolve,0));assert.equal(f.engines.calls.runs.length,0);
+    await requested;
+  } finally {
+    gate.resolve();if(f.engines.calls.runs.length)f.engines.emit(0,{type:'end',status:'success',environmentReset:false});
+    await opening;await requested;await f.close();
+  }
+});
+
+test('sesión: inspección nueva descarta una sugerencia pendiente del esquema anterior aunque no cambie el texto',async()=>{
+ const f=setup();const inspect=deferred<import('../src/practice/contracts.ts').RuntimeSchema>();const completion=deferred<import('../src/practice/contracts.ts').CompletionResult>();
+ let pending:Promise<unknown>|undefined;
+ try{
+  await f.manager.setContext(context());await f.manager.open();f.engines.deferInspect(inspect.promise);
+  const running=f.manager.execute();await until(()=>f.engines.calls.runs.length===1);f.engines.emit(0,{type:'end',status:'success',environmentReset:false});await running;
+  f.engines.deferCompletion(completion.promise);pending=f.manager.complete(3);await until(()=>f.engines.calls.completion.length===1);const request=f.engines.calls.completion[0];
+  inspect.resolve({version:9,entities:[{name:'productos',kind:'table',columns:[{name:'actual',type:'text'}]}]});await until(()=>f.manager.getSnapshot().schema.version===9);
+  completion.resolve({...request,from:0,to:3,items:[{label:'eliminada',insertText:'eliminada'}]});assert.equal(await pending,null);
+ }finally{inspect.resolve({version:9,entities:[]});completion.resolve({requestId:'late',workspaceId:'sql',generation:0,revision:0,file:'main.sql',from:0,to:0,items:[]});await pending;await f.close();}
+});
+
+for(const status of ['cancelled','timeout'] as const)test(`sesión: recuperación explícita tras ${status} reconstruye SQL/pandas una vez y no encola otro atajo`,async()=>{
+ for(const tool of ['sql','pandas']){
+  const f=setup({timeoutMs:50});const gate=deferred();let first:Promise<void>|undefined;let second:Promise<void>|undefined;
+  try{
+   await f.manager.setContext(context(tool));await f.manager.open();first=f.manager.execute();await until(()=>f.engines.calls.runs.length===1);
+   const path=tool==='sql'?'main.sql':'main.py';const content=tool==='sql'?'SELECT 9;':'productos.head(1)';f.manager.edit(path,content);
+   if(status==='cancelled')await f.manager.stop();await first;
+   assert.equal(f.manager.getSnapshot().events.at(-1)?.type,'end');assert.equal((f.manager.getSnapshot().events.at(-1) as {status:string}).status,status);
+   assert.equal(f.engines.calls.active,0);assert.equal(f.engines.calls.created,1);assert.equal(f.manager.getSnapshot().phase,'ready');
+   f.engines.deferInit(gate.promise);second=f.manager.execute();await new Promise(resolve=>setImmediate(resolve));
+   assert.equal(f.engines.calls.init,2,'La siguiente ejecución explícita debe preparar otro motor');assert.equal(f.manager.getSnapshot().phase,'loading');
+   await f.manager.execute();assert.equal(f.engines.calls.runs.length,1);gate.resolve();await until(()=>f.engines.calls.runs.length===2);
+   f.engines.emit(1,{type:'end',status:'success',environmentReset:false});await second;
+   assert.equal(f.engines.calls.runs[1].files[0].content,content);assert.equal(f.engines.calls.runs.length,2);assert.equal(f.engines.calls.maxActive,1);
+  }finally{gate.resolve();if(f.engines.calls.runs.length>1)f.engines.emit(1,{type:'end',status:'success',environmentReset:false});await first;await second;await f.close();}
+ }
+});
+
 test('sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores', async () => {
   const f = setup(); await f.manager.setContext(context()); await f.manager.setContext(context('pandas'));
   assert.equal(f.manager.getSnapshot().phase, 'collapsed');

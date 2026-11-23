@@ -1,0 +1,55 @@
+(node:99268) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preset cliente: autocompletado SQL conserva arrays de columnas CTE y nombres de tablas al transformar iteradores (613.454334ms)
+✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (36.363625ms)
+✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (17.669084ms)
+✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (12.7505ms)
+✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (28.48075ms)
+✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (162.23375ms)
+✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (8.319875ms)
+✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (97.463167ms)
+✔ regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar (85.32725ms)
+(node:99269) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición de práctica: fases independientes por perfil sin conservar texto del usuario (5.445709ms)
+✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (9.425084ms)
+✔ sesión: ejecutar durante preparación no encola trabajo cuando el motor queda listo (10.744375ms)
+✔ sesión: inspección nueva descarta una sugerencia pendiente del esquema anterior aunque no cambie el texto (3.472666ms)
+✔ sesión: recuperación explícita tras cancelled reconstruye SQL/pandas una vez y no encola otro atajo (10.183709ms)
+✔ sesión: recuperación explícita tras timeout reconstruye SQL/pandas una vez y no encola otro atajo (105.829875ms)
+✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.185416ms)
+✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (0.600916ms)
+✔ sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla (0.44025ms)
+✔ sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior (0.477292ms)
+✔ sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo (0.364875ms)
+✔ sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores (0.157625ms)
+✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (0.249917ms)
+✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (1.628959ms)
+✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (1.61675ms)
+✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (2.814ms)
+✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (2.22525ms)
+✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (21.333417ms)
+✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (4.238291ms)
+✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.26525ms)
+✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (5.431041ms)
+✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (1.632583ms)
+✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (0.401959ms)
+✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (1.525583ms)
+✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (0.398458ms)
+✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (6.111458ms)
+✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (1.943333ms)
+✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (1.655ms)
+✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (0.376416ms)
+✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (1.564375ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1683.98975
