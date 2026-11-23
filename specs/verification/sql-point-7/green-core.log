@@ -1,0 +1,83 @@
+(node:85397) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ regiones: el puente valida claves y relaciones sin rechazar esquemas anteriores ni referencias implícitas (2.006959ms)
+✔ puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera (0.377042ms)
+✔ puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido (2.807ms)
+✔ puente: contexto SQL y esquema serializables, con límites y tipos completos (0.4555ms)
+(node:85398) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ panel: resolver reconoce SQL/pandas ejecutables, sin categorías (1.34875ms)
+✔ panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo (0.09675ms)
+✔ regiones: disposición interior según espacio útil, sin depender del modo del dock (0.087875ms)
+✔ panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible (0.102917ms)
+✔ panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados (5.188708ms)
+✔ panel: añadir un perfil futuro no activa automáticamente un editor sin preparación (0.215083ms)
+✔ diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda (0.074042ms)
+✔ diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente (0.961875ms)
+(node:85399) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (85.254125ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.478166ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (1.710458ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (2.504792ms)
+✖ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (18.248292ms)
+✔ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (0.967292ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (0.726417ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.640083ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (1.782416ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (1.476292ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (29.9245ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (207.857042ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 795.871417
+
+✖ failing tests:
+
+test at tests/practice-sqlite.test.ts:80:1
+✖ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (18.248292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    [
+      {
+        columns: [
+          'proveedor_id'
+        ],
+  ...
+      },
+  +   {
+  +     columns: [
+  +       'categoria'
+  +     ],
+  +     table: 'categorias',
+  +     targetColumns: [
+  +       'nombre'
+  +     ]
+  +   }
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts:85:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { columns: [Array], table: 'proveedores', targetColumns: [Array] }, { columns: [Array], table: 'categorias', targetColumns: [Array] } ],
+    expected: [ { columns: [Array], table: 'proveedores', targetColumns: [Array] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

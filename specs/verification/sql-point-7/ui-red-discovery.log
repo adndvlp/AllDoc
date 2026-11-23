@@ -1,0 +1,7 @@
+
+> alldoc@0.1.0 test:ui:sql:regions:red
+> playwright test tests/ui/practice-regions.spec.ts --project=celular --workers=1 -g 'regiones en orden:' --list
+
+Listing tests:
+  [celular] › practice-regions.spec.ts:10:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+Total: 1 test in 1 file

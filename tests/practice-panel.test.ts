@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createPracticeEditorContextResolver, resolvePracticeContext, resolvePracticeEditorContext} from '../src/practice/context.ts';
 import {concepts} from '../src/content/concepts.ts';
 import {practiceLayout, practiceSize} from '../src/practice/layout.ts';
+import * as panelLayout from '../src/practice/layout.ts';
 import {practiceRegistry} from '../src/practice/profiles.ts';
 import {createDraftStore} from '../src/practice/drafts.ts';
 import {createPracticeSessionManager} from '../src/practice/session-manager.ts';
@@ -28,6 +29,14 @@ test('panel: disposición por espacio real y tamaño raíz, sin clasificar por d
   assert.equal(practiceLayout({width: 844, height: 334, rem: 16}), 'modal');
   assert.equal(practiceLayout({width: 1200, height: 800, rem: 32}), 'modal');
   assert.equal(practiceLayout({width: 1600, height: 200, rem: 16}), 'modal');
+});
+
+test('regiones: disposición interior según espacio útil, sin depender del modo del dock', () => {
+  const surface = (panelLayout as unknown as {practiceSurface?: (space: {width:number;height:number;rem:number}) => string}).practiceSurface;
+  assert.equal(typeof surface, 'function', 'El panel necesita distinguir superficie amplia y compacta');
+  assert.equal(surface!({width: 512, height: 544, rem: 16}), 'stacked');
+  for (const space of [{width:511,height:800,rem:16},{width:900,height:543,rem:16},{width:768,height:600,rem:32}]) assert.equal(surface!(space), 'compact');
+  assert.equal(surface!({width:1024,height:1088,rem:32}), 'stacked');
 });
 
 test('panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible', () => {

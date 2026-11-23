@@ -1,0 +1,38 @@
+(node:84784) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ regiones: el puente valida claves y relaciones sin rechazar esquemas anteriores ni referencias implícitas (1.666834ms)
+✔ puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera (0.316458ms)
+✔ puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido (0.674417ms)
+✔ puente: contexto SQL y esquema serializables, con límites y tipos completos (0.14975ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 190.320334
+
+✖ failing tests:
+
+test at tests/practice-bridge.test.ts:5:1
+✖ regiones: el puente valida claves y relaciones sin rechazar esquemas anteriores ni referencias implícitas (1.666834ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts:15:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

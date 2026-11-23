@@ -1,0 +1,29 @@
+{
+  "reviewed": {
+    "tests/ui/__screenshots__/celular/business-data.png": "bd70606a8ab970c365be6cfabd0cf04333f4131a0f0024db33c8d4e20d917b91",
+    "tests/ui/__screenshots__/celular/practice-200.png": "bd7b8a890e44845f1333e69e89db38796ae15d131381cde323349ffb87185b8c",
+    "tests/ui/__screenshots__/celular/practice-actions.png": "9df847c38af73ccf2155f3ec5366999711bd9f9711cd728a46ef1fdf01cc401c",
+    "tests/ui/__screenshots__/celular/practice-data.png": "7da52f9ce940051c4a4eb71cb2ffef4432c77418ff6c6d589002e80517c2b396",
+    "tests/ui/__screenshots__/celular/practice-pandas.png": "2b98dba1ec1ce99040ce38574515737717bba49a0eccbc5f262bd228dcc43303",
+    "tests/ui/__screenshots__/celular/practice-sql.png": "28b222a25a30be0f20e7ee7208770a660b6eb4a7bc6b776a1c123c022bcf4e20",
+    "tests/ui/__screenshots__/celular/python-schema.png": "5f42ca909b8d49195149f812db6d53d78911882b2ff8b1bc9b451785d944dc38",
+    "tests/ui/__screenshots__/celular/sqlite-schema.png": "43c1719f3887a5acff421ee4ccb28dbcceb190a4ccaea83b7073752de3a68a02",
+    "tests/ui/__screenshots__/laptop/business-data.png": "be243e7f9e2b4cae50953e08e70ae0b2055ac5db5877c819dc003ea7b9ad4f48",
+    "tests/ui/__screenshots__/laptop/practice-200.png": "bd7b8a890e44845f1333e69e89db38796ae15d131381cde323349ffb87185b8c",
+    "tests/ui/__screenshots__/laptop/practice-actions.png": "e8f247a5ececba33f66837f0bef731015afdc2251146ef430a1b6ce32c642153",
+    "tests/ui/__screenshots__/laptop/practice-data.png": "587db1c185d01a084d9b5c985308f28cf421296d9f628376266ddb1e092a371c",
+    "tests/ui/__screenshots__/laptop/practice-pandas.png": "c7a534c105b52f717b794a4ec2a75746480a231d603ef002c8173bf360495674",
+    "tests/ui/__screenshots__/laptop/practice-sql.png": "cba5db2409e077482d274b1411d6fb2deab3604cc48037256e93d5372a25bd0f",
+    "tests/ui/__screenshots__/laptop/python-schema.png": "8ef72ced49bfc3748e4bd1bd9d3d82ff3f77c9e19cc59043c2a9db7ee79cd288",
+    "tests/ui/__screenshots__/laptop/sqlite-schema.png": "d011d4fdfa2675f44a234f7d1e9f9b4eb81c0be2ddcbea2a0a2b7a56cb459c78"
+  },
+  "recapture": [
+    "tests/ui/__screenshots__/celular/business-result.png",
+    "tests/ui/__screenshots__/celular/python-result.png",
+    "tests/ui/__screenshots__/celular/sqlite-result.png",
+    "tests/ui/__screenshots__/laptop/business-result.png",
+    "tests/ui/__screenshots__/laptop/python-result.png",
+    "tests/ui/__screenshots__/laptop/sqlite-result.png"
+  ],
+  "reason": "Three result captures per project kept rows below visible area; test-only change clicks Ir al resultado, asserts last row in viewport and waits for local save."
+}

@@ -1,0 +1,132 @@
+(node:84422) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (419.036584ms)
+✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (29.845792ms)
+✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (18.3885ms)
+✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (41.380667ms)
+✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (162.069542ms)
+✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (8.333917ms)
+✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (73.380417ms)
+✖ regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar (65.811292ms)
+(node:84423) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ panel: resolver reconoce SQL/pandas ejecutables, sin categorías (3.913916ms)
+✔ panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo (0.293292ms)
+✖ regiones: disposición interior según espacio útil, sin depender del modo del dock (2.24775ms)
+✔ panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible (0.322459ms)
+✔ panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados (8.673458ms)
+✔ panel: añadir un perfil futuro no activa automáticamente un editor sin preparación (0.469292ms)
+✔ diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda (0.166333ms)
+✔ diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente (1.713209ms)
+(node:84424) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (86.988125ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.573333ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (1.600833ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (2.137334ms)
+✖ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (19.329334ms)
+✖ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (8.2695ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (1.22325ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.693292ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (1.979959ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (2.883084ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (25.220792ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (123.02775ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 24
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1267.7185
+
+✖ failing tests:
+
+test at tests/client-compilation.test.ts:137:1
+✖ regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar (65.811292ms)
+  AssertionError [ERR_ASSERTION]: Las regiones no deben ocultarse con pestañas excluyentes
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts:151:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/practice-panel.test.ts:34:1
+✖ regiones: disposición interior según espacio útil, sin depender del modo del dock (2.24775ms)
+  AssertionError [ERR_ASSERTION]: El panel necesita distinguir superficie amplia y compacta
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts:36:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/practice-sqlite.test.ts:80:1
+✖ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (19.329334ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - true
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts:84:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/practice-sqlite.test.ts:94:1
+✖ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (8.2695ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(update.some(event=>event.type==='stream'&&/1 fila afectada/.test(event.text)))
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts:97:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

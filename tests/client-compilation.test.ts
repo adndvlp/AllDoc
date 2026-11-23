@@ -28,6 +28,12 @@ function compile<T>(path: string, imports: Record<string, unknown> = {}): T {
   return module.exports as T;
 }
 
+function regionModules() {
+  const region=compile<typeof import('../src/components/PracticePanel/Region.tsx')>('../src/components/PracticePanel/Region.tsx',{'./styles.module.css':{}});
+  const inspector=compile<typeof import('../src/components/PracticePanel/DataInspector.tsx')>('../src/components/PracticePanel/DataInspector.tsx',{'./styles.module.css':{},'./Region':region});
+  return {'./Region':region,'./DataInspector':inspector,'@site/src/practice/layout':compile<typeof import('../src/practice/layout.ts')>('../src/practice/layout.ts')};
+}
+
 test('ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible', () => {
   const fixture: {context: ReturnType<typeof practiceContext> | null; openExample(): void} = {context: practiceContext(), openExample() {}};
   const {ConceptNote} = compile<{ConceptNote: import('react').ComponentType<{concept: (typeof sqlConcepts)[number]; conceptId: string; kind: string; language: string}>}>('../src/components/ConceptNote/index.tsx', {
@@ -124,6 +130,7 @@ test('panel con tercer perfil de prueba: etiqueta propia y controles de detener/
     state: {phase: 'running', draft: {workspace: ws, status: 'clean'}, schema: {version: 0, entities: []}, events: [], error: null},
     requested: true, visible: true, error: null};
   const {default: Panel} = compile<typeof import('../src/components/PracticePanel/index.tsx')>('../src/components/PracticePanel/index.tsx', {
+    ...regionModules(),
     '@site/src/practice/interaction': compile<typeof import('../src/practice/interaction.ts')>('../src/practice/interaction.ts'),
     '@docusaurus/theme-common/internal': {useNavbarMobileSidebar: () => ({shouldRender: false})},
     '../PracticeProvider': {usePractice: () => fixture}, '../SearchProvider': {useSearch: () => ({store: {}})},
@@ -132,4 +139,27 @@ test('panel con tercer perfil de prueba: etiqueta propia y controles de detener/
   });
   const html = renderToStaticMarkup(createElement(Panel, {layout: 'parallel'}));
   assert.ok(html.includes('Perfil de prueba')); assert.ok(html.includes('Detener')); assert.ok(html.includes('Reiniciar entorno'));
+});
+
+test('regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar', () => {
+  const resultModule=compile<typeof import('../src/components/PracticeResults/index.tsx')>('../src/components/PracticeResults/index.tsx',{'../PracticePanel/styles.module.css':{}});
+  const fixture={context:practiceContext(),state:{phase:'ready',generation:1,draft:{workspace:workspace(),status:'clean'},schema:{version:1,entities:[
+    {name:'productos',kind:'table',columns:[{name:'precio',type:'integer'}],rowCount:1,preview:{columns:[{name:'precio',type:'integer'}],rows:[[500]],truncated:false}},
+    {name:'clientes',kind:'table',columns:[{name:'nombre',type:'text'}],rowCount:1,preview:{columns:[{name:'nombre',type:'text'}],rows:[['Ana']],truncated:false}},
+  ]},events:[],error:null},visible:true,requested:true,error:null};
+  const {default:Panel}=compile<typeof import('../src/components/PracticePanel/index.tsx')>('../src/components/PracticePanel/index.tsx',{
+    ...regionModules(),
+    '@site/src/practice/interaction':compile<typeof import('../src/practice/interaction.ts')>('../src/practice/interaction.ts'),
+    '@docusaurus/theme-common/internal':{useNavbarMobileSidebar:()=>({shouldRender:false})},
+    '../PracticeProvider':{usePractice:()=>fixture},'../SearchProvider':{useSearch:()=>({store:{}})},
+    '../Icon':{__esModule:true,default:()=>null},'../PracticeResults':resultModule,
+    '@site/src/lib/dialog-coordination':{suspendDialogEvent:'test'},'./styles.module.css':{},
+  });
+  const html=renderToStaticMarkup(createElement(Panel,{layout:'parallel'}));
+  assert.ok(!html.includes('role="tablist"'),'Las regiones no deben ocultarse con pestañas excluyentes');
+  assert.ok(html.indexOf('data-practice-region="data"')<html.indexOf('data-practice-region="editor"'));
+  assert.ok(html.includes('data-practice-region="editor"'));
+  assert.ok(!html.includes('data-practice-region="results"'));
+  assert.equal((html.match(/<table>/g)??[]).length,1,'Solo se monta la vista previa de la tabla seleccionada');
+  assert.ok(html.includes('Tabla de datos'));
 });

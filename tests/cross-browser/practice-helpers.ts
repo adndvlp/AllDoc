@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from '../ui/practice-helpers';
 import {expect, test, type Page, type TestInfo} from '@playwright/test';
 
 export const profiles = [
@@ -35,16 +36,16 @@ export async function ready(page: Page, profile: Profile) {
   });
 }
 export async function showResults(page: Page) {
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
 }
 export async function expectNoExecution(page: Page) {
   await showResults(page);
-  await expect(panel(page).getByText('Todavía no has ejecutado código.', {exact: true})).toBeVisible();
-  await expect(panel(page).getByRole('table')).toHaveCount(0);
-  await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+  await expect(practiceResults(page)).toHaveCount(0);
+  await expect(practiceResults(page).getByRole('table')).toHaveCount(0);
+  await openPracticeRegion(page,'editor');
 }
 export async function fillCode(page: Page, profile: Profile, content: string) {
-  await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+  await openPracticeRegion(page,'editor');
   await code(page, profile).fill(content);
   await code(page, profile).press('End');
   await expectCode(page, profile, content);

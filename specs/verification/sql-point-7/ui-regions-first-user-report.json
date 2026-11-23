@@ -1,0 +1,14 @@
+{
+  "source": "user terminal output",
+  "passed": 24,
+  "failed": 3,
+  "duration": "1.6m",
+  "failedCase": "plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio",
+  "projects": [
+    "celular",
+    "ipad",
+    "laptop"
+  ],
+  "artifactSourceUsesInnerText": false,
+  "fixAlreadyApplied": true
+}

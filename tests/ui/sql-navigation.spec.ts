@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from './practice-helpers';
 import {test,expect,type Page} from '@playwright/test';
 import {chooseHeaderArea,expectSelectedHeaderArea,goHome} from './header-helpers';
 import {openCatalogSqlGroup,openSqlGroup} from './sql-tree-helpers';
@@ -17,14 +18,14 @@ async function topics(page:Page){
 }
 async function practice(page:Page){
  await page.getByRole('button',{name:'Practicar SQL',exact:true}).click();
- await panel(page).getByRole('tab',{name:'Código',exact:true}).click();
+ await openPracticeRegion(page,'editor');
  await expect(code(page)).toBeVisible();
  await expect(panel(page).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();
 }
 async function execute(page:Page,sql:string){
- await panel(page).getByRole('tab',{name:'Código',exact:true}).click();
+ await openPracticeRegion(page,'editor');
  await code(page).fill(sql);await panel(page).getByRole('button',{name:'Ejecutar',exact:true}).click();
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();
+ await openPracticeRegion(page,'results');
  await expect(panel(page).getByText('Ejecución completada',{exact:true})).toBeVisible();
 }
 
@@ -86,15 +87,15 @@ test('documento compartido: canonical único, favorito visible y enlaces interno
 test('sesión compartida: cambiar de área conserva motor, tabla creada, borrador y resultados sin ejecutar',async({page})=>{
  await go(page,primary+'select');await practice(page);
  await execute(page,'CREATE TABLE compartida(valor INTEGER); INSERT INTO compartida VALUES(7); SELECT valor FROM compartida;');
- await expect(panel(page).getByRole('table').getByRole('cell')).toHaveText(['7']);
+ await expect(practiceResults(page).getByRole('table').getByRole('cell')).toHaveText(['7']);
  const frame=page.locator('iframe[data-practice-runtime]');await frame.evaluate(e=>e.setAttribute('data-instance-test','shared'));
- await panel(page).getByRole('tab',{name:'Código',exact:true}).click();await code(page).fill('SELECT valor + 1 AS siguiente FROM compartida;');
+ await openPracticeRegion(page,'editor');await code(page).fill('SELECT valor + 1 AS siguiente FROM compartida;');
  await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
  await chooseHeaderArea(page,'Lenguajes');await expect(page).toHaveURL(shared+'select');await practice(page);
  await expect(code(page)).toHaveText('SELECT valor + 1 AS siguiente FROM compartida;');
  await expect(frame).toHaveAttribute('data-instance-test','shared');
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page).getByRole('table').getByRole('cell')).toHaveText(['7']);
- await execute(page,'SELECT valor + 1 AS siguiente FROM compartida;');await expect(panel(page).getByRole('table').getByRole('cell')).toHaveText(['8']);
+ await openPracticeRegion(page,'results');await expect(practiceResults(page).getByRole('table').getByRole('cell')).toHaveText(['7']);
+ await execute(page,'SELECT valor + 1 AS siguiente FROM compartida;');await expect(practiceResults(page).getByRole('table').getByRole('cell')).toHaveText(['8']);
  await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
  await chooseHeaderArea(page,'Análisis de datos');await expect(page).toHaveURL(primary+'select');await practice(page);
  await expect(code(page)).toHaveText('SELECT valor + 1 AS siguiente FROM compartida;');await expect(frame).toHaveAttribute('data-instance-test','shared');

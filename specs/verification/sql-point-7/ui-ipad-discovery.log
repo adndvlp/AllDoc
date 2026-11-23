@@ -1,0 +1,11 @@
+Listing tests:
+  [ipad] › practice-regions.spec.ts:27:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [ipad] › practice-regions.spec.ts:45:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [ipad] › practice-regions.spec.ts:60:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [ipad] › practice-regions.spec.ts:73:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [ipad] › practice-regions.spec.ts:84:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [ipad] › practice-regions.spec.ts:94:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [ipad] › practice-regions.spec.ts:103:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [ipad] › practice-regions.spec.ts:115:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [ipad] › practice-regions.spec.ts:123:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+Total: 9 tests in 1 file

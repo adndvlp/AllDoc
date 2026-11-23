@@ -1,0 +1,27 @@
+{
+  "changed": [
+    "tests/ui/__screenshots__/celular/business-data.png",
+    "tests/ui/__screenshots__/celular/business-result.png",
+    "tests/ui/__screenshots__/celular/practice-200.png",
+    "tests/ui/__screenshots__/celular/practice-actions.png",
+    "tests/ui/__screenshots__/celular/practice-data.png",
+    "tests/ui/__screenshots__/celular/practice-pandas.png",
+    "tests/ui/__screenshots__/celular/practice-sql.png",
+    "tests/ui/__screenshots__/celular/python-result.png",
+    "tests/ui/__screenshots__/celular/python-schema.png",
+    "tests/ui/__screenshots__/celular/sqlite-result.png",
+    "tests/ui/__screenshots__/celular/sqlite-schema.png",
+    "tests/ui/__screenshots__/laptop/business-data.png",
+    "tests/ui/__screenshots__/laptop/business-result.png",
+    "tests/ui/__screenshots__/laptop/practice-200.png",
+    "tests/ui/__screenshots__/laptop/practice-actions.png",
+    "tests/ui/__screenshots__/laptop/practice-data.png",
+    "tests/ui/__screenshots__/laptop/practice-pandas.png",
+    "tests/ui/__screenshots__/laptop/practice-sql.png",
+    "tests/ui/__screenshots__/laptop/python-result.png",
+    "tests/ui/__screenshots__/laptop/python-schema.png",
+    "tests/ui/__screenshots__/laptop/sqlite-result.png",
+    "tests/ui/__screenshots__/laptop/sqlite-schema.png"
+  ],
+  "newReviewedDrift": []
+}

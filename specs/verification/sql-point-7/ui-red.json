@@ -1,0 +1,312 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.0.0/bin/node",
+      "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/.bin/playwright",
+      "test",
+      "tests/ui/practice-regions.spec.ts",
+      "--project=celular",
+      "--workers=1",
+      "-g",
+      "regiones en orden:"
+    ],
+    "configFile": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/playwright.config.ts",
+    "rootDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-pequeno",
+        "name": "celular-pequeno",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular",
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "celular-horizontal",
+        "name": "celular-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad",
+        "name": "ipad",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ipad-horizontal",
+        "name": "ipad-horizontal",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "laptop",
+        "name": "laptop",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "escritorio",
+        "name": "escritorio",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "celular",
+        "testDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "snapshotDir": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "browserName": "chromium",
+          "locale": "es-MX",
+          "colorScheme": "dark",
+          "reducedMotion": "reduce",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "celular"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run build:ui && npm run serve:ui",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "practice-regions.spec.ts",
+      "file": "practice-regions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "celular",
+              "projectName": "celular",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8540,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel]').getByRole('tablist')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel]').getByRole('tablist') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').getByRole('tablist')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel]').getByRole('tablist')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel]').getByRole('tablist') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').getByRole('tablist')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-regions.spec.ts:12:49",
+                    "location": {
+                      "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-regions.spec.ts",
+                      "column": 49,
+                      "line": 12
+                    },
+                    "snippet": " \u001b[90m 10 |\u001b[39m test(\u001b[32m'regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 11 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m  \u001b[36mawait\u001b[39m expect(panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tablist'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m  expect(\u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-practice-region]'\u001b[39m)\u001b[33m.\u001b[39mevaluateAll(regions\u001b[33m=>\u001b[39mregions\u001b[33m.\u001b[39mmap(region\u001b[33m=>\u001b[39mregion\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'data-practice-region'\u001b[39m))))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'editor'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m  \u001b[36mawait\u001b[39m expect(panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-practice-region=\"results\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-editor'\u001b[39m)\u001b[33m.\u001b[39mevaluate(element\u001b[33m=>\u001b[39melement\u001b[33m.\u001b[39msetAttribute(\u001b[32m'data-instance-test'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'original'\u001b[39m))\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-regions.spec.ts",
+                        "column": 49,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('dialog[data-practice-panel]').getByRole('tablist')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('dialog[data-practice-panel]').getByRole('tablist') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for locator('dialog[data-practice-panel]').getByRole('tablist')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 10 |\u001b[39m test(\u001b[32m'regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 11 |\u001b[39m  \u001b[36mawait\u001b[39m open(page)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m  \u001b[36mawait\u001b[39m expect(panel(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tablist'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m  expect(\u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-practice-region]'\u001b[39m)\u001b[33m.\u001b[39mevaluateAll(regions\u001b[33m=>\u001b[39mregions\u001b[33m.\u001b[39mmap(region\u001b[33m=>\u001b[39mregion\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'data-practice-region'\u001b[39m))))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'editor'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m  \u001b[36mawait\u001b[39m expect(panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-practice-region=\"results\"]'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m  \u001b[36mawait\u001b[39m panel(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'.cm-editor'\u001b[39m)\u001b[33m.\u001b[39mevaluate(element\u001b[33m=>\u001b[39melement\u001b[33m.\u001b[39msetAttribute(\u001b[32m'data-instance-test'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'original'\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[2m    at /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-regions.spec.ts:12:49\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T21:14:16.660Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-regions-regiones--347be-tar-sin-sustituir-el-código-celular/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-regions-regiones--347be-tar-sin-sustituir-el-código-celular/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/test-results/artifacts/practice-regions-regiones--347be-tar-sin-sustituir-el-código-celular/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/ui/practice-regions.spec.ts",
+                    "column": 49,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2c89ee63b746b21f495d-06061d29b279e7e967ef",
+          "file": "practice-regions.spec.ts",
+          "line": 10,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-23T21:14:01.787Z",
+    "duration": 23643.981,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

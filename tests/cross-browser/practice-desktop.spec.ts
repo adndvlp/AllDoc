@@ -1,3 +1,4 @@
+import {practiceResults} from '../ui/practice-helpers';
 import {test, expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {profiles, panel, code, runButton, openPractice, ready, fillCode, expectCode, execute, completion, expectNoExecution, showResults, capture} from './practice-helpers';
@@ -14,7 +15,7 @@ for (const profile of profiles) {
       await expect(code(page, profile)).toContainText(profile.seed);
       await expectNoExecution(page);
       await execute(page, profile, profile.query);
-      const table = panel(page).getByRole('table');
+      const table = practiceResults(page).getByRole('table');
       await expect(table).toHaveCount(1);
       await expect(table.getByRole('columnheader')).toHaveText(['nombre', 'precio']);
       await expect(table.getByRole('row')).toHaveCount(3);
@@ -42,7 +43,7 @@ for (const profile of profiles) {
       await fillCode(page, profile, profile.query);
       await code(page, profile).press('ControlOrMeta+Enter'); await showResults(page);
       await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
-      await expect(panel(page).getByRole('table')).toContainText('3500');
+      await expect(practiceResults(page).getByRole('table')).toContainText('3500');
     });
 
     test(caseTitle(profile.id + '-03'), async ({page}, info) => {
@@ -75,14 +76,14 @@ for (const profile of profiles) {
       for (let i = 0; i < selected.length; i++) await code(page, profile).press('Shift+ArrowRight');
       await runButton(page).click(); await showResults(page);
       await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
-      await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(2);
-      await expect(panel(page).getByRole('table')).toContainText(profile.id === 'SQL' ? '42' : 'Teclado');
+      await expect(practiceResults(page).getByRole('table').getByRole('row')).toHaveCount(2);
+      await expect(practiceResults(page).getByRole('table')).toContainText(profile.id === 'SQL' ? '42' : 'Teclado');
       await fillCode(page, profile, profile.id === 'SQL' ? invalid : 'x = 1\n' + invalid);
       await runButton(page).click(); await showResults(page);
       await expect(panel(page).getByText('La ejecución terminó con error', {exact: true})).toBeVisible();
       await expect(panel(page).getByRole('alert')).toContainText(profile.id === 'SQL' ? 'consulta.sql' : 'main.py:2:');
       await execute(page, profile, profile.query);
-      await expect(panel(page).getByRole('table')).toContainText('3500');
+      await expect(practiceResults(page).getByRole('table')).toContainText('3500');
     });
 
     test(caseTitle(profile.id + '-05'), async ({page}) => {
@@ -95,7 +96,7 @@ for (const profile of profiles) {
       await ready(page, profile); await expectNoExecution(page);
       await code(page, profile).press('ControlOrMeta+Enter'); await showResults(page);
       await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
-      await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(profile.id === 'SQL' ? 19 : 4);
+      await expect(practiceResults(page).getByRole('table').getByRole('row')).toHaveCount(profile.id === 'SQL' ? 19 : 4);
     });
   });
 }

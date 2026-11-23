@@ -1,0 +1,57 @@
+(node:85865) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (497.593084ms)
+✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (30.80125ms)
+✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (15.460709ms)
+✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (42.894334ms)
+✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (167.851ms)
+✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (9.94875ms)
+✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (96.32675ms)
+✔ regiones: el panel comparte Datos/Editor, no monta pestañas ni una salida vacía antes de ejecutar (86.527833ms)
+(node:85866) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ regiones: el puente valida claves y relaciones sin rechazar esquemas anteriores ni referencias implícitas (1.760792ms)
+✔ puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera (0.576084ms)
+✔ puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido (2.392875ms)
+✔ puente: contexto SQL y esquema serializables, con límites y tipos completos (0.23875ms)
+(node:85867) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ panel: resolver reconoce SQL/pandas ejecutables, sin categorías (1.281583ms)
+✔ panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo (0.097542ms)
+✔ regiones: disposición interior según espacio útil, sin depender del modo del dock (0.086125ms)
+✔ panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible (0.106125ms)
+✔ panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados (3.704958ms)
+✔ panel: añadir un perfil futuro no activa automáticamente un editor sin preparación (0.215584ms)
+✔ diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda (0.075458ms)
+✔ diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente (0.901ms)
+(node:85868) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (75.599667ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (1.415084ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (2.043458ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (3.537166ms)
+✔ regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas (30.455083ms)
+✔ regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior (1.381917ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (0.921375ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (0.644458ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (1.624334ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (1.486ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (32.573083ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (448.922958ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1744.545833

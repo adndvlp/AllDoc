@@ -15,6 +15,12 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
     wasm: {peekPtr(pointer: number): number}};
   const {capi, wasm} = sqlite; const encoder = new TextEncoder(); const decoder = new TextDecoder();
   let db: Database | null = null; let seed: MaterializedDataset | null = null; let schemaVersion = 0;
+  let statementEffect: 'ddl'|'dml'|null = null;
+  const ddlActions=new Set<number>([capi.SQLITE_CREATE_INDEX,capi.SQLITE_CREATE_TABLE,capi.SQLITE_CREATE_TEMP_INDEX,capi.SQLITE_CREATE_TEMP_TABLE,
+    capi.SQLITE_CREATE_TEMP_TRIGGER,capi.SQLITE_CREATE_TEMP_VIEW,capi.SQLITE_CREATE_TRIGGER,capi.SQLITE_CREATE_VIEW,
+    capi.SQLITE_DROP_INDEX,capi.SQLITE_DROP_TABLE,capi.SQLITE_DROP_TEMP_INDEX,capi.SQLITE_DROP_TEMP_TABLE,
+    capi.SQLITE_DROP_TEMP_TRIGGER,capi.SQLITE_DROP_TEMP_VIEW,capi.SQLITE_DROP_TRIGGER,capi.SQLITE_DROP_VIEW,capi.SQLITE_ALTER_TABLE]);
+  const dmlActions=new Set<number>([capi.SQLITE_INSERT,capi.SQLITE_UPDATE,capi.SQLITE_DELETE]);
   const quote = (value: string) => '"' + value.replaceAll('"', '""') + '"';
   const requireDB = () => {if (!db) throw new Error('El entorno SQL no está preparado'); return db;};
   const raw = (value: unknown): null | string | number | bigint => {
@@ -57,10 +63,12 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
       }
       if(parsed.foreignKeys===true&&connection.selectArrays('PRAGMA foreign_key_check').length)throw new Error('La semilla viola claves foráneas');
       connection.exec('COMMIT;');
-      capi.sqlite3_set_authorizer(connection.pointer!, (_arg, action, a, b) => {
+      capi.sqlite3_set_authorizer(connection.pointer!, (_arg, action, a, b, _schema, trigger) => {
         if (action === capi.SQLITE_ATTACH || action === capi.SQLITE_DETACH) return capi.SQLITE_DENY;
         if (action === capi.SQLITE_PRAGMA && ['hard_heap_limit', 'soft_heap_limit', 'temp_store_directory', 'data_store_directory', 'writable_schema'].includes(String(a).toLowerCase())) return capi.SQLITE_DENY;
         if (action === capi.SQLITE_FUNCTION && ['load_extension', 'readfile', 'writefile'].includes(String(b).toLowerCase())) return capi.SQLITE_DENY;
+        if(ddlActions.has(action))statementEffect='ddl';
+        else if(!trigger&&statementEffect!=='ddl'&&dmlActions.has(action)&&!['sqlite_master','sqlite_schema','sqlite_temp_master','sqlite_temp_schema'].includes(String(a)))statementEffect='dml';
         return capi.SQLITE_OK;
       }, 0);
       schemaVersion++;
@@ -92,6 +100,7 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
           let pointer = start;
           while (pointer < start + length) {
             statementOffset = pointer - start;
+            statementEffect=null;
             const rc = capi.sqlite3_prepare_v3(connection.pointer!, pointer, start + length - pointer, 0, statementPointer, tailPointer);
             const handle = extra.wasm.peekPtr(statementPointer);
             const tail = extra.wasm.peekPtr(tailPointer);
@@ -103,7 +112,6 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
             try {
               const names = statement.columnCount ? statement.getColumnNames() : [];
               const rows: Raw[][] = []; let truncated = false; let previewBytes = 0;
-              const before = connection.changes(true, true);
               while (statement.step()) {
                 if (!names.length) continue;
                 if (rows.length === 200) {truncated = true; break;}
@@ -114,8 +122,8 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
               }
               if (names.length) send({...identity, type: 'table', ...table(names, rows), truncated});
               else {
-                const changes = BigInt(connection.changes(true, true)) - BigInt(before);
-                send({...identity, type: 'stream', channel: 'stdout', text: changes ? `Cambios registrados: ${changes}\n` : 'Sentencia completada.\n'});
+                const changes=connection.changes(false,true);
+                send({...identity,type:'stream',channel:'stdout',text:statementEffect==='dml'?`${changes} ${BigInt(changes)===1n?'fila afectada':'filas afectadas'}.\n`:'Sentencia completada.\n'});
               }
             } finally {statement.finalize();}
           }
@@ -143,8 +151,14 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
         const columns = connection.selectArrays(`PRAGMA table_xinfo(${quote(String(name))})`).filter((row) => row[6] !== 1).map((row) => {
           const declared = String(row[2]).toUpperCase();
           const type: ColumnType = declared.includes('INT') ? 'integer' : /REAL|FLOA|DOUB/.test(declared) ? 'number' : 'text';
-          return {name: String(row[1]), type};
+          return {name: String(row[1]), type,...(Number(row[5])>0?{primaryKey:true}:{})};
         });
+        const relations=new Map<number,{columns:string[];table:string;targetColumns:(string|null)[]}>();
+        for(const row of connection.selectArrays(`PRAGMA foreign_key_list(${quote(String(name))})`).sort((a,b)=>Number(a[0])-Number(b[0])||Number(a[1])-Number(b[1]))){
+          const id=Number(row[0]);const key=relations.get(id)??{columns:[],table:String(row[2]),targetColumns:[]};
+          key.columns.push(String(row[3]));key.targetColumns.push(row[4]===null?null:String(row[4]));relations.set(id,key);
+        }
+        const foreignKeys=Array.from(relations.values());
         // Las vistas pueden ejecutar programas arbitrariamente costosos. Solo se previsualizan tablas físicas.
         if (kind !== 'table') return {name: String(name), kind: 'table' as const, columns};
         const rowCount = Number(connection.selectValue(`SELECT count(*) FROM ${quote(String(name))}`));
@@ -159,7 +173,7 @@ export function createSQLiteEngine(sqlite: Sqlite3Static): SQLiteEngine {
             rows.push(row); remainingBytes -= size; remainingRows--;
           }
         } finally {statement.finalize();}
-        return {name: String(name), kind: 'table' as const, columns, rowCount,
+        return {name: String(name), kind: 'table' as const, columns, rowCount,...(foreignKeys.length?{foreignKeys}:{}),
           preview: {...table(names, rows), truncated: rows.length < rowCount}};
       });
       return {version: schemaVersion, entities};

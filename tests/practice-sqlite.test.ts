@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import initSQLite, {type Sqlite3Static} from '@sqlite.org/sqlite-wasm';
 import {createSQLiteEngine, type SQLiteEngine} from '../src/practice/adapters/sqlite/core.ts';
 import {createDatasetAdapter} from '../src/practice/datasets/index.ts';
-import type {MaterializedDataset, RunRequest, RuntimeEvent} from '../src/practice/contracts.ts';
+import type {MaterializedDataset, RunRequest, RuntimeEvent, RuntimeSchema} from '../src/practice/contracts.ts';
 import {isRuntimeEvent} from '../src/practice/protocol.ts';
 import {getSqlConcept} from '../src/content/notes/sql.ts';
 import {sqliteEnvironment} from '../src/practice/adapters/sqlite/environment.ts';
@@ -75,6 +75,34 @@ test('SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no mod
   assert.deepEqual(tables(run(b, 'SELECT precio FROM productos;'))[0].rows, [[500], [250], [3500]]);
   a.reset(); assert.equal(a.inspect().entities.some((entity) => entity.name === 'ventas'), false);
   assert.deepEqual(tables(run(a, 'SELECT precio FROM productos;'))[0].rows, [[500], [250], [3500]]);
+});
+
+test('regiones SQL: inspección viva incluye claves primarias y relaciones reales, incluidas compuestas', () => {
+  const db = engine(); db.init(businessSeed);
+  type Entity = RuntimeSchema['entities'][number] & {foreignKeys?: readonly {columns:readonly string[];table:string;targetColumns:readonly (string|null)[]}[]};
+  const products = db.inspect().entities.find(entity => entity.name === 'productos')! as Entity;
+  assert.equal((products.columns.find(column => column.name === 'id') as {primaryKey?:boolean}).primaryKey, true);
+  assert.deepEqual(products.foreignKeys, [{columns:['proveedor_id'],table:'proveedores',targetColumns:['id']},{columns:['categoria'],table:'categorias',targetColumns:['nombre']}]);
+  assert.equal(products.rowCount, 18); assert.ok(products.preview!.rows.length <= 20);
+  run(db, 'CREATE TABLE padre(a INTEGER,b INTEGER,PRIMARY KEY(a,b)); CREATE TABLE hija(x INTEGER,y INTEGER,FOREIGN KEY(x,y) REFERENCES padre(a,b));');
+  const schema=db.inspect(); const parent=schema.entities.find(entity=>entity.name==='padre')!;
+  assert.equal(parent.columns.filter(column=>(column as {primaryKey?:boolean}).primaryKey).length,2);
+  assert.deepEqual((schema.entities.find(entity=>entity.name==='hija')! as Entity).foreignKeys,[{columns:['x','y'],table:'padre',targetColumns:['a','b']}]);
+  db.reset(); assert.ok(!db.inspect().entities.some(entity=>entity.name==='hija'));
+});
+
+test('regiones SQL: DML informa filas afectadas y DDL confirma sin reutilizar el contador anterior', () => {
+  const db=engine();
+  const update=run(db,'UPDATE productos SET precio=1 WHERE nombre=\'Monitor\';');
+  assert.ok(update.some(event=>event.type==='stream'&&/1 fila afectada/.test(event.text)));
+  const empty=run(db,'DELETE FROM productos WHERE 0;');
+  assert.ok(empty.some(event=>event.type==='stream'&&/0 filas afectadas/.test(event.text)));
+  const ddl=run(db,'CREATE TABLE nueva(id INTEGER);');
+  assert.ok(ddl.some(event=>event.type==='stream'&&/Sentencia completada/.test(event.text)));
+  assert.ok(!ddl.some(event=>event.type==='stream'&&/fila.*afectada/.test(event.text)));
+  run(db,'CREATE TABLE auditoria(valor INTEGER); CREATE TRIGGER audita AFTER UPDATE ON productos BEGIN INSERT INTO auditoria VALUES(1); END;');
+  const triggered=run(db,'UPDATE productos SET precio=2 WHERE nombre=\'Monitor\';');
+  assert.ok(triggered.some(event=>event.type==='stream'&&/1 fila afectada/.test(event.text)));
 });
 
 test('SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción', () => {

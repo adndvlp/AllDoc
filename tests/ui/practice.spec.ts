@@ -1,4 +1,5 @@
 import {test, expect, type Page, type Locator} from '@playwright/test';
+import {openPracticeRegion,practiceRegion,practiceResults} from './practice-helpers';
 
 const sql = '/apuntes/analisis-de-datos/sql/select';
 const panel = (page: Page) => page.locator('dialog[data-practice-panel]');
@@ -57,19 +58,22 @@ test('borradores: SELECT/WHERE comparten edición y pandas conserva su propio co
   await expect(code(page)).toHaveText('SELECT nombre FROM productos;');
 });
 
-test('datos: tabla común tipada y pestañas por teclado sin resultados inventados', async ({page}) => {
+test('datos: tabla común tipada y regiones por teclado sin resultados inventados', async ({page}) => {
   await go(page); await open(page);
-  const data = panel(page).getByRole('tab', {name: 'Datos', exact: true});
-  await data.click(); await expect(data).toHaveAttribute('aria-selected', 'true');
+  await openPracticeRegion(page,'data');
+  const data = practiceRegion(page,'data').getByRole('button', {name: 'Datos', exact: true});
+  await data.focus();await data.press('Space');await expect(data).toHaveAttribute('aria-expanded','false');
+  await data.press('Enter');await expect(data).toHaveAttribute('aria-expanded','true');
   const table = panel(page).getByRole('table', {name: 'Datos de productos'});
   await expect(table).toBeVisible(); await expect(table.getByRole('row')).toHaveCount(19);
   await expect(table).toContainText('Teclado'); await expect(table).toContainText('3500');
   await expect(panel(page)).toContainText('precio'); await expect(panel(page)).toContainText('integer');
   await expect(page).toHaveScreenshot('practice-data.png');
-  await data.focus(); await page.keyboard.press('ArrowRight');
-  await expect(panel(page).getByRole('tab', {name: 'Resultados', exact: true})).toBeFocused();
-  await expect(panel(page)).toContainText('Todavía no has ejecutado código');
-  await page.keyboard.press('Home'); await expect(panel(page).getByRole('tab', {name: 'Código', exact: true})).toBeFocused();
+  await expect(practiceResults(page)).toHaveCount(0);
+  const toggle=practiceRegion(page,'editor').getByRole('button',{name:'Editor',exact:true});
+  await toggle.focus();await toggle.press('Space');await expect(code(page)).toBeHidden();
+  await expect(panel(page).locator('.cm-editor')).toHaveCount(1);
+  await toggle.press('Enter');await expect(toggle).toBeFocused();
   await expect(code(page)).toBeVisible();
 });
 

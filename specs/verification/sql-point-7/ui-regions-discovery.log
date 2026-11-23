@@ -1,0 +1,33 @@
+
+> alldoc@0.1.0 test:ui:sql:regions
+> playwright test tests/ui/practice-regions.spec.ts --project=celular --project=ipad --project=laptop --workers=1 --max-failures=0 --list
+
+Listing tests:
+  [celular] › practice-regions.spec.ts:23:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [celular] › practice-regions.spec.ts:40:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [celular] › practice-regions.spec.ts:55:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [celular] › practice-regions.spec.ts:68:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [celular] › practice-regions.spec.ts:79:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [celular] › practice-regions.spec.ts:89:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [celular] › practice-regions.spec.ts:98:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [celular] › practice-regions.spec.ts:110:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [celular] › practice-regions.spec.ts:118:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [ipad] › practice-regions.spec.ts:23:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [ipad] › practice-regions.spec.ts:40:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [ipad] › practice-regions.spec.ts:55:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [ipad] › practice-regions.spec.ts:68:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [ipad] › practice-regions.spec.ts:79:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [ipad] › practice-regions.spec.ts:89:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [ipad] › practice-regions.spec.ts:98:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [ipad] › practice-regions.spec.ts:110:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [ipad] › practice-regions.spec.ts:118:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+  [laptop] › practice-regions.spec.ts:23:1 › regiones en orden: datos y editor conviven; resultado aparece solo al ejecutar sin sustituir el código
+  [laptop] › practice-regions.spec.ts:40:1 › datos elegidos: una vista previa, veinte filas como máximo, esquema vivo y consulta sobre todas las tablas
+  [laptop] › practice-regions.spec.ts:55:1 › plegado y rotación: una instancia, selección conservada y aperturas elegidas sin reinicio
+  [laptop] › practice-regions.spec.ts:68:1 › ir al resultado desplaza solo práctica; lector, encabezado y editor conservan su posición
+  [laptop] › practice-regions.spec.ts:79:1 › salidas reales: revisión anterior, cero filas, DML, DDL y error recuperable en la tercera región
+  [laptop] › practice-regions.spec.ts:89:1 › pandas conserva su dataset y DataFrame con las mismas regiones y sin controles de dialecto SQL
+  [laptop] › practice-regions.spec.ts:98:1 › 320 px, texto al 200% y teclado virtual conservan editor y controles accesibles
+  [laptop] › practice-regions.spec.ts:110:1 › contexto compartido: tabla elegida, plegado y borrador sobreviven al cambiar de área
+  [laptop] › practice-regions.spec.ts:118:1 › detener conserva código, resultado de cancelación y editor utilizable para la siguiente consulta
+Total: 27 tests in 1 file

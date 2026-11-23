@@ -9,6 +9,13 @@ export const practiceProfiles = [
     keyword: 'import pandas as pd\npd.Da', keywordLabel: 'DataFrame', columns: 'productos["pre', columnLabel: 'precio', comment: '#'},
 ];
 const panel = page => page.locator('dialog[data-practice-panel]');
+const results = page => panel(page).locator('[data-practice-region="results"]');
+async function openRegion(page,name){
+  const region=panel(page).locator(`[data-practice-region="${name}"]`);
+  if(name==='results'&&!await region.count())return;
+  const button=region.getByRole('button',{name:({data:'Datos',editor:'Editor',results:'Resultado'})[name],exact:true});
+  if(await button.getAttribute('aria-expanded')==='false')await button.click();
+}
 const editor = page => panel(page).getByRole('textbox', {name: /^Código /});
 const ready = page => expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled({timeout: 120_000});
 
@@ -54,7 +61,7 @@ async function measure(page, target, specification, act) {
           if (condition === 'ready' || condition === 'open') return Boolean(code && executing && !executing.disabled);
           if (condition === 'text') return text() === specification.text;
           if (condition === 'option') return Array.from(dialog.querySelectorAll('.cm-completionLabel')).some(label => label.textContent === specification.label);
-          if (condition === 'executed') return dialog.textContent.includes('Ejecución completada') && Boolean(dialog.querySelector('table'));
+          if (condition === 'executed') return dialog.textContent.includes('Ejecución completada') && Boolean(dialog.querySelector('[data-practice-region="results"] table'));
           if (condition === 'context') return document.querySelector('h1')?.textContent.trim() === specification.title
             && code?.getAttribute('data-language') === specification.language && text() === specification.text;
           return false;
@@ -195,9 +202,9 @@ export async function measurePracticeProfile(chromium, project, profile, baseURL
     result.cold = {editorReadyMs: cold.responses.editor - cold.eventAt, runtimeReadyMs: cold.responses.ready - cold.eventAt,
       eventAt: cold.eventAt, timeOrigin: cold.timeOrigin, reading: before, ...await phases(page)};
     result.screenshots.push(await saveScreenshot(page, output, project.name + '-' + profile.id + '-ready'));
-    await panel(page).getByRole('tab', {name: 'Datos', exact: true}).click();
+    await openRegion(page,'data');
     result.screenshots.push(await saveScreenshot(page, output, project.name + '-' + profile.id + '-data'));
-    await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+    await openRegion(page,'editor');
     const collect = (action, sample) => {sample.action = action; (result.actions[action] ??= []).push(sample); samples.push(sample);};
     for (let index = 0; index < 30; index++) {
       const close = panel(page).getByRole('button', {name: 'Volver al apunte', exact: true});
@@ -223,12 +230,12 @@ export async function measurePracticeProfile(chromium, project, profile, baseURL
     await fillCode(page, profile.id === 'sql-sqlite' ? 'SELECT nombre, precio FROM productos WHERE precio > 300;' : 'productos[productos["precio"] > 300][["nombre", "precio"]]');
     const execute = panel(page).getByRole('button', {name: 'Ejecutar', exact: true});
     const execution = await measure(page, execute, {id: 'execution', conditions: ['executed'], timeout: 30000}, async () => {
-      await execute.click(); await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+      await execute.click(); await openRegion(page,'results');
     });
     result.execution = {...execution, durationMs: execution.observedAt - execution.eventAt, budgetMs: null};
-    await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', '500']);
+    await expect(results(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', '500']);
     result.screenshots.push(await saveScreenshot(page, output, project.name + '-' + profile.id + '-result'));
-    await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+    await openRegion(page,'editor');
     if (profile.id === 'python-pandas') {
       result.contextMeasurements = {};
       const texts = {'sql-sqlite': 'SELECT * FROM productos;', 'python-pandas': 'productos.head(1)'};
@@ -277,10 +284,10 @@ export async function crossBrowserSmoke(browserType, name, baseURL, output) {
         await page.getByRole('button', {name: 'Practicar ' + profile.label, exact: true}).click(); await ready(page);
         await fillCode(page, profile.id === 'sql-sqlite' ? 'SELECT nombre, precio FROM productos WHERE precio > 300;' : 'productos[productos["precio"] > 300][["nombre", "precio"]]');
         await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-        await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+        await openRegion(page,'results');
         await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible({timeout: 30000});
-        await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', '500']);
-        await expect(panel(page).getByRole('table').getByRole('row').nth(2).getByRole('cell')).toHaveText(['Monitor', '3500']);
+        await expect(results(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['Teclado', '500']);
+        await expect(results(page).getByRole('table').getByRole('row').nth(2).getByRole('cell')).toHaveText(['Monitor', '3500']);
         result.screenshots.push(await saveScreenshot(page, output, name + '-' + profile.id));
         result.cases.push({profileId: profile.id, status: 'passed'});
       } finally {await context.close();}

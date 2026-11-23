@@ -1,6 +1,19 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {isBridgeReply, isBridgeRequest, isCompletionRequest, isRunRequest, isRuntimeContext, isRuntimeSchema} from '../src/practice/isolation/messages.ts';
+
+test('regiones: el puente valida claves y relaciones sin rechazar esquemas anteriores ni referencias implícitas', () => {
+  const entity={name:'hija',kind:'table',columns:[{name:'id',type:'integer',primaryKey:true},{name:'padre',type:'integer'}],foreignKeys:[{columns:['padre'],table:'padres',targetColumns:['id']}]};
+  const schema={version:1,entities:[entity]};assert.equal(isRuntimeSchema(schema),true);
+  assert.equal(isRuntimeSchema({...schema,entities:[{...entity,foreignKeys:[{columns:['padre'],table:'padres',targetColumns:[null]}]}]}),true);
+  for(const bad of [
+    {...entity,columns:[{name:'id',type:'integer',primaryKey:'sí'}]},
+    {...entity,foreignKeys:[{columns:[],table:'padres',targetColumns:[]}]},
+    {...entity,foreignKeys:[{columns:['padre'],table:'padres',targetColumns:['id','otro']}]},
+    {...entity,foreignKeys:[{columns:['no_existe'],table:'padres',targetColumns:['id']}]},
+    {...entity,foreignKeys:[{columns:['padre'],table:'',targetColumns:['id']}]},
+  ])assert.equal(isRuntimeSchema({...schema,entities:[bad]}),false);
+});
 import {context, environment, workspace} from './fixtures/practice-session.ts';
 
 test('puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera', () => {

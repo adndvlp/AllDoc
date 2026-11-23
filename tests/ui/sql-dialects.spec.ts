@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from './practice-helpers';
 import {test,expect,type Page} from '@playwright/test';
 const path=(id:string)=>'/apuntes/analisis-de-datos/sql/'+id;
 const dialect=(p:Page)=>p.getByRole('combobox',{name:'Dialecto SQL',exact:true});
@@ -29,9 +30,9 @@ test('cambiar dialecto no toca el borrador ni ejecuta; equivalente exige acción
  await go(page,'limit');await page.getByRole('button',{name:'Practicar SQL',exact:true}).click();const editor=panel(page).getByRole('textbox',{name:'Código SQL',exact:true});await expect(panel(page).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();await editor.fill('SELECT 42;');
  await expect(panel(page)).toContainText('Motor local: SQLite');await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
  await dialect(page).selectOption('sqlserver');await page.getByRole('button',{name:'Practicar SQL',exact:true}).click();await expect(editor).toHaveText('SELECT 42;');
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page)).toContainText('Todavía no has ejecutado');await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
+ await openPracticeRegion(page,'results');await expect(practiceResults(page)).toHaveCount(0);await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
  await note(page).getByRole('button',{name:/Probar equivalente en SQLite/}).first().click();await expect(editor).toHaveText('SELECT * FROM productos LIMIT 5;');
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page)).toContainText('Todavía no has ejecutado');
+ await openPracticeRegion(page,'results');await expect(practiceResults(page)).toHaveCount(0);
 });
 test('subsección directa y cambio de dialecto conservan despliegue y posición del lector',async({page})=>{
  await go(page,'where/not');const group=note(page).getByRole('group',{name:'Más de WHERE'});await expect(group).toHaveAttribute('open','');

@@ -1,5 +1,8 @@
 export type PracticeLayout = 'parallel' | 'bottom' | 'modal';
 export type PracticeSpace = {width: number; height: number; rem: number};
+export function practiceSurface({width,height,rem}: PracticeSpace): 'stacked'|'compact' {
+  return width >= 32 * rem && height >= 34 * rem ? 'stacked' : 'compact';
+}
 export function practiceLayout({width, height, rem}: PracticeSpace): PracticeLayout {
   if (height < 38 * rem) return 'modal';
   if (width >= 54 * rem + 8) return 'parallel';

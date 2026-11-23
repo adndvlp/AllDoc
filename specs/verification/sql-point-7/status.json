@@ -1,0 +1,116 @@
+{
+  "status": "complete",
+  "point": 7,
+  "native": {
+    "passed": 398,
+    "failed": 0
+  },
+  "types": {
+    "app": "passed",
+    "tests": "passed"
+  },
+  "build": {
+    "app": "passed",
+    "runtime": "passed"
+  },
+  "ui": {
+    "red": "ui-red.json",
+    "newCasesDiscovered": 27,
+    "regressionDiscovered": 126,
+    "status": "passed",
+    "updateCommand": "npm run test:ui:sql:regions -- --update-snapshots",
+    "firstRun": {
+      "failedCases": 3,
+      "diagnosis": "ui-regions-trace-failures.json",
+      "originalReport": "overwritten-by-discovery",
+      "passedCount": 24,
+      "countSource": "user-report"
+    },
+    "regions": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "report": "ui-regions-green.json"
+    },
+    "regression": {
+      "passed": 125,
+      "skipped": 1,
+      "failed": 0,
+      "report": "ui-regression-green.json",
+      "skipReason": "Modal layout has no separator"
+    },
+    "recapture": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "report": "ui-captures-green.json"
+    },
+    "compareCommand": "npm run test:ui:sql:regions:compare",
+    "comparison": {
+      "status": "passed",
+      "passed": 134,
+      "skipped": 1,
+      "failed": 0,
+      "flaky": 0,
+      "regressionReport": "ui-regression-compare.json",
+      "ipadReport": "ui-ipad-compare.json",
+      "snapshotsUpdated": false,
+      "reviewedHashes": 34,
+      "reviewedHashDrift": [],
+      "skipReason": "Modal layout has no separator"
+    }
+  },
+  "references": {
+    "before": 253,
+    "modifiedBeforeUIReview": [],
+    "reviewed": [
+      "tests/ui/__screenshots__/celular/practice-regions-200.png",
+      "tests/ui/__screenshots__/celular/practice-regions-data.png",
+      "tests/ui/__screenshots__/celular/practice-regions-pandas.png",
+      "tests/ui/__screenshots__/celular/practice-regions-result.png",
+      "tests/ui/__screenshots__/ipad/practice-regions-200.png",
+      "tests/ui/__screenshots__/ipad/practice-regions-data.png",
+      "tests/ui/__screenshots__/ipad/practice-regions-pandas.png",
+      "tests/ui/__screenshots__/ipad/practice-regions-result.png",
+      "tests/ui/__screenshots__/laptop/practice-regions-200.png",
+      "tests/ui/__screenshots__/laptop/practice-regions-data.png",
+      "tests/ui/__screenshots__/laptop/practice-regions-pandas.png",
+      "tests/ui/__screenshots__/laptop/practice-regions-result.png",
+      "tests/ui/__screenshots__/celular/business-data.png",
+      "tests/ui/__screenshots__/celular/practice-200.png",
+      "tests/ui/__screenshots__/celular/practice-actions.png",
+      "tests/ui/__screenshots__/celular/practice-data.png",
+      "tests/ui/__screenshots__/celular/practice-pandas.png",
+      "tests/ui/__screenshots__/celular/practice-sql.png",
+      "tests/ui/__screenshots__/celular/python-schema.png",
+      "tests/ui/__screenshots__/celular/sqlite-schema.png",
+      "tests/ui/__screenshots__/laptop/business-data.png",
+      "tests/ui/__screenshots__/laptop/practice-200.png",
+      "tests/ui/__screenshots__/laptop/practice-actions.png",
+      "tests/ui/__screenshots__/laptop/practice-data.png",
+      "tests/ui/__screenshots__/laptop/practice-pandas.png",
+      "tests/ui/__screenshots__/laptop/practice-sql.png",
+      "tests/ui/__screenshots__/laptop/python-schema.png",
+      "tests/ui/__screenshots__/laptop/sqlite-schema.png",
+      "tests/ui/__screenshots__/celular/business-result.png",
+      "tests/ui/__screenshots__/celular/python-result.png",
+      "tests/ui/__screenshots__/celular/sqlite-result.png",
+      "tests/ui/__screenshots__/laptop/business-result.png",
+      "tests/ui/__screenshots__/laptop/python-result.png",
+      "tests/ui/__screenshots__/laptop/sqlite-result.png"
+    ],
+    "regressionReview": "regression-visual-review.json",
+    "reviewManifest": "visual-review.json",
+    "new": 12,
+    "modifiedExisting": 22,
+    "unchangedExisting": 231,
+    "hashDriftAfterComparison": []
+  },
+  "scope": {
+    "sqlDataset": "negocio-relacional@1",
+    "pandasDataset": "productos-basico@1",
+    "newServerEngines": false,
+    "columnCompletionChanged": false,
+    "globalPerformance": "pending-point-9"
+  }
+}

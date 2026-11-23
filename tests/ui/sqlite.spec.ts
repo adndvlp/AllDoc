@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults,selectPracticeTable,practiceRegion} from './practice-helpers';
 import {test, expect, type Page} from '@playwright/test';
 
 const route = '/apuntes/analisis-de-datos/sql/select';
@@ -10,9 +11,9 @@ async function open(page: Page) {
   await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled();
 }
 async function execute(page: Page, sql: string) {
-  await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+  await openPracticeRegion(page,'editor');
   await code(page).fill(sql); await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
   await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
 }
 
@@ -20,10 +21,12 @@ test('consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WA
   await open(page);
   await expect(panel(page).getByRole('button', {name: 'Ejecutar', exact: true})).toBeEnabled();
   await execute(page, 'SELECT nombre, precio FROM productos WHERE precio > 300 AND id <= 3 ORDER BY precio DESC;');
-  const table = panel(page).getByRole('table');
+  const table = practiceResults(page).getByRole('table');
   await expect(table.getByRole('row')).toHaveCount(3);
   await expect(table.getByRole('row').nth(1).getByRole('cell')).toHaveText(['Monitor', '3500']);
   await expect(table.getByRole('row').nth(2).getByRole('cell')).toHaveText(['Teclado', '500']);
+  await practiceRegion(page,'editor').getByRole('button',{name:'Ir al resultado',exact:true}).click();
+  await expect(table.getByRole('row').nth(2)).toBeInViewport();
   await expect(panel(page).getByText('Guardado local', {exact: true})).toBeVisible();
   await expect(page).toHaveScreenshot('sqlite-result.png');
 });
@@ -32,18 +35,18 @@ test('esquema vivo: cambios parciales aparecen en Datos y completado aunque una 
   await open(page);
   await code(page).fill("CREATE TABLE ventas(total INTEGER); INSERT INTO ventas VALUES(7); UPDATE productos SET precio=1; SELECT * FROM no_existe;");
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
   await expect(panel(page).getByText('La ejecución terminó con error', {exact: true})).toBeVisible();
   await expect(panel(page).getByRole('alert')).toContainText('no_existe');
-  await panel(page).getByRole('tab', {name: 'Datos', exact: true}).click();
-  await expect(panel(page).getByRole('table', {name: 'Datos de ventas', exact: true})).toContainText('7');
-  const products = panel(page).getByRole('table', {name: 'Datos de productos', exact: true});
+  await openPracticeRegion(page,'data');
+  await expect(await selectPracticeTable(page,'ventas')).toContainText('7');
+  const products = await selectPracticeTable(page,'productos');
   await expect(products.getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado', 'Accesorios', '1','45','1','1']);
   await expect(panel(page).getByText('Guardado local', {exact: true})).toBeVisible();
   await expect(page).toHaveScreenshot('sqlite-schema.png');
-  await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+  await openPracticeRegion(page,'editor');
   await code(page).fill('SELECT * FROM ven'); await code(page).press('Control+Space');
-  await expect(panel(page).getByRole('option', {name: 'ventas', exact: true})).toBeVisible();
+  await expect(panel(page).locator('.cm-tooltip-autocomplete').getByRole('option', {name: 'ventas', exact: true})).toBeVisible();
 });
 
 test('selección: el botón ejecuta solo la selección; varios resultados, cero filas y HTML se muestran como datos', async ({page}) => {
@@ -53,14 +56,14 @@ test('selección: el botón ejecuta solo la selección; varios resultados, cero 
   await code(page).press('ControlOrMeta+Home');
   for (let i = 0; i < selection.length; i++) await code(page).press('Shift+ArrowRight');
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
   await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
-  await expect(panel(page).getByRole('table')).toContainText('42');
+  await expect(practiceResults(page).getByRole('table')).toContainText('42');
   await execute(page, "SELECT nombre FROM productos WHERE 0; SELECT '<img src=x onerror=alert(1)>' AS texto, NULL AS vacio;");
-  await expect(panel(page).getByRole('table')).toHaveCount(2);
-  await expect(panel(page).getByRole('table').first().getByRole('row')).toHaveCount(1);
-  await expect(panel(page).getByRole('table').last()).toContainText('<img src=x onerror=alert(1)>');
-  await expect(panel(page).getByRole('table').last()).toContainText('NULL');
+  await expect(practiceResults(page).getByRole('table')).toHaveCount(2);
+  await expect(practiceResults(page).getByRole('table').first().getByRole('row')).toHaveCount(1);
+  await expect(practiceResults(page).getByRole('table').last()).toContainText('<img src=x onerror=alert(1)>');
+  await expect(practiceResults(page).getByRole('table').last()).toContainText('NULL');
   await expect(panel(page).locator('img')).toHaveCount(0);
 });
 
@@ -86,7 +89,7 @@ test('aislamiento real: carga diferida, otro hostname, sin almacenamiento, red o
   expect(checks.cookie).not.toContain('app-only');
   await expect(page).toHaveURL(new RegExp(route + '$'));
   await execute(page, 'SELECT 1 AS aislado;');
-  await expect(panel(page).getByRole('table')).toContainText('1');
+  await expect(practiceResults(page).getByRole('table')).toContainText('1');
   expect(requests.filter((url) => url.endsWith('.wasm')).every((url) => new URL(url).hostname === new URL(frame.url()).hostname)).toBe(true);
 });
 
@@ -94,20 +97,20 @@ test('timeout real: consulta ocupada termina en diez segundos y el borrador pued
   await open(page);
   await code(page).fill('WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n) SELECT sum(x) FROM n;');
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
   await expect(panel(page).getByText('Se alcanzó el tiempo máximo', {exact: true})).toBeVisible({timeout: 13_000});
   await expect(panel(page)).toContainText('Entorno reiniciado');
-  await execute(page, 'SELECT 9 AS despues;'); await expect(panel(page).getByRole('table')).toContainText('9');
+  await execute(page, 'SELECT 9 AS despues;'); await expect(practiceResults(page).getByRole('table')).toContainText('9');
 });
 
 test('datos mutables: reiniciar conserva el código y restaura solo la sesión SQL', async ({page}) => {
   await open(page); await execute(page, 'UPDATE productos SET precio = 1; SELECT precio FROM productos;');
-  await expect(panel(page).getByRole('table').getByRole('row').nth(1)).toContainText('1');
+  await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1)).toContainText('1');
   await panel(page).getByRole('button', {name: 'Reiniciar entorno', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Código', exact: true}).click();
+  await openPracticeRegion(page,'editor');
   await expect(code(page)).toContainText('UPDATE productos SET precio = 1;');
   await execute(page, 'SELECT precio FROM productos ORDER BY precio;');
-  await expect(panel(page).getByRole('table')).toContainText('250'); await expect(panel(page).getByRole('table')).toContainText('3500');
+  await expect(practiceResults(page).getByRole('table')).toContainText('250'); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
 });
 
 test('cancelación real: el Worker ocupado se detiene y permite ejecutar sin perder edición', async ({page}) => {
@@ -119,5 +122,5 @@ test('cancelación real: el Worker ocupado se detiene y permite ejecutar sin per
   await panel(page).getByRole('button', {name: 'Detener', exact: true}).click();
   await expect(code(page)).toHaveText('SELECT 42 AS respuesta;');
   await expect(panel(page)).toContainText('Entorno reiniciado');
-  await execute(page, 'SELECT 42 AS respuesta;'); await expect(panel(page).getByRole('table')).toContainText('42');
+  await execute(page, 'SELECT 42 AS respuesta;'); await expect(practiceResults(page).getByRole('table')).toContainText('42');
 });

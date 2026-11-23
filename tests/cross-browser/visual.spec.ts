@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from '../ui/practice-helpers';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {writeFile} from 'node:fs/promises';
 import {visualTitle,visualPolicy,type VisualState} from '../../scripts/lib/browser-visual';
@@ -32,21 +33,21 @@ test(visualTitle('VIS-02'),async({page},info)=>{
   await reference(page,info,'sql-codigo.png');
   await execute(page,sql,sql.query);
   await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();
-  const table=panel(page).getByRole('table');
+  const table=practiceResults(page).getByRole('table');
   await expect(table.getByRole('columnheader')).toHaveText(['nombre','precio']);
   await expect(table.getByRole('row')).toHaveCount(3);
   for(let i=0;i<sql.rows.length;i++) await expect(table.getByRole('row').nth(i+1).getByRole('cell')).toHaveText([...sql.rows[i]]);
   await reference(page,info,'sql-resultado.png');
-  await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
+  await openPracticeRegion(page,'data');
   const data=panel(page).getByRole('table',{name:'Datos de productos',exact:true});
-  await expect(data.getByRole('row')).toHaveCount(4);await expect(data).toContainText('Teclado');await expect(data).toContainText('3500');
+  await expect(data.getByRole('row')).toHaveCount(19);await expect(data).toContainText('Teclado');await expect(data).toContainText('3500');
   await reference(page,info,'sql-datos.png');
 });
 
 test(visualTitle('VIS-03'),async({page},info)=>{
   test.setTimeout(120_000); await openPractice(page,python); await execute(page,python,python.query);
   await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();
-  const table=panel(page).getByRole('table'); await expect(table.getByRole('columnheader')).toHaveText(['nombre','precio']);
+  const table=practiceResults(page).getByRole('table'); await expect(table.getByRole('columnheader')).toHaveText(['nombre','precio']);
   await expect(table.getByRole('row')).toHaveCount(3);
   for(let i=0;i<python.rows.length;i++) await expect(table.getByRole('row').nth(i+1).getByRole('cell')).toHaveText([...python.rows[i]]);
   await reference(page,info,'pandas-resultado.png');

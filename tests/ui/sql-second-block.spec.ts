@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from './practice-helpers';
 import {test,expect,type Page} from '@playwright/test';
 const note=(p:Page)=>p.locator('[data-sql-concept]');
 const panel=(p:Page)=>p.locator('dialog[data-practice-panel]');
@@ -9,7 +10,7 @@ async function go(p:Page,id:string,query=''){
 async function run(p:Page){
  await expect(panel(p).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();
  await panel(p).getByRole('button',{name:'Ejecutar',exact:true}).click();
- await panel(p).getByRole('tab',{name:'Resultados',exact:true}).click();
+ await openPracticeRegion(p,'results');
  await expect(panel(p).getByText('Ejecución completada',{exact:true})).toBeVisible();
 }
 
@@ -42,8 +43,8 @@ test('segundo bloque: UPDATE explícito prepara sin ejecutar y muestra antes y d
  await go(page,'update/comprobar-con-select');await expect(note(page)).toContainText('Sin WHERE se modifican todas las filas');
  await note(page).getByRole('button',{name:/Probar en SQLite:/}).click();
  const editor=panel(page).getByRole('textbox',{name:'Código SQL',exact:true});await expect(editor).toContainText('UPDATE productos SET precio = 520');
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page)).toContainText('Todavía no has ejecutado');
- await run(page);const tables=panel(page).getByRole('table');await expect(tables).toHaveCount(2);
+ await openPracticeRegion(page,'results');await expect(practiceResults(page)).toHaveCount(0);
+ await run(page);const tables=practiceResults(page).getByRole('table');await expect(tables).toHaveCount(2);
  await expect(tables.first().getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado','500']);
  await expect(tables.last().getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado','520']);
  await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
@@ -57,12 +58,12 @@ test('segundo bloque: REPLACE sin soporte ofrece su variante SQLite y muestra el
  await expect(note(page).getByRole('link',{name:'Ver variante SQLite'})).toHaveAttribute('href',/\/sql\/insert\/replace\?dialect=sqlite$/);
  await note(page).getByRole('link',{name:'Ver variante SQLite'}).click();await expect(dialect(page)).toHaveValue('sqlite');
  await note(page).getByRole('button',{name:/Probar en SQLite:/}).click();await run(page);
- await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Nuevo','0']);
+ await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Nuevo','0']);
 });
 
 test('segundo bloque: DDL con SET NULL real, tipos de identidad y controles al 200%',async({page})=>{
  await go(page,'create-table/on-delete-set-null');await note(page).getByRole('button',{name:/Probar en SQLite:/}).click();await run(page);
- await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','NULL']);
+ await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','NULL']);
  await panel(page).getByRole('button',{name:'Volver al apunte',exact:true}).click();
  await go(page,'create-table/primary-key');await dialect(page).selectOption('sqlserver');await expect(note(page).locator('pre').last()).toContainText('IDENTITY(1,1)');
  await go(page,'create-table/if-not-exists','?dialect=oracle');await expect(note(page).locator('pre')).toContainText('IF NOT EXISTS');

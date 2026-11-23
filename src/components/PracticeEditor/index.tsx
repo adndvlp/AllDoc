@@ -30,6 +30,7 @@ export default function PracticeEditor(props: {workspace: Workspace; schema: Run
     return () => {cancelled = true; editor.current?.destroy(); editor.current = null;};
   }, [attempt]);
   useEffect(() => {focusRequested();}, [props.focusRequest]);
+  useEffect(()=>{const observer=new ResizeObserver(()=>editor.current?.measure?.());observer.observe(parent.current!);return()=>observer.disconnect();},[]);
   useEffect(() => {void editor.current?.update(props.workspace, props.schema).catch((reason) => setError(String(reason)));}, [props.workspace, props.schema]);
   return <>
     {error && <div role="alert">No se pudo preparar el editor. <button type="button" onClick={() => setAttempt((value) => value + 1)}>Reintentar editor</button></div>}

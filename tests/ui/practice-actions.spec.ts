@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from './practice-helpers';
 import {test, expect, type Page} from '@playwright/test';
 
 const sql = '/apuntes/analisis-de-datos/sql/select';
@@ -25,8 +26,8 @@ test('ejemplo explícito: abre el editor, conserva código anterior y prepara si
   await variant.getByRole('button', {name: 'Probar en SQLite: Columnas concretas', exact: true}).click();
   await expect(code(page)).toHaveText('SELECT nombre, precio FROM productos;'); await ready(page);
   await expect(code(page)).toBeFocused();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByText('Todavía no has ejecutado código.', {exact: true})).toBeVisible();
+  await openPracticeRegion(page,'results');
+  await expect(practiceResults(page)).toHaveCount(0);
   await action(page, 'Recuperar código anterior');
   await expect(code(page)).toHaveText('SELECT * FROM productos;'); await expect(code(page)).toBeFocused();
   await expect(page.locator('dialog:modal')).toHaveCount((await panel(page).getAttribute('data-layout')) === 'modal' ? 1 : 0);
@@ -47,12 +48,12 @@ test('revisión anterior: persiste tras recargar y restaura la edición sin camb
 test('restaurar código: conserva las mutaciones y el menú cabe al ampliar el texto', async ({page}) => {
   await open(page); await code(page).fill('UPDATE productos SET precio = 1;');
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
+  await openPracticeRegion(page,'results');
   await expect(panel(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
   await action(page, 'Restaurar código inicial'); await expect(code(page)).toHaveText('SELECT * FROM productos;');
   await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado', 'Accesorios', '1','45','1','1']);
+  await openPracticeRegion(page,'results');
+  await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1','Teclado', 'Accesorios', '1','45','1','1']);
   await page.evaluate(() => document.documentElement.style.fontSize = '200%');
   await panel(page).getByRole('button', {name: 'Opciones de código', exact: true}).click();
   const menu = page.getByRole('region', {name: 'Opciones de código', exact: true}); await expect(menu).toBeVisible();
@@ -72,8 +73,8 @@ test('descarga fallida: mantiene el ejemplo y la edición; reintentar prepara si
   await code(page).fill('SELECT 73;'); await savedCode(page, 'SELECT 73;');
   await page.unroute('**/alldoc-sqlite.*.js'); await panel(page).getByRole('button', {name: 'Reintentar', exact: true}).click(); await ready(page);
   await expect(code(page)).toHaveText('SELECT 73;');
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByText('Todavía no has ejecutado código.', {exact: true})).toBeVisible();
+  await openPracticeRegion(page,'results');
+  await expect(practiceResults(page)).toHaveCount(0);
   expect(page.frames().filter(frame => new URL(frame.url()).hostname === 'localhost')).toHaveLength(1);
 });
 
@@ -106,8 +107,8 @@ test('ejemplo pandas: conserva el entorno y recupera su código anterior sin eje
   await expect(code(page)).toContainText('pd.DataFrame'); await ready(page); await expect(code(page)).toBeFocused();
   expect(page.frames()).toContain(frame);
   await action(page, 'Recuperar código anterior'); await expect(code(page)).toHaveText('numero = 42');
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByText('Todavía no has ejecutado código.', {exact: true})).toBeVisible();
+  await openPracticeRegion(page,'results');
+  await expect(practiceResults(page)).toHaveCount(0);
 });
 
 test('carga del panel fallida: reintentar conserva el ejemplo solicitado antes de tener editor', async ({page}) => {
@@ -117,6 +118,6 @@ test('carga del panel fallida: reintentar conserva el ejemplo solicitado antes d
   await expect(panel(page).getByRole('button', {name: 'Reintentar', exact: true})).toBeVisible();
   await page.unroute('**/*practice-session*.js'); await panel(page).getByRole('button', {name: 'Reintentar', exact: true}).click();
   await ready(page); await expect(code(page)).toHaveText('SELECT nombre, precio FROM productos;');
-  await panel(page).getByRole('tab', {name: 'Resultados', exact: true}).click();
-  await expect(panel(page).getByText('Todavía no has ejecutado código.', {exact: true})).toBeVisible();
+  await openPracticeRegion(page,'results');
+  await expect(practiceResults(page)).toHaveCount(0);
 });

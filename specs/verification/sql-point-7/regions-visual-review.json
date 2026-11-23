@@ -1,0 +1,18 @@
+{
+  "review": "Reviewed all twelve images after 27 passed; selected data preview, real SQL/pandas results, bounded scroll and 320px/200% layout. Zoomed layout requires vertical practice scroll to reach Editor.",
+  "hashes": {
+    "tests/ui/__screenshots__/celular/practice-regions-200.png": "0863fb985b5b2202c2c3d040076d2047fce92ba1497efcb3217b7f742f7bcf72",
+    "tests/ui/__screenshots__/celular/practice-regions-data.png": "a641978e7040a501a90a6ca60c0dadbadcb8691d88084f2ed706179e8088e508",
+    "tests/ui/__screenshots__/celular/practice-regions-pandas.png": "99d1b59184a10faf555049f51cec928f25c3cf432b3bf199e807eb6c806186e1",
+    "tests/ui/__screenshots__/celular/practice-regions-result.png": "fdf2b4a1bd38a24436479cb595318040b9d558194a374ab9ff324178a41577d4",
+    "tests/ui/__screenshots__/ipad/practice-regions-200.png": "0863fb985b5b2202c2c3d040076d2047fce92ba1497efcb3217b7f742f7bcf72",
+    "tests/ui/__screenshots__/ipad/practice-regions-data.png": "9dc15142c8c51f0fa78514af40b256b8dd3be6bdb316cb020267d8dc34178033",
+    "tests/ui/__screenshots__/ipad/practice-regions-pandas.png": "4238ab9c100737e13f31bb8f9279c43707a3d7029b3a47b2602b020a5040df88",
+    "tests/ui/__screenshots__/ipad/practice-regions-result.png": "96477270053e0b6163551b2b9b7698fcd8489cf52af50ef98aa50333ac41b368",
+    "tests/ui/__screenshots__/laptop/practice-regions-200.png": "0863fb985b5b2202c2c3d040076d2047fce92ba1497efcb3217b7f742f7bcf72",
+    "tests/ui/__screenshots__/laptop/practice-regions-data.png": "c53b3f57927b769c84d46294a0e916e3603a177b5804557b622206323e30ce0f",
+    "tests/ui/__screenshots__/laptop/practice-regions-pandas.png": "23bae94600619cd98c4d46aed2f906572fc54e672150d8f02f680e13d552edfd",
+    "tests/ui/__screenshots__/laptop/practice-regions-result.png": "70904a8ef46657897700f6a72c4dc72f3d12730ac94482e1d2814d89ab81aed9"
+  },
+  "existingReferencesChanged": []
+}

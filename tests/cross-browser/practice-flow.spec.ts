@@ -1,3 +1,4 @@
+import {practiceResults} from '../ui/practice-helpers';
 import {test,expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {profiles,panel,code,openPractice,ready,fillCode,execute,expectCode,expectNoExecution,savedCode,searchTo} from './practice-helpers';
@@ -8,14 +9,14 @@ test(caseTitle('FLOW-01'),async({page})=>{
   await openPractice(page,sql); await execute(page,sql,'UPDATE productos SET precio=1; SELECT precio FROM productos;');
   const sqlDraft='SELECT precio FROM productos;'; await fillCode(page,sql,sqlDraft); await savedCode(page,sql,sqlDraft);
   await searchTo(page,'WHERE'); await ready(page,sql); await expectCode(page,sql,sqlDraft);
-  await execute(page,sql,sqlDraft); await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1']);
+  await execute(page,sql,sqlDraft); await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1']);
   await searchTo(page,'DataFrame'); await ready(page,python); await execute(page,python,'productos[["precio"]]');
-  await expect(panel(page).getByRole('table')).toContainText('500');
+  await expect(practiceResults(page).getByRole('table')).toContainText('500');
   const pythonDraft='productos.head(2)'; await fillCode(page,python,pythonDraft); await savedCode(page,python,pythonDraft);
   await page.reload({waitUntil:'networkidle'}); await expect(panel(page)).toBeHidden();
   await page.getByRole('button',{name:'Practicar pandas',exact:true}).click(); await ready(page,python); await expectCode(page,python,pythonDraft); await expectNoExecution(page);
   await searchTo(page,'SELECT'); await ready(page,sql); await expectCode(page,sql,sqlDraft); await expectNoExecution(page);
-  await execute(page,sql,sqlDraft); await expect(panel(page).getByRole('table')).toContainText('500');
+  await execute(page,sql,sqlDraft); await expect(practiceResults(page).getByRole('table')).toContainText('500');
 });
 
 test(caseTitle('FLOW-02'),async({page},info)=>{

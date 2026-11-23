@@ -8,7 +8,7 @@ import {editorLanguage} from './editor-language.ts';
 import {createEditorCompletionSource, type SemanticCompletion} from './editor-completion.ts';
 import type {RunRequest, RuntimeSchema, Workspace} from './contracts.ts';
 
-export type EditorHandle = {update(workspace: Workspace, schema: RuntimeSchema): Promise<void>; destroy(): void};
+export type EditorHandle = {update(workspace: Workspace, schema: RuntimeSchema): Promise<void>; measure?():void; destroy(): void};
 type Options = {workspace: Workspace; schema: RuntimeSchema; helpId: string;
   onChange(id: string, path: string, content: string): void; onExecute(selection?: RunRequest['selection']): void;
   onComplete?: SemanticCompletion;
@@ -85,6 +85,7 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
       const {from, to, empty} = view.state.selection.main;
       options.onSelection?.(current.id, current.activeFile, empty ? undefined : {from, to});
     },
+    measure(){if(!destroyed)view.requestMeasure();},
     destroy() {destroyed = true; version++; states.clear(); view.destroy();},
   };
 }

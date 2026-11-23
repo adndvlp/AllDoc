@@ -41,7 +41,8 @@ export type Workspace = Readonly<{
 }>;
 
 export type ColumnType = 'text' | 'integer' | 'number' | 'boolean' | 'bigint' | 'decimal' | 'date' | 'datetime';
-export type DataColumn = Readonly<{name: string; type: ColumnType}>;
+export type DataColumn = Readonly<{name: string; type: ColumnType; primaryKey?: boolean}>;
+export type RuntimeForeignKey = Readonly<{columns:readonly string[];table:string;targetColumns:readonly (string|null)[]}>;
 export type Cell = null | boolean | number | string;
 export type RuntimeSchema = Readonly<{
   version: number;
@@ -49,6 +50,7 @@ export type RuntimeSchema = Readonly<{
     name: string;
     kind: 'table' | 'dataframe' | 'variable';
     columns: readonly DataColumn[];
+    foreignKeys?: readonly RuntimeForeignKey[];
     rowCount?: number;
     preview?: Readonly<{columns: readonly DataColumn[]; rows: readonly (readonly Cell[])[]; truncated: boolean}>;
   }>[];

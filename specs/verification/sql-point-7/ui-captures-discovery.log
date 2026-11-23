@@ -1,0 +1,12 @@
+
+> alldoc@0.1.0 test:ui:sql:regions:captures
+> playwright test tests/ui/sql-business.spec.ts tests/ui/sqlite.spec.ts tests/ui/python.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0 -g 'negocio real:|consulta real:|DataFrame real:' --list --reporter=list
+
+Listing tests:
+  [celular] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [celular] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [celular] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+  [laptop] › python.spec.ts:25:1 › DataFrame real: pandas filtra los productos en Pyodide y conserva precio numérico
+  [laptop] › sql-business.spec.ts:16:1 › negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio
+  [laptop] › sqlite.spec.ts:20:1 › consulta real: ejecutar SQL con WHERE y ORDER BY produce resultados del WASM aislado
+Total: 6 tests in 3 files

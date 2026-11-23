@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults} from '../ui/practice-helpers';
 import {test,expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {profiles,panel,code,runButton,openPractice,ready,fillCode,expectCode,execute,showResults,expectNoExecution,codeAction,savedCode} from './practice-helpers';
@@ -13,20 +14,20 @@ for(const profile of profiles) {
       await code(page,profile).fill(profile.query); await code(page,profile).press('End');
       await panel(page).getByRole('button',{name:'Detener',exact:true}).click(); await expectCode(page,profile,profile.query);
       await expect(panel(page)).toContainText('Entorno reiniciado'); await ready(page,profile);
-      await execute(page,profile,profile.query); await expect(panel(page).getByRole('table')).toContainText('3500');
+      await execute(page,profile,profile.query); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
     });
     test(caseTitle(profile.id+'-11'),async({page})=>{
       await openPractice(page,profile); await fillCode(page,profile,busy); await runButton(page).click(); await showResults(page);
       await expect(panel(page).getByText('Se alcanzó el tiempo máximo',{exact:true})).toBeVisible({timeout:15_000});
-      await panel(page).getByRole('tab',{name:'Código',exact:true}).click(); await expectCode(page,profile,busy);
-      await ready(page,profile); await execute(page,profile,profile.query); await expect(panel(page).getByRole('table')).toContainText('3500');
+      await openPracticeRegion(page,'editor'); await expectCode(page,profile,busy);
+      await ready(page,profile); await execute(page,profile,profile.query); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
     });
     test(caseTitle(profile.id+'-12'),async({page})=>{
       await openPractice(page,profile);
       await execute(page,profile,profile.id==='SQL'?'WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n WHERE x<1000) SELECT x FROM n;':'pd.DataFrame({"numero":range(1000)})');
       await expect(panel(page).getByText('Vista previa truncada.',{exact:true})).toBeVisible();
-      await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(201);
-      await execute(page,profile,profile.query); await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(3);
+      await expect(practiceResults(page).getByRole('table').getByRole('row')).toHaveCount(201);
+      await execute(page,profile,profile.query); await expect(practiceResults(page).getByRole('table').getByRole('row')).toHaveCount(3);
     });
     test(caseTitle(profile.id+'-13'),async({page})=>{
       const pattern=profile.id==='SQL'?'**/alldoc-sqlite.*.js':'**/python/**/*.whl';
@@ -36,7 +37,7 @@ for(const profile of profiles) {
       await page.unroute(pattern); await panel(page).getByRole('button',{name:'Reintentar',exact:true}).click(); await ready(page,profile);
       await expectCode(page,profile,profile.query); await expectNoExecution(page);
       expect(page.frames().filter(frame=>new URL(frame.url()).hostname==='localhost')).toHaveLength(1);
-      await execute(page,profile,profile.query); await expect(panel(page).getByRole('table')).toContainText('3500');
+      await execute(page,profile,profile.query); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
     });
   });
 }

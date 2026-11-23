@@ -23,7 +23,11 @@ export function isRuntimeSchema(v: unknown): v is RuntimeSchema {
   return record(v) && counter(v.version) && Array.isArray(v.entities) && v.entities.length <= 200
     && Array.from(v.entities).every((e) => record(e) && identifier(e.name) && ['table', 'dataframe', 'variable'].includes(e.kind as string)
       && (e.rowCount === undefined || counter(e.rowCount)) && Array.isArray(e.columns) && e.columns.length <= 200
-      && Array.from(e.columns).every((c) => record(c) && identifier(c.name) && ['text', 'integer', 'number', 'boolean', 'bigint', 'decimal', 'date', 'datetime'].includes(c.type as string))
+      && Array.from(e.columns).every((c) => record(c) && identifier(c.name) && ['text', 'integer', 'number', 'boolean', 'bigint', 'decimal', 'date', 'datetime'].includes(c.type as string)
+        && (c.primaryKey===undefined||typeof c.primaryKey==='boolean'))
+      && (e.foreignKeys===undefined||(Array.isArray(e.foreignKeys)&&e.foreignKeys.length<=200&&Array.from(e.foreignKeys).every(key=>record(key)&&identifier(key.table)
+        &&Array.isArray(key.columns)&&key.columns.length>0&&key.columns.length<=200&&Array.from(key.columns).every(name=>identifier(name)&&(e.columns as {name:string}[]).some(column=>column.name.toLowerCase()===name.toLowerCase()))
+        &&Array.isArray(key.targetColumns)&&key.targetColumns.length===key.columns.length&&Array.from(key.targetColumns).every(name=>name===null||identifier(name)))))
       && (e.preview === undefined || (record(e.preview) && isRuntimeEvent({protocolVersion: 1, runId: 'inspect', generation: 0, revision: 0, type: 'table', ...e.preview}))));
 }
 export function isRuntimeContext(v: unknown): v is RuntimeContext {

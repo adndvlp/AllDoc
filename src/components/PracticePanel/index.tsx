@@ -1,18 +1,19 @@
-import {useEffect, useId, useRef, useState, type ComponentType} from 'react';
+import {useCallback,useEffect, useId, useMemo, useRef, useState, type ComponentType} from 'react';
 import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
 import {usePractice} from '../PracticeProvider';
 import {useSearch} from '../SearchProvider';
 import Icon from '../Icon';
-import type {PracticeLayout} from '@site/src/practice/layout';
+import {practiceSurface,type PracticeLayout} from '@site/src/practice/layout';
 import {canExecutePractice} from '@site/src/practice/interaction';
 import type {RunRequest, Workspace} from '@site/src/practice/contracts';
 import type {PracticeDataset} from '@site/src/practice/datasets/types';
 import {hasOtherModal, openExclusiveModal, suspendDialogEvent} from '@site/src/lib/dialog-coordination';
 import type Editor from '../PracticeEditor';
 import PracticeResults from '../PracticeResults';
+import Region from './Region';
+import DataInspector from './DataInspector';
 import styles from './styles.module.css';
 
-const tabs = ['Código', 'Datos', 'Resultados'] as const;
 let editorPromise: Promise<{default: typeof Editor}> | undefined;
 const loadEditor = () => editorPromise ??= import(/* webpackChunkName: "practice-editor" */ '../PracticeEditor')
   .catch((error) => {editorPromise = undefined; throw error;});
@@ -25,7 +26,21 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const selection = useRef<{id: string; path: string; range: RunRequest['selection']} | null>(null);
   if (practice.state.draft) previousWorkspace.current = practice.state.draft.workspace;
   const workspace = practice.state.draft?.workspace ?? previousWorkspace.current;
-  const [activeTab, setActiveTab] = useState(0); const [EditorComponent, setEditor] = useState<ComponentType<Parameters<typeof Editor>[0]> | null>(null);
+  const [EditorComponent, setEditor] = useState<ComponentType<Parameters<typeof Editor>[0]> | null>(null);
+  const body=useRef<HTMLDivElement>(null),result=useRef<HTMLDivElement>(null);
+  const [surface,setSurface]=useState<'stacked'|'compact'>('compact');
+  const [choices,setChoices]=useState<Record<string,Partial<Record<'data'|'editor'|'results',boolean>>>>({});
+  const workspaceKey=practice.context?.workspaceKey??'';
+  const opened={data:choices[workspaceKey]?.data??surface==='stacked',editor:choices[workspaceKey]?.editor??true,results:choices[workspaceKey]?.results??true};
+  const choose=(region:'data'|'editor'|'results',open:boolean)=>setChoices(previous=>({...previous,[workspaceKey]:{...previous[workspaceKey],[region]:open}}));
+  const toggleData=useCallback(()=>choose('data',!opened.data),[workspaceKey,opened.data]);
+  const runId=practice.state.events[0]?.runId;const lastRun=useRef('');
+  const running=practice.state.phase==='running';const hasResults=running||practice.state.events.length>0;
+  useEffect(()=>{
+    const update=()=>{const rect=body.current?.getBoundingClientRect();if(!rect?.width||!rect.height)return;setSurface(practiceSurface({width:rect.width,height:rect.height,rem:parseFloat(getComputedStyle(document.documentElement).fontSize)}));};
+    const observer=new ResizeObserver(update);observer.observe(body.current!);update();return()=>observer.disconnect();
+  },[]);
+  useEffect(()=>{const identity=workspaceKey+'|'+runId;if(running||(runId&&lastRun.current!==identity)){lastRun.current=identity;choose('results',true);}},[running,runId,workspaceKey]);
   const [editorError, setEditorError] = useState(false); const [attempt, setAttempt] = useState(0);
   const [data, setData] = useState<PracticeDataset | null>(null); const [message, setMessage] = useState<string | null>(null);
   const id = useId(); const openedBefore = useRef(false);
@@ -40,7 +55,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   useEffect(() => {if (codeMenu.current) codeMenu.current.open = false;}, [practice.visible, practice.context?.workspaceKey]);
   useEffect(() => {
     if (!practice.state.codeAction || !EditorComponent) return;
-    setActiveTab(0);
+    choose('editor',true);
   }, [practice.state.codeAction, EditorComponent]);
 
   useEffect(() => {
@@ -87,7 +102,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
     return () => {cancelled = true;};
   }, [practice.visible, Boolean(workspace), EditorComponent, attempt]);
   useEffect(() => {
-    if (!practice.visible || data) return;
+    if (!practice.visible || data || practice.context?.profile.availability==='enabled') return;
     let cancelled = false;
     void import(/* webpackChunkName: "practice-data" */ '@site/src/practice/editor-bootstrap')
       .then(({editorDataset}) => {if (!cancelled) setData(editorDataset);});
@@ -111,18 +126,17 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const status = practice.state.draft?.status;
   const saved = status === 'memory' ? 'Guardado en esta sesión' : status === 'conflict' ? 'Copia recuperable guardada' : status === 'dirty' || status === 'saving' ? 'Guardando…' : 'Guardado local';
   const error = practice.error ?? practice.state.error;
-  const tables = unavailable ? data?.tables : practice.state.schema.entities.map((entity) => ({
-    name: entity.name, columns: entity.columns, rows: entity.preview?.rows ?? [], rowCount: entity.rowCount, truncated: entity.preview?.truncated}));
-  function selectTab(index: number, focus = false) {
-    setActiveTab(index);
-    if (focus) dialog.current?.querySelector<HTMLButtonElement>(`[data-practice-tab="${index}"]`)?.focus();
+  const schema=useMemo(()=>unavailable&&data?{version:0,entities:data.tables.map(table=>({name:table.name,kind:'table' as const,columns:table.columns,rowCount:table.rows.length,preview:{columns:table.columns,rows:table.rows,truncated:false}}))}:practice.state.schema,[unavailable,data,practice.state.schema]);
+  function goToResult(){
+    choose('results',true);
+    requestAnimationFrame(()=>{if(body.current&&result.current)body.current.scrollTo({top:body.current.scrollTop+result.current.getBoundingClientRect().top-body.current.getBoundingClientRect().top,behavior:'instant'});});
   }
   function codeAction(action: () => void | Promise<unknown>) {
     if (codeMenu.current) codeMenu.current.open = false;
     void Promise.resolve().then(action).catch(reason => setMessage(reason instanceof Error ? reason.message : String(reason)));
   }
   return <dialog ref={dialog} id="alldoc-practice-panel" className={styles.panel} data-practice-panel data-layout={layout}
-    aria-labelledby={id + '-title'} onClose={() => {
+    data-surface={surface} aria-labelledby={id + '-title'} onClose={() => {
       if (programmaticCloses.current) programmaticCloses.current--;
       else if (!suspended.current) practice.collapse();
     }}>
@@ -135,6 +149,9 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
           <button type="button" autoFocus aria-label="Volver al apunte" onClick={() => dialog.current?.close()}><Icon name="close" size={19} /></button>
         </div>
       </header>
+      <div ref={body} className={styles.body} data-practice-scroll>
+      <DataInspector schema={schema} workspaceKey={workspaceKey} open={opened.data} onToggle={toggleData} loading={practice.state.phase==='loading'}/>
+      <Region name="editor" label="Editor" open={opened.editor} onToggle={()=>choose('editor',!opened.editor)}>
       <div className={styles.toolbar}>
         <span className={styles.file}>{workspace?.activeFile ?? 'Preparando código…'}</span>
         {practice.state.phase === 'running'
@@ -157,25 +174,16 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
             {status === 'memory' && <button type="button" onClick={() => codeAction(() => practice.manager?.retrySave())}>Reintentar guardado</button>}
           </div>
         </details>
-        {activeTab !== 2 && practice.state.events.some((event) => event.type === 'end') && <button type="button" onClick={() => selectTab(2)}>Ver resultados</button>}
+        {hasResults&&<button type="button" onClick={goToResult}>Ir al resultado</button>}
       </div>
-      <div role="tablist" aria-label="Contenido de práctica" className={styles.tabs}>
-        {tabs.map((tab, index) => <button key={tab} type="button" role="tab" id={`${id}-tab-${index}`} data-practice-tab={index}
-          aria-controls={`${id}-pane-${index}`} aria-selected={activeTab === index} tabIndex={activeTab === index ? 0 : -1}
-          onClick={() => selectTab(index)} onKeyDown={(event) => {
-            const next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : event.key === 'ArrowLeft' ? (index + tabs.length - 1) % tabs.length : event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : null;
-            if (next !== null) {event.preventDefault(); selectTab(next, true);}
-          }}>{tab}</button>)}
-      </div>
-      <div className={styles.body}>
-        <section className={styles.code} role="tabpanel" id={id + '-pane-0'} aria-labelledby={id + '-tab-0'} hidden={activeTab !== 0}>
+        <div className={styles.code}>
           {(error || editorError) && <div className={styles.message} role="alert">No se pudo preparar la práctica.
             {error && <p>{error}</p>}
             <button type="button" onClick={() => {if (error) {if (practice.error || !practice.manager) void practice.open(); else void practice.manager.retry();} setAttempt((value) => value + 1);}}>Reintentar</button>
           </div>}
           {!error && !editorError && (!EditorComponent || !workspace) && <p className={styles.message} role="status">Cargando editor…</p>}
-          {EditorComponent && workspace && <EditorComponent workspace={workspace} schema={practice.state.schema} helpId={id + '-help'}
-            focusRequest={practice.visible && activeTab === 0 ? practice.state.codeAction : 0}
+          <div className={styles.editorViewport}>{EditorComponent && workspace && <EditorComponent workspace={workspace} schema={practice.state.schema} helpId={id + '-help'}
+            focusRequest={practice.visible && opened.editor ? practice.state.codeAction : 0}
             onChange={(key, path, content) => {
               if (practice.manager?.getSnapshot().context?.workspaceKey !== key) return;
               try {practice.manager.edit(path, content); setMessage(null);} catch (reason) {setMessage(String(reason));}
@@ -185,25 +193,13 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
               if (!active || active.id !== workspace?.id || active.files.find((file) => file.path === active.activeFile)?.content !== document) return Promise.resolve(null);
               return practice.manager!.complete(position, signal);
             }}
-            onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else if (canExecute) void practice.manager?.execute(selection);}} />}
+            onExecute={(selection) => {if (unavailable) setMessage('La ejecución aún no está disponible.'); else if (canExecute) void practice.manager?.execute(selection);}} />}</div>
           <p id={id + '-help'} className={styles.help}>Tab sale del editor · Ctrl+Espacio sugiere</p>
-        </section>
-        <section role="tabpanel" id={id + '-pane-1'} aria-labelledby={id + '-tab-1'} hidden={activeTab !== 1} className={styles.data}>
-          {practice.state.phase === 'loading' && !tables?.length && <p>Preparando datos…</p>}
-          {tables ? tables.map((table) => <div key={table.name}>
-            <h3>{table.name} <span>{'rowCount' in table ? table.rowCount === undefined ? 'Vista' : table.rowCount + ' filas' : table.rows.length + ' filas'}</span></h3>
-            <div role="region" aria-label={'Tabla ' + table.name} tabIndex={0} className={styles.table}>
-              <table><caption className="sr-only">Datos de {table.name}</caption>
-                <thead><tr>{table.columns.map((column) => <th key={column.name} scope="col">{column.name}<small>{column.type}</small></th>)}</tr></thead>
-                <tbody>{table.rows.map((row, index) => <tr key={index}>{row.map((cell, column) => <td key={column}>{String(cell ?? 'NULL')}</td>)}</tr>)}</tbody>
-              </table>
-            </div>
-            {'truncated' in table && table.truncated === true && <p>Vista previa truncada.</p>}
-          </div>) : <p>Cargando datos…</p>}
-        </section>
-        <section role="tabpanel" id={id + '-pane-2'} aria-labelledby={id + '-tab-2'} hidden={activeTab !== 2} className={styles.results}>
-          <PracticeResults events={practice.state.events} revision={workspace?.revision ?? 0} />
-        </section>
+        </div>
+      </Region>
+      {hasResults&&<div ref={result} data-practice-run={runId}><Region name="results" label="Resultado" open={opened.results} onToggle={()=>choose('results',!opened.results)}>
+        <div className={styles.results}>{running&&<p role="status">Ejecutando…</p>}{practice.state.events.length>0&&<PracticeResults events={practice.state.events} revision={workspace?.revision??0}/>}</div>
+      </Region></div>}
       </div>
       <div className={styles.status}>
         {unavailable && <p>La ejecución aún no está disponible.</p>}

@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults,selectPracticeTable,practiceRegion} from '../ui/practice-helpers';
 import {test,expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {pandasExampleCode} from '../../src/practice/datasets/materialize.ts';
@@ -11,8 +12,8 @@ for(const profile of profiles) {
       await openPractice(page,profile);
       if(profile.id==='SQL') {
         await execute(page,profile,'CREATE TABLE ventas(total INTEGER); INSERT INTO ventas VALUES(7); UPDATE productos SET precio=1; SELECT * FROM ventas;');
-        await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
-        await expect(panel(page).getByRole('table',{name:'Datos de ventas',exact:true})).toContainText('7');
+        await openPracticeRegion(page,'data');
+        await expect(await selectPracticeTable(page,'ventas')).toContainText('7');
         await fillCode(page,profile,'SELECT * FROM ven'); await code(page,profile).press('Control+Space'); await expect(completion(page,'ventas')).toBeVisible(); await code(page,profile).press('Escape');
       } else {
         await execute(page,profile,'numero=7\nproductos["precio"]=1\nventas=productos.rename(columns={"precio":"importe"})\nproductos');
@@ -20,20 +21,20 @@ for(const profile of profiles) {
         await fillCode(page,profile,'ventas["imp"]'); await code(page,profile).press('ArrowLeft'); await code(page,profile).press('ArrowLeft'); await code(page,profile).press('Control+Space');
         await expect(completion(page,'importe')).toBeVisible(); await code(page,profile).press('Escape');
       }
-      await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
-      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
+      await openPracticeRegion(page,'data');
+      await expect((await selectPracticeTable(page,'productos')).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
       const kept=profile.id==='SQL'?'SELECT * FROM productos;':'pd.DataFrame=None'; await fillCode(page,profile,kept);
       if(profile.id==='PY') {await runButton(page).click(); await showResults(page); await expect(panel(page).getByText('Ejecución completada',{exact:true})).toBeVisible();}
       await panel(page).getByRole('button',{name:'Reiniciar entorno',exact:true}).click();
-      await panel(page).getByRole('tab',{name:'Código',exact:true}).click(); await expectCode(page,profile,kept); await ready(page,profile);
+      await openPracticeRegion(page,'editor'); await expectCode(page,profile,kept); await ready(page,profile);
       if(profile.id==='PY') {
         await fillCode(page,profile,'numero'); await runButton(page).click(); await showResults(page);
         await expect(panel(page).getByRole('alert')).toContainText('numero');
-        await execute(page,profile,'pd.DataFrame({"ok":[1]})'); await expect(panel(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1']);
+        await execute(page,profile,'pd.DataFrame({"ok":[1]})'); await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1).getByRole('cell')).toHaveText(['1']);
       }
       await execute(page,profile,profile.id==='SQL'?'SELECT precio FROM productos ORDER BY precio;':'productos[["precio"]]');
-      await expect(panel(page).getByRole('table')).toContainText('500'); await expect(panel(page).getByRole('table')).toContainText('3500');
-      await panel(page).getByRole('tab',{name:'Datos',exact:true}).click(); await expect(panel(page).getByRole('table',{name:'Datos de ventas',exact:true})).toHaveCount(0);
+      await expect(practiceResults(page).getByRole('table')).toContainText('500'); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
+      await openPracticeRegion(page,'data'); await expect(practiceRegion(page,'data').getByRole('combobox',{name:'Tabla de datos',exact:true}).locator('option[value="ventas"]')).toHaveCount(0);
     });
 
     test(caseTitle(profile.id+'-07'),async({page})=>{
@@ -50,8 +51,8 @@ for(const profile of profiles) {
       await showResults(page); await expect(panel(page).getByText('Este resultado corresponde a una versión anterior del código.',{exact:true})).toBeVisible();
       await codeAction(page,'Recuperar código anterior'); await expectCode(page,profile,mutation);
       await codeAction(page,'Restaurar código inicial'); await expectCode(page,profile,initial);
-      await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();
-      await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true}).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
+      await openPracticeRegion(page,'data');
+      await expect((await selectPracticeTable(page,'productos')).getByRole('row').nth(1).getByRole('cell')).toHaveText(profile.id==='SQL'?['1','Teclado','Accesorios','1','45','1','1']:['Teclado','Accesorios','1']);
       await savedCode(page,profile,initial); await page.reload({waitUntil:'networkidle'});
       await page.getByRole('button',{name:'Practicar '+profile.label,exact:true}).click(); await ready(page,profile);
       await codeAction(page,'Recuperar código anterior'); await expectCode(page,profile,mutation); await expect(code(page,profile)).toBeFocused();
@@ -61,11 +62,11 @@ for(const profile of profiles) {
       await openPractice(page,profile); const html='<img src=x onerror=alert(1)>';
       if(profile.id==='SQL') {
         await execute(page,profile,"SELECT nombre FROM productos WHERE 0; SELECT '"+html+"' AS texto, NULL AS vacio;");
-        await expect(panel(page).getByRole('table')).toHaveCount(2); await expect(panel(page).getByRole('table').first().getByRole('row')).toHaveCount(1);
+        await expect(practiceResults(page).getByRole('table')).toHaveCount(2); await expect(practiceResults(page).getByRole('table').first().getByRole('row')).toHaveCount(1);
       } else await execute(page,profile,'pd.DataFrame({"texto":["'+html+'"],"vacio":[None]})');
-      await expect(panel(page).getByRole('table').last().getByRole('row').nth(1).getByRole('cell')).toHaveText([html,'NULL']);
+      await expect(practiceResults(page).getByRole('table').last().getByRole('row').nth(1).getByRole('cell')).toHaveText([html,'NULL']);
       await expect(panel(page).locator('img')).toHaveCount(0);
-      if(profile.id==='PY') {await execute(page,profile,'productos.head(0)'); await expect(panel(page).getByRole('table').getByRole('row')).toHaveCount(1);}
+      if(profile.id==='PY') {await execute(page,profile,'productos.head(0)'); await expect(practiceResults(page).getByRole('table').getByRole('row')).toHaveCount(1);}
     });
 
     test(caseTitle(profile.id+'-09'),async({page})=>{
@@ -88,7 +89,7 @@ for(const profile of profiles) {
         await expect(panel(page).getByRole('alert')).toContainText('localStorage');
       }
       await expect(page).toHaveURL(new RegExp(profile.route+'$')); expect(await page.evaluate(()=>localStorage.getItem('browser-isolation-secret'))).toBe('app-only');
-      await execute(page,profile,profile.query); await expect(panel(page).getByRole('table')).toContainText('3500');
+      await execute(page,profile,profile.query); await expect(practiceResults(page).getByRole('table')).toContainText('3500');
       const runtimeRequests=requests.filter(url=>/\.wasm(?:\?|$)|\.whl(?:\?|$)/.test(url)); expect(runtimeRequests.length).toBeGreaterThan(0);
       expect(runtimeRequests.every(url=>new URL(url).hostname===new URL(frame.url()).hostname)).toBe(true);
     });

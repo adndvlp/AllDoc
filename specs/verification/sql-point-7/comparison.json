@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "passed": 134,
+  "skipped": 1,
+  "failed": 0,
+  "flaky": 0,
+  "regressionReport": "ui-regression-compare.json",
+  "ipadReport": "ui-ipad-compare.json",
+  "snapshotsUpdated": false,
+  "reviewedHashes": 34,
+  "reviewedHashDrift": [],
+  "skipReason": "Modal layout has no separator"
+}

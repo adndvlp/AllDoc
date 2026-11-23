@@ -1,3 +1,4 @@
+import {openPracticeRegion, practiceResults,practiceRegion} from './practice-helpers';
 import {test,expect,type Page} from '@playwright/test';
 import {readFileSync} from 'node:fs';import {createRequire} from 'node:module';import path from 'node:path';
 import {sqliteEnvironment} from '../../src/practice/adapters/sqlite/environment';
@@ -10,17 +11,19 @@ const seed={id:key('negocio-relacional'),toolKey:'analisis-de-datos/sql',profile
 const old={...seed,id:key('productos-basico'),dataset:{id:'productos-basico',version:1},files:[{...seed.files[0],content:"SELECT 'mi borrador' AS mensaje;"}],revision:7,environmentVersion:'sqlite@3.54.1-build1/productos@1/protocol@1'};
 const legacyRecord={formatVersion:1,storageRevision:3,savedAt:10,workspace:old,previous:null};
 async function open(p:Page){await p.goto(route,{waitUntil:'networkidle'});await p.getByRole('button',{name:'Practicar SQL',exact:true}).click();await expect(code(p)).toBeVisible();await expect(panel(p).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();}
-async function execute(p:Page,sql:string){await panel(p).getByRole('tab',{name:'Código',exact:true}).click();await code(p).fill(sql);await expect(panel(p).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();await code(p).press('ControlOrMeta+Enter');await panel(p).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(p).getByText('Ejecución completada',{exact:true})).toBeVisible();}
+async function execute(p:Page,sql:string){await openPracticeRegion(p,'editor');await code(p).fill(sql);await expect(panel(p).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();await code(p).press('ControlOrMeta+Enter');await openPracticeRegion(p,'results');await expect(panel(p).getByText('Ejecución completada',{exact:true})).toBeVisible();}
 
 test('negocio real: trece tablas, JOIN y CTE con ranking, FK activas y reinicio',async({page})=>{
- await open(page);await panel(page).getByRole('tab',{name:'Datos',exact:true}).click();await expect(panel(page).getByRole('table')).toHaveCount(13);
+ await open(page);await openPracticeRegion(page,'data');await expect(practiceRegion(page,'data').getByRole('combobox',{name:'Tabla de datos',exact:true}).locator('option')).toHaveCount(13);await expect(practiceRegion(page,'data').getByRole('table')).toHaveCount(1);
  await expect(panel(page).getByRole('table',{name:'Datos de productos',exact:true})).toContainText('Monitor');await expect(page).toHaveScreenshot('business-data.png');
  await execute(page,`WITH ventas AS (SELECT c.id,SUM(d.cantidad*d.precio_unitario) AS total FROM clientes c JOIN pedidos p ON p.cliente_id=c.id JOIN detalle_pedidos d ON d.pedido_id=p.id GROUP BY c.id) SELECT id,total,DENSE_RANK() OVER(ORDER BY total DESC) AS posicion FROM ventas ORDER BY total DESC,id LIMIT 3;`);
- const table=panel(page).getByRole('table');await expect(table.getByRole('row')).toHaveCount(4);await expect(table.getByRole('row').nth(1).getByRole('cell')).toHaveText(['3','17550','1']);await expect(table.getByRole('row').nth(2).getByRole('cell')).toHaveText(['6','16450','2']);await expect(table.getByRole('row').nth(3).getByRole('cell')).toHaveText(['9','11400','3']);await expect(page).toHaveScreenshot('business-result.png');
- await panel(page).getByRole('tab',{name:'Código',exact:true}).click();await code(page).fill('UPDATE productos SET proveedor_id=9999 WHERE id=1;');await panel(page).getByRole('button',{name:'Ejecutar',exact:true}).click();await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page).getByRole('alert')).toContainText(/FOREIGN KEY/i);
- await execute(page,'CREATE TABLE libre(id INTEGER); INSERT INTO libre VALUES(7); SELECT * FROM libre;');await expect(panel(page).getByRole('table')).toContainText('7');
- await panel(page).getByRole('button',{name:'Reiniciar entorno',exact:true}).click();await panel(page).getByRole('tab',{name:'Código',exact:true}).click();await expect(code(page)).toContainText('CREATE TABLE libre');
- await execute(page,"SELECT count(*) AS tablas FROM sqlite_schema WHERE type='table' AND name NOT LIKE 'sqlite_%';");await expect(panel(page).getByRole('table').getByRole('row').nth(1)).toContainText('13');
+ const table=practiceResults(page).getByRole('table');await expect(table.getByRole('row')).toHaveCount(4);await expect(table.getByRole('row').nth(1).getByRole('cell')).toHaveText(['3','17550','1']);await expect(table.getByRole('row').nth(2).getByRole('cell')).toHaveText(['6','16450','2']);await expect(table.getByRole('row').nth(3).getByRole('cell')).toHaveText(['9','11400','3']);
+ await practiceRegion(page,'editor').getByRole('button',{name:'Ir al resultado',exact:true}).click();await expect(table.getByRole('row').nth(3)).toBeInViewport();
+ await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();await expect(page).toHaveScreenshot('business-result.png');
+ await openPracticeRegion(page,'editor');await code(page).fill('UPDATE productos SET proveedor_id=9999 WHERE id=1;');await panel(page).getByRole('button',{name:'Ejecutar',exact:true}).click();await openPracticeRegion(page,'results');await expect(panel(page).getByRole('alert')).toContainText(/FOREIGN KEY/i);
+ await execute(page,'CREATE TABLE libre(id INTEGER); INSERT INTO libre VALUES(7); SELECT * FROM libre;');await expect(practiceResults(page).getByRole('table')).toContainText('7');
+ await panel(page).getByRole('button',{name:'Reiniciar entorno',exact:true}).click();await openPracticeRegion(page,'editor');await expect(code(page)).toContainText('CREATE TABLE libre');
+ await execute(page,"SELECT count(*) AS tablas FROM sqlite_schema WHERE type='table' AND name NOT LIKE 'sqlite_%';");await expect(practiceResults(page).getByRole('table').getByRole('row').nth(1)).toContainText('13');
 });
 
 test('migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecuta el borrador',async({page})=>{
@@ -28,7 +31,7 @@ test('migración en la app: IndexedDB antiguo se copia una vez y abrir no ejecut
   await new Promise<void>((resolve,reject)=>{const request=indexedDB.open('alldoc-practice',1);request.onupgradeneeded=()=>{const db=request.result;db.createObjectStore('drafts',{keyPath:'workspace.id'});const recoveries=db.createObjectStore('recoveries',{keyPath:'id'});recoveries.createIndex('workspaceId','workspaceId');};request.onerror=()=>reject(request.error);request.onsuccess=()=>{const db=request.result;const tx=db.transaction('drafts','readwrite');tx.objectStore('drafts').put(record);tx.oncomplete=()=>{db.close();resolve();};tx.onabort=()=>reject(tx.error);};});
  },legacyRecord);
  await open(page);await expect(code(page)).toHaveText(old.files[0].content);await expect(panel(page)).toContainText('Dataset actualizado');
- await panel(page).getByRole('tab',{name:'Resultados',exact:true}).click();await expect(panel(page).getByRole('table')).toHaveCount(0);await expect(panel(page).getByText('Ejecución completada',{exact:true})).toHaveCount(0);
+ await openPracticeRegion(page,'results');await expect(practiceResults(page).getByRole('table')).toHaveCount(0);await expect(panel(page).getByText('Ejecución completada',{exact:true})).toHaveCount(0);
  const stored=await page.evaluate(async({oldId,newId})=>await new Promise<{old:any;current:any}>((resolve,reject)=>{const r=indexedDB.open('alldoc-practice');r.onsuccess=()=>{const db=r.result;const tx=db.transaction('drafts');const a=tx.objectStore('drafts').get(oldId),b=tx.objectStore('drafts').get(newId);tx.oncomplete=()=>{resolve({old:a.result,current:b.result});db.close();};tx.onabort=()=>reject(tx.error);};}),{oldId:old.id,newId:seed.id});
  expect(stored.old).toEqual(legacyRecord);expect(stored.current.workspace.files).toEqual(old.files);expect(stored.current.previous.files).toEqual(old.files);const revision=stored.current.storageRevision;
  await page.reload({waitUntil:'networkidle'});await page.getByRole('button',{name:'Practicar SQL',exact:true}).click();await expect(code(page)).toHaveText(old.files[0].content);
