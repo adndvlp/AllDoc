@@ -130,7 +130,7 @@ test('buscador accesible y dentro de la pantalla', async ({page}, testInfo) => {
   await expect(dialog).toBeVisible();
   const input = dialog.getByRole('searchbox');
   await input.fill('filtrar');
-  const result = dialog.getByRole('link').filter({hasText: 'WHERE'});
+  const result = dialog.getByRole('link').filter({has: page.getByText('WHERE',{exact:true})});
   await expect(result).toHaveCount(1);
   await fitsViewport(page, dialog);
   await fitsViewport(page, dialog.getByRole('button', {name: 'Cerrar buscador'}));

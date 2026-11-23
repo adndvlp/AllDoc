@@ -1,0 +1,1265 @@
+{
+  "block": "ALTER TABLE → Transacciones",
+  "sourceInventorySha256": "be0a06e66b22281a4049270aa07f463d9949d296715cb5acb1eef273663f9cbe",
+  "sources": [
+    {
+      "path": "tmp/SQL/1.- SELECT/1.- base.md",
+      "sha256": "b2f9a1d996d3de2bce07e94cc99d60654c5b75a1e176c88aff2d08597403c392",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/select",
+        "analisis-de-datos/sql/select/todas-las-columnas",
+        "analisis-de-datos/sql/select/columnas-concretas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/1.- base.md",
+      "sha256": "b9de45f3087c2b399e3f62dfb4abd04e354fc1ab0784971996f765769fa5bf61",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/limit",
+        "analisis-de-datos/sql/limit/filas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/2.- LIMIT/2.- Offset.md",
+      "sha256": "74796b3332301640be89d82a83f1fc801b47406fc5f189c9b57bbd5a91cc3480",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/limit/offset"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/1.- Base, Operadores y tipos.md",
+      "sha256": "c7c32461e71312b2e6c13d1c6d48a528f645b059e43447aa23a8ebf91b651bbb",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/where",
+        "analisis-de-datos/sql/where/operadores",
+        "analisis-de-datos/sql/where/tipos"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- And.md",
+      "sha256": "083b55ffd58a2dc3f0ad67d692d273615b58d53794223f8a319f8f7c5d546f3c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/and"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/2.- OR.md",
+      "sha256": "013859f78243789b53690467fcde73ef9fc36270839dec74a828c1a5fb870d19",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/or"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/3.- NOt.md",
+      "sha256": "02bc0293f7872aee0b7bc770bf9f82aa1d9fd0053cdae89a0fd847e117ed2f88",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/not"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/3.- WHERE/4.- combinado and or not.md",
+      "sha256": "548102d7fdee98fd3a46496e9d6b61c7ab7842715f931746c416a19074239e37",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/where/combinaciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/1.- base, and.md",
+      "sha256": "acfb438d77d544f6afd57177438f108b222e68454098c3ca4369cb57d0173478",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/between",
+        "analisis-de-datos/sql/between/rango"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/4.- BEtweem/2.-Not.md",
+      "sha256": "2f64f30a96abe37842a0550e9223448600afd1ae8612305647c4df8118998c01",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/between/not-between"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/1.- base.md",
+      "sha256": "2a0f1f01dbfb8e3ae80c4a35c77f036fa3390b9d00478311002ee00792058e74",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/in",
+        "analisis-de-datos/sql/in/lista"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/5.- IN/2.- not.md",
+      "sha256": "75f3fc2037fc0ec5bdc7cb07a99ae298b4c9e09077df27a43d4df10344f11b5b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/in/not-in"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/1.- LIKe.md",
+      "sha256": "8f6b4493264196df6e75cee45ea499ec718690110f6eec4fd2afd1db11b872fe",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/like",
+        "analisis-de-datos/sql/like/comodines"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/6.- LIke/2.- NOt.md",
+      "sha256": "21d3544f0deb7b297e0727cadcc57def934853fbcff30f2cd267777a3449d6d4",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/like/not-like"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/1.- Base.md",
+      "sha256": "a57ec8c632e6849900a47464be4fd513f7ca6465f9318efb62f2e384706c97f8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by",
+        "analisis-de-datos/sql/order-by/asc"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/3.- DESC.md",
+      "sha256": "5955ab790e5c2e3534582b85e1bbb50d6f0f4d440237694ff4eac272dd867f57",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by/desc"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/7.- ORDER BY/4.- combinado.md",
+      "sha256": "666263fb99be9ef6ca100ac2d5512f9721cada44681c2fc45fc53db3d29fb4c7",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/order-by/varias-columnas",
+        "analisis-de-datos/sql/order-by/con-limit"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/8.- Distinct/1.- Base.md",
+      "sha256": "2371c0b78a0daeae06216817a7f188a2fa3d5d9473da6087530bb4b21b46181d",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/distinct",
+        "analisis-de-datos/sql/distinct/columna",
+        "analisis-de-datos/sql/distinct/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/1.- Base.md",
+      "sha256": "2295558aae8553ef17abacbf7f3c04984ffce08d98004dbc5e95bf4b6895e2ec",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/join",
+        "analisis-de-datos/sql/join/on"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/2.- aliases.md",
+      "sha256": "66cdb0f628ec339cb953748d86e681b972505829c4a248731013828b36d439a8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/alias"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/3.- self join.md",
+      "sha256": "e79bd911afa33a43b8d9a75a2bc1805f9bc2bda1e6ba26d6acffd90a59071694",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/self-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/9.- Join/4.- cross join.md",
+      "sha256": "c0781f94a32249861dcca466421cd0293ce9340e06a76a52a4ec8f713b76676c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/join/cross-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/1.- left join.md",
+      "sha256": "e45d21c57b9d2b9ac7c5f6a1b3cd0d3d72d2bf8235462b6e693a725f07570512",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins",
+        "analisis-de-datos/sql/outer-joins/left-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/2.- right join.md",
+      "sha256": "fecf1620e4b21cbb364953f5306bcb5cb0065d4db4cd1e4db25aa8f668678381",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/right-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/3.- full outer join.md",
+      "sha256": "fc6408f4350e6fd92d8cef012bef75c45486965fc9ea08f07e38e088bbb73627",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/full-outer-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/10.- joins extremos/4.- anti join.md",
+      "sha256": "60340ddce096ea33f81dd39cdc1918747d199b4a666258e6b5411fdf24f4d8ac",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/outer-joins/anti-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/1.- base.md",
+      "sha256": "4c369062a1a62e0de5655b36c1ed3f0e060262a092e395125beb5f360deae6b2",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/null",
+        "analisis-de-datos/sql/null/is-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/2.- NOT NULL.md",
+      "sha256": "6f7d73a827b153989b5debbaa698f3d3bfd8803eb4b0d17cf940f9005e4099b2",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/null/is-not-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/11.- NULL/3.- NULL IF.md",
+      "sha256": "16b588955156b17e45be435d0ae091dec7a907dd22a9faee2dd02685f0b2d015",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/null/nullif"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/12.- COALESCE/1.- base.md",
+      "sha256": "1c736b59f46bf42093f0314a032d1fc5329d9fedd39986aebb514a0af539e96b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/coalesce",
+        "analisis-de-datos/sql/coalesce/alternativas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/13.- CASE WHEN/1.- Base.md",
+      "sha256": "f20770357e9f96f520e6391a657591f45363c51d591c02a1ad5e1b8b0ce63652",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/case",
+        "analisis-de-datos/sql/case/condiciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Revisar definición y ejemplos en contexto de negocio, con notas sobre NULL, orden y dialectos cuando corresponda."
+    },
+    {
+      "path": "tmp/SQL/14.- CAST/1.- base.md",
+      "sha256": "ded86bfe96fb03f6c6e4ef4b63ad1042f4c73556099b512bddb06720db046347",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/cast",
+        "analisis-de-datos/sql/cast/conversion",
+        "analisis-de-datos/sql/cast/tipos",
+        "analisis-de-datos/sql/text-functions/concat"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-3",
+      "decision": "Separar conversión explícita de concatenación; esta última queda en el punto 4.",
+      "carryOver": "Concatenación resuelta en Funciones de texto desde el punto 4."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/1.- UPPER(texto).md",
+      "sha256": "d06bbda021d91bfeda597495a5ace76093f610fee284aaacb86a08107757f2b1",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions",
+        "analisis-de-datos/sql/text-functions/upper",
+        "analisis-de-datos/sql/text-functions/lower",
+        "analisis-de-datos/sql/text-functions/length",
+        "analisis-de-datos/sql/text-functions/substring",
+        "analisis-de-datos/sql/text-functions/trim",
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/2.- LOWER(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/lower"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/3.- LENGTH(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/length"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/4.- SUBSTR(texto, inicio, longitud).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/substring"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/5.- TRIM(texto).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/trim"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/15.- Funciones de texto/6.- REPLACE(texto, buscar, reemplazo).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/text-functions/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Funciones de texto completas; longitud en caracteres/bytes y LEN, subcadena, TRIM, REPLACE escalar y concatenación con NULL por motor."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/1.- ROUND(número, decimales).md",
+      "sha256": "578241ca02f984a7f14ec0749fa7079b7ad9ba04d2a5cf8028faac38189f4a95",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/numeric-functions",
+        "analisis-de-datos/sql/numeric-functions/round",
+        "analisis-de-datos/sql/numeric-functions/division",
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "ROUND y ABS; división decimal explícita y MIN/MAX escalares de SQLite no portátiles."
+    },
+    {
+      "path": "tmp/SQL/16.- Funciones numércias/2.- ABS(número).md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/numeric-functions/abs"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. ROUND y ABS; división decimal explícita y MIN/MAX escalares de SQLite no portátiles."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/1.- COUNT.md",
+      "sha256": "4580df481cae9acc53d772c02452c0535d1765727c41d90cf12aafee1b3a395c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation",
+        "analisis-de-datos/sql/aggregation/count"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/2.- SUM.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/sum"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/3.- AVG.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/avg"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/4.- MIN.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/min"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/5-. MAX.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/max"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Fuente vacía completada con ejemplo propio de negocio. Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/6.- GROUP_CONCAT.md",
+      "sha256": "cdf4764628bd7495feb9dc7667d6e0dc4170c32b80a9f81fc4e7c36de6f37415",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/string-aggregate"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/7-. Combinación.md",
+      "sha256": "20175fa3be51063d4e25088dc9130ce47614d3df0872b8ad3ebe9184410f3057",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/combinaciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/17.- Agregación/8-. Con flitro WHERE.md",
+      "sha256": "ad7c60037c15fb31012406d1243fd10d746c46bbb7ee89dcdff151913fd6ae17",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/aggregation/con-where"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Agregación global antes de GROUP BY; COUNT/NULL, cero filas y concatenación ordenada por motor."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/1.- base.md",
+      "sha256": "9a5a0b282968d9da1dd37ec776950d06e3849aaadd253d7028ad0bcea87a904c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by",
+        "analisis-de-datos/sql/group-by/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/2.- HAVING.md",
+      "sha256": "f051c3225475b91aca48a4f2f63a7e805611dfb0fdbbfb20a6cc8d5b1d6d216d",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by/having"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/18.- GROUP BY/3.- diff having y where.md",
+      "sha256": "a03cba77548de8ea4e8de723e2f494f178d1dde1e367b01582026a9c3bbbfb06",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/group-by/where-y-having"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas agrupadas completas, orden de salida explícito, HAVING frente a WHERE."
+    },
+    {
+      "path": "tmp/SQL/19.- orden de ejecución/1.-  base.md",
+      "sha256": "a560b4bb973f7efdbd5e6a931a7334f1f68ca7ff53178e57ad25fb331181b027",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/logical-order",
+        "analisis-de-datos/sql/logical-order/orden-logico",
+        "analisis-de-datos/sql/logical-order/plan-fisico"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Orden lógico de vinculación separado del plan físico elegido por el optimizador."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/1.- base.md",
+      "sha256": "143882d0f392b117768e8985576cad2d5efb5b4043e0186eea2f7d5539393e7b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert",
+        "analisis-de-datos/sql/insert/columnas",
+        "analisis-de-datos/sql/insert/varias-filas",
+        "analisis-de-datos/sql/insert/sin-lista"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/2.- INSERT OR IGNORE.md",
+      "sha256": "ff6dfad473b306fdbcc2af49d12e051547cc5bbcaabe26012189e994b693c1db",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert/ignore"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/20.- INSERT INTO/3.- INSERT OR REPLACE.md",
+      "sha256": "a589ddbbca3bc217713277d7c50ef603589274549846f37daaa7470d49d0f9ba",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/insert/replace"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Columnas/valores y varias filas; conflictos explícitos. REPLACE borra e inserta; no se inventa una equivalencia upsert."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/1.- base.md",
+      "sha256": "df4a7ecb5561980723bc5155002b7fd09a4525494286ee7cac91341e8d0b8237",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/update",
+        "analisis-de-datos/sql/update/varias-columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "WHERE explícito, revisión mediante selección del SELECT inicial y resultado final del programa."
+    },
+    {
+      "path": "tmp/SQL/21.- UPDATE/2.- SELECT y UPDATE.md",
+      "sha256": "7e5a5e08448f676b05418ec9ba99445c97ea289cfd00285335282910605e75b5",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/update/comprobar-con-select"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "WHERE explícito, revisión mediante selección del SELECT inicial y resultado final del programa."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/1.- base.md",
+      "sha256": "851036a0340b4dae25c98f7da973ad4feeb62ebae507b42b5339a542897456e8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/delete",
+        "analisis-de-datos/sql/delete/condiciones"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Revisión mediante selección, alcance sin WHERE, integridad referencial y literales de fecha explícitos."
+    },
+    {
+      "path": "tmp/SQL/22.- DELETE/2.- SELECT y DELETE.md",
+      "sha256": "c583ba10c9d5f4fa2ac0d1756197ea4ac213b7b459945e9c45ff1d81510c67dd",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/delete/comprobar-con-select"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Revisión mediante selección, alcance sin WHERE, integridad referencial y literales de fecha explícitos."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/1.- base.md",
+      "sha256": "54b97ed8234c6478eca77e70b7a536f58739e49d15559cf4989cdbcf2d0eeb40",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table",
+        "analisis-de-datos/sql/create-table/tipos",
+        "analisis-de-datos/sql/create-table/not-null",
+        "analisis-de-datos/sql/create-table/unique",
+        "analisis-de-datos/sql/create-table/default",
+        "analisis-de-datos/sql/create-table/check"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/2.- IF NOT EXISTS.md",
+      "sha256": "f103c52684313137dcf7473cde3c76c8788d2f610d2bf14e9218721bd5f0fabe",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/if-not-exists"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/3.- PRIMARY KEY.md",
+      "sha256": "129911b217509d88d1245701c99e6264ecd2337787908363f8ca41b467c6aecd",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/primary-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/4.- FOREIGN KEY.md",
+      "sha256": "49ccd83d8765c6ba9a0f45d28d537c235fd0879b3af46cc855ee3553475e96a8",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/foreign-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/5.- Múltiples claves foráneas.md",
+      "sha256": "8159574395caf4801a11be5e2ada49fc064417ae4c079224535af29a54ac5a4e",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/varias-foreign-key"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/6.- ON DELETE CASCADE.md",
+      "sha256": "93312ab80faa88226902dc02246b142e4a562b8e50f3811b6e2967ea82ddf253",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/on-delete-cascade"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/23.- CREATE TABLE/7.- ON DELETE SET NULL.md",
+      "sha256": "080e6475a35707a2c95dd36026d2c4426253a959e72c7e35c5102280b8bde605",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/create-table/on-delete-set-null"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-4",
+      "decision": "Tipos, afinidad SQLite, identidad por dialecto, restricciones reales, IF NOT EXISTS en Oracle 26 y ausencia en SQL Server, FK/CASCADE/SET NULL."
+    },
+    {
+      "path": "tmp/SQL/24.- ALTER TABLE/1.- base.md",
+      "sha256": "743504c465946153c78c1995f8b9bfc1c92a4ff019c184ef688f403c7c09d00c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/alter-table",
+        "analisis-de-datos/sql/alter-table/add-column",
+        "analisis-de-datos/sql/alter-table/rename-column",
+        "analisis-de-datos/sql/alter-table/rename-table",
+        "analisis-de-datos/sql/alter-table/drop-column"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "ADD/RENAME/DROP por dialecto, DEFAULT aplicado a filas existentes y advertencia sobre dependencias y DDL no reversible universalmente."
+    },
+    {
+      "path": "tmp/SQL/25.- DROP TABLE/1.- base.md",
+      "sha256": "68ebabc9c0a14e34ac4d688f9bd25d71e968e0c50e758b3c95932faf56603b78",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/drop-table",
+        "analisis-de-datos/sql/drop-table/if-exists"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "DROP con y sin IF EXISTS, ausencia verificada en catálogo y diferencia frente a DELETE."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/1.- CREATE VIEW.md",
+      "sha256": "888f9334a6e067e987d67e4fda411a076514c222de82bace815aef006a182047",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/views",
+        "analisis-de-datos/sql/views/create-view"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Vista normal no materializada; JOIN; IF NOT EXISTS solo cuando está soportado; reemplazo con columnas compatibles y GO del cliente en SQL Server. SQLite requiere DROP + CREATE; triggers INSTEAD OF son una excepción a su lectura exclusiva."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/2-. CREATE VIEW con JOINs.md",
+      "sha256": "48b6e7de1b8b8f2dd67e9cac275f5b728952700063b47930e3e3229db005cac0",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/views/con-join"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Vista normal no materializada; JOIN; IF NOT EXISTS solo cuando está soportado; reemplazo con columnas compatibles y GO del cliente en SQL Server. SQLite requiere DROP + CREATE; triggers INSTEAD OF son una excepción a su lectura exclusiva."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/3.- CREATE VIEW IF NOT EXISTS.md",
+      "sha256": "c518cf6f0870640f0db63cb595d101f5ac8920d21a203e22e1b3789820ef7632",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/views/if-not-exists",
+        "analisis-de-datos/sql/views/replace-view"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Vista normal no materializada; JOIN; IF NOT EXISTS solo cuando está soportado; reemplazo con columnas compatibles y GO del cliente en SQL Server. SQLite requiere DROP + CREATE; triggers INSTEAD OF son una excepción a su lectura exclusiva."
+    },
+    {
+      "path": "tmp/SQL/26.- VIEWs/4.- DROP VIEW.md",
+      "sha256": "0c8ede1a9125ebe8a2d8bebbf8f7cd788ae894b64ae6dbcb6f77526c5685437b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/views/drop-view"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Vista normal no materializada; JOIN; IF NOT EXISTS solo cuando está soportado; reemplazo con columnas compatibles y GO del cliente en SQL Server. SQLite requiere DROP + CREATE; triggers INSTEAD OF son una excepción a su lectura exclusiva."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/1.- base.md",
+      "sha256": "3db21382f6aa74c581cb55339675550e7729777448abf9b85da37dd9b0049bfd",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/indexes",
+        "analisis-de-datos/sql/indexes/simple-y-compuesto"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Índices simples/compuestos/UNIQUE, catálogos reales por motor y DROP. Se elimina la afirmación de que una segunda columna nunca se aprovecha; no se afirma que el índice siempre acelere o se use."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/2.- UNIQUE.md",
+      "sha256": "2c2fb23901c7f0e9cb68be3c8e3755558a6d7ed71f9b83548b9db9d744f9c42a",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/indexes/unique"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Índices simples/compuestos/UNIQUE, catálogos reales por motor y DROP. Se elimina la afirmación de que una segunda columna nunca se aprovecha; no se afirma que el índice siempre acelere o se use."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/3.- SELECT.md",
+      "sha256": "806ac571959d1ed7eb8247ccec63571101175aa63cf730f4170d150b77e25a1b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/indexes/consultar"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Índices simples/compuestos/UNIQUE, catálogos reales por motor y DROP. Se elimina la afirmación de que una segunda columna nunca se aprovecha; no se afirma que el índice siempre acelere o se use."
+    },
+    {
+      "path": "tmp/SQL/27.- INDEX/4.- DROP.md",
+      "sha256": "cf69cac5a9a57534f8f0b1b0415f09fd200a366ba2a89d12637a06ffd6e9b344",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/indexes/drop"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Índices simples/compuestos/UNIQUE, catálogos reales por motor y DROP. Se elimina la afirmación de que una segunda columna nunca se aprovecha; no se afirma que el índice siempre acelere o se use."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/1.- WHERE.md",
+      "sha256": "e728a385269cabac7fbf008370525adce938f07f3b225935c1c98f3e5c639c85",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/subqueries",
+        "analisis-de-datos/sql/subqueries/where"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Comparaciones escalares, lista IN, valor SELECT y EXISTS/NOT EXISTS con relaciones del dataset; no se elimina la multiplicidad sin explicar."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/2.- IN.md",
+      "sha256": "0659b98b977a5b3a344710118a98518c13c62252caa74aefba8ec359853245ff",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/subqueries/in"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Comparaciones escalares, lista IN, valor SELECT y EXISTS/NOT EXISTS con relaciones del dataset; no se elimina la multiplicidad sin explicar."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/3.- SELECT.md",
+      "sha256": "07a85dcb5a0128997551ace9bafa9cce25111d6550b1e279a4a07776878e9c0c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/subqueries/select"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Comparaciones escalares, lista IN, valor SELECT y EXISTS/NOT EXISTS con relaciones del dataset; no se elimina la multiplicidad sin explicar."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/4.- EXISTS.md",
+      "sha256": "0ad7fd58316192e3140fa24dfe693b3f792e6e66ca2d7cca2e80e190b970ac90",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/subqueries/exists"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Comparaciones escalares, lista IN, valor SELECT y EXISTS/NOT EXISTS con relaciones del dataset; no se elimina la multiplicidad sin explicar."
+    },
+    {
+      "path": "tmp/SQL/28.- SUBconsultas/5.- NOT EXISTS.md",
+      "sha256": "daa3bcc30042953f206778e3a261b7a19a2445cad9b868df7ce4261c112bb930",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/subqueries/not-exists"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Comparaciones escalares, lista IN, valor SELECT y EXISTS/NOT EXISTS con relaciones del dataset; no se elimina la multiplicidad sin explicar."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/1.- base.md",
+      "sha256": "673dd4cffd5a005a99396d50b51a5cee74f2088c8e6636a521a9631ec8985963",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/union"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "UNION y ALL contrastados, columnas compatibles y ORDER BY global."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/2.- UNION ALL.md",
+      "sha256": "44cca17934aa61ba0d773512616009f5d5a6a8de2d02ceb83fff84c29e1ac5d0",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/union/union-all"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "UNION y ALL contrastados, columnas compatibles y ORDER BY global."
+    },
+    {
+      "path": "tmp/SQL/29.- UNION/3.- ORDER BY con UNION.md",
+      "sha256": "f736aa11ff339da52b6189c41d820f8d3c16dfa2bfe49a67039965b6a2fdfa9f",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/union/order-by"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "UNION y ALL contrastados, columnas compatibles y ORDER BY global."
+    },
+    {
+      "path": "tmp/SQL/30.- INTERSECT/1.- base.md",
+      "sha256": "0c80de3d96f601ec107ebbc9def83ff8d407fae33dccec647c11563f70028233",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/intersect",
+        "analisis-de-datos/sql/intersect/columnas"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Intersección de filas completas, tipos compatibles y soporte de las versiones revisadas de MySQL/MariaDB."
+    },
+    {
+      "path": "tmp/SQL/31.- EXCEPT/1.- base.md",
+      "sha256": "9c13e2031722258e578b8391175f3999ca8d627078a8946e35ba3904d326db77",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/except",
+        "analisis-de-datos/sql/except/equivalentes"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Diferencia direccional entre resultados; Oracle 26 ofrece EXCEPT y MINUS, con ejemplo explícito de MINUS."
+    },
+    {
+      "path": "tmp/SQL/32.- CTEs/1.- base.md",
+      "sha256": "2e2703c7f8b8565e71e28c761830f7649e6c8e7c6548049cec625294c27ccbad",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/cte",
+        "analisis-de-datos/sql/cte/with"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Consulta con nombre por sentencia; no se presenta como variable ni materialización o mejora de rendimiento garantizadas."
+    },
+    {
+      "path": "tmp/SQL/32.- CTEs/2.- Múltiples ctes.md",
+      "sha256": "05b961e047c7bb919d132cfaaa0f51b1e0ae6c9b2eefefc2142e9ee9647384ed",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/cte/multiples"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Consulta con nombre por sentencia; no se presenta como variable ni materialización o mejora de rendimiento garantizadas."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/1.- base.md",
+      "sha256": "1a099175afc49c95daa8d1bd90a7e30d0ef5f45f9859319b1cdbe7522ce7892b",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions",
+        "analisis-de-datos/sql/window-functions/over"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/2.- PARTITION BY.md",
+      "sha256": "e7029c045de816260767ee8f8ad8f0c4cee056794907240683e1f3869c6532b1",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/partition-by"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/3.- PARTITION BY y ORDER BY.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "empty": true,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/order-by",
+        "analisis-de-datos/sql/window-functions/frame"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/4.- ROW_NUMBER().md",
+      "sha256": "e3e2b555adaa04e7c7ce55e45477078731812c19c8df12944d360160bec811b5",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/row-number"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/5.- RANK() y DENSE_RANK().md",
+      "sha256": "c5de68fd57047e4be8b697a26ea1fcd0d837845d59ca80d60668a74b190d1e9e",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/rank"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/6.- LAG() y LEAD().md",
+      "sha256": "af339a7ac2810df5828025d6ae0a8ce87a279f4901e58cfd55799c592865d8a0",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/lag-lead"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/33.- Funciones ventana/7.- Agregaciones.md",
+      "sha256": "1b12ebb78f9dd3df39009e2c16c6b603b741c4e029f839cb8dd5a0e4bb133346",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/window-functions/agregados"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Filas conservadas, partición/orden de cálculo frente a orden de salida; ROWS/RANGE con empates, ROW_NUMBER/LAG/LEAD con desempate, RANK/DENSE_RANK conservando empates."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/1.- base.md",
+      "sha256": "de667119cfef44eed543670e0e35695b7d103751bc5e9a65f6e90fd03f0cb4a7",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/transactions",
+        "analisis-de-datos/sql/transactions/begin"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Control de débito y crédito con rollback ante saldo insuficiente o cuenta ausente, confirmación explícita, transacción entre ejecuciones, autocommit de cliente/motor y DDL con commit implícito. Bloques procedurales externos se copian; no se preparan en SQLite."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/2.- COMMIT.md",
+      "sha256": "1a43fd27e27452055d4a334eccb98e312f32d93294f848f3143f212c3757683c",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/transactions/commit"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Control de débito y crédito con rollback ante saldo insuficiente o cuenta ausente, confirmación explícita, transacción entre ejecuciones, autocommit de cliente/motor y DDL con commit implícito. Bloques procedurales externos se copian; no se preparan en SQLite."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/3.- ROLLBACK.md",
+      "sha256": "eadc108c6794e80a9ef28a0ba37ef71791acb0922da9806df9504902539d5b1d",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/transactions/rollback"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Control de débito y crédito con rollback ante saldo insuficiente o cuenta ausente, confirmación explícita, transacción entre ejecuciones, autocommit de cliente/motor y DDL con commit implícito. Bloques procedurales externos se copian; no se preparan en SQLite."
+    },
+    {
+      "path": "tmp/SQL/34.- Transacciones/4.- Autocommit.md",
+      "sha256": "d282267ecc7d6cdea9561ae8f320e885ebaa0073dc3531db8832c4f2db891235",
+      "empty": false,
+      "publishedTargets": [
+        "analisis-de-datos/sql/transactions/autocommit"
+      ],
+      "pendingTargets": [],
+      "status": "reviewed",
+      "reviewedIn": "point-5",
+      "decision": "Control de débito y crédito con rollback ante saldo insuficiente o cuenta ausente, confirmación explícita, transacción entre ejecuciones, autocommit de cliente/motor y DDL con commit implícito. Bloques procedurales externos se copian; no se preparan en SQLite."
+    }
+  ],
+  "scope": {
+    "newConcepts": 48,
+    "newExamples": 50,
+    "totalSQLConcepts": 153,
+    "totalSQLExamples": 166,
+    "groups": 34,
+    "reviewedCapabilities": 540,
+    "sourceFiles": 99,
+    "emptySourcesResolved": 11,
+    "sourceFilesInThisBlock": 33,
+    "externalExecutions": 0
+  }
+}

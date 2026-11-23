@@ -27,8 +27,8 @@ test('el catálogo conserva tres áreas, diecinueve herramientas y los cinco gru
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 106 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [106, 0, 0]);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 154 conceptos', true], ['Por explorar', false], ['Por explorar', false]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [154, 0, 0]);
   assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1);
 });
 

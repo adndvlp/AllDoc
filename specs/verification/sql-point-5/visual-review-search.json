@@ -1,0 +1,29 @@
+{
+  "reviewed": 4,
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/buscador.png",
+      "sha256": "fcda80c9b6aa52c91571aecd441534d0e06ce9024dadb03cec2faef73a616342",
+      "viewed": true,
+      "notes": "Se revisó la segunda coincidencia de subconsultas con WHERE primero y los nuevos destinos al final del catálogo; controles accesibles y disposición conservada."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/busqueda-inicio.png",
+      "sha256": "422ef8e95750c744927f6fffedd894fc4bd946a9de2002c62bdc24323a0e2ea7",
+      "viewed": true,
+      "notes": "Se revisó la segunda coincidencia de subconsultas con WHERE primero y los nuevos destinos al final del catálogo; controles accesibles y disposición conservada."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/catalogo.png",
+      "sha256": "2ed0e5e111eec9a633e70e6724bf192c5a0f6dc52fe48e19b8eba3dbad334234",
+      "viewed": true,
+      "notes": "Se revisó la segunda coincidencia de subconsultas con WHERE primero y los nuevos destinos al final del catálogo; controles accesibles y disposición conservada."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/busqueda-inicio.png",
+      "sha256": "f5954ac5d6d34962f80fb4bbbd9a5802583916ec1d8374d1c094daf7a342f611",
+      "viewed": true,
+      "notes": "Se revisó la segunda coincidencia de subconsultas con WHERE primero y los nuevos destinos al final del catálogo; controles accesibles y disposición conservada."
+    }
+  ]
+}

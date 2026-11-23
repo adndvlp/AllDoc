@@ -5,7 +5,7 @@ import {resolveSqlExampleAction} from '../../sql/variants.ts';
 import type {SqlDialectId,SqlVariant,VerifiedSqliteExample} from '../../sql/contracts.ts';
 
 export type SqlOutput={columns:string[];rows:string[][]};
-export type ExampleChange={code?:string;explanation:string;unavailable?:boolean;alternative?:{label:string;href:string}};
+export type ExampleChange={code?:string;explanation:string;unavailable?:boolean;external?:boolean;alternative?:{label:string;href:string}};
 export type SqlExample={id:string;title:string;code:string;hint:string;output:SqlOutput;changes?:Partial<Record<SqlDialectId,ExampleChange>>};
 export type SqlConcept={id:string;conceptId:string;key:string;slug:string;title:string;description:string;number:string;order:number;examples:[SqlExample,...SqlExample[]];remember:string;note?:string};
 type Input={key:string;examples:readonly {title:string;code:string;hint:string;id?:string;changes?:SqlExample['changes']}[];remember:string;note?:string};
@@ -20,7 +20,7 @@ export function resolveNoteExample(concept:SqlConcept,example:SqlExample,dialect
   equivalentTo:code&&code!==example.code?[{dialectId:dialect,code}]:[]}]:[];
  const explanation=change?.explanation??(cell.status==='reviewed'?cell.explanation:'Revisión pendiente.');
  const variant:SqlVariant={conceptId:concept.conceptId,feature:plan.feature,dialectId:dialect,stage:'reviewed',support:cell.status==='reviewed'?cell.support:'native',
-  ...(code?{code}:{}),explanation,sources:cell.status==='reviewed'?cell.sources:[],localExecution:!code?{kind:'external',explanation}:code===example.code?{kind:'sqlite',exampleId:example.id}:{kind:'sqlite-equivalent',exampleId:example.id,explanation:'El panel ejecuta SQLite. Se preparará este equivalente: '+example.code}};
+  ...(code?{code}:{}),explanation,sources:cell.status==='reviewed'?cell.sources:[],localExecution:!code||change?.external?{kind:'external',explanation}:code===example.code?{kind:'sqlite',exampleId:example.id}:{kind:'sqlite-equivalent',exampleId:example.id,explanation:'El panel ejecuta SQLite. Se preparará este equivalente: '+example.code}};
  const action=resolveSqlExampleAction(variant,examples);
  return {variant,action,explanation,alternative:action.kind==='external'?(change?.alternative??{label:'Ver variante SQLite',href:concept.slug+'?dialect=sqlite'}):undefined};
 }

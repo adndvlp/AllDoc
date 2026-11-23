@@ -1,0 +1,65 @@
+(node:72660) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO practica_indice_unico VALUES (2,'A-1');
+✔ tercer bloque: 48 fichas nuevas cierran los 153 destinos y los 34 grupos (15.266834ms)
+✖ tercer bloque: seis dialectos revisados y ausencias sin SQL ni ejecución inventados (4.386375ms)
+✖ tercer bloque: alias propios de los RDBMS buscan un solo concepto (2.23275ms)
+✔ tercer bloque: programas completos desde semilla limpia reproducen todas las salidas en WASM (338.505292ms)
+✔ tercer bloque: empates de RANK, ROW_NUMBER determinista y marcos ROWS/RANGE distintos (6.154334ms)
+✔ tercer bloque: transferencia revierte saldo insuficiente o cuenta ausente, y confirma solo dos cambios válidos (27.074625ms)
+✔ tercer bloque: transacción abierta entre ejecuciones, rollback DDL y UNIQUE reales (6.448584ms)
+✔ tercer bloque: los 99 originales y once vacíos están cubiertos por cuerpos publicados (17.155708ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 609.732834
+
+✖ failing tests:
+
+test at tests/sql-third-block.test.ts:21:1
+✖ tercer bloque: seis dialectos revisados y ausencias sin SQL ni ejecución inventados (4.386375ms)
+  AssertionError [ERR_ASSERTION]: sql/indexes/drop/ejemplo-2/mysql
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:22:183)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'disabled',
+    expected: 'disabled',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:26:1
+✖ tercer bloque: alias propios de los RDBMS buscan un solo concepto (2.23275ms)
+  AssertionError [ERR_ASSERTION]: MINUS
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:27:183)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

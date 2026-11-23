@@ -2,6 +2,7 @@ import {sqlConceptPlans,sqlCurriculum} from './curriculum.ts';
 import {isSqlSource,isOfficialSqlSource,type SqlCapability,type SqlDialectId,type SqlSupport,type SqlSource} from './contracts.ts';
 import {firstBlockSources} from './first-block-sources.ts';
 import {secondBlockSources,type SqlSourceFamily} from './second-block-sources.ts';
+import {thirdBlockSources,type ThirdBlockFamily} from './third-block-sources.ts';
 export const sqlDialects: readonly Readonly<{id:SqlDialectId;label:string}>[]=Object.freeze([
   {id:'sqlite',label:'SQLite'},{id:'postgresql',label:'PostgreSQL'},{id:'mysql',label:'MySQL'},
   {id:'sqlserver',label:'SQL Server'},{id:'mariadb',label:'MariaDB'},{id:'oracle',label:'Oracle SQL'},
@@ -78,6 +79,20 @@ for(const group of sqlCurriculum.slice(14,23)){
   (facts[feature]??={})[id]=reviewed(unavailable?'unavailable':equivalent?'equivalent':'native',unavailable?'':feature,
    unavailable?`${label} no ofrece esta sintaxis con la semántica descrita. Consulta la variante SQLite y su explicación.`:
    'Revisión documental del ejemplo y sus diferencias. La salida guardada corresponde exclusivamente a SQLite.',secondBlockSources(id,family));
+ }
+}
+
+for(const group of sqlCurriculum.slice(23)){
+ const family:ThirdBlockFamily=group.key==='alter-table'?'alter':group.key==='drop-table'?'drop':group.key==='views'?'views':group.key==='indexes'?'indexes':group.key==='window-functions'?'window':group.key==='transactions'?'transactions':'query';
+ for(const feature of Array.from(new Set(group.children.map(c=>c.feature))))for(const {id} of sqlDialects){
+  const unavailable=feature==='view-if-not-exists'&&['postgresql','mysql','sqlserver'].includes(id);
+  const equivalent=(['alter-table','add-column','rename-column','rename-table'].includes(feature)&&id==='sqlserver')
+   ||(feature==='replace-view'&&['sqlite','sqlserver'].includes(id))
+   ||(feature==='inspect-indexes'&&id!=='sqlite')
+   ||(feature==='drop-index'&&['mysql','mariadb','sqlserver'].includes(id))
+   ||(['transactions','autocommit'].includes(feature)&&['mysql','mariadb','sqlserver','oracle'].includes(id));
+  (facts[feature]??={})[id]=reviewed(unavailable?'unavailable':equivalent?'equivalent':'native',unavailable?'':feature,
+   unavailable?'CREATE VIEW IF NOT EXISTS no forma parte de la gramática revisada. No equivale a OR REPLACE.':'Sintaxis y diferencias documentales revisadas. La ejecución del panel y sus resultados siguen siendo SQLite.',thirdBlockSources(id,family));
  }
 }
 

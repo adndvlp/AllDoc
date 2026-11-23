@@ -1,0 +1,1168 @@
+{
+  "status": "passed",
+  "pages": [
+    {
+      "route": "404.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/404",
+      "servedAs": "404.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos",
+      "servedAs": "apuntes/analisis-de-datos.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/pandas/dataframe.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/pandas/dataframe",
+      "servedAs": "apuntes/analisis-de-datos/pandas/dataframe.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/avg.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/avg",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/avg.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/combinaciones.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/combinaciones",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/combinaciones.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/con-where.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/con-where",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/con-where.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/count.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/count",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/count.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/max.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/max",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/max.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/min.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/min",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/min.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/string-aggregate.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/string-aggregate",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/string-aggregate.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/aggregation/sum.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/aggregation/sum",
+      "servedAs": "apuntes/analisis-de-datos/sql/aggregation/sum.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/alter-table.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/alter-table",
+      "servedAs": "apuntes/analisis-de-datos/sql/alter-table.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/alter-table/add-column.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/alter-table/add-column",
+      "servedAs": "apuntes/analisis-de-datos/sql/alter-table/add-column.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/alter-table/drop-column.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/alter-table/drop-column",
+      "servedAs": "apuntes/analisis-de-datos/sql/alter-table/drop-column.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/alter-table/rename-column.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/alter-table/rename-column",
+      "servedAs": "apuntes/analisis-de-datos/sql/alter-table/rename-column.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/alter-table/rename-table.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/alter-table/rename-table",
+      "servedAs": "apuntes/analisis-de-datos/sql/alter-table/rename-table.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/between.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/between",
+      "servedAs": "apuntes/analisis-de-datos/sql/between.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/between/not-between.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/between/not-between",
+      "servedAs": "apuntes/analisis-de-datos/sql/between/not-between.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/between/rango.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/between/rango",
+      "servedAs": "apuntes/analisis-de-datos/sql/between/rango.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/case.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/case",
+      "servedAs": "apuntes/analisis-de-datos/sql/case.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/case/condiciones.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/case/condiciones",
+      "servedAs": "apuntes/analisis-de-datos/sql/case/condiciones.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cast.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cast",
+      "servedAs": "apuntes/analisis-de-datos/sql/cast.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cast/conversion.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cast/conversion",
+      "servedAs": "apuntes/analisis-de-datos/sql/cast/conversion.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cast/tipos.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cast/tipos",
+      "servedAs": "apuntes/analisis-de-datos/sql/cast/tipos.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/coalesce.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/coalesce",
+      "servedAs": "apuntes/analisis-de-datos/sql/coalesce.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/coalesce/alternativas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/coalesce/alternativas",
+      "servedAs": "apuntes/analisis-de-datos/sql/coalesce/alternativas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/comentarios.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/comentarios",
+      "servedAs": "apuntes/analisis-de-datos/sql/comentarios.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/check.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/check",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/check.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/default.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/default",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/default.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/foreign-key.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/foreign-key",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/foreign-key.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/if-not-exists.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/if-not-exists",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/if-not-exists.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/not-null.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/not-null",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/not-null.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/on-delete-cascade.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/on-delete-cascade",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/on-delete-cascade.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/on-delete-set-null.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/on-delete-set-null",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/on-delete-set-null.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/primary-key.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/primary-key",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/primary-key.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/tipos.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/tipos",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/tipos.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/unique.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/unique",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/unique.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/create-table/varias-foreign-key.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/create-table/varias-foreign-key",
+      "servedAs": "apuntes/analisis-de-datos/sql/create-table/varias-foreign-key.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cte.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cte",
+      "servedAs": "apuntes/analisis-de-datos/sql/cte.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cte/multiples.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cte/multiples",
+      "servedAs": "apuntes/analisis-de-datos/sql/cte/multiples.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/cte/with.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/cte/with",
+      "servedAs": "apuntes/analisis-de-datos/sql/cte/with.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/delete.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/delete",
+      "servedAs": "apuntes/analisis-de-datos/sql/delete.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/delete/comprobar-con-select.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/delete/comprobar-con-select",
+      "servedAs": "apuntes/analisis-de-datos/sql/delete/comprobar-con-select.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/delete/condiciones.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/delete/condiciones",
+      "servedAs": "apuntes/analisis-de-datos/sql/delete/condiciones.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/distinct.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/distinct",
+      "servedAs": "apuntes/analisis-de-datos/sql/distinct.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/distinct/columna.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/distinct/columna",
+      "servedAs": "apuntes/analisis-de-datos/sql/distinct/columna.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/distinct/varias-columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/distinct/varias-columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/distinct/varias-columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/drop-table.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/drop-table",
+      "servedAs": "apuntes/analisis-de-datos/sql/drop-table.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/drop-table/if-exists.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/drop-table/if-exists",
+      "servedAs": "apuntes/analisis-de-datos/sql/drop-table/if-exists.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/except.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/except",
+      "servedAs": "apuntes/analisis-de-datos/sql/except.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/except/equivalentes.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/except/equivalentes",
+      "servedAs": "apuntes/analisis-de-datos/sql/except/equivalentes.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/group-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/group-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/group-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/group-by/having.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/group-by/having",
+      "servedAs": "apuntes/analisis-de-datos/sql/group-by/having.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/group-by/varias-columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/group-by/varias-columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/group-by/varias-columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/group-by/where-y-having.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/group-by/where-y-having",
+      "servedAs": "apuntes/analisis-de-datos/sql/group-by/where-y-having.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/in.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/in",
+      "servedAs": "apuntes/analisis-de-datos/sql/in.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/in/lista.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/in/lista",
+      "servedAs": "apuntes/analisis-de-datos/sql/in/lista.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/in/not-in.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/in/not-in",
+      "servedAs": "apuntes/analisis-de-datos/sql/in/not-in.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/indexes.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/indexes",
+      "servedAs": "apuntes/analisis-de-datos/sql/indexes.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/indexes/consultar.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/indexes/consultar",
+      "servedAs": "apuntes/analisis-de-datos/sql/indexes/consultar.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/indexes/drop.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/indexes/drop",
+      "servedAs": "apuntes/analisis-de-datos/sql/indexes/drop.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/indexes/simple-y-compuesto.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/indexes/simple-y-compuesto",
+      "servedAs": "apuntes/analisis-de-datos/sql/indexes/simple-y-compuesto.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/indexes/unique.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/indexes/unique",
+      "servedAs": "apuntes/analisis-de-datos/sql/indexes/unique.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert/columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert/columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert/columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert/ignore.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert/ignore",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert/ignore.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert/replace.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert/replace",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert/replace.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert/sin-lista.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert/sin-lista",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert/sin-lista.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/insert/varias-filas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/insert/varias-filas",
+      "servedAs": "apuntes/analisis-de-datos/sql/insert/varias-filas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/intersect.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/intersect",
+      "servedAs": "apuntes/analisis-de-datos/sql/intersect.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/intersect/columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/intersect/columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/intersect/columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/join",
+      "servedAs": "apuntes/analisis-de-datos/sql/join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/join/alias.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/join/alias",
+      "servedAs": "apuntes/analisis-de-datos/sql/join/alias.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/join/cross-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/join/cross-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/join/cross-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/join/on.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/join/on",
+      "servedAs": "apuntes/analisis-de-datos/sql/join/on.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/join/self-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/join/self-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/join/self-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/like.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/like",
+      "servedAs": "apuntes/analisis-de-datos/sql/like.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/like/comodines.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/like/comodines",
+      "servedAs": "apuntes/analisis-de-datos/sql/like/comodines.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/like/not-like.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/like/not-like",
+      "servedAs": "apuntes/analisis-de-datos/sql/like/not-like.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/limit.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/limit",
+      "servedAs": "apuntes/analisis-de-datos/sql/limit.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/limit/filas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/limit/filas",
+      "servedAs": "apuntes/analisis-de-datos/sql/limit/filas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/limit/offset.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/limit/offset",
+      "servedAs": "apuntes/analisis-de-datos/sql/limit/offset.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/logical-order.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/logical-order",
+      "servedAs": "apuntes/analisis-de-datos/sql/logical-order.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/logical-order/orden-logico.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/logical-order/orden-logico",
+      "servedAs": "apuntes/analisis-de-datos/sql/logical-order/orden-logico.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/logical-order/plan-fisico.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/logical-order/plan-fisico",
+      "servedAs": "apuntes/analisis-de-datos/sql/logical-order/plan-fisico.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/null.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/null",
+      "servedAs": "apuntes/analisis-de-datos/sql/null.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/null/is-not-null.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/null/is-not-null",
+      "servedAs": "apuntes/analisis-de-datos/sql/null/is-not-null.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/null/is-null.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/null/is-null",
+      "servedAs": "apuntes/analisis-de-datos/sql/null/is-null.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/null/nullif.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/null/nullif",
+      "servedAs": "apuntes/analisis-de-datos/sql/null/nullif.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/numeric-functions.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/numeric-functions",
+      "servedAs": "apuntes/analisis-de-datos/sql/numeric-functions.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/numeric-functions/abs.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/numeric-functions/abs",
+      "servedAs": "apuntes/analisis-de-datos/sql/numeric-functions/abs.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/numeric-functions/division.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/numeric-functions/division",
+      "servedAs": "apuntes/analisis-de-datos/sql/numeric-functions/division.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/numeric-functions/round.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/numeric-functions/round",
+      "servedAs": "apuntes/analisis-de-datos/sql/numeric-functions/round.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by/asc.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by/asc",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by/asc.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by/con-limit.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by/con-limit",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by/con-limit.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by/desc.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by/desc",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by/desc.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/order-by/varias-columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/order-by/varias-columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/order-by/varias-columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/outer-joins.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/outer-joins",
+      "servedAs": "apuntes/analisis-de-datos/sql/outer-joins.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/outer-joins/anti-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/outer-joins/anti-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/outer-joins/anti-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/outer-joins/full-outer-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/outer-joins/full-outer-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/outer-joins/full-outer-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/outer-joins/left-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/outer-joins/left-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/outer-joins/left-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/outer-joins/right-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/outer-joins/right-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/outer-joins/right-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/select.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/select",
+      "servedAs": "apuntes/analisis-de-datos/sql/select.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/select/alias.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/select/alias",
+      "servedAs": "apuntes/analisis-de-datos/sql/select/alias.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/select/columnas-concretas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/select/columnas-concretas",
+      "servedAs": "apuntes/analisis-de-datos/sql/select/columnas-concretas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/select/todas-las-columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/select/todas-las-columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/select/todas-las-columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries/exists.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries/exists",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries/exists.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries/in.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries/in",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries/in.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries/not-exists.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries/not-exists",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries/not-exists.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries/select.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries/select",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries/select.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/subqueries/where.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/subqueries/where",
+      "servedAs": "apuntes/analisis-de-datos/sql/subqueries/where.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/concat.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/concat",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/concat.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/length.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/length",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/length.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/lower.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/lower",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/lower.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/replace.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/replace",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/replace.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/substring.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/substring",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/substring.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/trim.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/trim",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/trim.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/text-functions/upper.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/text-functions/upper",
+      "servedAs": "apuntes/analisis-de-datos/sql/text-functions/upper.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/transactions.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/transactions",
+      "servedAs": "apuntes/analisis-de-datos/sql/transactions.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/transactions/autocommit.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/transactions/autocommit",
+      "servedAs": "apuntes/analisis-de-datos/sql/transactions/autocommit.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/transactions/begin.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/transactions/begin",
+      "servedAs": "apuntes/analisis-de-datos/sql/transactions/begin.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/transactions/commit.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/transactions/commit",
+      "servedAs": "apuntes/analisis-de-datos/sql/transactions/commit.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/transactions/rollback.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/transactions/rollback",
+      "servedAs": "apuntes/analisis-de-datos/sql/transactions/rollback.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/union.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/union",
+      "servedAs": "apuntes/analisis-de-datos/sql/union.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/union/order-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/union/order-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/union/order-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/union/union-all.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/union/union-all",
+      "servedAs": "apuntes/analisis-de-datos/sql/union/union-all.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/update.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/update",
+      "servedAs": "apuntes/analisis-de-datos/sql/update.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/update/comprobar-con-select.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/update/comprobar-con-select",
+      "servedAs": "apuntes/analisis-de-datos/sql/update/comprobar-con-select.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/update/varias-columnas.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/update/varias-columnas",
+      "servedAs": "apuntes/analisis-de-datos/sql/update/varias-columnas.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views",
+      "servedAs": "apuntes/analisis-de-datos/sql/views.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views/con-join.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views/con-join",
+      "servedAs": "apuntes/analisis-de-datos/sql/views/con-join.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views/create-view.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views/create-view",
+      "servedAs": "apuntes/analisis-de-datos/sql/views/create-view.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views/drop-view.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views/drop-view",
+      "servedAs": "apuntes/analisis-de-datos/sql/views/drop-view.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views/if-not-exists.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views/if-not-exists",
+      "servedAs": "apuntes/analisis-de-datos/sql/views/if-not-exists.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/views/replace-view.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/views/replace-view",
+      "servedAs": "apuntes/analisis-de-datos/sql/views/replace-view.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where",
+      "servedAs": "apuntes/analisis-de-datos/sql/where.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/and.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/and",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/and.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/combinaciones.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/combinaciones",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/combinaciones.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/not.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/not",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/not.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/operadores.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/operadores",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/operadores.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/or.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/or",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/or.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/where/tipos.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/where/tipos",
+      "servedAs": "apuntes/analisis-de-datos/sql/where/tipos.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/agregados.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/agregados",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/agregados.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/frame.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/frame",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/frame.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/lag-lead.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/lag-lead",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/lag-lead.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/order-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/order-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/order-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/over.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/over",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/over.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/partition-by.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/partition-by",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/partition-by.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/rank.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/rank",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/rank.html"
+    },
+    {
+      "route": "apuntes/analisis-de-datos/sql/window-functions/row-number.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/analisis-de-datos/sql/window-functions/row-number",
+      "servedAs": "apuntes/analisis-de-datos/sql/window-functions/row-number.html"
+    },
+    {
+      "route": "apuntes/desarrollo-web.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/desarrollo-web",
+      "servedAs": "apuntes/desarrollo-web.html"
+    },
+    {
+      "route": "apuntes/ia.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/apuntes/ia",
+      "servedAs": "apuntes/ia.html"
+    },
+    {
+      "route": "index.html",
+      "h1": 1,
+      "viewport": "<meta data-rh=\"true\" name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+      "url": "/",
+      "servedAs": "index.html"
+    }
+  ],
+  "homeJS": {
+    "loaderFound": true,
+    "chunkIds": [
+      1869,
+      2030,
+      4583
+    ],
+    "bodyAssets": [
+      "assets/js/notes-data-business.e7a11dca.js",
+      "assets/js/notes-data-products.89b9caf3.js",
+      "assets/js/notes-pandas.82a8b23e.js",
+      "assets/js/notes-sql-aggregation.220df60a.js",
+      "assets/js/notes-sql-alter-table.d7b19a55.js",
+      "assets/js/notes-sql-between.b5f2bdb8.js",
+      "assets/js/notes-sql-case.1cfe30a6.js",
+      "assets/js/notes-sql-cast.975393a7.js",
+      "assets/js/notes-sql-coalesce.2004e194.js",
+      "assets/js/notes-sql-create-table.ac502d5f.js",
+      "assets/js/notes-sql-cte.d7a00fa8.js",
+      "assets/js/notes-sql-delete.fa85d838.js",
+      "assets/js/notes-sql-distinct.7605d307.js",
+      "assets/js/notes-sql-drop-table.8607dc96.js",
+      "assets/js/notes-sql-except.5fdc2f4d.js",
+      "assets/js/notes-sql-factory.9d266135.js",
+      "assets/js/notes-sql-group-by.d087fcfd.js",
+      "assets/js/notes-sql-in.21a7a82c.js",
+      "assets/js/notes-sql-indexes.c3beaa67.js",
+      "assets/js/notes-sql-insert.5aa6d02b.js",
+      "assets/js/notes-sql-intersect.6f6dc60e.js",
+      "assets/js/notes-sql-join.d524b684.js",
+      "assets/js/notes-sql-like.d4ddec7a.js",
+      "assets/js/notes-sql-limit.6accc6aa.js",
+      "assets/js/notes-sql-logical-order.ebf923cd.js",
+      "assets/js/notes-sql-null.6ce093d3.js",
+      "assets/js/notes-sql-numeric-functions.5734b91f.js",
+      "assets/js/notes-sql-order-by.1141a812.js",
+      "assets/js/notes-sql-outer-joins.e71fd7b8.js",
+      "assets/js/notes-sql-select.bd62ce6f.js",
+      "assets/js/notes-sql-subqueries.e6378b88.js",
+      "assets/js/notes-sql-text-functions.6eba5408.js",
+      "assets/js/notes-sql-transactions.9f21700f.js",
+      "assets/js/notes-sql-union.586aa89f.js",
+      "assets/js/notes-sql-update.dbcea4c1.js",
+      "assets/js/notes-sql-views.875b1281.js",
+      "assets/js/notes-sql-where.37b6940b.js",
+      "assets/js/notes-sql-window-functions.320a178f.js"
+    ],
+    "loadedBodies": []
+  },
+  "failures": []
+}

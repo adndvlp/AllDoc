@@ -19,9 +19,9 @@ test('bloque SELECT → CAST: publica exactamente 53 destinos completos, con las
   for(const c of firstBlock){assert.ok(c.description.trim());assert.ok(c.examples.length);assert.ok(c.examples.every(e=>e.code.trim()));}
   for(const id of ['select','where','limit','order-by','comentarios'])assert.ok(sqlConcepts.some(c=>c.conceptId==='analisis-de-datos/sql/'+id));
 });
-test('bloque SELECT → CAST: las seis variantes tienen revisión explícita y lo posterior permanece pendiente',()=>{
+test('bloque SELECT → CAST: las seis variantes tienen revisión explícita y las capacidades desconocidas permanecen pendientes',()=>{
   for(const group of sqlCurriculum.slice(0,14))for(const c of group.children)for(const d of sqlDialects)assert.equal(getSqlCapability(c.feature,d.id).status,'reviewed',c.key+'/'+d.id);
-  assert.equal(getSqlCapability('alter-table','mysql').status,'pending');
+  assert.equal(getSqlCapability('capacidad-futura','mysql').status,'pending');
   for(const dialect of ['mysql','mariadb'] as const){const c=getSqlCapability('full-outer-join',dialect);assert.equal(c.status,'reviewed');if(c.status==='reviewed')assert.equal(c.support,'unavailable');}
 });
 test('bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo',()=>{

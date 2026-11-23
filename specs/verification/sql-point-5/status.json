@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "scope": "SQL punto 5, ALTER TABLE → Transacciones",
+  "native": {
+    "passed": 386,
+    "failed": 0
+  },
+  "types": "passed",
+  "build": "passed",
+  "ui": {
+    "discovered": 132,
+    "regressionDiscovered": 132,
+    "projects": [
+      "celular",
+      "laptop"
+    ],
+    "executed": true,
+    "passed": 130,
+    "failed": 0,
+    "skipped": 2,
+    "visualReviewed": 14,
+    "comparisonWithoutUpdate": true,
+    "regressionAttempt": {
+      "passed": 9,
+      "failed": 1,
+      "interrupted": 1,
+      "notRun": 121,
+      "cause": "browserContext.newPage: Target crashed, antes de ejecutar el caso de texto al 200%",
+      "functionalFailureConfirmed": false
+    },
+    "readingRerun": {
+      "passed": 2,
+      "failed": 0,
+      "workers": 1,
+      "command": "npm run test:ui:sql:reading",
+      "updatedSnapshots": false
+    },
+    "searchFailure": {
+      "passedBeforeFailure": 29,
+      "cause": "La prueba esperaba un único resultado global para SELECT, pero el catálogo ampliado muestra ocho coincidencias legítimas con SELECT primero.",
+      "applicationChanged": false,
+      "fix": "La prueba exige el concepto SELECT único y primero; LIMIT por título exacto. Se mantienen foco, Esc, consulta compartida e IME."
+    },
+    "searchRerun": {
+      "passed": 20,
+      "failed": 0,
+      "workers": 1,
+      "command": "npm run test:ui:sql:search -- --update-snapshots"
+    },
+    "regressionPassed": true,
+    "regressionWorkers": 1,
+    "skipReasons": [
+      "laptop: rotación cubierta por proyectos táctiles; celular sí la ejecutó.",
+      "celular: sidebar de escritorio no aplica al panel móvil; laptop sí verifica independencia de scroll."
+    ],
+    "focusedDiscovered": 12,
+    "finalCommand": "npm run test:ui:sql:editorial -- --workers=1",
+    "snapshotUpdateMode": "default",
+    "reviewedImageHashesUnchanged": 14,
+    "previousReferencesUnchanged": 229
+  },
+  "artifacts": {
+    "red.log": "5410955adfe4e8bd8ba007bca8c47d90322291563b3f0439f037e7e87bbde77c",
+    "green-first.log": "26241bd1acf7f1c8fddab144100ffe4617582fdd95cacf331f22869074731ae3",
+    "green-focused.log": "7e07fe00b19342ce86aa6a4f6e2212984af7e664346fcffbd8ec8d901f185a56",
+    "native.log": "5b209277e043b2380a2542230c0532960341cfc867c8f2ae78c14cc7b27c5ee1",
+    "types-app.log": "3b0995fb71596da1bf76ffaeef7db2dbd008844f0b111199c1fa1ba9842ea7a1",
+    "types-tests.log": "32149e874275090b949af74a8bdecd8a4d94f1ab5388de101e516757de0e6902",
+    "prepare.log": "7e529af97c1a0364503fb2813c6a949bc074f35a46444a4ed4321b37657d02c2",
+    "build.log": "9b68acab3716674401e096a05cfd5010eab33e815db1f6b1f220a220dd97551c",
+    "production.json": "78116158629445285dcae03704e111d661e611812f13127401d762cba6265be3",
+    "editorial-review.json": "c6fc4b5560f19fc89783896712f27e4cf4689bee04df692a795a0d19690a6d56",
+    "ui-discovery.log": "65e5b481058b28a04f4ead31ca2102ce96503284c9a87383be572f9f00783030",
+    "ui-editorial-discovery.log": "a232f6d48a5563709aa0a6ea7aa78847943a2dc90863dab19657bd23e4625999",
+    "screenshots-before.json": "9bf5e7f2777e8bb392af8bf499a98a91bce80ec704ffbc0e987c9d7f7fa8f272",
+    "ui-third-update.json": "6ff72669da41d882fcf3dfd329b53b14c73014a34eaae3ab90407739371c12e5",
+    "screenshots-changes.json": "faffe18b1b57522ecf3ba10b87f56d97034548cd1d4afb2314e5218e585ebe6b",
+    "visual-review-new.json": "e978b77f3261d9c778264dda1f54e703b2ff60bc19ce4fa3acb21b4c914c6ca6",
+    "ui-editorial-crash.json": "2cc842e1fd8a47879029a2b6baca4977f92d77c9d50b54b0ced139b919fd446a",
+    "ui-reading-compare.json": "2c1eade8de0a8a04361a51b13d7ff8d6b0124a478570b4344222a5ae6eb0879e",
+    "ui-reading-discovery.log": "f0270b525c45562d585e1adf64777b233d1364f7913d929efae3a97cbd29176b",
+    "ui-editorial-search-failure.json": "810dd4415f89362b32620b155217035e125d6432d2924f8dee5c1b832e72f6aa",
+    "ui-search-discovery.log": "11c784240e1f8065cc78dd23952fa2cb4379a9592c8127cca052f58444a7a909",
+    "ui-search-update.json": "166d86780b1c66a7973fdb38d2794c956eee56434bfa45f5ee78f6975f1e0f7b",
+    "visual-review-search.json": "2b000fc5e1bef0448e4494b01be2b038ff650ce772b5a01597c8f4e34e6089ba",
+    "screenshots-changes-partial.json": "ef81017da685c1289cb18d6c52dda6f875de2696a87fc58169717a7517c42edb",
+    "ui-editorial-update.json": "ed81714f95f5ec6af161d190decf86b053f99eff1ae53eb119d047e00af5e2a3",
+    "visual-review-regression.json": "801e7e9145e12b49198752b126db1ea7ca6cf851810835c496e20b785c7ea191",
+    "ui-editorial-compare.json": "9c6888f85773582bc0f0d4f92a5798585554899a5895fbf7b4d578347864f8e3"
+  }
+}

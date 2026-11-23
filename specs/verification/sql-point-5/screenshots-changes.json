@@ -1,0 +1,25 @@
+{
+  "changed": [
+    "tests/ui/__screenshots__/celular/buscador.png",
+    "tests/ui/__screenshots__/celular/busqueda-inicio.png",
+    "tests/ui/__screenshots__/celular/catalogo.png",
+    "tests/ui/__screenshots__/laptop/buscador.png",
+    "tests/ui/__screenshots__/laptop/busqueda-inicio.png",
+    "tests/ui/__screenshots__/laptop/catalogo.png"
+  ],
+  "new": [
+    "tests/ui/__screenshots__/celular/sql-alter-column.png",
+    "tests/ui/__screenshots__/celular/sql-index-catalog.png",
+    "tests/ui/__screenshots__/celular/sql-view-result.png",
+    "tests/ui/__screenshots__/celular/sql-window-frame.png",
+    "tests/ui/__screenshots__/laptop/sql-alter-column.png",
+    "tests/ui/__screenshots__/laptop/sql-index-catalog.png",
+    "tests/ui/__screenshots__/laptop/sql-view-result.png",
+    "tests/ui/__screenshots__/laptop/sql-window-frame.png"
+  ],
+  "unchanged": 229,
+  "unreviewedChanges": [
+    "tests/ui/__screenshots__/laptop/buscador.png",
+    "tests/ui/__screenshots__/laptop/catalogo.png"
+  ]
+}

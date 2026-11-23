@@ -18,7 +18,7 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await expect(input(page)).not.toBeFocused();
   expect(requests).toBe(0);
   await input(page).fill('cómo filtrar');
-  const result = home(page).getByRole('link').filter({hasText: 'WHERE'});
+  const result = home(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})});
   await expect(result).toHaveCount(1);
   await expect(page.locator('[data-catalog]')).not.toBeVisible();
   await expect(page).toHaveScreenshot('busqueda-inicio.png');
@@ -38,7 +38,8 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
 test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco', async ({page}) => {
   await go(page);
   await input(page).fill('¿qué es SELECT?');
-  await expect(home(page).getByRole('link')).toHaveCount(1);
+  await expect(home(page).getByRole('link').filter({has: page.getByText('SELECT', {exact: true})})).toHaveCount(1);
+  await expect(home(page).getByRole('link').first()).toHaveAttribute('href', '/apuntes/analisis-de-datos/sql/select');
   await input(page).press('Control+k');
   await expect(dialog(page).getByRole('searchbox')).toHaveValue('¿qué es SELECT?');
   await expect(home(page).locator('ul')).toHaveCount(0);
@@ -47,7 +48,7 @@ test('consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foc
   await expect(dialog(page)).not.toBeVisible();
   await expect(input(page)).toHaveValue('limitar');
   await expect(input(page)).toBeFocused();
-  await expect(home(page).getByRole('link').filter({hasText: 'LIMIT'})).toBeVisible();
+  await expect(home(page).getByRole('link').filter({has: page.getByText('LIMIT', {exact: true})})).toBeVisible();
   await home(page).getByRole('button', {name: 'Limpiar búsqueda'}).click();
   await expect(page.locator('[data-catalog]')).toBeVisible();
 });
@@ -64,7 +65,7 @@ test('atajo desde el menú de temas: un solo diálogo abierto y retorno a un con
   await expect(topics).toBeHidden();
   await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
   await dialog(page).getByRole('searchbox').fill('filtrar');
-  await expect(dialog(page).getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+  await expect(dialog(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog(page)).toBeHidden();
   await expect(page.getByRole('button', {name: 'Buscar un concepto', exact: true})).toBeFocused();
@@ -111,7 +112,7 @@ test('una carga tardía conserva lo escrito y no vuelve a abrir el diálogo', as
     await dialog(page).getByRole('button', {name: 'Cerrar buscador'}).click();
     await expect(dialog(page)).not.toBeVisible();
     release();
-    await expect(home(page).getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+    await expect(home(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toBeVisible();
     await expect(dialog(page)).not.toBeVisible();
     expect(requests).toBe(1);
   } finally {release();}
@@ -124,7 +125,7 @@ test('error del índice y reintento visible sin perder la consulta', async ({pag
   await input(page).fill('filtrar');
   await expect(home(page).getByRole('alert')).toContainText('No pude cargar los apuntes');
   await home(page).getByRole('button', {name: 'Reintentar'}).click();
-  await expect(home(page).getByRole('link').filter({hasText: 'WHERE'})).toBeVisible();
+  await expect(home(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toBeVisible();
   await expect(input(page)).toHaveValue('filtrar');
   expect(requests).toBe(2);
 });
@@ -136,7 +137,8 @@ test('sin coincidencias, solo auxiliares y Enter durante composición IME', asyn
   await input(page).fill('qué es para');
   await expect(home(page).getByText('Escribe un concepto o una acción', {exact: true})).toBeVisible();
   await input(page).fill('SELECT');
-  await expect(home(page).getByRole('link')).toHaveCount(1);
+  await expect(home(page).getByRole('link').filter({has: page.getByText('SELECT', {exact: true})})).toHaveCount(1);
+  await expect(home(page).getByRole('link').first()).toHaveAttribute('href', '/apuntes/analisis-de-datos/sql/select');
   for (const composing of [true, false]) {
     await input(page).evaluate((element, composing) => {
       const event = new KeyboardEvent('keydown', {key: 'Enter', bubbles: true, cancelable: true, isComposing: composing});

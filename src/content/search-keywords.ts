@@ -17,5 +17,10 @@ const sqlAliases:Readonly<Record<string,readonly string[]>>={
  'insert/ignore':['INSERT OR IGNORE','INSERT IGNORE','ON CONFLICT','DO NOTHING'],
  'insert/replace':['INSERT OR REPLACE','REPLACE INTO'],
  'create-table/primary-key':['IDENTITY','AUTO_INCREMENT','GENERATED ALWAYS','autoincremento'],
+ 'alter-table/rename-column':['sp_rename','RENAME COLUMN'],
+ 'alter-table/rename-table':['sp_rename','RENAME TABLE'],
+ 'indexes/consultar':['pg_indexes','sys.indexes','USER_INDEXES','information_schema.statistics'],
+ 'except/equivalentes':['MINUS','EXCEPT'],
+ 'transactions/begin':['START TRANSACTION','BEGIN TRANSACTION'],
 };
 export const searchKeywords=Object.fromEntries(concepts.map(c=>[c.id,legacy[c.id]??[c.title,c.label,c.description,...(sqlAliases[c.id.replace('analisis-de-datos/sql/','')]??[])]])) as Record<ConceptId,readonly string[]>;

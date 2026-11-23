@@ -1,0 +1,232 @@
+(node:72618) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ tercer bloque: 48 fichas nuevas cierran los 153 destinos y los 34 grupos (23.323541ms)
+✖ tercer bloque: seis dialectos revisados y ausencias sin SQL ni ejecución inventados (0.608208ms)
+✖ tercer bloque: alias propios de los RDBMS buscan un solo concepto (1.663083ms)
+✖ tercer bloque: programas completos desde semilla limpia reproducen todas las salidas en WASM (0.244708ms)
+✖ tercer bloque: empates de RANK, ROW_NUMBER determinista y marcos ROWS/RANGE distintos (47.3025ms)
+✖ tercer bloque: transferencia revierte saldo insuficiente o cuenta ausente, y confirma solo dos cambios válidos (0.182875ms)
+✖ tercer bloque: transacción abierta entre ejecuciones, rollback DDL y UNIQUE reales (13.518708ms)
+✖ tercer bloque: los 99 originales y once vacíos están cubiertos por cuerpos publicados (2.901917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 299.049125
+
+✖ failing tests:
+
+test at tests/sql-third-block.test.ts:17:1
+✖ tercer bloque: 48 fichas nuevas cierran los 153 destinos y los 34 grupos (23.323541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   'analisis-de-datos/sql/alter-table',
+  -   'analisis-de-datos/sql/alter-table/add-column',
+  -   'analisis-de-datos/sql/alter-table/rename-column',
+  -   'analisis-de-datos/sql/alter-table/rename-table',
+  -   'analisis-de-datos/sql/alter-table/drop-column',
+  -   'analisis-de-datos/sql/drop-table',
+  -   'analisis-de-datos/sql/drop-table/if-exists',
+  -   'analisis-de-datos/sql/views',
+  -   'analisis-de-datos/sql/views/create-view',
+  -   'analisis-de-datos/sql/views/con-join',
+  -   'analisis-de-datos/sql/views/if-not-exists',
+  -   'analisis-de-datos/sql/views/replace-view',
+  -   'analisis-de-datos/sql/views/drop-view',
+  -   'analisis-de-datos/sql/indexes',
+  -   'analisis-de-datos/sql/indexes/simple-y-compuesto',
+  -   'analisis-de-datos/sql/indexes/unique',
+  -   'analisis-de-datos/sql/indexes/consultar',
+  -   'analisis-de-datos/sql/indexes/drop',
+  -   'analisis-de-datos/sql/subqueries',
+  -   'analisis-de-datos/sql/subqueries/where',
+  -   'analisis-de-datos/sql/subqueries/in',
+  -   'analisis-de-datos/sql/subqueries/select',
+  -   'analisis-de-datos/sql/subqueries/exists',
+  -   'analisis-de-datos/sql/subqueries/not-exists',
+  -   'analisis-de-datos/sql/union',
+  -   'analisis-de-datos/sql/union/union-all',
+  -   'analisis-de-datos/sql/union/order-by',
+  -   'analisis-de-datos/sql/intersect',
+  -   'analisis-de-datos/sql/intersect/columnas',
+  -   'analisis-de-datos/sql/except',
+  -   'analisis-de-datos/sql/except/equivalentes',
+  -   'analisis-de-datos/sql/cte',
+  -   'analisis-de-datos/sql/cte/with',
+  -   'analisis-de-datos/sql/cte/multiples',
+  -   'analisis-de-datos/sql/window-functions',
+  -   'analisis-de-datos/sql/window-functions/over',
+  -   'analisis-de-datos/sql/window-functions/partition-by',
+  -   'analisis-de-datos/sql/window-functions/order-by',
+  -   'analisis-de-datos/sql/window-functions/frame',
+  -   'analisis-de-datos/sql/window-functions/row-number',
+  -   'analisis-de-datos/sql/window-functions/rank',
+  -   'analisis-de-datos/sql/window-functions/lag-lead',
+  -   'analisis-de-datos/sql/window-functions/agregados',
+  -   'analisis-de-datos/sql/transactions',
+  -   'analisis-de-datos/sql/transactions/begin',
+  -   'analisis-de-datos/sql/transactions/commit',
+  -   'analisis-de-datos/sql/transactions/rollback',
+  -   'analisis-de-datos/sql/transactions/autocommit'
+  - ]
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:18:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [
+      'analisis-de-datos/sql/alter-table',                   'analisis-de-datos/sql/alter-table/add-column',
+      'analisis-de-datos/sql/alter-table/rename-column',     'analisis-de-datos/sql/alter-table/rename-table',
+      'analisis-de-datos/sql/alter-table/drop-column',       'analisis-de-datos/sql/drop-table',
+      'analisis-de-datos/sql/drop-table/if-exists',          'analisis-de-datos/sql/views',
+      'analisis-de-datos/sql/views/create-view',             'analisis-de-datos/sql/views/con-join',
+      'analisis-de-datos/sql/views/if-not-exists',           'analisis-de-datos/sql/views/replace-view',
+      'analisis-de-datos/sql/views/drop-view',               'analisis-de-datos/sql/indexes',
+      'analisis-de-datos/sql/indexes/simple-y-compuesto',    'analisis-de-datos/sql/indexes/unique',
+      'analisis-de-datos/sql/indexes/consultar',             'analisis-de-datos/sql/indexes/drop',
+      'analisis-de-datos/sql/subqueries',                    'analisis-de-datos/sql/subqueries/where',
+      'analisis-de-datos/sql/subqueries/in',                 'analisis-de-datos/sql/subqueries/select',
+      'analisis-de-datos/sql/subqueries/exists',             'analisis-de-datos/sql/subqueries/not-exists',
+      'analisis-de-datos/sql/union',                         'analisis-de-datos/sql/union/union-all',
+      'analisis-de-datos/sql/union/order-by',                'analisis-de-datos/sql/intersect',
+      'analisis-de-datos/sql/intersect/columnas',            'analisis-de-datos/sql/except',
+      'analisis-de-datos/sql/except/equivalentes',           'analisis-de-datos/sql/cte',
+      'analisis-de-datos/sql/cte/with',                      'analisis-de-datos/sql/cte/multiples',
+      'analisis-de-datos/sql/window-functions',              'analisis-de-datos/sql/window-functions/over',
+      'analisis-de-datos/sql/window-functions/partition-by', 'analisis-de-datos/sql/window-functions/order-by',
+      'analisis-de-datos/sql/window-functions/frame',        'analisis-de-datos/sql/window-functions/row-number',
+      'analisis-de-datos/sql/window-functions/rank',         'analisis-de-datos/sql/window-functions/lag-lead',
+      'analisis-de-datos/sql/window-functions/agregados',    'analisis-de-datos/sql/transactions',
+      'analisis-de-datos/sql/transactions/begin',            'analisis-de-datos/sql/transactions/commit',
+      'analisis-de-datos/sql/transactions/rollback',         'analisis-de-datos/sql/transactions/autocommit'
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:21:1
+✖ tercer bloque: seis dialectos revisados y ausencias sin SQL ni ejecución inventados (0.608208ms)
+  AssertionError [ERR_ASSERTION]: alter-table/definicion/sqlite
+  + actual - expected
+  
+  + 'pending'
+  - 'reviewed'
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:22:58)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'pending',
+    expected: 'reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:26:1
+✖ tercer bloque: alias propios de los RDBMS buscan un solo concepto (1.663083ms)
+  AssertionError [ERR_ASSERTION]: MINUS
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:27:183)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:32:1
+✖ tercer bloque: programas completos desde semilla limpia reproducen todas las salidas en WASM (0.244708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 48
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:33:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 48,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:37:1
+✖ tercer bloque: empates de RANK, ROW_NUMBER determinista y marcos ROWS/RANGE distintos (47.3025ms)
+  AssertionError [ERR_ASSERTION]: Ficha completa: window-functions/rank
+      at get (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:14:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:39:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:44:1
+✖ tercer bloque: transferencia revierte saldo insuficiente o cuenta ausente, y confirma solo dos cambios válidos (0.182875ms)
+  AssertionError [ERR_ASSERTION]: Ficha completa: transactions/definicion
+      at get (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:14:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:45:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:54:1
+✖ tercer bloque: transacción abierta entre ejecuciones, rollback DDL y UNIQUE reales (13.518708ms)
+  AssertionError [ERR_ASSERTION]: Ficha completa: indexes/unique
+      at get (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:14:70)
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:57:11)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/sql-third-block.test.ts:60:1
+✖ tercer bloque: los 99 originales y once vacíos están cubiertos por cuerpos publicados (2.901917ms)
+  AssertionError [ERR_ASSERTION]: tmp/SQL/24.- ALTER TABLE/1.- base.md → analisis-de-datos/sql/alter-table
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts:62:60)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

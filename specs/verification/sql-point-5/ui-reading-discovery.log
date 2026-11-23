@@ -1,0 +1,8 @@
+
+> alldoc@0.1.0 test:ui:sql:reading
+> playwright test tests/ui/notes.spec.ts --project=celular --workers=1 -g 'texto al 200|anterior y siguiente' --list
+
+Listing tests:
+  [celular] › notes.spec.ts:124:1 › anterior y siguiente conservan rutas, teclado y alineación con la ficha
+  [celular] › notes.spec.ts:139:1 › texto al 200% conserva código, explicaciones y controles accesibles sin desbordar la página
+Total: 2 tests in 1 file

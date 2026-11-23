@@ -1,0 +1,26 @@
+
+> alldoc@0.1.0 test:ui:sql:search
+> playwright test tests/ui/search.spec.ts --project=celular --project=laptop --workers=1 --list
+
+Listing tests:
+  [celular] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [celular] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [celular] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [celular] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [celular] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [celular] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [celular] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [celular] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+  [laptop] › search.spec.ts:14:1 › buscador de portada: carga diferida, consulta pedagógica y navegación por teclado
+  [laptop] › search.spec.ts:38:1 › consulta compartida y Esc nativo: cierra, conserva texto y devuelve el foco
+  [laptop] › search.spec.ts:56:1 › atajo desde el menú de temas: un solo diálogo abierto y retorno a un control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de área: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:77:3 › atajo desde el selector de color: cerrar búsqueda devuelve el foco a su control visible
+  [laptop] › search.spec.ts:102:1 › una carga tardía conserva lo escrito y no vuelve a abrir el diálogo
+  [laptop] › search.spec.ts:121:1 › error del índice y reintento visible sin perder la consulta
+  [laptop] › search.spec.ts:133:1 › sin coincidencias, solo auxiliares y Enter durante composición IME
+  [laptop] › search.spec.ts:154:1 › diálogo ajustado a un viewport visual reducido por teclado
+  [laptop] › search.spec.ts:168:1 › el diálogo contiene el scroll sin desplazar el apunte del fondo
+Total: 20 tests in 1 file

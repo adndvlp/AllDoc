@@ -1,0 +1,18 @@
+
+> alldoc@0.1.0 test:ui:sql:third
+> playwright test tests/ui/sql-third-block.spec.ts --project=celular --project=laptop --list
+
+Listing tests:
+  [celular] › sql-third-block.spec.ts:11:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [celular] › sql-third-block.spec.ts:19:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [celular] › sql-third-block.spec.ts:25:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [celular] › sql-third-block.spec.ts:32:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [celular] › sql-third-block.spec.ts:39:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [celular] › sql-third-block.spec.ts:44:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+  [laptop] › sql-third-block.spec.ts:11:1 › tercer bloque: ALTER con sintaxis propia, equivalente local explícito y columna nueva real
+  [laptop] › sql-third-block.spec.ts:19:1 › tercer bloque: vistas condicionales y reemplazo sin inventar soporte ni resultados externos
+  [laptop] › sql-third-block.spec.ts:25:1 › tercer bloque: catálogo de índices por motor y rechazo UNIQUE en SQLite
+  [laptop] › sql-third-block.spec.ts:32:1 › tercer bloque: conjuntos y CTE ejecutables, subconsultas y último destino sin página siguiente
+  [laptop] › sql-third-block.spec.ts:39:1 › tercer bloque: ventanas con empates, marco explícito y lectura al 200% sin desbordar
+  [laptop] › sql-third-block.spec.ts:44:1 › tercer bloque: transferencia fallida revierte, recupera y mantiene código externo fuera de SQLite
+Total: 12 tests in 1 file

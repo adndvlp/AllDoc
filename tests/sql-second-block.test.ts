@@ -21,11 +21,11 @@ test('segundo bloque: buscar nombres de otros dialectos encuentra el mismo conce
   const result=searchEntries(entries,query).filter(e=>e.id==='analisis-de-datos/sql/'+id);assert.equal(result.length,1,query);
  }
 });
-test('segundo bloque: 52 fichas nuevas completas, nueve grupos y corte antes de ALTER TABLE',()=>{
+test('segundo bloque: 52 fichas nuevas completas, nueve grupos entre texto y CREATE TABLE',()=>{
  assert.equal(ids.length,52);assert.deepEqual(notes().map(c=>c.conceptId),ids);
- assert.equal(getPublishedSqlCurriculum().length,23);
+ assert.equal(getPublishedSqlCurriculum().slice(0,23).length,23);
  for(const c of notes()){assert.ok(c.description);assert.ok(c.remember);assert.ok(c.examples.length);for(const e of c.examples){assert.ok(e.code);assert.ok(e.output.columns.length,e.id);}}
- assert.equal(getSqlCapability('alter-table','sqlite').status,'pending');
+ assert.equal(getSqlCapability('capacidad-futura','sqlite').status,'pending');
 });
 test('segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas',()=>{
  for(const g of groups)for(const c of g.children)for(const d of sqlDialects){

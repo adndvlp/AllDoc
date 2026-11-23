@@ -1,0 +1,9 @@
+{
+  "changed": [
+    "tests/ui/__screenshots__/celular/buscador.png",
+    "tests/ui/__screenshots__/celular/busqueda-inicio.png",
+    "tests/ui/__screenshots__/celular/catalogo.png",
+    "tests/ui/__screenshots__/laptop/busqueda-inicio.png"
+  ],
+  "unchanged": 231
+}

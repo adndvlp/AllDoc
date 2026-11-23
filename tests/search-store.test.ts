@@ -52,7 +52,7 @@ test('la carga es diferida, comparte promesa y resuelve la consulta más recient
   await first;
   assert.equal(store.getSnapshot().surface, 'inline');
   assert.equal(store.getSnapshot().query, 'cómo filtrar');
-  assert.deepEqual(store.getSnapshot().results.map((entry) => entry.title), ['WHERE']);
+  assert.deepEqual(store.getSnapshot().results.map((entry) => entry.title), ['WHERE', 'Subconsultas · Subconsulta en WHERE']);
   await store.openDialog();
   assert.equal(calls, 1);
   assert.equal(store.getSnapshot().query, 'cómo filtrar');

@@ -1,0 +1,631 @@
+
+> alldoc@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs
+
+(node:73160) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/baseline.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ percentiles de referencia: nearest rank, valores cero y muestras ausentes (1.937666ms)
+✔ servidor de referencia: resuelve HTML hermano aunque exista el directorio de sus fichas (53.952ms)
+✔ assets declarados: incluye preloads JS/CSS y elimina duplicados, sin contar fuentes o scripts inline (0.705292ms)
+✔ inventario: separa total del build y assets declarados por página y usa gzip real (92.070875ms)
+✔ huella: detecta cambios de la app y excluye los informes y resultados generados (19.077083ms)
+✔ servidor de referencia: resuelve rutas estáticas con y sin trailing slash y bloquea salir del build (19.950625ms)
+✔ CLI final: descubre 26/168/714 casos sin motores, build ni multiplicar la suite Chromium (6324.039166ms)
+✔ CLI final: selección de un caso no pretende aceptación completa y no permite actualizar (3440.043959ms)
+✔ CLI corto de zoom: descubre siete casos sin un filtro que pueda romperse al copiar (2394.054542ms)
+✔ CLI de pendientes: descubre solo los 204 casos de laptop y escritorio (1422.082833ms)
+✔ CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight (1281.724209ms)
+(node:73162) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-config.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ aceptación: comparación estricta, sin actualización, reintentos ni servidores/preflight duplicados (3.221583ms)
+✔ aceptación: conserva siete proyectos Chromium, seis por motor/tamaño y rutas originales de referencias (1.646417ms)
+✔ aceptación: descubre los 168 casos funcionales sin iniciar navegadores y sin mezclar Chromium (1104.061125ms)
+(node:73163) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-acceptance.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consolidación: recalcula casos reales y conserva procedencia sin mutar resultados originales (2.548541ms)
+✔ consolidación: errores globales requieren revisión explícita y ningún resultado inestable se oculta (0.409375ms)
+✔ consolidación: rechaza duplicados y huecos aunque cada fuente tenga contadores favorables (0.264583ms)
+✔ consolidación: no selecciona fallos ni reintentos ni transforma datos en aprobaciones (0.205791ms)
+✔ consolidación: selecciona por caso/proyecto y rechaza identidades que no pertenecen al descubrimiento (0.344666ms)
+✔ consolidación: ninguna fuente puede actualizar capturas aunque sus casos estén aprobados (0.112291ms)
+✔ compatibilidad: exige hashes idénticos salvo cada cambio de herramienta revisado explícitamente (13.578375ms)
+(node:73164) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance-preflight.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preflight final: los tres motores arrancan y cierran antes del build; selección solo Chromium (8.707625ms)
+✔ preflight final: Chromium ausente impide el cierre y conserva la liberación de otros motores (0.449ms)
+✔ preflight final: versión vacía y cierre fallido nunca acreditan Chromium (0.282208ms)
+(node:73165) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-acceptance.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ aceptación: filtros y modos parciales nunca se confunden con cierre; actualizar referencias se rechaza (1.294334ms)
+✔ referencias aprobadas: exige las 52 imágenes y los seis manifiestos ligados a la revisión (2.62225ms)
+✔ Chromium: contrasta todos los casos descubiertos y rechaza resumen favorable con huecos, duplicados o retries (0.775458ms)
+✔ cierre global: doce criterios dependen de evidencia ejecutada, revisión, invariantes y fuente final (35.994042ms)
+✔ Chromium: una omisión nueva no se acredita como aprobada (0.179083ms)
+✔ Chromium: el diagnóstico prioriza el fallo real frente a casos que no llegaron a ejecutarse (0.190958ms)
+✔ Chromium: las nueve omisiones previstas conservan identidad y motivo; un motivo distinto se rechaza (0.550042ms)
+✔ cierre global: faltan pruebas, revisión y navegadores aunque se declare un contador favorable (0.336417ms)
+✔ ENOSPC al escribir el log: rechaza, termina el hijo y espera su cierre sin error global (4.038291ms)
+✔ ENOSPC al cerrar el log: un proceso con código cero no se presenta como aprobado (32.488292ms)
+✔ comando real: espera stdout/stderr y cierre del log sin cambiar el código de salida (248.127125ms)
+✔ fallo al crear el log no inicia un proceso y fallo de spawn no deja la promesa pendiente (10.804459ms)
+(node:73170) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-config.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ configuración dedicada: seis proyectos, idioma/tema y referencias independientes, sin arranque pesado automático (1.769291ms)
+✔ configuración Chromium: conserva los siete proyectos y la ruta de referencias existentes (0.103625ms)
+(node:73172) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/baseline.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consolidación: acredita solo un cambio limitado a APP-04 y conserva hashes de las partes sin cambios (3.27125ms)
+✔ consolidación: rechaza cambios fuera de APP-04 y marcadores ausentes o repetidos (0.531417ms)
+✔ consolidación: recalcula contadores de los resultados reales y conserva procedencia por caso (2.184333ms)
+✔ consolidación: no oculta un fallo con un contador favorable ni acepta duplicar un caso (0.618542ms)
+✔ consolidación: selección explícita separa el foco corregido de los casos históricos (0.30575ms)
+(node:73173) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ matriz de compatibilidad: seis proyectos con tamaños y capacidades propios, sin modificar otra lectura (6.275625ms)
+✔ selección de compatibilidad: todos por defecto, subconjunto deduplicado y error para un nombre desconocido (0.4675ms)
+✔ selección CLI: admite proyectos repetidos y listado; rechaza valores ausentes y opciones desconocidas (0.200541ms)
+✔ preflight: seleccionar Firefox no abre WebKit ni Chromium y cierra la única instancia (4.083834ms)
+✔ preflight: seleccionar solo WebKit funciona sin un launcher Chromium o Firefox (0.150375ms)
+✔ preflight completo: cada motor arranca una vez, con versión y liberación comprobadas (0.151958ms)
+✔ preflight: binarios ausentes dejan el resultado bloqueado con un diagnóstico agregado (0.406958ms)
+✔ preflight: un motor listo no compensa un fallo del otro y no se recomienda instalar por un error de permisos (0.19775ms)
+✔ preflight: un proyecto desconocido se rechaza antes de abrir cualquier motor (0.140708ms)
+✔ preflight: una versión ausente o un cierre fallido no se declaran listos (0.271042ms)
+✔ preflight: un cierre que no responde tiene un límite y bloquea continuar (11.192125ms)
+✔ preflight: informa qué motor está comprobando y conserva el estado final de cada uno (0.519542ms)
+(node:73206) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-matrix.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ matriz: valores por defecto cubren seis proyectos; smoke conserva cuatro casos y se puede seleccionar estrecho (1.705417ms)
+✔ matriz: registra los veinte requisitos y configura exclusiones por alcance sin tests omitidos (0.23225ms)
+✔ matriz: exige cada caso aplicable con archivo correcto y rechaza huecos aunque el contador sea favorable (3.000708ms)
+✔ matriz: veinte casos históricos de escritorio no acreditan la matriz ampliada (0.699375ms)
+✔ matriz: filtros de casos de escritorio no exigen resultados inventados en los otros tamaños (0.343125ms)
+✔ matriz: el informe acredita cada requisito con sus casos reales y distingue capacidades no aplicables (8.1295ms)
+✔ informe: registra el origen efímero efectivo sin arrastrar la baseURL por defecto ni mutar opciones (0.404959ms)
+✔ CLI de preflight: listado completo y selección WebKit sin iniciar navegadores o declarar pruebas aprobadas (1771.662709ms)
+✔ CLI de preflight: un proyecto desconocido falla una vez antes del trabajo pesado (966.728375ms)
+✔ progreso compacto: conserva contadores, caso/fase y fallo breve sin una línea por cada inicio y éxito (1.208625ms)
+✔ CLI de compatibilidad: descubre la matriz sin iniciar motores ni incluir la suite Chromium (1959.28ms)
+✔ CLI de escritorio: smoke, motor y filtro reducen los casos antes de construir (4781.50675ms)
+✔ CLI de compatibilidad: rechaza un proyecto desconocido con un único diagnóstico (1238.675167ms)
+✔ CLI de compatibilidad: selección estrecha ejecuta sus casos aplicables y conserva el recorrido histórico de escritorio (3331.945209ms)
+(node:73213) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-run.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ runner de escritorio: valores por defecto, selección y filtro como un solo argumento (6.999542ms)
+✔ runner de escritorio: preflight bloqueado impide construir o iniciar un servidor (0.318334ms)
+✔ informe de escritorio: exige cada caso aprobado en ambos motores, no solo un contador favorable (1.099791ms)
+✔ informe de escritorio: rechaza omisiones, resultados ausentes, duplicados y pruebas de otro proyecto (0.791834ms)
+✔ informe de escritorio: fallo, interrupción y reintento no quedan como aprobados (1.7255ms)
+✔ informe de escritorio: smoke y filtros no acreditan la cobertura completa (1.378875ms)
+✔ informe de escritorio: el diagnóstico principal identifica el fallo real antes de los casos no ejecutados (0.714ms)
+✔ espacio: mide los destinos y exige margen antes de iniciar navegadores/build (1.749333ms)
+✔ espacio: el temporal lleno bloquea aunque el destino de informes tenga espacio (0.427917ms)
+✔ espacio: usa bloques disponibles al usuario y admite el límite exacto (0.127875ms)
+✔ CLI con disco sin margen: diagnóstico único, informe parcial y ningún navegador o build iniciado (1439.004375ms)
+✔ CLI: si falta el navegador después de medir espacio, el informe identifica preflight (1264.883833ms)
+(node:73218) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/scripts/lib/browser-run.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ visual: selección explícita separada, seis proyectos y actualización solo intencional (4.468042ms)
+✔ visual: descubrimiento de 26 casos sin motores ni casos funcionales y configuración estricta (2897.48325ms)
+(node:73219) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/browser-visual.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ referencias: 52 imágenes independientes, 26 casos y adaptación solo en proyectos estrechos (3.710084ms)
+✔ referencias: generación pendiente de revisión, archivos exactos y dimensiones reales de cada estado (56.971042ms)
+✔ referencias: rechaza entorno o binario distintos sin comparar silenciosamente entre plataformas (2.666875ms)
+✔ referencias: falta de manifiesto, edición manual, PNG ajeno o política ampliada bloquean la comparación (9.218084ms)
+✔ referencias: evaluación estricta rechaza huecos, duplicados, fallos, reintentos y contadores inventados (2.503167ms)
+✔ referencias: los estados capturados corresponden exactamente a los casos seleccionados, también al comparar (0.291834ms)
+(node:73226) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/catalog.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ el catálogo conserva tres áreas, diecinueve herramientas y los cinco grupos en su orden (5.468917ms)
+✔ el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos (3.969125ms)
+✔ metadata, páginas MDX, palabras clave y cuerpos tienen los mismos conceptos e IDs únicos (133.787459ms)
+✔ el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado (5.765833ms)
+✔ catálogo, sidebar y búsqueda admiten conceptos en cualquier área sin depender de SQL (0.58ms)
+✔ el catálogo rechaza conceptos huérfanos e IDs repetidos antes de publicar enlaces inválidos (0.856708ms)
+✔ Docusaurus recibe la metadata canónica conservando contenido, opciones y descripciones SEO (17.45125ms)
+(node:73229) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/client-compilation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ejemplos: las fichas ofrecen acciones accesibles con identidad estable solo en un contexto compatible (944.436875ms)
+✔ preset cliente: favoritos y recientes siguen siendo arrays de IDs/visitas tras guardar y recargar (162.462542ms)
+✔ preset cliente: las sugerencias priorizan recientes y eliminan duplicados (83.155ms)
+✔ preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores (113.988541ms)
+✔ preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map (692.7145ms)
+✔ salida de práctica: tablas semánticas, valores escapados y revisión anterior sin depender del motor (12.378833ms)
+✔ panel con tercer perfil de prueba: etiqueta propia y controles de detener/reiniciar sin cambiar componentes (342.027042ms)
+(node:73230) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/final-verification.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ auditoría publicada: comprueba la ruta canónica de cada HTML antes de ejecutar UI (99.6635ms)
+✔ comparación final: distingue bundle total e inicial y favoritos sin referencia previa (1.627334ms)
+✔ presupuesto: recalcula p95 de muestras crudas y no acepta un resumen antiguo favorable (0.602583ms)
+✔ muestras ausentes o inválidas no se convierten en cero ni acreditan el presupuesto (1.251709ms)
+✔ comparación: ejecuciones parciales, perfiles o rutas eliminados y favoritos sin medir quedan pendientes (1.780375ms)
+✔ comparación: cambiar navegador, CPU, viewport o red impide atribuir diferencias a la aplicación (1.3825ms)
+✔ Event Timing: conserva cobertura parcial y no etiqueta el proxy DOM como INP (0.402667ms)
+✔ procedencia incompleta o esquema desconocido no permiten una comparación aprobada (1.000791ms)
+✔ crecimiento: mil entradas sintéticas conservan IDs únicos y ranking del motor real (34.34225ms)
+✔ auditoría publicada: detecta repaso retirado, h1 duplicado y zoom bloqueado (26.942ms)
+✔ auditoría publicada: los literales de scripts no se cuentan como estructura visible (17.173ms)
+✔ portada: el cargador no debe descargar un chunk compartido con cuerpos de apuntes (117.825083ms)
+(node:73252) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/palettes.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ restaura cualquiera de los ocho colores guardados antes de pintar (12.380416ms)
+✔ convierte las antiguas paletas al color equivalente (1.291333ms)
+✔ una elección inválida o la falta de almacenamiento conserva un color válido (3.291292ms)
+✔ los colores del texto tienen contraste suficiente sobre negro (0.821791ms)
+(node:73254) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/personal-library.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ recientes: valida fechas e IDs, deduplica por fecha, desempata por ID y limita a veinte (6.783458ms)
+✔ versiones y formas inválidas se recuperan sin lanzar; favoritos filtran sin cambiar orden (0.405792ms)
+✔ SSR vacío y estable; hidratar lee ambas colecciones sin escribir ni sobrescribirlas (0.613083ms)
+✔ activación directa antes de hidratar espera la lectura; efectos repetidos registran una sola visita (0.255375ms)
+✔ visitas y revisitas en cualquier área: una por activación, fechas crecientes y máximo veinte (0.526208ms)
+✔ favoritos conservan inserción y quitar/guardar envía al final; cada escritura afecta solo su clave (0.679542ms)
+✔ corrupción de una clave no borra la otra ni escribe al iniciar (0.182542ms)
+✔ almacenamiento inaccesible: conserva memoria y solo avisa tras una acción; no sobrescribe lo que no pudo leer (0.244625ms)
+✔ cuota llena: acción inmediata en memoria, siguientes escrituras pueden recuperar persistencia (0.162625ms)
+✔ storage sincroniza solo la clave afectada, última escritura gana y nunca responde con otra escritura (0.309958ms)
+(node:73255) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-actions.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ acciones: sustituir y recuperar conserva todos los archivos, revisiones y el backup al recargar (4.279625ms)
+✔ acciones: sustituciones iguales no consumen backup y las inválidas no cambian el borrador (0.8795ms)
+✔ acciones: un backup corrupto o ajeno no descarta el código principal y el formato anterior sigue válido (0.130167ms)
+✔ acciones: fallo de escritura conserva backup en memoria y el reintento guarda la edición más reciente (0.443833ms)
+✔ acciones: una escritura pendiente no guarda una revisión anterior como backup de la nueva (3.771041ms)
+✔ acciones: un ejemplo abre, conserva la revisión anterior y no ejecuta ni reinicia el motor (5.542584ms)
+✔ acciones: un ejemplo idéntico no anuncia una recuperación inexistente (0.950666ms)
+✔ acciones: el ejemplo queda editable aunque la descarga falle; reintentar no reemplaza el texto (11.70825ms)
+✔ acciones: navegar o colapsar durante una sustitución tardía no reemplaza ni reabre el contexto (4.010542ms)
+✔ acciones: los IDs y lenguajes incompatibles se rechazan antes de modificar código o crear recursos (1.028209ms)
+(node:73274) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-bridge.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ puente: identidad, sesión, tipos y revisión se validan antes de cruzar la frontera (4.138583ms)
+✔ puente Python: contexto, código y sugerencias válidos; rechaza lenguaje mixto, posición falsa y esquema inválido (1.354083ms)
+✔ puente: contexto SQL y esquema serializables, con límites y tipos completos (3.163ms)
+✔ medición de navegador: conserva detail aunque PerformanceMeasure.toJSON lo omita (2.303208ms)
+(node:73276) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-context.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL y pandas habilitan sus proveedores diferidos sin crear motores al resolver contexto (86.018292ms)
+✔ SELECT y WHERE comparten identidad de workspace; no se deriva contexto de categorías ni de títulos (0.36625ms)
+✔ pandas cambia de perfil y workspace mediante su metadata publicada (0.298458ms)
+✔ la clave separa herramienta, perfil, dataset y versión; no depende del concepto ni de versiones del motor (0.098167ms)
+✔ un tercer lenguaje y varios perfiles SQL usan el mismo registro y resolver sin ramas por lenguaje (38.97375ms)
+✔ consultar perfiles es puro; cargar proveedores es explícito, comparte promesa y no construye motores (2.834041ms)
+✔ una carga fallida puede reintentarse y no queda guardada como proveedor válido (0.641041ms)
+✔ el registro rechaza identidades ambiguas, capacidades inválidas y perfiles habilitados sin proveedores (0.371ms)
+✔ un perfil inválido no muta el registro después de crearlo y el contexto exige metadata coherente (0.467667ms)
+(node:73278) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-contracts.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ el protocolo acepta eventos de ambos motores sin handles o clases del runtime (1.321542ms)
+✔ versiones, tipos desconocidos, identidades ausentes y respuestas de otro contexto se rechazan (0.144875ms)
+✔ columnas y valores coinciden sin confundir null, vacío, booleanos o enteros grandes (0.361583ms)
+✔ el protocolo limita tablas y exige estados finales y localizaciones de error válidos (0.579833ms)
+✔ arrays dispersos no se aceptan como filas, columnas o sugerencias completas (0.155959ms)
+✔ sugerencias validadas por archivo, workspace, revisión y offsets UTF-16 del documento (0.116208ms)
+(node:73279) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-data.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ el dataset canónico conserva tres columnas, tres productos y el precio entero, sin id añadido (22.460208ms)
+✔ materializar el dataset histórico SQLite prepara parámetros y conserva sus tres productos (13.678541ms)
+✔ los valores con comillas o SQL se enlazan como datos, sin interpolarlos en sentencias (0.272958ms)
+✔ Python recibe el mismo JSON tipado y cada materialización tiene su propia copia (0.411333ms)
+✔ dataset y runtime desconocidos o una operación abortada no preparan otro entorno por defecto (0.492375ms)
+✔ DataFrame está publicado bajo Pandas, con búsqueda propia y un único ejemplo breve (17.856125ms)
+✔ las cinco rutas históricas conservan su identidad y ejemplos al revisar el contenido; el snapshot original sigue disponible (7.844ms)
+✔ anterior y siguiente permanecen dentro de la misma herramienta (0.557417ms)
+(node:73280) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-drafts.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ borradores: carga diferida, edición inmediata, revisiones y guardado agrupado por herramienta (7.283709ms)
+✔ borradores: recuperar en otra sesión conserva texto y avisa del cambio de entorno (0.487167ms)
+✔ borradores: una escritura tardía no declara guardada una edición posterior (2.075875ms)
+✔ borradores: fallo de almacenamiento conserva edición en memoria (0.818709ms)
+✔ borradores: conflicto entre sesiones guarda copia recuperable sin sobrescribir la ganadora (0.460375ms)
+✔ borradores: valida clave, archivos, versión, UTF-8 y restaura una copia inmutable (1.759708ms)
+(node:73281) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor-completion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor semántico: adapta datos del proveedor al menú, con documento, posición y cancelación (7.968917ms)
+✔ editor semántico: respuestas tardías de otro documento no reemplazan la sugerencia actual (0.283917ms)
+✔ editor semántico: errores del análisis permiten seguir escribiendo sin sugerencias inventadas (0.195583ms)
+(node:73282) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-editor.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editor: semillas reproducibles y manifiestos SQLite/Pyodide fijados (21.6185ms)
+✔ editor: CodeMirror SQL sugiere tablas y columnas iniciales; Python completa variables locales (48.181292ms)
+(node:73283) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-examples.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ejemplos: IDs únicos para las 166 variantes SQL y pandas; ocho IDs anteriores y defaults conservados (1.0285ms)
+(node:73284) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-interaction.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ejecutar: botón y atajo comparten permiso solo para un workspace habilitado y listo (0.911958ms)
+(node:73285) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-isolation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ aislamiento: exige otro hostname y origen HTTP(S), sin credenciales, rutas o downgrade (19.9005ms)
+✔ aislamiento: origen exacto normalizado, sin prefijos engañosos ni aceptar null (0.174584ms)
+✔ aislamiento: CSP propia restringe red, frames hijos, formularios y Workers al origen del runtime (0.159791ms)
+(node:73286) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-panel.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ panel: resolver reconoce SQL/pandas ejecutables, sin categorías (6.026917ms)
+✔ panel: disposición por espacio real y tamaño raíz, sin clasificar por dispositivo (0.463041ms)
+✔ panel: separador conserva mínimos legibles, limita arrastre y tiene tamaño inicial restablecible (0.847708ms)
+✔ panel: perfil pendiente permite editar y guardar, sin cargar proveedores ni inventar resultados (4.276209ms)
+✔ panel: añadir un perfil futuro no activa automáticamente un editor sin preparación (0.184958ms)
+✔ diálogos: detectar otra ventana al rotar permite suspender práctica sin cerrar la búsqueda (0.076583ms)
+✔ diálogos: suspender y cerrar el anterior ocurre antes de enfocar el invocador y abrir el siguiente (0.910084ms)
+(node:73287) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-providers.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ proveedores: el completador recibe el mismo runtime del workspace sin crear otra VM (10.8625ms)
+✔ proveedores: un fallo al crear el completador libera el runtime ya creado (1.182459ms)
+(node:73288) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python-initialization.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición Python: separa SDK de paquetes y conserva el fallo original con tiempos acotados (3.336583ms)
+✔ inicialización Python: no anuncia VM lista antes de terminar la carga explícita de paquetes (2.471583ms)
+✔ inicialización Python: un error de paquetes rechaza la preparación y no entrega una VM parcial (0.198459ms)
+✔ inicialización Python: un fallo comunicado por callback tampoco entrega una VM parcial (0.151792ms)
+(node:73289) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-python.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Pyodide real: dataset compartido, DataFrame filtrado y precio numérico (9517.211542ms)
+✔ Pyodide real: variables y cambios parciales persisten; reiniciar datos no modifica el paquete ni otra sesión (41.832042ms)
+✔ Pyodide real: stdout/stderr, await y última expresión; sintaxis y traceback conservan archivo y línea (17.60625ms)
+✔ Pyodide real: selección UTF-16 no ejecuta el resto y sitúa errores en el archivo original (13.951083ms)
+✔ Pyodide real: null, vacío, booleano, bigint, fechas, cero filas y truncamiento son serializables (23.2785ms)
+✔ Pyodide real: Jedi completa pandas sin ejecutar el programa; columnas siguen solo DataFrames registrados (3409.488375ms)
+✔ Pyodide real: offsets de sugerencia son UTF-16 y disponer libera el entorno del núcleo (15.909125ms)
+✔ Pyodide real: completar columnas usa el esquema y no invoca propiedades del objeto del usuario (14.310334ms)
+Error thrown in write:
+Error: Se alcanzó el límite de salida de 1 MiB
+    at send (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:55:82)
+    at flush (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:61:9)
+    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/adapters/python/core.ts:67:105)
+    at file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660783
+    at handleEAGAIN (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659665)
+    at readWriteHelper (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:659781)
+    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:660765)
+    at Object.write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:84421)
+    at doWritev (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:228608)
+    at _fd_write (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/pyodide/pyodide.asm.mjs:1:230179)
+✔ Pyodide real: límites UTF-8 de código y stdout dejan un final explícito y permiten seguir ejecutando (19.446125ms)
+✔ Pyodide real: una función de una ejecución anterior conserva su excepción y señala la llamada actual (13.3245ms)
+(node:73290) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-session.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ medición de práctica: fases independientes por perfil sin conservar texto del usuario (15.468458ms)
+✔ sesión: completar mientras llega la inspección no descarta el nuevo esquema del motor (11.793834ms)
+✔ sesión: comienza colapsada y navegar sin abrir no carga motores ni borradores (0.234667ms)
+✔ sesión: SELECT → WHERE conserva motor y código; SQL → pandas → SQL recupera borradores independientes (1.029834ms)
+✔ sesión: el contexto preparado publica su borrador antes de liberar la VM anterior y permite editar sin ejecutarla (0.699334ms)
+✔ sesión: cambiar de contexto publica generación y borrador juntos, sin un estado nuevo del contexto anterior (0.568125ms)
+✔ sesión: editar o guardar un borrador inactivo no notifica ni reemplaza el snapshot activo (0.438708ms)
+✔ sesión: abrir la práctica ya abierta y preparada es idempotente para los suscriptores (0.192333ms)
+✔ sesión: salir oculta, volver recuerda apertura y recargar empieza colapsado (0.329625ms)
+✔ sesión: cerrar durante init y su respuesta tardía no reabren el panel ni retienen el motor (1.134625ms)
+✔ sesión: contexto nuevo puede iniciar aunque init anterior no responda; nunca hay dos motores (3.129334ms)
+✔ sesión: editar durante run conserva su revisión; un solo end y esquema tardío no pisa otro run (6.157791ms)
+✔ sesión: cancelación y eventos tardíos no contaminan el nuevo contexto (2.014208ms)
+✔ sesión: timeout fuerza liberación aunque cancel no conteste y emite exactamente un end (33.904875ms)
+✔ sesión: salida inválida, fin ausente y presupuesto de salida terminan sin un run colgado (11.319625ms)
+✔ sesión: completar ignora respuestas de una revisión anterior y no bloquea editar (0.524042ms)
+✔ sesión: reiniciar entorno conserva texto, no ejecuta y colapsar libera tras inactividad (10.016375ms)
+✔ sesión: error de init se puede reintentar sin duplicar recursos ni ejecutar (3.075875ms)
+✔ sesión: ejecutar esperando una carga anterior no ejecuta el contexto al que se navegó (3.784875ms)
+✔ sesión: un end que perdió el entorno espera dispose antes de permitir otra ejecución (1.081625ms)
+✔ sesión: reinicios concurrentes comparten operación sin construir otro motor (4.006667ms)
+✔ sesión: si dispose no responde, el contexto siguiente falla sin crear un segundo motor (7.417209ms)
+✔ sesión: cancelar sin perder entorno conserva el motor y rechaza sugerencias de un contexto anterior (1.971125ms)
+✔ sesión: cambiar de herramienta no espera un reset viejo que ignora AbortSignal (4.333666ms)
+✔ sesión: SQL → pandas → SQL durante descarga solo construye el último motor (2.227083ms)
+✔ sesión: reiniciar durante ejecución cancela y deja un motor preparado conservando el código (1.808209ms)
+(node:73291) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-sqlite.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 18 SQLITE_TOOBIG SQL = SELECT randomblob(2000000);
+✔ SQLite WASM real: los ocho ejemplos conservan valores, columnas y precio entero (185.612125ms)
+✔ SQLite WASM real: sentencias y triggers con punto y coma se separan con el parser del motor (3.126916ms)
+✔ SQLite WASM real: selección UTF-16 ejecuta solo lo seleccionado y conserva el archivo en errores (29.251417ms)
+✔ SQLite WASM real: mutaciones, esquema tras error parcial y reinicio no modifican el paquete ni otra sesión (14.425625ms)
+✔ SQLite WASM real: respeta transacciones explícitas, sin envolver el programa en otra transacción (2.774042ms)
+✔ SQLite WASM real: null, texto vacío, bigint, blob y columnas mixtas son serializables sin perder precisión (2.428208ms)
+✔ SQLite WASM real: cero filas sigue teniendo columnas y la vista previa corta en 200 sin inventar un total (10.221125ms)
+✔ SQLite WASM real: límites y extensiones de archivos fallan con error visible, sin impedir reiniciar (4.5695ms)
+✔ SQLite WASM real: manifiesto coincide con motor y lockfile; completado utiliza el esquema inspeccionado (74.5575ms)
+✔ SQLite WASM real: truncar RETURNING conserva todas las mutaciones y rechaza salida excesiva con fin explícito (475.51975ms)
+(node:73293) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/practice-verification.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ aceptación de tiempos: exige cuatro perfiles, treinta muestras por acción y fases frías separadas (3.272958ms)
+✔ aceptación de tiempos: un resumen favorable no oculta muestras lentas ni redefine el presupuesto (3.150791ms)
+✔ aceptación de tiempos: muestras ausentes, repetidas, negativas y fases incompletas impiden aprobar (6.921375ms)
+✔ aceptación de tiempos: Event Timing no observado se conserva como ausente y no se declara INP (0.663291ms)
+✔ aceptación de tiempos: pandas admite 300 ms de completado y el resto conserva 100 ms (0.543458ms)
+✔ aceptación del bundle: compara iniciales por página, sin confundir chunks diferidos con descarga inicial (0.19475ms)
+✔ aceptación global: no basta con declarar que la suite pasó ni con omitir un tamaño (0.229709ms)
+✔ informe UI: conserva fallos, omisiones y proyecto al recorrer suites anidadas (2.058708ms)
+(node:73294) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/python-assets.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ assets Python: cierre transitivo determinista sin paquetes ajenos y con hashes completos (18.541791ms)
+✔ assets Python: preparar reutiliza el pin compatible; actualizar o cambiar runtime exige resolver versiones (0.134459ms)
+✔ assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin integridad (0.598666ms)
+(node:73296) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/src/practice/isolation/policy.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:73296) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+✔ runtime publicado: SDK/WASM/stdlib conservan los bytes de la distribución y los wheels cumplen el pin (5814.899666ms)
+✔ HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios intactos sin framing chunked (20.891958ms)
+(node:73298) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search-store.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consultas pedagógicas: auxiliares, acentos, preguntas y operadores de comentarios (6.448166ms)
+✔ título completo y prefijo superan coincidencias de palabras y los empates conservan orden (0.171583ms)
+✔ índice preparado: mil entradas conservan coincidencias sin reconstruir la normalización (5.727042ms)
+✔ la carga es diferida, comparte promesa y resuelve la consulta más reciente sin reabrir el diálogo (1.276042ms)
+✔ un error permite reintentar sin perder la consulta; elegir un resultado limpia y conserva la caché (1.972292ms)
+✔ los resultados se muestran en lotes de diez y una consulta nueva restaura el límite (0.793666ms)
+✔ salir de la landing elimina su superficie y las suscripciones se pueden limpiar (2.791667ms)
+✔ buscador vacío: recientes primero sin duplicados; una consulta conserva su ranking (1.171625ms)
+✔ recientes recibidos durante la carga se usan al resolver; no mueven enlaces de un diálogo ya visible (0.46775ms)
+(node:73299) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/search.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ encuentra un concepto por lo que hace, sin recordar su nombre (5.941375ms)
+✔ ignora acentos y mayúsculas, y permite combinar área y concepto (0.234417ms)
+✔ una coincidencia exacta en el título precede una mención en la descripción (0.109708ms)
+✔ una consulta sin coincidencias devuelve una lista vacía (0.07175ms)
+(node:73300) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-business-data.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO clientes(id,nombre,email,ciudad,fecha_alta) VALUES(100,'X','cliente1@ejemplo.test','X','2026-01-01');
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE productos SET precio=-1 WHERE id=1;
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = UPDATE productos SET proveedor_id=9999 WHERE id=1;
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO inventario(almacen_id,producto_id,unidades) VALUES(1,1,5);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO hijos(id,padre_id) VALUES(2,999);
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO hijos VALUES(1,1,2);
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = UPDATE hijos SET cantidad=0;
+✔ negocio: trece tablas, 300–600 filas y valores tipados reproducibles; pandas conserva su dataset (118.413959ms)
+✔ negocio: PK/FK/UNIQUE/CHECK/DEFAULT son restricciones reales, no etiquetas (133.565625ms)
+✔ negocio: consultas complejas, ausencias, NULL y empates de ventanas producen datos reales (52.399417ms)
+✔ negocio: inspeccionar no confirma transacciones y reiniciar conserva una semilla limpia (127.576625ms)
+✔ negocio: cascada y SET NULL actúan de verdad y no modifican otra sesión (87.326167ms)
+✔ materializador: restricciones de un dataset se crean incluso fuera del registro de negocio (3.118125ms)
+(node:73301) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-client.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preset cliente SQL: la matriz conserva capacidades y acciones revisadas para todas las fichas (1243.455416ms)
+✔ preset cliente SQL: seleccionar y navegar notifican al selector de React (12.516083ms)
+(node:73303) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dataset-export.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ exportación: seis scripts deterministas, mismos datos y restricciones, sin DROP ni credenciales (25.523125ms)
+✔ exportación: script SQLite se importa entero y comprueba FK, texto Unicode y fechas (3.449833ms)
+✔ exportación: fechas Oracle, Unicode SQL Server y charset MySQL tienen sintaxis propia (11.063459ms)
+✔ exportación: valores con comillas y backslash no rompen los literales ni interpolan identificadores (0.974083ms)
+✔ exportación: archivos estáticos publicados coinciden byte a byte con el generador (44.399791ms)
+(node:73305) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dataset-migration.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migración SQL: copia código una vez, guarda revisión recuperable y conserva el registro original (7.885167ms)
+✔ migración SQL: no sustituye un borrador nuevo ya editado y nunca migra pandas u otro dataset (0.389042ms)
+✔ migración SQL: dos conexiones conservan la ganadora por CAS y el origen sigue íntegro (0.3705ms)
+✔ migración SQL: fallo de escritura conserva la copia en memoria y permite reintentar sin borrar el origen (0.405291ms)
+✔ migración SQL: cerrar durante la lectura no escribe un seed vacío ni borra el origen (0.475667ms)
+(node:73306) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-dialect-store.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ dialecto: SQLite inicial SSR, selección validada y preferencia persistente con notificación estable (2.771167ms)
+✔ dialecto: parámetro de enlace prevalece solo en esa navegación, inválido usa SQLite sin borrar preferencia (0.519ms)
+✔ dialecto: almacenamiento corrupto o bloqueado conserva selección en memoria y no lanza (0.436666ms)
+(node:73307) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-first-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bloque SELECT → CAST: publica exactamente 53 destinos completos, con las cinco identidades anteriores (42.637917ms)
+✔ bloque SELECT → CAST: las seis variantes tienen revisión explícita y las capacidades desconocidas permanecen pendientes (1.008166ms)
+✔ bloque SELECT → CAST: no se ofrece práctica local sin una salida verificada del ejemplo (14.832208ms)
+✔ bloque SELECT → CAST: documentos modulares resuelven todos los destinos sin importar el corpus completo (62.679833ms)
+✔ bloque SELECT → CAST: los resultados publicados proceden del dataset relacional real en SQLite WASM (412.686708ms)
+(node:73308) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-foundation.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SQL: 34 grupos ordenados, definición inicial, dependientes dentro de su grupo y sin numeración visible (7.561292ms)
+✔ SQL: rechaza árboles con identidad repetida, definición ausente, orden ambiguo o rutas inseguras (8.3335ms)
+✔ SQL: publicación incluye solo los 153 conceptos revisados y no importa cuerpos, filas o motores (28.724ms)
+✔ SQL: inventario conserva las 99 fuentes con hash, once vacíos y destinos existentes (274.657375ms)
+✔ SQL: cinco rutas e IDs históricos y sus ubicaciones Lenguajes comparten identidad y workspace (0.450667ms)
+✔ SQL: rutas de grupos, otras herramientas, URL externa y escapes no se confunden con conceptos (0.111209ms)
+✔ SQL: la matriz tiene seis dialectos y ninguna capacidad pendiente se convierte en soporte implícito (10.719333ms)
+✔ SQL: límite distingue LIMIT, TOP y FETCH sin confundir el dialecto documental con otro runtime (0.145542ms)
+✔ SQL: ausencia de sintaxis nativa se explica y no publica código ni ejecución local ficticios (0.97825ms)
+✔ SQL: variante revisada requiere fuentes y un ejemplo SQLite verificado con el mismo código (1.819125ms)
+✔ SQL: borradores y variantes sin capacidad revisada no se publican aunque tengan SQL (0.121083ms)
+✔ SQL: estados y modos de ejecución mal serializados no eluden la revisión (0.114958ms)
+✔ SQL: una variante externa no habilita ejecutar MySQL en SQLite ni inventa un resultado (0.098833ms)
+✔ SQL: equivalente local exige explicación y acción explícita; nunca cambia el borrador por cambiar dialecto (0.2095ms)
+(node:73311) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-second-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ segundo bloque: buscar nombres de otros dialectos encuentra el mismo concepto sin duplicarlo (67.532875ms)
+✔ segundo bloque: 52 fichas nuevas completas, nueve grupos entre texto y CREATE TABLE (20.313083ms)
+✔ segundo bloque: seis variantes revisadas; diferencias de sintaxis y ausencias explícitas (11.171375ms)
+✔ segundo bloque: una variante no disponible lleva al mismo concepto SQLite, nunca a un anti join ajeno (0.191666ms)
+✔ segundo bloque: las fechas de DELETE son explícitas para motores con formato de sesión (0.222417ms)
+✔ segundo bloque: agregación global antes de GROUP BY y secuencias de escritura explícitas (0.34075ms)
+sqlite3_step() rc= 1555 SQLITE_CONSTRAINT_PRIMARYKEY SQL = INSERT INTO practica_clave VALUES (101, 'Duplicado');
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = INSERT INTO practica_obligatorio VALUES (2, NULL);
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO practica_correo VALUES (2, 'compras@empresa.test');
+sqlite3_step() rc= 275 SQLITE_CONSTRAINT_CHECK SQL = INSERT INTO practica_regla VALUES (2, -1);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO practica_reservas VALUES (2, 9999);
+sqlite3_step() rc= 787 SQLITE_CONSTRAINT_FOREIGNKEY SQL = INSERT INTO practica_solicitudes VALUES (9999, 1);
+✔ segundo bloque: las fuentes originales y diez vacíos tienen destinos revisados y verificables (11.420084ms)
+✔ segundo bloque: cada programa completo reproduce su salida desde semilla limpia en WASM (1273.054833ms)
+✔ segundo bloque: las restricciones de las tablas enseñadas rechazan datos inválidos realmente (119.671333ms)
+(node:73312) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-third-block.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 1299 SQLITE_CONSTRAINT_NOTNULL SQL = 
+INSERT OR ROLLBACK INTO practica_control
+  VALUES (CASE WHEN changes() = 1 THEN 1 ELSE NULL END);
+sqlite3_step() rc= 2067 SQLITE_CONSTRAINT_UNIQUE SQL = INSERT INTO practica_indice_unico VALUES (2,'A-1');
+✔ tercer bloque: 48 fichas nuevas cierran los 153 destinos y los 34 grupos (76.3515ms)
+✔ tercer bloque: seis dialectos revisados y ausencias sin SQL ni ejecución inventados (37.219041ms)
+✔ tercer bloque: bloques procedurales externos no se preparan ni ejecutan como un equivalente SQLite (0.836417ms)
+✔ tercer bloque: alias propios de los RDBMS buscan un solo concepto (2.621833ms)
+✔ tercer bloque: programas completos desde semilla limpia reproducen todas las salidas en WASM (1236.185375ms)
+✔ tercer bloque: empates de RANK, ROW_NUMBER determinista y marcos ROWS/RANGE distintos (29.183334ms)
+✔ tercer bloque: transferencia revierte saldo insuficiente o cuenta ausente, y confirma solo dos cambios válidos (90.935542ms)
+✔ tercer bloque: transacción abierta entre ejecuciones, rollback DDL y UNIQUE reales (7.714625ms)
+✔ tercer bloque: los 99 originales y once vacíos están cubiertos por cuerpos publicados (121.249ms)
+(node:73313) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SELECT / Todas las columnas: resultado correcto (2.877667ms)
+✔ SELECT / Columnas concretas: resultado correcto (0.172833ms)
+✔ SELECT · Todas las columnas / Todas las columnas: resultado correcto (0.132625ms)
+✔ SELECT · Columnas concretas / Columnas concretas: resultado correcto (0.465042ms)
+✔ SELECT · Alias AS / Un nombre claro en el resultado: resultado correcto (0.384583ms)
+✔ Comentarios / Una línea o al final: resultado correcto (0.326917ms)
+✔ Comentarios / Varias líneas: resultado correcto (0.364208ms)
+✔ LIMIT / Hasta 5 filas completas: resultado correcto (0.202375ms)
+✔ LIMIT / Hasta 3 nombres: resultado correcto (0.075333ms)
+✔ LIMIT · Máximo de filas / Hasta 5 filas completas: resultado correcto (7.342583ms)
+✔ LIMIT · OFFSET / Saltar 3 y mostrar hasta 3: resultado correcto (0.146333ms)
+✔ WHERE / Cumplir una condición: resultado correcto (0.059833ms)
+✔ WHERE · Operadores / Mayor o igual: resultado correcto (0.047958ms)
+✔ WHERE · Operadores / Distinto de: resultado correcto (0.042916ms)
+✔ WHERE · Texto, números y fechas / Comparar texto y números: resultado correcto (0.048833ms)
+✔ WHERE · Texto, números y fechas / Comparar una fecha: resultado correcto (0.053ms)
+✔ WHERE · AND / Audio de al menos 1000 pesos: resultado correcto (0.031375ms)
+✔ WHERE · OR / Audio o pantallas: resultado correcto (0.042209ms)
+✔ WHERE · NOT / Excluir accesorios: resultado correcto (0.034875ms)
+✔ WHERE · AND, OR y NOT / Dos categorías con un precio mínimo: resultado correcto (0.037083ms)
+✔ BETWEEN / De 250 a 1000 pesos: resultado correcto (0.042375ms)
+✔ BETWEEN · Extremos incluidos / De 250 a 1000 pesos: resultado correcto (0.037375ms)
+✔ BETWEEN · NOT BETWEEN / Fuera de ese rango: resultado correcto (0.03875ms)
+✔ IN / Elegir categorías: resultado correcto (0.033542ms)
+✔ IN · Lista de valores / Elegir categorías: resultado correcto (0.033333ms)
+✔ IN · NOT IN / Excluir dos proveedores: resultado correcto (0.035291ms)
+✔ IN · NOT IN / Por qué un NULL cambia la comparación: resultado correcto (0.03325ms)
+✔ LIKE / Nombres que empiezan por M: resultado correcto (0.040959ms)
+✔ LIKE · Comodines % y _ / Nombres que empiezan por M: resultado correcto (0.040625ms)
+✔ LIKE · Comodines % y _ / M y cuatro caracteres más: resultado correcto (0.031458ms)
+✔ LIKE · NOT LIKE / Excluir un prefijo: resultado correcto (0.042416ms)
+✔ ORDER BY / Del más barato al más caro: resultado correcto (0.057ms)
+✔ ORDER BY · ASC / Del más barato al más caro: resultado correcto (0.047ms)
+✔ ORDER BY · DESC / Del más caro al más barato: resultado correcto (0.046084ms)
+✔ ORDER BY · Varias columnas / Categoría, precio y desempate: resultado correcto (0.0555ms)
+✔ ORDER BY · ORDER BY y LIMIT / Los 3 productos más caros: resultado correcto (0.049416ms)
+✔ DISTINCT / Categorías que tienen productos: resultado correcto (0.04375ms)
+✔ DISTINCT · Una columna / Categorías que tienen productos: resultado correcto (0.036292ms)
+✔ DISTINCT · Combinación de columnas / Pares de categoría y proveedor: resultado correcto (0.06675ms)
+✔ JOIN / Pedidos con el nombre del cliente: resultado correcto (0.102375ms)
+✔ JOIN · Condición ON / Pedidos con el nombre del cliente: resultado correcto (0.08125ms)
+✔ JOIN · Alias de tablas / Nombres cortos para las tablas: resultado correcto (0.075208ms)
+✔ JOIN · Self join / Empleado y su gerente: resultado correcto (0.049208ms)
+✔ JOIN · CROSS JOIN / Todas las parejas de almacén y cliente: resultado correcto (0.097042ms)
+✔ JOIN externos / Clientes con o sin pedidos: resultado correcto (0.110291ms)
+✔ JOIN externos · LEFT JOIN / Clientes con o sin pedidos: resultado correcto (0.094958ms)
+✔ JOIN externos · LEFT JOIN / Condición dentro de ON: resultado correcto (0.068792ms)
+✔ JOIN externos · RIGHT JOIN / Conservar clientes desde la derecha: resultado correcto (0.102667ms)
+✔ JOIN externos · FULL OUTER JOIN / Productos y proveedores sin pareja: resultado correcto (0.067375ms)
+✔ JOIN externos · Anti join / Clientes que no han pedido: resultado correcto (0.055292ms)
+✔ NULL / Clientes sin teléfono: resultado correcto (0.041125ms)
+✔ NULL · IS NULL / Clientes sin teléfono: resultado correcto (0.037292ms)
+✔ NULL · IS NOT NULL / Clientes con teléfono presente: resultado correcto (0.044542ms)
+✔ NULL · NULLIF / Tratar el precio cero como ausente: resultado correcto (0.0345ms)
+✔ COALESCE / Mostrar un valor de reserva: resultado correcto (0.050417ms)
+✔ COALESCE · Varios valores alternativos / Teléfono, email y valor de reserva: resultado correcto (0.052125ms)
+✔ CASE WHEN / Etiquetar el precio: resultado correcto (0.050667ms)
+✔ CASE WHEN · Condiciones y ELSE / Varias condiciones, en orden: resultado correcto (0.046667ms)
+✔ CAST / Precio como texto: resultado correcto (0.029459ms)
+✔ CAST · Conversión explícita / Texto numérico a entero: resultado correcto (0.029167ms)
+✔ CAST · Tipos por motor / Precio como texto: resultado correcto (0.026375ms)
+ℹ tests 386
+ℹ suites 0
+ℹ pass 386
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19345.982667

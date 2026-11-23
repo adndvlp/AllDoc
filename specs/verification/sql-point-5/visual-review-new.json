@@ -1,0 +1,54 @@
+{
+  "reviewed": 8,
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-alter-column.png",
+      "sha256": "54b79a147e67b085e6738d60577a64e25304a34c7f3badebcb1a037b935ded03",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-index-catalog.png",
+      "sha256": "2dd6a81f8982f1b5552b58fe2e8d92ab5ffcfeff84b095c1a5984bacc232984f",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-view-result.png",
+      "sha256": "d2216c405daf11d82efae9f08b6d6488d6fdd08c6000900acf18e7b0c0af4dda",
+      "viewed": true,
+      "notes": "Tabla del resultado real visible y controles del panel accesibles; se conserva el layout actual de práctica."
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-window-frame.png",
+      "sha256": "d31c1c4e6a7c42e08a6e87ab9812b3644cebedd6208717eaea9a535bc12dc37b",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-alter-column.png",
+      "sha256": "63bf3ab5c076a48fd44a68174569b1aaf021cd5098c58850dbbd71923c49b8af",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-index-catalog.png",
+      "sha256": "d2266ce675846d1c428d78403f8e0a4ee2fc5657513dd1975bc01f26092fb0b6",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-view-result.png",
+      "sha256": "d2862f40705c9ac73d0fc9783cace3e86e67fe8b49559b026ce91b6f094bd4e6",
+      "viewed": true,
+      "notes": "Tabla del resultado real visible y controles del panel accesibles; se conserva el layout actual de práctica."
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-window-frame.png",
+      "sha256": "43e1b2c7db589111c18defef8e0677dba0c6d8fa93e262043f3e56d09aeb5300",
+      "viewed": true,
+      "notes": "Definición, código, resultado y controles revisados en el estado capturado. El contenido largo conserva el scroll del lector."
+    }
+  ],
+  "unchangedReferences": 235
+}
