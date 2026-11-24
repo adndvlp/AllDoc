@@ -12,21 +12,32 @@ import {createSidebars} from '../src/lib/catalog-sidebar.ts';
 import {parseConceptFrontMatter} from '../src/lib/concept-front-matter.ts';
 import {searchEntries} from '../src/lib/search.ts';
 
-test('el catálogo incluye Lenguajes y conserva, diecinueve herramientas y los cinco grupos en su orden', () => {
+const pendingTools = ['Spreadsheets', 'dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake'];
+
+test('el catálogo incluye Lenguajes y conserva las herramientas en su grupo y orden', () => {
   assert.deepEqual(catalog.map((area) => area.id), ['analisis-de-datos', 'desarrollo-web', 'ia', 'lenguajes']);
   assert.deepEqual(getTopics('analisis-de-datos').map((topic) => topic.label), [
-    'Excel', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
+    'Excel', 'Spreadsheets', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
+    'dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake',
   ]);
   const groups = catalog[0].items.filter((item) => item.kind === 'group');
   assert.deepEqual(groups.map((group) => [group.label, group.items.map((topic) => topic.label)]), [
+    ['Hojas de cálculo', ['Excel', 'Spreadsheets']],
     ['Tablas y archivos', ['Pandas', 'openpyxl']],
     ['Cálculo científico', ['NumPy', 'SciPy']],
     ['Visualización', ['Matplotlib', 'Seaborn']],
     ['Conexiones SQL', ['SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg']],
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
+    ['Transformación de datos', ['dbt', 'Alteryx']],
+    ['Plataformas de datos', ['Databricks', 'Snowflake']],
   ]);
-  assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
+  assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label),
+    ['Power Query', 'SQL', 'R', 'Power BI', 'Tableau', 'Apache Spark', 'Apache Airflow']);
+  for (const topic of getTopics('analisis-de-datos').filter(topic => pendingTools.includes(topic.label))) {
+    assert.deepEqual(topic.concepts, []);
+    assert.equal(topic.sections, undefined);
+  }
   assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas, NumPy, sqlite3, json · 799 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
   assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [799, 0, 0, 153]);
   assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 646);
@@ -60,7 +71,12 @@ test('el sidebar deriva del catálogo, conserva categorías contraídas y solo e
   assert.deepEqual(pandas.items.flatMap(group => typeof group === 'object' && group.type === 'category' && Array.isArray(group.items)
     ? group.items.flatMap(leaf => typeof leaf === 'object' && leaf.type === 'doc' ? [leaf.id] : []) : []),
   getConceptsForTopic('analisis-de-datos', 'pandas').map(concept => concept.id));
-  assert.deepEqual(items[0].items, [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}]);
+  const categories = items.flatMap(item => [item, ...(Array.isArray(item.items) ? item.items : [])]);
+  for (const label of ['Excel', ...pendingTools]) {
+    const category = categories.find(item => typeof item === 'object' && item.type === 'category' && item.label === label);
+    assert.ok(category && typeof category === 'object' && category.type === 'category', label);
+    assert.deepEqual(category.items, [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}]);
+  }
 });
 
 test('metadata, páginas MDX, palabras clave y cuerpos tienen los mismos conceptos e IDs únicos', async () => {

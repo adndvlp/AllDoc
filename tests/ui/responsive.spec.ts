@@ -125,7 +125,7 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
   });
   await scroller.evaluate((element) => element.scrollTo({top: 0, left: 0, behavior: 'instant'}));
   await expect.poll(() => scroller.evaluate((element) => element.scrollTop)).toBe(0);
-  await expect(menu.getByRole('button', {name: 'Excel', exact: true})).toBeInViewport();
+  await expect(menu.getByRole('button', {name: 'Hojas de cálculo', exact: true})).toBeInViewport();
   await page.mouse.move(page.viewportSize()!.width - 1, 0);
   await expect(page).toHaveScreenshot('menu.png');
   const where = await openSqlGroup(menu, 'WHERE');
@@ -220,7 +220,7 @@ test('scroll independiente del contenido y el sidebar', async ({page}) => {
   await openPage(page);
   for (const result of await page.getByText('Ver resultado', {exact: false}).all()) await result.click();
   const menu = await openTopics(page);
-  const labels = ['Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización', 'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn'];
+  const labels = ['Hojas de cálculo', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización', 'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn'];
   for (const label of labels) {
     const button = menu.getByRole('button', {name: label, exact: true});
     if (await button.getAttribute('aria-expanded') === 'false') await button.click();

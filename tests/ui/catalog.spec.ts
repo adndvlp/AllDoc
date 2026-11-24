@@ -18,17 +18,23 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await go(page);
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   await expect(page.locator('[data-personal-shortcuts]')).toHaveCount(0);
-  await expect(library(page).locator('details')).toHaveCount(158);
+  await expect(library(page).locator('details')).toHaveCount(168);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   expect(await library(page).locator(':scope > ul > li > details > summary').evaluateAll((summaries) => summaries.map((summary) => summary.getAttribute('aria-label')))).toEqual([
-    'Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
+    'Hojas de cálculo', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
     'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau',
+    'Transformación de datos', 'Apache Spark', 'Apache Airflow', 'Plataformas de datos',
   ]);
   await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('153 conceptos');
   expect(await library(page).locator('[data-topic-icon]:not([data-icon-kind="group"])').evaluateAll((icons) => icons.map((icon) => icon.getAttribute('data-topic-icon')))).toEqual([
-    'Excel', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
+    'Excel', 'Spreadsheets', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
+    'dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake',
   ]);
+  for (const label of ['spreadsheets', 'dbt', 'alteryx', 'apache-spark', 'apache-airflow', 'databricks', 'snowflake']) {
+    await expect(item(page, label).getByText('Sin apuntes todavía', {exact: true})).toHaveCount(1);
+    await expect(item(page, label).locator('a')).toHaveCount(0);
+  }
   await library(page).getByLabel('SQL', {exact: true}).focus();
   await page.keyboard.press('Enter');
   await expect(item(page, 'sql')).toHaveAttribute('open', '');
@@ -44,6 +50,10 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await noOverflow(page);
   await library(page).locator('img[data-topic-icon]').evaluateAll((images) => Promise.all(images.map((image) => (image as HTMLImageElement).decode())));
   await expect(page).toHaveScreenshot('catalogo.png');
+  await library(page).getByLabel('Hojas de cálculo', {exact: true}).click();
+  await item(page, 'spreadsheets').getByLabel('Spreadsheets', {exact: true}).click();
+  await expect(item(page, 'spreadsheets').getByText('Sin apuntes todavía', {exact: true})).toBeVisible();
+  await expect(page).toHaveURL(/\/$/);
   const where = await openCatalogSqlGroup(page, 'WHERE');
   await where.getByRole('link', {name: 'Definición', exact: true}).click();
   await expect(page).toHaveURL(/\/sql\/where$/);
@@ -94,7 +104,7 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos');
-  await expect(library(page).locator('details')).toHaveCount(158);
+  await expect(library(page).locator('details')).toHaveCount(168);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
   await expect(item(page, 'sql').getByRole('link')).toHaveCount(0);

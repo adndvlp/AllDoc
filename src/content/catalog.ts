@@ -38,7 +38,7 @@ const definitions: readonly AreaDefinition[] = [
     id: 'analisis-de-datos', sidebarId: 'analisisDeDatos', number: '01',
     title: 'Análisis de datos', description: 'Consultar, entender y trabajar con datos.', icon: 'data',
     items: [
-      topic('excel', 'Excel'),
+      group('hojas-de-calculo', 'Hojas de cálculo', [topic('excel', 'Excel'), topic('spreadsheets', 'Spreadsheets')]),
       topic('power-query', 'Power Query'),
       topic('sql', 'SQL'),
       group('tablas-y-archivos', 'Tablas y archivos', [topic('pandas', 'Pandas'), topic('openpyxl', 'openpyxl')]),
@@ -52,6 +52,10 @@ const definitions: readonly AreaDefinition[] = [
       topic('r', 'R'),
       topic('power-bi', 'Power BI'),
       topic('tableau', 'Tableau'),
+      group('transformacion-de-datos', 'Transformación de datos', [topic('dbt', 'dbt'), topic('alteryx', 'Alteryx')]),
+      topic('apache-spark', 'Apache Spark'),
+      topic('apache-airflow', 'Apache Airflow'),
+      group('plataformas-de-datos', 'Plataformas de datos', [topic('databricks', 'Databricks'), topic('snowflake', 'Snowflake')]),
     ],
   },
   {

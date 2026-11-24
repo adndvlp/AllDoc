@@ -1,13 +1,21 @@
 import type {IconType} from 'react-icons';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {
+  LuArrowLeftRight,
   LuCalculator,
   LuChartNoAxesCombined,
+  LuCloud,
   LuDatabase,
+  LuLayers,
   LuNetwork,
+  LuSheet,
   LuTable2,
+  LuWorkflow,
 } from 'react-icons/lu';
 import {
+  SiApacheairflow,
+  SiApachespark,
+  SiDatabricks,
   SiJson,
   SiMysql,
   SiNumpy,
@@ -15,6 +23,7 @@ import {
   SiPostgresql,
   SiR,
   SiScipy,
+  SiSnowflake,
   SiSqlalchemy,
   SiSqlite,
 } from 'react-icons/si';
@@ -31,6 +40,7 @@ type TopicIconDefinition = {
 
 export const topicIcons: Record<string, TopicIconDefinition> = {
   Excel: {icon: PiMicrosoftExcelLogoFill, kind: 'brand'},
+  Spreadsheets: {icon: LuSheet, kind: 'generic'},
   'Power Query': {src: '/img/topics/power-query.svg', kind: 'brand'},
   SQL: {icon: LuDatabase, kind: 'generic'},
   Pandas: {icon: SiPandas, kind: 'brand'},
@@ -54,11 +64,20 @@ export const topicIcons: Record<string, TopicIconDefinition> = {
   R: {icon: SiR, kind: 'brand'},
   'Power BI': {src: '/img/topics/power-bi.svg', kind: 'brand'},
   Tableau: {icon: IoLogoTableau, kind: 'brand'},
+  dbt: {icon: LuLayers, kind: 'generic'},
+  Alteryx: {icon: LuWorkflow, kind: 'generic'},
+  'Apache Spark': {icon: SiApachespark, kind: 'brand'},
+  'Apache Airflow': {icon: SiApacheairflow, kind: 'brand'},
+  Databricks: {icon: SiDatabricks, kind: 'brand'},
+  Snowflake: {icon: SiSnowflake, kind: 'brand'},
+  'Hojas de cálculo': {icon: LuTable2, kind: 'group'},
   'Tablas y archivos': {icon: LuTable2, kind: 'group'},
   'Cálculo científico': {icon: LuCalculator, kind: 'group'},
   Visualización: {icon: LuChartNoAxesCombined, kind: 'group'},
   'Conexiones SQL': {icon: LuDatabase, kind: 'group'},
   'Peticiones y formatos': {icon: LuNetwork, kind: 'group'},
+  'Transformación de datos': {icon: LuArrowLeftRight, kind: 'group'},
+  'Plataformas de datos': {icon: LuCloud, kind: 'group'},
 };
 
 export default function TopicIcon({label, className}: {label: string; className?: string}) {
