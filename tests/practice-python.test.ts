@@ -462,3 +462,154 @@ test('Pyodide real: SQLAlchemy reproduce las salidas de los 228 ejemplos web', a
   ]);
   assert.deepEqual(differences, []);
 });
+
+test('Pyodide real: Matplotlib captura show antes de close, mantiene figuras y descarga exportaciones nuevas', async () => {
+  await pyodide.loadPackage('matplotlib');
+  assert.equal(pyodide.runPython('import matplotlib; matplotlib.__version__'), pythonPackages.lock.packages.matplotlib.version);
+  const dataset = await createDatasetAdapter().materialize({id: 'matplotlib-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide, {figures: true});
+  engines.push(value);
+  await value.init(dataset);
+  assert.equal(value.inspect().entities.find(item => item.name === 'df')?.rowCount, 6);
+  assert.ok(complete(value, 'plt.subpl').items.some(item => item.label === 'subplots'));
+
+  const shown = await run(value, 'fig, ax = plt.subplots()\nax.plot(meses, ventas)\nax.set_title("Ventas")\nplt.show()\nplt.close(fig)');
+  const plot = shown.find(event => event.type === 'figure');
+  assert.equal(plot?.title, 'Ventas');
+  assert.ok(plot.bytes.byteLength > 1000);
+  assert.ok(shown.some(event => event.type === 'end' && event.status === 'success'));
+
+  const exports = await run(value, 'fig, ax = plt.subplots()\nax.bar(regiones, ventas_region)\nfor ext in ["png", "jpg", "svg", "pdf"]:\n    fig.savefig(salida / f"ventas.{ext}")');
+  assert.deepEqual(exports.filter(event => event.type === 'file').map(event => event.path), [
+    'salidas_matplotlib/ventas.jpg', 'salidas_matplotlib/ventas.pdf',
+    'salidas_matplotlib/ventas.png', 'salidas_matplotlib/ventas.svg',
+  ]);
+  assert.equal(exports.filter(event => event.type === 'figure').length, 1);
+  assert.ok(exports.some(event => event.type === 'end' && event.status === 'success'));
+  const idle = await run(value, 'print(len(plt.get_fignums()))');
+  assert.equal(idle.filter(event => event.type === 'figure' || event.type === 'file').length, 0);
+  assert.ok(idle.some(event => event.type === 'stream' && event.text.trim() === '1'));
+
+  const mutation = await run(value, 'ax.set_title("Ventas por región")');
+  assert.ok(mutation.some(event => event.type === 'figure' && event.title === 'Ventas por región'));
+  await value.reset();
+  const restored = await run(value, 'print(len(plt.get_fignums()))');
+  assert.ok(restored.some(event => event.type === 'stream' && event.text.trim() === '0'));
+  assert.equal(restored.filter(event => event.type === 'figure' || event.type === 'file').length, 0);
+  value.dispose();
+});
+
+test('Pyodide real: ejecuta y renderiza los 148 ejemplos web de Matplotlib', async () => {
+  const {matplotlibCurriculum} = await import('../src/content/matplotlib-curriculum.ts');
+  await pyodide.loadPackage('matplotlib');
+  const dataset = await createDatasetAdapter().materialize({id: 'matplotlib-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide, {figures: true});
+  engines.push(value);
+  await value.init(dataset);
+  const textOnly = new Set(['matplotlib/gestion-figuras/limpiar-cerrar/1', 'matplotlib/interactividad/definicion/1']);
+  const external: string[] = [], failures: string[] = [];
+  let executed = 0;
+  for (const {key} of matplotlibCurriculum) {
+    const {notes} = await import(`../src/content/notes/matplotlib/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {
+        external.push(example.id);
+        continue;
+      }
+      await value.reset();
+      const events = await run(value, example.code);
+      const error = events.find(event => event.type === 'error');
+      if (error) failures.push(example.id + ' ' + error.message);
+      else if (!textOnly.has(example.id) && !events.some(event => event.type === 'figure')) failures.push(example.id + ' sin gráfica');
+      if (example.id === 'matplotlib/interactividad/func-animation/1') {
+        assert.ok(events.some(event => event.type === 'file' && event.path === 'salidas_matplotlib/ventas.gif'));
+      }
+      executed++;
+    }
+  }
+  assert.equal(executed, 148);
+  assert.deepEqual(external, [
+    'matplotlib/interactividad/eventos-callbacks/1',
+    'matplotlib/interactividad/widgets/1',
+    'matplotlib/interactividad/widgets/2',
+  ]);
+  assert.deepEqual(failures, []);
+  value.dispose();
+});
+
+test('Pyodide real: Seaborn prepara las ventas, completa sns y Objects y conserva datos válidos', async () => {
+  await pyodide.loadPackage('seaborn');
+  assert.equal(pyodide.runPython('import seaborn; seaborn.__version__'), pythonPackages.lock.packages.seaborn.version);
+  const dataset = await createDatasetAdapter().materialize({id: 'seaborn-sucursales', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide, {figures: true});
+  engines.push(value);
+  await value.init(dataset);
+  const sales = () => value.inspect().entities.find(item => item.name === 'ventas');
+  assert.equal(sales()?.rowCount, 16);
+  assert.deepEqual(sales()?.preview?.rows[0], ['2026-09-01T00:00:00', 'N1', 'Norte', 'Online', 100, 24, 11, 4, 0]);
+  assert.ok(complete(value, 'sns.scat').items.some(item => item.label === 'scatterplot'));
+  assert.ok(complete(value, 'so.Plo').items.some(item => item.label === 'Plot'));
+  const total = await run(value, 'print(ventas["ingresos"].sum())');
+  assert.ok(total.some(event => event.type === 'stream' && event.text.trim() === '2080'));
+  await run(value, 'ventas.loc[0, "ingresos"] = 200');
+  assert.equal(sales()?.preview?.rows[0][4], 200);
+  await value.reset();
+  assert.equal(sales()?.preview?.rows[0][4], 100);
+  value.dispose();
+});
+
+test('Pyodide real: Seaborn ejecuta los 162 ejemplos web y exporta las figuras de Objects', async () => {
+  const {seabornCurriculum} = await import('../src/content/seaborn-curriculum.ts');
+  await pyodide.loadPackage('seaborn');
+  const dataset = await createDatasetAdapter().materialize({id: 'seaborn-sucursales', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide, {figures: true});
+  engines.push(value);
+  await value.init(dataset);
+
+  const textOnly = new Map([
+    ['seaborn/introduccion/importacion-y-version/1', pythonPackages.lock.packages.seaborn.version],
+    ['seaborn/estructura-de-datos/pivot-y-pivot-table/1', 'Norte      520     440'],
+    ['seaborn/estructura-de-datos/datos-faltantes-y-categorias/1', '15'],
+    ['seaborn/estadistica-descriptiva/definicion/1', '130.000000'],
+    ['seaborn/estadistica-descriptiva/media-mediana-y-moda/1', '130.0 130.0 [120, 140]'],
+    ['seaborn/estadistica-descriptiva/varianza-y-desviacion-estandar/1', '746.67 27.33'],
+    ['seaborn/estadistica-descriptiva/cuartiles-percentiles-e-iqr/1', '[115.0, 130.0, 145.0] 30.0'],
+    ['seaborn/estadistica-descriptiva/outliers/1', '[500]'],
+    ['seaborn/analisis-exploratorio/comunicar-conclusiones/1', 'Online 1120'],
+    ['seaborn/compatibilidad/definicion/1', pythonPackages.lock.packages.seaborn.version],
+  ]);
+  const downloads = new Map([
+    ['seaborn/personalizacion/mostrar-y-exportar/1', ['ventas.png', 'ventas.svg']],
+    ['seaborn/objects-composicion/show-save-y-on/1', ['totales-objects.png']],
+  ]);
+  const external: string[] = [], failures: string[] = [];
+  let executed = 0;
+  for (const {key} of seabornCurriculum) {
+    const {notes} = await import(`../src/content/notes/seaborn/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; external?: boolean;
+    }[]}[]};
+    for (const {id, code, external: local} of notes.flatMap(note => note.examples)) {
+      if (local) {
+        external.push(id);
+        continue;
+      }
+      await value.reset();
+      const events = await run(value, code);
+      const error = events.find(event => event.type === 'error');
+      const stdout = events.flatMap(event => event.type === 'stream' && event.channel === 'stdout' ? [event.text] : []).join('').trim();
+      const count = events.filter(event => event.type === 'figure').length;
+      const expectedText = textOnly.get(id);
+      if (error) failures.push(id + ' ' + error.message);
+      else if (expectedText ? count !== 0 || !stdout.includes(expectedText) : count === 0) failures.push(id + ' salida incorrecta');
+      if (/<seaborn\.(?:axisgrid|matrix)\..* at 0x/i.test(stdout)) failures.push(id + ' objeto de cuadrícula en bruto');
+      if (downloads.has(id)) assert.deepEqual(events.filter(event => event.type === 'file').map(event => event.path), downloads.get(id));
+      executed++;
+    }
+  }
+  assert.equal(executed, 162);
+  assert.deepEqual(external, ['seaborn/introduccion/datasets-de-ejemplo/1']);
+  assert.deepEqual(failures, []);
+  value.dispose();
+});

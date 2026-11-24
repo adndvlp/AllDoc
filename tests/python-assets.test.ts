@@ -24,3 +24,10 @@ test('assets Python: rechaza dependencias ausentes, ciclos, rutas y checksum sin
     assert.throws(() => selectPythonPackages({info: {}, packages: {pandas: modified}}, ['pandas']));
   }
 });
+
+test('assets Python acepta la capitalización de Pillow en el lock oficial', () => {
+  const pillow = {name: 'Pillow', version: '12.2.0', file_name: 'pillow.whl', sha256: 'a'.repeat(64), depends: []};
+  const lock = {info: {}, packages: {pillow}};
+  assert.equal(selectPythonPackages(lock, ['pillow']).pillow.name, 'Pillow');
+  assert.throws(() => selectPythonPackages({info: {}, packages: {pillow: {...pillow, name: 'otra'}}}, ['pillow']));
+});

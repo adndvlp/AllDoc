@@ -5,6 +5,8 @@ import {pandasCurriculum} from './pandas-curriculum.ts';
 import {jsonCurriculum} from './json-curriculum.ts';
 import {numpyCurriculum} from './numpy-curriculum.ts';
 import {scipyCurriculum} from './scipy-curriculum.ts';
+import {matplotlibCurriculum} from './matplotlib-curriculum.ts';
+import {seabornCurriculum} from './seaborn-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
@@ -57,6 +59,7 @@ function courseMetadata<TopicId extends string>(topicId: TopicId, curriculum: ty
 export const concepts = [...publishedSqlMetadata, ...pandasMetadata,
   ...courseMetadata('openpyxl', openpyxlCurriculum),
   ...courseMetadata('numpy', numpyCurriculum), ...courseMetadata('scipy', scipyCurriculum),
+  ...courseMetadata('matplotlib', matplotlibCurriculum), ...courseMetadata('seaborn', seabornCurriculum),
   ...courseMetadata('sqlalchemy', sqlalchemyCurriculum), ...courseMetadata('sqlite3', sqlite3Curriculum),
   ...courseMetadata('json', jsonCurriculum),
 ] as const satisfies readonly ConceptMeta[];

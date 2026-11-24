@@ -20,6 +20,8 @@ import {sqlite3ShopManifest, sqlite3ShopSchema} from '../src/practice/datasets/s
 import {openpyxlSalesManifest, openpyxlSalesSchema} from '../src/practice/datasets/openpyxl-sales.ts';
 import {scipyBusinessManifest, scipyBusinessSchema} from '../src/practice/datasets/scipy-business.ts';
 import {sqlalchemySalesManifest, sqlalchemySalesSchema} from '../src/practice/datasets/sqlalchemy-sales.ts';
+import {matplotlibSalesManifest, matplotlibSalesSchema} from '../src/practice/datasets/matplotlib-sales.ts';
+import {seabornBranchesManifest, seabornBranchesSchema} from '../src/practice/datasets/seaborn-branches.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -136,7 +138,7 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 9);
+  assert.equal(profiles.practiceRegistry.list().length, 11);
 });
 
 test('preset cliente: resuelve los manifiestos de Python por ID y versión', () => {
@@ -150,9 +152,12 @@ test('preset cliente: resuelve los manifiestos de Python por ID y versión', () 
     './openpyxl-sales.ts': {openpyxlSalesManifest, openpyxlSalesSchema},
     './scipy-business.ts': {scipyBusinessManifest, scipyBusinessSchema},
     './sqlalchemy-sales.ts': {sqlalchemySalesManifest, sqlalchemySalesSchema},
+    './matplotlib-sales.ts': {matplotlibSalesManifest, matplotlibSalesSchema},
+    './seaborn-branches.ts': {seabornBranchesManifest, seabornBranchesSchema},
   });
   for (const manifest of [productsManifest, businessManifest, pandasCommerceManifest, jsonOrdersManifest,
-    numpySalesManifest, sqlite3ShopManifest, openpyxlSalesManifest, scipyBusinessManifest, sqlalchemySalesManifest]) {
+    numpySalesManifest, sqlite3ShopManifest, openpyxlSalesManifest, scipyBusinessManifest,
+    sqlalchemySalesManifest, matplotlibSalesManifest, seabornBranchesManifest]) {
     assert.equal(getDatasetManifest({...manifest.reference}), manifest);
   }
   assert.equal(getDatasetManifest({...jsonOrdersManifest.reference, version: 0}), undefined);

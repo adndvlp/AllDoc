@@ -32,7 +32,7 @@ scope.onmessage = ({data: request}) => {
         lockFileContents: JSON.stringify(pythonPackages.lock),
         jsglobals: Object.freeze({}), stdout() {}, stderr() {}}, getPythonAdditionalPackages(context.profile.id));
       if (pyodide.version !== context.environment.runtime.version) throw new Error('Versión de Pyodide incompatible');
-      engine = createPythonEngine(pyodide); await engine.init(context.dataset);
+      engine = createPythonEngine(pyodide, {figures: context.profile.capabilities.figures}); await engine.init(context.dataset);
       const document = 'import pandas as pd\npd.Da';
       const check = await practicePhase('python-jedi', async () => engine!.complete({requestId: 'prepare', generation: 0, revision: 0, workspaceId: 'prepare',
         file: 'main.py', document, position: document.length, schema: engine!.inspect()}));

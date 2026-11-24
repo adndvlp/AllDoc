@@ -6,6 +6,8 @@ import {pandasCommerceManifest, pandasCommerceSchema} from './datasets/pandas-co
 import {jsonOrdersManifest, jsonOrdersSchema} from './datasets/json-orders.ts';
 import {numpySalesManifest, numpySalesSchema} from './datasets/numpy-sales.ts';
 import {scipyBusinessManifest, scipyBusinessSchema} from './datasets/scipy-business.ts';
+import {matplotlibSalesManifest, matplotlibSalesSchema} from './datasets/matplotlib-sales.ts';
+import {seabornBranchesManifest, seabornBranchesSchema} from './datasets/seaborn-branches.ts';
 import {sqlalchemySalesManifest, sqlalchemySalesSchema} from './datasets/sqlalchemy-sales.ts';
 import {sqlite3ShopManifest, sqlite3ShopSchema} from './datasets/sqlite3-shop.ts';
 import {openpyxlSalesManifest, openpyxlSalesSchema} from './datasets/openpyxl-sales.ts';
@@ -15,6 +17,8 @@ const courseExamples = new Map([
   [jsonOrdersManifest, {schema: jsonOrdersSchema, load: () => import('../content/notes/json/deserializacion.ts')}],
   [numpySalesManifest, {schema: numpySalesSchema, load: () => import('../content/notes/numpy/ndarray-y-fundamentos.ts')}],
   [scipyBusinessManifest, {schema: scipyBusinessSchema, load: () => import('../content/notes/scipy/entorno.ts')}],
+  [matplotlibSalesManifest, {schema: matplotlibSalesSchema, load: () => import('../content/notes/matplotlib/fundamentos.ts')}],
+  [seabornBranchesManifest, {schema: seabornBranchesSchema, load: () => import('../content/notes/seaborn/introduccion.ts')}],
   [sqlalchemySalesManifest, {schema: sqlalchemySalesSchema, load: () => import('../content/notes/sqlalchemy/sqlalchemy-arquitectura.ts')}],
   [sqlite3ShopManifest, {schema: sqlite3ShopSchema, load: () => import('../content/notes/sqlite3/conexion-a-sqlite.ts')}],
   [openpyxlSalesManifest, {schema: openpyxlSalesSchema, load: () => import('../content/notes/openpyxl/workbook.ts')}],

@@ -11,7 +11,7 @@ export function inlineCode(text: string) {
 }
 
 export function PythonCourseNote({note, kind, formatText}: {
-  note?: CourseNote; kind: 'pandas' | 'openpyxl' | 'numpy' | 'scipy' | 'sqlalchemy' | 'sqlite3' | 'json'; formatText?: (text: string) => ReactNode;
+  note?: CourseNote; kind: 'pandas' | 'openpyxl' | 'numpy' | 'scipy' | 'matplotlib' | 'seaborn' | 'sqlalchemy' | 'sqlite3' | 'json'; formatText?: (text: string) => ReactNode;
 }) {
   const metadata = note && getConcept(note.id);
   if (!note || !metadata) throw new Error('Ficha desconocida de ' + kind);

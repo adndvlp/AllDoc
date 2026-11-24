@@ -32,6 +32,7 @@ test('HTTP del runtime: GET/HEAD anuncian longitud exacta y entregan binarios in
     for (const name of manifest.files) for (const method of ['GET', 'HEAD']) {
       const response = await responseBytes(handler, method, '/' + name);
       assert.match(response.headers, new RegExp('Content-Length: ' + binary.length + '(?:\\r\\n|$)', 'i'));
+      assert.match(response.headers, /\r\nConnection: close\r?(?:\n|$)/i);
       assert.doesNotMatch(response.headers, /Transfer-Encoding/i);
       assert.match(response.headers, /Content-Security-Policy: default-src 'none'/);
       assert.deepEqual(response.body, method === 'HEAD' ? Buffer.alloc(0) : binary);

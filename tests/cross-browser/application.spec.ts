@@ -9,7 +9,7 @@ const sql=profiles[0];
 test(caseTitle('APP-01'), async ({page}, info) => {
   await go(page);
   const catalog=page.locator('[data-catalog]');
-  await expect(catalog.locator('details')).toHaveCount(263);
+  await expect(catalog.locator('details')).toHaveCount(312);
   await expect(catalog.locator('details[open]')).toHaveCount(0);
   await activate(catalog.getByLabel('SQL',{exact:true}),info);
   await activate(catalog.getByLabel('Tablas y archivos',{exact:true}),info);
@@ -111,7 +111,11 @@ test(caseTitle('APP-05'), async ({page},info) => {
   await reader(page).evaluate(el=>{el.scrollTop=30;}); const initial=await reader(page).evaluate(el=>el.scrollTop);
   const compact=width<=996; if(compact) await header(page).locator('.navbar__toggle').click();
   const menu=compact?topicsDialog(page):page.locator('.theme-doc-sidebar-container');
-  for(const label of ['SQL','Tablas y archivos','Pandas','openpyxl','Cálculo científico','NumPy','SciPy','Visualización','Matplotlib','Seaborn','Conexiones SQL','Peticiones y formatos']){const button=menu.getByRole('button',{name:label,exact:true});if(await button.getAttribute('aria-expanded')==='false')await button.click();}
+  for(const label of ['SQL','Tablas y archivos','Pandas','openpyxl','Cálculo científico','NumPy','SciPy','Visualización','Matplotlib','Seaborn','Conexiones SQL','Peticiones y formatos']){
+    const scope=label==='Visualización'?menu.locator('.sidebar-topic-group > .menu__list-item-collapsible'):menu;
+    const button=scope.getByRole('button',{name:label,exact:true});
+    if(await button.getAttribute('aria-expanded')==='false')await button.click();
+  }
   // Se vuelve a medir después de cerrar el menú: el selector DOM conserva
   // acceso al nodo oculto, mientras getByRole lo excluiría por accesibilidad.
   const side=page.locator(compact?'.navbar-sidebar .navbar-sidebar__item':'.theme-doc-sidebar-container nav.menu');

@@ -10,7 +10,7 @@ export function selectPythonPackages(lock: PythonLock, roots: readonly string[])
     if (visiting.has(name)) throw new Error('Ciclo de dependencias Python: ' + name);
     if (selected.has(name)) return;
     const value = lock.packages[name];
-    if (!value || value.name !== name || !value.version || !/^[a-zA-Z0-9][a-zA-Z0-9_.+-]*\.whl$/.test(value.file_name)
+    if (!value || typeof value.name !== 'string' || value.name.toLowerCase() !== name || !value.version || !/^[a-zA-Z0-9][a-zA-Z0-9_.+-]*\.whl$/.test(value.file_name)
       || !/^[a-f0-9]{64}$/.test(value.sha256) || !Array.isArray(value.depends)) throw new Error('Paquete Python inválido: ' + name);
     visiting.add(name); for (const dependency of value.depends) visit(dependency); visiting.delete(name);
     selected.set(name, structuredClone(value));

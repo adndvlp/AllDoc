@@ -38,9 +38,9 @@ test('el catálogo incluye Lenguajes y conserva las herramientas en su grupo y o
     assert.deepEqual(topic.concepts, []);
     assert.equal(topic.sections, undefined);
   }
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas, openpyxl, NumPy, SciPy, SQLAlchemy, sqlite3, json · 1384 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [1384, 0, 0, 153]);
-  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1231);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas, openpyxl, NumPy, SciPy, Matplotlib, Seaborn, SQLAlchemy, sqlite3, json · 1678 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [1678, 0, 0, 153]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1525);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -106,7 +106,7 @@ test('metadata, páginas MDX, palabras clave y cuerpos tienen los mismos concept
 test('el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado', () => {
   assert.deepEqual(entries.map((entry) => entry.id), concepts.map((concept) => concept.id));
   const topicLabels: Record<string, string> = {sql: 'SQL', pandas: 'Pandas', openpyxl: 'openpyxl', numpy: 'NumPy',
-    scipy: 'SciPy', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3', json: 'json'};
+    scipy: 'SciPy', matplotlib: 'Matplotlib', seaborn: 'Seaborn', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3', json: 'json'};
   for (const entry of entries) {
     const metadata = getConcept(entry.id)!;
     assert.equal(entry.href, metadata.slug);

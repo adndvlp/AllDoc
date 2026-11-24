@@ -175,7 +175,8 @@ test('menú de temas: modal con inicio, foco contenido y cierre con Esc sin move
   await expect(drawer.getByRole('link', {name: 'Desarrollo web', exact: true})).toHaveCount(0);
   await expect(drawer.getByRole('button', {name: 'SQL', exact: true})).toHaveAttribute('aria-expanded', 'true');
   for (const name of ['SQL', 'Tablas y archivos', 'Pandas', 'openpyxl', 'Cálculo científico', 'NumPy', 'SciPy', 'Visualización', 'Matplotlib', 'Seaborn', 'Conexiones SQL', 'Peticiones y formatos']) {
-    const button = drawer.getByRole('button', {name, exact: true});
+    const scope = name === 'Visualización' ? drawer.locator('.sidebar-topic-group > .menu__list-item-collapsible') : drawer;
+    const button = scope.getByRole('button', {name, exact: true});
     if (await button.getAttribute('aria-expanded') === 'false') await button.click();
   }
   const scroller = drawer.locator('.navbar-sidebar__item');

@@ -28,6 +28,7 @@ const pure = {
   parso: {module: 'parso', depends: []},
   'et-xmlfile': {module: 'et_xmlfile', depends: []},
   openpyxl: {module: 'openpyxl', depends: ['et-xmlfile']},
+  seaborn: {module: 'seaborn', depends: ['numpy', 'pandas', 'matplotlib', 'scipy', 'statsmodels']},
 };
 for (const [name, {module, depends}] of Object.entries(pure)) {
   if (pinned?.lock.packages[name]) continue;
@@ -42,7 +43,7 @@ for (const [name, {module, depends}] of Object.entries(pure)) {
   };
   sources[name] = wheel.url;
 }
-const selected = selectPythonPackages(lock, ['pandas', 'jedi', 'openpyxl', 'scipy', 'sqlalchemy']);
+const selected = selectPythonPackages(lock, ['pandas', 'jedi', 'openpyxl', 'scipy', 'sqlalchemy', 'matplotlib', 'seaborn']);
 const cache = resolve(root, '.python-packages', version); await mkdir(cache, {recursive: true});
 let bytes = 0;
 for (const [name, item] of Object.entries(selected)) {

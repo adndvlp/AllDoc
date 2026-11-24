@@ -2,7 +2,8 @@ import type {PyodideAPI} from 'pyodide';
 import type {PyProxy} from 'pyodide/ffi';
 import type {CompletionRequest, CompletionResult, MaterializedDataset, RunRequest, RuntimeEvent, RuntimeSchema} from '../../contracts.ts';
 import {pythonHelper} from './helpers.ts';
-import {eventBytes, isRuntimeEvent, isWorkbookPath, MAX_WORKBOOK_BYTES} from '../../protocol.ts';
+import {pythonFigures} from './figures.ts';
+import {eventBytes, isArtifactFile, isPlotExportPath, isRuntimeEvent, isWorkbookPath, MAX_ARTIFACT_BYTES} from '../../protocol.ts';
 import {isRuntimeSchema} from '../../isolation/messages.ts';
 import {practicePhase} from '../../timing.ts';
 
@@ -15,7 +16,7 @@ export interface PythonEngine {
   dispose(): void;
 }
 
-function* workbookFiles(fs: PyodideAPI['FS'], root: string) {
+function* artifactPaths(fs: PyodideAPI['FS'], root: string, accepts: (path: string) => boolean) {
   const folders = [''];
   let remaining = 200;
   while (folders.length && remaining > 0) {
@@ -30,16 +31,13 @@ function* workbookFiles(fs: PyodideAPI['FS'], root: string) {
         continue;
       }
       const path = (folder + '/' + name).slice(1);
-      if (!fs.isFile(stats.mode) || !isWorkbookPath(path) || stats.size > MAX_WORKBOOK_BYTES) continue;
-      const bytes = fs.readFile(absolute);
-      if (bytes[0] === 80 && bytes[1] === 75 && bytes[2] === 3 && bytes[3] === 4) {
-        yield {type: 'file' as const, path, bytes};
-      }
+      if (!fs.isFile(stats.mode) || !accepts(path) || stats.size > MAX_ARTIFACT_BYTES) continue;
+      yield {path, absolute, stamp: stats.mtime.getTime() + ':' + stats.size};
     }
   }
 }
 
-export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
+export function createPythonEngine(pyodide: PyodideAPI, {figures = false} = {}): PythonEngine {
   type Namespace = PyProxy & {set(key: string, value: unknown): void; has(key: string): boolean; delete(key: string): boolean};
   let scope: Namespace | null = null; let seed: MaterializedDataset | null = null; let version = 0; let disposed = false;
   const root = '/home/pyodide/alldoc-' + crypto.randomUUID();
@@ -63,6 +61,9 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
       requireScope().set('_inspect_workbook', seed.reference.id === 'openpyxl-ventas');
       requireScope().set('_inspect_scipy', seed.reference.id === 'scipy-negocio');
       requireScope().set('_inspect_sqlalchemy', seed.reference.id === 'sqlalchemy-ventas');
+      requireScope().set('_inspect_figures', figures);
+      requireScope().set('_inspect_seaborn', seed.reference.id === 'seaborn-sucursales');
+      if (figures) evaluate('_reset_figures()');
       evaluate('_prepare(_bootstrap)'); requireScope().delete('_bootstrap'); version++;
     } finally {pyodide.FS.chdir(previous);}
   }
@@ -71,7 +72,12 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
       if (disposed) throw new Error('El entorno Python está dispuesto');
       if (scope) throw new Error('El entorno Python ya está preparado');
       scope = pyodide.runPython('dict()') as Namespace;
-      try {await practicePhase('python-data', async () => {pyodide.runPython(pythonHelper, {globals: scope!}); seed = dataset; await reset();});}
+      try {await practicePhase('python-data', async () => {
+        evaluate(pythonHelper);
+        if (figures) evaluate(pythonFigures);
+        seed = dataset;
+        await reset();
+      });}
       catch (error) {scope.destroy(); scope = null; throw error;}
     },
     async run(request, emit) {
@@ -93,6 +99,12 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         const text = pending[channel]; pending[channel] = ''; streamCount++;
         send({type: 'stream', channel, text});
       };
+      const sendArtifact = (artifact: Omit<Extract<RuntimeEvent, {type: 'figure'}>, keyof typeof identity>
+        | Omit<Extract<RuntimeEvent, {type: 'file'}>, keyof typeof identity>) => {
+        flush('stdout'); flush('stderr');
+        const event = {...artifact, ...identity};
+        if (isRuntimeEvent(event, request) && bytes + eventBytes(event, encoder) <= MAX_ARTIFACT_BYTES - 8192) send(artifact);
+      };
       const writer = (channel: 'stdout' | 'stderr') => {
         const decoder = new TextDecoder();
         return {write(buffer: Uint8Array) {
@@ -102,6 +114,7 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         }};
       };
       const previous = pyodide.FS.cwd();
+      let capturing = false;
       try {
         const own = requireScope(); const file = request.files.find((f) => f.path === request.entryFile);
         if (!file) throw new Error('Archivo Python inexistente');
@@ -118,14 +131,26 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         own.set('_request', JSON.stringify({entryFile: request.entryFile, source, lineOffset: prefix.split('\n').length - 1, columnOffset: prefix.length - prefix.lastIndexOf('\n') - 1}));
         own.set('_publish', (value: string) => {flush('stdout'); flush('stderr'); send(JSON.parse(value));});
         pyodide.setStdout(writer('stdout')); pyodide.setStderr(writer('stderr'));
+        const previousExports = new Map<string, string>();
+        if (figures) {
+          for (const file of artifactPaths(pyodide.FS, root, isPlotExportPath)) previousExports.set(file.path, file.stamp);
+          own.set('_publish_figure', (title: string, bytes: Uint8Array) => sendArtifact({type: 'figure', title, bytes}));
+          evaluate('_start_figures()');
+          capturing = true;
+        }
         send({type: 'progress', phase: 'Ejecutando Python'});
         const result = await pyodide.runPythonAsync('await _run(_request)', {globals: own});
         flush('stdout'); flush('stderr');
         status = result === 'error' || limited ? 'error' : 'success';
-        if (status === 'success' && seed?.reference.id === 'openpyxl-ventas') {
-          for (const artifact of workbookFiles(pyodide.FS, root)) {
-            if (bytes + artifact.bytes.byteLength > MAX_WORKBOOK_BYTES - 8192) continue;
-            send(artifact);
+        if (capturing) {
+          capturing = false;
+          evaluate(status === 'success' ? '_finish_figures(True)' : '_finish_figures(False)');
+        }
+        const accepts = figures ? isPlotExportPath : seed?.reference.id === 'openpyxl-ventas' ? isWorkbookPath : null;
+        if (status === 'success' && accepts) {
+          for (const file of artifactPaths(pyodide.FS, root, accepts)) {
+            if (previousExports.get(file.path) === file.stamp) continue;
+            sendArtifact({type: 'file', path: file.path, bytes: pyodide.FS.readFile(file.absolute)});
           }
         }
       } catch (error) {
@@ -133,6 +158,8 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         send({type: 'error', file: request.entryFile, message: error instanceof Error ? error.message : String(error)});
       } finally {
         // El panel recibe datos normalizados o bytes, nunca un DataFrame/PyProxy.
+        if (capturing) evaluate('_finish_figures(False)');
+        if (scope?.has('_publish_figure')) scope.delete('_publish_figure');
         if (scope?.has('_publish')) scope.delete('_publish');
         if (scope?.has('_request')) scope.delete('_request');
         pyodide.setStdout({batched() {}}); pyodide.setStderr({batched() {}});
@@ -152,6 +179,10 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
       finally {requireScope().delete('_completion');}
     },
     reset,
-    dispose() {if (disposed) return; disposed = true; scope?.destroy(); scope = null; seed = null;},
+    dispose() {
+      if (disposed) return;
+      if (figures && scope) evaluate('_plt.close("all")');
+      disposed = true; scope?.destroy(); scope = null; seed = null;
+    },
   };
 }

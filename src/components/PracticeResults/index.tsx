@@ -2,28 +2,45 @@ import {useEffect, useState} from 'react';
 import type {RuntimeEvent} from '@site/src/practice/contracts';
 import styles from '../PracticePanel/styles.module.css';
 
-function WorkbookDownload({path, bytes}: Extract<RuntimeEvent, {type: 'file'}>) {
+function useArtifactUrl(bytes: Uint8Array, type: string) {
   const [url, setUrl] = useState<string>();
   useEffect(() => {
-    const type = path.toLowerCase().endsWith('.xltx')
-      ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.template'
-      : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     const created = URL.createObjectURL(new Blob([new Uint8Array(bytes)], {type}));
     setUrl(created);
     return () => URL.revokeObjectURL(created);
-  }, [path, bytes]);
+  }, [bytes, type]);
+  return url;
+}
+
+function ArtifactDownload({path, bytes}: Extract<RuntimeEvent, {type: 'file'}>) {
+  const extension = path.toLowerCase().split('.').at(-1);
+  const type = extension === 'xlsx' || extension === 'xltx'
+    ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.' + (extension === 'xlsx' ? 'sheet' : 'template')
+    : 'application/octet-stream';
+  const url = useArtifactUrl(bytes, type);
   return <p><a href={url} download={path.split('/').at(-1)}>Descargar {path}</a></p>;
+}
+
+function PlotResult({title, bytes, number}: Extract<RuntimeEvent, {type: 'figure'}> & {number: number}) {
+  const url = useArtifactUrl(bytes, 'image/png');
+  return <figure className={styles.resultFigure}>
+    <figcaption>{title}</figcaption>
+    {url && <img src={url} alt={title} />}
+    <a href={url} download={`grafica-${number}.png`}>Descargar gráfica PNG</a>
+  </figure>;
 }
 
 export default function PracticeResults({events, revision}: {events: readonly RuntimeEvent[]; revision: number}) {
   if (!events.length) return <p>Todavía no has ejecutado código.</p>;
   const end = events.slice().reverse().find((event) => event.type === 'end');
+  let figureNumber = 0;
   return <>
     {events[0].revision !== revision && <p role="status">Este resultado corresponde a una versión anterior del código.</p>}
     {events.map((event, index) => {
       if (event.type === 'stream') return <pre key={index}>{event.text}</pre>;
       if (event.type === 'error') return <p key={index} role="alert">{event.file && <strong>{event.file}{event.line ? ':' + event.line : ''}{event.column ? ':' + event.column : ''}: </strong>}{event.message}</p>;
-      if (event.type === 'file') return <WorkbookDownload key={index} {...event} />;
+      if (event.type === 'figure') return <PlotResult key={index} number={++figureNumber} {...event} />;
+      if (event.type === 'file') return <ArtifactDownload key={index} {...event} />;
       if (event.type === 'table') return <div key={index}>
         <div className={styles.table} role="region" aria-label={`Tabla de resultado ${index + 1}`} tabIndex={0}>
           <table><caption className="sr-only">Resultado {index + 1}</caption>

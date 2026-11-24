@@ -124,7 +124,7 @@ async def _run(payload):
             result = result.to_frame()
         if isinstance(result, _DataFrame):
             _send({"type": "table", **_table(result)})
-        elif result is not None:
+        elif result is not None and not (_inspect_figures and _is_plot_handle(result)):
             _send({"type": "stream", "channel": "stdout", "text": repr(result) + "\n"})
         return "success"
     except BaseException as error:
@@ -311,6 +311,10 @@ def _complete(payload):
         from_position = position - _u16(prefix)
         to_position = position + _u16(_re.match(r"\w*", document[cursor:])[0])
         header = "import pandas as pd\n"
+        if _inspect_figures:
+            header += "import numpy as np\nimport matplotlib as mpl\nimport matplotlib.pyplot as plt\n"
+        if _inspect_seaborn:
+            header += "import seaborn as sns\nimport seaborn.objects as so\n"
         if _inspect_scipy:
             header += "import numpy as np\nfrom scipy import stats\n"
         if _inspect_workbook:

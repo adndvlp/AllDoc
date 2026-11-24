@@ -18,6 +18,8 @@ test('SQL y las herramientas Python habilitan sus proveedores diferidos sin crea
     ['python-openpyxl', 'analisis-de-datos/openpyxl', 'enabled'],
     ['python-scipy', 'analisis-de-datos/scipy', 'enabled'],
     ['python-sqlalchemy', 'analisis-de-datos/sqlalchemy', 'enabled'],
+    ['python-matplotlib', 'analisis-de-datos/matplotlib', 'enabled'],
+    ['python-seaborn', 'analisis-de-datos/seaborn', 'enabled'],
   ]);
   assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'negocio-relacional', version: 1});
   assert.deepEqual(practiceRegistry.get('python-pandas')?.defaultDataset, {id: 'productos-basico', version: 1});
