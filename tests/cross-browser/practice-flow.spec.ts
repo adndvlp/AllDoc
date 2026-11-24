@@ -26,12 +26,16 @@ test(caseTitle('FLOW-02'),async({page},info)=>{
   const scroller=panel(page).locator('.cm-scroller'); await expect.poll(()=>scroller.evaluate(el=>el.scrollHeight-el.clientHeight)).toBeGreaterThan(0);
   await scrollRegion(page,scroller,0,1000,info); await expect.poll(()=>scroller.evaluate(el=>el.scrollTop)).toBeGreaterThan(0);
   expect(await reader(page).evaluate(el=>el.scrollTop)).toBe(position); expect(await page.locator('.navbar').boundingBox()).toEqual(navbar);
-  await execute(page,sql,"SELECT printf('%0300d',1) AS texto FROM productos;");
+  await execute(page,sql,"SELECT printf('%0300d', id) AS texto FROM productos WHERE id=1;");
+  await panel(page).getByRole('button',{name:'Ir al resultado',exact:true}).click();
   const region=panel(page).getByRole('region',{name:/^Tabla de resultado/}); await fits(page,region);
   // Infima puede convertir table en un bloque con overflow propio. La prueba
   // sigue al scroller real y conserva la comprobación del contenedor acotado.
   const table=await region.evaluate(el=>el.scrollWidth>el.clientWidth+1)?region:region.getByRole('table');
   await expect.poll(()=>table.evaluate(el=>el.scrollWidth-el.clientWidth)).toBeGreaterThan(0);
+  const body=panel(page).locator('[data-practice-scroll]');
+  const practicePosition=await body.evaluate(el=>el.scrollTop);
   await scrollRegion(page,table,900,0,info,region); await expect.poll(()=>table.evaluate(el=>el.scrollLeft)).toBeGreaterThan(0);
+  expect(await body.evaluate(el=>el.scrollTop)).toBe(practicePosition);
   expect(await reader(page).evaluate(el=>el.scrollTop)).toBe(position); expect(await page.locator('.navbar').boundingBox()).toEqual(navbar); await noOverflow(page);
 });

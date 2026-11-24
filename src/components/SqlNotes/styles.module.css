@@ -45,6 +45,27 @@
   .variant:only-child { grid-column: 1 / -1; }
 }
 
+@container sql-note (max-width: 10rem) {
+  [data-sql-concept] .variant :global(.theme-code-block pre) { overflow-x: auto; }
+  [data-sql-concept] .variant :global(.theme-code-block code) {
+    padding-inline-end: 0;
+    overflow-wrap: normal;
+  }
+  [data-sql-concept] .variant :global(.theme-code-block [class*='buttonGroup']) {
+    position: static;
+    justify-content: flex-end;
+  }
+  .dialectControls select {
+    appearance: none;
+    padding-inline-end: calc(.5rem + 16px);
+    background-image: linear-gradient(45deg, transparent 50%, var(--text-secondary) 50%),
+      linear-gradient(135deg, var(--text-secondary) 50%, transparent 50%);
+    background-position: calc(100% - .5rem - 5px) center, calc(100% - .5rem) center;
+    background-repeat: no-repeat;
+    background-size: 5px 5px;
+  }
+}
+
 @media (pointer: coarse) {
   .variant :global(.theme-code-block button) { opacity: 1 !important; }
 }

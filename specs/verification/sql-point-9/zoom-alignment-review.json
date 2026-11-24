@@ -1,0 +1,139 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "viewport": [
+    320,
+    568
+  ],
+  "fontScale": 2,
+  "captures": {
+    "chromium": 7,
+    "firefoxWebkit": 5
+  },
+  "sharedReference": "WebKit estrecho y tableta usan emulación táctil y se fijan en 320×568 antes de navegar. Se usa la captura de tableta como referencia de ese estado para estrecho, pendiente de comparación.",
+  "images": [
+    {
+      "path": "tests/ui/__screenshots__/celular/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/celular/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-horizontal/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/celular-horizontal/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/celular-pequeno/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/celular-pequeno/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/escritorio/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/escritorio/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/ipad/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/ipad-horizontal/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/ipad-horizontal/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/ui/__screenshots__/laptop/sql-dialect-200.png",
+      "sha256": "bc23a2c6e7120be7ec418a33aab133460bfd758b96878493afb61f2f80c858d5",
+      "previousSha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/candidates/laptop/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/sql-dialect-200.png",
+      "sha256": "a20a2eef04b769185f28dc8312e114eccc07ec505420c76f6541d67cc7d63520",
+      "previousSha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/firefox-escritorio/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-dialect-200.png",
+      "sha256": "a20a2eef04b769185f28dc8312e114eccc07ec505420c76f6541d67cc7d63520",
+      "previousSha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/firefox-estrecho/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/sql-dialect-200.png",
+      "sha256": "a20a2eef04b769185f28dc8312e114eccc07ec505420c76f6541d67cc7d63520",
+      "previousSha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/firefox-tableta/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-dialect-200.png",
+      "sha256": "effd38180461c9cf6043ca1a45b7bae9a7e8fb0bb171d89345ccc7a2274cbf81",
+      "previousSha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/webkit-escritorio/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/sql-dialect-200.png",
+      "sha256": "effd38180461c9cf6043ca1a45b7bae9a7e8fb0bb171d89345ccc7a2274cbf81",
+      "previousSha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/webkit-tableta/sql-dialect-200.png",
+      "sharedViewportReference": false
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-dialect-200.png",
+      "sha256": "effd38180461c9cf6043ca1a45b7bae9a7e8fb0bb171d89345ccc7a2274cbf81",
+      "previousSha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+      "candidate": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/candidates/webkit-tableta/sql-dialect-200.png",
+      "sharedViewportReference": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/verification.json",
+      "sha256": "bdc346e8b7aa1b986a8dfa8b2f5deadc932f878bddbf05b51bb3dbb26d0ca17a"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/results.json",
+      "sha256": "47ff58aaf700b06b6d320c987d17d628b925a7d2b660474eebb30c042aafc61a"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-23-322Z-a17136b744/chromium/changed-references.json",
+      "sha256": "e214f31b10e07c2685bbb184137bae3c4284d7420f82920d9ff50dbedbcbadaa"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/verification.json",
+      "sha256": "275425a68dc5a996d517a70fe037d784547075d4264b75b17befcaa505af8ed3"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/results.json",
+      "sha256": "46399a8f061d27b1dcde16b3869b2c542caa92084a698b611120202166bfe08e"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-00-53-706Z-a17136b744/sql/changed-references.json",
+      "sha256": "0ab421fea8108bb49b12228c450d11fbb86ae98cd2199d2a119de7d67bee2d0c"
+    }
+  ],
+  "sqlComparison": {
+    "status": "passed",
+    "directory": "benchmarks/sql-verifications/2026-11-24T05-03-48-340Z-a17136b744",
+    "cases": 6,
+    "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+    "resultsSha256": "91959e70a8401acfca06f6ee61f2299968ab9b67c4984a79d8d5053660d04e28"
+  }
+}

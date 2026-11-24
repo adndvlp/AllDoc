@@ -1,0 +1,182 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "review": "VARCHAR2(30) en un solo renglón, copiar debajo del código y selector de 44 px o más. Comparación pendiente.",
+  "runs": [
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-54-02-228Z-a17136b744",
+      "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+      "tooling": "eec3c1059ff18e01a601f3a56cfe53448cd606dcd3706f946d3ca32bb3f358e2",
+      "suite": "chromium",
+      "passed": 9,
+      "artifacts": [
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-02-228Z-a17136b744/verification.json",
+          "sha256": "645dd996b6ea39fde81fd923d3a94d421b6ffd533f6c781d25e4f03aa4527233"
+        },
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-02-228Z-a17136b744/chromium/results.json",
+          "sha256": "d0dcf9ddaa1936adb2d5f227643faba963f94bdde4ca4d517a810ab24da55ab4"
+        },
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-02-228Z-a17136b744/chromium/changed-references.json",
+          "sha256": "e8a91d5b2966c68c2ca6610322bbf093d5aef73c84f7a72ee3d82698c3b3a99a"
+        }
+      ],
+      "initialAssets": [
+        {
+          "html": "apuntes/analisis-de-datos/sql/select.html",
+          "beforeJS": 159651,
+          "afterJS": 195732,
+          "beforeCSS": 22566,
+          "afterCSS": 23260,
+          "deltaJS": 36081,
+          "deltaCSS": 694
+        },
+        {
+          "html": "index.html",
+          "beforeJS": 159651,
+          "afterJS": 195732,
+          "beforeCSS": 22566,
+          "afterCSS": 23260,
+          "deltaJS": 36081,
+          "deltaCSS": 694
+        }
+      ],
+      "images": [
+        {
+          "path": "tests/ui/__screenshots__/celular/encabezado-texto-200.png",
+          "sha256": "8dc320471264a7af23f8a74616c58c7e45d258a60d6bdf6eb5952b3c43a17e65",
+          "previousSha256": "8a0ade7ac7133390ad22a175b72915883d3f784d69d6d5adb947c03e4236e74f",
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/celular/select-texto-200.png",
+          "sha256": "8dc320471264a7af23f8a74616c58c7e45d258a60d6bdf6eb5952b3c43a17e65",
+          "previousSha256": "8a0ade7ac7133390ad22a175b72915883d3f784d69d6d5adb947c03e4236e74f",
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/celular/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": "f79f7fbd472314a0c5e0f46d33a61621dee3f2d4ed5e20bbbb7fdfbb1836ffb4",
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/celular-horizontal/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/celular-pequeno/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/escritorio/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/ipad/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/ipad-horizontal/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        },
+        {
+          "path": "tests/ui/__screenshots__/laptop/sql-dialect-200.png",
+          "sha256": "0d9fcbd0c7d771a7a5fe8e73f4d1b327487b5330055479f17208a19319bf3029",
+          "previousSha256": "f79f7fbd472314a0c5e0f46d33a61621dee3f2d4ed5e20bbbb7fdfbb1836ffb4",
+          "run": "2026-11-24T04-54-02-228Z-a17136b744"
+        }
+      ]
+    },
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-54-40-375Z-a17136b744",
+      "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+      "tooling": "eec3c1059ff18e01a601f3a56cfe53448cd606dcd3706f946d3ca32bb3f358e2",
+      "suite": "sql",
+      "passed": 6,
+      "artifacts": [
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-40-375Z-a17136b744/verification.json",
+          "sha256": "de9eb16703f69f6cfddd6cb582c71d4322ea1ff6dced5eaf1e59908db5fdb1f0"
+        },
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-40-375Z-a17136b744/sql/results.json",
+          "sha256": "4b2f582deec27306404c88846be0c044c934a04c3d106f37d62a9bda4b655656"
+        },
+        {
+          "path": "benchmarks/sql-verifications/2026-11-24T04-54-40-375Z-a17136b744/sql/changed-references.json",
+          "sha256": "f27374c83078266b7e9d0374aae8b401f0019799a688ec2eacce895e0a28bfa3"
+        }
+      ],
+      "initialAssets": [
+        {
+          "html": "apuntes/analisis-de-datos/sql/select.html",
+          "beforeJS": 159651,
+          "afterJS": 195733,
+          "beforeCSS": 22566,
+          "afterCSS": 23260,
+          "deltaJS": 36082,
+          "deltaCSS": 694
+        },
+        {
+          "html": "index.html",
+          "beforeJS": 159651,
+          "afterJS": 195733,
+          "beforeCSS": 22566,
+          "afterCSS": 23260,
+          "deltaJS": 36082,
+          "deltaCSS": 694
+        }
+      ],
+      "images": [
+        {
+          "path": "tests/sql-browser/__screenshots__/firefox-escritorio/sql-dialect-200.png",
+          "sha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        },
+        {
+          "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-dialect-200.png",
+          "sha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        },
+        {
+          "path": "tests/sql-browser/__screenshots__/firefox-tableta/sql-dialect-200.png",
+          "sha256": "14542d50c2225d50f4036b1a85e33b8853e4d75e4c173c28b3909140e1c82091",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        },
+        {
+          "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-dialect-200.png",
+          "sha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        },
+        {
+          "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-dialect-200.png",
+          "sha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        },
+        {
+          "path": "tests/sql-browser/__screenshots__/webkit-tableta/sql-dialect-200.png",
+          "sha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7",
+          "previousSha256": null,
+          "run": "2026-11-24T04-54-40-375Z-a17136b744"
+        }
+      ]
+    }
+  ]
+}

@@ -3,9 +3,24 @@ import {practiceRegion,practiceResults,selectPracticeTable} from './practice-hel
 test.setTimeout(60_000);
 const panel=(page:Page)=>page.locator('dialog[data-practice-panel]');
 const code=(page:Page)=>panel(page).getByRole('textbox',{name:'Código SQL',exact:true});
+const editorScroll=(page:Page)=>panel(page).locator('.cm-scroller');
 const option=(page:Page,label:string)=>panel(page).locator('.cm-tooltip-autocomplete').getByRole('option').filter({has:page.locator('.cm-completionLabel').filter({hasText:new RegExp('^'+label.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$')})});
 async function open(page:Page){await page.goto('/apuntes/analisis-de-datos/sql/select',{waitUntil:'networkidle'});await page.getByRole('button',{name:'Practicar SQL',exact:true}).click();await expect(panel(page).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();}
-async function suggest(page:Page,marked:string){const position=marked.indexOf('▏');await code(page).fill(marked.replace('▏',''));await code(page).press('ControlOrMeta+Home');for(let i=0;i<position;i++)await code(page).press('ArrowRight');await code(page).press('Control+Space');}
+async function suggest(page:Page,marked:string,options:{fromLeftEdge?:boolean}={}){
+ const position=marked.indexOf('▏');
+ const input=code(page);
+ await input.fill(marked.replace('▏',''));
+ await input.press('ControlOrMeta+Home');
+ for(let i=0;i<position;i++)await input.press('ArrowRight');
+ if(options.fromLeftEdge){
+  // El cursor ya está visible al inicio. Quita el desplazamiento residual
+  // de fill() para que el menú se capture desde el mismo punto.
+  await editorScroll(page).evaluate(scroller=>new Promise<void>(resolve=>{
+   requestAnimationFrame(()=>{scroller.scrollLeft=0;requestAnimationFrame(()=>resolve());});
+  }));
+ }
+ await input.press('Control+Space');
+}
 async function execute(page:Page,document:string){
  const run=panel(page).locator('[data-practice-run]');const previous=await run.count()?await run.getAttribute('data-practice-run'):null;
  await code(page).fill(document);await expect(panel(page).getByRole('button',{name:'Ejecutar',exact:true})).toBeEnabled();await panel(page).getByRole('button',{name:'Ejecutar',exact:true}).click();
@@ -26,7 +41,8 @@ test('alias y JOIN: columnas del origen, nombres ambiguos e inserción con tecla
   await suggest(page,marked);await expect(option(page,'precio')).toBeVisible();await expect(option(page,'telefono')).toHaveCount(0);
   await option(page,'precio').click();await expect(code(page)).toHaveText(marked.replace(/pre▏|▏/,'precio'));await expect(practiceResults(page)).toHaveCount(0);
  }
- await suggest(page,'SELECT ▏ FROM productos p JOIN proveedores v ON p.proveedor_id=v.id;');await expect(option(page,'p.nombre')).toBeVisible();await expect(option(page,'v.nombre')).toBeVisible();await expect(option(page,'nombre')).toHaveCount(0);
+ await suggest(page,'SELECT ▏ FROM productos p JOIN proveedores v ON p.proveedor_id=v.id;',{fromLeftEdge:true});await expect(option(page,'p.nombre')).toBeVisible();await expect(option(page,'v.nombre')).toBeVisible();await expect(option(page,'nombre')).toHaveCount(0);
+ await expect.poll(()=>editorScroll(page).evaluate(scroller=>scroller.scrollLeft)).toBe(0);
  await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();await expect(page).toHaveScreenshot('sql-completion-join.png');
  await option(page,'p.nombre').click();await expect(code(page)).toHaveText('SELECT p.nombre FROM productos p JOIN proveedores v ON p.proveedor_id=v.id;');
  await suggest(page,'SELECT pre▏ FROM productos;');await expect(option(page,'precio')).toHaveAttribute('aria-selected','true');

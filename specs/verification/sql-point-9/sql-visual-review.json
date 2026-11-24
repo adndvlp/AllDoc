@@ -1,0 +1,197 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "run": "benchmarks/sql-verifications/2026-11-24T03-53-28-104Z-3b6c991879",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "tooling": "690c4ec4a5a7d0feb66cdade0cb312ccf9ede60459a1dd68c4e2481e40c80f65",
+  "browsers": [
+    {
+      "engine": "firefox",
+      "version": "159.0"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2"
+    }
+  ],
+  "projects": [
+    "firefox-escritorio",
+    "firefox-estrecho",
+    "firefox-tableta",
+    "webkit-escritorio",
+    "webkit-estrecho",
+    "webkit-tableta"
+  ],
+  "passed": 60,
+  "review": {
+    "practice-regions-200.png": "Encabezado, selector de tabla y estado de guardado al 200% y 320 px. El caso comprueba el acceso al editor mediante desplazamiento.",
+    "practice-regions-data.png": "Tabla clientes, relaciones, total de filas y vista previa dentro de la región desplazable.",
+    "practice-regions-result.png": "Resultado real Monitor y 3500, región de resultado debajo del editor.",
+    "sql-completion-columns.png": "Menú del esquema con nombre, categoria y precio para FROM productos.",
+    "sql-completion-join.png": "Columnas de productos y proveedores, con candidatos ambiguos calificados por alias.",
+    "sql-dialect-limit.png": "SQL Server muestra TOP y la acción de equivalente SQLite conserva el motor local indicado."
+  },
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T03-53-28-104Z-3b6c991879/verification.json",
+      "sha256": "a408e4d92c613bf9a39671ab89a1ac9560185b09655e204b271c3c05f47b2997"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T03-53-28-104Z-3b6c991879/sql/results.json",
+      "sha256": "afcc19317e9d8c6d6f5b4c120abc642e1483b154ce10fa1ae242e4529c8fc2c9"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T03-53-28-104Z-3b6c991879/sql/discovery.json",
+      "sha256": "7ce7ee4888998f7c85916f2696acdb15298d7964399e3a09e1b48d4254b61c1d"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T03-53-28-104Z-3b6c991879/sql/changed-references.json",
+      "sha256": "d5ec999c4aaac544f58c926d2c00c3db689633e4f5b0ec5d47d0998e4944deab"
+    }
+  ],
+  "images": [
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/practice-regions-200.png",
+      "sha256": "d9a9fe5429b6560c244032b707091fe9449c2ac821e54273bc3a300f4f6bb6ed"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/practice-regions-data.png",
+      "sha256": "191f34017bf0d9491ce075f7d2b54bc070b631cbf156f3a4e6a4ff4072daaec2"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/practice-regions-result.png",
+      "sha256": "b68e684324d272589ba93c54f4a9a2b258d173d3bff9b716c9710cb27654b0f0"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/sql-completion-columns.png",
+      "sha256": "d3935511f4bdb82789f3515368134f50d0ba40e4b2cf172f2f3c5fa4ab5f6f82"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/sql-completion-join.png",
+      "sha256": "fd17e9e4fbb0e8ebb39b4154d505fb74905889f3fb4cac307b5e9c8fc7e0506b"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-escritorio/sql-dialect-limit.png",
+      "sha256": "7c3615a5f2b0c841ec5a7940311a9188d89d489f7756ecdc15837f682774d75f"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/practice-regions-200.png",
+      "sha256": "d9a9fe5429b6560c244032b707091fe9449c2ac821e54273bc3a300f4f6bb6ed"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/practice-regions-data.png",
+      "sha256": "690a7bbb0cca6b464321e0d91e531861617f1c6019c46f0ae608743cf2170286"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/practice-regions-result.png",
+      "sha256": "bf203c2382f7d5c537c88916097af7eec3a7699ea5bde99cabdfa53572747e9f"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-completion-columns.png",
+      "sha256": "6dabfe9f13ac9007847d24624d66b8e4c1aebfa971a7a9efdc84dd0ef4dbcd2a"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-completion-join.png",
+      "sha256": "9724aa7ec3f98a5f647cce72cf5c608db2202adeb496b4e8e0387f4dd4267a39"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-dialect-limit.png",
+      "sha256": "ded8d1388d232dc4bc256c6679ac470c9c68f9c0fe903a19770af5a0b8e54e7d"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/practice-regions-200.png",
+      "sha256": "d9a9fe5429b6560c244032b707091fe9449c2ac821e54273bc3a300f4f6bb6ed"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/practice-regions-data.png",
+      "sha256": "e108893c9a5ebbcaf38c3afa376bb8a9fdf848c1ec7b9896f94aef53edc259e5"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/practice-regions-result.png",
+      "sha256": "fb0c7d948e4f6bfdf47a8f4a3d33d026c4475f798ff65dbef104bdb7e3572c91"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/sql-completion-columns.png",
+      "sha256": "0a957db7a3452cac90e4f6b89a949e6743249bbbd6abb9bac618ef9e500ebf0c"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/sql-completion-join.png",
+      "sha256": "e19035a10c1de488bb42162bc50e43361caeb58f45f645fbe462f32b12d7ec14"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-tableta/sql-dialect-limit.png",
+      "sha256": "4e3b892ae53480cacb3bfb019925c55a016897dc74466f5059e052e8a17deec8"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/practice-regions-200.png",
+      "sha256": "8dc587fba43708fb262d54c45ec3afb3b86eba7eac139a76920be2d10dded756"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/practice-regions-data.png",
+      "sha256": "fa9de973f54118cee9f8ded396d24a4632a17bef0a36393665d3b4786aa2f82c"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/practice-regions-result.png",
+      "sha256": "99fc5318f35fb2734d6e9170d5bfabd2801473042bd3dc5c1c4583e8f103486b"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-completion-columns.png",
+      "sha256": "cd2e43c0e773dd9b6d718f08814ca49d8aff145fedf6c17b374d717dc6ef171a"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-completion-join.png",
+      "sha256": "c1fb0a7352376e6460cb4648614d656edfdc0065d54a854c870cbd84cbdc0901"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-dialect-limit.png",
+      "sha256": "e12030e3b30640791f0f69b30f320b6f883118b1c21d5b55a00bbc874374344e"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/practice-regions-200.png",
+      "sha256": "8dc587fba43708fb262d54c45ec3afb3b86eba7eac139a76920be2d10dded756"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/practice-regions-data.png",
+      "sha256": "7d454b7b31b9c7d17285d8ba932137b1a9bb5bc7a17df38f3540581b4f027e81"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/practice-regions-result.png",
+      "sha256": "185af5dd1742dc5e05e3d5ba3bfc3f00834a44ca4b0790bda6f080cf7ebbcf13"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-completion-columns.png",
+      "sha256": "b66a380fbd2dba8fc75dce938198b5235281731b3f1fec37769e39ebe5a5df22"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-completion-join.png",
+      "sha256": "50fdcc41b5d927b8b35974a9a0b78f7a341af7b310985b4cffe10d696a68d97b"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-dialect-limit.png",
+      "sha256": "bd1a81e188c9b7c7a0238e3c3ad5ae6a51ac6af8cb3592e2cd9b73c1ee031948"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/practice-regions-200.png",
+      "sha256": "8dc587fba43708fb262d54c45ec3afb3b86eba7eac139a76920be2d10dded756"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/practice-regions-data.png",
+      "sha256": "d1702cb2780c2933b1b69ed2fee993b5d982d0f9702d06c3309d9e7937178ad6"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/practice-regions-result.png",
+      "sha256": "fa696d8ae19814f2d69e50fc7dc5db14f4ec96b15df5006b12b748266eebda87"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/sql-completion-columns.png",
+      "sha256": "b1996d0df5c81bdbbeba3c7206f1bdd8822b54ca24a15f13d0d929b95f509b0e"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/sql-completion-join.png",
+      "sha256": "f118b9ec8f9b16634e2f301ec0b7151a9e103c142024787562684c1ba4c4481e"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-tableta/sql-dialect-limit.png",
+      "sha256": "3b60aa31703e9074f57e2bfee56c46b5a8b11d53ff7f7bd3ddf6dbfa8036a7db"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+(node:47513) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-closure.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ el presupuesto usa p95 de las treinta interacciones completadas (3.434292ms)
+✔ una muestra rápida no acredita un escenario incompleto (0.124708ms)
+✔ el informe rechaza una muestra reciclada y un menú que nunca apareció (0.090583ms)
+✖ la comparación SQL usa referencias revisadas aunque la ruta de candidatas esté vacía (1298.376084ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1569.377291
+
+✖ failing tests:
+
+test at tests/sql-closure.test.ts:38:1
+✖ la comparación SQL usa referencias revisadas aunque la ruta de candidatas esté vacía (1298.376084ms)
+  AssertionError [ERR_ASSERTION]: 
+  Running 1 test using 1 worker
+  
+  
+  [1/1] [webkit-escritorio] › ../../../../../../private/var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/fixture.spec.ts:3:5 › referencia
+    1) [webkit-escritorio] › ../../../../../../private/var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/fixture.spec.ts:3:5 › referencia 
+  
+      Error: A snapshot doesn't exist at /var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/webkit-escritorio/fixture.txt.
+  
+        1 |
+        2 |     import {test, expect} from "/Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/node_modules/@playwright/test/index.mjs";
+      > 3 |     test('referencia', () => expect("revisada").toMatchSnapshot('fixture.txt'));
+          |                                                 ^
+        4 |   
+          at /private/var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/fixture.spec.ts:3:49
+  
+      attachment #1: fixture (text/plain) ────────────────────────────────────────────────────────────
+      Received: ../../../../../../var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/report/artifacts/fixture-referencia-webkit-escritorio/fixture-actual.txt
+      ────────────────────────────────────────────────────────────────────────────────────────────────
+  
+      Error Context: ../../../../../../var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/report/artifacts/fixture-referencia-webkit-escritorio/error-context.md
+  
+  
+    1 failed
+      [webkit-escritorio] › ../../../../../../private/var/folders/s9/pxf5v35115795ym09k5vg7pm0000gn/T/alldoc-sql-snapshot-LuL8ra/fixture.spec.ts:3:5 › referencia 
+  (node:47515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+  (Use `node --trace-warnings ...` to show where the warning was created)
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/andresitopacheco/Desktop/workspace/Projects/AllDoc/tests/sql-closure.test.ts:66:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

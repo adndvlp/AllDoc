@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "run": "benchmarks/sql-verifications/2026-11-24T04-06-43-445Z-3b6c991879",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "tooling": "2baea7fb0a47c487ce982d686a652fd1ddf8b3673effd13c93d2f908743f7191",
+  "browser": "159.0.8154.6",
+  "metric": "DOM y siguiente cuadro de animación",
+  "completionBudgetMs": 100,
+  "samplesPerScenario": 30,
+  "completionSamples": 420,
+  "profiles": [
+    {
+      "project": "celular",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuRate": 4,
+      "p95": {
+        "palabra": 82.9,
+        "columna": 82.7,
+        "prefijo": 83.6,
+        "calificada": 81.7,
+        "alias-join": 83.7,
+        "cte": 77.4,
+        "esquema-vivo": 81.4
+      },
+      "cold": {
+        "editorReadyMs": 423.4,
+        "runtimeReadyMs": 526.8
+      },
+      "warm": {
+        "close": 32.4,
+        "open": 32,
+        "write": 32.5,
+        "dialect": 28.9,
+        "concept": 44.9
+      },
+      "readingRequests": 32,
+      "coldDownloads": 16
+    },
+    {
+      "project": "laptop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "cpuRate": 1,
+      "p95": {
+        "palabra": 85.1,
+        "columna": 85.2,
+        "prefijo": 84.7,
+        "calificada": 84.1,
+        "alias-join": 83.8,
+        "cte": 81.8,
+        "esquema-vivo": 85.4
+      },
+      "cold": {
+        "editorReadyMs": 97.6,
+        "runtimeReadyMs": 181.6
+      },
+      "warm": {
+        "close": 32.7,
+        "open": 32.6,
+        "write": 21,
+        "dialect": 27.5,
+        "concept": 32.2
+      },
+      "readingRequests": 37,
+      "coldDownloads": 16
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-06-43-445Z-3b6c991879/verification.json",
+      "sha256": "41866384f23676e00ca38c8a8f9af3dc669862c6461e52850b64c8154169febe"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-06-43-445Z-3b6c991879/measurements.json",
+      "sha256": "0289de8870c9dca2180f8e05f1df8f4929a0b68e56c4d2344b84c2f5a606cb83"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-06-43-445Z-3b6c991879/bundle.json",
+      "sha256": "3858c5a8c5377fcce30c45d876f3a9154278c51e0797e0027d741d6574ffe2f2"
+    }
+  ]
+}

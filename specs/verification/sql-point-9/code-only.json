@@ -1,0 +1,105 @@
+{
+  "directory": "benchmarks/sql-verifications/2026-11-24T03-41-20-154Z-3b6c991879",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "tooling": "690c4ec4a5a7d0feb66cdade0cb312ccf9ede60459a1dd68c4e2481e40c80f65",
+  "commit": "af8c7fc9a6cbee0b9d649c1eb94fa7f8407d046e",
+  "status": "code-only-complete",
+  "checks": {
+    "espacio": {
+      "status": "passed",
+      "durationMs": 0
+    },
+    "código": {
+      "status": "passed",
+      "durationMs": 20951
+    },
+    "tipos-app": {
+      "status": "passed",
+      "durationMs": 632
+    },
+    "tipos-pruebas": {
+      "status": "passed",
+      "durationMs": 341
+    },
+    "inventario-editorial": {
+      "status": "passed",
+      "durationMs": 73
+    },
+    "build": {
+      "status": "passed",
+      "durationMs": 16716
+    },
+    "runtime": {
+      "status": "passed",
+      "durationMs": 2060
+    },
+    "entrega-publicada": {
+      "status": "passed",
+      "durationMs": 455
+    }
+  },
+  "native": {
+    "passed": 418,
+    "failed": 0,
+    "skipped": 0
+  },
+  "editorial": {
+    "sources": 99,
+    "originalEmpty": 11,
+    "groups": 34,
+    "concepts": 153,
+    "examples": 166,
+    "dialects": 6
+  },
+  "published": {
+    "pages": 313,
+    "bodyChunks": 38,
+    "loadedOnHome": 0
+  },
+  "initialAssets": [
+    {
+      "html": "apuntes/analisis-de-datos/sql/select.html",
+      "beforeJS": 159651,
+      "afterJS": 195729,
+      "beforeCSS": 22566,
+      "afterCSS": 23121,
+      "deltaJS": 36078,
+      "deltaCSS": 555
+    },
+    {
+      "html": "index.html",
+      "beforeJS": 159651,
+      "afterJS": 195729,
+      "beforeCSS": 22566,
+      "afterCSS": 23121,
+      "deltaJS": 36078,
+      "deltaCSS": 555
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "verification.json",
+      "sha256": "8101a8ada3cdf95bf05f436d99a63cdd3ed3b31a4c72a7bf0c832ec5bf111419"
+    },
+    {
+      "file": "native.log",
+      "sha256": "4955f338a6d8a4d28a1ca9b08205a0d150ac2b03713060658369bf3572d868e7"
+    },
+    {
+      "file": "published.json",
+      "sha256": "bdce2f8a02e5c2c2776a557336fb72449aac037d131b2f8bfed1c346c464015f"
+    },
+    {
+      "file": "editorial.json",
+      "sha256": "813024ad77abd556bc865e65d5f439b76da7de97a941d958a4044703f656c91e"
+    },
+    {
+      "file": "bundle.json",
+      "sha256": "b0640cfb75d6fafe7b60df358a3ee39f2b7d8410e06df8051cc639d0613b86b7"
+    },
+    {
+      "file": "runtime-manifest.json",
+      "sha256": "d32fb61cea967941f08ae78b0eaefd82ffcc7570bb4c8d79eb977ecc60cf3620"
+    }
+  ]
+}

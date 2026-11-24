@@ -1,4 +1,5 @@
 import {openPracticeRegion, practiceResults} from '../ui/practice-helpers';
+import {openSqlGroup} from '../ui/sql-tree-helpers';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {writeFile} from 'node:fs/promises';
 import {visualTitle,visualPolicy,type VisualState} from '../../scripts/lib/browser-visual';
@@ -6,6 +7,12 @@ import {go,noOverflow,fits,header,searchDialog,topicsDialog} from './application
 import {profiles,panel,code,openPractice,fillCode,execute,completion,expectCode} from './practice-helpers';
 
 const sql=profiles[0],python=profiles[1];
+const wherePath='/apuntes/analisis-de-datos/sql/where';
+async function revealResult(page:Page) {
+  await panel(page).getByRole('button',{name:'Ir al resultado',exact:true}).click();
+  await expect(practiceResults(page).getByRole('table')).toBeInViewport();
+}
+
 async function reference(page:Page,info:TestInfo,image:string,fontScale=1) {
   await test.step('Referencia visual: '+image,async()=>{
     await page.evaluate(async()=>{await document.fonts.ready;});
@@ -23,6 +30,7 @@ async function reference(page:Page,info:TestInfo,image:string,fontScale=1) {
 test(visualTitle('VIS-01'),async({page},info)=>{
   await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(58);
   await expect(page.locator('[data-catalog] details[open]')).toHaveCount(0);
+  await expect(page.locator('[data-catalog]').getByLabel('SQL',{exact:true})).toContainText('153 conceptos');
   await expect(page.locator('[data-search-surface="inline"]').getByRole('searchbox')).toBeVisible();
   await reference(page,info,'inicio.png');
 });
@@ -37,10 +45,13 @@ test(visualTitle('VIS-02'),async({page},info)=>{
   await expect(table.getByRole('columnheader')).toHaveText(['nombre','precio']);
   await expect(table.getByRole('row')).toHaveCount(3);
   for(let i=0;i<sql.rows.length;i++) await expect(table.getByRole('row').nth(i+1).getByRole('cell')).toHaveText([...sql.rows[i]]);
+  await revealResult(page);
   await reference(page,info,'sql-resultado.png');
-  await openPracticeRegion(page,'data');
-  const data=panel(page).getByRole('table',{name:'Datos de productos',exact:true});
+  await panel(page).locator('[data-practice-scroll]').evaluate(scroller=>{scroller.scrollTop=0;});
+  const dataRegion=await openPracticeRegion(page,'data');
+  const data=dataRegion.getByRole('table',{name:'Datos de productos',exact:true});
   await expect(data.getByRole('row')).toHaveCount(19);await expect(data).toContainText('Teclado');await expect(data).toContainText('3500');
+  await expect(data).toBeInViewport();
   await reference(page,info,'sql-datos.png');
 });
 
@@ -50,6 +61,7 @@ test(visualTitle('VIS-03'),async({page},info)=>{
   const table=practiceResults(page).getByRole('table'); await expect(table.getByRole('columnheader')).toHaveText(['nombre','precio']);
   await expect(table.getByRole('row')).toHaveCount(3);
   for(let i=0;i<python.rows.length;i++) await expect(table.getByRole('row').nth(i+1).getByRole('cell')).toHaveText([...python.rows[i]]);
+  await revealResult(page);
   await reference(page,info,'pandas-resultado.png');
   await fillCode(page,python,'import pandas as pd\npd.Da');
   await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();
@@ -64,7 +76,7 @@ test(visualTitle('VIS-04'),async({page},info)=>{
   await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();
   await code(page,sql).press('ControlOrMeta+k');await expect(searchDialog(page)).toBeVisible();
   await searchDialog(page).getByRole('searchbox').fill('filtrar');
-  await expect(searchDialog(page).getByRole('link').filter({hasText:'WHERE'})).toHaveCount(1);
+  await expect(searchDialog(page).locator(`a[href="${wherePath}"]`)).toHaveCount(1);
   await expect(page.locator('dialog:modal')).toHaveCount(1);
   await reference(page,info,'practica-busqueda.png');
   await page.keyboard.press('Escape');await expect(panel(page)).toBeVisible();
@@ -76,9 +88,8 @@ test(visualTitle('VIS-04'),async({page},info)=>{
     await page.keyboard.press('Escape');await expect(panel(page)).toBeVisible();
   } else {
     const sidebar=page.locator('.theme-doc-sidebar-container');await expect(sidebar).toBeVisible();
-    const toggle=sidebar.getByRole('button',{name:'SQL',exact:true});
-    if(await toggle.getAttribute('aria-expanded')!=='true') await toggle.click();
-    await expect(sidebar.getByRole('link',{name:'WHERE',exact:true})).toBeVisible();
+    const where=await openSqlGroup(sidebar,'WHERE');
+    await expect(where.getByRole('link',{name:'Definición',exact:true})).toHaveAttribute('href',wherePath);
     await reference(page,info,'practica-temas.png');
   }
 });

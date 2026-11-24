@@ -1,5 +1,5 @@
 import {openPracticeRegion, practiceResults} from '../ui/practice-helpers';
-import {expect, test, type Page, type TestInfo} from '@playwright/test';
+import {expect, test, type Locator, type Page, type TestInfo} from '@playwright/test';
 
 export const profiles = [
   {id: 'SQL', label: 'SQL', route: '/apuntes/analisis-de-datos/sql/select', seed: 'SELECT * FROM productos;',
@@ -37,6 +37,15 @@ export async function ready(page: Page, profile: Profile) {
 }
 export async function showResults(page: Page) {
   await openPracticeRegion(page,'results');
+}
+export async function scrollInPractice(target: Locator) {
+  await expect(target).toBeVisible();
+  await target.evaluate(element => {
+    const body = element.closest<HTMLElement>('[data-practice-scroll]');
+    if (!body) throw new Error('El control está fuera del cuerpo de práctica');
+    body.scrollTop += element.getBoundingClientRect().top - body.getBoundingClientRect().top;
+  });
+  await expect(target).toBeInViewport();
 }
 export async function expectNoExecution(page: Page) {
   await showResults(page);

@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "command": "npm run verify:sql -- --code-only",
+  "directory": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744",
+  "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+  "tooling": "0910f0864b578c2f857b698e0b0f2a353e9981872a459d3e2f7c4d53cdb591d4",
+  "passed": 420,
+  "failed": 0,
+  "skipped": 0,
+  "checks": {
+    "espacio": {
+      "status": "passed",
+      "durationMs": 1
+    },
+    "código": {
+      "status": "passed",
+      "durationMs": 20902
+    },
+    "tipos-app": {
+      "status": "passed",
+      "durationMs": 590
+    },
+    "tipos-pruebas": {
+      "status": "passed",
+      "durationMs": 403
+    },
+    "inventario-editorial": {
+      "status": "passed",
+      "durationMs": 76
+    },
+    "build": {
+      "status": "passed",
+      "durationMs": 15632
+    },
+    "runtime": {
+      "status": "passed",
+      "durationMs": 2081
+    },
+    "entrega-publicada": {
+      "status": "passed",
+      "durationMs": 471
+    }
+  },
+  "editorial": {
+    "sources": 99,
+    "originalEmpty": 11,
+    "groups": 34,
+    "concepts": 153,
+    "examples": 166,
+    "dialects": 6
+  },
+  "published": {
+    "pages": 313,
+    "lazyBodyChunks": 38,
+    "loadedOnHome": 0
+  },
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/verification.json",
+      "sha256": "ba563814c0bd6e4fe441e439336a4dce8ddb73b10fbcecfff9e8f0d976708853"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/native.log",
+      "sha256": "c3887a52c09acde0134d8d2f261f2eb825bbf3b0dcc29171f922da11f543cf94"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/published.json",
+      "sha256": "bdce2f8a02e5c2c2776a557336fb72449aac037d131b2f8bfed1c346c464015f"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/editorial.json",
+      "sha256": "813024ad77abd556bc865e65d5f439b76da7de97a941d958a4044703f656c91e"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/bundle.json",
+      "sha256": "154c80d1abb2762def43828e381001c8585b04bca334e147ba6ef963b3f1080f"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T05-30-38-136Z-a17136b744/runtime-manifest.json",
+      "sha256": "d32fb61cea967941f08ae78b0eaefd82ffcc7570bb4c8d79eb977ecc60cf3620"
+    }
+  ]
+}

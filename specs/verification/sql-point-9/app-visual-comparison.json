@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "run": "benchmarks/sql-verifications/2026-11-24T04-20-01-448Z-3b6c991879",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "tooling": "848d45ce407781173d480710a1cd9ee97df423c039196df6ece03a0fd034d061",
+  "passed": 26,
+  "skipped": 0,
+  "references": 52,
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-20-01-448Z-3b6c991879/verification.json",
+      "sha256": "54fc1a4b96c1391510a9e14d255ccbdd29e1d6e3353340f1ce01bdb21c303c8b"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-20-01-448Z-3b6c991879/visual/results.json",
+      "sha256": "03c25ec9d76a4b99f83d7fa6d32041b3e5bdb0c8369899c7f2b1002370143da8"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-20-01-448Z-3b6c991879/visual/discovery.json",
+      "sha256": "f2c0ed15fd3c3bfa490369d7d6f8f5b1eee9f1e2f7df894ef45298d0e063cc30"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-20-01-448Z-3b6c991879/visual/references.json",
+      "sha256": "010e1d34bcae5df75ae0ca625d23d6e95269acfc16bc0c25d7e355496ae02609"
+    }
+  ]
+}

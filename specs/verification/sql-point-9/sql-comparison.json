@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "cases": 60,
+  "skipped": 0,
+  "runs": [
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-01-42-385Z-3b6c991879",
+      "creditedCases": 54,
+      "resultsSha256": "d36aa2e570bd1e525ba112b703757a3b066e6b88959a7024148762cd0680f3d4",
+      "reportSha256": "78fe4a051699622e2164a8d339f5ee51564cd4dce824e31a615a7bf372ae5fda"
+    },
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-10-24-127Z-3b6c991879",
+      "creditedCases": 6,
+      "resultsSha256": "d8cc7b9c63c6da59d62b893ecc8f95810fe8f28bd4a041a21d8c92ffd495ebfd",
+      "reportSha256": "7bfa74b1f18df2b92cde92119524a3cc3398e24e8ce4389ff923f243c80f2a68"
+    }
+  ],
+  "latestReferences": {
+    "directory": "tests/sql-browser/__screenshots__",
+    "count": 36,
+    "sha256": "b99ad9fda053390f71bbc3798f91d77594eb2c8bc00340c12bc91e64027e5b4a"
+  }
+}

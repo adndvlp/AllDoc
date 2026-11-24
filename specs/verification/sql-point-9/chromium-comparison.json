@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+  "cases": 882,
+  "passed": 873,
+  "skipped": 9,
+  "previousRun": {
+    "directory": "benchmarks/sql-verifications/2026-11-24T05-04-28-765Z-a17136b744",
+    "creditedCases": 865,
+    "omitted": 9,
+    "artifacts": [
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-04-28-765Z-a17136b744/verification.json",
+        "sha256": "ae43e0142b62b0d80a9bcd31b2a1cf10a3e4baf0467a1f55496e3888812b08ef"
+      },
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-04-28-765Z-a17136b744/chromium/results.json",
+        "sha256": "d00e865375a5c61fedf2e21d6626cc666f7e8e89292f310bd414ddc2e3281094"
+      },
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-04-28-765Z-a17136b744/chromium/discovery.json",
+        "sha256": "4ca7ea54b343eedddb6add0bd770468e97d56945f25124a26f84fcc8412ffe92"
+      }
+    ]
+  },
+  "repeat": {
+    "directory": "benchmarks/sql-verifications/2026-11-24T05-29-19-519Z-a17136b744",
+    "creditedCases": 8,
+    "artifacts": [
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-29-19-519Z-a17136b744/verification.json",
+        "sha256": "670e4dd0fbeb4c54be0eded5ff295eb7ea740b38734435005b1f3ffab949bc10"
+      },
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-29-19-519Z-a17136b744/chromium/results.json",
+        "sha256": "e75032644a0d593dbf0c3222824c0bef7f985c38697142a33e79c6b666d61eaa"
+      },
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-29-19-519Z-a17136b744/chromium/discovery.json",
+        "sha256": "bf29adbfedbeb21466d5fc5919499da64ac84cc191cfe9482747cb3c61a5d319"
+      },
+      {
+        "path": "benchmarks/sql-verifications/2026-11-24T05-29-19-519Z-a17136b744/chromium/references.json",
+        "sha256": "5aca0275c97df0bc4562ce435db4f0603bd0863ffe3ae3734eb0d6b8f3d5bb4b"
+      }
+    ]
+  },
+  "references": 333,
+  "caseIdentities": "proyecto, archivo y nombre de caso",
+  "omissions": [
+    {
+      "project": "celular-pequeno",
+      "file": "practice.spec.ts",
+      "title": "separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente"
+    },
+    {
+      "project": "celular",
+      "file": "practice.spec.ts",
+      "title": "separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente"
+    },
+    {
+      "project": "celular-horizontal",
+      "file": "practice.spec.ts",
+      "title": "separador: teclado, arrastre y restablecer mantienen mínimos y scroll independiente"
+    },
+    {
+      "project": "laptop",
+      "file": "responsive.spec.ts",
+      "title": "la navegación se adapta al girar el dispositivo"
+    },
+    {
+      "project": "escritorio",
+      "file": "responsive.spec.ts",
+      "title": "la navegación se adapta al girar el dispositivo"
+    },
+    {
+      "project": "celular-pequeno",
+      "file": "responsive.spec.ts",
+      "title": "scroll independiente del contenido y el sidebar"
+    },
+    {
+      "project": "celular",
+      "file": "responsive.spec.ts",
+      "title": "scroll independiente del contenido y el sidebar"
+    },
+    {
+      "project": "celular-horizontal",
+      "file": "responsive.spec.ts",
+      "title": "scroll independiente del contenido y el sidebar"
+    },
+    {
+      "project": "ipad",
+      "file": "responsive.spec.ts",
+      "title": "scroll independiente del contenido y el sidebar"
+    }
+  ]
+}

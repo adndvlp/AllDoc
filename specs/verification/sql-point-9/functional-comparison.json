@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "passed": 168,
+  "skipped": 0,
+  "runs": [
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-21-29-637Z-3b6c991879",
+      "creditedCases": 156,
+      "resultsSha256": "0955209cb9fb0e0fee75b9d5d98c56e0385d27a7c756b5382624aca9042747e2",
+      "reportSha256": "02084636fe36493a0e7a96efdf038502e530d17c0915b43813481e7e1ae8912a"
+    },
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-34-05-130Z-3b6c991879",
+      "creditedCases": 12,
+      "resultsSha256": "1e2738a05383b7c8240f58bd7cd37e7b159685eb09750a4d701b77cfaa541ebc",
+      "reportSha256": "283663480ba4fb015138b0b71c84ca59f41642ac5d1f4604afdf5b3baa01e4c9"
+    }
+  ],
+  "corrected": [
+    "APP-06",
+    "FLOW-02"
+  ]
+}

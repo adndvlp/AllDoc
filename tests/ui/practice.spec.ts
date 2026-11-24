@@ -51,6 +51,20 @@ test('borradores: SELECT/WHERE comparten edición y pandas conserva su propio co
   await searchTo(page, 'DataFrame', 'DataFrame'); await expect(code(page)).toHaveAccessibleName('Código pandas');
   await expect(code(page)).toContainText('pd.DataFrame'); await code(page).fill('productos.head(2)');
   await expect(panel(page).getByText('Guardado local', {exact: true})).toBeVisible();
+  const {width,height}=page.viewportSize()!;
+  if(width>height&&await panel(page).getAttribute('data-layout')==='bottom'){
+    // En horizontal queda poco alto y focus() puede desplazar el panel al editar.
+    // Mantén visible el inicio de Datos en la captura de esta disposición.
+    await expect.poll(()=>practiceRegion(page,'data').evaluate(async region=>{
+      const body=region.closest<HTMLElement>('[data-practice-scroll]');
+      if(!body)throw new Error('Datos no está dentro del área desplazable de práctica');
+      const padding=parseFloat(getComputedStyle(body).paddingBlockStart);
+      const offset=()=>region.getBoundingClientRect().top-body.getBoundingClientRect().top-padding;
+      if(Math.round(offset())!==0)body.scrollTo({top:body.scrollTop+offset(),behavior:'instant'});
+      await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));
+      return Math.round(offset());
+    })).toBe(0);
+  }
   await expect(page).toHaveScreenshot('practice-pandas.png');
   await searchTo(page, 'SELECT', 'SELECT'); await expect(code(page)).toHaveText('SELECT nombre FROM productos;');
   await panel(page).getByRole('button', {name: 'Volver al apunte', exact: true}).click();

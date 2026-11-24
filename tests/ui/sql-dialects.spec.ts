@@ -42,8 +42,36 @@ test('subsección directa y cambio de dialecto conservan despliegue y posición 
 });
 test('320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página',async({page})=>{
  await page.setViewportSize({width:320,height:568});await go(page,'cast/tipos');await page.addStyleTag({content:'html {font-size:200% !important}'});await dialect(page).selectOption('oracle');await expect(note(page).locator('pre')).toContainText('VARCHAR2');
+ const code=note(page).locator('pre code');
+ await expect.poll(()=>code.evaluate(element=>{
+   const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);
+   for(let text=walker.nextNode();text;text=walker.nextNode()){
+     const start=text.textContent?.indexOf('VARCHAR2')??-1;
+     if(start<0)continue;
+     const range=document.createRange();
+     range.setStart(text,start);range.setEnd(text,start+'VARCHAR2'.length);
+     return new Set(Array.from(range.getClientRects(),rect=>rect.top)).size;
+   }
+   return 0;
+ })).toBe(1);
+ const copy=note(page).getByRole('button',{name:'Copiar código',exact:true});
+ await copy.evaluate(element=>(element as HTMLElement).focus({preventScroll:true}));
+ await expect(copy).toBeFocused();
+ const [copyBox,codeBox]=await Promise.all([copy.boundingBox(),code.boundingBox()]);
+ expect(copyBox!.y).toBeGreaterThanOrEqual(codeBox!.y+codeBox!.height-1);
  expect(await page.evaluate(()=>Math.max(document.body.scrollWidth,document.documentElement.scrollWidth)>innerWidth+1)).toBe(false);
  const box=await dialect(page).boundingBox();expect(box!.height).toBeGreaterThanOrEqual(44);expect(box!.x+box!.width).toBeLessThanOrEqual(321);
- await note(page).locator('pre').scrollIntoViewIfNeeded();
+ const block=note(page).locator('pre');
+ await page.evaluate(async()=>{await document.fonts.ready;});
+ // El lector puede reajustar el scroll mientras termina de maquetar al 200%.
+ await expect.poll(()=>block.evaluate(async element=>{
+   const reader=element.closest<HTMLElement>('[data-scroll-panel="content"]');
+   if(!reader)throw new Error('El código está fuera del lector');
+   const inset=()=>element.getBoundingClientRect().top-reader.getBoundingClientRect().top;
+   if(Math.round(inset())!==12)reader.scrollTo({top:reader.scrollTop+inset()-12,behavior:'instant'});
+   await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));
+   return Math.round(inset());
+ })).toBe(12);
+ expect(await page.evaluate(()=>scrollY)).toBe(0);
  await expect(page).toHaveScreenshot('sql-dialect-200.png');
 });

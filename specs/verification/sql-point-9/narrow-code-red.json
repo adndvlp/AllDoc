@@ -1,0 +1,32 @@
+{
+  "status": "observed",
+  "run": "benchmarks/sql-verifications/2026-11-24T04-36-18-305Z-3b6c991879",
+  "viewport": [
+    320,
+    568
+  ],
+  "fontScale": 2,
+  "failure": "VARCHAR2, INTEGER y PRIMARY se dividen en varios renglones por el ancho reservado al control de copiar.",
+  "images": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-36-18-305Z-3b6c991879/chromium/candidates/celular-pequeno/sql-dialect-200.png",
+      "sha256": "f79f7fbd472314a0c5e0f46d33a61621dee3f2d4ed5e20bbbb7fdfbb1836ffb4"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-36-18-305Z-3b6c991879/chromium/candidates/celular-pequeno/sql-create-200.png",
+      "sha256": "1252512ca9100e3fdcecdd000596fb3e72316c0537631705c0b9e760210c4f1e"
+    }
+  ],
+  "selector": {
+    "status": "failed",
+    "run": "benchmarks/sql-verifications/2026-11-24T04-50-45-752Z-27987b6f70",
+    "minimumHeight": 44,
+    "observedHeight": 38,
+    "projects": [
+      "webkit-estrecho",
+      "webkit-tableta",
+      "webkit-escritorio"
+    ],
+    "resultsSha256": "4e9664551633b358c4d1aa02e5bb8a49feae2870c4dfe57a4fbb39ad0305d424"
+  }
+}

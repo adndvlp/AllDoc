@@ -1,0 +1,29 @@
+{
+  "status": "failed",
+  "directory": "benchmarks/sql-verifications/2026-11-24T04-56-38-260Z-a17136b744",
+  "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+  "project": "webkit-tableta",
+  "title": "320 px y texto al 200%: selector, código y fuentes accesibles sin desbordar la página",
+  "passed": 5,
+  "failed": 1,
+  "diagnosis": {
+    "verticalDisplacementPx": -11,
+    "differentPixels": 6363,
+    "geometryAndFocusAssertions": "passed"
+  },
+  "resultsSha256": "71e8fe774291873c0e930c638040b16509ca2d9a5e68c44e4ca9c8cc7da1cd95",
+  "images": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-54-40-375Z-a17136b744/sql/candidates/webkit-tableta/sql-dialect-200.png",
+      "sha256": "cf7f418abb9653fc7991326b6ff25eacc46c692089d5ba1623ce9d61e98b0fc7"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-56-38-260Z-a17136b744/sql/artifacts/sql-dialects-320-px-y-text-dbf4d-les-sin-desbordar-la-página-webkit-tableta/sql-dialect-200-actual.png",
+      "sha256": "01643d78cde4a2d6ad2e6a01673cac8da2b6f714ac65d70fd34e7c6cdf76e8fc"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-56-38-260Z-a17136b744/sql/artifacts/sql-dialects-320-px-y-text-dbf4d-les-sin-desbordar-la-página-webkit-tableta/sql-dialect-200-diff.png",
+      "sha256": "797d9485b19df277cbbc3eeed864faddf4108996051125a96daf082147d5f79e"
+    }
+  ]
+}

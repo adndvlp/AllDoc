@@ -14,6 +14,7 @@ build/
 
 # Resultados de pruebas y cobertura
 test-results/
+/benchmarks/sql-verifications/
 playwright-report/
 blob-report/
 playwright/.cache/

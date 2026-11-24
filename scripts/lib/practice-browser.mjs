@@ -1,6 +1,8 @@
 import {writeFile, mkdir} from 'node:fs/promises';
 import path from 'node:path';
 import {expect} from '@playwright/test';
+import {assessCompletionSamples, completionScenarios, sampleCount} from './sql-closure.ts';
+import {summarize} from './baseline.ts';
 
 export const practiceProfiles = [
   {id: 'sql-sqlite', label: 'SQL', language: 'sql', route: '/apuntes/analisis-de-datos/sql/select', title: 'SELECT',
@@ -55,6 +57,9 @@ async function measure(page, target, specification, act) {
         const text = () => Array.from(code?.querySelectorAll('.cm-line') ?? [], line => line.textContent).join('\n');
         const executing = Array.from(dialog?.querySelectorAll('button') ?? []).find(button => button.textContent.trim() === 'Ejecutar');
         const satisfied = condition => {
+          if (condition === 'note') return location.pathname === specification.path
+            && document.querySelector('article [data-sql-concept]')?.getAttribute('data-sql-concept') === specification.concept;
+          if (condition === 'dialect') return document.querySelector('[data-sql-concept] pre')?.textContent.includes(specification.code);
           if (condition === 'closed') return !dialog?.open;
           if (!dialog?.open) return false;
           if (condition === 'editor') return Boolean(code);
@@ -268,6 +273,127 @@ export async function measurePracticeProfile(chromium, project, profile, baseURL
     await saveScreenshot(page, output, project.name + '-' + profile.id + '-failure').catch(() => {});
     throw Object.assign(error, {profileResult: result});
   } finally {await context.close(); await browser.close();}
+}
+
+/** Mide el mismo menú que usa el lector, con el cursor en la consulta real. */
+export async function measureSqlProfile(chromium, project, baseURL, onScenario = () => {}) {
+  const browser = await chromium.launch();
+  const cpuRate = project.name === 'celular' ? 4 : 1;
+  const report = {project: project.name, viewport: project.use.viewport, cpuRate, status: 'partial', actions: {}, completion: {}};
+  try {
+    const context = await browser.newContext({...project.use, baseURL, locale: 'es-MX', colorScheme: 'dark'});
+    await context.addInitScript(installProbe);
+    const page = await context.newPage();
+    const client = await context.newCDPSession(page);
+    await client.send('Network.enable');
+    await client.send('Network.setCacheDisabled', {cacheDisabled: true});
+    await client.send('Emulation.setCPUThrottlingRate', {rate: cpuRate});
+    const requests = [], errors = [], samples = [];
+    page.on('request', request => requests.push(request.url()));
+    page.on('pageerror', error => errors.push(error.message));
+    const limit = '/apuntes/analisis-de-datos/sql/limit';
+    await page.goto(limit, {waitUntil: 'networkidle'});
+    await expect(page.locator('html')).toHaveAttribute('data-has-hydrated', 'true');
+    const trigger = page.getByRole('button', {name: 'Practicar SQL', exact: true});
+    await expect(editor(page)).toHaveCount(0);
+    report.readingRequests = requests.slice();
+    if (requests.some(url => new URL(url).origin !== new URL(baseURL).origin
+      || /\.wasm|\.whl|practice-(?:editor|panel)|negocio-relacional-1\//.test(url))) {
+      throw new Error('La lectura inicial descargó recursos de práctica');
+    }
+    const initial = await measure(page, trigger, {id: 'cold', conditions: ['editor', 'ready'], timeout: 120000}, () => trigger.click());
+    report.cold = {editorReadyMs: initial.responses.editor - initial.eventAt, runtimeReadyMs: initial.responses.ready - initial.eventAt,
+      downloads: Array.from(new Set(requests.slice(report.readingRequests.length))), ...await phases(page)};
+    const collect = (action, sample) => {
+      sample.action = action;
+      (report.actions[action] ??= []).push(sample);
+      samples.push(sample);
+    };
+    const close = panel(page).getByRole('button', {name: 'Volver al apunte', exact: true});
+    onScenario('apertura y escritura');
+    for (let index = 0; index < sampleCount; index++) {
+      collect('close', await measure(page, close, {id: 'close-' + index, conditions: ['closed']}, () => close.click()));
+      collect('open', await measure(page, trigger, {id: 'open-' + index, conditions: ['open']}, () => trigger.click()));
+      const text = '-- escritura ' + index;
+      await fillCode(page, text);
+      collect('write', await measure(page, editor(page), {id: 'write-' + index, event: 'keydown', key: 'x', text: text + 'x',
+        conditions: ['text']}, () => editor(page).press('x')));
+    }
+    const input = editor(page);
+    const menu = panel(page).locator('.cm-tooltip-autocomplete');
+    const run = panel(page).locator('[data-practice-run]');
+    for (const {id, marked, label} of completionScenarios) {
+      onScenario(id);
+      if (id === 'esquema-vivo') {
+        await fillCode(page, 'ALTER TABLE productos ADD COLUMN precio_extra INTEGER;');
+        await panel(page).getByRole('button', {name: 'Ejecutar', exact: true}).click();
+        await expect(results(page).getByText('Ejecución completada', {exact: true})).toBeVisible();
+      }
+      const [before, after] = marked.split('▏');
+      await fillCode(page, before + after);
+      for (let i = 0; i < after.length; i++) await input.press('ArrowLeft');
+      const runId = await run.count() ? await run.getAttribute('data-practice-run') : null;
+      const activate = () => input.press('Control+Space');
+      await activate();
+      await expect(menu.locator('.cm-completionLabel').filter({hasText: new RegExp('^' + label + '$')})).toBeVisible();
+      await input.press('Escape');
+      const measured = [];
+      for (let index = 0; index < sampleCount; index++) {
+        await expect(menu).toBeHidden();
+        const sample = await measure(page, input, {id: id + '-' + index, event: 'keydown', key: ' ', label, conditions: ['option']}, activate);
+        sample.action = id;
+        measured.push(sample);
+        samples.push(sample);
+        await input.press('Escape');
+      }
+      if (runId === null) await expect(run).toHaveCount(0);
+      else await expect(run).toHaveAttribute('data-practice-run', runId);
+      report.completion[id] = {...assessCompletionSamples(measured), samples: measured};
+    }
+    await close.click();
+    onScenario('dialecto');
+    const selector = page.getByRole('combobox', {name: 'Dialecto SQL', exact: true});
+    const dialects = [{id: 'sqlserver', code: 'TOP (5)'}, {id: 'sqlite', code: 'LIMIT 5'}];
+    await selector.selectOption('sqlserver');
+    await expect(page.locator('[data-sql-concept] pre').first()).toContainText('TOP (5)');
+    await selector.selectOption('sqlite');
+    await expect(page.locator('[data-sql-concept] pre').first()).toContainText('LIMIT 5');
+    for (let index = 0; index < sampleCount; index++) {
+      const next = dialects[index % dialects.length];
+      collect('dialect', await measure(page, selector, {id: 'dialect-' + index, event: 'change', code: next.code,
+        conditions: ['dialect']}, () => selector.selectOption(next.id)));
+    }
+    onScenario('concepto');
+    const next = page.locator('.pagination-nav__link--next');
+    const previous = page.locator('.pagination-nav__link--prev');
+    const nextPath = new URL(await next.getAttribute('href'), baseURL).pathname;
+    const concept = page.locator('[data-sql-concept]');
+    const initialConcept = await concept.getAttribute('data-sql-concept');
+    await next.click();
+    await expect(page).toHaveURL(url => url.pathname === nextPath);
+    await expect(concept).not.toHaveAttribute('data-sql-concept', initialConcept);
+    const nextConcept = await concept.getAttribute('data-sql-concept');
+    await previous.click();
+    await expect(concept).toHaveAttribute('data-sql-concept', initialConcept);
+    for (let index = 0; index < sampleCount; index++) {
+      const forward = index % 2 === 0;
+      const link = forward ? next : previous;
+      collect('concept', await measure(page, link, {id: 'concept-' + index, conditions: ['note'],
+        path: forward ? nextPath : limit, concept: forward ? nextConcept : initialConcept}, () => link.click()));
+    }
+    report.observers = await observerData(page, samples);
+    report.errors = errors;
+    if (errors.length) throw new Error(errors[0]);
+    report.actionSummary = Object.fromEntries(Object.entries(report.actions).map(([action, items]) =>
+      [action, summarize(items.map(item => item.observedAt - item.eventAt))]));
+    report.status = Object.values(report.completion).every(scenario => scenario.status === 'passed') ? 'passed' : 'budget-exceeded';
+    return report;
+  } catch (error) {
+    report.failure = error.message;
+    return report;
+  } finally {
+    await browser.close();
+  }
 }
 
 export async function crossBrowserSmoke(browserType, name, baseURL, output) {

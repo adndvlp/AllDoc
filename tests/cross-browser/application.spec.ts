@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 import {caseTitle} from '../../scripts/lib/browser-cases';
 import {go, reader, header, fits, noOverflow, activate, scrollRegion, chooseHeaderArea, goHome, searchDialog, topicsDialog} from './application-helpers';
-import {profiles, panel, code, openPractice, fillCode, expectCode, capture} from './practice-helpers';
+import {profiles, panel, code, openPractice, fillCode, expectCode, capture, scrollInPractice} from './practice-helpers';
 import {openCatalogSqlGroup} from '../ui/sql-tree-helpers';
 
 const sql=profiles[0];
@@ -48,7 +48,7 @@ test(caseTitle('APP-02'), async ({page}, info) => {
   const search=header(page).getByRole('button',{name:'Buscar un concepto',exact:true});
   await activate(search,info); await fits(page,searchDialog(page));
   await searchDialog(page).getByRole('searchbox').fill('limitar');
-  await expect(searchDialog(page).getByRole('link').filter({hasText:'LIMIT'})).toBeVisible();
+  await expect(searchDialog(page).locator('a[href="/apuntes/analisis-de-datos/sql/limit"]')).toBeVisible();
   await page.keyboard.press('Escape'); await expect(search).toBeFocused();
   await search.press('ControlOrMeta+k'); await expect(searchDialog(page).getByRole('searchbox')).toHaveValue('limitar');
   await searchDialog(page).getByRole('searchbox').press('ArrowDown'); await page.keyboard.press('Enter');
@@ -161,11 +161,13 @@ test(caseTitle('APP-06'), async ({page},info) => {
   } else await expect(panel(page)).toHaveAttribute('data-layout','modal');
   await page.addStyleTag({content:'html {font-size:200% !important}'});
   await expect.poll(()=>code(page,sql).evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(27);
-  await fits(page,panel(page).getByRole('button',{name:'Volver al apunte',exact:true})); await fits(page,panel(page).locator('.cm-editor')); await noOverflow(page);
+  await fits(page,panel(page).getByRole('button',{name:'Volver al apunte',exact:true}));
+  const editor=panel(page).locator('.cm-editor');
+  await scrollInPractice(editor); await fits(page,editor); await noOverflow(page);
   if(initial.width<768) {
     await page.setViewportSize({width:320,height:568}); await fits(page,panel(page));
     await page.setViewportSize({width:844,height:390}); await fits(page,panel(page).getByRole('button',{name:'Volver al apunte',exact:true}));
-    await code(page,sql).scrollIntoViewIfNeeded(); await expect(code(page,sql)).toBeInViewport();
+    await scrollInPractice(code(page,sql).locator('.cm-line').first());
     await code(page,sql).press('End'); await noOverflow(page);
   }
   await capture(page,info,'adaptacion-200');

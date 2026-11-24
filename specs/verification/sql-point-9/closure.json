@@ -1,0 +1,86 @@
+{
+  "status": "complete",
+  "point": 9,
+  "source": "a17136b744ffc4443a314c2b90dd5f530b65b67948caa5eb439fe87e78b2de84",
+  "criteria": [
+    "SA-01",
+    "SA-02",
+    "SA-03",
+    "SA-04",
+    "SA-05",
+    "SA-06",
+    "SA-07",
+    "SA-08",
+    "SA-09",
+    "SA-10",
+    "SA-11",
+    "SA-12",
+    "SA-13",
+    "SA-14",
+    "SA-15"
+  ],
+  "code": {
+    "passed": 420
+  },
+  "browsers": {
+    "chromium": {
+      "passed": 873,
+      "skipped": 9,
+      "viewports": 7
+    },
+    "firefoxWebkit": {
+      "functional": 168,
+      "visual": 26,
+      "sql": 66,
+      "viewportsPerEngine": 3
+    }
+  },
+  "references": {
+    "chromium": 333,
+    "appFirefoxWebkit": 52,
+    "sqlFirefoxWebkit": 42
+  },
+  "completion": {
+    "budgetMs": 100,
+    "mobileMaxP95Ms": 83.7,
+    "laptopMaxP95Ms": 85.4
+  },
+  "evidence": [
+    {
+      "path": "specs/verification/sql-point-9/native-final.json",
+      "sha256": "6cffcb005c86f35b8a5db03df61be6ed78584b9b805ba5072fb79e13e282d4fc"
+    },
+    {
+      "path": "specs/verification/sql-point-9/chromium-comparison.json",
+      "sha256": "4ddff2ee5cf751a3f80f474d07130a1e2775f77b3805f52a04ef707920f21daa"
+    },
+    {
+      "path": "specs/verification/sql-point-9/functional-comparison.json",
+      "sha256": "b515bd4b1adfb303334cf7fa6487bdb869e0a93376e9c23725e9a616e1cab101"
+    },
+    {
+      "path": "specs/verification/sql-point-9/app-visual-comparison.json",
+      "sha256": "0aa59bc3ef75d9f3e9e4d527be70a7e9e9d877bf666970b94847ca91a2f106aa"
+    },
+    {
+      "path": "specs/verification/sql-point-9/sql-comparison.json",
+      "sha256": "9ba8daf9ef90fbeb3ede7c75cc0ad17dc32512178e1a2f69842f79f20e8601f0"
+    },
+    {
+      "path": "specs/verification/sql-point-9/zoom-alignment-review.json",
+      "sha256": "9bc00513320bad3e8265f56e8abca8ebf676b0048828dcc8e2edc0e52ed1b53e"
+    },
+    {
+      "path": "specs/verification/sql-point-9/measurements.json",
+      "sha256": "c867b6c5e386615a483680fc7dce0dc4440ce6b163aa1c59240a8a4645160ed8"
+    },
+    {
+      "path": "specs/verification/sql-point-9/chromium-visual-review.json",
+      "sha256": "4c5582cca03926447977e75842cbfb915bdb82d543a3e9ccf77741ed45d8f434"
+    },
+    {
+      "path": "specs/verification/sql-point-9/app-visual-review.json",
+      "sha256": "166cb9cb605cffe3051ec3de94212affe1702418c31418476f43baec91dac041"
+    }
+  ]
+}

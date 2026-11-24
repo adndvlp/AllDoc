@@ -1,0 +1,40 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "run": "benchmarks/sql-verifications/2026-11-24T04-05-52-898Z-3b6c991879",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "tooling": "2baea7fb0a47c487ce982d686a652fd1ddf8b3673effd13c93d2f908743f7191",
+  "passed": 6,
+  "review": "Inicio de línea visible y menú anclado al cursor. Sugerencias y orden conservados.",
+  "artifacts": [
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-05-52-898Z-3b6c991879/verification.json",
+      "sha256": "536ad34d48760fd0034c7a6960817b4f29a1bd5c91e388713ab4fbfde7dfe401"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-05-52-898Z-3b6c991879/sql/changed-references.json",
+      "sha256": "7c24dab5195fd769326884c9f8bf114457b4fae745c57aa6a59288a5e91d8811"
+    },
+    {
+      "path": "benchmarks/sql-verifications/2026-11-24T04-05-52-898Z-3b6c991879/sql/results.json",
+      "sha256": "d10f69b9e0ee36764feacaa400fa142ffdd8308a0f68a88ed21340d8ae8a76c1"
+    }
+  ],
+  "updatedImages": [
+    {
+      "path": "tests/sql-browser/__screenshots__/firefox-estrecho/sql-completion-join.png",
+      "previousSha256": "9724aa7ec3f98a5f647cce72cf5c608db2202adeb496b4e8e0387f4dd4267a39",
+      "sha256": "d5023aa08579f300bc893476dfe35e5f51d18e475cfd5a64ea3efeb10ee8fd7f"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-escritorio/sql-completion-join.png",
+      "previousSha256": "c1fb0a7352376e6460cb4648614d656edfdc0065d54a854c870cbd84cbdc0901",
+      "sha256": "76f15c2697ee44223100244b48293ff3f6c5f5bd2579cb2343a6f52653a371e8"
+    },
+    {
+      "path": "tests/sql-browser/__screenshots__/webkit-estrecho/sql-completion-join.png",
+      "previousSha256": "50fdcc41b5d927b8b35974a9a0b78f7a341af7b310985b4cffe10d696a68d97b",
+      "sha256": "1e532448abf8984f05b8a801834181b0dcc87f4ed22264836e94cbe507b2fcc8"
+    }
+  ],
+  "unchangedImages": 33
+}

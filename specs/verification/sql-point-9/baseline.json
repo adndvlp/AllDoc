@@ -1,0 +1,149 @@
+{
+  "bundle": {
+    "path": "benchmarks/browser-verifications/2026-11-15T07-46-52-079Z-5d2023cce7/bundle.json",
+    "sha256": "88d656b128e5e0201c16b558d46e2791b83c74ee1ac5bdd6ca3ace282ca3024d",
+    "source": "5d2023cce70b83c736dfc1e2f7a0351d35d3fe81dbaf39c2482b7a75aadee435"
+  },
+  "measurements": {
+    "path": "benchmarks/practice-verifications/2026-11-15T01-58-37-682Z-eab186a574/measurements.json",
+    "sha256": "2e4aac709672a571b16855133e713acdcf6b3a1b1e0d781ffd47be5c75f5a43c"
+  },
+  "pages": [
+    {
+      "html": "apuntes/analisis-de-datos/sql/select.html",
+      "assets": [
+        "assets/css/styles.bed189bb.css",
+        "assets/js/main.215788fa.js",
+        "assets/js/runtime~main.73411d45.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 504694,
+        "gzipBytes": 159651
+      },
+      "css": {
+        "files": 1,
+        "bytes": 112937,
+        "gzipBytes": 22566
+      }
+    },
+    {
+      "html": "index.html",
+      "assets": [
+        "assets/css/styles.bed189bb.css",
+        "assets/js/main.215788fa.js",
+        "assets/js/runtime~main.73411d45.js"
+      ],
+      "js": {
+        "files": 2,
+        "bytes": 504694,
+        "gzipBytes": 159651
+      },
+      "css": {
+        "files": 1,
+        "bytes": 112937,
+        "gzipBytes": 22566
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "project": "laptop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "cpuRate": 1,
+      "cold": {
+        "editorReadyMs": 160.5,
+        "runtimeReadyMs": 260.5
+      },
+      "warm": {
+        "close": {
+          "count": 30,
+          "min": 30.5,
+          "median": 31.5,
+          "p95": 31.80000001192093,
+          "max": 32.10000002384186
+        },
+        "open": {
+          "count": 30,
+          "min": 30.599999994039536,
+          "median": 31.299999982118607,
+          "p95": 31.799999982118607,
+          "max": 31.799999982118607
+        },
+        "write": {
+          "count": 30,
+          "min": 16.900000005960464,
+          "median": 19.69999998807907,
+          "p95": 31.600000023841858,
+          "max": 31.69999998807907
+        },
+        "completionKeyword": {
+          "count": 30,
+          "min": 68.5,
+          "median": 79.90000000596046,
+          "p95": 84.69999998807907,
+          "max": 84.69999998807907
+        },
+        "completionColumns": {
+          "count": 30,
+          "min": 70.59999999403954,
+          "median": 80.69999998807907,
+          "p95": 84.80000001192093,
+          "max": 86.7000000178814
+        }
+      }
+    },
+    {
+      "project": "celular",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuRate": 4,
+      "cold": {
+        "editorReadyMs": 527.6999999880791,
+        "runtimeReadyMs": 647.6999999880791
+      },
+      "warm": {
+        "close": {
+          "count": 30,
+          "min": 27.099999994039536,
+          "median": 28.900000005960464,
+          "p95": 30.400000005960464,
+          "max": 30.5
+        },
+        "open": {
+          "count": 30,
+          "min": 27.599999994039536,
+          "median": 29.099999994039536,
+          "p95": 30.700000017881393,
+          "max": 32.599999994039536
+        },
+        "write": {
+          "count": 30,
+          "min": 17.899999976158142,
+          "median": 20.5,
+          "p95": 33.29999998211861,
+          "max": 33.599999994039536
+        },
+        "completionKeyword": {
+          "count": 30,
+          "min": 68.39999997615814,
+          "median": 79.5,
+          "p95": 84.2000000178814,
+          "max": 84.40000000596046
+        },
+        "completionColumns": {
+          "count": 30,
+          "min": 69.2000000178814,
+          "median": 77.69999998807907,
+          "p95": 84.5,
+          "max": 85
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "status": "reviewed-awaiting-comparison",
+  "source": "3b6c9918798c61802d5e74d559a7625c7b43158e5b593278bd39fa9dd9b2ba65",
+  "directory": "tests/sql-browser/app-screenshots",
+  "reviewed": 52,
+  "review": "Datos y resultados de SQLite visibles en su región. Búsqueda con dos resultados distintos y árbol de temas desplegable. Resultado de pandas, sugerencias Jedi y controles compactos al 200%. Las seis portadas muestran los 153 conceptos de SQL.",
+  "runs": [
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-11-05-839Z-3b6c991879",
+      "selectedCases": "VIS-03 y VIS-05",
+      "resultsSha256": "7d8c7b0714b3813424ef82ded940e2b6a707fba12dfd07857f892b778f0fd373",
+      "changedReferencesSha256": "29886e0a5f2e2199ef62719e0ea1c430847c4e3c46f4333861217020e91647d1"
+    },
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-14-55-554Z-3b6c991879",
+      "selectedCases": "VIS-02 y VIS-04",
+      "resultsSha256": "bb94a78a3c68e31dbf5cd2757da85b8877d3421ec3e189cdee98c1ed5037e66a",
+      "changedReferencesSha256": "8926be7c824a05362d1bc24985d45dfe363dfc8004836e563c9d68f70f31f21c"
+    },
+    {
+      "directory": "benchmarks/sql-verifications/2026-11-24T04-18-21-845Z-3b6c991879",
+      "selectedCases": "VIS-01",
+      "resultsSha256": "483267afd45d0a3bbecd88a17abb7da407a08bbc1bb5f680b012f324b56718f3",
+      "changedReferencesSha256": "25a9fc0e7e78e947bab5ad330efc6330b8b02fa32fb1dfa4228d34cd5bdb691a"
+    }
+  ],
+  "images": [
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/pandas-resultado.png",
+      "sha256": "83f92002474d697d7fe7afacfb97086e9ed6dc6ab092c6fbb6d60ce20566e251",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/pandas-sugerencias.png",
+      "sha256": "ebb3a5348d2bd70f2e53db839ab6d5d30ef71462baffb0bbea80893ee66d1dc3",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/320-texto-200.png",
+      "sha256": "d9a9fe5429b6560c244032b707091fe9449c2ac821e54273bc3a300f4f6bb6ed",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/horizontal-texto-200.png",
+      "sha256": "d5c9e2de33cd879d0cced2f225ed185515260cc520407c174bc586cf1c0e2760",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/pandas-resultado.png",
+      "sha256": "6c067d570c3ca5a6f04aedeb333197ddb636375ec591ee0c67bb09269c980f89",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/pandas-sugerencias.png",
+      "sha256": "844075982b0b6cbb82821fa211b385c874049453184e206586fe1e7cad2ee4d7",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/pandas-resultado.png",
+      "sha256": "b419d9b52af32e2296bec3d15e6b71a09db8079590a41bf5327413682039bf15",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/pandas-sugerencias.png",
+      "sha256": "9ed29d066c4a1d1dd72be54d1f7ac2108661861739493c8cfe33aeecddd6c21f",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/pandas-resultado.png",
+      "sha256": "85fbaeb67e37fc05e6ec7f32517ff6c3037d1d21e035cf72091b58091819fb47",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/pandas-sugerencias.png",
+      "sha256": "aa374cbeba0b3b5db3a244d54e41fabf5c2024d97aa8129e96ede175683fe4cb",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/320-texto-200.png",
+      "sha256": "98ad3dc71285dc9d88741f0d01c68f6ff5c44316caaef967d5b6a62332c26bce",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/horizontal-texto-200.png",
+      "sha256": "6c287cfeb969067e909c35ef9066d6f87b5b00ad8e8d4ab89362521410c9eaaf",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/pandas-resultado.png",
+      "sha256": "ab4f58e12c1a4be0f05e59ac201723124c054fa425d8972991ebcc9824090ade",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/pandas-sugerencias.png",
+      "sha256": "ea4e43bc462349f0d3ae56bc63109f14a050c37f02af202201a34a3194b46b6c",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/pandas-resultado.png",
+      "sha256": "6616dfad05b36b5f9f7b63c5a8171559fef5625474b25942a90e97f6916a11ef",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/pandas-sugerencias.png",
+      "sha256": "dad454e5e1c0334870ec5a35cbca4cf73717b20194e6aac5df8590ee79e6d6ea",
+      "run": "2026-11-24T04-11-05-839Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/practica-busqueda.png",
+      "sha256": "de80013e310b470aad0bc8c28e1b49bb2afb1c730ed95465bf2819ffa5c83466",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/practica-temas.png",
+      "sha256": "b62fd13e3f4fdd04d77949698a9d49dbecd68c24c2458a191a9f0d07b7796785",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/sql-codigo.png",
+      "sha256": "5c8b349090bb42eae960bc0c796eda2c86a3deb88f5a613ce159b3cb74f8fdde",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/sql-datos.png",
+      "sha256": "4a67d71466162dbb16417a7fbbdd61e3151291d191a170451681e2ad36b7eb31",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/sql-resultado.png",
+      "sha256": "13a54bb3ebc122aafb19043acb10b5e606950744aae6ab87dc51a36761125e52",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/practica-busqueda.png",
+      "sha256": "171afd967864c32dcec7af936140c30b83287dfb0cfbdac3b52ec2600c9d87c9",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/practica-temas.png",
+      "sha256": "67521b490badb6027c86f7e710ace228e64644f7f1771b6a76463be0bb9bcfb7",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/sql-codigo.png",
+      "sha256": "cbd4cc3fe16acac881cb2f178579d5eb8fbb2a22ca7944e942b9f8b1c8f7ce1f",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/sql-datos.png",
+      "sha256": "3738025f0de30c7938f19ee5d89bb1e789c4b099499235a68f4ddd83cce55c54",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/sql-resultado.png",
+      "sha256": "8e2b94543480b748daa9598869da5712a9636c580f720a2f0e4ddbded3d5b673",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/practica-busqueda.png",
+      "sha256": "be35cde0650317466db4f4887375a07ef09ce886e40dcfe44ba0ccae77e57f6f",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/practica-temas.png",
+      "sha256": "6cd3b2676f56573bee44ecb4ec9f0765f4640069f621d5deabdc15b89daf039e",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/sql-codigo.png",
+      "sha256": "104733215e898953aa52dfdd17e7b1c46d04085db2770d784e51f87a15830c39",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/sql-datos.png",
+      "sha256": "23cc896010e9ab526256cd23b5f51c5c6275fe74b7d1d3461ed51cf866d48b0f",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/sql-resultado.png",
+      "sha256": "b2be97070597b8e6f5a6362b7916542f4e61c5ead7e7111d70121f53527b2f33",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/practica-busqueda.png",
+      "sha256": "0c087933fb56a697e1c71faa9fd48224595cdc48fd9ef69b80e6f4c39601a2bc",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/practica-temas.png",
+      "sha256": "1dc218977fb90e299ff2d1ccff6572071da7e2287d0f0ce816584f505d9ba3da",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/sql-codigo.png",
+      "sha256": "f9eeb20cb079d70fef4713b92495205448b0176b8e89f40ce305aec9d99714b9",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/sql-datos.png",
+      "sha256": "85a50ef06b43cf0594198e2ba3f87c117d37f312018b2cea520eec92b6065755",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/sql-resultado.png",
+      "sha256": "02057de8fc34f9a2000f4f86c3269ea7bab02c3925610b919063407c7b40ae79",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/practica-busqueda.png",
+      "sha256": "09763a303de02ce90cdee714bbf91e554897cb8d625e8213c1c48ceeb04cce7d",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/practica-temas.png",
+      "sha256": "e5181620df44e270d317b3398160c20114867b9111b33ecee160c378ffaedda1",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/sql-codigo.png",
+      "sha256": "ecca0054397ae0c9649776a5bfc82885a2cb4bc62b3142f97f1f53d657162416",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/sql-datos.png",
+      "sha256": "5157880965c51e1364950e3f2b7749dec8e911e4247615957f1b73bccf41c152",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/sql-resultado.png",
+      "sha256": "6afda6d92ee30a687aec1a1299002bde40ce8f36d561edbc8cea2eafb2d77df6",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/practica-busqueda.png",
+      "sha256": "95919243d2fab17a30dc5ab5f3b1f12addfe64e2ca9b4393df27b6b8b6b6c821",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/practica-temas.png",
+      "sha256": "afe284b7c40541ed5998627ae83a091f0fdbaa995865639a24c972baea3f81b9",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/sql-codigo.png",
+      "sha256": "13c317ee2c90c5a4d02077cc878cb625141e96caa68724540e31dae31a62259d",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/sql-datos.png",
+      "sha256": "550b17b60363734d15fde95ca63d177e5f433fc3a2bf70feeb699486b15582ef",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/sql-resultado.png",
+      "sha256": "d669f4a03d8fd4f946b003f924d8ece574315fd37d7b4b7f59eeb10ec9f9e81a",
+      "run": "2026-11-24T04-14-55-554Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-escritorio/inicio.png",
+      "sha256": "943c7760d1193e30f3856a2c5ec456087485a81bf4179f544e58100d94fc06f2",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-estrecho/inicio.png",
+      "sha256": "864cd919103f8a4904ad1681c45f77769f96d37050a1ff6a13dbd94b9a536c80",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/firefox-tableta/inicio.png",
+      "sha256": "130cfec1d495a7563fdf8d7f9d08787bad9b1b88f8bcf0a9592fdcfa17b2b952",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-escritorio/inicio.png",
+      "sha256": "140a658e23426ba2fedde38f57faf76e461150cc8de2fa0993628f70563a161a",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-estrecho/inicio.png",
+      "sha256": "c64d5a7a11f926379281d017cf77cb2961dd3578f194f5c66c6879e4b74422c1",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    },
+    {
+      "path": "tests/sql-browser/app-screenshots/webkit-tableta/inicio.png",
+      "sha256": "0bfa79d21d1b56dd3c014af5d5861766ba7503c2001d73fb2be566e305f1b6f5",
+      "run": "2026-11-24T04-18-21-845Z-3b6c991879"
+    }
+  ]
+}
