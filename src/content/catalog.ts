@@ -14,12 +14,15 @@ import {rCurriculum} from './r-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
+import {requestsCurriculum} from './requests-curriculum.ts';
+import {httpxCurriculum} from './httpx-curriculum.ts';
 
 const courses = new Map([
   ['excel', excelCurriculum], ['google-sheets', googleSheetsCurriculum], ['r', rCurriculum],
   ['pandas', pandasCurriculum], ['openpyxl', openpyxlCurriculum], ['numpy', numpyCurriculum],
   ['scipy', scipyCurriculum], ['matplotlib', matplotlibCurriculum], ['seaborn', seabornCurriculum],
   ['sqlalchemy', sqlalchemyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
+  ['requests', requestsCurriculum], ['httpx', httpxCurriculum],
 ]);
 
 type TopicDefinition = {kind: 'topic'; id: string; label: string; sharedFrom?:AreaId};

@@ -81,7 +81,7 @@ export function parseCourse(markdown, tool, parseExample, keywordSeparator = /,\
 }
 
 export async function emitCourse({tool, component, dataset, parse, check, dataExtension = 'py'}) {
-  const {groups, bootstrap} = parse(await readFile(new URL('../../specs/' + tool + '.md', import.meta.url), 'utf8'));
+  const {groups, bootstrap, download = bootstrap} = parse(await readFile(new URL('../../specs/' + tool + '.md', import.meta.url), 'utf8'));
   const generated = `// Generado desde specs/${tool}.md por scripts/prepare-${tool}-notes.mjs.\n`;
   const identifier = value => value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
   const exportName = identifier(dataset) + 'Bootstrap';
@@ -101,7 +101,7 @@ export async function emitCourse({tool, component, dataset, parse, check, dataEx
   await emit(`src/content/${tool}-curriculum.ts`, generated + `export const ${identifier(tool)}Curriculum = ` + JSON.stringify(curriculum, null, 2) + ';\n');
   await emit(`src/content/${tool}-search-keywords.ts`, generated + `export const ${identifier(tool)}Keywords: Readonly<Record<string, readonly string[]>> = ` + JSON.stringify(keywords, null, 2) + ';\n');
   await emit(`src/practice/datasets/rows/${dataset}.ts`, generated + `export const ${exportName} = ` + JSON.stringify(bootstrap) + ';\n');
-  await emit(`static/practice/${tool}/datos.${dataExtension}`, bootstrap + '\n');
+  await emit(`static/practice/${tool}/datos.${dataExtension}`, download + '\n');
   for (const group of groups) {
     await emit(`src/content/notes/${tool}/${group.key}.ts`, generated + 'export const notes = ' + JSON.stringify(group.children.map(({body}) => body), null, 2) + ';\n');
     for (const {meta} of group.children) {

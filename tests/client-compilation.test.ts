@@ -15,6 +15,8 @@ import {productsManifest} from '../src/practice/datasets/manifest.ts';
 import {businessManifest} from '../src/practice/datasets/business-manifest.ts';
 import {pandasCommerceManifest, pandasCommerceSchema} from '../src/practice/datasets/pandas-commerce.ts';
 import {jsonOrdersManifest, jsonOrdersSchema} from '../src/practice/datasets/json-orders.ts';
+import {requestsOrdersManifest, requestsOrdersSchema} from '../src/practice/datasets/requests-orders.ts';
+import {httpxOrdersManifest, httpxOrdersSchema} from '../src/practice/datasets/httpx-orders.ts';
 import {numpySalesManifest, numpySalesSchema} from '../src/practice/datasets/numpy-sales.ts';
 import {sqlite3ShopManifest, sqlite3ShopSchema} from '../src/practice/datasets/sqlite3-shop.ts';
 import {openpyxlSalesManifest, openpyxlSalesSchema} from '../src/practice/datasets/openpyxl-sales.ts';
@@ -138,7 +140,7 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 14);
+  assert.equal(profiles.practiceRegistry.list().length, 16);
 });
 
 test('preset cliente: resuelve los manifiestos de Python por ID y versión', () => {
@@ -147,6 +149,8 @@ test('preset cliente: resuelve los manifiestos de Python por ID y versión', () 
     './business-manifest.ts': {businessManifest},
     './pandas-commerce.ts': {pandasCommerceManifest, pandasCommerceSchema},
     './json-orders.ts': {jsonOrdersManifest, jsonOrdersSchema},
+    './requests-orders.ts': {requestsOrdersManifest, requestsOrdersSchema},
+    './httpx-orders.ts': {httpxOrdersManifest, httpxOrdersSchema},
     './numpy-sales.ts': {numpySalesManifest, numpySalesSchema},
     './sqlite3-shop.ts': {sqlite3ShopManifest, sqlite3ShopSchema},
     './openpyxl-sales.ts': {openpyxlSalesManifest, openpyxlSalesSchema},
@@ -157,7 +161,7 @@ test('preset cliente: resuelve los manifiestos de Python por ID y versión', () 
   });
   for (const manifest of [productsManifest, businessManifest, pandasCommerceManifest, jsonOrdersManifest,
     numpySalesManifest, sqlite3ShopManifest, openpyxlSalesManifest, scipyBusinessManifest,
-    sqlalchemySalesManifest, matplotlibSalesManifest, seabornBranchesManifest]) {
+    sqlalchemySalesManifest, matplotlibSalesManifest, seabornBranchesManifest, requestsOrdersManifest, httpxOrdersManifest]) {
     assert.equal(getDatasetManifest({...manifest.reference}), manifest);
   }
   assert.equal(getDatasetManifest({...jsonOrdersManifest.reference, version: 0}), undefined);

@@ -13,6 +13,8 @@ import {rCurriculum} from './r-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
+import {requestsCurriculum} from './requests-curriculum.ts';
+import {httpxCurriculum} from './httpx-curriculum.ts';
 
 export const docsBasePath = '/apuntes';
 
@@ -66,7 +68,7 @@ export const concepts = [...publishedSqlMetadata, ...pandasMetadata, ...courseMe
   ...courseMetadata('numpy', numpyCurriculum), ...courseMetadata('scipy', scipyCurriculum),
   ...courseMetadata('matplotlib', matplotlibCurriculum), ...courseMetadata('seaborn', seabornCurriculum),
   ...courseMetadata('sqlalchemy', sqlalchemyCurriculum), ...courseMetadata('sqlite3', sqlite3Curriculum),
-  ...courseMetadata('json', jsonCurriculum),
+  ...courseMetadata('json', jsonCurriculum), ...courseMetadata('requests', requestsCurriculum), ...courseMetadata('httpx', httpxCurriculum),
 ] as const satisfies readonly ConceptMeta[];
 
 export type Concept = (typeof concepts)[number];

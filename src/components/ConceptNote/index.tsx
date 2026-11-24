@@ -7,7 +7,7 @@ import styles from '../SqlNotes/styles.module.css';
 type TabularOutput = {
   columns: readonly string[]; rows: readonly (readonly string[])[]; rowLabels?: readonly string[];
 };
-type Example = {id: string; title: string; code: string; hint: string; language?: string; external?: boolean} & (
+type Example = {id: string; title: string; code: string; practiceCode?: string; hint: string; language?: string; external?: boolean} & (
   | {output: TabularOutput; textOutput?: never; resultLabel?: never}
   | {output?: never; textOutput: string; resultLabel: string}
 );
@@ -21,7 +21,7 @@ function TryExample({example, language}: {example: Example; language: string}) {
   return <button className={styles.tryExample} type="button"
     data-practice-example={example.id} aria-label={'Probar este ejemplo: ' + example.title}
     aria-haspopup="dialog" aria-controls="alldoc-practice-panel" title="Probar este ejemplo"
-    onClick={(event) => {event.currentTarget.focus({preventScroll: true}); void practice.openExample({id: example.id, code: example.code, languageId: language});}}>Probar</button>;
+    onClick={(event) => {event.currentTarget.focus({preventScroll: true}); void practice.openExample({id: example.id, code: example.practiceCode ?? example.code, languageId: language});}}>Probar</button>;
 }
 
 /** La presentación compacta es común; cada herramienta aporta lenguaje y contenido. */

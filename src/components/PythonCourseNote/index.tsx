@@ -10,12 +10,13 @@ export function inlineCode(text: string) {
     index % 2 ? <code key={index}>{part.slice(1, -1)}</code> : part);
 }
 
-export function PythonCourseNote({note, kind, formatText}: {
-  note?: CourseNote; kind: 'pandas' | 'openpyxl' | 'numpy' | 'scipy' | 'matplotlib' | 'seaborn' | 'sqlalchemy' | 'sqlite3' | 'json'; formatText?: (text: string) => ReactNode;
+export function PythonCourseNote({note, kind, formatText, downloadLabel = 'Descargar los datos de los ejemplos'}: {
+  note?: CourseNote; kind: 'pandas' | 'openpyxl' | 'numpy' | 'scipy' | 'matplotlib' | 'seaborn' | 'sqlalchemy' | 'sqlite3' | 'json' | 'requests' | 'httpx';
+  formatText?: (text: string) => ReactNode; downloadLabel?: string;
 }) {
   const metadata = note && getConcept(note.id);
   if (!note || !metadata) throw new Error('Ficha desconocida de ' + kind);
   return <ConceptNote concept={{...metadata, ...note}} conceptId={note.id} kind={kind} language="python"
     formatText={formatText}
-    afterContent={<a className={styles.datasetLink} href={`/practice/${kind}/datos.py`} download>Descargar los datos de los ejemplos</a>} />;
+    afterContent={<a className={styles.datasetLink} href={`/practice/${kind}/datos.py`} download>{downloadLabel}</a>} />;
 }

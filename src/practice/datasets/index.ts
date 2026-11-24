@@ -11,10 +11,14 @@ import {seabornBranchesManifest, seabornBranchesSchema} from './seaborn-branches
 import {sqlalchemySalesManifest, sqlalchemySalesSchema} from './sqlalchemy-sales.ts';
 import {sqlite3ShopManifest, sqlite3ShopSchema} from './sqlite3-shop.ts';
 import {openpyxlSalesManifest, openpyxlSalesSchema} from './openpyxl-sales.ts';
+import {requestsOrdersManifest, requestsOrdersSchema} from './requests-orders.ts';
+import {httpxOrdersManifest, httpxOrdersSchema} from './httpx-orders.ts';
 
 const pythonDatasets = new Map([
   [pandasCommerceManifest, {schema: pandasCommerceSchema, load: () => import('./rows/pandas-commerce.ts').then(module => module.pandasCommerceBootstrap)}],
   [jsonOrdersManifest, {schema: jsonOrdersSchema, load: () => import('./rows/json-orders.ts').then(module => module.jsonOrdersBootstrap)}],
+  [requestsOrdersManifest, {schema: requestsOrdersSchema, load: () => import('./rows/requests-orders.ts').then(module => module.requestsOrdersBootstrap)}],
+  [httpxOrdersManifest, {schema: httpxOrdersSchema, load: () => import('./rows/httpx-orders.ts').then(module => module.httpxOrdersBootstrap)}],
   [numpySalesManifest, {schema: numpySalesSchema, load: () => import('./rows/numpy-sales.ts').then(module => module.numpySalesBootstrap)}],
   [scipyBusinessManifest, {schema: scipyBusinessSchema, load: () => import('./rows/scipy-business.ts').then(module => module.scipyBusinessBootstrap)}],
   [matplotlibSalesManifest, {schema: matplotlibSalesSchema, load: () => import('./rows/matplotlib-sales.ts').then(module => module.matplotlibSalesBootstrap)}],

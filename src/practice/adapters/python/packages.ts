@@ -10,6 +10,68 @@ export const pythonPackages = {
       "python": "3.14.2"
     },
     "packages": {
+      "anyio": {
+        "depends": [
+          "sniffio",
+          "typing-extensions"
+        ],
+        "file_name": "anyio-4.13.0-py3-none-any.whl",
+        "imports": [
+          "anyio"
+        ],
+        "install_dir": "site",
+        "name": "anyio",
+        "package_type": "package",
+        "sha256": "ea08c971f29d33d940864407ceb08601836ac8924d3b4f27db6612ed47faeafc",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "4.13.0"
+      },
+      "beautifulsoup4": {
+        "depends": [
+          "soupsieve",
+          "typing-extensions"
+        ],
+        "file_name": "beautifulsoup4-4.14.3-py3-none-any.whl",
+        "imports": [
+          "bs4"
+        ],
+        "install_dir": "site",
+        "name": "beautifulsoup4",
+        "package_type": "package",
+        "sha256": "60e71fb66c245d535d80c63a9ab922ee2ab086624a04e0995bc601bfea0ef750",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "4.14.3"
+      },
+      "certifi": {
+        "depends": [],
+        "file_name": "certifi-2026.4.22-py3-none-any.whl",
+        "imports": [
+          "certifi"
+        ],
+        "install_dir": "site",
+        "name": "certifi",
+        "package_type": "package",
+        "sha256": "c2c0091986db798df5fd84582d289496f31244a898ec032b7015278c2d82c80c",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "2026.4.22"
+      },
+      "charset-normalizer": {
+        "depends": [],
+        "file_name": "charset_normalizer-3.4.7-py3-none-any.whl",
+        "imports": [
+          "charset_normalizer"
+        ],
+        "install_dir": "site",
+        "name": "charset-normalizer",
+        "package_type": "package",
+        "sha256": "9e437ef92fa51f06eedeb1ef092c0a887bd24fe0d40b1e900191117ce1653121",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "3.4.7"
+      },
       "contourpy": {
         "depends": [
           "numpy"
@@ -67,6 +129,70 @@ export const pythonPackages = {
         "tool": {},
         "unvendored_tests": false,
         "version": "4.62.1"
+      },
+      "h11": {
+        "depends": [],
+        "file_name": "h11-0.16.0-py3-none-any.whl",
+        "imports": [
+          "h11"
+        ],
+        "install_dir": "site",
+        "name": "h11",
+        "package_type": "package",
+        "sha256": "d920caa25363694bc8de71ba42e5e2bc3353c8df6bcf5025551386e279bca264",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "0.16.0"
+      },
+      "httpcore": {
+        "depends": [
+          "certifi",
+          "h11"
+        ],
+        "file_name": "httpcore-1.0.9-py3-none-any.whl",
+        "imports": [
+          "httpcore"
+        ],
+        "install_dir": "site",
+        "name": "httpcore",
+        "package_type": "package",
+        "sha256": "27bc91994ad7e21a8333608b8ba5e2b9655ae9d86820d4cefb03dd8db8c5de48",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "1.0.9"
+      },
+      "httpx": {
+        "depends": [
+          "anyio",
+          "certifi",
+          "httpcore",
+          "idna"
+        ],
+        "file_name": "httpx-0.28.1-py3-none-any.whl",
+        "imports": [
+          "httpx"
+        ],
+        "install_dir": "site",
+        "name": "httpx",
+        "package_type": "package",
+        "sha256": "830cb1ec73bb4c46f2e38ebeb3dd50ffb45f62b804dd040519d34fe36f8fdfc7",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "0.28.1"
+      },
+      "idna": {
+        "depends": [],
+        "file_name": "idna-3.11-py3-none-any.whl",
+        "imports": [
+          "idna"
+        ],
+        "install_dir": "site",
+        "name": "idna",
+        "package_type": "package",
+        "sha256": "1619419bc899f07c7a608a12e8238e5e0bc15bb25fec90cfe20a86bb849ba0d8",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "3.11"
       },
       "jedi": {
         "depends": [
@@ -274,6 +400,25 @@ export const pythonPackages = {
         "unvendored_tests": false,
         "version": "2026.1.post1"
       },
+      "requests": {
+        "depends": [
+          "charset-normalizer",
+          "idna",
+          "urllib3",
+          "certifi"
+        ],
+        "file_name": "requests-2.33.1-py3-none-any.whl",
+        "imports": [
+          "requests"
+        ],
+        "install_dir": "site",
+        "name": "requests",
+        "package_type": "package",
+        "sha256": "6d62c51c4e7707386bfc2ef54845c16cdaeb99606c064357cccfe4d621285175",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "2.33.1"
+      },
       "scipy": {
         "depends": [
           "numpy"
@@ -321,6 +466,34 @@ export const pythonPackages = {
         "tool": {},
         "unvendored_tests": false,
         "version": "1.17.0"
+      },
+      "sniffio": {
+        "depends": [],
+        "file_name": "sniffio-1.3.1-py3-none-any.whl",
+        "imports": [
+          "sniffio"
+        ],
+        "install_dir": "site",
+        "name": "sniffio",
+        "package_type": "package",
+        "sha256": "1e0f350ca8eac5252c1af9a8d93a7edd70056c1eddf5661f6950688094d1f670",
+        "tool": {},
+        "unvendored_tests": true,
+        "version": "1.3.1"
+      },
+      "soupsieve": {
+        "depends": [],
+        "file_name": "soupsieve-2.8.3-py3-none-any.whl",
+        "imports": [
+          "soupsieve"
+        ],
+        "install_dir": "site",
+        "name": "soupsieve",
+        "package_type": "package",
+        "sha256": "675af05b7a3de6b5f8e0b89eb7644364a809af5f374b911b9f8c6225417c3299",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "2.8.3"
       },
       "sqlalchemy": {
         "depends": [
@@ -371,6 +544,20 @@ export const pythonPackages = {
         "tool": {},
         "unvendored_tests": false,
         "version": "4.15.0"
+      },
+      "urllib3": {
+        "depends": [],
+        "file_name": "urllib3-2.6.3-py3-none-any.whl",
+        "imports": [
+          "urllib3"
+        ],
+        "install_dir": "site",
+        "name": "urllib3",
+        "package_type": "package",
+        "sha256": "86b7c1af060597b115bcde5e36798039ca50b221afe14aa03d3437ac09b02a75",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "2.6.3"
       }
     }
   },
@@ -397,7 +584,19 @@ export const pythonPackages = {
     "pyparsing": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyparsing-3.3.2-py3-none-any.whl",
     "seaborn": "https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl",
     "patsy": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/patsy-1.0.2-py2.py3-none-any.whl",
-    "statsmodels": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/statsmodels-0.14.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    "statsmodels": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/statsmodels-0.14.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+    "certifi": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/certifi-2026.4.22-py3-none-any.whl",
+    "charset-normalizer": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/charset_normalizer-3.4.7-py3-none-any.whl",
+    "idna": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/idna-3.11-py3-none-any.whl",
+    "requests": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/requests-2.33.1-py3-none-any.whl",
+    "urllib3": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/urllib3-2.6.3-py3-none-any.whl",
+    "anyio": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/anyio-4.13.0-py3-none-any.whl",
+    "beautifulsoup4": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/beautifulsoup4-4.14.3-py3-none-any.whl",
+    "h11": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/h11-0.16.0-py3-none-any.whl",
+    "httpcore": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/httpcore-1.0.9-py3-none-any.whl",
+    "httpx": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/httpx-0.28.1-py3-none-any.whl",
+    "sniffio": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/sniffio-1.3.1-py3-none-any.whl",
+    "soupsieve": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/soupsieve-2.8.3-py3-none-any.whl"
   },
-  "digest": "f9dbcf02ef25423952b062837fd47884b55f9a140d16872882848f1c4d22f294"
+  "digest": "e0369ddd66cf707274e2af5404bed6f23c8220dfa1f7c1fbe7f1c72d60ada14a"
 } as const;

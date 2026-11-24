@@ -13,6 +13,8 @@ test('las herramientas habilitan sus proveedores diferidos sin crear motores al 
     ['python-pandas', 'analisis-de-datos/pandas', 'enabled'],
     ['python-pandas-comercio', 'analisis-de-datos/pandas', 'enabled'],
     ['python-json', 'analisis-de-datos/json', 'enabled'],
+    ['python-requests', 'analisis-de-datos/requests', 'enabled'],
+    ['python-httpx', 'analisis-de-datos/httpx', 'enabled'],
     ['python-numpy', 'analisis-de-datos/numpy', 'enabled'],
     ['python-sqlite3', 'analisis-de-datos/sqlite3', 'enabled'],
     ['python-openpyxl', 'analisis-de-datos/openpyxl', 'enabled'],

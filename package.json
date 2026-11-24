@@ -83,7 +83,11 @@
     "test:ui:sql:regions:regression": "playwright test tests/ui/practice-regions.spec.ts tests/ui/practice.spec.ts tests/ui/sqlite.spec.ts tests/ui/sql-business.spec.ts tests/ui/practice-actions.spec.ts tests/ui/practice-storage.spec.ts tests/ui/python.spec.ts tests/ui/sql-navigation.spec.ts tests/ui/sql-dialects.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0",
     "test:ui:sql:completion:red": "playwright test tests/ui/sql-completion.spec.ts --project=celular --workers=1 -g 'columnas sin alias:'",
     "test:ui:sql:completion": "playwright test tests/ui/sql-completion.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0",
-    "test:ui:sql:completion:regression": "playwright test tests/ui/sql-completion.spec.ts tests/ui/sqlite.spec.ts tests/ui/practice.spec.ts tests/ui/python.spec.ts tests/ui/practice-actions.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0"
+    "test:ui:sql:completion:regression": "playwright test tests/ui/sql-completion.spec.ts tests/ui/sqlite.spec.ts tests/ui/practice.spec.ts tests/ui/python.spec.ts tests/ui/practice-actions.spec.ts --project=celular --project=laptop --workers=1 --max-failures=0",
+    "prepare:requests": "node scripts/prepare-requests-notes.mjs",
+    "test:ui:requests": "DOCUSAURUS_NO_PERSISTENT_CACHE=1 playwright test tests/ui/requests.spec.ts",
+    "prepare:httpx": "node scripts/prepare-httpx-notes.mjs",
+    "test:ui:httpx": "DOCUSAURUS_NO_PERSISTENT_CACHE=1 playwright test tests/ui/httpx.spec.ts"
   },
   "dependencies": {
     "@codemirror/autocomplete": "latest",
