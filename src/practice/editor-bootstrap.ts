@@ -26,6 +26,18 @@ const courseExamples = new Map([
 
 /** Solo se importa al abrir práctica. No crea ni simula un motor. */
 export async function editorBootstrap(context: PracticeEditorContext) {
+  if (context.profile.runtimeId === 'ironcalc') {
+    const [{spreadsheetSchema}, {EXCEL_FILE}] = await Promise.all([
+      import('./adapters/excel/dataset.ts'), import('./adapters/excel/workbook.ts'),
+    ]);
+    const dataset = context.profile.defaultDataset;
+    const version = `ironcalc@0.9.1/${dataset.id}@${dataset.version}`;
+    const workspace: Workspace = {id: context.workspaceKey, toolKey: context.toolKey, profileId: context.profile.id,
+      dataset, files: [{path: EXCEL_FILE, languageId: 'excel', content: '{}'}],
+      activeFile: EXCEL_FILE, revision: 0, environmentVersion: version};
+    return {workspace, schema: spreadsheetSchema(dataset.id),
+      environment: {version, runtime: {id: 'ironcalc', version: '0.9.1'}, packages: []}};
+  }
   const python = context.profile.languageId === 'python';
   const manifest = getDatasetManifest(context.profile.defaultDataset);
   const commerce = manifest === pandasCommerceManifest;

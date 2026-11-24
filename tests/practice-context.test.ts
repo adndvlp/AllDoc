@@ -7,7 +7,7 @@ import {practiceRegistry} from '../src/practice/profiles.ts';
 import {createPracticeContextResolver, workspaceKey} from '../src/practice/context.ts';
 import {pandasConcept, registration, sqlProfile} from './fixtures/practice.ts';
 
-test('SQL y las herramientas Python habilitan sus proveedores diferidos sin crear motores al resolver contexto', async () => {
+test('las herramientas habilitan sus proveedores diferidos sin crear motores al resolver contexto', async () => {
   assert.deepEqual(practiceRegistry.list().map((profile) => [profile.id, profile.toolKey, profile.availability]), [
     ['sql-sqlite', 'analisis-de-datos/sql', 'enabled'],
     ['python-pandas', 'analisis-de-datos/pandas', 'enabled'],
@@ -20,6 +20,8 @@ test('SQL y las herramientas Python habilitan sus proveedores diferidos sin crea
     ['python-sqlalchemy', 'analisis-de-datos/sqlalchemy', 'enabled'],
     ['python-matplotlib', 'analisis-de-datos/matplotlib', 'enabled'],
     ['python-seaborn', 'analisis-de-datos/seaborn', 'enabled'],
+    ['excel-ironcalc', 'analisis-de-datos/excel', 'enabled'],
+    ['google-sheets-ironcalc', 'analisis-de-datos/google-sheets', 'enabled'],
   ]);
   assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'negocio-relacional', version: 1});
   assert.deepEqual(practiceRegistry.get('python-pandas')?.defaultDataset, {id: 'productos-basico', version: 1});

@@ -138,7 +138,7 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 11);
+  assert.equal(profiles.practiceRegistry.list().length, 13);
 });
 
 test('preset cliente: resuelve los manifiestos de Python por ID y versión', () => {

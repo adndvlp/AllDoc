@@ -28,7 +28,7 @@ async function reference(page:Page,info:TestInfo,image:string,fontScale=1) {
 }
 
 test(visualTitle('VIS-01'),async({page},info)=>{
-  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(312);
+  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(386);
   await expect(page.locator('[data-catalog] details[open]')).toHaveCount(0);
   await expect(page.locator('[data-catalog]').getByLabel('SQL',{exact:true})).toContainText('153 conceptos');
   await expect(page.locator('[data-search-surface="inline"]').getByRole('searchbox')).toBeVisible();

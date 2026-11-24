@@ -7,6 +7,8 @@ import {numpyCurriculum} from './numpy-curriculum.ts';
 import {scipyCurriculum} from './scipy-curriculum.ts';
 import {matplotlibCurriculum} from './matplotlib-curriculum.ts';
 import {seabornCurriculum} from './seaborn-curriculum.ts';
+import {excelCurriculum} from './excel-curriculum.ts';
+import {googleSheetsCurriculum} from './google-sheets-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
@@ -56,7 +58,8 @@ function courseMetadata<TopicId extends string>(topicId: TopicId, curriculum: ty
   }));
 }
 
-export const concepts = [...publishedSqlMetadata, ...pandasMetadata,
+export const concepts = [...publishedSqlMetadata, ...pandasMetadata, ...courseMetadata('excel', excelCurriculum),
+  ...courseMetadata('google-sheets', googleSheetsCurriculum),
   ...courseMetadata('openpyxl', openpyxlCurriculum),
   ...courseMetadata('numpy', numpyCurriculum), ...courseMetadata('scipy', scipyCurriculum),
   ...courseMetadata('matplotlib', matplotlibCurriculum), ...courseMetadata('seaborn', seabornCurriculum),

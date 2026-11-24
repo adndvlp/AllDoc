@@ -1,0 +1,15 @@
+.book { padding: .75rem; min-inline-size: 0; }
+.sheets, .formula, .suggestions, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-block-end: .5rem; }
+.book button { padding-inline: .6rem; border-color: var(--border-subtle); }
+.sheets button[aria-pressed='true'], .grid td[aria-selected='true'] button { color: var(--accent); border-color: var(--accent); }
+.formula output { color: var(--accent); font: .8rem var(--ifm-font-family-monospace); }
+.formula input { min-inline-size: 9ch; flex: 1 1 14rem; max-inline-size: 100%; min-block-size: 44px; padding: .4rem .55rem; background: #000; color: var(--text-primary); border: 1px solid var(--border-subtle); border-radius: .4rem; font: inherit; }
+.grid { overflow: auto; overscroll-behavior: contain; max-block-size: max(8rem, 62cqh); border: 1px solid var(--border-subtle); border-radius: .4rem; margin-block-end: .5rem; }
+.grid table { display: table; border-collapse: separate; border-spacing: 0; margin: 0; font-size: .8rem; }
+.grid th, .grid td { padding: 0; border: 0; border-inline-end: 1px solid var(--border-subtle); border-block-end: 1px solid var(--border-subtle); background: #000; }
+.grid th { color: var(--text-muted); padding: .35rem; text-align: center; }
+.grid thead th { position: sticky; inset-block-start: 0; z-index: 1; }
+.grid tbody th { position: sticky; inset-inline-start: 0; z-index: 1; }
+.grid td button { display: block; inline-size: 100%; min-inline-size: 5rem; padding: .2rem .4rem; text-align: start; border-color: transparent; border-radius: 0; white-space: nowrap; }
+.grid td[aria-selected='true'] button { border-color: var(--accent); }
+.actions { margin-block: 0; }

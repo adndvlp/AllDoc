@@ -40,7 +40,7 @@ type TopicIconDefinition = {
 
 export const topicIcons: Record<string, TopicIconDefinition> = {
   Excel: {icon: PiMicrosoftExcelLogoFill, kind: 'brand'},
-  Spreadsheets: {icon: LuSheet, kind: 'generic'},
+  'Google Sheets': {icon: LuSheet, kind: 'generic'},
   'Power Query': {src: '/img/topics/power-query.svg', kind: 'brand'},
   SQL: {icon: LuDatabase, kind: 'generic'},
   Pandas: {icon: SiPandas, kind: 'brand'},

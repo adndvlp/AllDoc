@@ -58,7 +58,7 @@ const config: Config = {
             name(noteModule: Module) {
               const resource = noteModule.nameForCondition() ?? '';
               const tool = resource.split(/[/\\](?:notes|rows)[/\\]/).at(-1)!.split(/[/\\]/)[0].replace(/\.[cm]?[jt]sx?$/, '');
-              const chapter = /[/\\]notes[/\\](?:sql|pandas|openpyxl|numpy|scipy|matplotlib|seaborn|sqlalchemy|sqlite3|json)[/\\]/.test(resource)
+              const chapter = /[/\\]notes[/\\](?:sql|pandas|openpyxl|numpy|scipy|matplotlib|seaborn|sqlalchemy|sqlite3|json|excel|google-sheets)[/\\]/.test(resource)
                 ? '-' + resource.split(/[/\\]/).at(-1)!.replace(/\.[cm]?[jt]sx?$/, '') : '';
               return 'notes-' + (/[/\\]practice[/\\]datasets[/\\]rows[/\\]/.test(resource) ? 'data-' : '') + tool + chapter;
             },
@@ -87,7 +87,7 @@ const config: Config = {
     prism: {
       theme: themes.vsDark,
       darkTheme: themes.vsDark,
-      additionalLanguages: ['sql', 'python', 'json', 'bash'],
+      additionalLanguages: ['sql', 'python', 'json', 'bash', 'excel-formula', 'dax', 'visual-basic', 'powerquery'],
     },
   } satisfies Preset.ThemeConfig,
 };

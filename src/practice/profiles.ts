@@ -17,6 +17,21 @@ const pythonLoaders: ProviderLoaders = {
   dataset: () => import(/* webpackChunkName: "practice-dataset-adapter" */ './datasets/index.ts').then(({createDatasetAdapter}) => createDatasetAdapter),
 };
 
+const spreadsheetProfile: EnabledPracticeProfile = {
+  id: 'excel-ironcalc', label: 'Excel', toolKey: 'analisis-de-datos/excel',
+  languageId: 'excel', runtimeId: 'ironcalc', completionId: 'excel-formulas',
+  completionDescription: 'Fórmulas en inglés · Ejemplo: SUM(A1:A8)',
+  defaultExampleId: 'excel/agregaciones/sum/1', defaultDataset: {id: 'excel-ventas', version: 1},
+  executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
+  capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
+};
+
+const spreadsheetLoaders = (label: string): ProviderLoaders => ({
+  runtime: () => import('./adapters/excel/browser.ts').then(module => () => module.createExcelRuntime(label)),
+  completion: () => import('./adapters/excel/browser.ts').then(module => module.createExcelCompletion),
+  dataset: () => import('./adapters/excel/dataset.ts').then(module => module.createExcelDataset),
+});
+
 // Solo metadata. Ningún motor, editor, cuerpo o dataset de filas se importa aquí.
 export const practiceRegistry = createPracticeRegistry([
   {profile: {
@@ -68,4 +83,8 @@ export const practiceRegistry = createPracticeRegistry([
     completionDescription: 'Python · Sugerencias Jedi',
     defaultExampleId: 'seaborn/introduccion/definicion/1',
     defaultDataset: {id: 'seaborn-sucursales', version: 1}}, loaders: pythonLoaders},
+  {profile: spreadsheetProfile, loaders: spreadsheetLoaders(spreadsheetProfile.label)},
+  {profile: {...spreadsheetProfile, id: 'google-sheets-ironcalc', label: 'Google Sheets', toolKey: 'analisis-de-datos/google-sheets',
+    defaultExampleId: 'google-sheets/agregacion/sum/1', defaultDataset: {id: 'google-sheets-ventas', version: 1}},
+  loaders: spreadsheetLoaders('Google Sheets')},
 ]);

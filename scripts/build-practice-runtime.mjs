@@ -1,6 +1,6 @@
 import {createRequire} from 'node:module';
 import {mkdir, writeFile, readFile} from 'node:fs/promises';
-import {resolve} from 'node:path';
+import {dirname, resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {validateRuntimeLocation, runtimeCSP} from '../src/practice/isolation/policy.ts';
@@ -51,7 +51,11 @@ export async function buildRuntime({appOrigin = process.env.PRACTICE_APP_ORIGIN 
   const entry = assets.find((name) => /^frame\..*\.js$/.test(name));
   await mkdir(output, {recursive: true});
   await writeFile(resolve(output, 'frame.html'), `<!doctype html><html><head><meta charset="utf-8"><title>AllDoc practice runtime</title><script defer src="/${entry}"></script></head><body></body></html>`);
-  const files = ['frame.html', ...assets];
+  const ironCalc = dirname(require.resolve('@ironcalc/wasm/wasm_bg.wasm'));
+  const notices = await Promise.all(['LICENSE-MIT', 'THIRD-PARTY-NOTICES.md'].map(name => readFile(resolve(ironCalc, name), 'utf8')));
+  const license = 'ironcalc-licenses.txt';
+  await writeFile(resolve(output, license), notices.join('\n\n'));
+  const files = ['frame.html', ...assets, license];
   const integrity = Object.fromEntries(await Promise.all(files.map(async (name) => [name, createHash('sha256').update(await readFile(resolve(output, name))).digest('hex')])));
   const manifest = {...location, csp: runtimeCSP(location), files, integrity};
   await writeFile(resolve(output, 'runtime-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');

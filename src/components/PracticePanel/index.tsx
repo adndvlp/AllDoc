@@ -1,4 +1,4 @@
-import {useCallback,useEffect, useId, useMemo, useRef, useState, type ComponentType} from 'react';
+import {lazy, Suspense, useCallback,useEffect, useId, useMemo, useRef, useState, type ComponentType} from 'react';
 import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
 import {usePractice} from '../PracticeProvider';
 import {useSearch} from '../SearchProvider';
@@ -17,9 +17,11 @@ import styles from './styles.module.css';
 let editorPromise: Promise<{default: typeof Editor}> | undefined;
 const loadEditor = () => editorPromise ??= import(/* webpackChunkName: "practice-editor" */ '../PracticeEditor')
   .catch((error) => {editorPromise = undefined; throw error;});
+const ExcelWorkbook = lazy(() => import(/* webpackChunkName: "practice-excel" */ '../ExcelWorkbook'));
 
 export default function PracticePanel({layout}: {layout: PracticeLayout}) {
   const practice = usePractice(); const {store: search} = useSearch(); const topics = useNavbarMobileSidebar();
+  const spreadsheet = practice.context?.profile.runtimeId === 'ironcalc' ? practice.context.profile.defaultDataset.id : null;
   const dialog = useRef<HTMLDialogElement>(null); const programmaticCloses = useRef(0); const suspended = useRef(false);
   const latest = useRef({practice, layout}); latest.current = {practice, layout};
   const previousWorkspace = useRef<Workspace | null>(null);
@@ -96,11 +98,11 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
     return () => {cancelAnimationFrame(frame); element.removeEventListener(suspendDialogEvent, suspend); document.removeEventListener('close', closed, true); if (element.open) element.close();};
   }, []);
   useEffect(() => {
-    if (!practice.visible || !workspace || EditorComponent) return;
+    if (!practice.visible || spreadsheet || !workspace || EditorComponent) return;
     let cancelled = false; setEditorError(false);
     void loadEditor().then((module) => {if (!cancelled) setEditor(() => module.default);}, () => {if (!cancelled) setEditorError(true);});
     return () => {cancelled = true;};
-  }, [practice.visible, Boolean(workspace), EditorComponent, attempt]);
+  }, [practice.visible, spreadsheet, Boolean(workspace), EditorComponent, attempt]);
   useEffect(() => {
     if (!practice.visible || data || practice.context?.profile.availability==='enabled') return;
     let cancelled = false;
@@ -150,6 +152,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
         </div>
       </header>
       <div ref={body} className={styles.body} data-practice-scroll>
+      {spreadsheet ? practice.visible && <Suspense fallback={<p className={styles.message} role="status">Cargando el libro…</p>}><ExcelWorkbook key={workspaceKey} datasetId={spreadsheet} /></Suspense> : <>
       <DataInspector schema={schema} workspaceKey={workspaceKey} open={opened.data} onToggle={toggleData} loading={practice.state.phase==='loading'}/>
       <Region name="editor" label="Editor" open={opened.editor} onToggle={()=>choose('editor',!opened.editor)}>
       <div className={styles.toolbar}>
@@ -200,6 +203,7 @@ export default function PracticePanel({layout}: {layout: PracticeLayout}) {
       {hasResults&&<div ref={result} data-practice-run={runId}><Region name="results" label="Resultado" open={opened.results} onToggle={()=>choose('results',!opened.results)}>
         <div className={styles.results}>{running&&<p role="status">Ejecutando…</p>}{practice.state.events.length>0&&<PracticeResults events={practice.state.events} revision={workspace?.revision??0}/>}</div>
       </Region></div>}
+      </>}
       </div>
       <div className={styles.status}>
         {unavailable && <p>La ejecución aún no está disponible.</p>}

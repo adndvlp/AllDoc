@@ -21,7 +21,9 @@ window.addEventListener('message', (event) => {
       const runtimeId = (request.payload as import('../contracts.ts').RuntimeContext).profile.runtimeId;
       worker = runtimeId === 'pyodide'
         ? new Worker(new URL('../adapters/python/worker.ts', import.meta.url), {name: 'alldoc-python'})
-        : new Worker(new URL('../adapters/sqlite/worker.ts', import.meta.url), {name: 'alldoc-sqlite'});
+        : runtimeId === 'ironcalc'
+          ? new Worker(new URL('../adapters/excel/worker.ts', import.meta.url), {name: 'alldoc-excel'})
+          : new Worker(new URL('../adapters/sqlite/worker.ts', import.meta.url), {name: 'alldoc-sqlite'});
       worker.onmessage = ({data: reply}) => {
         if (!isBridgeReply(reply, session) || !pending.has(reply.id)) return;
         if (reply.kind !== 'event') pending.delete(reply.id);

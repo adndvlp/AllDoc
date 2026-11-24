@@ -8,11 +8,14 @@ import {numpyCurriculum} from './numpy-curriculum.ts';
 import {scipyCurriculum} from './scipy-curriculum.ts';
 import {matplotlibCurriculum} from './matplotlib-curriculum.ts';
 import {seabornCurriculum} from './seaborn-curriculum.ts';
+import {excelCurriculum} from './excel-curriculum.ts';
+import {googleSheetsCurriculum} from './google-sheets-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 
 const courses = new Map([
+  ['excel', excelCurriculum], ['google-sheets', googleSheetsCurriculum],
   ['pandas', pandasCurriculum], ['openpyxl', openpyxlCurriculum], ['numpy', numpyCurriculum],
   ['scipy', scipyCurriculum], ['matplotlib', matplotlibCurriculum], ['seaborn', seabornCurriculum],
   ['sqlalchemy', sqlalchemyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
@@ -45,7 +48,7 @@ const definitions: readonly AreaDefinition[] = [
     id: 'analisis-de-datos', sidebarId: 'analisisDeDatos', number: '01',
     title: 'Análisis de datos', description: 'Consultar, entender y trabajar con datos.', icon: 'data',
     items: [
-      group('hojas-de-calculo', 'Hojas de cálculo', [topic('excel', 'Excel'), topic('spreadsheets', 'Spreadsheets')]),
+      group('hojas-de-calculo', 'Hojas de cálculo', [topic('excel', 'Excel'), topic('google-sheets', 'Google Sheets')]),
       topic('power-query', 'Power Query'),
       topic('sql', 'SQL'),
       group('tablas-y-archivos', 'Tablas y archivos', [topic('pandas', 'Pandas'), topic('openpyxl', 'openpyxl')]),

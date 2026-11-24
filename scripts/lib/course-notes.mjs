@@ -38,15 +38,18 @@ export function parseInlineExample(part, id) {
     resultLabel: 'Ver resultado esperado'};
 }
 
-export function parseCourse(markdown, tool, parseExample, keywordSeparator = /,\s*/) {
+const pythonBootstrap = data => data.match(new RegExp(`${fence}python\n([\\s\\S]+?)\n${fence}`))?.[1];
+
+export function parseCourse(markdown, tool, parseExample, keywordSeparator = /,\s*/, parseBootstrap = pythonBootstrap) {
   const prefix = 'analisis-de-datos/' + tool;
   const sections = markdown.replaceAll('\r\n', '\n').split(/(?=^## )/m).slice(1);
   const data = sections.shift();
   const sources = sections.pop();
-  const bootstrap = data?.match(new RegExp(`${fence}python\n([\\s\\S]+?)\n${fence}`))?.[1];
-  if (!data?.startsWith('## Datos compartidos\n') || !sources?.startsWith('## Fuentes\n') || !bootstrap) {
+  if (!data?.startsWith('## Datos compartidos\n') || !sources?.startsWith('## Fuentes\n')) {
     throw new Error('Faltan los datos compartidos o las fuentes de ' + tool);
   }
+  const bootstrap = parseBootstrap(data);
+  if (!bootstrap) throw new Error('No se pudieron preparar los datos de ' + tool);
   const groupKeys = new Set();
   const groups = sections.map(section => {
     const [header, ...parts] = section.split(/(?=^### )/m);
@@ -77,10 +80,11 @@ export function parseCourse(markdown, tool, parseExample, keywordSeparator = /,\
   return {groups, bootstrap};
 }
 
-export async function emitCourse({tool, component, dataset, parse, check}) {
+export async function emitCourse({tool, component, dataset, parse, check, dataExtension = 'py'}) {
   const {groups, bootstrap} = parse(await readFile(new URL('../../specs/' + tool + '.md', import.meta.url), 'utf8'));
   const generated = `// Generado desde specs/${tool}.md por scripts/prepare-${tool}-notes.mjs.\n`;
-  const exportName = dataset.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()) + 'Bootstrap';
+  const identifier = value => value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+  const exportName = identifier(dataset) + 'Bootstrap';
   async function emit(name, content) {
     const path = new URL('../../' + name, import.meta.url);
     if (check) {
@@ -94,10 +98,10 @@ export async function emitCourse({tool, component, dataset, parse, check}) {
     children: children.map(({meta: {id, label, description}}) => ({id, label, description})),
   }));
   const keywords = Object.fromEntries(groups.flatMap(group => group.children.map(({meta}) => [meta.id, meta.keywords])));
-  await emit(`src/content/${tool}-curriculum.ts`, generated + `export const ${tool}Curriculum = ` + JSON.stringify(curriculum, null, 2) + ';\n');
-  await emit(`src/content/${tool}-search-keywords.ts`, generated + `export const ${tool}Keywords: Readonly<Record<string, readonly string[]>> = ` + JSON.stringify(keywords, null, 2) + ';\n');
+  await emit(`src/content/${tool}-curriculum.ts`, generated + `export const ${identifier(tool)}Curriculum = ` + JSON.stringify(curriculum, null, 2) + ';\n');
+  await emit(`src/content/${tool}-search-keywords.ts`, generated + `export const ${identifier(tool)}Keywords: Readonly<Record<string, readonly string[]>> = ` + JSON.stringify(keywords, null, 2) + ';\n');
   await emit(`src/practice/datasets/rows/${dataset}.ts`, generated + `export const ${exportName} = ` + JSON.stringify(bootstrap) + ';\n');
-  await emit(`static/practice/${tool}/datos.py`, bootstrap + '\n');
+  await emit(`static/practice/${tool}/datos.${dataExtension}`, bootstrap + '\n');
   for (const group of groups) {
     await emit(`src/content/notes/${tool}/${group.key}.ts`, generated + 'export const notes = ' + JSON.stringify(group.children.map(({body}) => body), null, 2) + ';\n');
     for (const {meta} of group.children) {

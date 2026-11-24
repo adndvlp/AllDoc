@@ -186,12 +186,24 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
     const draft = await options.drafts.load(seed.workspace);
     if (!current()) return false;
     if (!state.draft) publish({draft});
-    const files = example ? seed.workspace.files.map(file => file.path === seed.workspace.activeFile ? {...file, content: example.code} : file) : seed.workspace.files;
+    let content = example?.code;
+    if (content !== undefined && ctx.profile.runtimeId === 'ironcalc') {
+      const {readExcelEdits, getSpreadsheet} = await import('./adapters/excel/workbook.ts');
+      if (!current()) return false;
+      const previous = options.drafts.get(ctx.workspaceKey)?.workspace ?? draft.workspace;
+      const workbook = getSpreadsheet(seed.workspace.dataset.id);
+      const edits = readExcelEdits(previous.files.find(file => file.path === previous.activeFile)!.content, workbook);
+      content = JSON.stringify({...edits, ...readExcelEdits(content, workbook)});
+    }
+    const files = content !== undefined ? seed.workspace.files.map(file => file.path === seed.workspace.activeFile ? {...file, content} : file) : seed.workspace.files;
     const validated = copyWorkspace({...seed.workspace, files});
     completionAbort?.abort();
     options.drafts.replace(ctx.workspaceKey, {files: validated.files, activeFile: validated.activeFile});
-    publish({codeAction: (state.codeAction ?? 0) + 1, notice: options.drafts.get(ctx.workspaceKey)?.previous
-      ? 'Código preparado. Puedes recuperar el código anterior.' : 'Código preparado.'});
+    const recovered = options.drafts.get(ctx.workspaceKey)?.previous;
+    const notice = ctx.profile.runtimeId === 'ironcalc'
+      ? recovered ? 'Libro preparado. Puedes recuperar el libro anterior.' : 'Libro preparado.'
+      : recovered ? 'Código preparado. Puedes recuperar el código anterior.' : 'Código preparado.';
+    publish({codeAction: (state.codeAction ?? 0) + 1, notice});
     if (example) void prepare();
     return true;
   }

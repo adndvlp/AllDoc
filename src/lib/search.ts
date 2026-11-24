@@ -26,6 +26,7 @@ export function prepareSearchIndex(entries: readonly SearchEntry[]) {
   return entries.map((entry, position) => ({
     entry, position,
     title: normalizeSearch(entry.title),
+    keywords: entry.keywords.map(normalizeSearch),
     text: normalizeSearch([entry.title, entry.description, entry.context, ...entry.keywords].join(' ')),
   }));
 }
@@ -38,9 +39,10 @@ export function searchPreparedEntries(index: PreparedSearchIndex, query: string)
   if (terms.length === 0) return [];
   const phrase = terms.join(' ');
   return index
-    .map(({entry, position, title, text}) => {
+    .map(({entry, position, title, keywords, text}) => {
       if (!terms.every((term) => text.includes(term))) return null;
-      const score = (title === phrase ? 1000 : title.startsWith(phrase) ? 100 : 0) + terms.reduce(
+      const score = (title === phrase ? 1000 : title.startsWith(phrase) ? 100 : 0)
+        + (title !== phrase && keywords.includes(phrase) ? 10 : 0) + terms.reduce(
         (sum, term) => sum + (title === term ? 10 : title.startsWith(term) ? 5 : 1),
         0,
       );
