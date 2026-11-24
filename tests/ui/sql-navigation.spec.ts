@@ -142,12 +142,12 @@ test('árbol accesible: 320 px al 200%, controles por teclado y sin desbordar el
  await expect(page).toHaveScreenshot('sql-shared-200.png');
 });
 
-test('entrada de Lenguajes: solo SQL, catálogo cerrado y editor y WASM diferidos',async({page})=>{
+test('entrada de Lenguajes: SQL y R, catálogo cerrado y editor y WASM diferidos',async({page})=>{
  const loaded:string[]=[];page.on('request',r=>loaded.push(r.url()));
  await go(page,'/apuntes/lenguajes');await expectSelectedHeaderArea(page,'Lenguajes');
- const catalog=page.locator('[data-catalog="lenguajes"]');await expect(catalog.locator('[data-catalog-item]')).toHaveCount(1);
+ const catalog=page.locator('[data-catalog="lenguajes"]');await expect(catalog.locator('[data-catalog-item]')).toHaveCount(2);
  await expect(catalog.locator('details[open]')).toHaveCount(0);await expect(page.locator('.cm-editor')).toHaveCount(0);
  expect(loaded.filter(url=>/practice-editor|practice-session|\.wasm(?:\?|$)/.test(url))).toEqual([]);
- await expect(page.getByRole('button',{name:'Practicar SQL',exact:true})).toHaveCount(0);
+ await expect(page.getByRole('button',{name:/^Practicar (SQL|R)$/})).toHaveCount(0);
  await expect(page).toHaveScreenshot('sql-languages-area.png');
 });

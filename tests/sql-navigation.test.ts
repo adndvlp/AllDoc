@@ -11,9 +11,9 @@ import {createPersonalLibrary} from '../src/lib/personal-library.ts';
 
 const sql=concepts.filter(c=>c.topicId==='sql');
 const alias=(slug:string)=>slug.replace('/analisis-de-datos/sql/','/lenguajes/sql/');
-test('navegación SQL: cuatro áreas y SQL como única entrada compartida en Lenguajes',()=>{
+test('navegación SQL: cuatro áreas y SQL conserva sus rutas compartidas en Lenguajes',()=>{
  assert.deepEqual(areas.map(a=>a.id),['analisis-de-datos','desarrollo-web','ia','lenguajes']);
- assert.deepEqual(getTopics('lenguajes').map(t=>t.id),['sql']);
+ assert.deepEqual(getTopics('lenguajes').map(t=>t.id),['sql','r']);
  const primary=getTopics('analisis-de-datos').find(t=>t.id==='sql')!,other=getTopics('lenguajes')[0];assert.deepEqual(other.concepts,primary.concepts);assert.equal(other.sections,primary.sections);
  assert.equal(sql.length,153);assert.equal(entries.filter(e=>e.context.endsWith('/ SQL')).length,153);assert.equal(new Set(entries.map(e=>e.id)).size,concepts.length);
 });

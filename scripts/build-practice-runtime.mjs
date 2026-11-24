@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {validateRuntimeLocation, runtimeCSP} from '../src/practice/isolation/policy.ts';
 import {pythonPackages} from '../src/practice/adapters/python/packages.ts';
 import {compatiblePythonPin} from './lib/python-assets.ts';
+import {publishRAssets, readRLock, rRepoPath} from './lib/r-assets.mjs';
 const require = createRequire(import.meta.url);
 const webpack = require('webpack');
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -14,6 +15,8 @@ export async function buildRuntime({appOrigin = process.env.PRACTICE_APP_ORIGIN 
   runtimeOrigin = process.env.PRACTICE_ORIGIN ?? 'http://localhost:3001', outDir = '.runtime-build'} = {}) {
   const location = validateRuntimeLocation(appOrigin, runtimeOrigin);
   if (!compatiblePythonPin(require('pyodide/package.json').version, pythonPackages)) throw new Error('Cambió Pyodide. Ejecuta npm run prepare:python antes de compilar el runtime');
+  const rLock = await readRLock(root);
+  const rRepository = rRepoPath(rLock);
   const output = resolve(root, outDir);
   const stats = await new Promise((yes, no) => {
     const compiler = webpack({mode: 'production', context: root, entry: './src/practice/isolation/frame.ts',
@@ -24,7 +27,7 @@ export async function buildRuntime({appOrigin = process.env.PRACTICE_APP_ORIGIN 
           generator: {filename: 'python/' + pythonPackages.runtimeVersion + '/[name][ext]'}},
         {test: /\.ts$/, exclude: /node_modules/, use: {loader: resolve(root, 'scripts/lib/runtime-typescript-loader.cjs')}},
       ]},
-      plugins: [new webpack.DefinePlugin({__APP_ORIGIN__: JSON.stringify(location.appOrigin)}), {
+      plugins: [new webpack.DefinePlugin({__APP_ORIGIN__: JSON.stringify(location.appOrigin), __WEBR_REPO_PATH__: JSON.stringify(rRepository)}), {
         apply(compiler) {compiler.hooks.thisCompilation.tap('AllDocPythonPackages', (compilation) => {
           compilation.hooks.processAssets.tapPromise({name: 'AllDocPythonPackages', stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL}, async () => {
             // La distribución ya está minificada. Volver a transformar el glue
@@ -55,7 +58,14 @@ export async function buildRuntime({appOrigin = process.env.PRACTICE_APP_ORIGIN 
   const notices = await Promise.all(['LICENSE-MIT', 'THIRD-PARTY-NOTICES.md'].map(name => readFile(resolve(ironCalc, name), 'utf8')));
   const license = 'ironcalc-licenses.txt';
   await writeFile(resolve(output, license), notices.join('\n\n'));
-  const files = ['frame.html', ...assets, license];
+  const rAssets = [];
+  await publishRAssets(root, rLock, async (name, bytes) => {
+    const path = resolve(output, name);
+    await mkdir(dirname(path), {recursive: true});
+    await writeFile(path, bytes);
+    rAssets.push(name);
+  });
+  const files = ['frame.html', ...assets, license, ...rAssets];
   const integrity = Object.fromEntries(await Promise.all(files.map(async (name) => [name, createHash('sha256').update(await readFile(resolve(output, name))).digest('hex')])));
   const manifest = {...location, csp: runtimeCSP(location), files, integrity};
   await writeFile(resolve(output, 'runtime-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');

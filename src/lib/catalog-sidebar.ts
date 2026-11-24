@@ -13,8 +13,10 @@ function sidebarItem(node: CatalogNode): SidebarCategory {
       ? node.sections.map(group => ({
         type: 'category', label: group.label, collapsed: true, collapsible: true,
         ...(isSql ? {className: 'sidebar-sql-group'} : {}),
-        items: group.concepts.map(concept => ({type: 'doc', label: concept.label,
-          id: isSql ? sqlDocIdForLocation(concept.id, node.areaId as 'analisis-de-datos' | 'lenguajes')! : concept.docId ?? concept.id})),
+        items: group.concepts.map(concept => node.sharedFrom && !isSql
+          ? {type: 'link', label: concept.label, href: concept.slug}
+          : {type: 'doc', label: concept.label,
+            id: isSql ? sqlDocIdForLocation(concept.id, node.areaId as 'analisis-de-datos' | 'lenguajes')! : concept.docId ?? concept.id}),
       }))
     : node.concepts.length
       ? node.concepts.map((concept) => concept.docId??concept.id)

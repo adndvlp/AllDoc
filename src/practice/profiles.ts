@@ -87,4 +87,15 @@ export const practiceRegistry = createPracticeRegistry([
   {profile: {...spreadsheetProfile, id: 'google-sheets-ironcalc', label: 'Google Sheets', toolKey: 'analisis-de-datos/google-sheets',
     defaultExampleId: 'google-sheets/agregacion/sum/1', defaultDataset: {id: 'google-sheets-ventas', version: 1}},
   loaders: spreadsheetLoaders('Google Sheets')},
+  {profile: {
+    id: 'r-webr', label: 'R', toolKey: 'analisis-de-datos/r', languageId: 'r', runtimeId: 'webr', completionId: 'r-schema',
+    completionDescription: 'R · Funciones y columnas de las tablas', busyCompletionDescription: 'Sugerencias en pausa durante la ejecución',
+    defaultExampleId: 'r/entorno-y-paquetes/definicion/1', defaultDataset: {id: 'r-comercio', version: 1},
+    executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
+    capabilities: {multipleFiles: false, tables: true, figures: true, preview: true, network: 'none'},
+  }, loaders: {
+    runtime: () => import('./adapters/r/browser.ts').then(module => module.createRRuntime),
+    completion: () => import('./adapters/r/browser.ts').then(module => module.createRCompletion),
+    dataset: () => import('./adapters/r/dataset.ts').then(module => module.createRDataset),
+  }},
 ]);

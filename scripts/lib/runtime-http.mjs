@@ -13,7 +13,8 @@ export function createRuntimeHandler({directory, manifest}) {
     try {
       const bytes = await readFile(resolve(directory, name));
       const type = name.endsWith('.wasm') ? 'application/wasm' : /\.[cm]?js$/.test(name) ? 'text/javascript'
-        : /\.(?:zip|whl)$/.test(name) ? 'application/zip' : name.endsWith('.html') ? 'text/html' : 'text/plain';
+        : /\.(?:zip|whl)$/.test(name) ? 'application/zip' : /\.(?:gz|tgz|so)$/.test(name) ? 'application/octet-stream'
+          : name.endsWith('.html') ? 'text/html' : 'text/plain';
       response.writeHead(200, {'Content-Type': type, 'Content-Length': bytes.length, 'Content-Security-Policy': manifest.csp,
         'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff',
         'Cache-Control': name === 'frame.html' ? 'no-store' : 'public, max-age=31536000, immutable'});

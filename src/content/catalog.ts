@@ -10,12 +10,13 @@ import {matplotlibCurriculum} from './matplotlib-curriculum.ts';
 import {seabornCurriculum} from './seaborn-curriculum.ts';
 import {excelCurriculum} from './excel-curriculum.ts';
 import {googleSheetsCurriculum} from './google-sheets-curriculum.ts';
+import {rCurriculum} from './r-curriculum.ts';
 import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 
 const courses = new Map([
-  ['excel', excelCurriculum], ['google-sheets', googleSheetsCurriculum],
+  ['excel', excelCurriculum], ['google-sheets', googleSheetsCurriculum], ['r', rCurriculum],
   ['pandas', pandasCurriculum], ['openpyxl', openpyxlCurriculum], ['numpy', numpyCurriculum],
   ['scipy', scipyCurriculum], ['matplotlib', matplotlibCurriculum], ['seaborn', seabornCurriculum],
   ['sqlalchemy', sqlalchemyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
@@ -79,7 +80,7 @@ const definitions: readonly AreaDefinition[] = [
   {
     id:'lenguajes',sidebarId:'lenguajes',number:'04',title:'Lenguajes',
     description:'Conceptos y sintaxis para recordar y practicar.',icon:'book',
-    items:[{...topic('sql','SQL'),sharedFrom:'analisis-de-datos'}],
+    items:[{...topic('sql','SQL'),sharedFrom:'analisis-de-datos'}, {...topic('r','R'),sharedFrom:'analisis-de-datos'}],
   },
 ];
 

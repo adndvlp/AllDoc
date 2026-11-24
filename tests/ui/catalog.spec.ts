@@ -18,7 +18,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await go(page);
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   await expect(page.locator('[data-personal-shortcuts]')).toHaveCount(0);
-  await expect(library(page).locator('details')).toHaveCount(386);
+  await expect(library(page).locator('details')).toHaveCount(433);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   expect(await library(page).locator(':scope > ul > li > details > summary').evaluateAll((summaries) => summaries.map((summary) => summary.getAttribute('aria-label')))).toEqual([
     'Hojas de cálculo', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
@@ -104,7 +104,7 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos');
-  await expect(library(page).locator('details')).toHaveCount(386);
+  await expect(library(page).locator('details')).toHaveCount(433);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
   await expect(item(page, 'sql').getByRole('link')).toHaveCount(0);

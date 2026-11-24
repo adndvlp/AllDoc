@@ -11,7 +11,7 @@ export function isRunRequest(v: unknown): v is RunRequest {
   if (!record(v) || !identifier(v.runId) || !identifier(v.workspaceId) || !counter(v.generation) || !counter(v.revision)
     || !Array.isArray(v.files) || !v.files.length || v.files.length > 64 || !path(v.entryFile)) return false;
   const files = Array.from(v.files);
-  if (!files.every((f) => record(f) && path(f.path) && ['sql', 'python', 'excel'].includes(f.languageId as string) && text(f.content))
+  if (!files.every((f) => record(f) && path(f.path) && ['sql', 'python', 'excel', 'r'].includes(f.languageId as string) && text(f.content))
     || new Set(files.map((f) => f.path)).size !== files.length
     || new Set(files.map((f) => f.languageId)).size !== 1
     || files.reduce((size, f) => size + new TextEncoder().encode(f.content).length, 0) > 1_048_576) return false;
@@ -35,7 +35,8 @@ export function isRuntimeContext(v: unknown): v is RuntimeContext {
   const p = v.profile, e = v.environment, d = v.dataset;
   return p.availability === 'enabled' && ((p.runtimeId === 'sqlite-wasm' && p.languageId === 'sql')
     || (p.runtimeId === 'pyodide' && p.languageId === 'python')
-    || (p.runtimeId === 'ironcalc' && p.languageId === 'excel')) && p.executionLocation === 'browser'
+    || (p.runtimeId === 'ironcalc' && p.languageId === 'excel')
+    || (p.runtimeId === 'webr' && p.languageId === 'r')) && p.executionLocation === 'browser'
     && identifier(p.id) && identifier(p.label) && identifier(p.toolKey) && identifier(p.completionId) && identifier(p.defaultExampleId)
     && datasetReference(p.defaultDataset) && record(p.capabilities) && p.capabilities.network === 'none'
     && ['multipleFiles', 'tables', 'figures', 'preview'].every((k) => typeof (p.capabilities as Record<string, unknown>)[k] === 'boolean')

@@ -9,6 +9,8 @@ Requiere Node.js 22.18 o posterior y acceso al registro de npm.
 
 ~~~sh
 npm install
+npm run prepare:python
+npm run prepare:r
 npm start
 ~~~
 
@@ -21,8 +23,9 @@ más adelante, define SITE_URL.
 La práctica SQL ejecuta SQLite WASM en un Worker de otro origen. `npm start`
 inicia también el servidor de archivos del runtime en `http://localhost:3001`.
 Los datos viven en memoria; los borradores se guardan por separado. pandas
-usa Pyodide y Jedi en su propio Worker. Antes del primer arranque de una copia
-del proyecto, ejecuta `npm run prepare:python` para descargar los paquetes fijados.
+usa Pyodide y Jedi en su propio Worker. R usa WebR 0.6.1 con R 4.6.0 y datos de comercio.
+El editor de R descarga el motor al abrir la práctica y carga paquetes adicionales cuando se usan.
+`prepare:python` y `prepare:r` descargan y verifican los paquetes antes de compilar.
 Para publicar ambos sitios,
 consulta [la configuración del runtime](specs/practice-runtime-deployment.md).
 

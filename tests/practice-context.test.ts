@@ -22,6 +22,7 @@ test('las herramientas habilitan sus proveedores diferidos sin crear motores al 
     ['python-seaborn', 'analisis-de-datos/seaborn', 'enabled'],
     ['excel-ironcalc', 'analisis-de-datos/excel', 'enabled'],
     ['google-sheets-ironcalc', 'analisis-de-datos/google-sheets', 'enabled'],
+    ['r-webr', 'analisis-de-datos/r', 'enabled'],
   ]);
   assert.deepEqual(practiceRegistry.get('sql-sqlite')?.defaultDataset, {id: 'negocio-relacional', version: 1});
   assert.deepEqual(practiceRegistry.get('python-pandas')?.defaultDataset, {id: 'productos-basico', version: 1});

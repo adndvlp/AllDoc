@@ -43,7 +43,7 @@ export async function mountPracticeEditor(parent: HTMLElement, options: Options)
   let schema = options.schema; let version = 0; let destroyed = false;
   const name = (workspace: Workspace) => workspace.files.find((file) => file.path === workspace.activeFile)!;
   const attrs = (workspace: Workspace) => EditorView.contentAttributes.of({role: 'textbox', 'aria-multiline': 'true',
-    'aria-label': `Código ${workspace.toolKey === 'analisis-de-datos/sql' ? 'SQL' : workspace.toolKey === 'analisis-de-datos/pandas' ? 'pandas' : name(workspace).languageId}`, 'aria-describedby': options.helpId,
+    'aria-label': `Código ${workspace.toolKey === 'analisis-de-datos/sql' ? 'SQL' : workspace.toolKey === 'analisis-de-datos/pandas' ? 'pandas' : name(workspace).languageId === 'r' ? 'R' : name(workspace).languageId}`, 'aria-describedby': options.helpId,
     spellcheck: 'false', autocapitalize: 'off', autocomplete: 'off', autocorrect: 'off'});
   const semantic = options.onComplete ? createEditorCompletionSource(options.onComplete) : undefined;
   const initialLanguage = await editorLanguage(name(current).languageId, schema, semantic);

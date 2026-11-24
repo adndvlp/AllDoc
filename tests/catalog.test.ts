@@ -38,8 +38,8 @@ test('el catálogo incluye Lenguajes y conserva las herramientas en su grupo y o
     assert.deepEqual(topic.concepts, []);
     assert.equal(topic.sections, undefined);
   }
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['Excel, Google Sheets, SQL, Pandas, openpyxl, NumPy, SciPy, Matplotlib, Seaborn, SQLAlchemy, sqlite3, json · 2202 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [2202, 0, 0, 153]);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['Excel, Google Sheets, SQL, Pandas, openpyxl, NumPy, SciPy, Matplotlib, Seaborn, SQLAlchemy, sqlite3, json, R · 2415 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL, R · 366 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [2415, 0, 0, 366]);
   assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 2049);
 });
 
@@ -107,7 +107,7 @@ test('el índice real conserva rutas y búsquedas y no contiene secciones vacía
   assert.deepEqual(entries.map((entry) => entry.id).sort(), concepts.map((concept) => concept.id).sort());
   assert.equal(entries[0].id, 'analisis-de-datos/excel/libro-hojas-y-celdas/definicion');
   const topicLabels: Record<string, string> = {excel: 'Excel', 'google-sheets': 'Google Sheets', sql: 'SQL', pandas: 'Pandas', openpyxl: 'openpyxl', numpy: 'NumPy',
-    scipy: 'SciPy', matplotlib: 'Matplotlib', seaborn: 'Seaborn', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3', json: 'json'};
+    scipy: 'SciPy', matplotlib: 'Matplotlib', seaborn: 'Seaborn', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3', json: 'json', r: 'R'};
   for (const entry of entries) {
     const metadata = getConcept(entry.id)!;
     assert.equal(entry.href, metadata.slug);

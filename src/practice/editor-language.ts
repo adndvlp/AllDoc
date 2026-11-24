@@ -1,6 +1,7 @@
 import type {Extension} from '@codemirror/state';
 import type {RuntimeSchema} from './contracts.ts';
 import type {CompletionSource} from '@codemirror/autocomplete';
+import {StreamLanguage} from '@codemirror/language';
 
 export async function editorLanguage(languageId: string, schema: RuntimeSchema, semantic?: CompletionSource): Promise<Extension> {
   if (languageId === 'sql') {
@@ -17,6 +18,11 @@ export async function editorLanguage(languageId: string, schema: RuntimeSchema, 
     const {python, pythonLanguage, localCompletionSource} = await import(/* webpackChunkName: "practice-python-language" */ '@codemirror/lang-python');
     return [python(), pythonLanguage.data.of({autocomplete: localCompletionSource}),
       ...(semantic ? [pythonLanguage.data.of({autocomplete: semantic})] : [])];
+  }
+  if (languageId === 'r') {
+    const {r} = await import(/* webpackChunkName: "practice-r-language" */ '@codemirror/legacy-modes/mode/r');
+    const language = StreamLanguage.define(r);
+    return [language, ...(semantic ? [language.data.of({autocomplete: semantic})] : [])];
   }
   return [];
 }

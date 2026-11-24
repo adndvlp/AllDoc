@@ -26,6 +26,18 @@ const courseExamples = new Map([
 
 /** Solo se importa al abrir práctica. No crea ni simula un motor. */
 export async function editorBootstrap(context: PracticeEditorContext) {
+  if (context.profile.runtimeId === 'webr') {
+    const [{rCommerceSchema}, {rEnvironment}, {notes}] = await Promise.all([
+      import('./adapters/r/dataset.ts'), import('./adapters/r/environment.ts'), import('../content/notes/r/entorno-y-paquetes.ts'),
+    ]);
+    const example = notes.flatMap(note => note.examples).find(item => item.id === context.profile.defaultExampleId);
+    if (!example) throw new Error('Ejemplo inicial de R no disponible');
+    const path = 'main.R';
+    const workspace: Workspace = {id: context.workspaceKey, toolKey: context.toolKey, profileId: context.profile.id,
+      dataset: context.profile.defaultDataset, files: [{path, languageId: 'r', content: example.code}], activeFile: path, revision: 0,
+      environmentVersion: rEnvironment.version};
+    return {workspace, environment: rEnvironment, schema: rCommerceSchema};
+  }
   if (context.profile.runtimeId === 'ironcalc') {
     const [{spreadsheetSchema}, {EXCEL_FILE}] = await Promise.all([
       import('./adapters/excel/dataset.ts'), import('./adapters/excel/workbook.ts'),

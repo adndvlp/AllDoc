@@ -41,6 +41,7 @@ jobs:
         run: |
           npm ci
           npm run prepare:python
+          npm run prepare:r
 
       - name: Pruebas de código y tipos
         run: |
