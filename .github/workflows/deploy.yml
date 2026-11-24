@@ -7,13 +7,25 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: alldoc-production
-  cancel-in-progress: false
-
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-24.04
+    outputs:
+      requested: ${{ steps.marker.outputs.requested }}
+    steps:
+      - name: Buscar el marcador de despliegue en los títulos
+        id: marker
+        run: |
+          jq -r 'any(.commits[]?; (.message | split("\n")[0] | contains("[deploy]"))) | "requested=\(.)"' \
+            "$GITHUB_EVENT_PATH" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: check
+    if: needs.check.outputs.requested == 'true'
+    runs-on: ubuntu-24.04
+    concurrency:
+      group: alldoc-production
+      cancel-in-progress: false
 
     steps:
       - uses: actions/checkout@v7.0.1

@@ -26,7 +26,7 @@ del proyecto, ejecuta `npm run prepare:python` para descargar los paquetes fijad
 Para publicar ambos sitios,
 consulta [la configuración del runtime](specs/practice-runtime-deployment.md).
 
-## Estructura inicial
+## Estructura
 
 ~~~text
 docs/
@@ -36,12 +36,7 @@ docs/
 │   │   └── _category_.json
 │   ├── power-query/
 │   │   └── _category_.json
-│   ├── sql/
-│   │   ├── select.mdx
-│   │   ├── where.mdx
-│   │   ├── order-by.mdx
-│   │   ├── limit.mdx
-│   │   └── comentarios.mdx
+│   ├── sql/              # Fichas SQL agrupadas por tema
 │   ├── pandas/
 │   │   ├── _category_.json
 │   │   └── dataframe.mdx
@@ -76,7 +71,10 @@ docs/
 │   └── tableau/
 │       └── _category_.json
 ├── desarrollo-web/index.mdx
-└── ia/index.mdx
+├── ia/index.mdx
+└── lenguajes/
+    ├── index.mdx
+    └── sql/              # Acceso a las mismas fichas SQL
 
 src/
 ├── content/             # Áreas, fichas SQL e índice de búsqueda
@@ -87,13 +85,13 @@ src/
 └── theme/SearchBar/     # Buscador con teclado y carga diferida del índice
 ~~~
 
-Análisis de datos, Desarrollo web e IA se eligen desde el encabezado.
+Análisis de datos, Desarrollo web, IA y Lenguajes se eligen desde el encabezado.
 El sidebar de cada área muestra solamente sus temas y conceptos.
 Análisis de datos se organiza en este orden:
 
 - Excel.
 - Power Query.
-- SQL, con sus conceptos.
+- SQL.
 - Tablas y archivos: Pandas y openpyxl.
 - Cálculo científico: NumPy y SciPy.
 - Visualización: Matplotlib y Seaborn.
@@ -103,10 +101,14 @@ Análisis de datos se organiza en este orden:
 - Power BI.
 - Tableau.
 
-Todos los grupos y secciones aparecen contraídos al abrir la página, incluido SQL
-aunque contenga la página actual. Cada herramienta conserva su propio desplegable;
-SQL tiene cinco conceptos y Pandas incluye un primer apunte de DataFrame;
-las demás herramientas todavía están sin apuntes.
+SQL reúne **153 fichas en 34 grupos**, desde SELECT hasta Transacciones. Las mismas
+fichas están en Análisis de datos y Lenguajes. El selector de dialecto muestra
+variantes de SQLite, PostgreSQL, MySQL, SQL Server, MariaDB y Oracle SQL.
+[SDD de SQL](specs/sql-sdd.md) · [Evidencia de cierre](specs/verification/sql-point-9.md).
+
+Los grupos del catálogo empiezan contraídos. Al abrir una ficha SQL por enlace
+directo, el sidebar abre los grupos que contienen esa ficha. pandas incluye un
+primer apunte de DataFrame y las demás herramientas tienen su espacio preparado.
 Pulsar un grupo o una sección despliega o contrae su contenido, sin abrir una página.
 Se navega al pulsar un concepto. La agrupación y el orden se definen en
 src/content/catalog.ts y sidebars.ts los consume; las carpetas y las rutas de los
@@ -222,13 +224,15 @@ pendientes navegador y rendimiento. Procedimiento y límites en
 La metadata común se edita en [src/content/concepts.ts](src/content/concepts.ts):
 ID global, área, herramienta, título, descripción breve, etiqueta y orden.
 Las rutas se derivan del ID, por ejemplo `analisis-de-datos/sql/select`.
-El catálogo de las tres áreas, sus herramientas y grupos se define en
+El catálogo de áreas, herramientas y grupos se define en
 [src/content/catalog.ts](src/content/catalog.ts); el sidebar se genera desde él.
 Las herramientas vacías conservan su lugar y solo los conceptos publicados
 aportan enlaces, recuentos y entradas de búsqueda.
 
-Los ejemplos, resultados, recordatorios y notas SQL se editan en
-[src/content/notes/sql.ts](src/content/notes/sql.ts), vinculados a la metadata por ID global.
+Los ejemplos, resultados, recordatorios y notas SQL se editan en los módulos de
+[src/content/notes/sql/](src/content/notes/sql/). El índice
+[src/content/notes/sql.ts](src/content/notes/sql.ts) reúne los módulos y los vincula
+a la metadata por ID global.
 [src/content/sql.ts](src/content/sql.ts) conserva la API usada por los MDX.
 El miniapunte pandas está en [src/content/notes/pandas.ts](src/content/notes/pandas.ts).
 Ambas herramientas comparten la presentación compacta de
@@ -251,13 +255,11 @@ de la definición breve de lectura.
 El índice de búsqueda y la navegación utilizan metadata, sin importar los
 cuerpos ni las tablas de todas las fichas.
 
-El dataset `productos-basico@1` tiene una fuente tipada común en
-[src/practice/datasets/rows/products.ts](src/practice/datasets/rows/products.ts).
-Su manifiesto ligero contiene columnas y tipos; las filas se cargan por separado.
-Los materializadores generan JSON y esquema para Python, y un plan de sentencias
-con parámetros para SQLite. Cada preparación recibe sus propios bytes y esquema.
-Precio permanece entero y no se añade una columna `id` a los ejemplos existentes.
-La portada no carga los cuerpos ni el chunk de filas compartidas.
+La práctica SQL usa `negocio-relacional@1`, con **13 tablas y 379 filas** sobre
+productos, clientes, pedidos, inventario, empleados y otras operaciones de negocio.
+pandas usa `productos-basico@1`, con tres productos. Los manifiestos describen
+columnas y tipos. Las filas se cargan por separado al preparar cada entorno.
+[Guía del dataset relacional](specs/sql/negocio-relacional.md).
 
 La base de práctica está en `src/practice/`: el gestor de sesiones separa
 contextos y ejecuciones; `drafts.ts` conserva archivos y revisiones en memoria,
@@ -267,17 +269,18 @@ Un conflicto entre pestañas deja una copia recuperable; un fallo de guardado
 mantiene el texto en memoria. No guarda resultados ni el estado interno del motor.
 El control «Practicar SQL/pandas» abre CodeMirror en las fichas compatibles.
 Se adapta al espacio del lector: lateral, inferior con separador o modal.
-Conserva borradores e historial al cambiar de tamaño o acento; cada herramienta
-tiene su código. «Datos» muestra los tres productos del paquete canónico.
+Cada herramienta conserva su código, borradores e historial al cambiar de tamaño
+o acento. «Datos» permite inspeccionar las tablas del entorno. Se muestra
+encima del editor y la región de resultados aparece debajo después de ejecutar.
 Tab sale del editor; Ctrl+Espacio abre sugerencias y las flechas/Inicio permiten
 ajustar/restablecer el separador sin arrastrar. Búsqueda y temas suspenden el
 modal de práctica y lo reanudan al cerrar, sin apilar ventanas.
 
-Los perfiles habilitan edición y mantienen ejecución pendiente. «Ejecutar» está
-desactivado: los motores reales se incorporan en los puntos 5/6 del
-[SDD de práctica](specs/practice-sdd.md). SQL sugiere palabras y columnas iniciales;
-Python ofrece completado básico de CodeMirror, todavía sin análisis de pandas.
-El editor, los lenguajes y el gestor se descargan al abrir práctica.
+«Ejecutar» usa SQLite WASM para SQL y Pyodide para pandas. El autocompletado SQL
+sugiere sentencias, tablas y columnas según la consulta y el esquema activo.
+pandas combina el análisis de Jedi con sugerencias de columnas. El editor, los
+lenguajes y el gestor se descargan al abrir la práctica.
+[SDD de práctica](specs/practice-sdd.md).
 Para comprobar solo IndexedDB en navegador:
 
 ```sh
@@ -307,8 +310,8 @@ consultas ni envía datos a un servicio externo.
 
 Debajo del buscador y los accesos personales aparece el catálogo del área activa,
 con el mismo orden, grupos y logos del sidebar. Las filas se despliegan mediante
-`details`/`summary` nativos; abrir SQL muestra sus cinco conceptos y pulsar un
-concepto abre la ficha. Las herramientas vacías muestran «Sin apuntes todavía».
+`details`/`summary` nativos. Abrir SQL muestra sus grupos y pulsar un concepto
+abre la ficha. Las herramientas vacías muestran «Sin apuntes todavía».
 El catálogo usa el scroll de la página, sin crear otro panel desplazable.
 
 En portada, las áreas del encabezado son botones de selección: cambian el catálogo

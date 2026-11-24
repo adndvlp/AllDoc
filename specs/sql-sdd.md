@@ -1,15 +1,18 @@
 # AllDoc — SDD de SQL: apuntes, dialectos y práctica relacional
 
-**Fecha:** 21 de noviembre de 2026, America/Mexico_City.  
-**Estado:** puntos 1 a 3 completados; puntos 4 a 9 pendientes. [Punto 1](verification/sql-point-1.md) · [Punto 2](verification/sql-point-2.md) · [Punto 3](verification/sql-point-3.md).
-**Objetivo:** convertir la base de `tmp/SQL` en apuntes completos, compactos y progresivos, compartidos entre Análisis de datos y Lenguajes, con variantes por dialecto y una práctica libre sobre un único dataset relacional.  
-**Entrega inicial:** este SDD. Los puntos 1 a 3 incorporan inventario y contratos, dataset relacional y el bloque editorial SELECT → CAST. Los puntos 4 a 9 siguen pendientes.
+**Fecha:** 21 de noviembre de 2026, America/Mexico_City.
+
+**Estado:** completado. Se cerraron los puntos 1 a 9. [Evidencia de cierre](verification/sql-point-9.md).
+
+**Objetivo:** convertir la base de `tmp/SQL` en apuntes completos, compactos y progresivos, compartidos entre Análisis de datos y Lenguajes, con variantes por dialecto y una práctica libre sobre un único dataset relacional.
+
+La entrega incluye 153 fichas en 34 grupos, desde SELECT hasta Transacciones, variantes para seis dialectos y práctica en SQLite sobre el dataset `negocio-relacional@1`.
 
 ## 1. Entradas y base comprobada
 
 Se leyeron [Prompt.md](../tmp/SQL/Prompt.md), los [criterios](<../tmp/SQL/0.- Criterios.md>) y los 99 archivos de conceptos distribuidos en 34 carpetas. Once archivos están vacíos. La captura aportada por el usuario muestra un editor SQL muy alto, con Datos y Resultados ocultos detrás de pestañas. Esta especificación incorpora su petición posterior de regiones apiladas.
 
-La implementación existente tiene:
+Antes de iniciar el SDD, se observó esta base:
 
 | Pieza | Base observada | Trabajo necesario |
 | --- | --- | --- |
@@ -466,4 +469,4 @@ Consultadas el 21 de noviembre de 2026. Las versiones de producto objetivo se fi
 | [Oracle SQL: SELECT](https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/SELECT.html) | Variante documental Oracle SQL, diferenciada de PL/SQL |
 | [CodeMirror SQL](https://github.com/codemirror/lang-sql) y [proveedor de completado](https://github.com/codemirror/lang-sql/blob/main/src/complete.ts) | Base técnica para resolver tablas, columnas y alias sin resultados ficticios |
 
-La elección de las trece tablas, el diseño de regiones, el modo móvil, la nueva ubicación Lenguajes y la secuencia de entrega son decisiones de este SDD a partir de las necesidades del usuario; no se atribuyen a las fuentes externas. No se acredita todavía implementación, rendimiento nuevo, ejecución de otros dialectos ni aprobación de las futuras capturas.
+La elección de las trece tablas, el diseño de regiones, el modo móvil, la nueva ubicación Lenguajes y la secuencia de entrega son decisiones de este SDD a partir de las necesidades del usuario. Las fuentes externas documentan las variantes de cada dialecto. Las pruebas de ejecución corresponden a SQLite y el informe del punto 9 registra la implementación, las comparaciones visuales y las mediciones finales. [Evidencia de cierre](verification/sql-point-9.md).
