@@ -9,9 +9,10 @@ const sql=profiles[0];
 test(caseTitle('APP-01'), async ({page}, info) => {
   await go(page);
   const catalog=page.locator('[data-catalog]');
-  await expect(catalog.locator('details')).toHaveCount(433);
+  await expect(catalog.locator('details')).toHaveCount(780);
   await expect(catalog.locator('details[open]')).toHaveCount(0);
-  await activate(catalog.getByLabel('SQL',{exact:true}),info);
+  const sqlTopic=catalog.locator('[data-catalog-item="sql"] > details > summary');
+  await activate(sqlTopic,info);
   await activate(catalog.getByLabel('Tablas y archivos',{exact:true}),info);
   await expect(catalog.locator('[data-catalog-item="sql"] > details')).toHaveAttribute('open','');
   await expect(page).toHaveURL(/\/$/);
@@ -20,7 +21,7 @@ test(caseTitle('APP-01'), async ({page}, info) => {
     await expect(catalog.locator('details[open]')).toHaveCount(0);
     if(area!=='Análisis de datos') {await expect(catalog.getByText('Sin apuntes todavía',{exact:true})).toBeVisible(); await expect(catalog.getByRole('link')).toHaveCount(0);}
   }
-  await catalog.getByLabel('SQL',{exact:true}).click();
+  await sqlTopic.click();
   await expect(catalog.locator('[data-catalog-item="sql"]').getByRole('link')).toHaveCount(0);
   const where=await openCatalogSqlGroup(page,'WHERE');
   await where.getByRole('link',{name:'Definición',exact:true}).click();
@@ -44,17 +45,20 @@ test(caseTitle('APP-02'), async ({page}, info) => {
   }
   const inlineSearch=page.locator('[data-search-surface="inline"]');
   const input=inlineSearch.getByRole('searchbox');
-  await input.fill('cómo filtrar'); const result=inlineSearch.getByRole('link').filter({has:page.getByText('WHERE',{exact:true})});
+  await input.fill('cómo filtrar en SQL'); const result=inlineSearch.getByRole('link').filter({has:page.getByText('WHERE',{exact:true})});
   await expect(result).toHaveCount(1); await focusSearchResult(inlineSearch,result);
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);
   const search=header(page).getByRole('button',{name:'Buscar un concepto',exact:true});
   await activate(search,info); await fits(page,searchDialog(page));
-  await searchDialog(page).getByRole('searchbox').fill('limitar');
-  await expect(searchDialog(page).locator('a[href="/apuntes/analisis-de-datos/sql/limit"]')).toBeVisible();
+  const dialog=searchDialog(page);
+  const limit=dialog.getByRole('link').first();
+  await dialog.getByRole('searchbox').fill('limitar en SQL');
+  await expect(limit).toHaveAttribute('href','/apuntes/analisis-de-datos/sql/limit');
   await page.keyboard.press('Escape'); await expect(search).toBeFocused();
-  await search.press('ControlOrMeta+k'); await expect(searchDialog(page).getByRole('searchbox')).toHaveValue('limitar');
-  await searchDialog(page).getByRole('searchbox').press('ArrowDown'); await page.keyboard.press('Enter');
+  await search.press('ControlOrMeta+k'); await expect(dialog.getByRole('searchbox')).toHaveValue('limitar en SQL');
+  await dialog.getByRole('searchbox').press('ArrowDown'); await expect(limit).toBeFocused();
+  await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/limit$/); await noOverflow(page);
 });
 

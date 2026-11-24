@@ -4,6 +4,7 @@ import {chooseHeaderArea, expectSelectedHeaderArea} from './header-helpers';
 
 const library = (page: Page) => page.locator('[data-catalog]');
 const item = (page: Page, id: string) => library(page).locator(`[data-catalog-item="${id}"] > details`);
+const sqlTopic = (page: Page) => item(page, 'sql').locator(':scope > summary');
 const search = (page: Page) => page.locator('[data-search-surface="inline"]').getByRole('searchbox');
 async function go(page: Page, route = '/') {
   await page.goto(route, {waitUntil: 'networkidle'});
@@ -18,24 +19,24 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await go(page);
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   await expect(page.locator('[data-personal-shortcuts]')).toHaveCount(0);
-  await expect(library(page).locator('details')).toHaveCount(480);
+  await expect(library(page).locator('details')).toHaveCount(780);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   expect(await library(page).locator(':scope > ul > li > details > summary').evaluateAll((summaries) => summaries.map((summary) => summary.getAttribute('aria-label')))).toEqual([
     'Hojas de cálculo', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
     'Conexiones SQL', 'Peticiones y formatos', 'R', 'Power BI', 'Tableau',
-    'Transformación de datos', 'Apache Spark', 'Apache Airflow', 'Plataformas de datos',
+    'Transformación de datos', 'Apache Spark (PySpark)', 'Apache Airflow', 'Plataformas de datos',
   ]);
-  await expect(library(page).getByLabel('SQL', {exact: true})).toContainText('153 conceptos');
+  await expect(sqlTopic(page)).toContainText('153 conceptos');
   expect(await library(page).locator('[data-topic-icon]:not([data-icon-kind="group"])').evaluateAll((icons) => icons.map((icon) => icon.getAttribute('data-topic-icon')))).toEqual([
     'Excel', 'Google Sheets', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
-    'dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake',
+    'dbt', 'Alteryx', 'Apache Spark (PySpark)', 'Apache Airflow', 'Databricks', 'Snowflake',
   ]);
-  for (const label of ['dbt', 'alteryx', 'apache-spark', 'apache-airflow', 'databricks', 'snowflake']) {
+  for (const label of ['alteryx', 'databricks']) {
     await expect(item(page, label).getByText('Sin apuntes todavía', {exact: true})).toHaveCount(1);
     await expect(item(page, label).locator('a')).toHaveCount(0);
   }
-  await library(page).getByLabel('SQL', {exact: true}).focus();
+  await sqlTopic(page).focus();
   await page.keyboard.press('Enter');
   await expect(item(page, 'sql')).toHaveAttribute('open', '');
   await library(page).getByLabel('Tablas y archivos', {exact: true}).click();
@@ -77,11 +78,11 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
   });
   await go(page);
   const before = await page.evaluate(() => ({recents: localStorage.getItem('alldoc-recents-v1'), favorites: localStorage.getItem('alldoc-favorites-v1')}));
-  await library(page).getByLabel('SQL', {exact: true}).click();
-  await search(page).fill('filtrar');
+  await sqlTopic(page).click();
+  await search(page).fill('filtrar en SQL');
   await chooseHeaderArea(page, 'Desarrollo web');
   await expect(page).toHaveURL(/\/$/);
-  await expect(search(page)).toHaveValue('filtrar');
+  await expect(search(page)).toHaveValue('filtrar en SQL');
   await expect(page.locator('[data-search-surface="inline"]').getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toContainText('WHERE');
   await expectSelectedHeaderArea(page, 'Desarrollo web');
   await page.getByRole('button', {name: 'Limpiar búsqueda', exact: true}).click();
@@ -104,9 +105,9 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos');
-  await expect(library(page).locator('details')).toHaveCount(480);
+  await expect(library(page).locator('details')).toHaveCount(780);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
-  await library(page).getByLabel('SQL', {exact: true}).click();
+  await sqlTopic(page).click();
   await expect(item(page, 'sql').getByRole('link')).toHaveCount(0);
   await expect(item(page, 'sql').locator('a')).toHaveCount(153);
   await noOverflow(page);
@@ -126,7 +127,7 @@ test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías
 
 test('buscar y limpiar conserva despliegues; el catálogo no crea otro panel de scroll', async ({page}) => {
   await go(page);
-  await library(page).getByLabel('SQL', {exact: true}).click();
+  await sqlTopic(page).click();
   await library(page).getByLabel('Conexiones SQL', {exact: true}).click();
   await library(page).getByLabel('mysql-connector-python', {exact: true}).click();
   await search(page).fill('ordenar');
@@ -135,7 +136,7 @@ test('buscar y limpiar conserva despliegues; el catálogo no crea otro panel de 
   for (const name of ['sql', 'conexiones-sql', 'mysql-connector-python']) await expect(item(page, name)).toHaveAttribute('open', '');
   expect(await library(page).evaluate((element) => ({overflow: getComputedStyle(element).overflowY, scrolls: element.scrollHeight > element.clientHeight + 1}))).toEqual({overflow: 'visible', scrolls: false});
   await noOverflow(page);
-  await library(page).getByLabel('SQL', {exact: true}).focus();
+  await sqlTopic(page).focus();
   await page.keyboard.press('Space');
   await expect(item(page, 'sql')).not.toHaveAttribute('open');
   await expect(item(page, 'conexiones-sql')).toHaveAttribute('open', '');

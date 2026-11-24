@@ -28,9 +28,9 @@ async function reference(page:Page,info:TestInfo,image:string,fontScale=1) {
 }
 
 test(visualTitle('VIS-01'),async({page},info)=>{
-  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(433);
+  await go(page); await expect(page.locator('[data-catalog] details')).toHaveCount(780);
   await expect(page.locator('[data-catalog] details[open]')).toHaveCount(0);
-  await expect(page.locator('[data-catalog]').getByLabel('SQL',{exact:true})).toContainText('153 conceptos');
+  await expect(page.locator('[data-catalog-item="sql"] > details > summary')).toContainText('153 conceptos');
   await expect(page.locator('[data-search-surface="inline"]').getByRole('searchbox')).toBeVisible();
   await reference(page,info,'inicio.png');
 });
@@ -76,9 +76,11 @@ test(visualTitle('VIS-04'),async({page},info)=>{
   await expect(panel(page).getByText('Guardado local',{exact:true})).toBeVisible();
   await code(page,sql).press('ControlOrMeta+k');await expect(searchDialog(page)).toBeVisible();
   await searchDialog(page).getByRole('searchbox').fill('filtrar');
-  await expect(searchDialog(page).locator(`a[href="${wherePath}"]`)).toHaveCount(1);
+  await expect(searchDialog(page).getByRole('link').first()).toHaveAttribute('href','/apuntes/analisis-de-datos/power-query/filtrar-filas/definicion');
   await expect(page.locator('dialog:modal')).toHaveCount(1);
   await reference(page,info,'practica-busqueda.png');
+  await searchDialog(page).getByRole('button',{name:/Mostrar más resultados/}).click();
+  await expect(searchDialog(page).locator(`a[href="${wherePath}"]`)).toHaveCount(1);
   await page.keyboard.press('Escape');await expect(panel(page)).toBeVisible();
   await expectCode(page,sql,'SELECT nombre FROM productos;');
   if(info.project.use.viewport!.width<=996) {

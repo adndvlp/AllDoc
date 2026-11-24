@@ -15,6 +15,15 @@ import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 import {requestsCurriculum} from './requests-curriculum.ts';
 import {httpxCurriculum} from './httpx-curriculum.ts';
+import {mysqlConnectorPythonCurriculum} from './mysql-connector-python-curriculum.ts';
+import {psycopgCurriculum} from './psycopg-curriculum.ts';
+import {dbtCurriculum} from './dbt-curriculum.ts';
+import {powerQueryCurriculum} from './power-query-curriculum.ts';
+import {pysparkCurriculum} from './pyspark-curriculum.ts';
+import {airflowCurriculum} from './airflow-curriculum.ts';
+import {snowflakeCurriculum} from './snowflake-curriculum.ts';
+import {powerbiCurriculum} from './powerbi-curriculum.ts';
+import {tableauCurriculum} from './tableau-curriculum.ts';
 
 export const docsBasePath = '/apuntes';
 
@@ -69,6 +78,14 @@ export const concepts = [...publishedSqlMetadata, ...pandasMetadata, ...courseMe
   ...courseMetadata('matplotlib', matplotlibCurriculum), ...courseMetadata('seaborn', seabornCurriculum),
   ...courseMetadata('sqlalchemy', sqlalchemyCurriculum), ...courseMetadata('sqlite3', sqlite3Curriculum),
   ...courseMetadata('json', jsonCurriculum), ...courseMetadata('requests', requestsCurriculum), ...courseMetadata('httpx', httpxCurriculum),
+  ...courseMetadata('mysql-connector-python', mysqlConnectorPythonCurriculum), ...courseMetadata('psycopg', psycopgCurriculum),
+  ...courseMetadata('dbt', dbtCurriculum),
+  ...courseMetadata('power-query', powerQueryCurriculum),
+  ...courseMetadata('pyspark', pysparkCurriculum),
+  ...courseMetadata('airflow', airflowCurriculum),
+  ...courseMetadata('snowflake', snowflakeCurriculum),
+  ...courseMetadata('powerbi', powerbiCurriculum),
+  ...courseMetadata('tableau', tableauCurriculum),
 ] as const satisfies readonly ConceptMeta[];
 
 export type Concept = (typeof concepts)[number];

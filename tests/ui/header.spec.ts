@@ -83,7 +83,7 @@ test('selector de áreas: teclado, cierre, foco y consulta conservada en portada
   await compactViewport(page);
   await go(page, '/');
   const input = page.locator('[data-search-surface="inline"]').getByRole('searchbox');
-  await input.fill('filtrar');
+  await input.fill('filtrar en SQL');
   const trigger = areaTrigger(page);
   await trigger.focus();
   await page.keyboard.press('Enter');
@@ -100,7 +100,7 @@ test('selector de áreas: teclado, cierre, foco y consulta conservada en portada
   await expect(trigger).toHaveAttribute('aria-expanded', 'false');
   await expect(trigger).toBeFocused();
   await expect(page).toHaveURL(/\/$/);
-  await expect(input).toHaveValue('filtrar');
+  await expect(input).toHaveValue('filtrar en SQL');
   const result = page.locator('[data-search-surface="inline"]').getByRole('link').filter({has: page.getByText('WHERE', {exact: true})});
   await expect(result).toHaveCount(1);
   await expect(result).toBeVisible();
@@ -232,7 +232,7 @@ test('rotación con menú abierto elimina la capa modal y permite seguir leyendo
   await expect(header(page).locator('.navbar__toggle')).toHaveAttribute('aria-expanded', 'false');
   await searchTrigger(page).click();
   const dialog = page.getByRole('dialog', {name: 'Buscar en tus apuntes'});
-  await dialog.getByRole('searchbox').fill('filtrar');
+  await dialog.getByRole('searchbox').fill('filtrar en SQL');
   await expect(dialog.getByRole('link').filter({has: page.getByText('WHERE', {exact: true})})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();

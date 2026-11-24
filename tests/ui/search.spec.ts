@@ -19,10 +19,12 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await expect(input(page)).not.toBeFocused();
   expect(requests).toBe(0);
   await input(page).fill('cómo filtrar');
-  const result = home(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})});
-  await expect(result).toHaveCount(1);
+  const result = home(page).locator('a[href="/apuntes/analisis-de-datos/sql/where"]');
+  await expect(home(page).getByRole('link').first()).toHaveAttribute('href', '/apuntes/analisis-de-datos/power-query/filtrar-filas/definicion');
   await expect(page.locator('[data-catalog]')).not.toBeVisible();
   await expect(page).toHaveScreenshot('busqueda-inicio.png');
+  await home(page).getByRole('button', {name: /Mostrar más resultados/}).click();
+  await expect(result).toHaveCount(1);
   await focusSearchResult(home(page), result);
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);
@@ -64,7 +66,7 @@ test('atajo desde el menú de temas: un solo diálogo abierto y retorno a un con
   await expect(page.locator('dialog[open]')).toHaveCount(1);
   await expect(topics).toBeHidden();
   await expect(page.locator('.navbar')).not.toHaveClass(/navbar-sidebar--show/);
-  await dialog(page).getByRole('searchbox').fill('filtrar');
+  await dialog(page).getByRole('searchbox').fill('filtrar en SQL');
   await expect(dialog(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog(page)).toBeHidden();
@@ -107,7 +109,7 @@ test('una carga tardía conserva lo escrito y no vuelve a abrir el diálogo', as
   try {
     await go(page);
     await open(page);
-    await dialog(page).getByRole('searchbox').fill('filtrar');
+    await dialog(page).getByRole('searchbox').fill('filtrar en SQL');
     await expect(dialog(page).getByRole('status')).toHaveText('Cargando apuntes…');
     await dialog(page).getByRole('button', {name: 'Cerrar buscador'}).click();
     await expect(dialog(page)).not.toBeVisible();
@@ -122,11 +124,11 @@ test('error del índice y reintento visible sin perder la consulta', async ({pag
   let requests = 0;
   await page.route(indexChunk, (route) => ++requests === 1 ? route.abort('failed') : route.continue());
   await go(page);
-  await input(page).fill('filtrar');
+  await input(page).fill('filtrar en SQL');
   await expect(home(page).getByRole('alert')).toContainText('No pude cargar los apuntes');
   await home(page).getByRole('button', {name: 'Reintentar'}).click();
   await expect(home(page).getByRole('link').filter({has: page.getByText('WHERE',{exact:true})})).toBeVisible();
-  await expect(input(page)).toHaveValue('filtrar');
+  await expect(input(page)).toHaveValue('filtrar en SQL');
   expect(requests).toBe(2);
 });
 

@@ -144,11 +144,13 @@ test('buscador accesible y dentro de la pantalla', async ({page}, testInfo) => {
   await expect(dialog).toBeVisible();
   const input = dialog.getByRole('searchbox');
   await input.fill('filtrar');
-  const result = dialog.getByRole('link').filter({has: page.getByText('WHERE',{exact:true})});
-  await expect(result).toHaveCount(1);
+  const result = dialog.locator('a[href="/apuntes/analisis-de-datos/sql/where"]');
+  await expect(dialog.getByRole('link').first()).toHaveAttribute('href', '/apuntes/analisis-de-datos/power-query/filtrar-filas/definicion');
   await fitsViewport(page, dialog);
   await fitsViewport(page, dialog.getByRole('button', {name: 'Cerrar buscador'}));
   await expect(page).toHaveScreenshot('buscador.png');
+  await dialog.getByRole('button', {name: /Mostrar más resultados/}).click();
+  await expect(result).toHaveCount(1);
   if (testInfo.project.use.hasTouch) {
     await result.click();
   } else {

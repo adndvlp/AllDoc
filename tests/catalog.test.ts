@@ -12,14 +12,14 @@ import {createSidebars} from '../src/lib/catalog-sidebar.ts';
 import {parseConceptFrontMatter} from '../src/lib/concept-front-matter.ts';
 import {searchEntries} from '../src/lib/search.ts';
 
-const pendingTools = ['dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake'];
+const pendingTools = ['Alteryx', 'Databricks'];
 
 test('el catálogo incluye Lenguajes y conserva las herramientas en su grupo y orden', () => {
   assert.deepEqual(catalog.map((area) => area.id), ['analisis-de-datos', 'desarrollo-web', 'ia', 'lenguajes']);
   assert.deepEqual(getTopics('analisis-de-datos').map((topic) => topic.label), [
     'Excel', 'Google Sheets', 'Power Query', 'SQL', 'Pandas', 'openpyxl', 'NumPy', 'SciPy', 'Matplotlib', 'Seaborn',
     'SQLAlchemy', 'sqlite3', 'mysql-connector-python', 'psycopg', 'requests', 'httpx', 'json', 'R', 'Power BI', 'Tableau',
-    'dbt', 'Alteryx', 'Apache Spark', 'Apache Airflow', 'Databricks', 'Snowflake',
+    'dbt', 'Alteryx', 'Apache Spark (PySpark)', 'Apache Airflow', 'Databricks', 'Snowflake',
   ]);
   const groups = catalog[0].items.filter((item) => item.kind === 'group');
   assert.deepEqual(groups.map((group) => [group.label, group.items.map((topic) => topic.label)]), [
@@ -33,14 +33,14 @@ test('el catálogo incluye Lenguajes y conserva las herramientas en su grupo y o
     ['Plataformas de datos', ['Databricks', 'Snowflake']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label),
-    ['Power Query', 'SQL', 'R', 'Power BI', 'Tableau', 'Apache Spark', 'Apache Airflow']);
+    ['Power Query', 'SQL', 'R', 'Power BI', 'Tableau', 'Apache Spark (PySpark)', 'Apache Airflow']);
   for (const topic of getTopics('analisis-de-datos').filter(topic => pendingTools.includes(topic.label))) {
     assert.deepEqual(topic.concepts, []);
     assert.equal(topic.sections, undefined);
   }
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['Excel, Google Sheets, SQL, Pandas, openpyxl, NumPy, SciPy, Matplotlib, Seaborn, SQLAlchemy, sqlite3, requests, httpx, json, R · 2700 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL, R · 366 conceptos', true]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [2700, 0, 0, 366]);
-  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 2334);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['Excel, Google Sheets, Power Query, SQL, Pandas, openpyxl, NumPy, SciPy, Matplotlib, Seaborn, SQLAlchemy, sqlite3, mysql-connector-python, psycopg, requests, httpx, json, R, Power BI, Tableau, dbt, Apache Spark (PySpark), Apache Airflow, Snowflake · 4485 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL, R · 366 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [4485, 0, 0, 366]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 3100);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -106,8 +106,10 @@ test('metadata, páginas MDX, palabras clave y cuerpos tienen los mismos concept
 test('el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado', () => {
   assert.deepEqual(entries.map((entry) => entry.id).sort(), concepts.map((concept) => concept.id).sort());
   assert.equal(entries[0].id, 'analisis-de-datos/excel/libro-hojas-y-celdas/definicion');
-  const topicLabels: Record<string, string> = {excel: 'Excel', 'google-sheets': 'Google Sheets', sql: 'SQL', pandas: 'Pandas', openpyxl: 'openpyxl', numpy: 'NumPy',
-    scipy: 'SciPy', matplotlib: 'Matplotlib', seaborn: 'Seaborn', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3', requests: 'requests', httpx: 'httpx', json: 'json', r: 'R'};
+  const topicLabels: Record<string, string> = {excel: 'Excel', 'google-sheets': 'Google Sheets', 'power-query': 'Power Query', sql: 'SQL', pandas: 'Pandas', openpyxl: 'openpyxl', numpy: 'NumPy',
+    scipy: 'SciPy', matplotlib: 'Matplotlib', seaborn: 'Seaborn', sqlalchemy: 'SQLAlchemy', sqlite3: 'sqlite3',
+    'mysql-connector-python': 'mysql-connector-python', psycopg: 'psycopg', requests: 'requests', httpx: 'httpx', json: 'json', r: 'R', dbt: 'dbt',
+    pyspark: 'Apache Spark (PySpark)', airflow: 'Apache Airflow', snowflake: 'Snowflake', powerbi: 'Power BI', tableau: 'Tableau'};
   for (const entry of entries) {
     const metadata = getConcept(entry.id)!;
     assert.equal(entry.href, metadata.slug);
@@ -118,7 +120,8 @@ test('el índice real conserva rutas y búsquedas y no contiene secciones vacía
   for (const [query, id] of [['filtrar', 'where'], ['ORDENAR', 'order-by'], ['máximo', 'limit'], ['--', 'comentarios'], ['/*', 'comentarios']]) {
     assert.equal(searchEntries(entries, query).find(entry => entry.context.endsWith('/ SQL'))?.id, 'analisis-de-datos/sql/' + id);
   }
-  assert.ok(searchEntries(entries, 'cómo filtrar').slice(0, 10).some(entry => entry.id === 'analisis-de-datos/sql/where'));
+  assert.ok(searchEntries(entries, 'cómo filtrar en SQL').slice(0, 10).some(entry => entry.id === 'analisis-de-datos/sql/where'));
+  assert.equal(searchEntries(entries, 'filtrar filas en Power Query')[0]?.id, 'analisis-de-datos/power-query/filtrar-filas/definicion');
   assert.equal(searchEntries(entries, '¿qué es SELECT?')[0]?.id, 'analisis-de-datos/sql/select');
   assert.ok(!JSON.stringify(entries).includes('/repaso'));
   assert.ok(searchEntries(entries, 'Excel').some(entry => entry.context.endsWith('/ Excel')));

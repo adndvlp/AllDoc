@@ -87,7 +87,16 @@
     "prepare:requests": "node scripts/prepare-requests-notes.mjs",
     "test:ui:requests": "DOCUSAURUS_NO_PERSISTENT_CACHE=1 playwright test tests/ui/requests.spec.ts",
     "prepare:httpx": "node scripts/prepare-httpx-notes.mjs",
-    "test:ui:httpx": "DOCUSAURUS_NO_PERSISTENT_CACHE=1 playwright test tests/ui/httpx.spec.ts"
+    "test:ui:httpx": "DOCUSAURUS_NO_PERSISTENT_CACHE=1 playwright test tests/ui/httpx.spec.ts",
+    "prepare:mysql-connector-python": "node scripts/prepare-mysql-connector-python-notes.mjs",
+    "prepare:psycopg": "node scripts/prepare-psycopg-notes.mjs",
+    "prepare:dbt": "node scripts/prepare-dbt-notes.mjs",
+    "prepare:power-query": "node scripts/prepare-power-query-notes.mjs",
+    "prepare:pyspark": "node scripts/prepare-pyspark-notes.mjs",
+    "prepare:airflow": "node scripts/prepare-airflow-notes.mjs",
+    "prepare:snowflake": "node scripts/prepare-snowflake-notes.mjs",
+    "prepare:powerbi": "node scripts/prepare-powerbi-notes.mjs",
+    "prepare:tableau": "node scripts/prepare-tableau-notes.mjs"
   },
   "dependencies": {
     "@codemirror/autocomplete": "latest",
@@ -118,6 +127,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "jszip": "3.10.2",
     "typescript": "latest",
     "webpack": "latest"
   },

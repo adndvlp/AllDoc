@@ -94,7 +94,7 @@ test('colecciones visibles: orden, quitar conserva foco útil y buscar no despla
   await favorites(page).getByRole('button', {name: 'Quitar WHERE de favoritos'}).focus();
   await page.keyboard.press('Space');
   await expect(favorites(page).getByRole('button', {name: 'Quitar LIMIT de favoritos'})).toBeFocused();
-  await search(page).fill('filtrar');
+  await search(page).fill('filtrar en SQL');
   const results = page.locator('[data-search-surface="inline"]').getByRole('link').filter({has: page.getByText('WHERE', {exact: true})});
   await expect(results).toHaveCount(1);
   await expect(results).toHaveAttribute('href', '/apuntes/analisis-de-datos/sql/where');
@@ -105,7 +105,7 @@ test('colecciones visibles: orden, quitar conserva foco útil y buscar no despla
   // Espera la actualización real del store a través de storage.
   await search(page).fill('');
   await expect(recents(page).getByRole('link').first()).toContainText('ORDER BY');
-  await search(page).fill('filtrar');
+  await search(page).fill('filtrar en SQL');
   await expect(results).toHaveCount(1);
   expect(await results.first().boundingBox()).toEqual(before);
   await expect(search(page)).toBeFocused();

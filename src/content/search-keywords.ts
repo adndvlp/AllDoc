@@ -13,6 +13,15 @@ import {sqlite3Keywords} from './sqlite3-search-keywords.ts';
 import {openpyxlKeywords} from './openpyxl-search-keywords.ts';
 import {requestsKeywords} from './requests-search-keywords.ts';
 import {httpxKeywords} from './httpx-search-keywords.ts';
+import {mysqlConnectorPythonKeywords} from './mysql-connector-python-search-keywords.ts';
+import {psycopgKeywords} from './psycopg-search-keywords.ts';
+import {dbtKeywords} from './dbt-search-keywords.ts';
+import {powerQueryKeywords} from './power-query-search-keywords.ts';
+import {pysparkKeywords} from './pyspark-search-keywords.ts';
+import {airflowKeywords} from './airflow-search-keywords.ts';
+import {snowflakeKeywords} from './snowflake-search-keywords.ts';
+import {powerbiKeywords} from './powerbi-search-keywords.ts';
+import {tableauKeywords} from './tableau-search-keywords.ts';
 
 const legacy:Readonly<Record<string,readonly string[]>> = {
   'analisis-de-datos/sql/select': ['elegir', 'seleccionar', 'columnas', 'mostrar', 'consultar', 'tabla', 'from', 'origen', 'asterisco', 'todas', 'varias', 'coma', 'especificas', 'productos', 'nombre', 'precio', 'negocio'],
@@ -41,6 +50,10 @@ export const searchKeywords = Object.fromEntries(concepts.map(concept => [concep
   legacy[concept.id] ?? excelKeywords[concept.id] ?? googleSheetsKeywords[concept.id] ?? rKeywords[concept.id] ?? pandasKeywords[concept.id] ?? openpyxlKeywords[concept.id] ?? numpyKeywords[concept.id]
   ?? scipyKeywords[concept.id] ?? matplotlibKeywords[concept.id] ?? seabornKeywords[concept.id]
   ?? sqlalchemyKeywords[concept.id] ?? sqlite3Keywords[concept.id]
-    ?? jsonKeywords[concept.id] ?? requestsKeywords[concept.id] ?? httpxKeywords[concept.id] ?? [concept.title, concept.label, concept.description,
+    ?? mysqlConnectorPythonKeywords[concept.id] ?? psycopgKeywords[concept.id] ?? jsonKeywords[concept.id]
+    ?? requestsKeywords[concept.id] ?? httpxKeywords[concept.id] ?? dbtKeywords[concept.id] ?? powerQueryKeywords[concept.id]
+    ?? pysparkKeywords[concept.id] ?? airflowKeywords[concept.id] ?? snowflakeKeywords[concept.id] ?? powerbiKeywords[concept.id]
+    ?? tableauKeywords[concept.id]
+    ?? [concept.title, concept.label, concept.description,
     ...(sqlAliases[concept.id.replace('analisis-de-datos/sql/', '')] ?? [])],
 ])) as Record<ConceptId, readonly string[]>;

@@ -7,7 +7,8 @@ import styles from '../SqlNotes/styles.module.css';
 type TabularOutput = {
   columns: readonly string[]; rows: readonly (readonly string[])[]; rowLabels?: readonly string[];
 };
-type Example = {id: string; title: string; code: string; practiceCode?: string; hint: string; language?: string; external?: boolean} & (
+type Example = {id: string; title: string; code: string; instructions?: string; practiceCode?: string; steps?: readonly string[];
+  hint: string; language?: string; external?: boolean} & (
   | {output: TabularOutput; textOutput?: never; resultLabel?: never}
   | {output?: never; textOutput: string; resultLabel: string}
 );
@@ -43,9 +44,13 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
               <h2 className={styles.variantTitle}>{example.title}</h2>
               {renderAction?renderAction(example):<TryExample example={example} language={example.language ?? language} />}
             </div>
+            {example.instructions && <p className={styles.hint}>{format(example.instructions)}</p>}
             {example.code&&<CodeBlock language={example.language ?? language}>{example.code}</CodeBlock>}
+            {example.steps && <ol className={styles.exampleSteps}>
+              {example.steps.map((step, position) => <li key={position}>{format(step)}</li>)}
+            </ol>}
             {example.hint && <p className={styles.hint}>{format(example.hint)}</p>}
-            {showResults&&(example.code||example.hint)&&<details className={styles.result}>
+            {showResults&&(example.code||example.steps?.length||example.hint)&&<details className={styles.result}>
               <summary>{example.output ? <>{resultLabel} <span>{example.output.rows.length} filas</span></> : example.resultLabel}</summary>
               <div className={styles.tableWrapper} role="region" tabIndex={0} aria-labelledby={`${resultId}-${index}`}>
                 {example.output ? <table>

@@ -1,4 +1,5 @@
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
+import JSZip from 'jszip';
 
 export const fence = String.fromCharCode(96).repeat(3);
 
@@ -26,16 +27,39 @@ export function parseTextExample(part, id, resultHeading, languages = 'python') 
 }
 
 const inlineResult = new RegExp(
-  '^' + fence + '(python|json|bash)\n([\\s\\S]+?)\n' + fence
+  '^' + fence + '(python|json|bash|sql|yaml|text|markdown|dockerfile|dax|powerquery)\n([\\s\\S]+?)\n' + fence
   + '\n([\\s\\S]+?)^\\*\\*Resultado esperado\\*\\* (.+)$', 'm',
 );
 export function parseInlineExample(part, id) {
   const [header, ...body] = part.trimEnd().split('\n');
-  const match = body.join('\n').trimStart().match(inlineResult);
+  const text = body.join('\n').trimStart();
+  const match = text.match(inlineResult);
   if (!match) throw new Error('Ejemplo incompleto en ' + id);
   const [, language, code, hint, textOutput] = match;
-  return {id, title: header.slice(5), language, code, hint: hint.trim(), textOutput,
+  const instructions = text.slice(0, match.index).trim();
+  return {id, title: header.slice(5), language, code, ...(instructions ? {instructions} : {}), hint: hint.trim(), textOutput,
     resultLabel: 'Ver resultado esperado'};
+}
+
+export function parseExternalExample(part, id) {
+  const [header, ...lines] = part.trimEnd().split('\n');
+  const body = lines.join('\n').trimStart();
+  if (body.startsWith(fence) || body.includes('\n' + fence)) return {...parseInlineExample(part, id), external: true};
+
+  const match = /^(?:((?:\d+\. .+\n)+)\n)?([\s\S]*?)^\*\*Resultado esperado\*\* (.+)$/m.exec(body);
+  if (!match || (!match[1] && !match[2].trim())) throw new Error('Instrucciones incompletas en ' + id);
+  const [, list, hint, textOutput] = match;
+  const steps = list?.trimEnd().split('\n').map(line => line.replace(/^\d+\. /, ''));
+  return {id, title: header.slice(5), code: '', ...(steps ? {steps} : {}), external: true, hint: hint.trim(), textOutput,
+    resultLabel: 'Ver resultado esperado'};
+}
+
+export async function createCourseArchive(folder, files, directories = []) {
+  const zip = new JSZip();
+  const options = {date: new Date('2000-01-01T00:00:00Z'), createFolders: false};
+  for (const [name, body] of Object.entries(files)) zip.file(`${folder}/${name}`, body + '\n', options);
+  for (const name of directories) zip.file(`${folder}/${name}/`, '', {...options, dir: true});
+  return zip.generateAsync({type: 'nodebuffer', compression: 'DEFLATE'});
 }
 
 const pythonBootstrap = data => data.match(new RegExp(`${fence}python\n([\\s\\S]+?)\n${fence}`))?.[1];
@@ -81,14 +105,13 @@ export function parseCourse(markdown, tool, parseExample, keywordSeparator = /,\
 }
 
 export async function emitCourse({tool, component, dataset, parse, check, dataExtension = 'py'}) {
-  const {groups, bootstrap, download = bootstrap} = parse(await readFile(new URL('../../specs/' + tool + '.md', import.meta.url), 'utf8'));
+  const {groups, bootstrap, download = bootstrap, downloads = {}} = await parse(await readFile(new URL('../../specs/' + tool + '.md', import.meta.url), 'utf8'));
   const generated = `// Generado desde specs/${tool}.md por scripts/prepare-${tool}-notes.mjs.\n`;
   const identifier = value => value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-  const exportName = identifier(dataset) + 'Bootstrap';
   async function emit(name, content) {
     const path = new URL('../../' + name, import.meta.url);
     if (check) {
-      if (await readFile(path, 'utf8') !== content) throw new Error(`Archivo desactualizado: ${name}`);
+      if (!(await readFile(path)).equals(Buffer.from(content))) throw new Error(`Archivo desactualizado: ${name}`);
       return;
     }
     await mkdir(new URL('.', path), {recursive: true});
@@ -100,8 +123,14 @@ export async function emitCourse({tool, component, dataset, parse, check, dataEx
   const keywords = Object.fromEntries(groups.flatMap(group => group.children.map(({meta}) => [meta.id, meta.keywords])));
   await emit(`src/content/${tool}-curriculum.ts`, generated + `export const ${identifier(tool)}Curriculum = ` + JSON.stringify(curriculum, null, 2) + ';\n');
   await emit(`src/content/${tool}-search-keywords.ts`, generated + `export const ${identifier(tool)}Keywords: Readonly<Record<string, readonly string[]>> = ` + JSON.stringify(keywords, null, 2) + ';\n');
-  await emit(`src/practice/datasets/rows/${dataset}.ts`, generated + `export const ${exportName} = ` + JSON.stringify(bootstrap) + ';\n');
-  await emit(`static/practice/${tool}/datos.${dataExtension}`, download + '\n');
+  if (dataset) {
+    const exportName = identifier(dataset) + 'Bootstrap';
+    await emit(`src/practice/datasets/rows/${dataset}.ts`, generated + `export const ${exportName} = ` + JSON.stringify(bootstrap) + ';\n');
+    await emit(`static/practice/${tool}/datos.${dataExtension}`, download + '\n');
+  }
+  for (const [name, content] of Object.entries(downloads)) {
+    await emit(`static/practice/${tool}/${name}`, typeof content === 'string' ? content + '\n' : content);
+  }
   for (const group of groups) {
     await emit(`src/content/notes/${tool}/${group.key}.ts`, generated + 'export const notes = ' + JSON.stringify(group.children.map(({body}) => body), null, 2) + ';\n');
     for (const {meta} of group.children) {

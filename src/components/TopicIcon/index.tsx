@@ -66,7 +66,7 @@ export const topicIcons: Record<string, TopicIconDefinition> = {
   Tableau: {icon: IoLogoTableau, kind: 'brand'},
   dbt: {icon: LuLayers, kind: 'generic'},
   Alteryx: {icon: LuWorkflow, kind: 'generic'},
-  'Apache Spark': {icon: SiApachespark, kind: 'brand'},
+  'Apache Spark (PySpark)': {icon: SiApachespark, kind: 'related-brand'},
   'Apache Airflow': {icon: SiApacheairflow, kind: 'brand'},
   Databricks: {icon: SiDatabricks, kind: 'brand'},
   Snowflake: {icon: SiSnowflake, kind: 'brand'},

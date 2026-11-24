@@ -16,6 +16,15 @@ import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
 import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 import {requestsCurriculum} from './requests-curriculum.ts';
 import {httpxCurriculum} from './httpx-curriculum.ts';
+import {mysqlConnectorPythonCurriculum} from './mysql-connector-python-curriculum.ts';
+import {psycopgCurriculum} from './psycopg-curriculum.ts';
+import {dbtCurriculum} from './dbt-curriculum.ts';
+import {powerQueryCurriculum} from './power-query-curriculum.ts';
+import {pysparkCurriculum} from './pyspark-curriculum.ts';
+import {airflowCurriculum} from './airflow-curriculum.ts';
+import {snowflakeCurriculum} from './snowflake-curriculum.ts';
+import {powerbiCurriculum} from './powerbi-curriculum.ts';
+import {tableauCurriculum} from './tableau-curriculum.ts';
 
 const courses = new Map([
   ['excel', excelCurriculum], ['google-sheets', googleSheetsCurriculum], ['r', rCurriculum],
@@ -23,6 +32,14 @@ const courses = new Map([
   ['scipy', scipyCurriculum], ['matplotlib', matplotlibCurriculum], ['seaborn', seabornCurriculum],
   ['sqlalchemy', sqlalchemyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
   ['requests', requestsCurriculum], ['httpx', httpxCurriculum],
+  ['mysql-connector-python', mysqlConnectorPythonCurriculum], ['psycopg', psycopgCurriculum],
+  ['dbt', dbtCurriculum],
+  ['power-query', powerQueryCurriculum],
+  ['pyspark', pysparkCurriculum],
+  ['airflow', airflowCurriculum],
+  ['snowflake', snowflakeCurriculum],
+  ['powerbi', powerbiCurriculum],
+  ['tableau', tableauCurriculum],
 ]);
 
 type TopicDefinition = {kind: 'topic'; id: string; label: string; sharedFrom?:AreaId};
@@ -64,11 +81,11 @@ const definitions: readonly AreaDefinition[] = [
       ]),
       group('peticiones-y-formatos', 'Peticiones y formatos', [topic('requests', 'requests'), topic('httpx', 'httpx'), topic('json', 'json')]),
       topic('r', 'R'),
-      topic('power-bi', 'Power BI'),
+      topic('powerbi', 'Power BI'),
       topic('tableau', 'Tableau'),
       group('transformacion-de-datos', 'Transformación de datos', [topic('dbt', 'dbt'), topic('alteryx', 'Alteryx')]),
-      topic('apache-spark', 'Apache Spark'),
-      topic('apache-airflow', 'Apache Airflow'),
+      topic('pyspark', 'Apache Spark (PySpark)'),
+      topic('airflow', 'Apache Airflow'),
       group('plataformas-de-datos', 'Plataformas de datos', [topic('databricks', 'Databricks'), topic('snowflake', 'Snowflake')]),
     ],
   },
