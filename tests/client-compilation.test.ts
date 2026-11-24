@@ -17,6 +17,9 @@ import {pandasCommerceManifest, pandasCommerceSchema} from '../src/practice/data
 import {jsonOrdersManifest, jsonOrdersSchema} from '../src/practice/datasets/json-orders.ts';
 import {numpySalesManifest, numpySalesSchema} from '../src/practice/datasets/numpy-sales.ts';
 import {sqlite3ShopManifest, sqlite3ShopSchema} from '../src/practice/datasets/sqlite3-shop.ts';
+import {openpyxlSalesManifest, openpyxlSalesSchema} from '../src/practice/datasets/openpyxl-sales.ts';
+import {scipyBusinessManifest, scipyBusinessSchema} from '../src/practice/datasets/scipy-business.ts';
+import {sqlalchemySalesManifest, sqlalchemySalesSchema} from '../src/practice/datasets/sqlalchemy-sales.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -133,7 +136,7 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 6);
+  assert.equal(profiles.practiceRegistry.list().length, 9);
 });
 
 test('preset cliente: resuelve los manifiestos de Python por ID y versión', () => {
@@ -144,8 +147,12 @@ test('preset cliente: resuelve los manifiestos de Python por ID y versión', () 
     './json-orders.ts': {jsonOrdersManifest, jsonOrdersSchema},
     './numpy-sales.ts': {numpySalesManifest, numpySalesSchema},
     './sqlite3-shop.ts': {sqlite3ShopManifest, sqlite3ShopSchema},
+    './openpyxl-sales.ts': {openpyxlSalesManifest, openpyxlSalesSchema},
+    './scipy-business.ts': {scipyBusinessManifest, scipyBusinessSchema},
+    './sqlalchemy-sales.ts': {sqlalchemySalesManifest, sqlalchemySalesSchema},
   });
-  for (const manifest of [productsManifest, businessManifest, pandasCommerceManifest, jsonOrdersManifest, numpySalesManifest, sqlite3ShopManifest]) {
+  for (const manifest of [productsManifest, businessManifest, pandasCommerceManifest, jsonOrdersManifest,
+    numpySalesManifest, sqlite3ShopManifest, openpyxlSalesManifest, scipyBusinessManifest, sqlalchemySalesManifest]) {
     assert.equal(getDatasetManifest({...manifest.reference}), manifest);
   }
   assert.equal(getDatasetManifest({...jsonOrdersManifest.reference, version: 0}), undefined);

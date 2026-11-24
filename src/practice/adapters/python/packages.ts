@@ -10,6 +10,18 @@ export const pythonPackages = {
       "python": "3.14.2"
     },
     "packages": {
+      "et-xmlfile": {
+        "name": "et-xmlfile",
+        "imports": [
+          "et_xmlfile"
+        ],
+        "depends": [],
+        "install_dir": "site",
+        "package_type": "package",
+        "version": "2.0.0",
+        "file_name": "et_xmlfile-2.0.0-py3-none-any.whl",
+        "sha256": "7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"
+      },
       "jedi": {
         "depends": [
           "parso"
@@ -39,6 +51,20 @@ export const pythonPackages = {
         "tool": {},
         "unvendored_tests": false,
         "version": "2.4.6"
+      },
+      "openpyxl": {
+        "name": "openpyxl",
+        "imports": [
+          "openpyxl"
+        ],
+        "depends": [
+          "et-xmlfile"
+        ],
+        "install_dir": "site",
+        "package_type": "package",
+        "version": "3.1.5",
+        "file_name": "openpyxl-3.1.5-py2.py3-none-any.whl",
+        "sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"
       },
       "pandas": {
         "depends": [
@@ -102,6 +128,22 @@ export const pythonPackages = {
         "unvendored_tests": false,
         "version": "2026.1.post1"
       },
+      "scipy": {
+        "depends": [
+          "numpy"
+        ],
+        "file_name": "scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+        "imports": [
+          "scipy"
+        ],
+        "install_dir": "site",
+        "name": "scipy",
+        "package_type": "package",
+        "sha256": "17ee329a957863516d1bb6a6aaa0c60576fac027e9cd3d43de27f58b5b599b50",
+        "tool": {},
+        "unvendored_tests": true,
+        "version": "1.18.0"
+      },
       "six": {
         "depends": [],
         "file_name": "six-1.17.0-py2.py3-none-any.whl",
@@ -115,6 +157,36 @@ export const pythonPackages = {
         "tool": {},
         "unvendored_tests": false,
         "version": "1.17.0"
+      },
+      "sqlalchemy": {
+        "depends": [
+          "typing-extensions"
+        ],
+        "file_name": "sqlalchemy-2.0.48-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+        "imports": [
+          "sqlalchemy"
+        ],
+        "install_dir": "site",
+        "name": "sqlalchemy",
+        "package_type": "package",
+        "sha256": "e12ade7bb0e2746d59fddb40ed0a26caf70d2d3bb483e2e022850939322c5105",
+        "tool": {},
+        "unvendored_tests": true,
+        "version": "2.0.48"
+      },
+      "typing-extensions": {
+        "depends": [],
+        "file_name": "typing_extensions-4.15.0-py3-none-any.whl",
+        "imports": [
+          "typing_extensions"
+        ],
+        "install_dir": "site",
+        "name": "typing-extensions",
+        "package_type": "package",
+        "sha256": "4fec68770a05408e668a4fa53d6bf4f0f684b9dacf820c7c5d6e97d3ad225e29",
+        "tool": {},
+        "unvendored_tests": false,
+        "version": "4.15.0"
       }
     }
   },
@@ -125,7 +197,12 @@ export const pythonPackages = {
     "pandas": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pandas-3.0.2-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
     "python-dateutil": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
     "pytz": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pytz-2026.1.post1-py2.py3-none-any.whl",
-    "six": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/six-1.17.0-py2.py3-none-any.whl"
+    "six": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/six-1.17.0-py2.py3-none-any.whl",
+    "et-xmlfile": "https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl",
+    "openpyxl": "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl",
+    "scipy": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+    "sqlalchemy": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/sqlalchemy-2.0.48-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+    "typing-extensions": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/typing_extensions-4.15.0-py3-none-any.whl"
   },
-  "digest": "b45b8bb4e8c828466384dd7940e6afa60ea495c4ccd5a96cb83efb8f2e69a257"
+  "digest": "2a847371d17e8a72211f79c6450d84196d7a1210916a06eb3484181775d7fcff"
 } as const;

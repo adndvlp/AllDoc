@@ -4,7 +4,10 @@ import {resolveSqlDocument} from './sql/placements.ts';
 import {pandasCurriculum} from './pandas-curriculum.ts';
 import {jsonCurriculum} from './json-curriculum.ts';
 import {numpyCurriculum} from './numpy-curriculum.ts';
+import {scipyCurriculum} from './scipy-curriculum.ts';
+import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
+import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 
 export const docsBasePath = '/apuntes';
 
@@ -52,7 +55,9 @@ function courseMetadata<TopicId extends string>(topicId: TopicId, curriculum: ty
 }
 
 export const concepts = [...publishedSqlMetadata, ...pandasMetadata,
-  ...courseMetadata('numpy', numpyCurriculum), ...courseMetadata('sqlite3', sqlite3Curriculum),
+  ...courseMetadata('openpyxl', openpyxlCurriculum),
+  ...courseMetadata('numpy', numpyCurriculum), ...courseMetadata('scipy', scipyCurriculum),
+  ...courseMetadata('sqlalchemy', sqlalchemyCurriculum), ...courseMetadata('sqlite3', sqlite3Curriculum),
   ...courseMetadata('json', jsonCurriculum),
 ] as const satisfies readonly ConceptMeta[];
 

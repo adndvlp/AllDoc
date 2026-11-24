@@ -2,7 +2,7 @@ import type {CompletionAdapter, CompletionResult, EnvironmentManifest, PracticeE
 import {copyWorkspace, MAX_CODE_BYTES, type DraftState, type DraftStore} from './drafts.ts';
 import {identifier} from './guards.ts';
 import {practicePhase} from './timing.ts';
-import {isCompletionResult, isRuntimeEvent} from './protocol.ts';
+import {eventBytes, isCompletionResult, isRuntimeEvent} from './protocol.ts';
 
 export type SessionSnapshot = Readonly<{
   context: PracticeEditorContext | null; openRequested: boolean; visible: boolean;
@@ -279,7 +279,7 @@ export function createPracticeSessionManager(options: SessionOptions): PracticeS
               await run.stopping;
               return;
             }
-            const bytes = encoder.encode(JSON.stringify(event)).byteLength;
+            const bytes = eventBytes(event, encoder);
             if (run.bytes + bytes > (options.maxOutputBytes ?? 1_048_576)) {
               await stopRun(run, 'cancelled');
               if (live(request.generation)) publish({notice: 'Salida truncada: se alcanzó el límite de la ejecución.'}); return;

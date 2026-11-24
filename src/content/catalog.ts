@@ -5,10 +5,14 @@ import {getPublishedSqlCurriculum} from './sql/curriculum.ts';
 import {pandasCurriculum} from './pandas-curriculum.ts';
 import {jsonCurriculum} from './json-curriculum.ts';
 import {numpyCurriculum} from './numpy-curriculum.ts';
+import {scipyCurriculum} from './scipy-curriculum.ts';
+import {sqlalchemyCurriculum} from './sqlalchemy-curriculum.ts';
 import {sqlite3Curriculum} from './sqlite3-curriculum.ts';
+import {openpyxlCurriculum} from './openpyxl-curriculum.ts';
 
 const courses = new Map([
-  ['pandas', pandasCurriculum], ['numpy', numpyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
+  ['pandas', pandasCurriculum], ['openpyxl', openpyxlCurriculum], ['numpy', numpyCurriculum],
+  ['scipy', scipyCurriculum], ['sqlalchemy', sqlalchemyCurriculum], ['sqlite3', sqlite3Curriculum], ['json', jsonCurriculum],
 ]);
 
 type TopicDefinition = {kind: 'topic'; id: string; label: string; sharedFrom?:AreaId};

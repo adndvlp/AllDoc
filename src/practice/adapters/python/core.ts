@@ -2,7 +2,7 @@ import type {PyodideAPI} from 'pyodide';
 import type {PyProxy} from 'pyodide/ffi';
 import type {CompletionRequest, CompletionResult, MaterializedDataset, RunRequest, RuntimeEvent, RuntimeSchema} from '../../contracts.ts';
 import {pythonHelper} from './helpers.ts';
-import {isRuntimeEvent} from '../../protocol.ts';
+import {eventBytes, isRuntimeEvent, isWorkbookPath, MAX_WORKBOOK_BYTES} from '../../protocol.ts';
 import {isRuntimeSchema} from '../../isolation/messages.ts';
 import {practicePhase} from '../../timing.ts';
 
@@ -14,6 +14,31 @@ export interface PythonEngine {
   reset(): Promise<void>;
   dispose(): void;
 }
+
+function* workbookFiles(fs: PyodideAPI['FS'], root: string) {
+  const folders = [''];
+  let remaining = 200;
+  while (folders.length && remaining > 0) {
+    const folder = folders.shift()!;
+    for (const name of fs.readdir(root + folder).sort()) {
+      if (name === '.' || name === '..') continue;
+      if (remaining-- === 0) return;
+      const absolute = root + folder + '/' + name;
+      const stats = fs.lstat(absolute);
+      if (fs.isDir(stats.mode)) {
+        folders.push(folder + '/' + name);
+        continue;
+      }
+      const path = (folder + '/' + name).slice(1);
+      if (!fs.isFile(stats.mode) || !isWorkbookPath(path) || stats.size > MAX_WORKBOOK_BYTES) continue;
+      const bytes = fs.readFile(absolute);
+      if (bytes[0] === 80 && bytes[1] === 75 && bytes[2] === 3 && bytes[3] === 4) {
+        yield {type: 'file' as const, path, bytes};
+      }
+    }
+  }
+}
+
 export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
   type Namespace = PyProxy & {set(key: string, value: unknown): void; has(key: string): boolean; delete(key: string): boolean};
   let scope: Namespace | null = null; let seed: MaterializedDataset | null = null; let version = 0; let disposed = false;
@@ -35,6 +60,9 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         .map(entity => [entity.name, entity.columns.map(column => column.name)]))));
       requireScope().set('_inspect_tables', JSON.stringify(seed.schema.entities
         .filter(entity => entity.kind === 'table').map(entity => entity.name)));
+      requireScope().set('_inspect_workbook', seed.reference.id === 'openpyxl-ventas');
+      requireScope().set('_inspect_scipy', seed.reference.id === 'scipy-negocio');
+      requireScope().set('_inspect_sqlalchemy', seed.reference.id === 'sqlalchemy-ventas');
       evaluate('_prepare(_bootstrap)'); requireScope().delete('_bootstrap'); version++;
     } finally {pyodide.FS.chdir(previous);}
   }
@@ -56,7 +84,7 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         if (event.type === 'error') {
           if (!sawError) {sawError = true; emit({...event, message: limited ? 'Se alcanzó el límite de salida de 1 MiB' : event.message.slice(0, 2048)});} return;
         }
-        const length = encoder.encode(JSON.stringify(event)).byteLength;
+        const length = eventBytes(event, encoder);
         if (limited || bytes + length > 1_048_576 - 4096) {limited = true; throw new Error('Se alcanzó el límite de salida de 1 MiB');}
         bytes += length; emit(event);
       };
@@ -94,11 +122,17 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         const result = await pyodide.runPythonAsync('await _run(_request)', {globals: own});
         flush('stdout'); flush('stderr');
         status = result === 'error' || limited ? 'error' : 'success';
+        if (status === 'success' && seed?.reference.id === 'openpyxl-ventas') {
+          for (const artifact of workbookFiles(pyodide.FS, root)) {
+            if (bytes + artifact.bytes.byteLength > MAX_WORKBOOK_BYTES - 8192) continue;
+            send(artifact);
+          }
+        }
       } catch (error) {
         status = 'error';
         send({type: 'error', file: request.entryFile, message: error instanceof Error ? error.message : String(error)});
       } finally {
-        // Los resultados cruzan como JSON: ningún DataFrame/PyProxy queda en la UI.
+        // El panel recibe datos normalizados o bytes, nunca un DataFrame/PyProxy.
         if (scope?.has('_publish')) scope.delete('_publish');
         if (scope?.has('_request')) scope.delete('_request');
         pyodide.setStdout({batched() {}}); pyodide.setStderr({batched() {}});

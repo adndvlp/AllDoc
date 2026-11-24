@@ -2,6 +2,7 @@ import {openSqlGroup, openCatalogSqlGroup} from './sql-tree-helpers';
 import {test, expect} from '@playwright/test';
 import type {Locator, Page} from '@playwright/test';
 import {chooseHeaderArea} from './header-helpers';
+import {focusSearchResult} from './search-helpers';
 
 const selectRoute = '/apuntes/analisis-de-datos/sql/select';
 const browserErrors = new WeakMap<Page, string[]>();
@@ -103,7 +104,7 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
       await expect(dataframe).toBeVisible();
       await expect(dataframe).toHaveAttribute('href', '/apuntes/analisis-de-datos/pandas/series-y-dataframe/dataframe');
       await expect(category.getByRole('link', {name: 'Crear una tabla de productos', exact: true})).toBeVisible();
-    } else await expect(category.locator('.sidebar-empty-note')).toBeVisible();
+    } else await expect(category.getByRole('button', {name: 'Workbook y archivos', exact: true})).toHaveAttribute('aria-expanded', 'false');
   }
   await expect.poll(async () => menu.locator('img[data-topic-icon]').evaluateAll((images) => images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
   await menu.locator('svg image').evaluateAll((images) => Promise.all(images.map((image) => {
@@ -125,7 +126,8 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
   });
   await scroller.evaluate((element) => element.scrollTo({top: 0, left: 0, behavior: 'instant'}));
   await expect.poll(() => scroller.evaluate((element) => element.scrollTop)).toBe(0);
-  await expect(menu.getByRole('button', {name: 'Hojas de cálculo', exact: true})).toBeInViewport();
+  await expect(menu.locator(':scope > .sidebar-topic-group > .menu__list-item-collapsible')
+    .getByRole('button', {name: 'Hojas de cálculo', exact: true})).toBeInViewport();
   await page.mouse.move(page.viewportSize()!.width - 1, 0);
   await expect(page).toHaveScreenshot('menu.png');
   const where = await openSqlGroup(menu, 'WHERE');
@@ -150,10 +152,7 @@ test('buscador accesible y dentro de la pantalla', async ({page}, testInfo) => {
   if (testInfo.project.use.hasTouch) {
     await result.click();
   } else {
-    await input.press('ArrowDown');
-    await expect(dialog.getByRole('link').first()).toBeFocused();
-    await page.keyboard.press('ArrowDown');
-    await expect(result).toBeFocused();
+    await focusSearchResult(dialog, result);
     await page.keyboard.press('Enter');
   }
   await expect(page).toHaveURL(/\/sql\/where$/);

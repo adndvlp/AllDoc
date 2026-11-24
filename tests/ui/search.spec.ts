@@ -1,5 +1,6 @@
 import {test, expect} from '@playwright/test';
 import type {Page} from '@playwright/test';
+import {focusSearchResult} from './search-helpers';
 
 const home = (page: Page) => page.locator('[data-search-surface="inline"]');
 const input = (page: Page) => home(page).getByRole('searchbox');
@@ -22,10 +23,7 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await expect(result).toHaveCount(1);
   await expect(page.locator('[data-catalog]')).not.toBeVisible();
   await expect(page).toHaveScreenshot('busqueda-inicio.png');
-  await input(page).press('ArrowDown');
-  await expect(home(page).getByRole('link').first()).toBeFocused();
-  await page.keyboard.press('ArrowDown');
-  await expect(result).toBeFocused();
+  await focusSearchResult(home(page), result);
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);
   await open(page);

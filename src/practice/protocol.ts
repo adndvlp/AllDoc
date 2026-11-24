@@ -4,6 +4,18 @@ import {record, counter, identifier, text} from './guards.ts';
 const columnTypes = new Set<ColumnType>(['text', 'integer', 'number', 'boolean', 'bigint', 'decimal', 'date', 'datetime']);
 const MAX_ROWS = 200;
 const MAX_COLUMNS = 200;
+export const MAX_WORKBOOK_BYTES = 1_048_576;
+
+export function isWorkbookPath(path: unknown): path is string {
+  return identifier(path) && /\.(xlsx|xltx)$/i.test(path)
+    && path.split('/').every(part => /^[\p{L}\p{N}_][\p{L}\p{N}_. -]*$/u.test(part));
+}
+
+export function eventBytes(event: RuntimeEvent, encoder: TextEncoder): number {
+  if (event.type !== 'file') return encoder.encode(JSON.stringify(event)).byteLength;
+  const {bytes, ...metadata} = event;
+  return bytes.byteLength + encoder.encode(JSON.stringify(metadata)).byteLength;
+}
 
 function cell(value: unknown, type: ColumnType): boolean {
   if (value === null) return true;
@@ -30,6 +42,9 @@ export function isRuntimeEvent(value: unknown, expected?: RunIdentity): value is
       && (value.line === undefined || (counter(value.line) && value.line > 0))
       && (value.column === undefined || (counter(value.column) && value.column > 0));
     case 'end': return ['success', 'error', 'cancelled', 'timeout'].includes(value.status as string) && typeof value.environmentReset === 'boolean';
+    case 'file': return isWorkbookPath(value.path) && value.bytes instanceof Uint8Array
+      && value.bytes.byteLength <= MAX_WORKBOOK_BYTES
+      && value.bytes[0] === 80 && value.bytes[1] === 75 && value.bytes[2] === 3 && value.bytes[3] === 4;
     case 'table': {
       if (typeof value.truncated !== 'boolean' || !Array.isArray(value.columns) || value.columns.length > MAX_COLUMNS
         || !Array.isArray(value.rows) || value.rows.length > MAX_ROWS) return false;

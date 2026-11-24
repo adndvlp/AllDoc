@@ -13,25 +13,36 @@ const target = resolve(root, 'src/practice/adapters/python/packages.ts');
 let previous;
 try {previous = (await import(pathToFileURL(target).href)).pythonPackages;} catch (error) {if (error.code !== 'ERR_MODULE_NOT_FOUND') throw error;}
 const pinned = compatiblePythonPin(version, previous, process.argv.includes('--update'));
-const lock = structuredClone(pinned?.lock ?? require('pyodide/pyodide-lock.json'));
+const lock = structuredClone(require('pyodide/pyodide-lock.json'));
+if (pinned) Object.assign(lock.packages, pinned.lock.packages);
 const sources = {...pinned?.sources};
 async function get(url) {
   const response = await fetch(url, {redirect: 'error', signal: AbortSignal.timeout(90_000)});
   if (!response.ok) throw new Error(`No se pudo descargar ${url}: HTTP ${response.status}`);
   return response;
 }
-// Los binarios deben pertenecer a la distribución/ABI instalada. Jedi y Parso
-// son Python puro: se resuelve su latest estable y se fija antes de publicar.
-for (const name of pinned ? [] : ['jedi', 'parso']) {
+// Los binarios deben pertenecer a la distribución/ABI instalada. Los paquetes
+// de Python puro se resuelven en PyPI y se fijan antes de publicar.
+const pure = {
+  jedi: {module: 'jedi', depends: ['parso']},
+  parso: {module: 'parso', depends: []},
+  'et-xmlfile': {module: 'et_xmlfile', depends: []},
+  openpyxl: {module: 'openpyxl', depends: ['et-xmlfile']},
+};
+for (const [name, {module, depends}] of Object.entries(pure)) {
+  if (pinned?.lock.packages[name]) continue;
   const metadata = await (await get(`https://pypi.org/pypi/${name}/json`)).json();
   const released = metadata.info.version;
   if (!/^\d+(?:\.\d+)+$/.test(released)) throw new Error('Se requiere una versión estable de ' + name);
-  const wheel = metadata.urls.find((item) => item.filename.startsWith(`${name}-${released}-`) && item.filename.endsWith('-none-any.whl') && !item.yanked);
+  const wheel = metadata.urls.find((item) => item.filename.startsWith(`${module}-${released}-`) && item.filename.endsWith('-none-any.whl') && !item.yanked);
   if (!wheel || new URL(wheel.url).origin !== 'https://files.pythonhosted.org') throw new Error('Wheel oficial no disponible: ' + name);
-  lock.packages[name] = {...lock.packages[name], version: released, file_name: wheel.filename, sha256: wheel.digests.sha256};
+  lock.packages[name] = {
+    ...lock.packages[name], name, imports: [module], depends, install_dir: 'site', package_type: 'package',
+    version: released, file_name: wheel.filename, sha256: wheel.digests.sha256,
+  };
   sources[name] = wheel.url;
 }
-const selected = selectPythonPackages(lock, ['pandas', 'jedi']);
+const selected = selectPythonPackages(lock, ['pandas', 'jedi', 'openpyxl', 'scipy', 'sqlalchemy']);
 const cache = resolve(root, '.python-packages', version); await mkdir(cache, {recursive: true});
 let bytes = 0;
 for (const [name, item] of Object.entries(selected)) {

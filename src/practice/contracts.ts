@@ -85,6 +85,7 @@ export type RuntimeEvent = RunIdentity & {readonly protocolVersion: 1} & (
   | {readonly type: 'progress'; readonly phase: string}
   | {readonly type: 'stream'; readonly channel: 'stdout' | 'stderr'; readonly text: string}
   | {readonly type: 'table'; readonly columns: readonly DataColumn[]; readonly rows: readonly (readonly Cell[])[]; readonly truncated: boolean}
+  | {readonly type: 'file'; readonly path: string; readonly bytes: Uint8Array}
   | {readonly type: 'error'; readonly message: string; readonly file?: string; readonly line?: number; readonly column?: number}
   | {readonly type: 'end'; readonly status: 'success' | 'error' | 'cancelled' | 'timeout'; readonly environmentReset: boolean}
 );

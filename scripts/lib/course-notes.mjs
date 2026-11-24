@@ -12,17 +12,17 @@ function keyFor(text, context) {
   return key;
 }
 
-export function parseTextExample(part, id, resultHeading) {
+export function parseTextExample(part, id, resultHeading, languages = 'python') {
   const [header, ...body] = part.trimEnd().split('\n');
   const pattern = new RegExp(
-    '^' + fence + 'python\n([\\s\\S]+?)\n' + fence
+    '^' + fence + '(' + languages + ')\n([\\s\\S]+?)\n' + fence
     + '\n([\\s\\S]+?)^\\*\\*(' + resultHeading + ')\\*\\*\n+' + fence
     + 'text\n([\\s\\S]+?)\n' + fence + '$', 'm',
   );
   const match = body.join('\n').match(pattern);
   if (!match) throw new Error('Ejemplo incompleto en ' + id);
-  const [, code, hint, heading, textOutput] = match;
-  return {title: header.slice(5), code, hint: hint.trim(), heading, textOutput};
+  const [, language, code, hint, heading, textOutput] = match;
+  return {title: header.slice(5), language, code, hint: hint.trim(), heading, textOutput};
 }
 
 const inlineResult = new RegExp(

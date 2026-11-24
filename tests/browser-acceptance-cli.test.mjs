@@ -6,9 +6,9 @@ import {readFile,rm} from 'node:fs/promises';
 const run=args=>spawnSync(process.execPath,['--experimental-strip-types','scripts/verify-browser.mjs',...args],{encoding:'utf8',timeout:30000,
   env:{...process.env,PLAYWRIGHT_BROWSERS_PATH:'/tmp/alldoc-acceptance-no-browser-binaries'}});
 
-test('CLI final: descubre 26/168/938 casos sin motores, build ni multiplicar la suite Chromium',()=>{
+test('CLI final: descubre 26/168/980 casos sin motores, build ni multiplicar la suite Chromium',()=>{
   const result=run(['--list']);assert.equal(result.status,0,result.stderr);
-  assert.match(result.stdout,/visual: 26 casos; 6 proyectos/);assert.match(result.stdout,/functional: 168 casos; 6 proyectos/);assert.match(result.stdout,/chromium: 938 casos; 7 proyectos/);
+  assert.match(result.stdout,/visual: 26 casos; 6 proyectos/);assert.match(result.stdout,/functional: 168 casos; 6 proyectos/);assert.match(result.stdout,/chromium: 980 casos; 7 proyectos/);
   assert.match(result.stdout,/ningún caso ejecutado/);assert.doesNotMatch(result.stdout,/checking|05-build-app|02-código/);
 });
 test('CLI final: selección de un caso no pretende aceptación completa y no permite actualizar',()=>{
@@ -23,10 +23,10 @@ test('CLI corto de zoom: descubre siete casos sin un filtro que pueda romperse a
   assert.equal(result.status,0,result.stderr);assert.match(result.stdout,/chromium: 7 casos; 7 proyectos/);
   assert.doesNotMatch(result.stdout,/functional:|visual:|checking|05-build-app/);
 });
-test('CLI de pendientes: descubre solo los 268 casos de laptop y escritorio',()=>{
+test('CLI de pendientes: descubre solo los 280 casos de laptop y escritorio',()=>{
   const result=spawnSync(process.execPath,['scripts/check-desktops.mjs','--list'],{encoding:'utf8',timeout:20000,
     env:{...process.env,PLAYWRIGHT_BROWSERS_PATH:'/tmp/alldoc-acceptance-no-browser-binaries'}});
-  assert.equal(result.status,0,result.stderr);assert.match(result.stdout,/chromium: 268 casos; 2 proyectos/);
+  assert.equal(result.status,0,result.stderr);assert.match(result.stdout,/chromium: 280 casos; 2 proyectos/);
   assert.doesNotMatch(result.stdout,/functional:|visual:|checking|05-build-app/);
 });
 test('CLI final: solo el motor seleccionado se exige antes de código/build; informe parcial con preflight',async context=>{

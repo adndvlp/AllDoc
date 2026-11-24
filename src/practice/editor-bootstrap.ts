@@ -5,13 +5,19 @@ import {pandasExampleCode} from './datasets/materialize.ts';
 import {pandasCommerceManifest, pandasCommerceSchema} from './datasets/pandas-commerce.ts';
 import {jsonOrdersManifest, jsonOrdersSchema} from './datasets/json-orders.ts';
 import {numpySalesManifest, numpySalesSchema} from './datasets/numpy-sales.ts';
+import {scipyBusinessManifest, scipyBusinessSchema} from './datasets/scipy-business.ts';
+import {sqlalchemySalesManifest, sqlalchemySalesSchema} from './datasets/sqlalchemy-sales.ts';
 import {sqlite3ShopManifest, sqlite3ShopSchema} from './datasets/sqlite3-shop.ts';
+import {openpyxlSalesManifest, openpyxlSalesSchema} from './datasets/openpyxl-sales.ts';
 import {sqliteEnvironment} from './adapters/sqlite/environment.ts';
 
 const courseExamples = new Map([
   [jsonOrdersManifest, {schema: jsonOrdersSchema, load: () => import('../content/notes/json/deserializacion.ts')}],
   [numpySalesManifest, {schema: numpySalesSchema, load: () => import('../content/notes/numpy/ndarray-y-fundamentos.ts')}],
+  [scipyBusinessManifest, {schema: scipyBusinessSchema, load: () => import('../content/notes/scipy/entorno.ts')}],
+  [sqlalchemySalesManifest, {schema: sqlalchemySalesSchema, load: () => import('../content/notes/sqlalchemy/sqlalchemy-arquitectura.ts')}],
   [sqlite3ShopManifest, {schema: sqlite3ShopSchema, load: () => import('../content/notes/sqlite3/conexion-a-sqlite.ts')}],
+  [openpyxlSalesManifest, {schema: openpyxlSalesSchema, load: () => import('../content/notes/openpyxl/workbook.ts')}],
 ]);
 
 /** Solo se importa al abrir práctica. No crea ni simula un motor. */
@@ -44,7 +50,9 @@ export async function editorBootstrap(context: PracticeEditorContext) {
       }))};
     }
   }
-  const environment = python ? (await import('./adapters/python/environment.ts')).pythonEnvironment : sqliteEnvironment;
+  const environment = python
+    ? (await import('./adapters/python/environment.ts')).getPythonEnvironment(context.profile.id)
+    : sqliteEnvironment;
   const workspace: Workspace = {id: context.workspaceKey, toolKey: context.toolKey, profileId: context.profile.id,
     dataset: context.profile.defaultDataset, files: [{path, languageId: context.profile.languageId, content}], activeFile: path, revision: 0,
     environmentVersion: environment.version};

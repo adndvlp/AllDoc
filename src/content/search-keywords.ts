@@ -2,7 +2,10 @@ import {concepts,type ConceptId} from './concepts.ts';
 import {pandasKeywords} from './pandas-search-keywords.ts';
 import {jsonKeywords} from './json-search-keywords.ts';
 import {numpyKeywords} from './numpy-search-keywords.ts';
+import {scipyKeywords} from './scipy-search-keywords.ts';
+import {sqlalchemyKeywords} from './sqlalchemy-search-keywords.ts';
 import {sqlite3Keywords} from './sqlite3-search-keywords.ts';
+import {openpyxlKeywords} from './openpyxl-search-keywords.ts';
 
 const legacy:Readonly<Record<string,readonly string[]>> = {
   'analisis-de-datos/sql/select': ['elegir', 'seleccionar', 'columnas', 'mostrar', 'consultar', 'tabla', 'from', 'origen', 'asterisco', 'todas', 'varias', 'coma', 'especificas', 'productos', 'nombre', 'precio', 'negocio'],
@@ -28,7 +31,8 @@ const sqlAliases:Readonly<Record<string,readonly string[]>>={
  'transactions/begin':['START TRANSACTION','BEGIN TRANSACTION'],
 };
 export const searchKeywords = Object.fromEntries(concepts.map(concept => [concept.id,
-  legacy[concept.id] ?? pandasKeywords[concept.id] ?? numpyKeywords[concept.id] ?? sqlite3Keywords[concept.id]
+  legacy[concept.id] ?? pandasKeywords[concept.id] ?? openpyxlKeywords[concept.id] ?? numpyKeywords[concept.id]
+  ?? scipyKeywords[concept.id] ?? sqlalchemyKeywords[concept.id] ?? sqlite3Keywords[concept.id]
     ?? jsonKeywords[concept.id] ?? [concept.title, concept.label, concept.description,
     ...(sqlAliases[concept.id.replace('analisis-de-datos/sql/', '')] ?? [])],
 ])) as Record<ConceptId, readonly string[]>;

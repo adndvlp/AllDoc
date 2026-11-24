@@ -7,15 +7,20 @@ import {pandasCurriculum} from '../src/content/pandas-curriculum.ts';
 import {jsonCurriculum} from '../src/content/json-curriculum.ts';
 import {numpyCurriculum} from '../src/content/numpy-curriculum.ts';
 import {sqlite3Curriculum} from '../src/content/sqlite3-curriculum.ts';
+import {openpyxlCurriculum} from '../src/content/openpyxl-curriculum.ts';
+import {scipyCurriculum} from '../src/content/scipy-curriculum.ts';
+import {sqlalchemyCurriculum} from '../src/content/sqlalchemy-curriculum.ts';
 
-test('ejemplos: IDs únicos para SQL, pandas, NumPy, json y sqlite3 con los ejemplos anteriores y predeterminados', async () => {
-  const courses = [['pandas', pandasCurriculum], ['json', jsonCurriculum], ['numpy', numpyCurriculum], ['sqlite3', sqlite3Curriculum]] as const;
+test('ejemplos: IDs únicos para SQL y los temarios Python con los ejemplos anteriores y predeterminados', async () => {
+  const courses = [['pandas', pandasCurriculum], ['json', jsonCurriculum], ['numpy', numpyCurriculum],
+    ['sqlite3', sqlite3Curriculum], ['openpyxl', openpyxlCurriculum], ['scipy', scipyCurriculum],
+    ['sqlalchemy', sqlalchemyCurriculum]] as const;
   const groups = await Promise.all(courses.flatMap(([tool, groups]) => groups.map(async ({key}) =>
     (await import(`../src/content/notes/${tool}/${key}.ts`)).notes as {examples: {id: string}[]}[])));
   const examples = [...sqlConcepts.flatMap(note => note.examples), ...pandasDataframe.examples,
     ...groups.flatMap(notes => notes.flatMap(note => note.examples))];
   const ids = examples.map(example => example.id);
-  assert.equal(ids.length, 812); assert.equal(new Set(ids).size, 812);
+  assert.equal(ids.length, 1397); assert.equal(new Set(ids).size, 1397);
   const legacy = [
     'sql/select/todas-las-columnas', 'sql/select/columnas-concretas',
     'sql/where/condicion', 'sql/order-by/precio-ascendente',

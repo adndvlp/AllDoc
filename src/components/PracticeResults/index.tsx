@@ -1,5 +1,19 @@
+import {useEffect, useState} from 'react';
 import type {RuntimeEvent} from '@site/src/practice/contracts';
 import styles from '../PracticePanel/styles.module.css';
+
+function WorkbookDownload({path, bytes}: Extract<RuntimeEvent, {type: 'file'}>) {
+  const [url, setUrl] = useState<string>();
+  useEffect(() => {
+    const type = path.toLowerCase().endsWith('.xltx')
+      ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.template'
+      : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+    const created = URL.createObjectURL(new Blob([new Uint8Array(bytes)], {type}));
+    setUrl(created);
+    return () => URL.revokeObjectURL(created);
+  }, [path, bytes]);
+  return <p><a href={url} download={path.split('/').at(-1)}>Descargar {path}</a></p>;
+}
 
 export default function PracticeResults({events, revision}: {events: readonly RuntimeEvent[]; revision: number}) {
   if (!events.length) return <p>Todavía no has ejecutado código.</p>;
@@ -9,6 +23,7 @@ export default function PracticeResults({events, revision}: {events: readonly Ru
     {events.map((event, index) => {
       if (event.type === 'stream') return <pre key={index}>{event.text}</pre>;
       if (event.type === 'error') return <p key={index} role="alert">{event.file && <strong>{event.file}{event.line ? ':' + event.line : ''}{event.column ? ':' + event.column : ''}: </strong>}{event.message}</p>;
+      if (event.type === 'file') return <WorkbookDownload key={index} {...event} />;
       if (event.type === 'table') return <div key={index}>
         <div className={styles.table} role="region" aria-label={`Tabla de resultado ${index + 1}`} tabIndex={0}>
           <table><caption className="sr-only">Resultado {index + 1}</caption>

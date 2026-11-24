@@ -5,6 +5,7 @@ import {isCompletionResult} from '../../protocol.ts';
 import {createPythonEngine, type PythonEngine} from './core.ts';
 import {pythonPackages} from './packages.ts';
 import {initializePythonVM} from './initialize.ts';
+import {getPythonAdditionalPackages} from './environment.ts';
 import {practicePhase} from '../../timing.ts';
 
 // Webpack emite los assets intactos. El SDK carga su módulo WASM y stdlib desde
@@ -29,7 +30,7 @@ scope.onmessage = ({data: request}) => {
       const indexURL = new URL('./', assets[0]).href;
       const pyodide = await initializePythonVM(module.loadPyodide, {indexURL, packageBaseUrl: indexURL,
         lockFileContents: JSON.stringify(pythonPackages.lock),
-        jsglobals: Object.freeze({}), stdout() {}, stderr() {}});
+        jsglobals: Object.freeze({}), stdout() {}, stderr() {}}, getPythonAdditionalPackages(context.profile.id));
       if (pyodide.version !== context.environment.runtime.version) throw new Error('Versión de Pyodide incompatible');
       engine = createPythonEngine(pyodide); await engine.init(context.dataset);
       const document = 'import pandas as pd\npd.Da';

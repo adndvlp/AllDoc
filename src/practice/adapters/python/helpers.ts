@@ -20,14 +20,21 @@ _DataFrame = _pd.DataFrame
 _Series = _pd.Series
 _namespace = {}
 _sqlite_view = None
+_sqlalchemy_connection = None
 _jedi.settings.use_filesystem_cache = False
 _jedi_environment = _JediEnvironment()
 
 def _prepare(bootstrap):
-    global _namespace, _sqlite_view
+    global _namespace, _sqlite_view, _sqlalchemy_connection
     _namespace = {"__name__": "__main__"}
     _sqlite_view = None
+    _sqlalchemy_connection = None
     exec(compile(bootstrap, "<datos>", "exec"), _namespace)
+    if _inspect_sqlalchemy:
+        # El pool conserva la conexión de la base en memoria. El inspector
+        # toma copias sin abrir otra conexión ni cerrar transacciones del editor.
+        with _namespace["engine"].connect() as connection:
+            _sqlalchemy_connection = connection.connection.driver_connection
 
 def _value(value):
     if value is None or value is _pd.NA or value is _pd.NaT:
@@ -187,7 +194,7 @@ def _preview_sqlite(seed_tables):
     if not seed_tables:
         return []
     import sqlite3
-    connection = _namespace.get("con")
+    connection = _sqlalchemy_connection if _inspect_sqlalchemy else _namespace.get("con")
     if _sqlite_view and _sqlite_view[0] is not connection:
         _sqlite_view = None
     if not isinstance(connection, sqlite3.Connection):
@@ -236,8 +243,29 @@ def _preview_sqlite(seed_tables):
     _sqlite_view = (connection, list(entities))
     return entities
 
+def _preview_workbook():
+    from openpyxl import Workbook
+    from openpyxl.utils import get_column_letter
+    book = _namespace.get("wb")
+    if not isinstance(book, Workbook) or book.write_only:
+        return []
+    entities, rows_left, bytes_left = [], 200, 524288
+    for sheet in book.worksheets[:200]:
+        limit = min(20, rows_left, sheet.max_row or 1)
+        width = min(200, sheet.max_column or 1)
+        columns = [get_column_letter(i + 1) for i in range(width)]
+        rows = list(sheet.iter_rows(min_row=1, max_row=limit, min_col=1, max_col=width, values_only=True)) if limit else []
+        preview = _table(_DataFrame(rows, columns=columns, dtype=object), limit, max(0, bytes_left))
+        row_count = sheet.max_row or 1
+        preview["truncated"] = len(preview["rows"]) < row_count
+        rows_left -= len(preview["rows"])
+        bytes_left -= len(_json.dumps(preview, ensure_ascii=False).encode("utf-8"))
+        entities.append({"name": sheet.title, "kind": "variable", "columns": preview["columns"],
+                         "rowCount": row_count, "preview": preview})
+    return entities
+
 def _inspect():
-    entities = _preview_sqlite(_json.loads(_inspect_tables))
+    entities = _preview_workbook() if _inspect_workbook else _preview_sqlite(_json.loads(_inspect_tables))
     table_names = {entity["name"] for entity in entities}
     rows_left = 200 - sum(len(entity["preview"]["rows"]) for entity in entities)
     bytes_left = 524288 - sum(len(_json.dumps(entity["preview"], ensure_ascii=False).encode("utf-8")) for entity in entities)
@@ -283,7 +311,15 @@ def _complete(payload):
         from_position = position - _u16(prefix)
         to_position = position + _u16(_re.match(r"\w*", document[cursor:])[0])
         header = "import pandas as pd\n"
-        if _json.loads(_inspect_tables):
+        if _inspect_scipy:
+            header += "import numpy as np\nfrom scipy import stats\n"
+        if _inspect_workbook:
+            header += "from openpyxl import Workbook, load_workbook\nfrom openpyxl.worksheet.worksheet import Worksheet\nwb: Workbook\nws: Worksheet\nresumen: Worksheet\n"
+        seed_tables = _json.loads(_inspect_tables)
+        if _inspect_sqlalchemy:
+            header += "import sqlalchemy as sa\nfrom sqlalchemy import Table, MetaData, select, text\nfrom sqlalchemy.engine import Engine\nfrom sqlalchemy.orm import Session, sessionmaker\nengine: Engine\nmetadata: MetaData\nSesion: sessionmaker[Session]\n"
+            header += "".join(name + ": Table\n" for name in seed_tables if name.isidentifier())
+        elif seed_tables:
             header += "import sqlite3\ncon: sqlite3.Connection\n"
         for name in registered:
             if name.isidentifier():

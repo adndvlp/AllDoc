@@ -44,7 +44,7 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
               {renderAction?renderAction(example):<TryExample example={example} language={example.language ?? language} />}
             </div>
             {example.code&&<CodeBlock language={example.language ?? language}>{example.code}</CodeBlock>}
-            <p className={styles.hint}>{format(example.hint)}</p>
+            {example.hint && <p className={styles.hint}>{format(example.hint)}</p>}
             {showResults&&example.code&&<details className={styles.result}>
               <summary>{example.output ? <>{resultLabel} <span>{example.output.rows.length} filas</span></> : example.resultLabel}</summary>
               <div className={styles.tableWrapper} role="region" tabIndex={0} aria-labelledby={`${resultId}-${index}`}>

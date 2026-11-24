@@ -296,3 +296,169 @@ test('Pyodide real: las 131 fichas compatibles de sqlite3 se ejecutan con los da
   assert.deepEqual(local, ['sqlite3/callbacks-y-control-de-ejecucion/interrupt/1',
     'sqlite3/pruebas-y-flujos-reproducibles/cli-de-sqlite3/1']);
 });
+
+test('Pyodide real: openpyxl carga los datos, modifica archivos XLSX y permite reabrir la descarga', async () => {
+  await pyodide.loadPackage('openpyxl');
+  assert.equal(pyodide.runPython('import openpyxl; openpyxl.__version__'), pythonPackages.lock.packages.openpyxl.version);
+  const dataset = await createDatasetAdapter().materialize({id: 'openpyxl-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+  const sheets = value.inspect().entities;
+  assert.deepEqual(sheets.map(entity => [entity.name, entity.rowCount]), [['Ventas', 6], ['Resumen', 2]]);
+  assert.equal(sheets[0].preview?.rows[1][1], 'Laptop');
+
+  const edited = await run(value, 'ws["B2"] = "Monitor"\nPath("salida").mkdir()\nwb.save("salida/ventas_editadas.xlsx")\nPath("danado.xlsx").write_text("texto")');
+  const files = edited.filter(event => event.type === 'file');
+  assert.deepEqual(files.map(event => event.path).sort(), ['salida/ventas_editadas.xlsx', 'ventas_base.xlsx']);
+  const saved = files.find(event => event.path === 'salida/ventas_editadas.xlsx')!;
+  const file = '/tmp/openpyxl-download-test.xlsx';
+  pyodide.FS.writeFile(file, saved.bytes);
+  try {
+    assert.equal(pyodide.runPython('openpyxl.load_workbook("/tmp/openpyxl-download-test.xlsx")["Ventas"]["B2"].value'), 'Monitor');
+  } finally {pyodide.FS.unlink(file);}
+  assert.equal(value.inspect().entities[0].preview?.rows[1][1], 'Monitor');
+  assert.ok(complete(value, 'from openpyxl import Work').items.some(item => item.label === 'Workbook'));
+  await value.reset();
+  assert.equal(value.inspect().entities[0].preview?.rows[1][1], 'Laptop');
+});
+
+test('Pyodide real: ejecuta las 168 fichas compatibles de openpyxl', async () => {
+  const {openpyxlCurriculum} = await import('../src/content/openpyxl-curriculum.ts');
+  await pyodide.loadPackage('openpyxl');
+  const dataset = await createDatasetAdapter().materialize({id: 'openpyxl-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+  let count = 0;
+  const external: string[] = [];
+  for (const {key} of openpyxlCurriculum) {
+    const {notes} = await import(`../src/content/notes/openpyxl/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {external.push(example.id); continue;}
+      await value.reset();
+      const events = await run(value, example.code);
+      const end = events.at(-1);
+      assert.ok(end?.type === 'end' && end.status === 'success',
+        example.id + ': ' + events.find(event => event.type === 'error')?.message);
+      count++;
+    }
+  }
+  assert.equal(count, 168);
+  assert.deepEqual(external, ['openpyxl/objetos-adicionales/insertar-imagen/1', 'openpyxl/formatos-avanzados/macros/1',
+    'openpyxl/formatos-avanzados/tablas-dinamicas/1', 'openpyxl/integraciones/matplotlib/1']);
+});
+
+test('Pyodide real: SciPy carga sus datos, completa stats y verifica 177 ejemplos', async () => {
+  const {scipyCurriculum} = await import('../src/content/scipy-curriculum.ts');
+  await pyodide.loadPackage('scipy');
+  assert.equal(pyodide.runPython('import scipy; scipy.__version__'), pythonPackages.lock.packages.scipy.version);
+  const dataset = await createDatasetAdapter().materialize({id: 'scipy-negocio', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+  const entity = (name: string) => value.inspect().entities.find(item => item.name === name);
+  assert.deepEqual(entity('ventas')?.preview?.rows, [[100], [120], [120], [140], [220]]);
+  assert.deepEqual(entity('ventas_nan')?.preview?.rows[2], [null]);
+  assert.deepEqual(entity('conversiones')?.preview?.rows, [[40, 160], [60, 140]]);
+  assert.ok(complete(value, 'stats.ttest_').items.some(item => item.label === 'ttest_ind'));
+  await run(value, 'ventas[0] = 400');
+  assert.deepEqual(entity('ventas')?.preview?.rows[0], [400]);
+
+  const differences: {id: string; expected: string; actual: string}[] = [];
+  const local: string[] = [];
+  let executed = 0;
+  for (const {key} of scipyCurriculum) {
+    const {notes} = await import(`../src/content/notes/scipy/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; textOutput: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {
+        local.push(example.id);
+        continue;
+      }
+      await value.reset();
+      const events = await run(value, example.code);
+      const failed = events.find(event => event.type === 'error');
+      const actual = failed ? failed.message : events.flatMap(event =>
+        event.type === 'stream' && event.channel === 'stdout' ? [event.text] : []).join('').trim();
+      if (failed || actual !== example.textOutput) differences.push({id: example.id, expected: example.textOutput, actual});
+      executed++;
+    }
+  }
+  assert.equal(executed, 177);
+  assert.deepEqual(local, ['scipy/io/matrix-market/1']);
+  assert.deepEqual(differences, []);
+});
+
+test('Pyodide real: SQLAlchemy comparte datos entre Core, ORM e inspector y restaura al reiniciar', async () => {
+  await pyodide.loadPackage('sqlalchemy');
+  assert.equal(pyodide.runPython('import sqlalchemy; sqlalchemy.__version__'), pythonPackages.lock.packages.sqlalchemy.version);
+  const seed = await createDatasetAdapter().materialize({id: 'sqlalchemy-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(seed);
+  const pedidos = () => value.inspect().entities.find(entity => entity.name === 'pedidos');
+  assert.deepEqual(pedidos()?.preview?.rows[0], [101, 1, 100, '2026-02-01', 'completed', null]);
+  assert.ok(complete(value, 'engine.con').items.some(item => item.label === 'connect'));
+
+  const edited = await run(value, 'with Sesion.begin() as s:\n    pedido = s.get(Pedido, 101)\n    pedido.monto = 777');
+  assert.ok(edited.some(event => event.type === 'end' && event.status === 'success'));
+  assert.equal(pedidos()?.preview?.rows[0][2], 777);
+
+  const opened = await run(value, 'c = engine.connect()\ntrx = c.begin()\nc.execute(update(pedidos).where(pedidos.c.id == 101).values(monto=999));');
+  assert.ok(opened.some(event => event.type === 'end' && event.status === 'success'));
+  assert.equal(pedidos()?.preview?.rows[0][2], 777);
+  const finished = await run(value, 'trx.commit()\nc.close()');
+  assert.ok(finished.some(event => event.type === 'end' && event.status === 'success'));
+  assert.equal(pedidos()?.preview?.rows[0][2], 999);
+
+  await value.reset();
+  assert.equal(pedidos()?.preview?.rows[0][2], 100);
+  const join = await run(value, 'with Sesion() as s:\n    print(s.get(Pedido, 101).cliente.nombre)');
+  assert.ok(join.some(event => event.type === 'stream' && event.text.trim() === 'Ana'));
+});
+
+test('Pyodide real: SQLAlchemy reproduce las salidas de los 228 ejemplos web', async () => {
+  const {sqlalchemyCurriculum} = await import('../src/content/sqlalchemy-curriculum.ts');
+  await pyodide.loadPackage('sqlalchemy');
+  const dataset = await createDatasetAdapter().materialize({id: 'sqlalchemy-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+
+  const differences: {id: string; expected: string; actual: string}[] = [];
+  const external: string[] = [];
+  let executed = 0;
+  for (const {key} of sqlalchemyCurriculum) {
+    const {notes} = await import(`../src/content/notes/sqlalchemy/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; textOutput: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {
+        external.push(example.id);
+        continue;
+      }
+      await value.reset();
+      const events = await run(value, example.code);
+      const failed = events.find(event => event.type === 'error');
+      const actual = failed ? failed.message : events.flatMap(event =>
+        event.type === 'stream' && event.channel === 'stdout' ? [event.text] : []).join('').trim();
+      if (failed || actual !== example.textOutput) differences.push({id: example.id, expected: example.textOutput, actual});
+      executed++;
+    }
+  }
+  assert.equal(executed, 228);
+  assert.deepEqual(external, [
+    'sqlalchemy/sqlalchemy-arquitectura/instalacion/1',
+    'sqlalchemy/asyncio/definicion/1',
+    'sqlalchemy/asyncio/asyncsession-y-async-sessionmaker/1',
+    'sqlalchemy/asyncio/run-sync-y-asyncresult/1',
+    'sqlalchemy/alembic/definicion/1',
+    'sqlalchemy/alembic/revision-y-autogenerate/1',
+    'sqlalchemy/alembic/upgrade-downgrade-y-revision-history/1',
+  ]);
+  assert.deepEqual(differences, []);
+});
