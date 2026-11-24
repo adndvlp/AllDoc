@@ -8,6 +8,8 @@ import decimal as _decimal
 import traceback as _traceback
 import ast as _ast
 import types as _types
+import reprlib as _reprlib
+from contextlib import closing as _closing
 import pandas as _pd
 import numpy as _np
 import jedi as _jedi
@@ -17,12 +19,14 @@ from pyodide.code import CodeRunner as _CodeRunner
 _DataFrame = _pd.DataFrame
 _Series = _pd.Series
 _namespace = {}
+_sqlite_view = None
 _jedi.settings.use_filesystem_cache = False
 _jedi_environment = _JediEnvironment()
 
 def _prepare(bootstrap):
-    global _namespace
+    global _namespace, _sqlite_view
     _namespace = {"__name__": "__main__"}
+    _sqlite_view = None
     exec(compile(bootstrap, "<datos>", "exec"), _namespace)
 
 def _value(value):
@@ -145,17 +149,119 @@ async def _run(payload):
         _send(event)
         return "error"
 
-def _inspect():
+def _preview_records(records, limit, budget):
+    sample = records[:limit]
+    if not all(type(row) is dict for row in sample):
+        return None
+    columns = {}
+    for row in sample:
+        for key in row:
+            if len(columns) >= 200:
+                break
+            if type(key) is str and 0 < len(key) <= 256:
+                columns[key] = None
+    rows = []
+    for row in sample:
+        values = [row.get(key) for key in columns]
+        rows.append([_reprlib.repr(value) if type(value) in (dict, list) else value for value in values])
+    preview = _table(_DataFrame(rows, columns=list(columns), dtype=object), limit, budget)
+    preview["truncated"] = len(preview["rows"]) < len(records)
+    return preview
+
+def _preview_array(array, columns, limit, budget):
+    if array.ndim == 1:
+        rows = array[:limit].reshape(-1, 1).tolist()
+        columns = ["valor"]
+    elif array.ndim == 2 and array.shape[1] <= 200:
+        rows = array[:limit].tolist()
+        if len(columns) != array.shape[1]:
+            columns = [str(index) for index in range(array.shape[1])]
+    else:
+        return None
+    preview = _table(_DataFrame(rows, columns=columns, dtype=object), limit, budget)
+    preview["truncated"] = len(preview["rows"]) < len(array)
+    return preview
+
+def _preview_sqlite(seed_tables):
+    global _sqlite_view
+    if not seed_tables:
+        return []
+    import sqlite3
+    connection = _namespace.get("con")
+    if _sqlite_view and _sqlite_view[0] is not connection:
+        _sqlite_view = None
+    if not isinstance(connection, sqlite3.Connection):
+        return []
     entities, rows_left, bytes_left = [], 200, 524288
-    for name, value in sorted(list(_namespace.items())):
-        if not isinstance(value, _DataFrame):
+    def check_backup(status, remaining, total):
+        if status in (sqlite3.SQLITE_BUSY, sqlite3.SQLITE_LOCKED):
+            raise sqlite3.OperationalError("La base está bloqueada durante la inspección")
+
+    try:
+        # Un backup en la propia transacción de escritura puede quedar esperando.
+        if connection.in_transaction:
+            return list(_sqlite_view[1]) if _sqlite_view else []
+        with _closing(sqlite3.connect(":memory:")) as snapshot:
+            sqlite3.Connection.backup(connection, snapshot, pages=64, progress=check_backup, sleep=0)
+            snapshot.execute("PRAGMA trusted_schema=OFF")
+            snapshot.execute("PRAGMA query_only=ON")
+            names = [row[0] for row in snapshot.execute("""
+                SELECT name FROM pragma_table_list WHERE "schema" = 'main' AND type = 'table'
+                AND substr(name, 1, 7) != 'sqlite_' ORDER BY name
+            """) if 0 < len(row[0]) <= 256]
+            ordered = [name for name in seed_tables if name in names]
+            ordered += [name for name in names if name not in seed_tables]
+            for name in ordered[:200]:
+                table = 'main."' + name.replace('"', '""') + '"'
+                primary = [row[0] for row in snapshot.execute(
+                    "SELECT name FROM pragma_table_info(?) WHERE pk > 0 ORDER BY pk", (name,))]
+                order = ' ORDER BY ' + ', '.join('"' + column.replace('"', '""') + '"' for column in primary) if primary else ''
+                row_count = snapshot.execute("SELECT COUNT(*) FROM " + table).fetchone()[0]
+                limit = min(20, rows_left)
+                cursor = snapshot.execute("SELECT * FROM " + table + order + " LIMIT ?", (limit,))
+                columns = [col[0] for col in cursor.description]
+                if len(columns) > 200 or any(not 0 < len(column) <= 256 for column in columns):
+                    continue
+                preview = _table(_DataFrame(cursor.fetchall(), columns=columns, dtype=object), limit, max(0, bytes_left))
+                preview["truncated"] = len(preview["rows"]) < row_count
+                for column in preview["columns"]:
+                    if column["name"] in primary:
+                        column["primaryKey"] = True
+                rows_left -= len(preview["rows"])
+                bytes_left -= len(_json.dumps(preview, ensure_ascii=False).encode("utf-8"))
+                entities.append({"name": name, "kind": "table", "columns": preview["columns"],
+                                 "rowCount": row_count, "preview": preview})
+    except sqlite3.Error:
+        return entities
+    _sqlite_view = (connection, list(entities))
+    return entities
+
+def _inspect():
+    entities = _preview_sqlite(_json.loads(_inspect_tables))
+    table_names = {entity["name"] for entity in entities}
+    rows_left = 200 - sum(len(entity["preview"]["rows"]) for entity in entities)
+    bytes_left = 524288 - sum(len(_json.dumps(entity["preview"], ensure_ascii=False).encode("utf-8")) for entity in entities)
+    variables = _json.loads(_inspect_variables)
+    for name in dict.fromkeys([*variables, *sorted(_namespace)]):
+        if name in table_names:
+            continue
+        value = _namespace.get(name)
+        limit, budget = min(20, rows_left), max(0, bytes_left)
+        if isinstance(value, _DataFrame):
+            kind, preview = "dataframe", _table(value, limit, budget)
+        elif name in variables and type(value) is list:
+            kind, preview = "variable", _preview_records(value, limit, budget)
+        elif name in variables and type(value) is _np.ndarray:
+            kind, preview = "variable", _preview_array(value, variables[name], limit, budget)
+        else:
+            continue
+        if preview is None:
             continue
         if len(entities) >= 200 or len(name) > 256:
             raise ValueError("El esquema supera los límites")
-        preview = _table(value, min(20, rows_left), max(0, bytes_left))
         rows_left -= len(preview["rows"])
         bytes_left -= len(_json.dumps(preview, ensure_ascii=False).encode("utf-8"))
-        entities.append({"name": name, "kind": "dataframe", "columns": preview["columns"], "rowCount": len(value), "preview": preview})
+        entities.append({"name": name, "kind": kind, "columns": preview["columns"], "rowCount": len(value), "preview": preview})
     return _json.dumps(entities, ensure_ascii=False, allow_nan=False)
 
 def _complete(payload):
@@ -177,6 +283,8 @@ def _complete(payload):
         from_position = position - _u16(prefix)
         to_position = position + _u16(_re.match(r"\w*", document[cursor:])[0])
         header = "import pandas as pd\n"
+        if _json.loads(_inspect_tables):
+            header += "import sqlite3\ncon: sqlite3.Connection\n"
         for name in registered:
             if name.isidentifier():
                 header += name + ": pd.DataFrame\n"

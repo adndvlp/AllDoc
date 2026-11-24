@@ -3,13 +3,25 @@ import type {DatasetManifest} from './types.ts';
 import {productsManifest} from './manifest.ts';
 import {businessManifest} from './business-manifest.ts';
 import {pandasCommerceManifest, pandasCommerceSchema} from './pandas-commerce.ts';
+import {jsonOrdersManifest, jsonOrdersSchema} from './json-orders.ts';
+import {numpySalesManifest, numpySalesSchema} from './numpy-sales.ts';
+import {sqlite3ShopManifest, sqlite3ShopSchema} from './sqlite3-shop.ts';
+
+const pythonDatasets = new Map([
+  [pandasCommerceManifest, {schema: pandasCommerceSchema, load: () => import('./rows/pandas-commerce.ts').then(module => module.pandasCommerceBootstrap)}],
+  [jsonOrdersManifest, {schema: jsonOrdersSchema, load: () => import('./rows/json-orders.ts').then(module => module.jsonOrdersBootstrap)}],
+  [numpySalesManifest, {schema: numpySalesSchema, load: () => import('./rows/numpy-sales.ts').then(module => module.numpySalesBootstrap)}],
+  [sqlite3ShopManifest, {schema: sqlite3ShopSchema, load: () => import('./rows/sqlite3-shop.ts').then(module => module.sqlite3ShopBootstrap)}],
+]);
+const manifests = [productsManifest, businessManifest, ...Array.from(pythonDatasets.keys())];
 
 export function getDatasetManifest(reference: DatasetReference): DatasetManifest | undefined {
-  return [productsManifest, businessManifest, pandasCommerceManifest].find(m=>m.reference.id===reference.id&&m.reference.version===reference.version);
+  return manifests.find(manifest =>
+    manifest.reference.id === reference.id && manifest.reference.version === reference.version);
 }
 export async function loadPracticeDataset(reference:DatasetReference){
   const manifest = getDatasetManifest(reference);
-  if (!manifest || manifest === pandasCommerceManifest) throw new Error('Dataset tabular desconocido o versión no disponible');
+  if (!manifest || pythonDatasets.has(manifest)) throw new Error('Dataset tabular desconocido o versión no disponible');
   return reference.id===businessManifest.reference.id?(await import('./rows/business.ts')).businessDataset:(await import('./products.ts')).productsDataset;
 }
 export function createDatasetAdapter(): DatasetAdapter {
@@ -18,11 +30,12 @@ export function createDatasetAdapter(): DatasetAdapter {
     const manifest = getDatasetManifest(reference);
     if (!manifest) throw new Error('Dataset desconocido o versión no disponible');
     if (runtimeId !== 'sqlite-wasm' && runtimeId !== 'pyodide') throw new Error('Runtime sin materializador de datos: ' + runtimeId);
-    if (manifest === pandasCommerceManifest) {
-      if (runtimeId !== 'pyodide') throw new Error('Los datos del temario de pandas requieren Python');
-      const {pandasCommerceBootstrap} = await import('./rows/pandas-commerce.ts');
+    const pythonDataset = pythonDatasets.get(manifest);
+    if (pythonDataset) {
+      if (runtimeId !== 'pyodide') throw new Error('Los datos de ' + manifest.title + ' requieren Python');
+      const bootstrap = await pythonDataset.load();
       signal.throwIfAborted();
-      return {reference: {...reference}, files: [], bootstrap: pandasCommerceBootstrap, schema: pandasCommerceSchema};
+      return {reference: {...reference}, files: [], bootstrap, schema: pythonDataset.schema};
     }
     const [dataset, {materializeDataset}] = await Promise.all([loadPracticeDataset(reference), import('./materialize.ts')]);
     signal.throwIfAborted();

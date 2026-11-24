@@ -153,3 +153,146 @@ test('Pyodide real: los 214 ejemplos integrados de pandas ejecutan sobre los dat
   assert.equal(executed, 214);
   assert.equal(external, 10);
 });
+
+test('Pyodide real: json muestra pedidos anidados, ejecuta sus ejemplos y recupera los datos iniciales', async () => {
+  const {jsonCurriculum} = await import('../src/content/json-curriculum.ts');
+  const course = await createDatasetAdapter().materialize({id: 'json-pedidos', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(course);
+  const orders = () => value.inspect().entities.find(entity => entity.name === 'pedidos');
+  assert.equal(orders()?.kind, 'variable');
+  assert.equal(orders()?.rowCount, 3);
+  assert.deepEqual(orders()?.columns, course.schema.entities[0].columns);
+  assert.deepEqual(orders()?.preview?.rows.map(row => row[0]), [101, 102, 103]);
+  assert.match(String(orders()?.preview?.rows[0][1]), /Ana/);
+  await run(value, 'pedidos.pop()\nruta.write_text("[]", encoding="utf-8")');
+  assert.equal(orders()?.rowCount, 2);
+  await value.reset();
+  const restored = await run(value, 'print(len(json.loads(ruta.read_text(encoding="utf-8"))), len(ruta_jsonl.read_text().splitlines()))');
+  assert.ok(restored.some(event => event.type === 'stream' && event.text.trim() === '3 3'));
+  assert.equal(orders()?.rowCount, 3);
+  assert.ok(complete(value, 'import json\njson.loa').items.some(item => item.label === 'loads'));
+
+  let executed = 0;
+  let external = 0;
+  for (const {key} of jsonCurriculum) {
+    const {notes} = await import(`../src/content/notes/json/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; language: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) { external++; continue; }
+      assert.equal(example.language, 'python');
+      await value.reset();
+      const events = await run(value, example.code);
+      assert.ok(events.some(event => event.type === 'end' && event.status === 'success'),
+        example.id + ': ' + events.find(event => event.type === 'error')?.message);
+      executed++;
+    }
+  }
+  assert.equal(executed, 81);
+  assert.equal(external, 9);
+});
+
+test('Pyodide real: NumPy muestra sus arrays y reproduce las salidas de los 196 ejemplos del editor', async () => {
+  const {numpyCurriculum} = await import('../src/content/numpy-curriculum.ts');
+  const course = await createDatasetAdapter().materialize({id: 'numpy-ventas', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(course);
+  const sales = () => value.inspect().entities.find(entity => entity.name === 'ventas');
+  assert.deepEqual(sales()?.columns.map(column => column.name), ['T1', 'T2', 'T3', 'T4']);
+  assert.deepEqual(sales()?.preview?.rows[1], [150, 200, 250, 350]);
+  assert.deepEqual(value.inspect().entities.find(entity => entity.name === 'fechas')?.preview?.rows[0], ['2026-01-05']);
+  await run(value, 'ventas[0, 0] = 800');
+  assert.equal(sales()?.preview?.rows[0][0], 800);
+  await value.reset();
+  assert.equal(sales()?.preview?.rows[0][0], 100);
+  assert.ok(complete(value, 'import numpy as np\nnp.ar').items.some(item => item.label === 'array'));
+
+  const differences: {id: string; expected: string; actual: string}[] = [];
+  const local: string[] = [];
+  let executed = 0;
+  for (const {key} of numpyCurriculum) {
+    const {notes} = await import(`../src/content/notes/numpy/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; textOutput: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {local.push(example.id); continue;}
+      await value.reset();
+      const events = await run(value, example.code);
+      const failed = events.find(event => event.type === 'error');
+      const actual = failed ? failed.message : events.flatMap(event =>
+        event.type === 'stream' && event.channel === 'stdout' ? [event.text] : []).join('').trim();
+      if (failed || actual !== example.textOutput) differences.push({id: example.id, expected: example.textOutput, actual});
+      executed++;
+    }
+  }
+  assert.equal(executed, 196);
+  assert.deepEqual(local, ['numpy/precision-y-errores-numericos/errstate-y-seterr/1',
+    'numpy/archivos-e-intercambio-de-datos/memmap/1']);
+  assert.deepEqual(differences, []);
+});
+
+test('Pyodide real: sqlite3 inspecciona una copia de la base, conserva cambios y vuelve a sembrar al reiniciar', async () => {
+  const dataset = await createDatasetAdapter().materialize({id: 'sqlite3-tienda', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+  const customers = () => value.inspect().entities.find(entity => entity.name === 'clientes');
+  assert.equal(customers()?.kind, 'table');
+  assert.equal(customers()?.rowCount, 4);
+  assert.deepEqual(customers()?.preview?.rows[0], [1, 'Ana', 'Mexico']);
+  assert.deepEqual(customers()?.preview?.rows[3], [4, 'Diego', null]);
+
+  await run(value, 'con.execute("UPDATE clientes SET nombre = \'Elena\' WHERE id = 1")\n' +
+    'con.execute(\'CREATE TABLE "prueba""nombre"(a INTEGER)\')\n' +
+    'con.execute(\'INSERT INTO "prueba""nombre" VALUES (42)\')\n' +
+    'traza = []\ncon.set_trace_callback(traza.append)\ncon.row_factory = sqlite3.Row');
+  assert.deepEqual(customers()?.preview?.rows[0], [1, 'Elena', 'Mexico']);
+  assert.deepEqual(value.inspect().entities.find(entity => entity.name === 'prueba"nombre')?.preview?.rows, [[42]]);
+  const traced = await run(value, 'print(traza)');
+  assert.ok(traced.some(event => event.type === 'stream' && event.channel === 'stdout' && event.text.trim() === '[]'));
+  await run(value, 'con.execute("BEGIN")\ncon.execute("UPDATE clientes SET nombre = \'Luz\' WHERE id = 1")');
+  assert.deepEqual(customers()?.preview?.rows[0], [1, 'Elena', 'Mexico']);
+  await run(value, 'con.execute("COMMIT")');
+  assert.deepEqual(customers()?.preview?.rows[0], [1, 'Luz', 'Mexico']);
+  assert.ok(complete(value, 'con.exe').items.some(item => item.label === 'execute'));
+  await run(value, 'con.close()');
+  assert.deepEqual(value.inspect().entities, []);
+  await value.reset();
+  assert.deepEqual(customers()?.preview?.rows[0], [1, 'Ana', 'Mexico']);
+});
+
+test('Pyodide real: las 131 fichas compatibles de sqlite3 se ejecutan con los datos compartidos', async () => {
+  const {sqlite3Curriculum} = await import('../src/content/sqlite3-curriculum.ts');
+  const dataset = await createDatasetAdapter().materialize({id: 'sqlite3-tienda', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(dataset);
+  const local: string[] = [];
+  let executed = 0;
+  for (const {key} of sqlite3Curriculum) {
+    const {notes} = await import(`../src/content/notes/sqlite3/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; textOutput: string; language: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) {local.push(example.id); continue;}
+      assert.equal(example.language, 'python');
+      await value.reset();
+      const events = await run(value, example.code);
+      const failed = events.find(event => event.type === 'error');
+      assert.equal(failed, undefined, example.id + ': ' + failed?.message);
+      const output = events.flatMap(event => event.type === 'stream' && event.channel === 'stdout' ? [event.text] : []).join('').trim();
+      const expected = [...example.textOutput.matchAll(/\x60([^\x60]+)\x60/g)].map(match => match[1]);
+      assert.ok(output, example.id + ': salida vacía');
+      const matches = expected.map(text => output.includes(text));
+      assert.ok(example.id.endsWith('/extensiones-cargables/1') ? matches.some(Boolean) : matches.every(Boolean),
+        example.id + ': ' + output + ' / ' + example.textOutput);
+      executed++;
+    }
+  }
+  assert.equal(executed, 131);
+  assert.deepEqual(local, ['sqlite3/callbacks-y-control-de-ejecucion/interrupt/1',
+    'sqlite3/pruebas-y-flujos-reproducibles/cli-de-sqlite3/1']);
+});

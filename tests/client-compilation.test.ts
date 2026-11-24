@@ -11,6 +11,12 @@ import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import type {RuntimeEvent} from '../src/practice/contracts.ts';
 import {sqlConcepts} from '../src/content/notes/sql.ts';
+import {productsManifest} from '../src/practice/datasets/manifest.ts';
+import {businessManifest} from '../src/practice/datasets/business-manifest.ts';
+import {pandasCommerceManifest, pandasCommerceSchema} from '../src/practice/datasets/pandas-commerce.ts';
+import {jsonOrdersManifest, jsonOrdersSchema} from '../src/practice/datasets/json-orders.ts';
+import {numpySalesManifest, numpySalesSchema} from '../src/practice/datasets/numpy-sales.ts';
+import {sqlite3ShopManifest, sqlite3ShopSchema} from '../src/practice/datasets/sqlite3-shop.ts';
 
 const require = createRequire(import.meta.url);
 const {transformSync} = require('@babel/core');
@@ -127,7 +133,22 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 3);
+  assert.equal(profiles.practiceRegistry.list().length, 6);
+});
+
+test('preset cliente: resuelve los manifiestos de Python por ID y versión', () => {
+  const {getDatasetManifest} = compile<typeof import('../src/practice/datasets/index.ts')>('../src/practice/datasets/index.ts', {
+    './manifest.ts': {productsManifest},
+    './business-manifest.ts': {businessManifest},
+    './pandas-commerce.ts': {pandasCommerceManifest, pandasCommerceSchema},
+    './json-orders.ts': {jsonOrdersManifest, jsonOrdersSchema},
+    './numpy-sales.ts': {numpySalesManifest, numpySalesSchema},
+    './sqlite3-shop.ts': {sqlite3ShopManifest, sqlite3ShopSchema},
+  });
+  for (const manifest of [productsManifest, businessManifest, pandasCommerceManifest, jsonOrdersManifest, numpySalesManifest, sqlite3ShopManifest]) {
+    assert.equal(getDatasetManifest({...manifest.reference}), manifest);
+  }
+  assert.equal(getDatasetManifest({...jsonOrdersManifest.reference, version: 0}), undefined);
 });
 
 test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map', async () => {

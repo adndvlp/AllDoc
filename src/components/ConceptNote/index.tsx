@@ -7,7 +7,7 @@ import styles from '../SqlNotes/styles.module.css';
 type TabularOutput = {
   columns: readonly string[]; rows: readonly (readonly string[])[]; rowLabels?: readonly string[];
 };
-type Example = {id: string; title: string; code: string; hint: string; external?: boolean} & (
+type Example = {id: string; title: string; code: string; hint: string; language?: string; external?: boolean} & (
   | {output: TabularOutput; textOutput?: never; resultLabel?: never}
   | {output?: never; textOutput: string; resultLabel: string}
 );
@@ -25,24 +25,26 @@ function TryExample({example, language}: {example: Example; language: string}) {
 }
 
 /** La presentación compacta es común; cada herramienta aporta lenguaje y contenido. */
-export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page', controls, afterContent, renderAction, showResults=true, resultLabel='Ver resultado'}: {
+export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page', controls, afterContent, renderAction, showResults=true, resultLabel='Ver resultado', formatText}: {
   concept: NoteContent; conceptId: string; kind: string; language: string; htmlClassName?: string;
   controls?:ReactNode;afterContent?:ReactNode;renderAction?:(example:Example)=>ReactNode;showResults?:boolean;resultLabel?:string;
+  formatText?: (text: string) => ReactNode;
 }) {
   const resultId = useId();
+  const format = formatText ?? ((text: string) => text);
   return <HtmlClassNameProvider className={htmlClassName}>
     <section className={styles.concept} {...{[`data-${kind}-concept`]: conceptId}} aria-label={concept.title}>
-      <p className={styles.definition}>{concept.description}</p>
+      <p className={styles.definition}>{format(concept.description)}</p>
       {controls}
       <div className={styles.variants}>
         {concept.examples.map((example, index) => (
           <div key={example.id} className={styles.variant} {...{[`data-${kind}-example`]: example.title}}>
             <div className={styles.variantHeading}>
               <h2 className={styles.variantTitle}>{example.title}</h2>
-              {renderAction?renderAction(example):<TryExample example={example} language={language} />}
+              {renderAction?renderAction(example):<TryExample example={example} language={example.language ?? language} />}
             </div>
-            {example.code&&<CodeBlock language={language}>{example.code}</CodeBlock>}
-            <p className={styles.hint}>{example.hint}</p>
+            {example.code&&<CodeBlock language={example.language ?? language}>{example.code}</CodeBlock>}
+            <p className={styles.hint}>{format(example.hint)}</p>
             {showResults&&example.code&&<details className={styles.result}>
               <summary>{example.output ? <>{resultLabel} <span>{example.output.rows.length} filas</span></> : example.resultLabel}</summary>
               <div className={styles.tableWrapper} role="region" tabIndex={0} aria-labelledby={`${resultId}-${index}`}>
@@ -60,15 +62,16 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
                   ))}</tbody>
                 </table> : <>
                   <span id={`${resultId}-${index}`} className="sr-only">Resultado de {concept.title}: {example.title}</span>
-                  <pre className={styles.textResult}>{example.textOutput}</pre>
+                  {formatText ? <p className={styles.hint}>{format(example.textOutput)}</p>
+                    : <pre className={styles.textResult}>{example.textOutput}</pre>}
                 </>}
               </div>
             </details>}
           </div>
         ))}
       </div>
-      <p className={styles.remember}>{concept.remember}</p>
-      {concept.note && <p className={styles.note}>{concept.note}</p>}
+      <p className={styles.remember}>{format(concept.remember)}</p>
+      {concept.note && <p className={styles.note}>{format(concept.note)}</p>}
       {afterContent}
     </section>
   </HtmlClassNameProvider>;

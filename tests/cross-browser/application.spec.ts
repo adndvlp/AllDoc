@@ -8,7 +8,7 @@ const sql=profiles[0];
 test(caseTitle('APP-01'), async ({page}, info) => {
   await go(page);
   const catalog=page.locator('[data-catalog]');
-  await expect(catalog.locator('details')).toHaveCount(91);
+  await expect(catalog.locator('details')).toHaveCount(158);
   await expect(catalog.locator('details[open]')).toHaveCount(0);
   await activate(catalog.getByLabel('SQL',{exact:true}),info);
   await activate(catalog.getByLabel('Tablas y archivos',{exact:true}),info);

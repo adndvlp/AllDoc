@@ -30,6 +30,11 @@ export function createPythonEngine(pyodide: PyodideAPI): PythonEngine {
         pyodide.FS.writeFile(file.path, file.bytes);
       }
       requireScope().set('_bootstrap', seed.bootstrap);
+      requireScope().set('_inspect_variables', JSON.stringify(Object.fromEntries(seed.schema.entities
+        .filter(entity => entity.kind === 'variable')
+        .map(entity => [entity.name, entity.columns.map(column => column.name)]))));
+      requireScope().set('_inspect_tables', JSON.stringify(seed.schema.entities
+        .filter(entity => entity.kind === 'table').map(entity => entity.name)));
       evaluate('_prepare(_bootstrap)'); requireScope().delete('_bootstrap'); version++;
     } finally {pyodide.FS.chdir(previous);}
   }

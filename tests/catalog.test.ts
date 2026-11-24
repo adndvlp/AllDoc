@@ -27,9 +27,9 @@ test('el catálogo incluye Lenguajes y conserva, diecinueve herramientas y los c
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 378 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [378, 0, 0, 153]);
-  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 225);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas, NumPy, sqlite3, json · 799 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [799, 0, 0, 153]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 646);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -89,18 +89,19 @@ test('metadata, páginas MDX, palabras clave y cuerpos tienen los mismos concept
 
 test('el índice real conserva rutas y búsquedas y no contiene secciones vacías o el repaso eliminado', () => {
   assert.deepEqual(entries.map((entry) => entry.id), concepts.map((concept) => concept.id));
+  const topicLabels: Record<string, string> = {sql: 'SQL', pandas: 'Pandas', numpy: 'NumPy', sqlite3: 'sqlite3', json: 'json'};
   for (const entry of entries) {
     const metadata = getConcept(entry.id)!;
     assert.equal(entry.href, metadata.slug);
     assert.equal(entry.title, metadata.title);
     assert.equal(entry.description, metadata.description);
-    assert.equal(entry.context, 'Análisis de datos / ' + (metadata.topicId === 'sql' ? 'SQL' : 'Pandas'));
+    assert.equal(entry.context, 'Análisis de datos / ' + topicLabels[metadata.topicId]);
   }
   for (const [query, id] of [['filtrar', 'where'], ['ORDENAR', 'order-by'], ['máximo', 'limit'], ['--', 'comentarios'], ['/*', 'comentarios']]) {
     assert.equal(searchEntries(entries, query).find(entry => entry.context.endsWith('/ SQL'))?.id, 'analisis-de-datos/sql/' + id);
   }
   assert.ok(!JSON.stringify(entries).includes('/repaso'));
-  assert.ok(searchEntries(entries, 'Excel').every(entry => entry.context.endsWith('/ Pandas')));
+  assert.ok(searchEntries(entries, 'Excel').every(entry => ['Pandas', 'json'].some(topic => entry.context.endsWith('/ ' + topic))));
   assert.ok(!entries.some(entry => entry.id.startsWith('analisis-de-datos/excel/')));
   assert.doesNotMatch(JSON.stringify(catalog), /SELECT \* FROM productos|WHERE precio >=|"examples"|"output"/);
 });
