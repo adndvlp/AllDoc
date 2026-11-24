@@ -6,16 +6,22 @@ type SidebarItemConfig = Extract<SidebarsConfig[string], unknown[]>[number];
 type SidebarCategory = Extract<SidebarItemConfig, {type: 'category'}>;
 
 function sidebarItem(node: CatalogNode): SidebarCategory {
+  const isSql = node.kind === 'topic' && node.id === 'sql';
   const items: SidebarItemConfig[] = node.kind === 'group'
     ? node.items.map(sidebarItem)
     : node.sections?.length
-      ? node.sections.map(group=>({type:'category',label:group.label,collapsed:true,collapsible:true,className:'sidebar-sql-group',items:group.concepts.map(c=>({type:'doc',id:sqlDocIdForLocation(c.id,node.areaId as 'analisis-de-datos'|'lenguajes')!,label:c.label}))}))
+      ? node.sections.map(group => ({
+        type: 'category', label: group.label, collapsed: true, collapsible: true,
+        ...(isSql ? {className: 'sidebar-sql-group'} : {}),
+        items: group.concepts.map(concept => ({type: 'doc', label: concept.label,
+          id: isSql ? sqlDocIdForLocation(concept.id, node.areaId as 'analisis-de-datos' | 'lenguajes')! : concept.docId ?? concept.id})),
+      }))
     : node.concepts.length
       ? node.concepts.map((concept) => concept.docId??concept.id)
       : [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}];
   return {
     type: 'category', label: node.label, collapsed: true, collapsible: true,
-    ...(node.kind === 'group' ? {className: 'sidebar-topic-group'} : node.sections?.length?{className:'sidebar-sql-topic'}:{}),
+    ...(node.kind === 'group' ? {className: 'sidebar-topic-group'} : isSql && node.sections?.length ? {className: 'sidebar-sql-topic'} : {}),
     items,
   };
 }

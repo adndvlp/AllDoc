@@ -16,7 +16,7 @@ export function searchKeyboard(input: RefObject<HTMLInputElement | null>, list: 
     onResultsKeyDown(event: KeyboardEvent<HTMLUListElement>) {
       if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
       event.preventDefault();
-      const links = [...(list.current?.querySelectorAll('a') ?? [])];
+      const links = Array.from(list.current?.querySelectorAll('a') ?? []);
       const current = links.indexOf(document.activeElement as HTMLAnchorElement);
       const next = current + (event.key === 'ArrowDown' ? 1 : -1);
       if (next < 0) input.current?.focus();

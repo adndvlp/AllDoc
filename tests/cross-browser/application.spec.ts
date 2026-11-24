@@ -8,7 +8,7 @@ const sql=profiles[0];
 test(caseTitle('APP-01'), async ({page}, info) => {
   await go(page);
   const catalog=page.locator('[data-catalog]');
-  await expect(catalog.locator('details')).toHaveCount(58);
+  await expect(catalog.locator('details')).toHaveCount(91);
   await expect(catalog.locator('details[open]')).toHaveCount(0);
   await activate(catalog.getByLabel('SQL',{exact:true}),info);
   await activate(catalog.getByLabel('Tablas y archivos',{exact:true}),info);
@@ -43,7 +43,8 @@ test(caseTitle('APP-02'), async ({page}, info) => {
   }
   const input=page.locator('[data-search-surface="inline"]').getByRole('searchbox');
   await input.fill('cómo filtrar'); const result=page.locator('[data-search-surface="inline"]').getByRole('link').filter({has:page.getByText('WHERE',{exact:true})});
-  await expect(result).toHaveCount(1); await input.press('ArrowDown'); await expect(result).toBeFocused(); await page.keyboard.press('Enter');
+  await expect(result).toHaveCount(1); await input.press('ArrowDown'); await page.keyboard.press('ArrowDown');
+  await expect(result).toBeFocused(); await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);
   const search=header(page).getByRole('button',{name:'Buscar un concepto',exact:true});
   await activate(search,info); await fits(page,searchDialog(page));

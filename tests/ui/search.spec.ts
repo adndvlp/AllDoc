@@ -23,6 +23,8 @@ test('buscador de portada: carga diferida, consulta pedagógica y navegación po
   await expect(page.locator('[data-catalog]')).not.toBeVisible();
   await expect(page).toHaveScreenshot('busqueda-inicio.png');
   await input(page).press('ArrowDown');
+  await expect(home(page).getByRole('link').first()).toBeFocused();
+  await page.keyboard.press('ArrowDown');
   await expect(result).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/sql\/where$/);

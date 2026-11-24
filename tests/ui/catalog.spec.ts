@@ -18,7 +18,7 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await go(page);
   await expect(library(page)).toHaveAttribute('data-catalog', 'analisis-de-datos');
   await expect(page.locator('[data-personal-shortcuts]')).toHaveCount(0);
-  await expect(library(page).locator('details')).toHaveCount(58);
+  await expect(library(page).locator('details')).toHaveCount(91);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   expect(await library(page).locator(':scope > ul > li > details > summary').evaluateAll((summaries) => summaries.map((summary) => summary.getAttribute('aria-label')))).toEqual([
     'Excel', 'Power Query', 'SQL', 'Tablas y archivos', 'Cálculo científico', 'Visualización',
@@ -35,7 +35,10 @@ test('portada: catálogo completo contraído, despliegues independientes y naveg
   await library(page).getByLabel('Tablas y archivos', {exact: true}).click();
   await library(page).getByLabel('Pandas', {exact: true}).click();
   await expect(item(page, 'sql')).toHaveAttribute('open', '');
-  await expect(item(page, 'pandas').getByRole('link', {name: /DataFrame/})).toBeVisible();
+  const pandas = item(page, 'pandas');
+  await expect(pandas.locator('[data-pandas-group]')).toHaveCount(33);
+  await pandas.getByLabel('Series y DataFrame', {exact: true}).click();
+  await expect(pandas.getByRole('link', {name: 'DataFrame', exact: true})).toBeVisible();
   await expect(page).toHaveURL(/\/$/);
   expect(await page.evaluate(() => localStorage.getItem('alldoc-recents-v1'))).toBeNull();
   await noOverflow(page);
@@ -91,7 +94,7 @@ test('cambiar área conserva URL, búsqueda y accesos globales; contrae el catá
 
 test('páginas de área: mismo catálogo, sidebar independiente y áreas vacías sin contenido ficticio', async ({page}) => {
   await go(page, '/apuntes/analisis-de-datos');
-  await expect(library(page).locator('details')).toHaveCount(58);
+  await expect(library(page).locator('details')).toHaveCount(91);
   await expect(library(page).locator('details[open]')).toHaveCount(0);
   await library(page).getByLabel('SQL', {exact: true}).click();
   await expect(item(page, 'sql').getByRole('link')).toHaveCount(0);

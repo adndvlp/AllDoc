@@ -27,9 +27,9 @@ test('el catálogo incluye Lenguajes y conserva, diecinueve herramientas y los c
     ['Peticiones y formatos', ['requests', 'httpx', 'json']],
   ]);
   assert.deepEqual(catalog[0].items.filter((item) => item.kind === 'topic').map((item) => item.label), ['Excel', 'Power Query', 'SQL', 'R', 'Power BI', 'Tableau']);
-  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 154 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
-  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [154, 0, 0, 153]);
-  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 1);
+  assert.deepEqual(areas.map((area) => [area.status, area.available]), [['SQL, Pandas · 378 conceptos', true], ['Por explorar', false], ['Por explorar', false], ['SQL · 153 conceptos', true]]);
+  assert.deepEqual(catalog.map((area) => countConcepts(area.items)), [378, 0, 0, 153]);
+  assert.equal(countConcepts(catalog[0].items.filter((item) => item.kind === 'group')), 225);
 });
 
 test('el sidebar deriva del catálogo, conserva categorías contraídas y solo enlaza conceptos', () => {
@@ -55,7 +55,11 @@ test('el sidebar deriva del catálogo, conserva categorías contraídas y solo e
   assert.ok(Array.isArray(files.items));
   const pandas = files.items.find((item) => typeof item === 'object' && item.type === 'category' && item.label === 'Pandas');
   assert.ok(pandas && typeof pandas === 'object' && pandas.type === 'category');
-  assert.deepEqual(pandas.items, ['analisis-de-datos/pandas/dataframe']);
+  assert.ok(Array.isArray(pandas.items));
+  assert.equal(pandas.items.length, 33);
+  assert.deepEqual(pandas.items.flatMap(group => typeof group === 'object' && group.type === 'category' && Array.isArray(group.items)
+    ? group.items.flatMap(leaf => typeof leaf === 'object' && leaf.type === 'doc' ? [leaf.id] : []) : []),
+  getConceptsForTopic('analisis-de-datos', 'pandas').map(concept => concept.id));
   assert.deepEqual(items[0].items, [{type: 'html', value: '<span class="sidebar-empty-note">Sin apuntes todavía</span>', defaultStyle: false}]);
 });
 
@@ -93,10 +97,11 @@ test('el índice real conserva rutas y búsquedas y no contiene secciones vacía
     assert.equal(entry.context, 'Análisis de datos / ' + (metadata.topicId === 'sql' ? 'SQL' : 'Pandas'));
   }
   for (const [query, id] of [['filtrar', 'where'], ['ORDENAR', 'order-by'], ['máximo', 'limit'], ['--', 'comentarios'], ['/*', 'comentarios']]) {
-    assert.equal(searchEntries(entries, query)[0]?.id, 'analisis-de-datos/sql/' + id);
+    assert.equal(searchEntries(entries, query).find(entry => entry.context.endsWith('/ SQL'))?.id, 'analisis-de-datos/sql/' + id);
   }
   assert.ok(!JSON.stringify(entries).includes('/repaso'));
-  assert.deepEqual(searchEntries(entries, 'Excel'), []);
+  assert.ok(searchEntries(entries, 'Excel').every(entry => entry.context.endsWith('/ Pandas')));
+  assert.ok(!entries.some(entry => entry.id.startsWith('analisis-de-datos/excel/')));
   assert.doesNotMatch(JSON.stringify(catalog), /SELECT \* FROM productos|WHERE precio >=|"examples"|"output"/);
 });
 
@@ -140,7 +145,7 @@ test('Docusaurus recibe la metadata canónica conservando contenido, opciones y 
     assert.equal(result.content, parsed.content);
     assert.deepEqual(result.frontMatter, {
       ...parsed.frontMatter,
-      title: concept.title, sidebar_label: concept.topicId==='sql'?concept.label:concept.title, sidebar_position: concept.order,
+      title: concept.title, sidebar_label: concept.label, sidebar_position: concept.order,
       description: ('seoDescription' in concept ? concept.seoDescription : concept.description),
       slug: concept.slug.slice(docsBasePath.length),
       ...(concept.topicId==='sql'?{displayed_sidebar:'analisisDeDatos',alldoc_canonical:concept.slug}:{}),

@@ -29,7 +29,7 @@ function CatalogItem({node, prefix}: {node: CatalogNode; prefix: string}) {
         <span id={descriptionId} className={styles.count}>{count ? `${count} ${count === 1 ? 'concepto' : 'conceptos'}` : null}<span className="sr-only">{hint ? ` ${hint}` : ''}</span></span>
       </summary>
       {node.kind === 'group' ? <ul className={styles.nested}>{node.items.map((item) => <CatalogItem key={item.id} node={item} prefix={prefix} />)}</ul>
-        : node.sections?.length?<ul className={styles.nested}>{node.sections.map(group=><li key={group.id} data-sql-group={group.id}>
+        : node.sections?.length?<ul className={styles.nested}>{node.sections.map(group=><li key={group.id} {...{[`data-${node.id}-group`]: group.id}}>
           <details className={styles.disclosure}><summary className={styles.trigger} aria-label={group.label}>
            <span className={styles.chevron} aria-hidden="true">›</span><span className={styles.copy}><span className={styles.name}>{group.label}</span></span>
            <span className={styles.count}>{group.concepts.length} conceptos</span>

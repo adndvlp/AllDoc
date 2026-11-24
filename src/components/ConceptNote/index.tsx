@@ -4,16 +4,20 @@ import {HtmlClassNameProvider} from '@docusaurus/theme-common';
 import {usePractice} from '../PracticeProvider';
 import styles from '../SqlNotes/styles.module.css';
 
-type Example = {id: string; title: string; code: string; hint: string; output: {
+type TabularOutput = {
   columns: readonly string[]; rows: readonly (readonly string[])[]; rowLabels?: readonly string[];
-}};
-type Note = {title: string; description: string; examples: readonly Example[]; remember: string; note?: string};
+};
+type Example = {id: string; title: string; code: string; hint: string; external?: boolean} & (
+  | {output: TabularOutput; textOutput?: never; resultLabel?: never}
+  | {output?: never; textOutput: string; resultLabel: string}
+);
+export type NoteContent = {title: string; description: string; examples: readonly Example[]; remember: string; note?: string};
 
 // Solo la acción depende de la sesión. Los cambios del editor no vuelven a
 // renderizar el contenido editorial, sus tablas ni el resaltado de código.
 function TryExample({example, language}: {example: Example; language: string}) {
   const practice = usePractice();
-  if (practice.context?.profile.languageId !== language) return null;
+  if (example.external || practice.context?.profile.languageId !== language) return null;
   return <button className={styles.tryExample} type="button"
     data-practice-example={example.id} aria-label={'Probar este ejemplo: ' + example.title}
     aria-haspopup="dialog" aria-controls="alldoc-practice-panel" title="Probar este ejemplo"
@@ -22,7 +26,7 @@ function TryExample({example, language}: {example: Example; language: string}) {
 
 /** La presentación compacta es común; cada herramienta aporta lenguaje y contenido. */
 export function ConceptNote({concept, conceptId, kind, language, htmlClassName = 'concept-note-page', controls, afterContent, renderAction, showResults=true, resultLabel='Ver resultado'}: {
-  concept: Note; conceptId: string; kind: string; language: string; htmlClassName?: string;
+  concept: NoteContent; conceptId: string; kind: string; language: string; htmlClassName?: string;
   controls?:ReactNode;afterContent?:ReactNode;renderAction?:(example:Example)=>ReactNode;showResults?:boolean;resultLabel?:string;
 }) {
   const resultId = useId();
@@ -40,9 +44,9 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
             {example.code&&<CodeBlock language={language}>{example.code}</CodeBlock>}
             <p className={styles.hint}>{example.hint}</p>
             {showResults&&example.code&&<details className={styles.result}>
-              <summary>{resultLabel} <span>{example.output.rows.length} filas</span></summary>
+              <summary>{example.output ? <>{resultLabel} <span>{example.output.rows.length} filas</span></> : example.resultLabel}</summary>
               <div className={styles.tableWrapper} role="region" tabIndex={0} aria-labelledby={`${resultId}-${index}`}>
-                <table>
+                {example.output ? <table>
                   <caption id={`${resultId}-${index}`} className="sr-only">Resultado de {concept.title}: {example.title}</caption>
                   <thead><tr>
                     {example.output.rowLabels && <th scope="col">Índice</th>}
@@ -54,7 +58,10 @@ export function ConceptNote({concept, conceptId, kind, language, htmlClassName =
                       {row.map((value, columnIndex) => <td key={columnIndex}>{value}</td>)}
                     </tr>
                   ))}</tbody>
-                </table>
+                </table> : <>
+                  <span id={`${resultId}-${index}`} className="sr-only">Resultado de {concept.title}: {example.title}</span>
+                  <pre className={styles.textResult}>{example.textOutput}</pre>
+                </>}
               </div>
             </details>}
           </div>

@@ -6,7 +6,7 @@ import {searchEntries, searchTerms, prepareSearchIndex, searchPreparedEntries} f
 
 test('consultas pedagógicas: auxiliares, acentos, preguntas y operadores de comentarios', () => {
   for (const [query, title] of [['cómo filtrar', 'WHERE'], ['¿qué es SELECT?', 'SELECT'], ['ordenar', 'ORDER BY'], ['máximo', 'LIMIT'], ['--', 'Comentarios'], ['/*', 'Comentarios']]) {
-    assert.equal(searchEntries(entries, query)[0]?.title, title);
+    assert.equal(searchEntries(entries, query).find(entry => entry.context.endsWith('/ SQL'))?.title, title);
   }
   assert.deepEqual(searchTerms('qué es para'), []);
   assert.deepEqual(searchEntries(entries, 'qué es para'), []);
@@ -52,7 +52,9 @@ test('la carga es diferida, comparte promesa y resuelve la consulta más recient
   await first;
   assert.equal(store.getSnapshot().surface, 'inline');
   assert.equal(store.getSnapshot().query, 'cómo filtrar');
-  assert.deepEqual(store.getSnapshot().results.map((entry) => entry.title), ['WHERE', 'Subconsultas · Subconsulta en WHERE']);
+  assert.deepEqual(store.getSnapshot().results, searchEntries(entries, 'cómo filtrar'));
+  assert.ok(store.getSnapshot().results.some(entry => entry.id === 'analisis-de-datos/sql/where'));
+  assert.ok(store.getSnapshot().results.some(entry => entry.context.endsWith('/ Pandas')));
   await store.openDialog();
   assert.equal(calls, 1);
   assert.equal(store.getSnapshot().query, 'cómo filtrar');
@@ -69,7 +71,7 @@ test('un error permite reintentar sin perder la consulta; elegir un resultado li
   assert.equal(calls, 2);
   assert.equal(store.getSnapshot().status, 'ready');
   assert.equal(store.getSnapshot().query, 'filtrar');
-  assert.equal(store.getSnapshot().results[0].title, 'WHERE');
+  assert.equal(store.getSnapshot().results.find(entry => entry.context.endsWith('/ SQL'))?.title, 'WHERE');
   store.chooseResult();
   store.closeDialog();
   assert.equal(store.getSnapshot().query, '');

@@ -17,7 +17,7 @@ export const parseConceptFrontMatter: ParseFrontMatter = async ({filePath, fileC
   return {...parsed, frontMatter: {
     ...parsed.frontMatter,
     title: concept.title,
-    sidebar_label: placement?concept.label:concept.title,
+    sidebar_label: concept.label,
     sidebar_position: concept.order,
     description: concept.seoDescription ?? concept.description,
     slug: (placement?.path??concept.slug).slice(docsBasePath.length),

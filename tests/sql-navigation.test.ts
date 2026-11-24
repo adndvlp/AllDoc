@@ -15,7 +15,7 @@ test('navegación SQL: cuatro áreas y SQL como única entrada compartida en Len
  assert.deepEqual(areas.map(a=>a.id),['analisis-de-datos','desarrollo-web','ia','lenguajes']);
  assert.deepEqual(getTopics('lenguajes').map(t=>t.id),['sql']);
  const primary=getTopics('analisis-de-datos').find(t=>t.id==='sql')!,other=getTopics('lenguajes')[0];assert.deepEqual(other.concepts,primary.concepts);assert.equal(other.sections,primary.sections);
- assert.equal(concepts.length,154);assert.equal(entries.length,154);assert.equal(new Set(entries.map(e=>e.id)).size,154);
+ assert.equal(sql.length,153);assert.equal(entries.filter(e=>e.context.endsWith('/ SQL')).length,153);assert.equal(new Set(entries.map(e=>e.id)).size,concepts.length);
 });
 test('navegación SQL: cambiar de área mantiene el concepto y los enlaces mantienen consulta y fragmento',()=>{
  assert.equal(sqlAreaTarget('/apuntes/analisis-de-datos/sql/where/and','lenguajes'),'/apuntes/lenguajes/sql/where/and');

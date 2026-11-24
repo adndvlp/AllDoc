@@ -107,8 +107,9 @@ variantes de SQLite, PostgreSQL, MySQL, SQL Server, MariaDB y Oracle SQL.
 [SDD de SQL](specs/sql-sdd.md) · [Evidencia de cierre](specs/verification/sql-point-9.md).
 
 Los grupos del catálogo empiezan contraídos. Al abrir una ficha SQL por enlace
-directo, el sidebar abre los grupos que contienen esa ficha. pandas incluye un
-primer apunte de DataFrame y las demás herramientas tienen su espacio preparado.
+directo, el sidebar abre los grupos que contienen esa ficha. pandas reúne 224
+fichas nuevas en 33 grupos y conserva el apunte original de DataFrame.
+[Temario de pandas](specs/pandas.md).
 Pulsar un grupo o una sección despliega o contrae su contenido, sin abrir una página.
 Se navega al pulsar un concepto. La agrupación y el orden se definen en
 src/content/catalog.ts y sidebars.ts los consume; las carpetas y las rutas de los
@@ -234,7 +235,10 @@ Los ejemplos, resultados, recordatorios y notas SQL se editan en los módulos de
 [src/content/notes/sql.ts](src/content/notes/sql.ts) reúne los módulos y los vincula
 a la metadata por ID global.
 [src/content/sql.ts](src/content/sql.ts) conserva la API usada por los MDX.
-El miniapunte pandas está en [src/content/notes/pandas.ts](src/content/notes/pandas.ts).
+El temario de pandas se edita en [specs/pandas.md](specs/pandas.md). Ejecuta
+`npm run prepare:pandas` para regenerar la metadata, los cuerpos por grupo,
+los documentos MDX y los datos descargables. El apunte original de DataFrame
+está en [src/content/notes/pandas.ts](src/content/notes/pandas.ts).
 Ambas herramientas comparten la presentación compacta de
 [ConceptNote](src/components/ConceptNote/index.tsx), con resultado inicialmente
 cerrado; pandas muestra su índice como encabezado de fila, separado de los datos.
@@ -257,8 +261,9 @@ cuerpos ni las tablas de todas las fichas.
 
 La práctica SQL usa `negocio-relacional@1`, con **13 tablas y 379 filas** sobre
 productos, clientes, pedidos, inventario, empleados y otras operaciones de negocio.
-pandas usa `productos-basico@1`, con tres productos. Los manifiestos describen
-columnas y tipos. Las filas se cargan por separado al preparar cada entorno.
+El temario de pandas usa `pandas-comercio@1`, con clientes, pedidos, productos,
+detalle, leads y dos Series. Su apunte original usa `productos-basico@1` y
+conserva sus borradores. Los datos se cargan al preparar cada entorno.
 [Guía del dataset relacional](specs/sql/negocio-relacional.md).
 
 La base de práctica está en `src/practice/`: el gestor de sesiones separa

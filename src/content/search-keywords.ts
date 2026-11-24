@@ -1,4 +1,5 @@
 import {concepts,type ConceptId} from './concepts.ts';
+import {pandasKeywords} from './pandas-search-keywords.ts';
 
 const legacy:Readonly<Record<string,readonly string[]>> = {
   'analisis-de-datos/sql/select': ['elegir', 'seleccionar', 'columnas', 'mostrar', 'consultar', 'tabla', 'from', 'origen', 'asterisco', 'todas', 'varias', 'coma', 'especificas', 'productos', 'nombre', 'precio', 'negocio'],
@@ -23,4 +24,7 @@ const sqlAliases:Readonly<Record<string,readonly string[]>>={
  'except/equivalentes':['MINUS','EXCEPT'],
  'transactions/begin':['START TRANSACTION','BEGIN TRANSACTION'],
 };
-export const searchKeywords=Object.fromEntries(concepts.map(c=>[c.id,legacy[c.id]??[c.title,c.label,c.description,...(sqlAliases[c.id.replace('analisis-de-datos/sql/','')]??[])]])) as Record<ConceptId,readonly string[]>;
+export const searchKeywords = Object.fromEntries(concepts.map(concept => [concept.id,
+  legacy[concept.id] ?? pandasKeywords[concept.id] ?? [concept.title, concept.label, concept.description,
+    ...(sqlAliases[concept.id.replace('analisis-de-datos/sql/', '')] ?? [])],
+])) as Record<ConceptId, readonly string[]>;

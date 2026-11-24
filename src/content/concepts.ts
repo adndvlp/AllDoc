@@ -1,6 +1,7 @@
 import type {AreaId} from './areas';
 import {publishedSqlMetadata} from './sql/published.ts';
 import {resolveSqlDocument} from './sql/placements.ts';
+import {pandasCurriculum} from './pandas-curriculum.ts';
 
 export const docsBasePath = '/apuntes';
 
@@ -16,6 +17,7 @@ export type ConceptMeta = {
   seoDescription?: string;
   docId?: string;
   aliases?: readonly string[];
+  practiceProfileId?: string;
 };
 
 function defineConcept<const T extends Omit<ConceptMeta, 'slug'>>(definition: T) {
@@ -23,15 +25,22 @@ function defineConcept<const T extends Omit<ConceptMeta, 'slug'>>(definition: T)
 }
 
 // Metadata de navegación. Los cuerpos y las palabras clave viven en módulos separados.
-export const concepts = [
-  ...publishedSqlMetadata,
-  defineConcept({
-    id: 'analisis-de-datos/pandas/dataframe',
-    areaId: 'analisis-de-datos', topicId: 'pandas', order: 1,
-    title: 'DataFrame', label: 'Crear una tabla',
-    description: 'Un DataFrame es una tabla: columnas para cada dato y filas para cada producto.',
-  }),
-] as const satisfies readonly ConceptMeta[];
+const pandasDataframe = {
+  id: 'analisis-de-datos/pandas/dataframe',
+  title: 'DataFrame', label: 'Crear una tabla de productos',
+  description: 'Un DataFrame es una tabla: columnas para cada dato y filas para cada producto.',
+};
+const pandasMetadata = pandasCurriculum.flatMap((group, index) => {
+  const children = group.children.map(({id, label, description}) => ({
+    id, label, description, title: label === 'Definición' ? group.label : label,
+    practiceProfileId: 'python-pandas-comercio',
+  }));
+  return index === 0 ? [...children, pandasDataframe] : children;
+}).map((concept, index) => defineConcept({
+  ...concept, areaId: 'analisis-de-datos', topicId: 'pandas', order: index + 1,
+}));
+
+export const concepts = [...publishedSqlMetadata, ...pandasMetadata] as const satisfies readonly ConceptMeta[];
 
 export type Concept = (typeof concepts)[number];
 export type ConceptId = Concept['id'];

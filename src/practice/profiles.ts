@@ -1,4 +1,21 @@
 import {createPracticeRegistry} from './registry.ts';
+import type {EnabledPracticeProfile, ProviderLoaders} from './contracts.ts';
+
+const pythonProfile: EnabledPracticeProfile = {
+  id: 'python-pandas', label: 'pandas', toolKey: 'analisis-de-datos/pandas',
+  languageId: 'python', runtimeId: 'pyodide', completionId: 'python-jedi',
+  completionDescription: 'Python · Jedi y columnas registradas',
+  busyCompletionDescription: 'Análisis pausado durante la ejecución',
+  defaultExampleId: 'pandas/dataframe/productos',
+  defaultDataset: {id: 'productos-basico', version: 1},
+  executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
+  capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
+};
+const pythonLoaders: ProviderLoaders = {
+  runtime: () => import(/* webpackChunkName: "practice-python-bridge" */ './adapters/python/browser.ts').then(({createPythonRuntime}) => createPythonRuntime),
+  completion: () => import(/* webpackChunkName: "practice-python-bridge" */ './adapters/python/browser.ts').then(({createPythonCompletion}) => createPythonCompletion),
+  dataset: () => import(/* webpackChunkName: "practice-dataset-adapter" */ './datasets/index.ts').then(({createDatasetAdapter}) => createDatasetAdapter),
+};
 
 // Solo metadata. Ningún motor, editor, cuerpo o dataset de filas se importa aquí.
 export const practiceRegistry = createPracticeRegistry([
@@ -15,18 +32,7 @@ export const practiceRegistry = createPracticeRegistry([
     completion: () => import(/* webpackChunkName: "practice-sql-completion" */ './adapters/sqlite/completion.ts').then((module) => module.createSQLCompletion),
     dataset: () => import(/* webpackChunkName: "practice-dataset-adapter" */ './datasets/index.ts').then((module) => module.createDatasetAdapter),
   }},
-  {profile: {
-    id: 'python-pandas', label: 'pandas', toolKey: 'analisis-de-datos/pandas',
-    languageId: 'python', runtimeId: 'pyodide', completionId: 'python-jedi',
-    completionDescription: 'Python · Jedi y columnas registradas',
-    busyCompletionDescription: 'Análisis pausado durante la ejecución',
-    defaultExampleId: 'pandas/dataframe/productos',
-    defaultDataset: {id: 'productos-basico', version: 1},
-    executionLocation: 'browser', availability: 'enabled', editorAvailability: 'enabled',
-    capabilities: {multipleFiles: false, tables: true, figures: false, preview: false, network: 'none'},
-  }, loaders: {
-    runtime: () => import(/* webpackChunkName: "practice-python-bridge" */ './adapters/python/browser.ts').then((module) => module.createPythonRuntime),
-    completion: () => import(/* webpackChunkName: "practice-python-bridge" */ './adapters/python/browser.ts').then((module) => module.createPythonCompletion),
-    dataset: () => import(/* webpackChunkName: "practice-dataset-adapter" */ './datasets/index.ts').then((module) => module.createDatasetAdapter),
-  }},
+  {profile: pythonProfile, defaultForTool: true, loaders: pythonLoaders},
+  {profile: {...pythonProfile, id: 'python-pandas-comercio', defaultExampleId: 'pandas/inspeccion/head-y-tail/1',
+    defaultDataset: {id: 'pandas-comercio', version: 1}}, loaders: pythonLoaders},
 ]);

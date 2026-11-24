@@ -1,5 +1,6 @@
 import {test, expect} from '@playwright/test';
 import {goHome} from './header-helpers';
+import {openPracticeRegion, practiceResults} from './practice-helpers';
 
 const route = '/apuntes/analisis-de-datos/pandas/dataframe';
 
@@ -9,7 +10,8 @@ test('pandas: navegación, ejemplo compacto, resultado con índice y acceso desd
   await catalog.getByLabel('Tablas y archivos', {exact: true}).click();
   await catalog.getByLabel('Pandas', {exact: true}).click();
   await expect(page).toHaveURL(/\/$/);
-  await catalog.getByRole('link', {name: /DataFrame/}).click();
+  await catalog.getByLabel('Series y DataFrame', {exact: true}).click();
+  await catalog.getByRole('link', {name: 'Crear una tabla de productos', exact: true}).click();
   await expect(page).toHaveURL(new RegExp(route + '$'));
   await expect(page.getByRole('heading', {level: 1, name: 'DataFrame', exact: true})).toHaveCount(1);
   const note = page.locator('[data-pandas-concept]');
@@ -31,9 +33,42 @@ test('pandas: navegación, ejemplo compacto, resultado con índice y acceso desd
   await goHome(page);
   await expect(page.getByRole('region', {name: 'Favoritos', exact: true}).getByRole('link')).toContainText('DataFrame');
   await page.locator('[data-search-surface="inline"]').getByRole('searchbox').fill('crear tabla pandas');
-  await page.locator('[data-search-surface="inline"]').getByRole('link').filter({hasText: 'DataFrame'}).click();
+  await page.locator(`[data-search-surface="inline"] a[href="${route}"]`).click();
   await expect(page).toHaveURL(new RegExp(route + '$'));
   await expect(note.locator('details[open]')).toHaveCount(0);
+});
+
+test('temario pandas: grupo colapsable, resultado de referencia y práctica con pedidos', async ({page}) => {
+  await page.goto('/', {waitUntil: 'networkidle'});
+  const catalog = page.locator('[data-catalog]');
+  await catalog.getByLabel('Tablas y archivos', {exact: true}).click();
+  await catalog.getByLabel('Pandas', {exact: true}).click();
+  const group = catalog.locator('[data-pandas-group="seleccion-de-datos"]');
+  await expect(group.locator('details')).not.toHaveAttribute('open', '');
+  await group.getByLabel('Selección de datos', {exact: true}).click();
+  await group.getByRole('link', {name: 'loc', exact: true}).click();
+  await expect(page).toHaveURL(/\/pandas\/seleccion-de-datos\/loc$/);
+  const note = page.locator('[data-pandas-concept]');
+  await note.getByText('Ver resultado en pandas 2.2.3', {exact: true}).click();
+  await expect(note.getByRole('region', {name: /Resultado de loc/})).toContainText('101');
+  await note.getByRole('button', {name: 'Probar este ejemplo: Elegir las etiquetas 0 a 2'}).click();
+  const panel = page.locator('[data-practice-panel]');
+  await expect(panel.getByRole('textbox', {name: 'Código pandas'})).toContainText('pedidos.loc');
+  const run = panel.getByRole('button', {name: 'Ejecutar', exact: true});
+  await expect(run).toBeEnabled({timeout: 25_000});
+  await run.click();
+  await openPracticeRegion(page, 'results');
+  const table = practiceResults(page).getByRole('table');
+  await expect(table.getByRole('row')).toHaveCount(4);
+  await expect(table.getByRole('row').nth(1).getByRole('cell')).toHaveText(['101', '100']);
+});
+
+test('temario pandas: los requisitos externos están junto al ejemplo', async ({page}) => {
+  await page.goto('/apuntes/analisis-de-datos/pandas/importar-datos/read-excel', {waitUntil: 'networkidle'});
+  const note = page.locator('[data-pandas-concept]');
+  await expect(note.getByText(/Requiere openpyxl/)).toBeVisible();
+  await expect(note.getByRole('button', {name: /Probar este ejemplo/})).toHaveCount(0);
+  await expect(note.getByRole('link', {name: 'Descargar los datos de los ejemplos'})).toHaveAttribute('href', '/practice/pandas/datos.py');
 });
 
 test('pandas al 200% mantiene código, copia, resultado y scroll limitado a la tabla', async ({page}) => {

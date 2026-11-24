@@ -30,8 +30,8 @@ function createResolver({registry, entries = concepts}: {registry: PracticeRegis
     const entry = byPath.get(path);
     if (!entry) return null;
     const toolKey = entry.areaId + '/' + entry.topicId;
-    const profile = registry.defaultForTool(toolKey);
-    if (!profile || (editing ? profile.editorAvailability ?? profile.availability : profile.availability) !== 'enabled') return null;
+    const profile = entry.practiceProfileId ? registry.get(entry.practiceProfileId) : registry.defaultForTool(toolKey);
+    if (!profile || profile.toolKey !== toolKey || (editing ? profile.editorAvailability ?? profile.availability : profile.availability) !== 'enabled') return null;
     return Object.freeze({conceptId: entry.id, conceptSlug: entry.slug, toolKey, profile, workspaceKey: workspaceKey(profile)});
   };
 }

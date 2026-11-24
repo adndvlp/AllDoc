@@ -7,6 +7,7 @@ import {pythonPackages} from '../src/practice/adapters/python/packages.ts';
 import {createDatasetAdapter} from '../src/practice/datasets/index.ts';
 import {isCompletionResult, isRuntimeEvent} from '../src/practice/protocol.ts';
 import {initializePythonVM} from '../src/practice/adapters/python/initialize.ts';
+import {pandasCurriculum} from '../src/content/pandas-curriculum.ts';
 import type {CompletionRequest, MaterializedDataset, RunRequest, RuntimeEvent} from '../src/practice/contracts.ts';
 
 let pyodide: PyodideAPI; let dataset: MaterializedDataset;
@@ -121,4 +122,34 @@ test('Pyodide real: una función de una ejecución anterior conserva su excepci�
   await run(value, 'def falla():\n    numero = 1\n    raise ValueError("función conservada")');
   const events = await run(value, 'falla()'); const error = events.find((event) => event.type === 'error')!;
   assert.equal(error.message, 'ValueError: función conservada'); assert.equal(error.file, 'main.py'); assert.equal(error.line, 1);
+});
+
+test('Pyodide real: los 214 ejemplos integrados de pandas ejecutan sobre los datos compartidos', async () => {
+  const course = await createDatasetAdapter().materialize({id: 'pandas-comercio', version: 1}, 'pyodide', new AbortController().signal);
+  const value = createPythonEngine(pyodide);
+  engines.push(value);
+  await value.init(course);
+  const schema = (entities: typeof course.schema.entities) => entities.map(({name, rowCount, columns}) => ({name, rowCount, columns}))
+    .sort((first, second) => first.name.localeCompare(second.name));
+  assert.deepEqual(schema(value.inspect().entities), schema(course.schema.entities));
+  let executed = 0;
+  let external = 0;
+  for (const {key} of pandasCurriculum) {
+    const {notes} = await import(`../src/content/notes/pandas/${key}.ts`) as {notes: {examples: {
+      id: string; code: string; external?: boolean;
+    }[]}[]};
+    for (const example of notes.flatMap(note => note.examples)) {
+      if (example.external) { external++; continue; }
+      await value.reset();
+      const events = await run(value, example.code);
+      assert.ok(events.some(event => event.type === 'end' && event.status === 'success'),
+        example.id + ': ' + events.find(event => event.type === 'error')?.message);
+      if (example.id === 'pandas/seleccion-de-datos/loc/1') {
+        assert.deepEqual(tables(events)[0].rows, [[101, 100], [102, 200], [103, 150]]);
+      }
+      executed++;
+    }
+  }
+  assert.equal(executed, 214);
+  assert.equal(external, 10);
 });

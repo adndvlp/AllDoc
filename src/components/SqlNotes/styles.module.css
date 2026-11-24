@@ -22,6 +22,7 @@
 .tableWrapper table { margin: 0; width: 100%; display: table; white-space: nowrap; font-size: .875rem; }
 .tableWrapper th { font-size: .875rem; }
 .tableWrapper th, .tableWrapper td { padding: .375rem .5rem; }
+.textResult { width: max-content; min-width: 100%; margin: 0; font-size: .875rem; white-space: pre; }
 .remember { padding: .375rem .625rem; border-left: 2px solid var(--accent); color: var(--accent-soft-text); font-size: .875rem; line-height: 1.5; margin: .75rem 0 0; }
 .note { color: var(--text-secondary); font-size: .875rem; line-height: 1.5; margin: .625rem 0 0; }
 .dialectControls { display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .75rem;margin:0 0 .625rem;min-width:0; }

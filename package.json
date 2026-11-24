@@ -9,6 +9,7 @@
     "serve": "node --experimental-strip-types scripts/serve-with-runtime.mjs serve",
     "build:runtime": "node --experimental-strip-types scripts/build-practice-runtime.mjs",
     "prepare:python": "node --experimental-strip-types scripts/prepare-python-runtime.mjs",
+    "prepare:pandas": "node scripts/prepare-pandas-notes.mjs",
     "update:python": "node --experimental-strip-types scripts/prepare-python-runtime.mjs --update",
     "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json",

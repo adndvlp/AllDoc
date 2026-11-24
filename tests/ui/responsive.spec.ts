@@ -95,8 +95,15 @@ test('grupos contraídos, logos y navegación desde el menú', async ({page}) =>
     const button = menu.getByRole('button', {name: label, exact: true});
     await button.click();
     const category = button.locator('..').locator('..');
-    if (label === 'Pandas') await expect(category.getByRole('link', {name: 'DataFrame', exact: true})).toBeVisible();
-    else await expect(category.locator('.sidebar-empty-note')).toBeVisible();
+    if (label === 'Pandas') {
+      const group = category.getByRole('button', {name: 'Series y DataFrame', exact: true});
+      await expect(group).toHaveAttribute('aria-expanded', 'false');
+      await group.click();
+      const dataframe = category.getByRole('link', {name: 'DataFrame', exact: true});
+      await expect(dataframe).toBeVisible();
+      await expect(dataframe).toHaveAttribute('href', '/apuntes/analisis-de-datos/pandas/series-y-dataframe/dataframe');
+      await expect(category.getByRole('link', {name: 'Crear una tabla de productos', exact: true})).toBeVisible();
+    } else await expect(category.locator('.sidebar-empty-note')).toBeVisible();
   }
   await expect.poll(async () => menu.locator('img[data-topic-icon]').evaluateAll((images) => images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
   await menu.locator('svg image').evaluateAll((images) => Promise.all(images.map((image) => {
@@ -144,6 +151,8 @@ test('buscador accesible y dentro de la pantalla', async ({page}, testInfo) => {
     await result.click();
   } else {
     await input.press('ArrowDown');
+    await expect(dialog.getByRole('link').first()).toBeFocused();
+    await page.keyboard.press('ArrowDown');
     await expect(result).toBeFocused();
     await page.keyboard.press('Enter');
   }

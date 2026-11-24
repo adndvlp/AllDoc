@@ -2,6 +2,7 @@ import type {IconName} from '../components/Icon';
 import type {AreaId} from './areas';
 import {concepts, type ConceptMeta} from './concepts.ts';
 import {getPublishedSqlCurriculum} from './sql/curriculum.ts';
+import {pandasCurriculum} from './pandas-curriculum.ts';
 
 type TopicDefinition = {kind: 'topic'; id: string; label: string; sharedFrom?:AreaId};
 type GroupDefinition = {kind: 'group'; id: string; label: string; items: readonly TopicDefinition[]};
@@ -83,6 +84,13 @@ export function buildCatalog(areas: readonly AreaDefinition[], entries: readonly
         const key=sourceArea+'/'+definition.id;
         sections=sectionsByTopic.get(key);
         if(!sections){const byId=new Map(members.map(c=>[c.id,c]));sections=getPublishedSqlCurriculum().map(g=>({id:g.key,label:g.label,collapsed:true as const,concepts:g.children.flatMap(c=>byId.has(c.id)?[byId.get(c.id)!]:[])})).filter(g=>g.concepts.length);sectionsByTopic.set(key,sections);}
+      }
+      if (sourceArea === 'analisis-de-datos' && definition.id === 'pandas') {
+        sections = pandasCurriculum.map(group => ({
+          id: group.key, label: group.label, collapsed: true as const,
+          concepts: members.filter(concept => concept.id.startsWith(`analisis-de-datos/pandas/${group.key}/`)
+            || (group.key === 'series-y-dataframe' && concept.id === 'analisis-de-datos/pandas/dataframe')),
+        })).filter(section => section.concepts.length > 0);
       }
       return {...definition, areaId: area.id, concepts: members,...(sections?.length?{sections}:{})};
     };

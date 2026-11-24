@@ -88,9 +88,9 @@ test('DataFrame está publicado bajo Pandas, con búsqueda propia y un único ej
   assert.deepEqual(note.examples[0].output.columns, expectedColumns);
   assert.deepEqual(note.examples[0].output.rows, expectedRows.map((row) => row.map(String)));
   assert.deepEqual(note.examples[0].output.rowLabels, ['0', '1', '2']);
-  assert.equal(countConcepts(catalog[0].items), 154);
+  assert.equal(countConcepts(catalog[0].items), 378);
   assert.equal(concepts.filter(({topicId}) => topicId === 'sql').length, 153);
-  assert.equal(searchEntries(entries, 'crear una tabla con pandas')[0]?.id, id);
+  assert.ok(searchEntries(entries, 'crear una tabla con pandas').some(entry => entry.id === id));
   assert.match(await readFile('docs/' + id + '.mdx', 'utf8'), /PandasConceptCard/);
 });
 
@@ -104,7 +104,7 @@ test('anterior y siguiente permanecen dentro de la misma herramienta', async () 
   for (const [id, previous, next] of [
     ['analisis-de-datos/sql/select', null, 'analisis-de-datos/sql/select/todas-las-columnas'],
     ['analisis-de-datos/sql/comentarios', 'analisis-de-datos/sql/select/alias', 'analisis-de-datos/sql/limit'],
-    ['analisis-de-datos/pandas/dataframe', null, null],
+    ['analisis-de-datos/pandas/series-y-dataframe/index', 'analisis-de-datos/pandas/series-y-dataframe/dataframe', 'analisis-de-datos/pandas/series-y-dataframe/series-frente-a-dataframe'],
   ] as const) {
     const result = await parseConceptFrontMatter({filePath: path.resolve('docs', id + '.mdx'), fileContent: '',
       defaultParseFrontMatter: async () => ({content: '', frontMatter: {}})});
@@ -115,4 +115,5 @@ test('anterior y siguiente permanecen dentro de la misma herramienta', async () 
     defaultParseFrontMatter: async () => ({content: '', frontMatter: {pagination_prev: null, pagination_next: null}})});
   assert.equal(explicit.frontMatter.pagination_prev, null);
   assert.equal(explicit.frontMatter.pagination_next, null);
+  assert.match(await readFile('docs/analisis-de-datos/pandas/dataframe.mdx', 'utf8'), /pagination_prev: null\npagination_next: null/);
 });

@@ -88,6 +88,33 @@ test('preset cliente: las sugerencias priorizan recientes y eliminan duplicados'
   assert.equal(store.getSnapshot().results.length, entries.length);
 });
 
+test('preset cliente: las flechas recorren un NodeList de resultados y devuelven el foco al buscador', context => {
+  const {searchKeyboard} = compile<typeof import('../src/components/SearchResults/keyboard.ts')>('../src/components/SearchResults/keyboard.ts');
+  const doc = {activeElement: {} as object};
+  const previous = Object.getOwnPropertyDescriptor(globalThis, 'document');
+  Object.defineProperty(globalThis, 'document', {configurable: true, value: doc});
+  context.after(() => {
+    if (previous) Object.defineProperty(globalThis, 'document', previous);
+    else Reflect.deleteProperty(globalThis, 'document');
+  });
+  const target = () => {
+    const element = {focus: () => {doc.activeElement = element;}};
+    return element;
+  };
+  const input = target(), first = target(), second = target();
+  const links = {0: first, 1: second, length: 2, [Symbol.iterator]: () => [first, second].values()};
+  const {onResultsKeyDown} = searchKeyboard({current: input as unknown as HTMLInputElement},
+    {current: {querySelectorAll: () => links} as unknown as HTMLUListElement});
+  const move = (key: string) => onResultsKeyDown({key, preventDefault() {}} as Parameters<typeof onResultsKeyDown>[0]);
+  first.focus();
+  move('ArrowDown');
+  assert.equal(doc.activeElement, second);
+  move('ArrowUp');
+  assert.equal(doc.activeElement, first);
+  move('ArrowUp');
+  assert.equal(doc.activeElement, input);
+});
+
 test('preset cliente: el registro de práctica resuelve defaults de Map sin cargar proveedores', () => {
   const guards = compile<typeof import('../src/practice/guards.ts')>('../src/practice/guards.ts');
   const registryModule = compile<typeof import('../src/practice/registry.ts')>('../src/practice/registry.ts', {'./guards.ts': guards});
@@ -100,7 +127,7 @@ test('preset cliente: el registro de práctica resuelve defaults de Map sin carg
   const resolved = context.createPracticeContextResolver({registry})(concepts[0].slug);
   assert.equal(resolved?.profile.id, 'sql-sqlite');
   assert.equal(fixture.calls.runtime, 0);
-  assert.equal(profiles.practiceRegistry.list().length, 2);
+  assert.equal(profiles.practiceRegistry.list().length, 3);
 });
 
 test('preset cliente: el gestor y los borradores conservan SQL/pandas y guardan todas las entradas del Map', async () => {
